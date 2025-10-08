@@ -36,6 +36,7 @@ export default function ProductsPage() {
               icon={product.icon}
               status={product.status}
               href={product.href}
+              isExternal={product.isExternal}
               features={product.features.slice(0, 3)}
             />
           ))}
