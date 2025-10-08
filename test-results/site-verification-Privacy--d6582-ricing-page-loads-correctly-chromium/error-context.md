@@ -1,0 +1,515 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "🦎 Privacy Gecko" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: 🦎
+        - generic [ref=e8]: Privacy Gecko
+      - generic [ref=e9]:
+        - link "Products" [ref=e10] [cursor=pointer]:
+          - /url: /products
+        - link "Pricing" [ref=e11] [cursor=pointer]:
+          - /url: /pricing
+        - link "About" [ref=e12] [cursor=pointer]:
+          - /url: /about
+        - link "Blog" [ref=e13] [cursor=pointer]:
+          - /url: /blog
+        - link "Resources" [ref=e14] [cursor=pointer]:
+          - /url: /resources
+      - link "Try GeckoAdvisor Free" [ref=e16] [cursor=pointer]:
+        - /url: /products/advisor
+  - main [ref=e17]:
+    - generic [ref=e20]:
+      - paragraph [ref=e21]: Pricing
+      - heading "Choose Your Privacy Level" [level=1] [ref=e22]
+      - paragraph [ref=e23]: Every tool has a generous free tier. Upgrade to Pro for unlimited access and advanced features.
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - heading "Pricing by Product" [level=2] [ref=e27]
+        - paragraph [ref=e28]: Compare Free vs Pro for each privacy tool
+      - generic [ref=e29]:
+        - generic [ref=e32]:
+          - generic [ref=e34]:
+            - generic [ref=e35]:
+              - img [ref=e36]
+              - heading "GeckoAdvisor" [level=3] [ref=e38]
+              - generic [ref=e39]: Live
+            - paragraph [ref=e40]: Know Your Privacy Score
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - generic [ref=e43]:
+                - heading "Free" [level=4] [ref=e44]
+                - paragraph [ref=e45]: $0/month
+                - paragraph [ref=e46]: 3 scans/month
+              - generic [ref=e47]:
+                - generic [ref=e48]:
+                  - img [ref=e49]
+                  - generic [ref=e52]: Basic privacy report
+                - generic [ref=e53]:
+                  - img [ref=e54]
+                  - generic [ref=e57]: Device scanning
+                - generic [ref=e58]:
+                  - img [ref=e59]
+                  - generic [ref=e62]: Privacy score
+            - generic [ref=e63]:
+              - generic [ref=e64]:
+                - heading "Pro" [level=4] [ref=e65]
+                - paragraph [ref=e66]: $9.99/month
+                - paragraph [ref=e67]: Unlimited access + advanced features
+              - generic [ref=e68]:
+                - generic [ref=e69]:
+                  - img [ref=e70]
+                  - generic [ref=e73]: Unlimited scans
+                - generic [ref=e74]:
+                  - img [ref=e75]
+                  - generic [ref=e78]: Detailed reports
+                - generic [ref=e79]:
+                  - img [ref=e80]
+                  - generic [ref=e83]: Priority alerts
+                - generic [ref=e84]:
+                  - img [ref=e85]
+                  - generic [ref=e88]: Advanced recommendations
+                - generic [ref=e89]:
+                  - img [ref=e90]
+                  - generic [ref=e93]: Historical tracking
+          - link "View GeckoAdvisor Details" [ref=e95] [cursor=pointer]:
+            - /url: /products/advisor
+        - generic [ref=e98]:
+          - generic [ref=e100]:
+            - generic [ref=e101]:
+              - img [ref=e102]
+              - heading "GeckoShare" [level=3] [ref=e108]
+              - generic [ref=e109]: Live
+            - paragraph [ref=e110]: Share Files, Not Your Privacy
+          - generic [ref=e111]:
+            - generic [ref=e112]:
+              - generic [ref=e113]:
+                - heading "Free" [level=4] [ref=e114]
+                - paragraph [ref=e115]: $0/month
+                - paragraph [ref=e116]: Up to 100MB, 24hr expiry
+              - generic [ref=e117]:
+                - generic [ref=e118]:
+                  - img [ref=e119]
+                  - generic [ref=e122]: E2E encryption
+                - generic [ref=e123]:
+                  - img [ref=e124]
+                  - generic [ref=e127]: Basic sharing
+                - generic [ref=e128]:
+                  - img [ref=e129]
+                  - generic [ref=e132]: Password protection
+            - generic [ref=e133]:
+              - generic [ref=e134]:
+                - heading "Pro" [level=4] [ref=e135]
+                - paragraph [ref=e136]: $7.99/month
+                - paragraph [ref=e137]: Unlimited access + advanced features
+              - generic [ref=e138]:
+                - generic [ref=e139]:
+                  - img [ref=e140]
+                  - generic [ref=e143]: Up to 5GB per file
+                - generic [ref=e144]:
+                  - img [ref=e145]
+                  - generic [ref=e148]: Custom expiry
+                - generic [ref=e149]:
+                  - img [ref=e150]
+                  - generic [ref=e153]: Branded links
+                - generic [ref=e154]:
+                  - img [ref=e155]
+                  - generic [ref=e158]: Advanced analytics
+                - generic [ref=e159]:
+                  - img [ref=e160]
+                  - generic [ref=e163]: Priority support
+          - link "View GeckoShare Details" [ref=e165] [cursor=pointer]:
+            - /url: /products/share
+        - generic [ref=e168]:
+          - generic [ref=e170]:
+            - generic [ref=e171]:
+              - img [ref=e172]
+              - heading "GeckoGuard" [level=3] [ref=e175]
+              - generic [ref=e176]: Live
+            - paragraph [ref=e177]: Browse Without Being Tracked
+          - generic [ref=e178]:
+            - generic [ref=e179]:
+              - generic [ref=e180]:
+                - heading "Free" [level=4] [ref=e181]
+                - paragraph [ref=e182]: $0/month
+                - paragraph [ref=e183]: Basic blocking, 10,000 trackers blocked
+              - generic [ref=e184]:
+                - generic [ref=e185]:
+                  - img [ref=e186]
+                  - generic [ref=e189]: Ad blocking
+                - generic [ref=e190]:
+                  - img [ref=e191]
+                  - generic [ref=e194]: Basic tracker blocking
+                - generic [ref=e195]:
+                  - img [ref=e196]
+                  - generic [ref=e199]: Privacy stats
+            - generic [ref=e200]:
+              - generic [ref=e201]:
+                - heading "Pro" [level=4] [ref=e202]
+                - paragraph [ref=e203]: $4.99/month
+                - paragraph [ref=e204]: Unlimited access + advanced features
+              - generic [ref=e205]:
+                - generic [ref=e206]:
+                  - img [ref=e207]
+                  - generic [ref=e210]: Advanced filters
+                - generic [ref=e211]:
+                  - img [ref=e212]
+                  - generic [ref=e215]: Whitelisting
+                - generic [ref=e216]:
+                  - img [ref=e217]
+                  - generic [ref=e220]: Device sync
+                - generic [ref=e221]:
+                  - img [ref=e222]
+                  - generic [ref=e225]: Custom rules
+                - generic [ref=e226]:
+                  - img [ref=e227]
+                  - generic [ref=e230]: Advanced analytics
+          - link "View GeckoGuard Details" [ref=e232] [cursor=pointer]:
+            - /url: /products/guard
+        - generic [ref=e235]:
+          - generic [ref=e237]:
+            - generic [ref=e238]:
+              - img [ref=e239]
+              - heading "GeckoVPN" [level=3] [ref=e243]
+              - generic [ref=e244]: Coming Q2 2025
+            - paragraph [ref=e245]: Private Browsing, Global Access
+          - generic [ref=e246]:
+            - generic [ref=e247]:
+              - generic [ref=e248]:
+                - heading "Free" [level=4] [ref=e249]
+                - paragraph [ref=e250]: $0/month
+                - paragraph [ref=e251]: Limited servers, 10GB/month
+              - generic [ref=e252]:
+                - generic [ref=e253]:
+                  - img [ref=e254]
+                  - generic [ref=e257]: Basic encryption
+                - generic [ref=e258]:
+                  - img [ref=e259]
+                  - generic [ref=e262]: Select servers
+                - generic [ref=e263]:
+                  - img [ref=e264]
+                  - generic [ref=e267]: Single device
+            - generic [ref=e268]:
+              - generic [ref=e269]:
+                - heading "Pro" [level=4] [ref=e270]
+                - paragraph [ref=e271]: $9.99/month
+                - paragraph [ref=e272]: Unlimited access + advanced features
+              - generic [ref=e273]:
+                - generic [ref=e274]:
+                  - img [ref=e275]
+                  - generic [ref=e278]: Unlimited bandwidth
+                - generic [ref=e279]:
+                  - img [ref=e280]
+                  - generic [ref=e283]: All servers
+                - generic [ref=e284]:
+                  - img [ref=e285]
+                  - generic [ref=e288]: 5 devices
+                - generic [ref=e289]:
+                  - img [ref=e290]
+                  - generic [ref=e293]: Premium support
+                - generic [ref=e294]:
+                  - img [ref=e295]
+                  - generic [ref=e298]: Advanced features
+        - generic [ref=e301]:
+          - generic [ref=e303]:
+            - generic [ref=e304]:
+              - img [ref=e305]
+              - heading "GeckoPass" [level=3] [ref=e309]
+              - generic [ref=e310]: Coming Q2 2025
+            - paragraph [ref=e311]: Secure Password Management
+          - generic [ref=e312]:
+            - generic [ref=e313]:
+              - generic [ref=e314]:
+                - heading "Free" [level=4] [ref=e315]
+                - paragraph [ref=e316]: $0/month
+                - paragraph [ref=e317]: Up to 50 passwords
+              - generic [ref=e318]:
+                - generic [ref=e319]:
+                  - img [ref=e320]
+                  - generic [ref=e323]: Password storage
+                - generic [ref=e324]:
+                  - img [ref=e325]
+                  - generic [ref=e328]: Basic auto-fill
+                - generic [ref=e329]:
+                  - img [ref=e330]
+                  - generic [ref=e333]: Single device
+            - generic [ref=e334]:
+              - generic [ref=e335]:
+                - heading "Pro" [level=4] [ref=e336]
+                - paragraph [ref=e337]: $4.99/month
+                - paragraph [ref=e338]: Unlimited access + advanced features
+              - generic [ref=e339]:
+                - generic [ref=e340]:
+                  - img [ref=e341]
+                  - generic [ref=e344]: Unlimited passwords
+                - generic [ref=e345]:
+                  - img [ref=e346]
+                  - generic [ref=e349]: Device sync
+                - generic [ref=e350]:
+                  - img [ref=e351]
+                  - generic [ref=e354]: Priority support
+                - generic [ref=e355]:
+                  - img [ref=e356]
+                  - generic [ref=e359]: Advanced sharing
+                - generic [ref=e360]:
+                  - img [ref=e361]
+                  - generic [ref=e364]: Family plan available
+        - generic [ref=e367]:
+          - generic [ref=e369]:
+            - generic [ref=e370]:
+              - img [ref=e371]
+              - heading "GeckoShell" [level=3] [ref=e374]
+              - generic [ref=e375]: Coming Q3 2025
+            - paragraph [ref=e376]: Anonymous Email Made Easy
+          - generic [ref=e377]:
+            - generic [ref=e378]:
+              - generic [ref=e379]:
+                - heading "Free" [level=4] [ref=e380]
+                - paragraph [ref=e381]: $0/month
+                - paragraph [ref=e382]: 5 active emails
+              - generic [ref=e383]:
+                - generic [ref=e384]:
+                  - img [ref=e385]
+                  - generic [ref=e388]: Basic forwarding
+                - generic [ref=e389]:
+                  - img [ref=e390]
+                  - generic [ref=e393]: 7-day retention
+                - generic [ref=e394]:
+                  - img [ref=e395]
+                  - generic [ref=e398]: Standard domains
+            - generic [ref=e399]:
+              - generic [ref=e400]:
+                - heading "Pro" [level=4] [ref=e401]
+                - paragraph [ref=e402]: $5.99/month
+                - paragraph [ref=e403]: Unlimited access + advanced features
+              - generic [ref=e404]:
+                - generic [ref=e405]:
+                  - img [ref=e406]
+                  - generic [ref=e409]: Unlimited emails
+                - generic [ref=e410]:
+                  - img [ref=e411]
+                  - generic [ref=e414]: Custom domains
+                - generic [ref=e415]:
+                  - img [ref=e416]
+                  - generic [ref=e419]: Extended retention
+                - generic [ref=e420]:
+                  - img [ref=e421]
+                  - generic [ref=e424]: Advanced filtering
+                - generic [ref=e425]:
+                  - img [ref=e426]
+                  - generic [ref=e429]: API access
+        - generic [ref=e432]:
+          - generic [ref=e434]:
+            - generic [ref=e435]:
+              - img [ref=e436]
+              - heading "GeckoView" [level=3] [ref=e439]
+              - generic [ref=e440]: Coming Q3 2025
+            - paragraph [ref=e441]: Privacy-First Browser
+          - generic [ref=e442]:
+            - generic [ref=e443]:
+              - generic [ref=e444]:
+                - heading "Free" [level=4] [ref=e445]
+                - paragraph [ref=e446]: $0/month
+                - paragraph [ref=e447]: Full features, free forever
+              - generic [ref=e448]:
+                - generic [ref=e449]:
+                  - img [ref=e450]
+                  - generic [ref=e453]: All privacy features
+                - generic [ref=e454]:
+                  - img [ref=e455]
+                  - generic [ref=e458]: Regular updates
+                - generic [ref=e459]:
+                  - img [ref=e460]
+                  - generic [ref=e463]: Community support
+            - generic [ref=e464]:
+              - generic [ref=e465]:
+                - heading "Pro" [level=4] [ref=e466]
+                - paragraph [ref=e467]: $6.99/month
+                - paragraph [ref=e468]: Unlimited access + advanced features
+              - generic [ref=e469]:
+                - generic [ref=e470]:
+                  - img [ref=e471]
+                  - generic [ref=e474]: Premium themes
+                - generic [ref=e475]:
+                  - img [ref=e476]
+                  - generic [ref=e479]: Priority support
+                - generic [ref=e480]:
+                  - img [ref=e481]
+                  - generic [ref=e484]: Advanced features
+                - generic [ref=e485]:
+                  - img [ref=e486]
+                  - generic [ref=e489]: Early access
+                - generic [ref=e490]:
+                  - img [ref=e491]
+                  - generic [ref=e494]: Custom branding
+        - generic [ref=e497]:
+          - generic [ref=e499]:
+            - generic [ref=e500]:
+              - img [ref=e501]
+              - heading "GeckoWatch" [level=3] [ref=e504]
+              - generic [ref=e505]: Coming Q4 2025
+            - paragraph [ref=e506]: Website Privacy Scanner
+          - generic [ref=e507]:
+            - generic [ref=e508]:
+              - generic [ref=e509]:
+                - heading "Free" [level=4] [ref=e510]
+                - paragraph [ref=e511]: $0/month
+                - paragraph [ref=e512]: 3 scans/month
+              - generic [ref=e513]:
+                - generic [ref=e514]:
+                  - img [ref=e515]
+                  - generic [ref=e518]: Basic scanning
+                - generic [ref=e519]:
+                  - img [ref=e520]
+                  - generic [ref=e523]: Public reports
+                - generic [ref=e524]:
+                  - img [ref=e525]
+                  - generic [ref=e528]: Standard checks
+            - generic [ref=e529]:
+              - generic [ref=e530]:
+                - heading "Pro" [level=4] [ref=e531]
+                - paragraph [ref=e532]: $14.99/month
+                - paragraph [ref=e533]: Unlimited access + advanced features
+              - generic [ref=e534]:
+                - generic [ref=e535]:
+                  - img [ref=e536]
+                  - generic [ref=e539]: Unlimited scans
+                - generic [ref=e540]:
+                  - img [ref=e541]
+                  - generic [ref=e544]: Continuous monitoring
+                - generic [ref=e545]:
+                  - img [ref=e546]
+                  - generic [ref=e549]: Advanced reports
+                - generic [ref=e550]:
+                  - img [ref=e551]
+                  - generic [ref=e554]: API access
+                - generic [ref=e555]:
+                  - img [ref=e556]
+                  - generic [ref=e559]: White-label reports
+    - generic [ref=e563]:
+      - heading "Privacy Gecko Pro Bundle" [level=2] [ref=e564]
+      - generic [ref=e565]: $24.99/month
+      - paragraph [ref=e566]: Get Pro access to all 8 tools and save 30%
+      - paragraph [ref=e567]: Individual plans total $58.93/month - Bundle saves you $33.94/month
+      - link "Get Pro Bundle" [ref=e568] [cursor=pointer]:
+        - /url: "#checkout"
+      - paragraph [ref=e569]: "💎 Coming Q2 2025: Save an additional 20% by staking $PRICKO tokens"
+    - generic [ref=e571]:
+      - generic [ref=e572]:
+        - paragraph [ref=e573]: FAQ
+        - heading "Frequently Asked Questions" [level=2] [ref=e574]
+      - generic [ref=e575]:
+        - generic [ref=e579]:
+          - img [ref=e580]
+          - generic [ref=e583]:
+            - heading "Can I switch plans anytime?" [level=3] [ref=e584]
+            - paragraph [ref=e585]: Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll pro-rate any billing differences.
+        - generic [ref=e589]:
+          - img [ref=e590]
+          - generic [ref=e593]:
+            - heading "What payment methods do you accept?" [level=3] [ref=e594]
+            - paragraph [ref=e595]: "We accept all major credit cards (Visa, Mastercard, American Express) through Stripe. Coming soon: $PRICKO token payments with exclusive discounts."
+        - generic [ref=e599]:
+          - img [ref=e600]
+          - generic [ref=e603]:
+            - heading "Do you offer refunds?" [level=3] [ref=e604]
+            - paragraph [ref=e605]: Yes, we offer a 30-day money-back guarantee on all Pro plans. If you're not satisfied, contact us for a full refund.
+        - generic [ref=e609]:
+          - img [ref=e610]
+          - generic [ref=e613]:
+            - heading "Can I cancel anytime?" [level=3] [ref=e614]
+            - paragraph [ref=e615]: Absolutely. You can cancel your subscription at any time. You'll retain access until the end of your billing period, and your data won't be deleted.
+        - generic [ref=e619]:
+          - img [ref=e620]
+          - generic [ref=e623]:
+            - heading "What happens with the $PRICKO token integration?" [level=3] [ref=e624]
+            - paragraph [ref=e625]: "Coming Q2 2025: Stake $PRICKO tokens to get 20-50% discounts on Pro plans, plus early access to new tools and exclusive features."
+        - generic [ref=e629]:
+          - img [ref=e630]
+          - generic [ref=e633]:
+            - heading "Do you offer team or enterprise plans?" [level=3] [ref=e634]
+            - paragraph [ref=e635]: Yes! Contact us for custom team pricing with centralized billing, admin controls, and dedicated support.
+    - generic [ref=e638]:
+      - heading "Still Have Questions?" [level=2] [ref=e639]
+      - paragraph [ref=e640]: We're here to help. Contact our team for personalized assistance.
+      - generic [ref=e641]:
+        - link "Contact Sales" [ref=e642] [cursor=pointer]:
+          - /url: /contact
+        - link "View All Products" [ref=e643] [cursor=pointer]:
+          - /url: /products
+  - contentinfo [ref=e644]:
+    - generic [ref=e645]:
+      - generic [ref=e646]:
+        - generic [ref=e647]:
+          - link "🦎 Privacy Gecko" [ref=e648] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e650]: 🦎
+            - generic [ref=e651]: Privacy Gecko
+          - paragraph [ref=e652]: Privacy tools that actually work. Powered by $PRICKO.
+          - generic [ref=e653]:
+            - link "Twitter" [ref=e654] [cursor=pointer]:
+              - /url: https://twitter.com/privacygecko
+              - img [ref=e655]
+            - link "Telegram" [ref=e657] [cursor=pointer]:
+              - /url: https://t.me/privacygecko
+              - img [ref=e658]
+        - generic [ref=e661]:
+          - heading "Products" [level=3] [ref=e662]
+          - list [ref=e663]:
+            - listitem [ref=e664]:
+              - link "GeckoAdvisor" [ref=e665] [cursor=pointer]:
+                - /url: /products/advisor
+            - listitem [ref=e666]:
+              - link "GeckoShare" [ref=e667] [cursor=pointer]:
+                - /url: /products/share
+            - listitem [ref=e668]:
+              - link "GeckoGuard" [ref=e669] [cursor=pointer]:
+                - /url: /products/guard
+            - listitem [ref=e670]:
+              - link "All Products" [ref=e671] [cursor=pointer]:
+                - /url: /products
+        - generic [ref=e672]:
+          - heading "Company" [level=3] [ref=e673]
+          - list [ref=e674]:
+            - listitem [ref=e675]:
+              - link "About" [ref=e676] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e677]:
+              - link "Blog" [ref=e678] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e679]:
+              - link "Contact" [ref=e680] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e681]:
+              - link "Pricing" [ref=e682] [cursor=pointer]:
+                - /url: /pricing
+        - generic [ref=e683]:
+          - heading "Resources" [level=3] [ref=e684]
+          - list [ref=e685]:
+            - listitem [ref=e686]:
+              - link "Documentation" [ref=e687] [cursor=pointer]:
+                - /url: /resources/docs
+            - listitem [ref=e688]:
+              - link "FAQ" [ref=e689] [cursor=pointer]:
+                - /url: /resources/faq
+            - listitem [ref=e690]:
+              - link "Support" [ref=e691] [cursor=pointer]:
+                - /url: /resources/support
+        - generic [ref=e692]:
+          - heading "Legal" [level=3] [ref=e693]
+          - list [ref=e694]:
+            - listitem [ref=e695]:
+              - link "Privacy Policy" [ref=e696] [cursor=pointer]:
+                - /url: /legal/privacy
+            - listitem [ref=e697]:
+              - link "Terms of Service" [ref=e698] [cursor=pointer]:
+                - /url: /legal/terms
+            - listitem [ref=e699]:
+              - link "Cookie Policy" [ref=e700] [cursor=pointer]:
+                - /url: /legal/cookies
+      - paragraph [ref=e702]: © 2025 Privacy Gecko. All rights reserved. Built with ❤️ for privacy.
+  - alert [ref=e703]
+```

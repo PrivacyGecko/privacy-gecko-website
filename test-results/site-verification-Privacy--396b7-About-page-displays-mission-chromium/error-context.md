@@ -1,0 +1,152 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "🦎 Privacy Gecko" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: 🦎
+        - generic [ref=e8]: Privacy Gecko
+      - generic [ref=e9]:
+        - link "Products" [ref=e10] [cursor=pointer]:
+          - /url: /products
+        - link "Pricing" [ref=e11] [cursor=pointer]:
+          - /url: /pricing
+        - link "About" [ref=e12] [cursor=pointer]:
+          - /url: /about
+        - link "Blog" [ref=e13] [cursor=pointer]:
+          - /url: /blog
+        - link "Resources" [ref=e14] [cursor=pointer]:
+          - /url: /resources
+      - link "Try GeckoAdvisor Free" [ref=e16] [cursor=pointer]:
+        - /url: /products/advisor
+  - main [ref=e17]:
+    - generic [ref=e20]:
+      - paragraph [ref=e21]: About Us
+      - heading "Making Privacy Tools Accessible to Everyone" [level=1] [ref=e22]
+      - paragraph [ref=e23]: "Privacy Gecko was founded with a simple mission: create privacy tools that actually work and don't require a PhD to use."
+    - generic [ref=e27]:
+      - heading "Our Story" [level=2] [ref=e28]
+      - generic [ref=e29]:
+        - paragraph [ref=e30]: "In 2024, privacy advocate @0xAnonA noticed a troubling trend: while privacy concerns were growing, the tools available were either too complex, too expensive, or worse—claiming to be private while secretly collecting user data."
+        - paragraph [ref=e31]: "Privacy Gecko was born from a simple question: \"What if we built privacy tools that were actually private, genuinely useful, and accessible to everyone?\""
+        - paragraph [ref=e32]: We started with GeckoAdvisor, a tool to help people understand their privacy posture. The response was overwhelming. People wanted more. So we built GeckoShare for encrypted file sharing, GeckoGuard for tracking protection, and we're not stopping there.
+        - paragraph [ref=e33]: "Today, Privacy Gecko is an ecosystem of 8 tools (3 live, 5 coming soon) serving thousands of privacy-conscious users worldwide. We're open source, community-driven, and committed to our original mission: making privacy accessible."
+    - generic [ref=e37]:
+      - heading "Our Mission" [level=2] [ref=e38]
+      - paragraph [ref=e39]: "\"To empower individuals with simple, effective privacy tools that protect their digital lives without requiring technical expertise or breaking the bank.\""
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - paragraph [ref=e43]: Our Values
+        - heading "What We Stand For" [level=2] [ref=e44]
+        - paragraph [ref=e45]: The principles that guide everything we build
+      - generic [ref=e46]:
+        - generic [ref=e49]:
+          - img [ref=e51]
+          - heading "Transparency" [level=3] [ref=e53]
+          - paragraph [ref=e54]: Open source code, clear privacy policies, and honest communication about our practices.
+        - generic [ref=e57]:
+          - img [ref=e59]
+          - heading "Accessibility" [level=3] [ref=e64]
+          - paragraph [ref=e65]: Privacy tools should be available to everyone, not just tech experts or those who can pay.
+        - generic [ref=e68]:
+          - img [ref=e70]
+          - heading "Community" [level=3] [ref=e74]
+          - paragraph [ref=e75]: Built with and for our users. We listen, iterate, and improve based on your feedback.
+        - generic [ref=e78]:
+          - img [ref=e80]
+          - heading "Trust" [level=3] [ref=e82]
+          - paragraph [ref=e83]: We earn your trust through actions, not words. No data selling, ever.
+    - generic [ref=e85]:
+      - generic [ref=e86]:
+        - paragraph [ref=e87]: Team
+        - heading "Built by Privacy Advocates" [level=2] [ref=e88]
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - generic [ref=e94]: 🦎
+          - generic [ref=e95]:
+            - heading "@0xAnonA" [level=3] [ref=e96]
+            - paragraph [ref=e97]: Founder & Privacy Advocate
+        - paragraph [ref=e98]: Privacy advocate since 2014. Built Privacy Gecko to democratize digital privacy. Previously worked in cybersecurity and saw firsthand how difficult it was for regular people to protect themselves online.
+    - generic [ref=e101]:
+      - heading "Join Our Mission" [level=2] [ref=e102]
+      - paragraph [ref=e103]: Help us make privacy accessible to everyone. Use our tools, contribute to our open source projects, or spread the word.
+      - generic [ref=e104]:
+        - link "Explore Our Tools" [ref=e105] [cursor=pointer]:
+          - /url: /products
+        - link "Get in Touch" [ref=e106] [cursor=pointer]:
+          - /url: /contact
+  - contentinfo [ref=e107]:
+    - generic [ref=e108]:
+      - generic [ref=e109]:
+        - generic [ref=e110]:
+          - link "🦎 Privacy Gecko" [ref=e111] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e113]: 🦎
+            - generic [ref=e114]: Privacy Gecko
+          - paragraph [ref=e115]: Privacy tools that actually work. Powered by $PRICKO.
+          - generic [ref=e116]:
+            - link "Twitter" [ref=e117] [cursor=pointer]:
+              - /url: https://twitter.com/privacygecko
+              - img [ref=e118]
+            - link "Telegram" [ref=e120] [cursor=pointer]:
+              - /url: https://t.me/privacygecko
+              - img [ref=e121]
+        - generic [ref=e124]:
+          - heading "Products" [level=3] [ref=e125]
+          - list [ref=e126]:
+            - listitem [ref=e127]:
+              - link "GeckoAdvisor" [ref=e128] [cursor=pointer]:
+                - /url: /products/advisor
+            - listitem [ref=e129]:
+              - link "GeckoShare" [ref=e130] [cursor=pointer]:
+                - /url: /products/share
+            - listitem [ref=e131]:
+              - link "GeckoGuard" [ref=e132] [cursor=pointer]:
+                - /url: /products/guard
+            - listitem [ref=e133]:
+              - link "All Products" [ref=e134] [cursor=pointer]:
+                - /url: /products
+        - generic [ref=e135]:
+          - heading "Company" [level=3] [ref=e136]
+          - list [ref=e137]:
+            - listitem [ref=e138]:
+              - link "About" [ref=e139] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e140]:
+              - link "Blog" [ref=e141] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e142]:
+              - link "Contact" [ref=e143] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e144]:
+              - link "Pricing" [ref=e145] [cursor=pointer]:
+                - /url: /pricing
+        - generic [ref=e146]:
+          - heading "Resources" [level=3] [ref=e147]
+          - list [ref=e148]:
+            - listitem [ref=e149]:
+              - link "Documentation" [ref=e150] [cursor=pointer]:
+                - /url: /resources/docs
+            - listitem [ref=e151]:
+              - link "FAQ" [ref=e152] [cursor=pointer]:
+                - /url: /resources/faq
+            - listitem [ref=e153]:
+              - link "Support" [ref=e154] [cursor=pointer]:
+                - /url: /resources/support
+        - generic [ref=e155]:
+          - heading "Legal" [level=3] [ref=e156]
+          - list [ref=e157]:
+            - listitem [ref=e158]:
+              - link "Privacy Policy" [ref=e159] [cursor=pointer]:
+                - /url: /legal/privacy
+            - listitem [ref=e160]:
+              - link "Terms of Service" [ref=e161] [cursor=pointer]:
+                - /url: /legal/terms
+            - listitem [ref=e162]:
+              - link "Cookie Policy" [ref=e163] [cursor=pointer]:
+                - /url: /legal/cookies
+      - paragraph [ref=e165]: © 2025 Privacy Gecko. All rights reserved. Built with ❤️ for privacy.
+  - alert [ref=e166]
+```

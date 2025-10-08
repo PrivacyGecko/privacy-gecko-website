@@ -1,0 +1,217 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "🦎 Privacy Gecko" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: 🦎
+        - generic [ref=e8]: Privacy Gecko
+      - generic [ref=e9]:
+        - link "Products" [ref=e10] [cursor=pointer]:
+          - /url: /products
+        - link "Pricing" [ref=e11] [cursor=pointer]:
+          - /url: /pricing
+        - link "About" [ref=e12] [cursor=pointer]:
+          - /url: /about
+        - link "Blog" [ref=e13] [cursor=pointer]:
+          - /url: /blog
+        - link "Resources" [ref=e14] [cursor=pointer]:
+          - /url: /resources
+      - link "Try GeckoAdvisor Free" [ref=e16] [cursor=pointer]:
+        - /url: /products/advisor
+  - main [ref=e17]:
+    - generic [ref=e20]:
+      - paragraph [ref=e21]: Our Products
+      - heading "Your Complete Privacy Toolkit" [level=1] [ref=e22]
+      - paragraph [ref=e23]: 8 powerful tools to protect every aspect of your digital privacy. From device audits to encrypted file sharing, we've got you covered.
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - heading "Available Now" [level=2] [ref=e27]
+        - paragraph [ref=e28]: Start using these tools today to protect your privacy
+      - generic [ref=e29]:
+        - generic [ref=e31]:
+          - generic [ref=e32]:
+            - generic [ref=e33]:
+              - img [ref=e35]
+              - generic [ref=e37]: Live
+            - heading "GeckoAdvisor" [level=3] [ref=e38]
+            - paragraph [ref=e39]: Comprehensive privacy & security audit tool for your devices
+          - list [ref=e41]:
+            - listitem [ref=e42]:
+              - generic [ref=e43]: ✓
+              - text: Device scanning & vulnerability detection
+            - listitem [ref=e44]:
+              - generic [ref=e45]: ✓
+              - text: Privacy score & actionable recommendations
+            - listitem [ref=e46]:
+              - generic [ref=e47]: ✓
+              - text: Tracking detection & secure configuration tips
+          - link "Learn More" [ref=e49] [cursor=pointer]:
+            - /url: /products/advisor
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - img [ref=e55]
+              - generic [ref=e61]: Live
+            - heading "GeckoShare" [level=3] [ref=e62]
+            - paragraph [ref=e63]: End-to-end encrypted file sharing with expiring links
+          - list [ref=e65]:
+            - listitem [ref=e66]:
+              - generic [ref=e67]: ✓
+              - text: End-to-end encryption (256-bit AES)
+            - listitem [ref=e68]:
+              - generic [ref=e69]: ✓
+              - text: Expiring links & password protection
+            - listitem [ref=e70]:
+              - generic [ref=e71]: ✓
+              - text: No registration required
+          - link "Learn More" [ref=e73] [cursor=pointer]:
+            - /url: /products/share
+        - generic [ref=e75]:
+          - generic [ref=e76]:
+            - generic [ref=e77]:
+              - img [ref=e79]
+              - generic [ref=e82]: Live
+            - heading "GeckoGuard" [level=3] [ref=e83]
+            - paragraph [ref=e84]: Browser extension for comprehensive tracker & ad blocking
+          - list [ref=e86]:
+            - listitem [ref=e87]:
+              - generic [ref=e88]: ✓
+              - text: Real-time tracker & ad blocking
+            - listitem [ref=e89]:
+              - generic [ref=e90]: ✓
+              - text: Privacy dashboard & statistics
+            - listitem [ref=e91]:
+              - generic [ref=e92]: ✓
+              - text: Custom filter lists
+          - link "Learn More" [ref=e94] [cursor=pointer]:
+            - /url: /products/guard
+    - generic [ref=e96]:
+      - generic [ref=e97]:
+        - heading "Coming Soon" [level=2] [ref=e98]
+        - paragraph [ref=e99]: Exciting privacy tools launching throughout 2025
+      - generic [ref=e100]:
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - generic [ref=e104]:
+              - img [ref=e106]
+              - generic [ref=e110]: Coming Q2 2025
+            - heading "GeckoVPN" [level=3] [ref=e111]
+            - paragraph [ref=e112]: Privacy-first VPN with global server network
+          - generic [ref=e113]:
+            - button "Coming Soon" [disabled]
+        - generic [ref=e115]:
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - img [ref=e119]
+              - generic [ref=e123]: Coming Q2 2025
+            - heading "GeckoPass" [level=3] [ref=e124]
+            - paragraph [ref=e125]: Open-source password manager with zero-knowledge encryption
+          - generic [ref=e126]:
+            - button "Coming Soon" [disabled]
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - generic [ref=e130]:
+              - img [ref=e132]
+              - generic [ref=e135]: Coming Q3 2025
+            - heading "GeckoShell" [level=3] [ref=e136]
+            - paragraph [ref=e137]: Disposable email addresses for ultimate privacy
+          - generic [ref=e138]:
+            - button "Coming Soon" [disabled]
+        - generic [ref=e140]:
+          - generic [ref=e141]:
+            - generic [ref=e142]:
+              - img [ref=e144]
+              - generic [ref=e147]: Coming Q3 2025
+            - heading "GeckoView" [level=3] [ref=e148]
+            - paragraph [ref=e149]: Chromium-based browser built for privacy from the ground up
+          - generic [ref=e150]:
+            - button "Coming Soon" [disabled]
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - generic [ref=e154]:
+              - img [ref=e156]
+              - generic [ref=e159]: Coming Q4 2025
+            - heading "GeckoWatch" [level=3] [ref=e160]
+            - paragraph [ref=e161]: Analyze and monitor privacy compliance of any website
+          - generic [ref=e162]:
+            - button "Coming Soon" [disabled]
+    - generic [ref=e165]:
+      - heading "Want Access to All Tools?" [level=2] [ref=e166]
+      - paragraph [ref=e167]: Get the Privacy Gecko Pro Bundle and save 30% on all products combined
+      - button "View Bundle Pricing" [ref=e169] [cursor=pointer]
+  - contentinfo [ref=e170]:
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - generic [ref=e173]:
+          - link "🦎 Privacy Gecko" [ref=e174] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e176]: 🦎
+            - generic [ref=e177]: Privacy Gecko
+          - paragraph [ref=e178]: Privacy tools that actually work. Powered by $PRICKO.
+          - generic [ref=e179]:
+            - link "Twitter" [ref=e180] [cursor=pointer]:
+              - /url: https://twitter.com/privacygecko
+              - img [ref=e181]
+            - link "Telegram" [ref=e183] [cursor=pointer]:
+              - /url: https://t.me/privacygecko
+              - img [ref=e184]
+        - generic [ref=e187]:
+          - heading "Products" [level=3] [ref=e188]
+          - list [ref=e189]:
+            - listitem [ref=e190]:
+              - link "GeckoAdvisor" [ref=e191] [cursor=pointer]:
+                - /url: /products/advisor
+            - listitem [ref=e192]:
+              - link "GeckoShare" [ref=e193] [cursor=pointer]:
+                - /url: /products/share
+            - listitem [ref=e194]:
+              - link "GeckoGuard" [ref=e195] [cursor=pointer]:
+                - /url: /products/guard
+            - listitem [ref=e196]:
+              - link "All Products" [ref=e197] [cursor=pointer]:
+                - /url: /products
+        - generic [ref=e198]:
+          - heading "Company" [level=3] [ref=e199]
+          - list [ref=e200]:
+            - listitem [ref=e201]:
+              - link "About" [ref=e202] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e203]:
+              - link "Blog" [ref=e204] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e205]:
+              - link "Contact" [ref=e206] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e207]:
+              - link "Pricing" [ref=e208] [cursor=pointer]:
+                - /url: /pricing
+        - generic [ref=e209]:
+          - heading "Resources" [level=3] [ref=e210]
+          - list [ref=e211]:
+            - listitem [ref=e212]:
+              - link "Documentation" [ref=e213] [cursor=pointer]:
+                - /url: /resources/docs
+            - listitem [ref=e214]:
+              - link "FAQ" [ref=e215] [cursor=pointer]:
+                - /url: /resources/faq
+            - listitem [ref=e216]:
+              - link "Support" [ref=e217] [cursor=pointer]:
+                - /url: /resources/support
+        - generic [ref=e218]:
+          - heading "Legal" [level=3] [ref=e219]
+          - list [ref=e220]:
+            - listitem [ref=e221]:
+              - link "Privacy Policy" [ref=e222] [cursor=pointer]:
+                - /url: /legal/privacy
+            - listitem [ref=e223]:
+              - link "Terms of Service" [ref=e224] [cursor=pointer]:
+                - /url: /legal/terms
+            - listitem [ref=e225]:
+              - link "Cookie Policy" [ref=e226] [cursor=pointer]:
+                - /url: /legal/cookies
+      - paragraph [ref=e228]: © 2025 Privacy Gecko. All rights reserved. Built with ❤️ for privacy.
+  - alert [ref=e229]
+```
