@@ -1,0 +1,33 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        gecko: {
+          green: '#10B981',
+          blue: '#1E3A8A',
+        },
+        neutral: {
+          50: '#FFFFFF',
+          100: '#F9FAFB',
+          900: '#1F2937',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['SF Pro Display', 'Space Grotesk', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+};
+
+export default config;
