@@ -47,6 +47,7 @@ export default function HomePage() {
               status={product.status}
               comingDate={product.comingDate}
               href={product.href}
+              isExternal={product.isExternal}
               features={product.features.slice(0, 3)}
             />
           ))}
@@ -249,9 +250,14 @@ export default function HomePage() {
             <p className="text-lg mb-8 max-w-2xl mx-auto">
               Stake $PRICKO tokens to unlock discounts, premium features, and early access to new tools
             </p>
-            <Button href="#token" variant="outline" size="lg" className="bg-white text-gecko-green hover:bg-gray-100 border-white">
+            <a
+              href="https://pricko.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border-2 bg-white text-gecko-green hover:bg-gray-100 border-white focus:ring-white px-8 py-3 text-lg shadow-lg hover:shadow-xl"
+            >
               Learn About $PRICKO <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
+            </a>
           </motion.div>
         </div>
       </Section>

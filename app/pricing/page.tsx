@@ -312,7 +312,7 @@ export default function PricingPage() {
 
             <div className="mt-6 pt-6 border-t border-white/20">
               <p className="text-sm opacity-90 mb-2">
-                💎 Coming Q2 2025: <a href="/token" className="underline hover:no-underline font-semibold">Stake $PRICKO tokens</a> for an additional 20% discount
+                💎 Coming Q2 2025: <a href="https://pricko.com" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline font-semibold">Stake $PRICKO tokens</a> for an additional 20% discount
               </p>
             </div>
           </motion.div>

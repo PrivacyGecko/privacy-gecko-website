@@ -9,6 +9,7 @@ import {
   Search,
   LucideIcon,
 } from "lucide-react";
+import { getProductLink } from "./domain-config";
 
 export interface Product {
   id: string;
@@ -19,6 +20,7 @@ export interface Product {
   status: "live" | "coming";
   comingDate?: string;
   href: string;
+  isExternal?: boolean; // True if links to external domain
   features: string[];
   pricing: {
     free: {
@@ -73,7 +75,8 @@ export const products: Product[] = [
     description: "End-to-end encrypted file sharing with expiring links",
     icon: Share2,
     status: "live",
-    href: "/products/share",
+    href: "https://geckoshare.com",
+    isExternal: true,
     features: [
       "End-to-end encryption (256-bit AES)",
       "Expiring links & password protection",
@@ -314,4 +317,16 @@ export function getLiveProducts(): Product[] {
 
 export function getComingProducts(): Product[] {
   return products.filter((product) => product.status === "coming");
+}
+
+/**
+ * Get the correct link for a product (internal or external)
+ */
+export function getProductHref(product: Product): string {
+  // Use domain config if available
+  const domainLink = getProductLink(product.id);
+  if (domainLink.startsWith('http')) {
+    return domainLink;
+  }
+  return product.href;
 }

@@ -14,6 +14,7 @@ interface ProductCardProps {
   status: "live" | "coming";
   comingDate?: string;
   href: string;
+  isExternal?: boolean;
   features?: string[];
 }
 
@@ -24,6 +25,7 @@ export function ProductCard({
   status,
   comingDate,
   href,
+  isExternal = false,
   features,
 }: ProductCardProps) {
   return (
@@ -60,9 +62,20 @@ export function ProductCard({
         )}
         <CardContent className="mt-4">
           {status === "live" ? (
-            <Button href={href} variant="outline" size="sm" className="w-full">
-              Learn More
-            </Button>
+            isExternal ? (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border-2 border-gecko-green text-gecko-green hover:bg-gecko-green hover:text-white focus:ring-gecko-green px-6 py-2.5 text-sm w-full"
+              >
+                Visit Site →
+              </a>
+            ) : (
+              <Button href={href} variant="outline" size="sm" className="w-full">
+                Learn More
+              </Button>
+            )
           ) : (
             <Button variant="ghost" size="sm" className="w-full" disabled>
               Coming Soon
