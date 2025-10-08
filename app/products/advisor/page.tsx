@@ -1,0 +1,278 @@
+"use client";
+
+import { Hero } from "@/components/sections/Hero";
+import { Section, SectionHeader } from "@/components/sections/Section";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
+import { getProductById } from "@/lib/products";
+import { CheckCircle, Shield, Activity, AlertTriangle, FileText, Bell, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
+
+export default function GeckoAdvisorPage() {
+  const product = getProductById("advisor");
+
+  if (!product) return null;
+
+  const features = [
+    {
+      icon: Shield,
+      title: "Device Scanning",
+      description: "Comprehensive scan of your device to identify privacy vulnerabilities and security risks",
+    },
+    {
+      icon: Activity,
+      title: "Privacy Score",
+      description: "Get a clear privacy score from 0-100 with detailed breakdown of your privacy posture",
+    },
+    {
+      icon: AlertTriangle,
+      title: "Vulnerability Detection",
+      description: "Identify outdated software, weak configurations, and potential security holes",
+    },
+    {
+      icon: FileText,
+      title: "Detailed Reports",
+      description: "Receive comprehensive reports with actionable recommendations to improve your privacy",
+    },
+    {
+      icon: Bell,
+      title: "Priority Alerts",
+      description: "Get notified about critical privacy threats and emerging security issues",
+    },
+    {
+      icon: TrendingUp,
+      title: "Historical Tracking",
+      description: "Monitor your privacy improvements over time with historical trend analysis",
+    },
+  ];
+
+  const howItWorks = [
+    {
+      step: 1,
+      title: "Install & Scan",
+      description: "Download GeckoAdvisor and run your first privacy scan in under 60 seconds",
+    },
+    {
+      step: 2,
+      title: "Review Score",
+      description: "See your privacy score and understand which areas need improvement",
+    },
+    {
+      step: 3,
+      title: "Take Action",
+      description: "Follow our step-by-step recommendations to enhance your digital privacy",
+    },
+    {
+      step: 4,
+      title: "Stay Protected",
+      description: "Regular scans ensure your privacy remains secure as threats evolve",
+    },
+  ];
+
+  const faqs = [
+    {
+      question: "How does GeckoAdvisor scan my device?",
+      answer: "GeckoAdvisor performs local scans of your device settings, installed applications, and system configurations. All scanning happens on your device - we never upload your personal data to our servers.",
+    },
+    {
+      question: "What's included in the free tier?",
+      answer: "The free tier includes 3 scans per month with basic privacy reports, device scanning, and a privacy score. You'll get fundamental recommendations to improve your privacy.",
+    },
+    {
+      question: "How is my data protected?",
+      answer: "All scans are performed locally on your device. We only store anonymized scan metadata (not your personal data) to improve our recommendations. We're open source - you can audit our code.",
+    },
+    {
+      question: "Can I use GeckoAdvisor on multiple devices?",
+      answer: "Yes! Pro users can scan unlimited devices and sync their privacy scores across all their hardware.",
+    },
+  ];
+
+  return (
+    <>
+      <Hero
+        subtitle="GeckoAdvisor"
+        title={product.tagline}
+        description={product.description}
+      >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Button href="#pricing" variant="primary" size="lg">
+            Start Free Trial
+          </Button>
+          <Badge variant="live">Live Now</Badge>
+        </div>
+      </Hero>
+
+      {/* Features Grid */}
+      <Section>
+        <SectionHeader
+          subtitle="Features"
+          title="Everything You Need to Know Your Privacy Score"
+          description="Comprehensive privacy auditing with actionable insights"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card>
+                <CardHeader>
+                  <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
+                    <feature.icon className="w-6 h-6 text-gecko-green" />
+                  </div>
+                  <CardTitle>{feature.title}</CardTitle>
+                  <CardDescription>{feature.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </Section>
+
+      {/* How It Works */}
+      <Section className="bg-neutral-100">
+        <SectionHeader
+          subtitle="How It Works"
+          title="Get Your Privacy Score in 4 Simple Steps"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {howItWorks.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 bg-gecko-green text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                {item.step}
+              </div>
+              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+              <p className="text-gray-600">{item.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Pricing */}
+      <Section id="pricing">
+        <SectionHeader
+          subtitle="Pricing"
+          title="Choose Your Plan"
+          description="Start free, upgrade when you need more"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Card className="h-full">
+              <CardHeader>
+                <CardTitle className="text-2xl mb-2">Free</CardTitle>
+                <div className="text-3xl font-bold mb-4">$0<span className="text-lg text-gray-500 font-normal">/month</span></div>
+                <CardDescription className="mb-6">{product.pricing.free.limit}</CardDescription>
+                <Button href="#download" variant="outline" className="w-full mb-6">
+                  Get Started
+                </Button>
+                <div className="space-y-3">
+                  {product.pricing.free.features.map((feature, index) => (
+                    <div key={index} className="flex items-start">
+                      <CheckCircle className="w-5 h-5 text-gecko-green mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardHeader>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <Card className="h-full border-gecko-green border-2">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-2">
+                  <CardTitle className="text-2xl">Pro</CardTitle>
+                  <Badge variant="live">Popular</Badge>
+                </div>
+                <div className="text-3xl font-bold mb-4">
+                  {product.pricing.pro.price.split('/')[0]}
+                  <span className="text-lg text-gray-500 font-normal">/month</span>
+                </div>
+                <CardDescription className="mb-6">Unlimited scans, advanced features</CardDescription>
+                <Button href="#checkout" variant="primary" className="w-full mb-6">
+                  Start Pro Trial
+                </Button>
+                <div className="space-y-3">
+                  {product.pricing.pro.features.map((feature, index) => (
+                    <div key={index} className="flex items-start">
+                      <CheckCircle className="w-5 h-5 text-gecko-green mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardHeader>
+            </Card>
+          </motion.div>
+        </div>
+      </Section>
+
+      {/* FAQ */}
+      <Section className="bg-neutral-100">
+        <SectionHeader
+          subtitle="FAQ"
+          title="Frequently Asked Questions"
+        />
+        <div className="max-w-3xl mx-auto space-y-4">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card hover={false}>
+                <CardHeader>
+                  <CardTitle className="text-lg">{faq.question}</CardTitle>
+                  <CardDescription className="mt-2">{faq.answer}</CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Final CTA */}
+      <Section>
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+            Ready to Know Your Privacy Score?
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Start with 3 free scans per month. No credit card required.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="#download" variant="primary" size="lg">
+              Download GeckoAdvisor
+            </Button>
+            <Button href="/products" variant="ghost" size="lg">
+              Explore Other Tools
+            </Button>
+          </div>
+        </div>
+      </Section>
+    </>
+  );
+}
