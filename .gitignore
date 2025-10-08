@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+/playwright-report
+/assets/docs/
+/assets/prompts/
+/tests
+/test-results/
 
 # testing
 /coverage

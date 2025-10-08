@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'https://privacygecko.com',
+    baseURL: 'https://www.privacygecko.com',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
