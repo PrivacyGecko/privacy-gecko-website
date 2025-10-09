@@ -27,6 +27,7 @@ export function Footer() {
     { href: "/legal/privacy", label: "Privacy Policy" },
     { href: "/legal/terms", label: "Terms of Service" },
     { href: "/legal/cookies", label: "Cookie Policy" },
+    { href: "/security", label: "Security" },
   ];
 
   return (
