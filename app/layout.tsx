@@ -10,18 +10,46 @@ import { PrivacyNotice } from "@/components/PrivacyNotice";
 export const metadata: Metadata = {
   title: "Privacy Gecko - Privacy Tools That Actually Work",
   description: "8 open-source privacy tools. No tracking. No data selling. Powered by $PRICKO.",
-  keywords: ["privacy", "security", "encryption", "open source", "privacy tools"],
+  keywords: ["privacy", "security", "encryption", "open source", "privacy tools", "GDPR", "data protection"],
   authors: [{ name: "@0xAnonA" }],
+  creator: "@0xAnonA",
+  publisher: "Privacy Gecko",
+  robots: "index, follow",
+  metadataBase: new URL("https://privacygecko.com"),
+  alternates: {
+    canonical: "https://privacygecko.com",
+  },
   openGraph: {
     title: "Privacy Gecko - Privacy Tools That Actually Work",
-    description: "8 open-source privacy tools. No tracking. No data selling.",
+    description: "8 open-source privacy tools. No tracking. No data selling. Powered by $PRICKO.",
     type: "website",
     url: "https://privacygecko.com",
+    siteName: "Privacy Gecko",
+    locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Privacy Gecko - Privacy Tools That Actually Work",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@privacygecko",
+    creator: "@0xAnonA",
     title: "Privacy Gecko - Privacy Tools That Actually Work",
-    description: "8 open-source privacy tools. No tracking. No data selling.",
+    description: "8 open-source privacy tools. No tracking. No data selling. Powered by $PRICKO.",
+    images: ["/twitter-image"],
+  },
+  icons: {
+    icon: [
+      { url: "/icon", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [
+      { url: "/apple-icon", type: "image/png", sizes: "180x180" },
+    ],
   },
 };
 
