@@ -68,19 +68,22 @@ export default function ProductsPage() {
         </div>
       </Section>
 
-      {/* Bundle CTA */}
+      {/* CTA */}
       <Section>
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Want Access to All Tools?
+            Stay Updated on New Releases
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Get the Privacy Gecko Pro Bundle and save 30% on all products combined
+            Be the first to know when new privacy tools launch throughout 2025
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-gecko-green text-white rounded-lg font-medium hover:bg-gecko-green/90 transition-all duration-200">
-              View Bundle Pricing
-            </button>
+            <a
+              href="/contact?subject=Product%20Updates"
+              className="px-8 py-3 bg-gecko-green text-white rounded-lg font-medium hover:bg-gecko-green/90 transition-all duration-200"
+            >
+              Get Product Updates
+            </a>
           </div>
         </div>
       </Section>
