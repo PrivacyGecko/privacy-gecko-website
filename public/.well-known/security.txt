@@ -1,0 +1,13 @@
+Contact: https://privacygecko.com/security
+Contact: mailto:security@privacygecko.com
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://privacygecko.com/.well-known/security.txt
+Policy: https://privacygecko.com/security
+Acknowledgments: https://privacygecko.com/security#acknowledgments
+Hiring: https://privacygecko.com/about
+
+# Privacy Gecko Security Contact Information
+# We take security seriously and appreciate responsible disclosure.
+# Please report vulnerabilities to security@privacygecko.com
+# or visit https://privacygecko.com/security for more information.
