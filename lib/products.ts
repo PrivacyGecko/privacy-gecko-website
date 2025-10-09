@@ -143,7 +143,7 @@ export const products: Product[] = [
     description: "Chromium-based browser built for privacy from the ground up",
     icon: Globe,
     status: "coming",
-    comingDate: "Coming Q3 2025",
+    comingDate: "Coming Q4 2025",
     href: "/products",
     features: [
       "Built-in ad & tracker blocking",
@@ -177,7 +177,7 @@ export const products: Product[] = [
     description: "Open-source password manager with zero-knowledge encryption",
     icon: Key,
     status: "coming",
-    comingDate: "Coming Q2 2025",
+    comingDate: "Coming Q4 2025",
     href: "/products",
     features: [
       "Zero-knowledge encryption",
@@ -211,7 +211,7 @@ export const products: Product[] = [
     description: "Disposable email addresses for ultimate privacy",
     icon: Mail,
     status: "coming",
-    comingDate: "Coming Q3 2025",
+    comingDate: "Coming Q4 2025",
     href: "/products",
     features: [
       "Unlimited disposable emails",
@@ -245,7 +245,7 @@ export const products: Product[] = [
     description: "Privacy-first VPN with global server network",
     icon: Wifi,
     status: "coming",
-    comingDate: "Coming Q2 2025",
+    comingDate: "Coming Q4 2025",
     href: "/products",
     features: [
       "No-logs policy",
