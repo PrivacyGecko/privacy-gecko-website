@@ -98,9 +98,9 @@ export default function GeckoGuardPage() {
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button href="#pricing" variant="primary" size="lg">
-            Install GeckoGuard
+            Coming Soon
           </Button>
-          <Badge variant="live">Live Now</Badge>
+          <Badge variant="coming">In Web Store Review</Badge>
         </div>
       </Hero>
 
@@ -325,7 +325,7 @@ export default function GeckoGuardPage() {
             Ready to Browse Without Being Tracked?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Join thousands using GeckoGuard to protect their privacy online.
+            GeckoGuard is currently in Chrome/Firefox web store review. Be among the first to protect your privacy when it launches soon.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="#install" variant="primary" size="lg">

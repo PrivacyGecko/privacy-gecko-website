@@ -10,6 +10,7 @@
 /assets/prompts/
 /tests
 /test-results/
+/assets/logs/
 
 # testing
 /coverage

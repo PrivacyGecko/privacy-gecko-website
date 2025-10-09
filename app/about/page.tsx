@@ -65,7 +65,7 @@ export default function AboutPage() {
                 for tracking protection, and we're not stopping there.
               </p>
               <p>
-                Today, Privacy Gecko is an ecosystem of 8 tools (3 live, 5 coming soon) serving hundreds of
+                Today, Privacy Gecko is an ecosystem of 8 tools (3 live, 5 coming soon) serving our growing community of
                 privacy-conscious users worldwide. We're committed to open source transparency, community-driven development,
                 and our original mission: making privacy accessible to everyone.
               </p>
