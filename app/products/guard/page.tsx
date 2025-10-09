@@ -6,7 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Ca
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { getProductById } from "@/lib/products";
-import { CheckCircle, Eye, Activity, Filter, Cookie, Fingerprint, RefreshCw } from "lucide-react";
+import { CheckCircle, Eye, Activity, Filter, Cookie, Fingerprint, RefreshCw, Zap, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function GeckoGuardPage() {
@@ -160,39 +160,66 @@ export default function GeckoGuardPage() {
         </div>
       </Section>
 
-      {/* Stats Showcase */}
+      {/* Benefits Section - Replaced unverified stats with real benefits */}
       <Section>
         <SectionHeader
           title="Making the Web Faster and More Private"
-          description="See the impact of using GeckoGuard"
+          description="Real benefits of privacy-first browsing"
         />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="text-4xl font-bold text-gecko-green mb-2">10M+</div>
-            <p className="text-gray-600">Trackers Blocked Daily</p>
+            <Card>
+              <CardHeader>
+                <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
+                  <Eye className="w-6 h-6 text-gecko-green" />
+                </div>
+                <CardTitle>Block Trackers</CardTitle>
+                <CardDescription>
+                  Automatically blocks third-party trackers, analytics scripts, and invisible pixels that follow you across the web
+                </CardDescription>
+              </CardHeader>
+            </Card>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="text-4xl font-bold text-gecko-green mb-2">40%</div>
-            <p className="text-gray-600">Faster Page Loads</p>
+            <Card>
+              <CardHeader>
+                <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
+                  <Zap className="w-6 h-6 text-gecko-green" />
+                </div>
+                <CardTitle>Faster Browsing</CardTitle>
+                <CardDescription>
+                  Pages load faster when ads and trackers are blocked. Less data downloaded means better performance and lower bandwidth usage
+                </CardDescription>
+              </CardHeader>
+            </Card>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="text-4xl font-bold text-gecko-green mb-2">60%</div>
-            <p className="text-gray-600">Less Data Usage</p>
+            <Card>
+              <CardHeader>
+                <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
+                  <Shield className="w-6 h-6 text-gecko-green" />
+                </div>
+                <CardTitle>Privacy Protection</CardTitle>
+                <CardDescription>
+                  Prevents fingerprinting, blocks malicious scripts, and protects against common web-based tracking techniques
+                </CardDescription>
+              </CardHeader>
+            </Card>
           </motion.div>
         </div>
       </Section>

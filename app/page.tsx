@@ -198,11 +198,11 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Social Proof */}
+      {/* Trust Section - Replaced unverified stats with honest messaging */}
       <Section>
         <SectionHeader
-          title="Trusted by Privacy-Conscious Users Worldwide"
-          description="Join thousands who have taken back control of their digital privacy"
+          title="Join Our Growing Privacy Community"
+          description="Privacy Gecko launched in January 2025. We're building a community of privacy advocates who believe digital privacy is a human right."
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <motion.div
@@ -211,8 +211,11 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="text-4xl font-bold text-gecko-green mb-2">500+</div>
-            <p className="text-gray-600">Users Protected</p>
+            <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4 mx-auto">
+              <Shield className="w-8 h-8 text-gecko-green" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">No Tracking</h3>
+            <p className="text-gray-600">Privacy-first analytics via Plausible. We practice what we preach.</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -220,8 +223,11 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="text-4xl font-bold text-gecko-green mb-2">10,000+</div>
-            <p className="text-gray-600">Files Shared Securely</p>
+            <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4 mx-auto">
+              <Lock className="w-8 h-8 text-gecko-green" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">No Data Selling</h3>
+            <p className="text-gray-600">Your data is never sold. Our business model is subscriptions, not surveillance.</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -229,8 +235,11 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="text-4xl font-bold text-gecko-green mb-2">99.9%</div>
-            <p className="text-gray-600">Uptime</p>
+            <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4 mx-auto">
+              <CheckCircle className="w-8 h-8 text-gecko-green" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Transparent</h3>
+            <p className="text-gray-600">Clear privacy policies. No hidden clauses. Working toward full open source.</p>
           </motion.div>
         </div>
       </Section>
