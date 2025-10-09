@@ -34,8 +34,9 @@ export function ProductCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
+      className="h-full"
     >
-      <Card>
+      <Card className="h-full flex flex-col">
         <CardHeader>
           <div className="flex items-start justify-between mb-4">
             <div className="p-3 bg-gecko-green/10 rounded-lg">
@@ -49,7 +50,7 @@ export function ProductCard({
           <CardDescription>{description}</CardDescription>
         </CardHeader>
         {features && features.length > 0 && (
-          <CardContent>
+          <CardContent className="flex-grow">
             <ul className="space-y-2 text-sm text-gray-600">
               {features.slice(0, 3).map((feature, index) => (
                 <li key={index} className="flex items-start">
@@ -60,7 +61,7 @@ export function ProductCard({
             </ul>
           </CardContent>
         )}
-        <CardContent className="mt-4">
+        <CardContent className="mt-auto pt-4">
           {status === "live" ? (
             isExternal ? (
               <a
