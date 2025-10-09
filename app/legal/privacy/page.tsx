@@ -47,6 +47,53 @@ export default function PrivacyPolicyPage() {
             <li>Respond to support requests</li>
           </ul>
 
+          <h2>Data Retention & Deletion</h2>
+          <h3>Account Data</h3>
+          <ul>
+            <li><strong>Email addresses:</strong> Retained while account is active + 30 days after deletion request</li>
+            <li><strong>Payment information:</strong> Never stored by us (processed by Stripe per their retention policy)</li>
+            <li><strong>Usage statistics:</strong> Anonymized via Plausible, retained 24 months maximum</li>
+          </ul>
+
+          <h3>Contact Form Submissions</h3>
+          <ul>
+            <li><strong>Contact messages:</strong> Retained for 90 days to provide support, then permanently deleted</li>
+            <li><strong>Email addresses from contact form:</strong> Deleted with message after 90 days</li>
+          </ul>
+
+          <h3>Product-Specific Retention</h3>
+
+          <h4>GeckoShare Files</h4>
+          <ul>
+            <li><strong>Encrypted files:</strong> Deleted immediately upon expiration (24hr free tier, custom for Pro)</li>
+            <li><strong>Access logs:</strong> Retained 7 days for abuse prevention, then permanently deleted</li>
+            <li><strong>File metadata:</strong> Deleted with file</li>
+          </ul>
+
+          <h4>GeckoAdvisor Scans</h4>
+          <ul>
+            <li><strong>Scan results:</strong> Stored locally on your device only</li>
+            <li><strong>Anonymized scan metadata:</strong> Retained 90 days to improve recommendations</li>
+            <li><strong>Raw scan data:</strong> Never uploaded to our servers</li>
+          </ul>
+
+          <h3>Data Deletion Requests</h3>
+          <p>
+            Request deletion at <a href="mailto:privacy@privacygecko.com">privacy@privacygecko.com</a>. We will:
+          </p>
+          <ol>
+            <li>Confirm your identity (to prevent abuse)</li>
+            <li>Delete all associated data within 30 days</li>
+            <li>Provide confirmation email upon completion</li>
+          </ol>
+
+          <h3>Data Storage Location</h3>
+          <ul>
+            <li><strong>Primary servers:</strong> Hosted by Vercel (US-based, GDPR-compliant)</li>
+            <li><strong>Analytics:</strong> Plausible Analytics (EU-based)</li>
+            <li><strong>Payments:</strong> Stripe (US-based, Privacy Shield certified)</li>
+          </ul>
+
           <h2>What We Don't Do</h2>
           <p>We will never:</p>
           <ul>
