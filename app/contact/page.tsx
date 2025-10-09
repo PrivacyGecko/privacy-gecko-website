@@ -4,7 +4,8 @@ import { Hero } from "@/components/sections/Hero";
 import { Section } from "@/components/sections/Section";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Mail, Send, HelpCircle } from "lucide-react";
+import { Mail, Send, HelpCircle, Info } from "lucide-react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -159,6 +160,23 @@ export default function ContactPage() {
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gecko-green focus:border-transparent outline-none transition-all resize-none"
                         placeholder="Tell us how we can help..."
                       />
+                    </div>
+
+                    {/* Privacy Notice */}
+                    <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                      <div className="flex items-start gap-3">
+                        <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                        <div className="text-sm text-gray-700">
+                          <p className="font-semibold text-blue-900 mb-1">Your Privacy Matters</p>
+                          <p>
+                            Your message is encrypted in transit (TLS). We'll respond within 48 hours and never share your email with third parties.
+                            Messages are retained for 90 days, then permanently deleted.{' '}
+                            <Link href="/legal/privacy" className="text-gecko-green underline hover:no-underline font-medium">
+                              Privacy Policy
+                            </Link>
+                          </p>
+                        </div>
+                      </div>
                     </div>
 
                     <Button
