@@ -7,10 +7,10 @@
   - Full source code available
   - Issues and contributions welcome
 
-### What's Coming Q2 2025
-- ⏳ **GeckoAdvisor** - Privacy scanning tool (security audit in progress)
-- ⏳ **GeckoShare** - End-to-end encrypted file sharing (security audit in progress)
-- ⏳ **GeckoGuard** - Privacy-first browser extension (security audit in progress)
+### What's Coming Q4 2025
+- ⏳ **Gecko Advisor** - Privacy scanning tool (security audit in progress)
+- ⏳ **Gecko Share** - End-to-end encrypted file sharing (security audit in progress)
+- ⏳ **Gecko Guard** - Privacy-first browser extension (security audit in progress)
 
 ## Why the Delay?
 
@@ -24,8 +24,8 @@ Before open-sourcing privacy/security tools, we're conducting comprehensive secu
 
 ### ✅ DO SAY:
 - "We're committed to open source transparency"
-- "Working toward full code transparency by Q2 2025"
-- "Website is open source, product code coming Q2 2025"
+- "Working toward full code transparency by Q4 2025"
+- "Website is open source, product code coming Q4 2025"
 - "Open development roadmap"
 
 ### ❌ DON'T SAY:
@@ -38,7 +38,7 @@ Before open-sourcing privacy/security tools, we're conducting comprehensive secu
 **Privacy Review - January 2025**:
 We identified that making "open source" claims without providing repository links is a critical credibility issue for privacy-focused users. Rather than link to non-existent repos, we've chosen honest messaging about our timeline and commitment.
 
-**Decision**: Use "open development" language and provide specific Q2 2025 timeline for full transparency.
+**Decision**: Use "open development" language and provide specific Q4 2025 timeline for full transparency.
 
 **Updated Files** (FIX #2):
 - `/app/resources/faq/page.tsx` - Honest FAQ answer about open source status

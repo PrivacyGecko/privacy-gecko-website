@@ -12,7 +12,7 @@ export default function AboutPage() {
     {
       icon: Shield,
       title: "Transparency",
-      description: "Clear privacy policies and honest communication about our practices. Working toward fully open source by Q2 2025.",
+      description: "Clear privacy policies and honest communication about our practices. Working toward fully open source by Q4 2025.",
     },
     {
       icon: Users,

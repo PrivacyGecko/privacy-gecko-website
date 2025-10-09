@@ -114,7 +114,7 @@ export default function HomePage() {
                 </div>
                 <CardTitle>Open Development</CardTitle>
                 <CardDescription>
-                  Committed to transparency. Website is open source, product code coming Q2 2025
+                  Committed to transparency. Website is open source, product code coming Q4 2025
                 </CardDescription>
               </CardHeader>
             </Card>

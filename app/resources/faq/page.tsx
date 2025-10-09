@@ -21,7 +21,7 @@ export default function FAQPage() {
         },
         {
           q: "Is Privacy Gecko open source?",
-          a: "We're committed to open source transparency. Core privacy features are currently in security audit before public release (Q2 2025). Our website is already open source. Sign up for our newsletter to be notified when product repositories go public.",
+          a: "We're committed to open source transparency. Core privacy features are currently in security audit before public release (Q4 2025). Our website is already open source. Sign up for our newsletter to be notified when product repositories go public.",
         },
       ],
     },
@@ -55,7 +55,7 @@ export default function FAQPage() {
         },
         {
           q: "What's the $PRICKO token integration?",
-          a: "Coming Q2 2025, you'll be able to stake $PRICKO tokens to get discounts on Pro plans and early access to new features.",
+          a: "Coming Q4 2025, you'll be able to stake $PRICKO tokens to get discounts on Pro plans and early access to new features.",
         },
       ],
     },

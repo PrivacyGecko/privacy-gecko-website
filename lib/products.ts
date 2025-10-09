@@ -37,7 +37,7 @@ export interface Product {
 export const products: Product[] = [
   {
     id: "advisor",
-    name: "GeckoAdvisor",
+    name: "Gecko Advisor",
     tagline: "Know Your Privacy Score",
     description: "Comprehensive privacy & security audit tool for your devices",
     icon: Shield,
@@ -71,7 +71,7 @@ export const products: Product[] = [
   },
   {
     id: "share",
-    name: "GeckoShare",
+    name: "Gecko Share",
     tagline: "Share Files, Not Your Privacy",
     description: "End-to-end encrypted file sharing with expiring links",
     icon: Share2,
@@ -105,7 +105,7 @@ export const products: Product[] = [
   },
   {
     id: "guard",
-    name: "GeckoGuard",
+    name: "Gecko Guard",
     tagline: "Browse Without Being Tracked",
     description: "Browser extension for comprehensive tracker & ad blocking",
     icon: Eye,
@@ -138,7 +138,7 @@ export const products: Product[] = [
   },
   {
     id: "view",
-    name: "GeckoView",
+    name: "Gecko View",
     tagline: "Privacy-First Browser",
     description: "Chromium-based browser built for privacy from the ground up",
     icon: Globe,
@@ -172,7 +172,7 @@ export const products: Product[] = [
   },
   {
     id: "pass",
-    name: "GeckoPass",
+    name: "Gecko Pass",
     tagline: "Secure Password Management",
     description: "Open-source password manager with zero-knowledge encryption",
     icon: Key,
@@ -206,7 +206,7 @@ export const products: Product[] = [
   },
   {
     id: "shell",
-    name: "GeckoShell",
+    name: "Gecko Shell",
     tagline: "Anonymous Email Made Easy",
     description: "Disposable email addresses for ultimate privacy",
     icon: Mail,
@@ -240,7 +240,7 @@ export const products: Product[] = [
   },
   {
     id: "vpn",
-    name: "GeckoVPN",
+    name: "Gecko VPN",
     tagline: "Private Browsing, Global Access",
     description: "Privacy-first VPN with global server network",
     icon: Wifi,
@@ -274,7 +274,7 @@ export const products: Product[] = [
   },
   {
     id: "watch",
-    name: "GeckoWatch",
+    name: "Gecko Watch",
     tagline: "Website Privacy Scanner",
     description: "Analyze and monitor privacy compliance of any website",
     icon: Search,

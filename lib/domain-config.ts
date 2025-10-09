@@ -24,56 +24,56 @@ export const TOKEN_SITE_LIVE = true; // Token site is live
 export const productDomains: Record<string, ProductDomain> = {
   advisor: {
     id: 'advisor',
-    name: 'GeckoAdvisor',
+    name: 'Gecko Advisor',
     domain: 'geckoadvisor.com',
     status: 'live', // ✅ LIVE
     useExternalLink: true, // Link to geckoadvisor.com
   },
   share: {
     id: 'share',
-    name: 'GeckoShare',
+    name: 'Gecko Share',
     domain: 'geckoshare.com',
     status: 'live', // ✅ LIVE
     useExternalLink: true, // Link to geckoshare.com
   },
   guard: {
     id: 'guard',
-    name: 'GeckoGuard',
+    name: 'Gecko Guard',
     domain: 'geckoguard.app',
     status: 'planned', // In web store review
     useExternalLink: false,
   },
   pass: {
     id: 'pass',
-    name: 'GeckoPass',
+    name: 'Gecko Pass',
     domain: 'geckopass.com',
     status: 'future',
     useExternalLink: false,
   },
   shell: {
     id: 'shell',
-    name: 'GeckoShell',
+    name: 'Gecko Shell',
     domain: 'geckoshell.app',
     status: 'future',
     useExternalLink: false,
   },
   view: {
     id: 'view',
-    name: 'GeckoView',
+    name: 'Gecko View',
     domain: 'geckoview.app',
     status: 'future',
     useExternalLink: false,
   },
   vpn: {
     id: 'vpn',
-    name: 'PrickoVPN',
+    name: 'Gecko VPN',
     domain: 'prickovpn.com',
     status: 'testing',
     useExternalLink: false,
   },
   vault: {
     id: 'vault',
-    name: 'GeckoVault',
+    name: 'Gecko Vault',
     domain: 'www.privacygecko.com', // Stays on main hub
     status: 'future',
     useExternalLink: false,

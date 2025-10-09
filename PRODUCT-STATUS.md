@@ -38,27 +38,27 @@
 
 ## Future Products
 
-### 💤 GeckoVPN - Coming Q2 2025
+### 💤 Gecko VPN - Coming Q4 2025
 - **Domain**: prickovpn.com (testing environment)
 - **Status**: Development
 - **Features**: Privacy-first VPN
 
-### 💤 GeckoPass - Coming Q2 2025
+### 💤 Gecko Pass - Coming Q4 2025
 - **Domain**: geckopass.com
 - **Status**: Planned
 - **Features**: Password manager with zero-knowledge encryption
 
-### 💤 GeckoShell - Coming Q3 2025
+### 💤 Gecko Shell - Coming Q4 2025
 - **Domain**: geckoshell.app
 - **Status**: Planned
 - **Features**: Disposable email addresses
 
-### 💤 GeckoView - Coming Q3 2025
+### 💤 Gecko View - Coming Q4 2025
 - **Domain**: geckoview.app
 - **Status**: Planned
 - **Features**: Privacy-first Chromium browser
 
-### 💤 GeckoWatch - Coming Q4 2025
+### 💤 Gecko Watch - Coming Q4 2025
 - **Status**: Planned
 - **Features**: Website privacy scanner
 

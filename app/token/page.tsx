@@ -68,7 +68,7 @@ export default function TokenPage() {
       <Section className="bg-yellow-50 border-y border-yellow-200 py-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-lg font-semibold text-yellow-900 mb-2">
-            🚀 Launching Q2 2025
+            🚀 Launching Q4 2025
           </p>
           <p className="text-gray-700">
             Token staking and benefits program is currently in development. Join our waitlist to be notified at launch.
@@ -216,7 +216,7 @@ export default function TokenPage() {
           {[
             {
               q: "When will $PRICKO launch?",
-              a: "Token staking is scheduled to launch in Q2 2025. Join our waitlist to be notified when it's live.",
+              a: "Token staking is scheduled to launch in Q4 2025. Join our waitlist to be notified when it's live.",
             },
             {
               q: "What blockchain is $PRICKO on?",
