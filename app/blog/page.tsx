@@ -6,8 +6,53 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Ca
 import { Button } from "@/components/ui/Button";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function BlogPage() {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [subscribeStatus, setSubscribeStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubscribing(true);
+    setSubscribeStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: newsletterEmail }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubscribeStatus({
+          type: "success",
+          message: data.message || "Successfully subscribed!",
+        });
+        setNewsletterEmail("");
+      } else {
+        setSubscribeStatus({
+          type: "error",
+          message: data.error || "Failed to subscribe. Please try again.",
+        });
+      }
+    } catch (error) {
+      setSubscribeStatus({
+        type: "error",
+        message: "Network error. Please try again.",
+      });
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
   const posts = [
     {
       title: "Why Privacy Tools Matter in 2025",
@@ -107,15 +152,31 @@ export default function BlogPage() {
             <p className="text-gray-600 mb-6">
               Get privacy tips, product updates, and exclusive insights delivered to your inbox
             </p>
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+
+            {subscribeStatus.type && (
+              <div
+                className={`p-4 rounded-lg mb-4 max-w-md mx-auto ${
+                  subscribeStatus.type === "success"
+                    ? "bg-green-50 text-green-800 border border-green-200"
+                    : "bg-red-50 text-red-800 border border-red-200"
+                }`}
+              >
+                {subscribeStatus.message}
+              </div>
+            )}
+
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="your.email@example.com"
                 required
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gecko-green focus:border-transparent outline-none transition-all"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                disabled={isSubscribing}
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gecko-green focus:border-transparent outline-none transition-all disabled:opacity-50"
               />
-              <Button type="submit" variant="primary" size="md">
-                Subscribe
+              <Button type="submit" variant="primary" size="md" disabled={isSubscribing}>
+                {isSubscribing ? "Subscribing..." : "Subscribe"}
               </Button>
             </form>
             <p className="text-xs text-gray-500 mt-3">
