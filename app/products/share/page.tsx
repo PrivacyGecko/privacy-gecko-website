@@ -134,8 +134,71 @@ export default function GeckoSharePage() {
         </div>
       </Section>
 
-      {/* How It Works */}
+      {/* Security Details */}
       <Section className="bg-neutral-100">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeader
+            subtitle="Security Details"
+            title="How Gecko Share Encryption Works"
+            description="Technical transparency for privacy-conscious users"
+          />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Card>
+              <CardHeader>
+                <div className="space-y-6 text-sm">
+                  <div>
+                    <h3 className="font-bold text-base mb-2">Encryption Process:</h3>
+                    <ol className="list-decimal list-inside space-y-1 text-gray-600">
+                      <li>File encrypted in your browser using Web Crypto API (AES-256-GCM)</li>
+                      <li>Random 256-bit encryption key generated locally using crypto.getRandomValues()</li>
+                      <li>Encrypted file uploaded to our servers (we never see plaintext)</li>
+                      <li>Key included in URL fragment (the part after #, never sent to servers)</li>
+                      <li>Recipient's browser decrypts locally using key from URL</li>
+                    </ol>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-base mb-2">Technical Specifications:</h3>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600">
+                      <li>Algorithm: AES-256-GCM with random 96-bit IV per file</li>
+                      <li>Key generation: Cryptographically secure random number generator (CSPRNG)</li>
+                      <li>No key derivation needed (random keys, not passwords)</li>
+                      <li>Same encryption standard used by Signal and WhatsApp</li>
+                      <li>Open source code releasing Q4 2025 after security audit</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-base mb-2">Security Limitations (We're Honest):</h3>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600">
+                      <li>Anyone with the full link can decrypt the file</li>
+                      <li>If you send the link over insecure channels (unencrypted messaging), encryption can be bypassed</li>
+                      <li>Browser security vulnerabilities could potentially compromise encryption</li>
+                      <li>We can see file sizes and upload timestamps (metadata), but not contents</li>
+                      <li>We're transparent about what we can and cannot protect</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-base mb-2">Third-Party Services:</h3>
+                    <p className="text-gray-600">
+                      File storage: Vercel Edge Network (US) • Analytics: Plausible (EU, cookieless) • Payments: Stripe (PCI compliant)
+                    </p>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+          </motion.div>
+        </div>
+      </Section>
+
+      {/* How It Works */}
+      <Section>
         <SectionHeader
           subtitle="How It Works"
           title="Secure File Sharing in 4 Simple Steps"

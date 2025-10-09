@@ -55,7 +55,15 @@ export default function FAQPage() {
         },
         {
           q: "What's the $PRICKO token integration?",
-          a: "Coming Q4 2025, you'll be able to stake $PRICKO tokens to get discounts on Pro plans and early access to new features.",
+          a: "Coming Q4 2025, you'll be able to stake $PRICKO tokens to get discounts on Pro plans and early access to new features. Important: Using $PRICKO is 100% optional—all tools work fully without any token requirement. Token transactions are on Solana (public blockchain), but we don't link wallet addresses to your Privacy Gecko account.",
+        },
+        {
+          q: "Why integrate a token? Doesn't that conflict with privacy?",
+          a: "Fair question. Using $PRICKO is completely optional—all tools have free and paid tiers without any token requirement. Token transactions are on Solana (public blockchain), but we don't link wallet addresses to accounts. We're experimenting with this as an alternative to VC funding, which often pressures companies to monetize user data. If token integration ever conflicts with privacy principles, we'll remove it. Privacy comes first.",
+        },
+        {
+          q: "Who funds Privacy Gecko? Any investors?",
+          a: "Privacy Gecko is currently bootstrapped by founder @0xAnonA. We have taken no venture capital and have no external investors. Our business model: free tiers supported by optional Pro subscriptions. We will never take funding from companies that sell user data, accept acquisition offers from data brokers, or compromise privacy to satisfy investor growth demands.",
         },
       ],
     },

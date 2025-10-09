@@ -12,7 +12,7 @@ export default function AboutPage() {
     {
       icon: Shield,
       title: "Transparency",
-      description: "Clear privacy policies and honest communication about our practices. Working toward fully open source by Q4 2025.",
+      description: "Clear privacy policies and honest communication about our practices. Website is open source now. Product code releasing Q4 2025 after security audits.",
     },
     {
       icon: Users,
@@ -65,9 +65,10 @@ export default function AboutPage() {
                 for tracking protection, and we're not stopping there.
               </p>
               <p>
-                Today, Privacy Gecko is an ecosystem of 8 tools (3 live, 5 coming soon) serving our growing community of
-                privacy-conscious users worldwide. We're committed to open source transparency, community-driven development,
-                and our original mission: making privacy accessible to everyone.
+                Today, Privacy Gecko is an ecosystem of 8 tools (3 live, 5 coming soon) available to
+                privacy-conscious users worldwide. As an early-stage project launched in January 2025, we're focused on
+                building trust through transparency and delivering on our promises. We're committed to open source transparency,
+                community-driven development, and our original mission: making privacy accessible to everyone.
               </p>
             </div>
           </motion.div>

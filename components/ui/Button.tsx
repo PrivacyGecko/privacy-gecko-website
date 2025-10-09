@@ -47,6 +47,17 @@ export function Button({
   const classes = cn(buttonVariants({ variant, size }), className);
 
   if (href) {
+    // Check if external link (starts with http:// or https://)
+    const isExternal = href.startsWith('http://') || href.startsWith('https://');
+
+    if (isExternal) {
+      return (
+        <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      );
+    }
+
     return (
       <Link href={href} className={classes}>
         {children}

@@ -19,7 +19,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <Hero
         title="Privacy Tools That Actually Work."
-        description="8 open-source tools. No tracking. No data selling. Take back control of your digital privacy."
+        description="8 privacy-first tools. Open source roadmap. No tracking. No data selling. Take back control of your digital privacy."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="/products/advisor" variant="primary" size="lg">
@@ -202,8 +202,8 @@ export default function HomePage() {
       {/* Trust Section - Replaced unverified stats with honest messaging */}
       <Section>
         <SectionHeader
-          title="Join Our Growing Privacy Community"
-          description="Privacy Gecko launched in January 2025. We're building a community of privacy advocates who believe digital privacy is a human right."
+          title="Join Us in Building Better Privacy Tools"
+          description="Privacy Gecko launched in January 2025. We're an early-stage project building privacy tools the right way—transparent, honest, and community-driven. No fake stats. No inflated user counts. Just solid tools and straight talk."
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <motion.div
@@ -255,10 +255,10 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Powered by $PRICKO
+              Powered by $PRICKO (Optional)
             </h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Stake $PRICKO tokens to unlock discounts, premium features, and early access to new tools
+              Stake tokens for discounts and governance rights. All tools work fully without any token requirement.
             </p>
             <ExternalLink
               href="https://pricko.com"

@@ -1,5 +1,4 @@
 import { ExternalLink as ExternalLinkIcon } from 'lucide-react';
-import Link from 'next/link';
 
 interface ExternalLinkProps {
   href: string;
@@ -15,7 +14,7 @@ export function ExternalLink({
   showIcon = true
 }: ExternalLinkProps) {
   return (
-    <Link
+    <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -23,6 +22,6 @@ export function ExternalLink({
     >
       {children}
       {showIcon && <ExternalLinkIcon className="w-3 h-3 opacity-60" aria-label="(opens in new tab)" />}
-    </Link>
+    </a>
   );
 }
