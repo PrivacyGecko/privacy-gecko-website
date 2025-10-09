@@ -6,9 +6,9 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        live: "bg-gecko-green text-white",
-        coming: "bg-gecko-blue text-white",
-        info: "bg-gray-200 text-gray-800",
+        live: "bg-gecko-green text-white shadow-sm",
+        coming: "bg-blue-900 text-white shadow-sm",
+        info: "bg-gray-200 text-gray-900",
       },
     },
     defaultVariants: {
