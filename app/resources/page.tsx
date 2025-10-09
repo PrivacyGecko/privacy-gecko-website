@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Hero } from "@/components/sections/Hero";
 import { Section } from "@/components/sections/Section";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
@@ -75,22 +76,22 @@ export default function ResourcesPage() {
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl font-display font-bold mb-8">Quick Links</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="/blog" className="p-4 bg-white rounded-lg hover:shadow-md transition-all text-left">
+            <Link href="/blog" className="p-4 bg-white rounded-lg hover:shadow-md transition-all text-left">
               <h3 className="font-semibold mb-1">Blog</h3>
               <p className="text-sm text-gray-600">Privacy tips and product updates</p>
-            </a>
-            <a href="/contact" className="p-4 bg-white rounded-lg hover:shadow-md transition-all text-left">
+            </Link>
+            <Link href="/contact" className="p-4 bg-white rounded-lg hover:shadow-md transition-all text-left">
               <h3 className="font-semibold mb-1">Contact Us</h3>
               <p className="text-sm text-gray-600">Get in touch with our team</p>
-            </a>
-            <a href="/products" className="p-4 bg-white rounded-lg hover:shadow-md transition-all text-left">
+            </Link>
+            <Link href="/products" className="p-4 bg-white rounded-lg hover:shadow-md transition-all text-left">
               <h3 className="font-semibold mb-1">All Products</h3>
               <p className="text-sm text-gray-600">Browse our privacy toolkit</p>
-            </a>
-            <a href="/pricing" className="p-4 bg-white rounded-lg hover:shadow-md transition-all text-left">
+            </Link>
+            <Link href="/pricing" className="p-4 bg-white rounded-lg hover:shadow-md transition-all text-left">
               <h3 className="font-semibold mb-1">Pricing</h3>
               <p className="text-sm text-gray-600">Compare plans and pricing</p>
-            </a>
+            </Link>
           </div>
         </div>
       </Section>
