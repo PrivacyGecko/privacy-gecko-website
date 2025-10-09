@@ -81,7 +81,7 @@ export default function GeckoGuardPage() {
     },
     {
       question: "How is GeckoGuard different from other ad blockers?",
-      answer: "GeckoGuard focuses on privacy-first blocking. We block trackers even if they don't show ads, protect against fingerprinting, and we're completely open source with no acceptable ads program.",
+      answer: "GeckoGuard focuses on privacy-first blocking. We block trackers even if they don't show ads, protect against fingerprinting, and have no acceptable ads program. We're committed to transparency.",
     },
     {
       question: "Can I whitelist certain websites?",

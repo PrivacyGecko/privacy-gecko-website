@@ -21,7 +21,7 @@ export default function FAQPage() {
         },
         {
           q: "Is Privacy Gecko open source?",
-          a: "Yes, all our tools are open source. You can audit our code on GitHub to verify there are no hidden trackers or backdoors.",
+          a: "We're committed to open source transparency. Core privacy features are currently in security audit before public release (Q2 2025). Our website is already open source. Sign up for our newsletter to be notified when product repositories go public.",
         },
       ],
     },

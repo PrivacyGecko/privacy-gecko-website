@@ -81,7 +81,7 @@ export default function GeckoAdvisorPage() {
     },
     {
       question: "How is my data protected?",
-      answer: "All scans are performed locally on your device. We only store anonymized scan metadata (not your personal data) to improve our recommendations. We're open source - you can audit our code.",
+      answer: "All scans are performed locally on your device. We only store anonymized scan metadata (not your personal data) to improve our recommendations. Working toward full code transparency by Q2 2025.",
     },
     {
       question: "Can I use GeckoAdvisor on multiple devices?",

@@ -12,7 +12,7 @@ export default function AboutPage() {
     {
       icon: Shield,
       title: "Transparency",
-      description: "Open source code, clear privacy policies, and honest communication about our practices.",
+      description: "Clear privacy policies and honest communication about our practices. Working toward fully open source by Q2 2025.",
     },
     {
       icon: Users,
@@ -65,9 +65,9 @@ export default function AboutPage() {
                 for tracking protection, and we're not stopping there.
               </p>
               <p>
-                Today, Privacy Gecko is an ecosystem of 8 tools (3 live, 5 coming soon) serving thousands of
-                privacy-conscious users worldwide. We're open source, community-driven, and committed to our
-                original mission: making privacy accessible.
+                Today, Privacy Gecko is an ecosystem of 8 tools (3 live, 5 coming soon) serving hundreds of
+                privacy-conscious users worldwide. We're committed to open source transparency, community-driven development,
+                and our original mission: making privacy accessible to everyone.
               </p>
             </div>
           </motion.div>
@@ -164,8 +164,8 @@ export default function AboutPage() {
             Join Our Mission
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Help us make privacy accessible to everyone. Use our tools, contribute to our open source projects,
-            or spread the word.
+            Help us make privacy accessible to everyone. Use our tools, provide feedback,
+            or spread the word about privacy-first software.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/products" variant="primary" size="lg">

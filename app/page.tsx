@@ -111,9 +111,9 @@ export default function HomePage() {
                 <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
                   <Code className="w-6 h-6 text-gecko-green" />
                 </div>
-                <CardTitle>Open Source</CardTitle>
+                <CardTitle>Open Development</CardTitle>
                 <CardDescription>
-                  Transparent code you can audit. No hidden trackers or backdoors
+                  Committed to transparency. Website is open source, product code coming Q2 2025
                 </CardDescription>
               </CardHeader>
             </Card>
