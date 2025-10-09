@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Twitter, Send, ExternalLink as ExternalLinkIcon } from "lucide-react";
+import { Twitter, Send, Github, Shield } from "lucide-react";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 
 export function Footer() {
@@ -48,19 +48,27 @@ export function Footer() {
             </p>
             <div className="flex flex-col space-y-2 text-sm">
               <ExternalLink
-                href="https://twitter.com/privacygecko"
-                className="text-gray-400 hover:text-gecko-green transition-colors"
-                showIcon={true}
+                href="https://github.com/privacygecko"
+                className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
+                showIcon={false}
               >
-                <Twitter size={16} className="mr-1" />
+                <Github size={16} className="mr-2" />
+                View Source
+              </ExternalLink>
+              <ExternalLink
+                href="https://twitter.com/privacygecko"
+                className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
+                showIcon={false}
+              >
+                <Twitter size={16} className="mr-2" />
                 Twitter
               </ExternalLink>
               <ExternalLink
                 href="https://t.me/privacygecko"
-                className="text-gray-400 hover:text-gecko-green transition-colors"
-                showIcon={true}
+                className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
+                showIcon={false}
               >
-                <Send size={16} className="mr-1" />
+                <Send size={16} className="mr-2" />
                 Telegram
               </ExternalLink>
             </div>
@@ -135,8 +143,41 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Trust Badges */}
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-6">
+            <ExternalLink
+              href="https://github.com/privacygecko"
+              className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-sm"
+              showIcon={false}
+            >
+              <Github size={16} />
+              <span className="text-gray-300">Open Source</span>
+            </ExternalLink>
+            <ExternalLink
+              href="https://plausible.io/privacygecko.com"
+              className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-sm"
+              showIcon={false}
+            >
+              <svg className="w-4 h-4 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.1 2C6.6 2 2.1 6.5 2.1 12s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
+                <path d="M13 7h-2v6h6v-2h-4z"/>
+              </svg>
+              <span className="text-gray-300">Privacy Analytics</span>
+            </ExternalLink>
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg text-sm">
+              <Shield size={16} className="text-gecko-green" />
+              <span className="text-gray-300">No Tracking</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg text-sm">
+              <Shield size={16} className="text-gecko-green" />
+              <span className="text-gray-300">No Data Selling</span>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
           <p>
             © {new Date().getFullYear()} Privacy Gecko. All rights reserved.
             Built with ❤️ for privacy.

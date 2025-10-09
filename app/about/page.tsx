@@ -4,7 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Section, SectionHeader } from "@/components/sections/Section";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Shield, Users, Target, Heart } from "lucide-react";
+import { Shield, Users, Target, Heart, Github, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function AboutPage() {
@@ -154,6 +154,38 @@ export default function AboutPage() {
                 </p>
               </CardHeader>
             </Card>
+          </motion.div>
+        </div>
+      </Section>
+
+      {/* Open Source */}
+      <Section className="bg-neutral-100">
+        <div className="text-center max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gecko-green rounded-full mb-4">
+              <Github className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-3xl font-display font-bold mb-4">Open Source & Transparent</h2>
+            <p className="text-lg text-gray-600 mb-6">
+              Privacy Gecko is committed to transparency. Our website code is open source and available
+              for anyone to review, audit, and contribute to. Product code will be released in Q4 2025
+              after comprehensive security audits.
+            </p>
+            <a
+              href="https://github.com/privacygecko"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
+            >
+              <Github className="w-5 h-5" />
+              View on GitHub
+              <ExternalLink className="w-4 h-4" />
+            </a>
           </motion.div>
         </div>
       </Section>
