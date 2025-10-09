@@ -17,8 +17,8 @@ export default function GeckoSharePage() {
   const features = [
     {
       icon: Lock,
-      title: "End-to-End Encryption",
-      description: "Military-grade 256-bit AES encryption ensures your files are secure from upload to download",
+      title: "Client-Side Encryption",
+      description: "Files encrypted in your browser using AES-256-GCM before upload. Encryption keys never touch our servers.",
     },
     {
       icon: Clock,
@@ -72,8 +72,8 @@ export default function GeckoSharePage() {
 
   const faqs = [
     {
-      question: "How secure is GeckoShare?",
-      answer: "All files are encrypted end-to-end using 256-bit AES encryption. The files are encrypted before leaving your device, and only recipients with the link can decrypt them. We can't access your files.",
+      question: "How does encryption work technically?",
+      answer: "GeckoShare uses AES-256-GCM encryption. Files are encrypted entirely in your browser before upload. The encryption key is generated client-side and transmitted via URL fragment (never sent to servers). Same encryption standard used by Signal and WhatsApp for end-to-end encryption.",
     },
     {
       question: "What file types can I share?",
@@ -109,7 +109,7 @@ export default function GeckoSharePage() {
         <SectionHeader
           subtitle="Features"
           title="Share Files Without Compromising Privacy"
-          description="End-to-end encrypted file sharing with enterprise-grade security"
+          description="Client-side encrypted file sharing - your files are encrypted before they leave your device"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
