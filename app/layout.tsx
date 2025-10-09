@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
+import { PrivacyNotice } from "@/components/PrivacyNotice";
 
 // Google Fonts removed for privacy - using system font stack instead
 // No external font requests = zero tracking vectors
@@ -43,6 +44,7 @@ export default function RootLayout({
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <PrivacyNotice />
       </body>
     </html>
   );
