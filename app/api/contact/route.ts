@@ -62,34 +62,85 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // TODO: Integrate with email service (Resend, SendGrid, or similar)
-    // For now, log the submission for server-side tracking
-    console.log('Contact form submission received:', {
-      name: sanitizedData.name,
-      email: sanitizedData.email,
-      subject: sanitizedData.subject,
-      messageLength: sanitizedData.message.length,
-      timestamp: new Date().toISOString(),
-    });
-
-    // In a production environment with email service, you would do:
-    /*
+    // Integrate with Resend email service
     if (process.env.RESEND_API_KEY) {
-      const resend = new Resend(process.env.RESEND_API_KEY);
-      await resend.emails.send({
-        from: 'contact@privacygecko.com',
-        to: 'support@privacygecko.com',
-        subject: `Contact Form: ${sanitizedData.subject}`,
-        html: `
-          <h2>New Contact Form Submission</h2>
-          <p><strong>From:</strong> ${sanitizedData.name} (${sanitizedData.email})</p>
-          <p><strong>Subject:</strong> ${sanitizedData.subject}</p>
-          <p><strong>Message:</strong></p>
-          <p>${sanitizedData.message.replace(/\n/g, '<br>')}</p>
-        `,
+      try {
+        const { Resend } = await import('resend');
+        const resend = new Resend(process.env.RESEND_API_KEY);
+
+        await resend.emails.send({
+          from: process.env.RESEND_FROM_EMAIL || 'contact@privacygecko.com',
+          to: process.env.RESEND_TO_EMAIL || 'support@privacygecko.com',
+          replyTo: sanitizedData.email,
+          subject: `Contact Form: ${sanitizedData.subject}`,
+          html: `
+            <!DOCTYPE html>
+            <html>
+              <head>
+                <meta charset="utf-8">
+                <style>
+                  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+                  .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+                  .header { background: #10B981; color: white; padding: 20px; border-radius: 8px 8px 0 0; }
+                  .content { background: #f9fafb; padding: 20px; border: 1px solid #e5e7eb; border-top: none; }
+                  .field { margin-bottom: 15px; }
+                  .label { font-weight: 600; color: #1F2937; }
+                  .value { color: #4B5563; }
+                  .message-box { background: white; padding: 15px; border-radius: 6px; margin-top: 10px; white-space: pre-wrap; }
+                </style>
+              </head>
+              <body>
+                <div class="container">
+                  <div class="header">
+                    <h2 style="margin: 0;">🦎 New Contact Form Submission</h2>
+                  </div>
+                  <div class="content">
+                    <div class="field">
+                      <div class="label">From:</div>
+                      <div class="value">${sanitizedData.name}</div>
+                    </div>
+                    <div class="field">
+                      <div class="label">Email:</div>
+                      <div class="value"><a href="mailto:${sanitizedData.email}">${sanitizedData.email}</a></div>
+                    </div>
+                    <div class="field">
+                      <div class="label">Subject:</div>
+                      <div class="value">${sanitizedData.subject}</div>
+                    </div>
+                    <div class="field">
+                      <div class="label">Message:</div>
+                      <div class="message-box">${sanitizedData.message}</div>
+                    </div>
+                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6B7280;">
+                      <p>Submitted: ${new Date().toLocaleString()}</p>
+                    </div>
+                  </div>
+                </div>
+              </body>
+            </html>
+          `,
+        });
+      } catch (emailError) {
+        console.error('Failed to send contact email via Resend:', emailError);
+        // Log for server-side tracking as fallback
+        console.log('Contact form submission (email failed):', {
+          name: sanitizedData.name,
+          email: sanitizedData.email,
+          subject: sanitizedData.subject,
+          messageLength: sanitizedData.message.length,
+          timestamp: new Date().toISOString(),
+        });
+      }
+    } else {
+      // Log the submission for server-side tracking when API key not configured
+      console.log('Contact form submission received (no email service):', {
+        name: sanitizedData.name,
+        email: sanitizedData.email,
+        subject: sanitizedData.subject,
+        messageLength: sanitizedData.message.length,
+        timestamp: new Date().toISOString(),
       });
     }
-    */
 
     // Return success response
     return NextResponse.json({
