@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+// Google Fonts removed for privacy - using system font stack instead
+// No external font requests = zero tracking vectors
 
 export const metadata: Metadata = {
   title: "Privacy Gecko - Privacy Tools That Actually Work",
@@ -39,7 +39,7 @@ export default function RootLayout({
           src="https://plausible.io/js/script.js"
         ></script>
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body className="font-sans antialiased">
         <Navigation />
         <main>{children}</main>
         <Footer />
