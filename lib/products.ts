@@ -142,9 +142,10 @@ export const products: Product[] = [
     tagline: "Your Passwords. Secured. Forever.",
     description: "Zero-knowledge password manager with AES-256 encryption and open-source transparency",
     icon: Key,
-    status: "live",
-    href: "https://geckolock.com",
-    isExternal: true,
+    status: "coming",
+    comingDate: "Coming Q4 2025",
+    href: "/products/lock",
+    isExternal: false,
     features: [
       "Military-grade AES-256 encryption",
       "Zero-knowledge architecture (we can't see your passwords)",

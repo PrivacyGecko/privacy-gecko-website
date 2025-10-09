@@ -47,8 +47,8 @@ export const productDomains: Record<string, ProductDomain> = {
     id: 'lock',
     name: 'Gecko Lock',
     domain: 'geckolock.com',
-    status: 'live', // ✅ LIVE
-    useExternalLink: true, // Link to geckolock.com
+    status: 'planned', // In development
+    useExternalLink: false,
   },
   shell: {
     id: 'shell',

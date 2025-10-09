@@ -105,10 +105,10 @@ export default function GeckoLockPage() {
         description="Never forget another password—and never worry about who can see them. Gecko Lock uses military-grade AES-256 encryption with zero-knowledge architecture, meaning your passwords are encrypted before they leave your device. Open-source code, self-hosting options, and a forever-free tier make security accessible to everyone."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button href="https://geckolock.com" variant="primary" size="lg">
-            Get Gecko Lock Free
+          <Button href="#pricing" variant="primary" size="lg">
+            Coming Soon
           </Button>
-          <Badge variant="live">Live Now</Badge>
+          <Badge variant="coming">Coming Q4 2025</Badge>
         </div>
       </Hero>
 
@@ -294,8 +294,8 @@ export default function GeckoLockPage() {
                 <CardTitle className="text-2xl mb-2">Free</CardTitle>
                 <div className="text-3xl font-bold mb-4">$0<span className="text-lg text-gray-500 font-normal">/month</span></div>
                 <CardDescription className="mb-6">{product.pricing.free.limit}</CardDescription>
-                <Button href="https://geckolock.com" variant="outline" className="w-full mb-6">
-                  Get Started Free
+                <Button href="#install" variant="outline" className="w-full mb-6">
+                  Get Started
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.free.features.map((feature, index) => (
@@ -326,8 +326,8 @@ export default function GeckoLockPage() {
                   <span className="text-lg text-gray-500 font-normal">/month</span>
                 </div>
                 <CardDescription className="mb-6">Advanced features & unlimited devices</CardDescription>
-                <Button href="https://geckolock.com" variant="primary" className="w-full mb-6">
-                  Start Pro Free Trial
+                <Button href="#checkout" variant="primary" className="w-full mb-6">
+                  Start Pro Trial
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.pro.features.map((feature, index) => (
@@ -382,11 +382,11 @@ export default function GeckoLockPage() {
             Ready to Take Control of Your Passwords?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Join thousands of users who've switched to true password privacy. Start with our forever-free tier—no credit card required.
+            Gecko Lock launches Q4 2025 with zero-knowledge encryption and open-source transparency. Be among the first to experience true password privacy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="https://geckolock.com" variant="primary" size="lg">
-              Get Gecko Lock Free
+            <Button href="#pricing" variant="primary" size="lg">
+              Coming Soon
             </Button>
             <Button href="/products" variant="ghost" size="lg">
               Explore Other Tools
