@@ -60,7 +60,7 @@ export const productDomains: Record<string, ProductDomain> = {
   view: {
     id: 'view',
     name: 'Gecko View',
-    domain: 'geckoview.app',
+    domain: 'view.privacygecko.com',
     status: 'future',
     useExternalLink: false,
   },
