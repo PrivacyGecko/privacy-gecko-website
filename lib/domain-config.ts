@@ -43,12 +43,12 @@ export const productDomains: Record<string, ProductDomain> = {
     status: 'planned', // In web store review
     useExternalLink: false,
   },
-  pass: {
-    id: 'pass',
-    name: 'Gecko Pass',
-    domain: 'geckopass.com',
-    status: 'future',
-    useExternalLink: false,
+  lock: {
+    id: 'lock',
+    name: 'Gecko Lock',
+    domain: 'geckolock.com',
+    status: 'live', // ✅ LIVE
+    useExternalLink: true, // Link to geckolock.com
   },
   shell: {
     id: 'shell',
