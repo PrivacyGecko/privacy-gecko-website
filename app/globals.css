@@ -22,3 +22,57 @@
     text-wrap: balance;
   }
 }
+
+/* Blog post typography styles */
+.prose-gecko {
+  @apply text-gray-800;
+}
+
+.prose-gecko .lead {
+  @apply text-xl text-gray-700 mb-8 leading-relaxed font-medium;
+}
+
+.prose-gecko h2 {
+  @apply text-2xl font-bold mt-12 mb-4 text-gray-900;
+}
+
+.prose-gecko h3 {
+  @apply text-xl font-semibold mt-8 mb-3 text-gray-900;
+}
+
+.prose-gecko p {
+  @apply mb-6 leading-relaxed;
+}
+
+.prose-gecko ul,
+.prose-gecko ol {
+  @apply mb-6 ml-6 space-y-2;
+}
+
+.prose-gecko ul {
+  @apply list-disc;
+}
+
+.prose-gecko ol {
+  @apply list-decimal;
+}
+
+.prose-gecko li {
+  @apply leading-relaxed;
+}
+
+.prose-gecko a {
+  @apply text-gecko-green hover:underline font-medium;
+}
+
+.prose-gecko strong {
+  @apply font-semibold text-gray-900;
+}
+
+.prose-gecko code {
+  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+}
+
+.prose-gecko .signature {
+  @apply text-gray-600 italic mt-8;
+}
