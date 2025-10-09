@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Ca
 import { Button } from "@/components/ui/Button";
 import { Mail, Send, HelpCircle, Info } from "lucide-react";
 import Link from "next/link";
+import { ExternalLink } from "@/components/ui/ExternalLink";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -231,24 +232,20 @@ export default function ContactPage() {
                   <CardTitle>Social</CardTitle>
                   <CardDescription className="space-y-2">
                     <div>
-                      <a
+                      <ExternalLink
                         href="https://twitter.com/privacygecko"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="text-gecko-green hover:underline"
                       >
                         Twitter
-                      </a>
+                      </ExternalLink>
                     </div>
                     <div>
-                      <a
+                      <ExternalLink
                         href="https://t.me/privacygecko"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="text-gecko-green hover:underline"
                       >
                         Telegram
-                      </a>
+                      </ExternalLink>
                     </div>
                   </CardDescription>
                 </CardHeader>

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Twitter, Send } from "lucide-react";
+import { Twitter, Send, ExternalLink as ExternalLinkIcon } from "lucide-react";
+import { ExternalLink } from "@/components/ui/ExternalLink";
 
 export function Footer() {
   const productLinks = [
@@ -45,25 +46,23 @@ export function Footer() {
             <p className="text-gray-400 text-sm mb-4">
               Privacy tools that actually work. Powered by $PRICKO.
             </p>
-            <div className="flex space-x-4">
-              <a
+            <div className="flex flex-col space-y-2 text-sm">
+              <ExternalLink
                 href="https://twitter.com/privacygecko"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-gecko-green transition-colors"
-                aria-label="Twitter"
+                showIcon={true}
               >
-                <Twitter size={20} />
-              </a>
-              <a
+                <Twitter size={16} className="mr-1" />
+                Twitter
+              </ExternalLink>
+              <ExternalLink
                 href="https://t.me/privacygecko"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-gecko-green transition-colors"
-                aria-label="Telegram"
+                showIcon={true}
               >
-                <Send size={20} />
-              </a>
+                <Send size={16} className="mr-1" />
+                Telegram
+              </ExternalLink>
             </div>
           </div>
 
