@@ -26,8 +26,8 @@ export const productDomains: Record<string, ProductDomain> = {
     id: 'advisor',
     name: 'GeckoAdvisor',
     domain: 'geckoadvisor.com',
-    status: 'planned', // Staging - Stripe integration pending
-    useExternalLink: false,
+    status: 'live', // ✅ LIVE
+    useExternalLink: true, // Link to geckoadvisor.com
   },
   share: {
     id: 'share',
