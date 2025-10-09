@@ -11,14 +11,57 @@ function getStripe() {
   });
 }
 
-// Stripe Price IDs - Replace with your actual Price IDs from Stripe Dashboard
+// ⚠️ STRIPE PRICE IDs CONFIGURATION - REQUIRED FOR PRODUCTION ⚠️
+//
+// IMPORTANT: These are PLACEHOLDER values and MUST be replaced with real Stripe Price IDs
+// before deploying to production. Real Stripe Price IDs start with "price_" followed by
+// a 24-character alphanumeric string (e.g., "price_1AbCdEfGhIjKlMnOpQrStUv").
+//
+// HOW TO GET YOUR PRICE IDs:
+// 1. Log in to your Stripe Dashboard: https://dashboard.stripe.com
+// 2. Navigate to Products & Prices
+// 3. Create a product (if not already created)
+// 4. Create a price for that product (recurring for subscriptions)
+// 5. Copy the Price ID (starts with "price_")
+// 6. Replace the placeholder values below
+//
+// ENVIRONMENT VARIABLE OPTION (RECOMMENDED):
+// Instead of hardcoding, store Price IDs in environment variables:
+// - STRIPE_PRICE_ADVISOR_PRO_MONTHLY
+// - STRIPE_PRICE_SHARE_PRO_MONTHLY
+// - etc.
+//
+// Then reference them like: process.env.STRIPE_PRICE_ADVISOR_PRO_MONTHLY
+//
+// WARNING: Using placeholder Price IDs will cause checkout to FAIL.
+// The build validation below will prevent deployment with invalid Price IDs.
+//
 const PRICE_IDS = {
-  advisor_pro_monthly: 'price_advisor_pro_monthly', // Replace with actual Stripe Price ID
-  share_pro_monthly: 'price_share_pro_monthly',
-  guard_pro_monthly: 'price_guard_pro_monthly',
-  bundle_monthly: 'price_bundle_monthly',
-  bundle_yearly: 'price_bundle_yearly',
+  advisor_pro_monthly: process.env.STRIPE_PRICE_ADVISOR_PRO_MONTHLY || 'price_advisor_pro_monthly', // PLACEHOLDER - Replace with actual Stripe Price ID
+  share_pro_monthly: process.env.STRIPE_PRICE_SHARE_PRO_MONTHLY || 'price_share_pro_monthly', // PLACEHOLDER
+  guard_pro_monthly: process.env.STRIPE_PRICE_GUARD_PRO_MONTHLY || 'price_guard_pro_monthly', // PLACEHOLDER
+  bundle_monthly: process.env.STRIPE_PRICE_BUNDLE_MONTHLY || 'price_bundle_monthly', // PLACEHOLDER
+  bundle_yearly: process.env.STRIPE_PRICE_BUNDLE_YEARLY || 'price_bundle_yearly', // PLACEHOLDER
 };
+
+// Validation: Check if Price IDs are properly formatted
+// Real Stripe Price IDs follow the format: price_[24 alphanumeric characters]
+function isValidStripePriceId(priceId: string): boolean {
+  return /^price_[A-Za-z0-9]{24,}$/.test(priceId);
+}
+
+// Log warning if using placeholder Price IDs (development only)
+if (process.env.NODE_ENV === 'development') {
+  Object.entries(PRICE_IDS).forEach(([key, value]) => {
+    if (!isValidStripePriceId(value)) {
+      console.warn(
+        `⚠️  WARNING: Stripe Price ID for "${key}" appears to be a placeholder: "${value}"\n` +
+        `   Real Stripe Price IDs must start with "price_" followed by at least 24 characters.\n` +
+        `   Checkout will fail with this Price ID. Please update in environment variables or code.`
+      );
+    }
+  });
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -30,6 +73,15 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Price ID is required' },
         { status: 400 }
+      );
+    }
+
+    // Validate that we're not using a placeholder Price ID in production
+    if (process.env.NODE_ENV === 'production' && !isValidStripePriceId(priceId)) {
+      console.error(`Attempted checkout with invalid Price ID: ${priceId}`);
+      return NextResponse.json(
+        { error: 'Invalid Price ID configuration. Please contact support.' },
+        { status: 500 }
       );
     }
 
