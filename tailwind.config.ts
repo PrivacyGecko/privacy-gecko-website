@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         gecko: {
-          green: '#10B981',
+          green: '#047857',
           blue: '#1E3A8A',
         },
         neutral: {
