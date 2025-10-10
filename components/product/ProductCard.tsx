@@ -16,6 +16,8 @@ interface ProductCardProps {
   href: string;
   isExternal?: boolean;
   features?: string[];
+  progress?: number;
+  lastUpdated?: string;
 }
 
 export function ProductCard({
@@ -27,6 +29,8 @@ export function ProductCard({
   href,
   isExternal = false,
   features,
+  progress,
+  lastUpdated,
 }: ProductCardProps) {
   return (
     <motion.div
@@ -49,6 +53,33 @@ export function ProductCard({
           <CardTitle>{name}</CardTitle>
           <CardDescription>{description}</CardDescription>
         </CardHeader>
+        {progress !== undefined && (
+          <CardContent>
+            <div className="mb-4">
+              <div className="flex justify-between items-center mb-2">
+                <p className="text-xs font-semibold text-gray-700">Development Progress</p>
+                <p className="text-xs font-bold text-gecko-green">{progress}%</p>
+              </div>
+              <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-full h-2.5 shadow-inner overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${progress}%` }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                  className="bg-gradient-to-r from-green-600 to-green-700 h-2.5 rounded-full shadow-sm"
+                  style={{
+                    boxShadow: '0 0 8px rgba(21, 128, 61, 0.4)'
+                  }}
+                />
+              </div>
+              {lastUpdated && (
+                <p className="text-xs text-gray-500 mt-1">
+                  Last updated: {new Date(lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </p>
+              )}
+            </div>
+          </CardContent>
+        )}
         {features && features.length > 0 && (
           <CardContent className="flex-grow">
             <ul className="space-y-2 text-sm text-gray-600">
@@ -79,7 +110,7 @@ export function ProductCard({
             )
           ) : (
             <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="outline" size="sm" className="w-full">
-              Join Waitlist
+              Get 20% Lifetime Discount
             </Button>
           )}
         </CardContent>

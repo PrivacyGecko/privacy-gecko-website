@@ -154,12 +154,23 @@ export default function RoadmapPage() {
                           <p className="text-xs font-semibold text-gray-700">Development Progress</p>
                           <p className="text-xs font-bold text-gecko-green">{product.progress}%</p>
                         </div>
-                        <div className="bg-gray-200 rounded-full h-2">
-                          <div
-                            className="bg-green-700 h-2 rounded-full transition-all duration-300"
-                            style={{ width: `${product.progress}%` }}
+                        <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-full h-2.5 shadow-inner overflow-hidden">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${product.progress}%` }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                            className="bg-gradient-to-r from-green-600 to-green-700 h-2.5 rounded-full shadow-sm"
+                            style={{
+                              boxShadow: '0 0 8px rgba(21, 128, 61, 0.4)'
+                            }}
                           />
                         </div>
+                        {product.lastUpdated && (
+                          <p className="text-xs text-gray-500 mt-1">
+                            Last updated: {new Date(product.lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                          </p>
+                        )}
                       </div>
                     )}
                     <ul className="space-y-2 text-sm text-gray-600 mb-4">
@@ -182,7 +193,7 @@ export default function RoadmapPage() {
                       size="sm"
                       className="w-full"
                     >
-                      Join Waitlist
+                      Get 20% Lifetime Discount
                     </Button>
                   </CardContent>
                 </Card>
@@ -386,7 +397,7 @@ export default function RoadmapPage() {
               size="lg"
               className="bg-white text-gecko-green hover:bg-gray-100 border-white"
             >
-              Join Waitlist
+              Get 20% Lifetime Discount
             </Button>
             <Button
               href="/products"

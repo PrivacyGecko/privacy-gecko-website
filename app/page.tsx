@@ -31,6 +31,24 @@ export default function HomePage() {
         </div>
       </Hero>
 
+      {/* Early Adopter Discount Banner */}
+      <Section className="bg-gradient-to-r from-gecko-green to-gecko-blue text-white py-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <p className="text-lg md:text-xl font-semibold mb-4">
+            Early Adopter Special: Lock in 20% off for life on all Q4 2025 launches
+          </p>
+          <Button href="/roadmap" variant="outline" className="bg-white text-gecko-green hover:bg-gray-100 border-white">
+            View Roadmap & Join Waitlist →
+          </Button>
+        </motion.div>
+      </Section>
+
       {/* Product Showcase */}
       <Section className="bg-neutral-100">
         <SectionHeader
@@ -50,6 +68,8 @@ export default function HomePage() {
               href={product.href}
               isExternal={product.isExternal}
               features={product.features.slice(0, 3)}
+              progress={product.progress}
+              lastUpdated={product.lastUpdated}
             />
           ))}
         </div>

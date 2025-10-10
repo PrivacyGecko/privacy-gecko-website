@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { PrivacyNotice } from "@/components/PrivacyNotice";
+import { MobileStickyCTA } from "@/components/ui/MobileStickyCTA";
 
 // Google Fonts removed for privacy - using system font stack instead
 // No external font requests = zero tracking vectors
@@ -70,9 +71,10 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <Navigation />
-        <main>{children}</main>
+        <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
         <PrivacyNotice />
+        <MobileStickyCTA />
       </body>
     </html>
   );

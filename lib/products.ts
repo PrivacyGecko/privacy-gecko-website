@@ -20,6 +20,7 @@ export interface Product {
   status: "live" | "coming";
   comingDate?: string;
   progress?: number; // Percentage complete for coming-soon products
+  lastUpdated?: string; // Last progress update date
   href: string;
   isExternal?: boolean; // True if links to external domain
   features: string[];
@@ -146,6 +147,7 @@ export const products: Product[] = [
     status: "coming",
     comingDate: "Coming Q4 2025",
     progress: 65,
+    lastUpdated: "2025-01-15",
     href: "/products/lock",
     isExternal: false,
     features: [
@@ -183,6 +185,7 @@ export const products: Product[] = [
     status: "coming",
     comingDate: "Coming Q4 2025",
     progress: 45,
+    lastUpdated: "2025-01-10",
     href: "/products/view",
     features: [
       "One-click AI summaries with GPT-3.5 & GPT-4",
@@ -219,6 +222,7 @@ export const products: Product[] = [
     status: "coming",
     comingDate: "Coming Q4 2025",
     progress: 30,
+    lastUpdated: "2025-01-08",
     href: "/products",
     features: [
       "Unlimited disposable emails",
@@ -254,6 +258,7 @@ export const products: Product[] = [
     status: "coming",
     comingDate: "Coming Q4 2025",
     progress: 20,
+    lastUpdated: "2025-01-05",
     href: "/products",
     features: [
       "No-logs policy",
@@ -289,6 +294,7 @@ export const products: Product[] = [
     status: "coming",
     comingDate: "Coming Q4 2025",
     progress: 55,
+    lastUpdated: "2025-01-12",
     href: "/products",
     features: [
       "GDPR compliance checking",
