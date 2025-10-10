@@ -19,6 +19,7 @@ export interface Product {
   icon: LucideIcon;
   status: "live" | "coming";
   comingDate?: string;
+  progress?: number; // Percentage complete for coming-soon products
   href: string;
   isExternal?: boolean; // True if links to external domain
   features: string[];
@@ -144,6 +145,7 @@ export const products: Product[] = [
     icon: Key,
     status: "coming",
     comingDate: "Coming Q4 2025",
+    progress: 65,
     href: "/products/lock",
     isExternal: false,
     features: [
@@ -180,6 +182,7 @@ export const products: Product[] = [
     icon: Globe,
     status: "coming",
     comingDate: "Coming Q4 2025",
+    progress: 45,
     href: "/products/view",
     features: [
       "One-click AI summaries with GPT-3.5 & GPT-4",
@@ -215,6 +218,7 @@ export const products: Product[] = [
     icon: Mail,
     status: "coming",
     comingDate: "Coming Q4 2025",
+    progress: 30,
     href: "/products",
     features: [
       "Unlimited disposable emails",
@@ -249,6 +253,7 @@ export const products: Product[] = [
     icon: Wifi,
     status: "coming",
     comingDate: "Coming Q4 2025",
+    progress: 20,
     href: "/products",
     features: [
       "No-logs policy",
@@ -283,6 +288,7 @@ export const products: Product[] = [
     icon: Search,
     status: "coming",
     comingDate: "Coming Q4 2025",
+    progress: 55,
     href: "/products",
     features: [
       "GDPR compliance checking",

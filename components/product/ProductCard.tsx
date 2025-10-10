@@ -78,8 +78,8 @@ export function ProductCard({
               </Button>
             )
           ) : (
-            <Button variant="ghost" size="sm" className="w-full" disabled>
-              Coming Soon
+            <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="outline" size="sm" className="w-full">
+              Join Waitlist
             </Button>
           )}
         </CardContent>

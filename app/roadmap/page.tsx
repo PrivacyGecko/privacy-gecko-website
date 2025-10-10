@@ -148,6 +148,20 @@ export default function RoadmapPage() {
                     <CardDescription>{product.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
+                    {product.progress !== undefined && (
+                      <div className="mb-4">
+                        <div className="flex justify-between items-center mb-2">
+                          <p className="text-xs font-semibold text-gray-700">Development Progress</p>
+                          <p className="text-xs font-bold text-gecko-green">{product.progress}%</p>
+                        </div>
+                        <div className="bg-gray-200 rounded-full h-2">
+                          <div
+                            className="bg-green-700 h-2 rounded-full transition-all duration-300"
+                            style={{ width: `${product.progress}%` }}
+                          />
+                        </div>
+                      </div>
+                    )}
                     <ul className="space-y-2 text-sm text-gray-600 mb-4">
                       {product.features.slice(0, 3).map((feature, idx) => (
                         <li key={idx} className="flex items-start">
