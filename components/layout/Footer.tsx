@@ -14,7 +14,7 @@ export function Footer() {
     { href: "/about", label: "About" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
-    { href: "/pricing", label: "Pricing" },
+    { href: "/roadmap", label: "Roadmap" },
   ];
 
   const resourceLinks = [
