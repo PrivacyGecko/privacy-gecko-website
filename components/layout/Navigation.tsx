@@ -17,8 +17,17 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <>
+      {/* Skip to main content - WCAG A compliance */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-gecko-green focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-gecko-green focus:ring-offset-2"
+      >
+        Skip to main content
+      </a>
+
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
@@ -45,8 +54,8 @@ export function Navigation() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button href="/products/advisor" variant="primary">
-              Try GeckoAdvisor Free
+            <Button href="https://geckoadvisor.com" variant="primary">
+              Join Beta (Free)
             </Button>
           </div>
 
@@ -76,13 +85,14 @@ export function Navigation() {
               </Link>
             ))}
             <div className="pt-2">
-              <Button href="/products/advisor" variant="primary" className="w-full">
-                Try GeckoAdvisor Free
+              <Button href="https://geckoadvisor.com" variant="primary" className="w-full">
+                Join Beta (Free)
               </Button>
             </div>
           </div>
         </div>
       )}
-    </nav>
+      </nav>
+    </>
   );
 }

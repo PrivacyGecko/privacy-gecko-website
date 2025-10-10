@@ -32,7 +32,7 @@ export default function HomePage() {
       </Hero>
 
       {/* Early Adopter Discount Banner */}
-      <Section className="bg-gradient-to-r from-gecko-green to-gecko-blue text-white py-8">
+      <Section className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -269,7 +269,7 @@ export default function HomePage() {
       </Section>
 
       {/* Token Bridge Section */}
-      <Section className="bg-gradient-to-r from-gecko-green to-gecko-blue text-white">
+      <Section className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white">
         <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

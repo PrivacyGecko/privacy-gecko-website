@@ -246,7 +246,7 @@ export default function TokenPage() {
       </Section>
 
       {/* CTA */}
-      <Section className="bg-gradient-to-r from-gecko-green to-gecko-blue text-white">
+      <Section className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Ready to Save with $PRICKO?

@@ -20,8 +20,25 @@ const badgeVariants = cva(
 
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLSpanElement>,
-    VariantProps<typeof badgeVariants> {}
+    VariantProps<typeof badgeVariants> {
+  ariaLabel?: string;
+}
 
-export function Badge({ className, variant, ...props }: BadgeProps) {
-  return <span className={cn(badgeVariants({ variant }), className)} {...props} />;
+export function Badge({ className, variant, ariaLabel, ...props }: BadgeProps) {
+  const getDefaultAriaLabel = () => {
+    if (ariaLabel) return ariaLabel;
+    if (variant === "live") return "Product status: Available now";
+    if (variant === "beta") return "Product status: Beta testing";
+    if (variant === "coming") return "Product status: In development";
+    return "Product status";
+  };
+
+  return (
+    <span
+      className={cn(badgeVariants({ variant }), className)}
+      role="status"
+      aria-label={getDefaultAriaLabel()}
+      {...props}
+    />
+  );
 }

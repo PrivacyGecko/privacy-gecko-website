@@ -71,7 +71,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <Navigation />
-        <main className="pb-28 md:pb-0">{children}</main>
+        <main id="main-content" className="pb-28 md:pb-0">{children}</main>
         <Footer />
         <PrivacyNotice />
         <MobileStickyCTA />

@@ -68,7 +68,7 @@ export default function RoadmapPage() {
           {liveProducts.map((product, index) => {
             const Icon = product.icon;
             const pricing = product.id === "advisor"
-              ? { free: "3 scans/month", pro: "$9.99/mo unlimited" }
+              ? { free: "3 scans/month", pro: "$4.99/mo beta (reg $9.99)" }
               : product.id === "share"
               ? { free: "100MB, 24hr expiry", pro: "$7.99/mo 5GB" }
               : { free: "Basic blocking", pro: "$4.99/mo advanced" };
@@ -382,7 +382,7 @@ export default function RoadmapPage() {
       </Section>
 
       {/* CTA */}
-      <Section className="bg-gradient-to-r from-gecko-green to-gecko-blue text-white">
+      <Section className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Join the Privacy Revolution
