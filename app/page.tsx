@@ -41,7 +41,7 @@ export default function HomePage() {
           className="text-center"
         >
           <p className="text-lg md:text-xl font-semibold mb-4">
-            Early Adopter Special: Lock in 20% off for life on all Q4 2025 launches
+            🎉 Early Adopter Special: Lock in 20% off for life on all upcoming privacy tools
           </p>
           <Button href="/roadmap" variant="outline" className="bg-white text-gecko-green hover:bg-gray-100 border-white">
             View Roadmap & Join Waitlist →
@@ -69,7 +69,6 @@ export default function HomePage() {
               isExternal={product.isExternal}
               features={product.features.slice(0, 3)}
               progress={product.progress}
-              lastUpdated={product.lastUpdated}
             />
           ))}
         </div>

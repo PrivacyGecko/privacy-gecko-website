@@ -166,11 +166,6 @@ export default function RoadmapPage() {
                             }}
                           />
                         </div>
-                        {product.lastUpdated && (
-                          <p className="text-xs text-gray-500 mt-1">
-                            Last updated: {new Date(product.lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                          </p>
-                        )}
                       </div>
                     )}
                     <ul className="space-y-2 text-sm text-gray-600 mb-4">

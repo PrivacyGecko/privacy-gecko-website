@@ -17,7 +17,6 @@ interface ProductCardProps {
   isExternal?: boolean;
   features?: string[];
   progress?: number;
-  lastUpdated?: string;
 }
 
 export function ProductCard({
@@ -30,7 +29,6 @@ export function ProductCard({
   isExternal = false,
   features,
   progress,
-  lastUpdated,
 }: ProductCardProps) {
   return (
     <motion.div
@@ -72,11 +70,6 @@ export function ProductCard({
                   }}
                 />
               </div>
-              {lastUpdated && (
-                <p className="text-xs text-gray-500 mt-1">
-                  Last updated: {new Date(lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                </p>
-              )}
             </div>
           </CardContent>
         )}
@@ -109,9 +102,14 @@ export function ProductCard({
               </Button>
             )
           ) : (
-            <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="outline" size="sm" className="w-full">
-              Get 20% Lifetime Discount
-            </Button>
+            <div>
+              <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="outline" size="sm" className="w-full">
+                Join Waitlist
+              </Button>
+              <p className="text-xs text-gray-600 text-center mt-2">
+                Includes 20% lifetime discount
+              </p>
+            </div>
           )}
         </CardContent>
       </Card>
