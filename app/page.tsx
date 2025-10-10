@@ -68,9 +68,10 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="h-full"
           >
-            <Card>
-              <CardHeader>
+            <Card className="h-full flex flex-col">
+              <CardHeader className="flex-grow">
                 <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
                   <Shield className="w-6 h-6 text-gecko-green" />
                 </div>
@@ -87,9 +88,10 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
+            className="h-full"
           >
-            <Card>
-              <CardHeader>
+            <Card className="h-full flex flex-col">
+              <CardHeader className="flex-grow">
                 <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
                   <Zap className="w-6 h-6 text-gecko-green" />
                 </div>
@@ -106,9 +108,10 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="h-full"
           >
-            <Card>
-              <CardHeader>
+            <Card className="h-full flex flex-col">
+              <CardHeader className="flex-grow">
                 <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
                   <Code className="w-6 h-6 text-gecko-green" />
                 </div>
@@ -125,9 +128,10 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
+            className="h-full"
           >
-            <Card>
-              <CardHeader>
+            <Card className="h-full flex flex-col">
+              <CardHeader className="flex-grow">
                 <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
                   <Lock className="w-6 h-6 text-gecko-green" />
                 </div>

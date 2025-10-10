@@ -63,6 +63,7 @@ export default function ProductsPage() {
               status={product.status}
               comingDate={product.comingDate}
               href={product.href}
+              features={product.features.slice(0, 3)}
             />
           ))}
         </div>
