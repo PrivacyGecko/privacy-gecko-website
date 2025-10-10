@@ -97,12 +97,45 @@ export default function GeckoAdvisorPage() {
         description={product.description}
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button href="#pricing" variant="primary" size="lg">
-            Start Free Trial
+          <Button href="https://geckoadvisor.com" variant="primary" size="lg">
+            Join Beta Program →
           </Button>
-          <Badge variant="live">Live Now</Badge>
+          <Badge variant="beta">Beta Testing</Badge>
         </div>
       </Hero>
+
+      {/* Beta Status Banner */}
+      <Section className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto"
+        >
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <Bell className="w-5 h-5" />
+            <h3 className="text-xl font-bold">Currently in Beta Testing</h3>
+          </div>
+          <p className="text-blue-100 mb-4">
+            GeckoAdvisor is in active beta with limited spots available. Early beta users get lifetime discounted pricing and help shape the product.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-green-400" />
+              <span>Free forever tier</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-green-400" />
+              <span>Beta pricing: $4.99/mo (vs $9.99 at launch)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-green-400" />
+              <span>No payment required during beta</span>
+            </div>
+          </div>
+        </motion.div>
+      </Section>
 
       {/* Features Grid */}
       <Section>
@@ -163,9 +196,9 @@ export default function GeckoAdvisorPage() {
       {/* Pricing */}
       <Section id="pricing">
         <SectionHeader
-          subtitle="Pricing"
-          title="Choose Your Plan"
-          description="Start free, upgrade when you need more"
+          subtitle="Beta Pricing"
+          title="Limited Time Beta Pricing"
+          description="Lock in discounted pricing as an early adopter. No payment required during beta."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <motion.div
@@ -179,8 +212,8 @@ export default function GeckoAdvisorPage() {
                 <CardTitle className="text-2xl mb-2">Free</CardTitle>
                 <div className="text-3xl font-bold mb-4">$0<span className="text-lg text-gray-500 font-normal">/month</span></div>
                 <CardDescription className="mb-6">{product.pricing.free.limit}</CardDescription>
-                <Button href="#download" variant="outline" className="w-full mb-6">
-                  Get Started
+                <Button href="https://geckoadvisor.com" variant="outline" className="w-full mb-6">
+                  Try Beta →
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.free.features.map((feature, index) => (
@@ -211,8 +244,8 @@ export default function GeckoAdvisorPage() {
                   <span className="text-lg text-gray-500 font-normal">/month</span>
                 </div>
                 <CardDescription className="mb-6">Unlimited scans, advanced features</CardDescription>
-                <Button href="#checkout" variant="primary" className="w-full mb-6">
-                  Start Pro Trial
+                <Button href="https://geckoadvisor.com" variant="primary" className="w-full mb-6">
+                  Join Beta →
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.pro.features.map((feature, index) => (
@@ -258,14 +291,14 @@ export default function GeckoAdvisorPage() {
       <Section>
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Ready to Know Your Privacy Score?
+            Ready to Join the Beta?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Start with 3 free scans per month. No credit card required.
+            Limited beta access available. Start with 3 free scans per month. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="#download" variant="primary" size="lg">
-              Download GeckoAdvisor
+            <Button href="https://geckoadvisor.com" variant="primary" size="lg">
+              Join Beta Program →
             </Button>
             <Button href="/products" variant="ghost" size="lg">
               Explore Other Tools

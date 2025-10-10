@@ -19,11 +19,11 @@ export default function HomePage() {
       {/* Hero Section */}
       <Hero
         title="Privacy Tools That Actually Work."
-        description="3 live privacy tools you can use today, plus 5 more in active development. Open source roadmap. No tracking. No data selling. Take back control of your digital privacy."
+        description="3 privacy tools in beta testing, plus 5 more in active development. Open source roadmap. No tracking. No data selling. Take back control of your digital privacy."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button href="/products/advisor" variant="primary" size="lg">
-            Try GeckoAdvisor Free
+          <Button href="https://geckoadvisor.com" variant="primary" size="lg">
+            Join GeckoAdvisor Beta →
           </Button>
           <Button href="/products" variant="outline" size="lg">
             Explore All Products
@@ -54,7 +54,7 @@ export default function HomePage() {
         <SectionHeader
           subtitle="Our Ecosystem"
           title="Complete Privacy Toolkit"
-          description="8 powerful tools to protect your privacy across all aspects of your digital life. 3 available today, 5 in active development."
+          description="8 powerful tools to protect your privacy across all aspects of your digital life. 3 in beta testing, 5 in active development."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
@@ -307,11 +307,11 @@ export default function HomePage() {
               Ready to Take Back Your Privacy?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Start with any of our tools today. No credit card required for free tier.
+              Join the GeckoAdvisor beta or explore our other privacy tools. No credit card required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="/products/advisor" variant="primary" size="lg">
-                Try GeckoAdvisor Free
+              <Button href="https://geckoadvisor.com" variant="primary" size="lg">
+                Join GeckoAdvisor Beta →
               </Button>
               <Button href="/products" variant="secondary" size="lg">
                 View All Products
