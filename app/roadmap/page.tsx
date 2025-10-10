@@ -45,7 +45,7 @@ export default function RoadmapPage() {
                 <Code className="w-6 h-6 text-gecko-green" />
               </div>
               <h3 className="font-bold mb-2">Open Source</h3>
-              <p className="text-sm text-gray-600">All code published Q4 2025</p>
+              <p className="text-sm text-gray-600">All code publishing after security audits</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-gecko-green/10 rounded-lg flex items-center justify-center mx-auto mb-3">
@@ -122,8 +122,8 @@ export default function RoadmapPage() {
       {/* Coming Soon Products */}
       <Section className="bg-neutral-100">
         <SectionHeader
-          title="Launching Q4 2025"
-          description="5 more privacy tools in active development - join waitlist for early adopter benefits"
+          title="In Active Development"
+          description="5 privacy tools being built in public - join waitlist for early adopter benefits"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {comingProducts.map((product, index) => {
@@ -182,14 +182,19 @@ export default function RoadmapPage() {
                         Early adopters: 20% lifetime discount
                       </p>
                     </div>
-                    <Button
-                      href="/contact?subject=Early%20Adopter%20Waitlist"
-                      variant="outline"
-                      size="sm"
-                      className="w-full"
-                    >
-                      Get 20% Lifetime Discount
-                    </Button>
+                    <div>
+                      <Button
+                        href="/contact?subject=Early%20Adopter%20Waitlist"
+                        variant="outline"
+                        size="sm"
+                        className="w-full"
+                      >
+                        Join Waitlist
+                      </Button>
+                      <p className="text-sm font-medium text-gecko-green text-center mt-2">
+                        Includes 20% lifetime discount
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -315,7 +320,7 @@ export default function RoadmapPage() {
               <div>
                 <h3 className="font-bold mb-2">Open Source Coming</h3>
                 <p className="text-gray-600">
-                  All product code will be published Q4 2025 after security audits complete. Transparency
+                  All product code will be published after security audits complete. Transparency
                   requires preparation.
                 </p>
               </div>
@@ -359,7 +364,7 @@ export default function RoadmapPage() {
               <CardHeader>
                 <CardTitle>What if Privacy Gecko shuts down?</CardTitle>
                 <CardDescription>
-                  All product code will be open-source by Q4 2025. You can self-host and continue using the tools.
+                  All product code will be open-source after launch. You can self-host and continue using the tools.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -386,14 +391,19 @@ export default function RoadmapPage() {
             Be part of building the privacy tools you wish existed. Early adopters help shape the future.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="/contact?subject=Early%20Adopter%20Waitlist"
-              variant="outline"
-              size="lg"
-              className="bg-white text-gecko-green hover:bg-gray-100 border-white"
-            >
-              Get 20% Lifetime Discount
-            </Button>
+            <div>
+              <Button
+                href="/contact?subject=Early%20Adopter%20Waitlist"
+                variant="outline"
+                size="lg"
+                className="bg-white text-gecko-green hover:bg-gray-100 border-white"
+              >
+                Join Waitlist
+              </Button>
+              <p className="text-sm font-medium text-gecko-green text-center mt-2">
+                Includes 20% lifetime discount
+              </p>
+            </div>
             <Button
               href="/products"
               variant="outline"
