@@ -19,7 +19,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <Hero
         title="Privacy Tools That Actually Work."
-        description="8 privacy-first tools. Open source roadmap. No tracking. No data selling. Take back control of your digital privacy."
+        description="3 live privacy tools you can use today, plus 5 more launching Q4 2025. Open source roadmap. No tracking. No data selling. Take back control of your digital privacy."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="/products/advisor" variant="primary" size="lg">
@@ -36,7 +36,7 @@ export default function HomePage() {
         <SectionHeader
           subtitle="Our Ecosystem"
           title="Complete Privacy Toolkit"
-          description="8 powerful tools to protect your privacy across all aspects of your digital life"
+          description="8 powerful tools to protect your privacy across all aspects of your digital life. 3 available today, 5 launching Q4 2025."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
