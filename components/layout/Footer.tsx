@@ -47,6 +47,58 @@ export function Footer() {
             <p className="text-gray-400 text-sm mb-4">
               Privacy tools that actually work. Powered by $PRICKO.
             </p>
+
+            {/* Brand Social Links */}
+            <div className="mb-4">
+              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                Community
+              </p>
+              <div className="flex flex-col space-y-2 text-sm">
+                <ExternalLink
+                  href="https://twitter.com/PrivacyGecko"
+                  className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
+                  showIcon={false}
+                >
+                  <Twitter size={16} className="mr-2" />
+                  @PrivacyGecko
+                </ExternalLink>
+                <ExternalLink
+                  href="https://t.me/pricko_official"
+                  className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
+                  showIcon={false}
+                >
+                  <Send size={16} className="mr-2" />
+                  $PRICKO Community
+                </ExternalLink>
+              </div>
+            </div>
+
+            {/* Developer Social Links */}
+            <div className="mb-4">
+              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                Developer
+              </p>
+              <div className="flex flex-col space-y-2 text-sm">
+                <ExternalLink
+                  href="https://twitter.com/0xAnonA"
+                  className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
+                  showIcon={false}
+                >
+                  <Twitter size={16} className="mr-2" />
+                  @0xAnonA
+                </ExternalLink>
+                <ExternalLink
+                  href="https://t.me/askAnonA"
+                  className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
+                  showIcon={false}
+                >
+                  <Send size={16} className="mr-2" />
+                  Ask Developer
+                </ExternalLink>
+              </div>
+            </div>
+
+            {/* GitHub Link */}
             <div className="flex flex-col space-y-2 text-sm">
               <ExternalLink
                 href="https://github.com/privacygecko"
@@ -55,22 +107,6 @@ export function Footer() {
               >
                 <Github size={16} className="mr-2" />
                 View Source
-              </ExternalLink>
-              <ExternalLink
-                href="https://twitter.com/privacygecko"
-                className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
-                showIcon={false}
-              >
-                <Twitter size={16} className="mr-2" />
-                Twitter
-              </ExternalLink>
-              <ExternalLink
-                href="https://t.me/privacygecko"
-                className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
-                showIcon={false}
-              >
-                <Send size={16} className="mr-2" />
-                Telegram
               </ExternalLink>
             </div>
           </div>
