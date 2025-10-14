@@ -79,12 +79,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
+            <div suppressHydrationWarning>
               <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl mb-6">Send Us a Message</CardTitle>
@@ -197,17 +192,12 @@ export default function ContactPage() {
                   </form>
                 </CardHeader>
               </Card>
-            </motion.div>
+            </div>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
+            <div suppressHydrationWarning>
               <Card>
                 <CardHeader>
                   <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
@@ -221,14 +211,9 @@ export default function ContactPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+            <div suppressHydrationWarning>
               <Card>
                 <CardHeader>
                   <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
@@ -255,14 +240,9 @@ export default function ContactPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
+            <div suppressHydrationWarning>
               <Card>
                 <CardHeader>
                   <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
@@ -278,7 +258,7 @@ export default function ContactPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-            </motion.div>
+            </div>
           </div>
         </div>
       </Section>
