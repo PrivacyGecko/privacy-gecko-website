@@ -31,13 +31,13 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center h-full py-2">
+          <Link href="/" className="flex items-center py-3">
             <Image
               src="/images/PrivacyGecko_logo.png"
               alt="Privacy Gecko"
-              width={180}
-              height={180}
-              className="rounded-lg h-full w-auto object-contain"
+              width={200}
+              height={200}
+              className="rounded-lg max-h-16 w-auto"
             />
           </Link>
 
