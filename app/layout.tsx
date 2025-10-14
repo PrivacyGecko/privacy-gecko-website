@@ -9,8 +9,8 @@ import { MobileStickyCTA } from "@/components/ui/MobileStickyCTA";
 // No external font requests = zero tracking vectors
 
 export const metadata: Metadata = {
-  title: "Privacy Gecko - Privacy Tools That Actually Work",
-  description: "8 open-source privacy tools. No tracking. No data selling. Powered by $PRICKO.",
+  title: "Privacy Gecko - 8 Privacy Tools. Zero Data Collection. Always Free Tier.",
+  description: "8 privacy tools including password manager, VPN, ad blocker, file sharing, and more. No tracking. No data selling. Free tier always available. Token optional.",
   keywords: ["privacy", "security", "encryption", "open source", "privacy tools", "GDPR", "data protection"],
   authors: [{ name: "@0xAnonA" }],
   creator: "@0xAnonA",
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     canonical: "https://privacygecko.com",
   },
   openGraph: {
-    title: "Privacy Gecko - Privacy Tools That Actually Work",
-    description: "8 open-source privacy tools. No tracking. No data selling. Powered by $PRICKO.",
+    title: "Privacy Gecko - 8 Privacy Tools. Zero Data Collection. Always Free Tier.",
+    description: "8 privacy tools including password manager, VPN, ad blocker, file sharing, and more. No tracking. No data selling. Free tier always available.",
     type: "website",
     url: "https://privacygecko.com",
     siteName: "Privacy Gecko",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Privacy Gecko - Privacy Tools That Actually Work",
+        alt: "Privacy Gecko - 8 Privacy Tools. Zero Data Collection.",
       },
     ],
   },
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@privacygecko",
     creator: "@0xAnonA",
-    title: "Privacy Gecko - Privacy Tools That Actually Work",
-    description: "8 open-source privacy tools. No tracking. No data selling. Powered by $PRICKO.",
+    title: "Privacy Gecko - 8 Privacy Tools. Zero Data Collection. Always Free Tier.",
+    description: "8 privacy tools including password manager, VPN, ad blocker, file sharing, and more. No tracking. No data selling. Free tier always available.",
     images: ["/twitter-image"],
   },
   icons: {

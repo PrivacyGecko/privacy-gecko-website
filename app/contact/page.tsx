@@ -8,9 +8,10 @@ import { Mail, Send, HelpCircle, Info } from "lucide-react";
 import Link from "next/link";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ContactPage() {
+  const [mounted, setMounted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,6 +24,10 @@ export default function ContactPage() {
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,7 +89,7 @@ export default function ContactPage() {
                 <CardHeader>
                   <CardTitle className="text-2xl mb-6">Send Us a Message</CardTitle>
 
-                  {submitStatus.type && (
+                  {mounted && submitStatus.type && (
                     <div
                       className={`p-4 rounded-lg mb-6 ${
                         submitStatus.type === "success"
