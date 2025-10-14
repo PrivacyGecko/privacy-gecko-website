@@ -32,8 +32,8 @@ export const METRICS = {
 
 export const TOOLS_COUNT = {
   live: 2,  // GeckoAdvisor, GeckoShare
-  beta: 1,  // GeckoShell (85%)
-  inDevelopment: 5, // GeckoGuard (90%), GeckoLock (65%), GeckoView (45%), GeckoVPN (20%), GeckoWatch (55%)
+  beta: 0,  // None currently
+  inDevelopment: 6, // GeckoGuard (90%), GeckoLock (65%), GeckoView (45%), GeckoShell (30%), GeckoVPN (20%), GeckoWatch (55%)
   total: 8
 } as const;
 

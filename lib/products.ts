@@ -223,9 +223,10 @@ export const products: Product[] = [
     tagline: "Cross-Platform Mobile Privacy Browser",
     description: "Cross-platform mobile privacy browser with Solana wallet integration and privacy toolkit SDK. Features plugin system architecture for extensibility, built-in crypto wallet, and comprehensive privacy protection on iOS and Android.",
     icon: Smartphone,
-    status: "beta",
-    progress: 85,
-    lastUpdated: "2025-01-08",
+    status: "coming",
+    comingDate: "In Development",
+    progress: 30,
+    lastUpdated: "2025-10-14",
     href: "/products/shell",
     features: [
       "Cross-platform (iOS, Android)",

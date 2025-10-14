@@ -123,7 +123,7 @@ export default function RoadmapPage() {
       <Section className="bg-neutral-100">
         <SectionHeader
           title="In Active Development"
-          description="5 privacy tools being built in public - join waitlist for early adopter benefits"
+          description="6 privacy tools being built in public - join waitlist for early adopter benefits"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {comingProducts.map((product, index) => {
