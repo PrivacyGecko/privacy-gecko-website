@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Hero } from "@/components/sections/Hero";
 import { Section, SectionHeader } from "@/components/sections/Section";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
@@ -139,9 +140,13 @@ export default function AboutPage() {
             <Card>
               <CardHeader>
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-gecko-green rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                    🦎
-                  </div>
+                  <Image
+                    src="/images/PrivacyGecko_logo.png"
+                    alt="Privacy Gecko Logo"
+                    width={64}
+                    height={64}
+                    className="rounded-full"
+                  />
                   <div>
                     <CardTitle>@0xAnonA</CardTitle>
                     <CardDescription>Founder & Privacy Advocate</CardDescription>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Loading() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
@@ -6,8 +8,14 @@ export default function Loading() {
           {/* Animated gecko logo spinner */}
           <div className="absolute inset-0 border-4 border-gray-200 rounded-full"></div>
           <div className="absolute inset-0 border-4 border-gecko-green rounded-full border-t-transparent animate-spin"></div>
-          <div className="absolute inset-0 flex items-center justify-center text-2xl">
-            🦎
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Image
+              src="/images/PrivacyGecko_logo.png"
+              alt="Privacy Gecko Logo"
+              width={40}
+              height={40}
+              className="rounded-lg"
+            />
           </div>
         </div>
         <p className="text-gray-600 font-medium">Loading...</p>

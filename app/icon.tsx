@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og'
+import fs from 'fs'
+import path from 'path'
 
 // Image metadata
 export const size = {
@@ -7,27 +9,14 @@ export const size = {
 }
 export const contentType = 'image/png'
 
-// Image generation
-export default function Icon() {
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          fontSize: 24,
-          background: '#10B981',
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderRadius: '8px',
-        }}
-      >
-        🦎
-      </div>
-    ),
-    {
-      ...size,
-    }
-  )
+// Image generation - serve the actual favicon
+export default async function Icon() {
+  const faviconPath = path.join(process.cwd(), 'public/images/favicon.png')
+  const imageBuffer = fs.readFileSync(faviconPath)
+
+  return new Response(imageBuffer, {
+    headers: {
+      'Content-Type': 'image/png',
+    },
+  })
 }

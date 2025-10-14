@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Twitter, Send, Github, Shield } from "lucide-react";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 
@@ -37,9 +38,13 @@ export function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gecko-green rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">🦎</span>
-              </div>
+              <Image
+                src="/images/PrivacyGecko_logo.png"
+                alt="Privacy Gecko Logo"
+                width={40}
+                height={40}
+                className="rounded-lg"
+              />
               <span className="font-display font-bold text-lg">
                 Privacy Gecko
               </span>

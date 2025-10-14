@@ -31,17 +31,14 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center">
             <Image
               src="/images/PrivacyGecko_logo.png"
-              alt="Privacy Gecko Logo"
-              width={32}
-              height={32}
+              alt="Privacy Gecko"
+              width={48}
+              height={48}
               className="rounded-lg"
             />
-            <span className="font-display font-bold text-xl text-neutral-900">
-              Privacy Gecko
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
