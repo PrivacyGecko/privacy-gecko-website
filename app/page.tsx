@@ -18,15 +18,15 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <Hero
-        title="Privacy Tools That Actually Work."
+        title="8 Privacy Tools. Zero Data Collection. Always Free Tier."
         description="2 live privacy tools available now, plus 6 more in active development. Open source roadmap. No tracking. No data selling. Take back control of your digital privacy."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="https://geckoadvisor.com" variant="primary" size="lg">
-            Join GeckoAdvisor Beta →
+            Start Free Privacy Scan →
           </Button>
           <Button href="/products" variant="outline" size="lg">
-            Explore All Products
+            See All 8 Privacy Tools
           </Button>
         </div>
       </Hero>
@@ -78,8 +78,8 @@ export default function HomePage() {
       <Section>
         <SectionHeader
           subtitle="Why Choose Us"
-          title="Privacy-First, Always"
-          description="We're building the tools we wished existed. Open, transparent, and actually private."
+          title="We Practice What We Preach"
+          description="Building privacy tools the right way: Open source. No tracking. No data selling."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <motion.div
@@ -311,10 +311,10 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="https://geckoadvisor.com" variant="primary" size="lg">
-                Join GeckoAdvisor Beta →
+                Try Your First Scan Free →
               </Button>
               <Button href="/products" variant="secondary" size="lg">
-                View All Products
+                Browse All Privacy Tools
               </Button>
             </div>
           </motion.div>
