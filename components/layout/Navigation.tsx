@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -31,9 +32,13 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gecko-green rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">🦎</span>
-            </div>
+            <Image
+              src="/images/PrivacyGecko_logo.png"
+              alt="Privacy Gecko Logo"
+              width={32}
+              height={32}
+              className="rounded-lg"
+            />
             <span className="font-display font-bold text-xl text-neutral-900">
               Privacy Gecko
             </span>
