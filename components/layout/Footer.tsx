@@ -37,15 +37,15 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
+            <Link href="/" className="flex items-center space-x-3 mb-4">
               <Image
                 src="/images/PrivacyGecko_logo.png"
                 alt="Privacy Gecko Logo"
-                width={40}
-                height={40}
+                width={64}
+                height={64}
                 className="rounded-lg"
               />
-              <span className="font-display font-bold text-lg">
+              <span className="font-display font-bold text-xl">
                 Privacy Gecko
               </span>
             </Link>

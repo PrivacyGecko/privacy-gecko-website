@@ -35,8 +35,8 @@ export function Navigation() {
             <Image
               src="/images/PrivacyGecko_logo.png"
               alt="Privacy Gecko"
-              width={48}
-              height={48}
+              width={120}
+              height={120}
               className="rounded-lg"
             />
           </Link>
