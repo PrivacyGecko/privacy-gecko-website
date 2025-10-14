@@ -29,15 +29,15 @@ export function Navigation() {
 
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center min-h-[88px] py-4">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center py-2">
             <Image
               src="/images/PrivacyGecko_logo.png"
               alt="Privacy Gecko"
-              width={160}
-              height={160}
-              className="rounded-lg h-[72px] w-auto"
+              width={120}
+              height={120}
+              className="rounded-lg h-12 w-auto"
             />
           </Link>
 
