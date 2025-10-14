@@ -53,7 +53,7 @@ const nextConfig = {
               "connect-src 'self' plausible.io",
               "frame-ancestors 'none'",
               "base-uri 'self'",
-              "form-action 'self'",
+              "form-action 'self' https://formspree.io",
               "upgrade-insecure-requests"
             ].join('; ')
           }
