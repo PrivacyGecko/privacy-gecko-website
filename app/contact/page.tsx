@@ -1,5 +1,3 @@
-"use client";
-
 import { Hero } from "@/components/sections/Hero";
 import { Section } from "@/components/sections/Section";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
