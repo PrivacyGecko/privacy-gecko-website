@@ -31,13 +31,13 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center -my-2">
+          <Link href="/" className="flex items-center -my-6">
             <Image
               src="/images/PrivacyGecko_logo.png"
               alt="Privacy Gecko"
               width={500}
               height={500}
-              className="h-20 w-20 rounded-lg"
+              className="h-28 w-auto rounded-lg"
               priority
             />
           </Link>
