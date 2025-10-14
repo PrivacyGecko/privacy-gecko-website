@@ -97,10 +97,10 @@ export default function GeckoGuardPage() {
         description={product.description}
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button href="#pricing" variant="primary" size="lg">
-            Coming Soon
+          <Button href="/contact?subject=GeckoGuard%20Waitlist" variant="primary" size="lg">
+            Join Waitlist
           </Button>
-          <Badge variant="coming">In Web Store Review</Badge>
+          <Badge variant="coming">In Web Store Review (90% Complete)</Badge>
         </div>
       </Hero>
 
@@ -243,8 +243,8 @@ export default function GeckoGuardPage() {
                 <CardTitle className="text-2xl mb-2">Free</CardTitle>
                 <div className="text-3xl font-bold mb-4">$0<span className="text-lg text-gray-500 font-normal">/month</span></div>
                 <CardDescription className="mb-6">{product.pricing.free.limit}</CardDescription>
-                <Button href="#install" variant="outline" className="w-full mb-6">
-                  Get Started
+                <Button href="/contact?subject=GeckoGuard%20Waitlist" variant="outline" className="w-full mb-6">
+                  Join Waitlist (Free)
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.free.features.map((feature, index) => (
@@ -275,8 +275,8 @@ export default function GeckoGuardPage() {
                   <span className="text-lg text-gray-500 font-normal">/month</span>
                 </div>
                 <CardDescription className="mb-6">Advanced features and device sync</CardDescription>
-                <Button href="#checkout" variant="primary" className="w-full mb-6">
-                  Start Pro Trial
+                <Button href="/contact?subject=GeckoGuard%20Pro%20Waitlist" variant="primary" className="w-full mb-6">
+                  Join Waitlist (Pro)
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.pro.features.map((feature, index) => (
@@ -328,8 +328,8 @@ export default function GeckoGuardPage() {
             GeckoGuard is currently in Chrome/Firefox web store review. Be among the first to protect your privacy when it launches soon.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="#install" variant="primary" size="lg">
-              Install GeckoGuard
+            <Button href="/contact?subject=GeckoGuard%20Waitlist" variant="primary" size="lg">
+              Join Waitlist
             </Button>
             <Button href="/products" variant="ghost" size="lg">
               Explore Other Tools

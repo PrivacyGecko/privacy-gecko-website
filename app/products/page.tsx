@@ -7,6 +7,7 @@ import { products } from "@/lib/products";
 
 export default function ProductsPage() {
   const liveProducts = products.filter((p) => p.status === "live");
+  const betaProducts = products.filter((p) => p.status === "beta");
   const comingProducts = products.filter((p) => p.status === "coming");
 
   return (
@@ -43,8 +44,36 @@ export default function ProductsPage() {
         </div>
       </Section>
 
+      {/* Beta Products */}
+      {betaProducts.length > 0 && (
+        <Section className="bg-neutral-100">
+          <div className="mb-12">
+            <h2 className="text-3xl font-display font-bold text-center mb-4">
+              Beta Testing
+            </h2>
+            <p className="text-center text-gray-600">
+              Join the beta program and help shape these tools
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {betaProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                name={product.name}
+                description={product.description}
+                icon={product.icon}
+                status={product.status}
+                href={product.href}
+                features={product.features.slice(0, 3)}
+                progress={product.progress}
+              />
+            ))}
+          </div>
+        </Section>
+      )}
+
       {/* Coming Soon Products */}
-      <Section className="bg-neutral-100">
+      <Section className={betaProducts.length > 0 ? "" : "bg-neutral-100"}>
         <div className="mb-12">
           <h2 className="text-3xl font-display font-bold text-center mb-4">
             Coming Soon

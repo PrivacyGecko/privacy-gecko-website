@@ -7,6 +7,7 @@ import {
   Mail,
   Globe,
   Search,
+  Smartphone,
   LucideIcon,
 } from "lucide-react";
 import { getProductLink } from "./domain-config";
@@ -17,9 +18,9 @@ export interface Product {
   tagline: string;
   description: string;
   icon: LucideIcon;
-  status: "live" | "coming";
+  status: "live" | "beta" | "coming";
   comingDate?: string;
-  progress?: number; // Percentage complete for coming-soon products
+  progress?: number; // Percentage complete for coming-soon/beta products
   lastUpdated?: string; // Last progress update date
   href: string;
   isExternal?: boolean; // True if links to external domain
@@ -111,7 +112,10 @@ export const products: Product[] = [
     tagline: "Browse Without Being Tracked",
     description: "Browser extension for comprehensive tracker & ad blocking",
     icon: Eye,
-    status: "live",
+    status: "coming",
+    comingDate: "In Web Store Review",
+    progress: 90,
+    lastUpdated: "2025-10-14",
     href: "/products/guard",
     features: [
       "Real-time tracker & ad blocking",
@@ -215,36 +219,42 @@ export const products: Product[] = [
   },
   {
     id: "shell",
-    name: "Gecko Shell",
-    tagline: "Anonymous Email Made Easy",
-    description: "Disposable email addresses for ultimate privacy",
-    icon: Mail,
-    status: "coming",
-    comingDate: "In Development",
-    progress: 30,
+    name: "GeckoShell",
+    tagline: "Cross-Platform Mobile Privacy Browser",
+    description: "Cross-platform mobile privacy browser with Solana wallet integration and privacy toolkit SDK. Features plugin system architecture for extensibility, built-in crypto wallet, and comprehensive privacy protection on iOS and Android.",
+    icon: Smartphone,
+    status: "beta",
+    progress: 85,
     lastUpdated: "2025-01-08",
-    href: "/products",
+    href: "/products/shell",
     features: [
-      "Unlimited disposable emails",
-      "Auto-forwarding",
-      "Spam filtering",
-      "Custom domains",
-      "Email aliases",
-      "Burn after reading",
+      "Cross-platform (iOS, Android)",
+      "Plugin system architecture",
+      "Solana wallet integration",
+      "Privacy toolkit SDK",
+      "Anti-tracking protection",
+      "Encrypted browsing",
     ],
     pricing: {
       free: {
-        limit: "5 active emails",
-        features: ["Basic forwarding", "7-day retention", "Standard domains"],
+        limit: "Basic features, 1 device",
+        features: [
+          "Cross-platform mobile browser",
+          "Basic privacy protection",
+          "Anti-tracking",
+          "Encrypted browsing",
+          "Basic Solana wallet"
+        ],
       },
       pro: {
-        price: "$5.99/mo",
+        price: "$6.99/mo",
         features: [
-          "Unlimited emails",
-          "Custom domains",
-          "Extended retention",
-          "Advanced filtering",
-          "API access",
+          "Unlimited device sync",
+          "Advanced privacy toolkit SDK",
+          "Premium plugin marketplace",
+          "Priority support",
+          "Advanced wallet features",
+          "Custom privacy profiles"
         ],
       },
     },

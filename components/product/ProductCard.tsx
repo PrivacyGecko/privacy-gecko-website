@@ -11,7 +11,7 @@ interface ProductCardProps {
   name: string;
   description: string;
   icon: LucideIcon;
-  status: "live" | "coming";
+  status: "live" | "beta" | "coming";
   comingDate?: string;
   href: string;
   isExternal?: boolean;
@@ -45,7 +45,7 @@ export function ProductCard({
               <Icon className="w-6 h-6 text-gecko-green" />
             </div>
             <Badge variant={status}>
-              {status === "live" ? "Live" : comingDate || "Coming Soon"}
+              {status === "live" ? "Live" : status === "beta" ? "Beta" : comingDate || "Coming Soon"}
             </Badge>
           </div>
           <CardTitle>{name}</CardTitle>
@@ -101,6 +101,10 @@ export function ProductCard({
                 Learn More
               </Button>
             )
+          ) : status === "beta" ? (
+            <Button href={href} variant="primary" size="sm" className="w-full">
+              Join Beta →
+            </Button>
           ) : (
             <div>
               <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="outline" size="sm" className="w-full">
