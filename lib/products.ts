@@ -175,7 +175,7 @@ export const products: Product[] = [
           "Emergency access",
           "Priority support (4hr response)",
           "Advanced sharing & folders",
-          "10% off with 50K+ $PRICKO tokens",
+          "10% off with 50K+ $PRICKO tokens (optional)",
         ],
       },
     },
@@ -212,7 +212,7 @@ export const products: Product[] = [
           "IPFS decentralized storage",
           "PDF exports",
           "Priority support",
-          "Free with 100K+ $PRICKO tokens",
+          "Free with 100K+ $PRICKO tokens (optional)",
         ],
       },
     },
@@ -220,8 +220,8 @@ export const products: Product[] = [
   {
     id: "shell",
     name: "GeckoShell",
-    tagline: "Cross-Platform Mobile Privacy Browser",
-    description: "Cross-platform mobile privacy browser with Solana wallet integration and privacy toolkit SDK. Features plugin system architecture for extensibility, built-in crypto wallet, and comprehensive privacy protection on iOS and Android.",
+    tagline: "Private Mobile Browser",
+    description: "Private mobile browser that blocks trackers on iOS and Android. Built-in crypto wallet optional.",
     icon: Smartphone,
     status: "coming",
     comingDate: "In Development",
@@ -229,33 +229,33 @@ export const products: Product[] = [
     lastUpdated: "2025-10-14",
     href: "/products/shell",
     features: [
-      "Cross-platform (iOS, Android)",
-      "Plugin system architecture",
-      "Solana wallet integration",
-      "Privacy toolkit SDK",
-      "Anti-tracking protection",
-      "Encrypted browsing",
+      "Blocks trackers automatically",
+      "Available on iOS and Android",
+      "Built-in Solana wallet (optional)",
+      "Privacy-focused browsing",
+      "No browsing history collection",
+      "Fast and lightweight",
     ],
     pricing: {
       free: {
         limit: "Basic features, 1 device",
         features: [
-          "Cross-platform mobile browser",
-          "Basic privacy protection",
-          "Anti-tracking",
-          "Encrypted browsing",
-          "Basic Solana wallet"
+          "Private mobile browsing",
+          "Automatic tracker blocking",
+          "No browsing history saved",
+          "Basic crypto wallet",
+          "Ad blocking"
         ],
       },
       pro: {
         price: "$6.99/mo",
         features: [
-          "Unlimited device sync",
-          "Advanced privacy toolkit SDK",
-          "Premium plugin marketplace",
+          "Sync across devices",
+          "Advanced tracker blocking",
+          "Premium wallet features",
           "Priority support",
-          "Advanced wallet features",
-          "Custom privacy profiles"
+          "Custom filters",
+          "Faster updates"
         ],
       },
     },

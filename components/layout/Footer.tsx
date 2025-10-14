@@ -45,7 +45,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 text-sm mb-4">
-              Privacy tools that actually work. Powered by $PRICKO.
+              Privacy tools that actually work. <span className="text-gray-500">($PRICKO token optional)</span>
             </p>
 
             {/* Brand Social Links */}

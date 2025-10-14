@@ -65,7 +65,7 @@ export default function AboutPage() {
                 for tracking protection, and we're not stopping there.
               </p>
               <p>
-                Today, Privacy Gecko is an ecosystem of 8 tools (3 live, 5 coming soon) available to
+                Today, Privacy Gecko is an ecosystem of 8 tools (2 live, 6 in development) available to
                 privacy-conscious users worldwide. As an early-stage project launched in January 2025, we're focused on
                 building trust through transparency and delivering on our promises. We're committed to open source transparency,
                 community-driven development, and our original mission: making privacy accessible to everyone.
