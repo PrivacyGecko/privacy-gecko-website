@@ -29,7 +29,7 @@ export function ContactForm() {
           </div>
         )}
 
-        <form action="https://formspree.io/f/xovkyqdp" method="POST" className="space-y-6">
+        <form action="https://formspree.io/f/xjkajvrk" method="POST" className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
               Name
