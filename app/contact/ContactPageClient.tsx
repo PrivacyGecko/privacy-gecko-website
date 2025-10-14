@@ -1,13 +1,19 @@
 "use client";
 
-import { Hero } from "@/components/sections/Hero";
 import { Section } from "@/components/sections/Section";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Mail, Send, HelpCircle } from "lucide-react";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 
-// Import ContactForm with SSR disabled to prevent hydration errors
+// Import Hero and ContactForm with SSR disabled to prevent hydration errors
+// Hero uses framer-motion animations which cause hydration mismatches
+const Hero = dynamic(() => import("@/components/sections/Hero").then((mod) => ({ default: mod.Hero })), {
+  ssr: false,
+  loading: () => <div className="h-64" />,
+});
+
 const ContactForm = dynamic(() => import("@/components/ContactForm").then((mod) => ({ default: mod.ContactForm })), {
   ssr: false,
   loading: () => (
