@@ -41,8 +41,8 @@ export function Footer() {
               <Image
                 src="/images/PrivacyGecko_logo.png"
                 alt="Privacy Gecko Logo"
-                width={120}
-                height={120}
+                width={200}
+                height={200}
                 className="rounded-lg"
               />
             </Link>
