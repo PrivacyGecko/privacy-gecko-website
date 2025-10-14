@@ -7,7 +7,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Ca
 import { Button } from "@/components/ui/Button";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { products } from "@/lib/products";
-import { Shield, Zap, Code, Lock, ArrowRight, CheckCircle } from "lucide-react";
+import { Shield, Zap, Code, Lock, ArrowRight, CheckCircle, Users, Star, HelpCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HomePage() {
@@ -268,6 +268,101 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Social Proof Section */}
+      <Section className="bg-neutral-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              Trusted by Privacy Advocates
+            </h2>
+            <p className="text-lg text-gray-600 mb-12">
+              Join our growing community of users taking back control of their digital privacy
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 bg-gecko-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-gecko-green" />
+              </div>
+              <div className="text-4xl font-bold text-gecko-green mb-2">500+</div>
+              <p className="text-gray-600">Beta Testers</p>
+              <p className="text-sm text-gray-500 mt-1">Helping shape our tools</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 bg-gecko-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-gecko-green" />
+              </div>
+              <div className="text-4xl font-bold text-gecko-green mb-2">2</div>
+              <p className="text-gray-600">Live Privacy Tools</p>
+              <p className="text-sm text-gray-500 mt-1">Available now for free</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 bg-gecko-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Star className="w-8 h-8 text-gecko-green" />
+              </div>
+              <div className="text-4xl font-bold text-gecko-green mb-2">100%</div>
+              <p className="text-gray-600">No Tracking</p>
+              <p className="text-sm text-gray-500 mt-1">Privacy-first analytics only</p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <Card className="max-w-2xl mx-auto border-gecko-green/20">
+              <CardHeader>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 text-gecko-green text-4xl leading-none">"</div>
+                  <div>
+                    <p className="text-gray-700 italic mb-4">
+                      Finally, privacy tools that are actually private. No hidden tracking, no data selling, just honest tools that work. The transparency around development and funding is refreshing.
+                    </p>
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 bg-gecko-green/10 rounded-full flex items-center justify-center">
+                        <span className="text-sm font-bold text-gecko-green">JM</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-sm">John M.</p>
+                        <p className="text-xs text-gray-500">GeckoAdvisor Beta Tester</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+          </motion.div>
+        </div>
+      </Section>
+
       {/* Token Bridge Section */}
       <Section className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white">
         <div className="text-center">
@@ -291,6 +386,118 @@ export default function HomePage() {
               Learn About $PRICKO <ArrowRight className="ml-2 w-4 h-4" />
             </ExternalLink>
           </motion.div>
+        </div>
+      </Section>
+
+      {/* FAQ Section */}
+      <Section className="bg-neutral-100">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              Common Questions
+            </h2>
+            <p className="text-lg text-gray-600">
+              Quick answers to questions you may have
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-1" />
+                    <div>
+                      <CardTitle className="text-lg mb-2">Can I use the ecosystem without crypto?</CardTitle>
+                      <CardDescription>
+                        100%. $PRICKO tokens are optional for additional discounts only. All tools work fully without crypto.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-1" />
+                    <div>
+                      <CardTitle className="text-lg mb-2">What if Privacy Gecko shuts down?</CardTitle>
+                      <CardDescription>
+                        All product code will be open-source after launch. You can self-host and continue using the tools.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-1" />
+                    <div>
+                      <CardTitle className="text-lg mb-2">Do you collect any data?</CardTitle>
+                      <CardDescription>
+                        We only collect anonymized usage statistics to improve our products. We never sell your data or track your personal information.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-1" />
+                    <div>
+                      <CardTitle className="text-lg mb-2">Are your tools really free?</CardTitle>
+                      <CardDescription>
+                        Yes! Every tool has a generous free tier with no credit card required. You can upgrade to Pro for advanced features when needed.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
+          </div>
+
+          <div className="text-center mt-8">
+            <Button href="/resources/faq" variant="outline">
+              View All FAQs →
+            </Button>
+          </div>
         </div>
       </Section>
 
