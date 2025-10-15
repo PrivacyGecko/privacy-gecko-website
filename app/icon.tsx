@@ -11,7 +11,7 @@ export const contentType = 'image/png'
 
 // Image generation - serve the actual favicon
 export default async function Icon() {
-  const faviconPath = path.join(process.cwd(), 'public/images/pg_favicon.png')
+  const faviconPath = path.join(process.cwd(), 'public/images/favicon_1024x1024.png')
   const imageBuffer = fs.readFileSync(faviconPath)
 
   return new Response(imageBuffer, {
