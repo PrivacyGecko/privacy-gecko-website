@@ -6,13 +6,13 @@ export default function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="text-center">
-        <div className="mb-4 flex justify-center">
+        <div className="mb-6 flex justify-center">
           <Image
-            src="/images/PrivacyGecko_logo.png"
+            src="/images/privacygecko_logo_320x100.png"
             alt="Privacy Gecko Logo"
-            width={128}
-            height={128}
-            className="rounded-lg"
+            width={320}
+            height={100}
+            className="h-20 w-auto"
           />
         </div>
         <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">404</h1>
