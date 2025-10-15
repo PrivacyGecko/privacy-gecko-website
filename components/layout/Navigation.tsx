@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -30,13 +31,15 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gecko-green rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">🦎</span>
-            </div>
-            <span className="font-display font-bold text-xl text-neutral-900">
-              Privacy Gecko
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/privacygecko_logo_320x100.png"
+              alt="Privacy Gecko"
+              width={320}
+              height={100}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

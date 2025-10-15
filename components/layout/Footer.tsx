@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Twitter, Send, Github, Shield } from "lucide-react";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 
@@ -36,13 +37,14 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gecko-green rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">🦎</span>
-              </div>
-              <span className="font-display font-bold text-lg">
-                Privacy Gecko
-              </span>
+            <Link href="/" className="inline-block mb-3">
+              <Image
+                src="/images/privacygecko_logo_320x100.png"
+                alt="Privacy Gecko Logo"
+                width={320}
+                height={100}
+                className="h-16 w-auto"
+              />
             </Link>
             <p className="text-gray-400 text-sm mb-4">
               Privacy tools that actually work. <span className="text-gray-500">($PRICKO token optional)</span>
