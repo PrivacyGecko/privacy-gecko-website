@@ -85,7 +85,7 @@ export default function GeckoLockPage() {
     },
     {
       question: "How does Gecko Lock integrate with $PRICKO tokens?",
-      answer: "$PRICKO token holders get optional benefits: 10% discount on Pro subscriptions when you stake 50,000+ tokens, early access to new features, and voting rights on product roadmap decisions. Tokens are completely optional—Gecko Lock works fully without any cryptocurrency requirement.",
+      answer: "$PRICKO token holders will get optional benefits once staking launches (Q4 2025): 10% discount on Pro subscriptions when you stake 50,000+ tokens, early access to new features, and future voting rights on product roadmap decisions. Tokens are completely optional—Gecko Lock works fully without any cryptocurrency requirement.",
     },
     {
       question: "Can I self-host Gecko Lock on my own servers?",

@@ -23,8 +23,8 @@ export default function TokenPage() {
     },
     {
       icon: Users,
-      title: "Community Governance",
-      description: "Vote on feature priorities and product roadmap decisions",
+      title: "Community Governance (Coming Soon)",
+      description: "When staking launches, vote on feature priorities and product roadmap decisions",
     },
     {
       icon: Shield,
@@ -33,8 +33,8 @@ export default function TokenPage() {
     },
     {
       icon: Coins,
-      title: "Staking Rewards",
-      description: "Earn rewards by staking tokens and supporting the ecosystem",
+      title: "Staking Rewards (Q4 2025)",
+      description: "Once launched, earn rewards by staking tokens and supporting the ecosystem",
     },
   ];
 
@@ -47,12 +47,12 @@ export default function TokenPage() {
     {
       amount: "5,000 $PRICKO",
       discount: "35% off",
-      benefits: ["35% discount on all Pro plans", "Priority support", "Beta feature access", "Governance voting rights"],
+      benefits: ["35% discount on all Pro plans", "Priority support", "Beta feature access", "Governance voting rights (when staking launches)"],
     },
     {
       amount: "10,000+ $PRICKO",
       discount: "50% off",
-      benefits: ["50% discount on all Pro plans", "Lifetime discount guarantee", "VIP support channel", "Full governance rights", "Exclusive features"],
+      benefits: ["50% discount on all Pro plans", "Lifetime discount guarantee", "VIP support channel", "Full governance rights (when staking launches)", "Exclusive features"],
     },
   ];
 
@@ -61,7 +61,7 @@ export default function TokenPage() {
       <Hero
         subtitle="$PRICKO Token"
         title="Stake Tokens, Unlock Premium Benefits"
-        description="Join the Privacy Gecko ecosystem with $PRICKO tokens and get exclusive discounts, early access, and governance rights."
+        description="Join the Privacy Gecko ecosystem with $PRICKO tokens (launching Q4 2025) and get exclusive discounts, early access, and future governance rights."
       />
 
       {/* Coming Soon Banner */}
@@ -88,14 +88,14 @@ export default function TokenPage() {
           />
           <div className="prose prose-lg max-w-none text-gray-600">
             <p>
-              $PRICKO is the official utility token of the Privacy Gecko ecosystem. By holding and staking $PRICKO tokens,
-              you unlock significant benefits including discounts on Pro subscriptions, early access to new tools,
-              and the ability to participate in community governance.
+              $PRICKO is the official utility token of the Privacy Gecko ecosystem. Once staking launches in Q4 2025, by holding and staking $PRICKO tokens,
+              you will unlock significant benefits including discounts on Pro subscriptions, early access to new tools,
+              and the ability to participate in future community governance.
             </p>
             <p>
               Unlike traditional subscription models, $PRICKO creates a sustainable ecosystem where early supporters
-              and community members are rewarded with lifetime benefits. The more you stake, the more you save—and
-              the more influence you have over the project's direction.
+              and community members will be rewarded with lifetime benefits. The more you stake, the more you save—and
+              the more influence you will have over the project's direction.
             </p>
           </div>
         </div>

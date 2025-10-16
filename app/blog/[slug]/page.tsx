@@ -243,9 +243,9 @@ const blogPosts = {
       <p>You can find all our code on <a href="https://github.com/privacygecko" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
 
       <h2>The $PRICKO Token</h2>
-      <p>Privacy Gecko is powered by the $PRICKO token, which enables:</p>
+      <p>Privacy Gecko is powered by the $PRICKO token, which will enable (launching Q4 2025):</p>
       <ul>
-        <li><strong>Community Governance:</strong> Token holders vote on feature priorities</li>
+        <li><strong>Community Governance (Coming Soon):</strong> Once staking launches, token holders will vote on feature priorities</li>
         <li><strong>Rewards:</strong> Earn tokens by contributing to the ecosystem</li>
         <li><strong>Premium Access:</strong> Use tokens to access Pro features</li>
         <li><strong>Sustainable Funding:</strong> Support development without selling user data</li>

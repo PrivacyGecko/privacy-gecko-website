@@ -376,7 +376,7 @@ export default function HomePage() {
               Powered by $PRICKO (Optional)
             </h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Stake tokens for discounts and governance rights. All tools work fully without any token requirement.
+              Coming Q4 2025: Stake tokens for discounts and future governance rights. All tools work fully without any token requirement.
             </p>
             <ExternalLink
               href="https://pricko.com"
