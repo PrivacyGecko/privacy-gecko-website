@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Ca
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { getProductById } from "@/lib/products";
+import { AIFeatureList, TimelineIndicator } from "@/components/ai";
 import { CheckCircle, Sparkles, Lock, Smartphone, MessageSquare, FileText, Tags, Zap, Clock, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -76,6 +77,10 @@ export default function GeckoViewPage() {
       answer: "Gecko View uses OpenAI's GPT-3.5 (free tier) and GPT-4 (Pro tier) APIs to generate summaries. When you summarize content, the article text is sent to OpenAI's secure API for processing. OpenAI does not train models on API data per their policy. Once summarized, your content is encrypted in your private vault using end-to-end encryption. We never sell your reading data, and your vault contents are encrypted so even we cannot read them.",
     },
     {
+      question: "How does Gecko View use AI?",
+      answer: "GeckoView is an AI-native product where AI is core to functionality from day 1 (launching Q4 2025). One-click AI summaries, intelligent content extraction, and privacy-preserving recommendations all run locally where possible. While summaries require OpenAI API calls, your vault stays encrypted end-to-end. This proves AI and privacy can coexist. AI features are included in both free tier (with limits) and Pro tier (unlimited).",
+    },
+    {
       question: "What's the difference between free and Pro tiers?",
       answer: "Free tier includes 10 summaries per day using GPT-3.5, local storage in your browser, and basic features. Pro tier ($9.99/mo OR free with 100K+ $PRICKO tokens) unlocks unlimited summaries, GPT-4 access for higher-quality insights, IPFS sync for decentralized storage, PDF exports, priority support, and cross-device sync via encrypted cloud storage. Both tiers include end-to-end encryption and full privacy protection.",
     },
@@ -101,8 +106,8 @@ export default function GeckoViewPage() {
     <>
       <Hero
         subtitle="Gecko View"
-        title={product.tagline}
-        description="Turn hours of reading into minutes with AI-powered summaries. Save to your encrypted vault and access across all devices. Get the insights you need without compromising your reading privacy."
+        title="Save and Summarize Without Being Tracked - Private AI-Powered Reading"
+        description="Turn hours of reading into minutes with privacy-preserving AI summaries. This is an AI-native product where AI powers core functionality while maintaining end-to-end encryption. Save to your encrypted vault and access across all devices."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button href="#pricing" variant="primary" size="lg">
@@ -111,6 +116,26 @@ export default function GeckoViewPage() {
           <Badge variant="coming">Coming Q4 2025</Badge>
         </div>
       </Hero>
+
+      {/* Development Status Banner */}
+      <Section className="bg-gradient-to-r from-purple-100 to-blue-100">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <TimelineIndicator timeline="In Development" format="banner" />
+          <p className="text-lg mt-4 text-gray-700">Development Progress: <strong>45%</strong></p>
+          <div className="mt-4 bg-white/50 rounded-lg p-4 max-w-2xl mx-auto">
+            <p className="text-sm text-gray-800 font-semibold mb-2">🤖 AI-Native Product</p>
+            <p className="text-sm text-gray-700">
+              This is an AI-powered product from day 1—AI is core to functionality. Privacy is NOT compromised: all AI features use end-to-end encryption and run through privacy-preserving architecture.
+            </p>
+          </div>
+        </motion.div>
+      </Section>
 
       {/* Benefits Section */}
       <Section>
@@ -172,14 +197,14 @@ export default function GeckoViewPage() {
         </div>
       </Section>
 
-      {/* Features Grid */}
+      {/* Features Grid with AI-Native Badge */}
       <Section className="bg-neutral-100">
         <SectionHeader
-          subtitle="Features"
-          title="AI-Powered Reading Assistant"
-          description="Summarize, save, and search—all while protecting your privacy"
+          subtitle="Planned Features"
+          title="Privacy-Preserving AI Reading Assistant"
+          description="AI-powered from launch while maintaining end-to-end encryption"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -199,6 +224,43 @@ export default function GeckoViewPage() {
               </Card>
             </motion.div>
           ))}
+        </div>
+
+        {/* AI-Native Features Section */}
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Card className="border-2 border-purple-300 bg-gradient-to-br from-purple-50/50 to-blue-50/50">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-2xl">🤖</span>
+                  <CardTitle className="text-2xl">AI-Native Product</CardTitle>
+                  <span className="ml-auto text-xs font-semibold text-purple-700 bg-purple-100 px-2 py-1 rounded-full border border-purple-300">
+                    AI is CORE
+                  </span>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  GeckoView is designed around AI from the start. AI powers the core summarization and organization features while your reading history stays encrypted and private. This proves AI and privacy can coexist.
+                </p>
+                {product.ai && (
+                  <AIFeatureList
+                    currentFeatures={[
+                      "Browser extension with right-click integration",
+                      "Mobile apps for iOS and Android",
+                      "Export to PDF and IPFS sharing"
+                    ]}
+                    aiFeatures={product.ai.aiFeatures}
+                    aiTimeline="Q4 2025"
+                    highlightAISection={false}
+                  />
+                )}
+              </CardHeader>
+            </Card>
+          </motion.div>
         </div>
       </Section>
 

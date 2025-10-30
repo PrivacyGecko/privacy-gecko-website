@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Ca
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { getProductById } from "@/lib/products";
+import { AIFeatureList } from "@/components/ai";
 import { CheckCircle, Lock, Clock, Shield, Link as LinkIcon, BarChart, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -80,6 +81,10 @@ export default function GeckoSharePage() {
       answer: "You can share any file type - documents, images, videos, archives, code files, and more. The only limitation is file size (100MB free, 5GB Pro).",
     },
     {
+      question: "How does GeckoShare use AI?",
+      answer: "GeckoShare will gain AI capabilities in Q4 2025 that scan files for hidden metadata and trackers before sharing, and detect suspicious file patterns. All AI processing happens locally on your device—no files sent to the cloud for analysis. AI features will be available to free tier users with monthly limits, or unlimited for Pro subscribers. File sharing works fully without any AI requirement.",
+    },
+    {
       question: "Can I track who downloaded my files?",
       answer: "Pro users get detailed audit logs showing download timestamps, IP addresses (anonymized for privacy), and access attempts.",
     },
@@ -93,7 +98,7 @@ export default function GeckoSharePage() {
     <>
       <Hero
         subtitle="GeckoShare"
-        title={product.tagline}
+        title="Share Files Securely Without Leaving a Trail - AI Threat Detection Coming Q4 2025"
         description={product.description}
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -104,14 +109,14 @@ export default function GeckoSharePage() {
         </div>
       </Hero>
 
-      {/* Features Grid */}
+      {/* Features Grid with AI */}
       <Section>
         <SectionHeader
           subtitle="Features"
           title="Share Files Without Compromising Privacy"
           description="Client-side encrypted file sharing - your files are encrypted before they leave your device"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -131,6 +136,33 @@ export default function GeckoSharePage() {
               </Card>
             </motion.div>
           ))}
+        </div>
+
+        {/* AI Features Section */}
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl mb-4">Current & AI-Enhanced Features</CardTitle>
+                {product.ai && (
+                  <AIFeatureList
+                    currentFeatures={[
+                      "End-to-end encryption (256-bit AES)",
+                      "Expiring links & password protection",
+                      "No registration required"
+                    ]}
+                    aiFeatures={product.ai.aiFeatures}
+                    aiTimeline="Q4 2025"
+                  />
+                )}
+              </CardHeader>
+            </Card>
+          </motion.div>
         </div>
       </Section>
 

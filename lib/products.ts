@@ -12,6 +12,33 @@ import {
 } from "lucide-react";
 import { getProductLink } from "./domain-config";
 
+/**
+ * AI Feature Timing Categories
+ * - launch-feature: AI capabilities available at product launch
+ * - post-launch: AI features added after initial product release
+ * - ai-native: Product is fundamentally AI-powered from the start
+ * - future: AI capabilities planned for later phases
+ */
+export type AITiming = "launch-feature" | "post-launch" | "ai-native" | "future";
+
+export interface ProductAIFeatures {
+  /**
+   * When AI features will be available for this product
+   */
+  aiTiming: AITiming;
+
+  /**
+   * List of AI-powered capabilities
+   */
+  aiFeatures: string[];
+
+  /**
+   * Development progress percentage (0-100)
+   * Only for products in development (status: "coming")
+   */
+  developmentProgress?: number;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -25,6 +52,7 @@ export interface Product {
   href: string;
   isExternal?: boolean; // True if links to external domain
   features: string[];
+  ai?: ProductAIFeatures; // AI feature information (Coming Q4 2025)
   pricing: {
     free: {
       limit: string;
@@ -55,6 +83,15 @@ export const products: Product[] = [
       "Real-time threat monitoring",
       "Compliance checking",
     ],
+    ai: {
+      aiTiming: "launch-feature",
+      aiFeatures: [
+        "AI generates personalized privacy action plans",
+        "Continuous monitoring with intelligent alerts",
+        "Predictive risk assessment",
+        "Natural language privacy reports",
+      ],
+    },
     pricing: {
       free: {
         limit: "3 scans/month",
@@ -89,6 +126,15 @@ export const products: Product[] = [
       "Custom branding options",
       "Team collaboration features",
     ],
+    ai: {
+      aiTiming: "launch-feature",
+      aiFeatures: [
+        "AI scans files for hidden metadata/trackers",
+        "Detects suspicious file patterns before sharing",
+        "Intelligent expiration recommendations",
+        "Automated security suggestions",
+      ],
+    },
     pricing: {
       free: {
         limit: "Up to 100MB, 24hr expiry",
@@ -125,6 +171,16 @@ export const products: Product[] = [
       "Fingerprint protection",
       "Cross-device sync",
     ],
+    ai: {
+      aiTiming: "launch-feature",
+      developmentProgress: 90,
+      aiFeatures: [
+        "Learns NEW tracking patterns in real-time",
+        "Adapts blocking to your browsing style",
+        "Predicts and blocks emerging threats",
+        "Self-updating without filter list updates",
+      ],
+    },
     pricing: {
       free: {
         limit: "Basic blocking, 10,000 trackers blocked",
@@ -162,6 +218,16 @@ export const products: Product[] = [
       "Built-in 2FA authenticator",
       "Easy import from LastPass, 1Password, Bitwarden",
     ],
+    ai: {
+      aiTiming: "post-launch",
+      developmentProgress: 65,
+      aiFeatures: [
+        "AI evaluates password strength against latest breaches",
+        "Detects phishing attempts on login pages",
+        "Intelligent password generation",
+        "Breach monitoring with smart alerts",
+      ],
+    },
     pricing: {
       free: {
         limit: "Unlimited passwords, 2 devices",
@@ -199,6 +265,17 @@ export const products: Product[] = [
       "Gecko Digest AI assistant (chat with content)",
       "Export to PDF and share via IPFS",
     ],
+    ai: {
+      aiTiming: "ai-native",
+      developmentProgress: 45,
+      aiFeatures: [
+        "One-click AI summaries (GPT-3.5 & GPT-4)",
+        "End-to-end encrypted bookmark vault",
+        "Intelligent content extraction",
+        "Privacy-preserving recommendations",
+        "Runs locally - your reading stays private",
+      ],
+    },
     pricing: {
       free: {
         limit: "10 summaries/day with GPT-3.5",
@@ -236,6 +313,16 @@ export const products: Product[] = [
       "No browsing history collection",
       "Fast and lightweight",
     ],
+    ai: {
+      aiTiming: "future",
+      developmentProgress: 30,
+      aiFeatures: [
+        "Adaptive content blocking",
+        "Intelligent cache management",
+        "Smart browsing suggestions",
+        "Privacy risk warnings",
+      ],
+    },
     pricing: {
       free: {
         limit: "Basic features, 1 device",
@@ -279,6 +366,16 @@ export const products: Product[] = [
       "WireGuard protocol",
       "Multi-device support",
     ],
+    ai: {
+      aiTiming: "future",
+      developmentProgress: 20,
+      aiFeatures: [
+        "Smart server selection",
+        "Intelligent split tunneling",
+        "Threat-based routing",
+        "Optimized performance",
+      ],
+    },
     pricing: {
       free: {
         limit: "Limited servers, 10GB/month",
@@ -315,6 +412,16 @@ export const products: Product[] = [
       "Competitor analysis",
       "Detailed reports",
     ],
+    ai: {
+      aiTiming: "launch-feature",
+      developmentProgress: 55,
+      aiFeatures: [
+        "Continuous compliance monitoring",
+        "Intelligent change detection",
+        "Risk scoring with ML models",
+        "Automated compliance reports",
+      ],
+    },
     pricing: {
       free: {
         limit: "3 scans/month",

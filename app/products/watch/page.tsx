@@ -6,148 +6,134 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Ca
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { getProductById } from "@/lib/products";
-import { AIFeatureList } from "@/components/ai";
-import { CheckCircle, Shield, Activity, AlertTriangle, FileText, Bell, TrendingUp } from "lucide-react";
+import { AIFeatureList, TimelineIndicator } from "@/components/ai";
+import { CheckCircle, Search, Shield, FileText, TrendingUp, AlertTriangle, BarChart, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function GeckoAdvisorPage() {
-  const product = getProductById("advisor");
+export default function GeckoWatchPage() {
+  const product = getProductById("watch");
 
   if (!product) return null;
 
   const features = [
     {
       icon: Shield,
-      title: "Device Scanning",
-      description: "Comprehensive scan of your device to identify privacy vulnerabilities and security risks",
+      title: "GDPR Compliance Checking",
+      description: "Automatically scan websites for GDPR, CCPA, and privacy regulation compliance",
     },
     {
-      icon: Activity,
-      title: "Privacy Score",
-      description: "Get a clear privacy score from 0-100 with detailed breakdown of your privacy posture",
-    },
-    {
-      icon: AlertTriangle,
-      title: "Vulnerability Detection",
-      description: "Identify outdated software, weak configurations, and potential security holes",
+      icon: Search,
+      title: "Cookie & Tracker Analysis",
+      description: "Identify all cookies, trackers, and third-party scripts running on any website",
     },
     {
       icon: FileText,
-      title: "Detailed Reports",
-      description: "Receive comprehensive reports with actionable recommendations to improve your privacy",
-    },
-    {
-      icon: Bell,
-      title: "Priority Alerts",
-      description: "Get notified about critical privacy threats and emerging security issues",
+      title: "Privacy Policy Scanning",
+      description: "Analyze privacy policies for red flags, contradictions, and compliance issues",
     },
     {
       icon: TrendingUp,
-      title: "Historical Tracking",
-      description: "Monitor your privacy improvements over time with historical trend analysis",
+      title: "Continuous Monitoring",
+      description: "Get alerts when websites change their privacy practices or add new trackers",
+    },
+    {
+      icon: BarChart,
+      title: "Competitor Analysis",
+      description: "Compare privacy practices across multiple websites and generate benchmark reports",
+    },
+    {
+      icon: Eye,
+      title: "Detailed Reports",
+      description: "Export comprehensive privacy audit reports in PDF or JSON format",
     },
   ];
 
   const howItWorks = [
     {
       step: 1,
-      title: "Install & Scan",
-      description: "Download GeckoAdvisor and run your first privacy scan in under 60 seconds",
+      title: "Enter URL",
+      description: "Submit any website URL you want to analyze for privacy compliance",
     },
     {
       step: 2,
-      title: "Review Score",
-      description: "See your privacy score and understand which areas need improvement",
+      title: "AI Scans Site",
+      description: "GeckoWatch scans cookies, trackers, and privacy policies with AI analysis",
     },
     {
       step: 3,
-      title: "Take Action",
-      description: "Follow our step-by-step recommendations to enhance your digital privacy",
+      title: "Get Instant Report",
+      description: "Receive detailed compliance report with actionable recommendations",
     },
     {
       step: 4,
-      title: "Stay Protected",
-      description: "Regular scans ensure your privacy remains secure as threats evolve",
+      title: "Monitor Changes",
+      description: "Pro users get continuous monitoring with alerts for privacy practice changes",
     },
   ];
 
   const faqs = [
     {
-      question: "How does GeckoAdvisor scan my device?",
-      answer: "GeckoAdvisor performs local scans of your device settings, installed applications, and system configurations. All scanning happens on your device - we never upload your personal data to our servers.",
+      question: "Who is GeckoWatch designed for?",
+      answer: "GeckoWatch is for website owners, privacy professionals, compliance officers, and anyone who wants to understand website privacy practices. Whether you're auditing your own site or researching competitors, GeckoWatch provides detailed privacy insights.",
     },
     {
-      question: "What's included in the free tier?",
-      answer: "The free tier includes 3 scans per month with basic privacy reports, device scanning, and a privacy score. You'll get fundamental recommendations to improve your privacy.",
+      question: "What privacy regulations does GeckoWatch check?",
+      answer: "GeckoWatch checks for GDPR (EU), CCPA (California), LGPD (Brazil), and other major privacy regulations. We analyze cookie consent banners, privacy policies, data collection practices, and third-party integrations.",
     },
     {
-      question: "How does GeckoAdvisor use AI?",
-      answer: "GeckoAdvisor will gain AI capabilities in Q4 2025 that generate personalized privacy action plans and provide intelligent alerts based on your specific device configuration. All AI processing happens locally on your device—no data sent to the cloud. AI features will be available to free tier users with monthly limits, or unlimited for Pro subscribers. The core privacy scanning works fully without any AI requirement.",
+      question: "How does GeckoWatch use AI?",
+      answer: "GeckoWatch launches with AI capabilities built-in (Q4 2025) for continuous compliance monitoring and intelligent change detection. AI analyzes privacy policy changes, detects new trackers automatically, and scores compliance risk using ML models. All AI processing happens on our servers—your scanned sites are not stored permanently. AI features are included in both free tier (with limits) and Pro tier (unlimited).",
     },
     {
-      question: "How is my data protected?",
-      answer: "All scans are performed locally on your device. We only store anonymized scan metadata (not your personal data) to improve our recommendations. Working toward full code transparency after comprehensive security audits.",
+      question: "Can I monitor multiple websites?",
+      answer: "Yes! Free tier allows 3 scans per month. Pro tier ($14.99/mo) includes unlimited scans, continuous monitoring for up to 10 websites, and API access for automated scanning.",
     },
     {
-      question: "Can I use GeckoAdvisor on multiple devices?",
-      answer: "Yes! Pro users can scan unlimited devices and sync their privacy scores across all their hardware.",
+      question: "How accurate are the compliance reports?",
+      answer: "GeckoWatch provides high-accuracy technical analysis of cookies, trackers, and privacy policies. However, legal compliance is complex and context-dependent. We recommend using GeckoWatch as a starting point and consulting with legal professionals for official compliance certification.",
+    },
+    {
+      question: "Can I white-label reports for clients?",
+      answer: "Yes! Pro tier includes white-label PDF reports with your branding. Perfect for agencies, consultants, and privacy professionals who audit client websites.",
     },
   ];
 
   return (
     <>
       <Hero
-        subtitle="GeckoAdvisor"
-        title="Find Out If Your Device Is Leaking Data - AI-Powered Recommendations Coming Q4 2025"
-        description={product.description}
+        subtitle="Gecko Watch"
+        title="AI-Powered Website Privacy Scanner"
+        description="Analyze and monitor privacy compliance of any website. Detect cookies, trackers, and GDPR violations with AI-powered continuous monitoring and intelligent change detection."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button href="https://geckoadvisor.com" variant="primary" size="lg">
-            Join Beta Program →
+          <Button href="#pricing" variant="primary" size="lg">
+            Coming Soon
           </Button>
-          <Badge variant="beta">Beta Testing</Badge>
+          <Badge variant="coming">Coming Q4 2025</Badge>
         </div>
       </Hero>
 
-      {/* Beta Status Banner */}
-      <Section className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-8">
+      {/* Development Status Banner */}
+      <Section className="bg-blue-50">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto"
+          className="text-center"
         >
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <Bell className="w-5 h-5" />
-            <h3 className="text-xl font-bold">Currently in Beta Testing</h3>
-          </div>
-          <p className="text-blue-100 mb-4">
-            GeckoAdvisor is in active beta with limited spots available. Early beta users get lifetime discounted pricing and help shape the product.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>Free forever tier</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>Beta pricing: $4.99/mo (vs $9.99 at launch)</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>No payment required during beta</span>
-            </div>
-          </div>
+          <TimelineIndicator timeline="In Development" format="banner" />
+          <p className="text-lg mt-4 text-gray-700">Development Progress: <strong>55%</strong></p>
+          <p className="text-sm mt-2 text-gray-600">AI compliance monitoring available at launch</p>
         </motion.div>
       </Section>
 
-      {/* Features Grid with AI */}
+      {/* Features Grid */}
       <Section>
         <SectionHeader
-          subtitle="Features"
-          title="Everything You Need to Know Your Privacy Score"
-          description="Comprehensive privacy auditing with actionable insights"
+          subtitle="Planned Features"
+          title="Comprehensive Website Privacy Analysis"
+          description="AI-powered compliance monitoring and intelligent change detection"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {features.map((feature, index) => (
@@ -171,7 +157,7 @@ export default function GeckoAdvisorPage() {
           ))}
         </div>
 
-        {/* AI Features Section */}
+        {/* AI Features Section - Launch Feature */}
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -179,15 +165,21 @@ export default function GeckoAdvisorPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Card>
+            <Card className="border-2 border-amber-300 bg-gradient-to-br from-amber-50/50 to-blue-50/50">
               <CardHeader>
-                <CardTitle className="text-2xl mb-4">Current & AI-Enhanced Features</CardTitle>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-2xl">🤖</span>
+                  <CardTitle className="text-2xl">AI-Powered from Day One</CardTitle>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  GeckoWatch launches with AI-powered compliance monitoring built-in. This is what makes it different from manual website audits.
+                </p>
                 {product.ai && (
                   <AIFeatureList
                     currentFeatures={[
-                      "Device scanning & vulnerability detection",
-                      "Privacy score & actionable recommendations",
-                      "Tracking detection & secure configuration tips"
+                      "GDPR compliance checking",
+                      "Cookie & tracker analysis",
+                      "Privacy policy scanning"
                     ]}
                     aiFeatures={product.ai.aiFeatures}
                     aiTimeline="Q4 2025"
@@ -203,7 +195,7 @@ export default function GeckoAdvisorPage() {
       <Section className="bg-neutral-100">
         <SectionHeader
           subtitle="How It Works"
-          title="Get Your Privacy Score in 4 Simple Steps"
+          title="Analyze Website Privacy in 4 Simple Steps"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {howItWorks.map((item, index) => (
@@ -228,9 +220,9 @@ export default function GeckoAdvisorPage() {
       {/* Pricing */}
       <Section id="pricing">
         <SectionHeader
-          subtitle="Beta Pricing"
-          title="Limited Time Beta Pricing"
-          description="Lock in discounted pricing as an early adopter. No payment required during beta."
+          subtitle="Pricing"
+          title="Choose Your Plan"
+          description="Start free, upgrade when you need continuous monitoring"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <motion.div
@@ -244,8 +236,8 @@ export default function GeckoAdvisorPage() {
                 <CardTitle className="text-2xl mb-2">Free</CardTitle>
                 <div className="text-3xl font-bold mb-4">$0<span className="text-lg text-gray-500 font-normal">/month</span></div>
                 <CardDescription className="mb-6">{product.pricing.free.limit}</CardDescription>
-                <Button href="https://geckoadvisor.com" variant="outline" className="w-full mb-6">
-                  Try Beta →
+                <Button href="#scan" variant="outline" className="w-full mb-6">
+                  Start Scanning
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.free.features.map((feature, index) => (
@@ -275,9 +267,9 @@ export default function GeckoAdvisorPage() {
                   {product.pricing.pro.price.split('/')[0]}
                   <span className="text-lg text-gray-500 font-normal">/month</span>
                 </div>
-                <CardDescription className="mb-6">Unlimited scans, advanced features</CardDescription>
-                <Button href="https://geckoadvisor.com" variant="primary" className="w-full mb-6">
-                  Join Beta →
+                <CardDescription className="mb-6">Unlimited scans & continuous monitoring</CardDescription>
+                <Button href="#checkout" variant="primary" className="w-full mb-6">
+                  Start Pro Trial
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.pro.features.map((feature, index) => (
@@ -323,14 +315,14 @@ export default function GeckoAdvisorPage() {
       <Section>
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Ready to Join the Beta?
+            Ready to Analyze Website Privacy?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Limited beta access available. Start with 3 free scans per month. No credit card required.
+            GeckoWatch launches Q4 2025 with AI-powered compliance monitoring. Be among the first to audit website privacy practices.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="https://geckoadvisor.com" variant="primary" size="lg">
-              Join Beta Program →
+            <Button href="#pricing" variant="primary" size="lg">
+              Coming Soon
             </Button>
             <Button href="/products" variant="ghost" size="lg">
               Explore Other Tools

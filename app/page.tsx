@@ -2,6 +2,8 @@
 
 import { Hero } from "@/components/sections/Hero";
 import { Section, SectionHeader } from "@/components/sections/Section";
+import { AIPreviewBanner } from "@/components/sections/AIPreviewBanner";
+import { AIDifference } from "@/components/sections/AIDifference";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -18,18 +20,22 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <Hero
-        title="8 Privacy Tools. Zero Data Collection. Always Free Tier."
-        description="2 live privacy tools available now, plus 6 more in active development. Open source roadmap. No tracking. No data selling. Take back control of your digital privacy."
+        subtitle="Privacy Tools That Evolve With You"
+        title="8 Privacy Tools (AI Coming Q4 2025). Zero Data Collection. Always Free Tier."
+        description="Intelligent privacy protection that adapts to new threats—running on your device, not our servers—without ever compromising your data. 2 live tools today, AI superpowers coming Q4 2025."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button href="https://geckoadvisor.com" variant="primary" size="lg">
-            Start Free Privacy Scan →
+          <Button href="/products" variant="primary" size="lg">
+            Explore Products
           </Button>
-          <Button href="/products" variant="outline" size="lg">
-            See All 8 Privacy Tools
+          <Button href="#ai-preview" variant="outline" size="lg">
+            Learn About AI Features →
           </Button>
         </div>
       </Hero>
+
+      {/* AI Preview Banner */}
+      <AIPreviewBanner />
 
       {/* Early Adopter Discount Banner */}
       <Section className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white py-8">
@@ -74,14 +80,17 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* The AI Difference */}
+      <AIDifference />
+
       {/* Why Privacy Gecko */}
       <Section>
         <SectionHeader
           subtitle="Why Choose Us"
           title="We Practice What We Preach"
-          description="Building privacy tools the right way: Open source. No tracking. No data selling."
+          description="Building privacy tools the right way: AI-enhanced. Open source. No tracking. No data selling."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -89,14 +98,17 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
             className="h-full"
           >
-            <Card className="h-full flex flex-col">
+            <Card className="h-full flex flex-col border-purple-200 hover:border-purple-400 transition-colors duration-200">
               <CardHeader className="flex-grow">
-                <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
-                  <Shield className="w-6 h-6 text-gecko-green" />
+                <div className="p-3 bg-gradient-to-br from-purple-100 to-blue-100 rounded-lg w-fit mb-4">
+                  <Zap className="w-6 h-6 text-purple-700" />
                 </div>
-                <CardTitle>Complete Ecosystem</CardTitle>
+                <CardTitle className="flex items-center gap-2">
+                  AI-Enhanced (Coming Q4 2025)
+                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-normal">Q4 2025</span>
+                </CardTitle>
                 <CardDescription>
-                  8 integrated tools covering every aspect of your digital privacy needs
+                  Privacy-first AI that will learn and adapt WITHOUT compromising your data. Local processing, federated learning, open-source models coming Q4 2025.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -112,11 +124,11 @@ export default function HomePage() {
             <Card className="h-full flex flex-col">
               <CardHeader className="flex-grow">
                 <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
-                  <Zap className="w-6 h-6 text-gecko-green" />
+                  <Shield className="w-6 h-6 text-gecko-green" />
                 </div>
-                <CardTitle>Free Tier Always</CardTitle>
+                <CardTitle>Complete Ecosystem</CardTitle>
                 <CardDescription>
-                  Every tool has a generous free tier. No credit card required to start
+                  8 integrated tools covering every aspect of your digital privacy needs. One account, one token, unified protection with AI enhancement.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -132,11 +144,11 @@ export default function HomePage() {
             <Card className="h-full flex flex-col">
               <CardHeader className="flex-grow">
                 <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
-                  <Code className="w-6 h-6 text-gecko-green" />
+                  <Zap className="w-6 h-6 text-gecko-green" />
                 </div>
-                <CardTitle>Open Development</CardTitle>
+                <CardTitle>Free Tier Always</CardTitle>
                 <CardDescription>
-                  Committed to transparency. Website is open source, product code in development
+                  Every tool has a generous free tier. No credit card required to start. AI features available to free users with monthly limits.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -152,11 +164,31 @@ export default function HomePage() {
             <Card className="h-full flex flex-col">
               <CardHeader className="flex-grow">
                 <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
+                  <Code className="w-6 h-6 text-gecko-green" />
+                </div>
+                <CardTitle>Open Development</CardTitle>
+                <CardDescription>
+                  Committed to transparency. Website is open source, product code in development. Core AI models will be open-sourced after maturity.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="h-full"
+          >
+            <Card className="h-full flex flex-col">
+              <CardHeader className="flex-grow">
+                <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
                   <Lock className="w-6 h-6 text-gecko-green" />
                 </div>
-                <CardTitle>Privacy-First</CardTitle>
+                <CardTitle>Always Improving</CardTitle>
                 <CardDescription>
-                  We don't track, sell, or monetize your data. Ever. That's our promise
+                  Static blocklists become outdated. Our AI evolves with the threat landscape. Continuous protection that gets smarter every day.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -365,19 +397,166 @@ export default function HomePage() {
 
       {/* Token Bridge Section */}
       <Section className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white">
-        <div className="text-center">
+        <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
               Powered by $PRICKO (Optional)
             </h2>
-            <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Coming Q4 2025: Stake tokens for discounts and future governance rights. All tools work fully without any token requirement.
+            <p className="text-lg mb-2 max-w-2xl mx-auto">
+              Coming Q4 2025: The token that funds AI-enhanced privacy for everyone.
             </p>
+            <p className="text-sm opacity-90 max-w-2xl mx-auto">
+              All tools work fully without any token requirement.
+            </p>
+          </motion.div>
+
+          {/* How $PRICKO Enables AI */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mb-12"
+          >
+            <h3 className="text-2xl font-display font-bold mb-6 text-center">
+              How $PRICKO Enables AI
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Problem Card */}
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6">
+                <h4 className="text-lg font-bold mb-3 flex items-center gap-2">
+                  <span className="text-red-300">⚠️</span> Problem: Privacy-First AI is Expensive
+                </h4>
+                <ul className="space-y-2 text-sm opacity-90">
+                  <li className="flex items-start gap-2">
+                    <span className="flex-shrink-0 mt-1">•</span>
+                    <span>GPU compute for local inference: High cost per 1000 users</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="flex-shrink-0 mt-1">•</span>
+                    <span>Model training and updates: Ongoing development costs</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="flex-shrink-0 mt-1">•</span>
+                    <span>No ads, no data selling = no revenue to fund it</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Solution Card */}
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6">
+                <h4 className="text-lg font-bold mb-3 flex items-center gap-2">
+                  <span className="text-green-300">✓</span> Solution: Token-Funded AI Infrastructure
+                </h4>
+                <ul className="space-y-2 text-sm opacity-90">
+                  <li className="flex items-start gap-2">
+                    <span className="flex-shrink-0 mt-1">•</span>
+                    <span>Token holders stake to provide/subsidize compute</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="flex-shrink-0 mt-1">•</span>
+                    <span>30% of Pro revenue funds AI development</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="flex-shrink-0 mt-1">•</span>
+                    <span>Community-owned models and infrastructure</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="flex-shrink-0 mt-1">•</span>
+                    <span>Sustainable without compromising privacy</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Token Benefits */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Free Tier Users */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                <h4 className="text-lg font-bold mb-3">Free Tier Users</h4>
+                <ul className="space-y-2 text-sm opacity-90">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-green-300" />
+                    <span>Limited AI queries per month (e.g., 50 scans)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-green-300" />
+                    <span>Basic AI features included</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-green-300" />
+                    <span>Community-subsidized through staking</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Token Holders (Pro) */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                <h4 className="text-lg font-bold mb-3">Token Holders (Pro)</h4>
+                <ul className="space-y-2 text-sm opacity-90">
+                  <li className="flex items-start gap-2">
+                    <Star className="w-4 h-4 flex-shrink-0 mt-0.5 text-amber-300" />
+                    <span>Unlimited AI queries across all products</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Star className="w-4 h-4 flex-shrink-0 mt-0.5 text-amber-300" />
+                    <span>Early access to new AI features</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Star className="w-4 h-4 flex-shrink-0 mt-0.5 text-amber-300" />
+                    <span>Vote on AI model training priorities</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Star className="w-4 h-4 flex-shrink-0 mt-0.5 text-amber-300" />
+                    <span>Contribute to federated learning network</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Why Token-Funded AI Works */}
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+              <h4 className="text-lg font-bold mb-4 text-center">Why Token-Funded AI Works</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 text-sm">
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-green-300" />
+                  <span>Aligns incentives (token grows = better AI = more users)</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-green-300" />
+                  <span>Community ownership of AI models</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-green-300" />
+                  <span>No need to sell data for revenue</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-green-300" />
+                  <span>Sustainable long-term funding</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-green-300" />
+                  <span>Transparent use of funds</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-center"
+          >
             <ExternalLink
               href="https://pricko.com"
               className="inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border-2 bg-white text-gecko-green hover:bg-gray-100 border-white focus:ring-white px-8 py-3 text-lg shadow-lg hover:shadow-xl"

@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Ca
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { getProductById } from "@/lib/products";
+import { AIFeatureList, TimelineIndicator } from "@/components/ai";
 import { CheckCircle, Eye, Activity, Filter, Cookie, Fingerprint, RefreshCw, Zap, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -80,8 +81,12 @@ export default function GeckoGuardPage() {
       answer: "No! GeckoGuard is optimized for performance. By blocking ads and trackers, most users actually experience faster page loads and reduced data usage.",
     },
     {
+      question: "How does GeckoGuard use AI?",
+      answer: "GeckoGuard browser extension launches soon with traditional blocking (currently 90% complete). AI features will be added in Q4 2025 via automatic update. AI will learn new tracking patterns in real-time and adapt blocking to your browsing style without needing constant filter list updates. All AI processing happens locally in your browser—no data sent to the cloud. AI features are included in both free and Pro tiers. GeckoGuard works fully with traditional filter lists if you prefer to disable AI.",
+    },
+    {
       question: "How is GeckoGuard different from other ad blockers?",
-      answer: "GeckoGuard focuses on privacy-first blocking. We block trackers even if they don't show ads, protect against fingerprinting, and have no acceptable ads program. We're committed to transparency.",
+      answer: "GeckoGuard focuses on privacy-first blocking with AI-adaptive protection (AI coming Q4 2025). We block trackers even if they don't show ads, protect against fingerprinting, and have no acceptable ads program. Our AI will learn new threats automatically without waiting for filter list updates. We're committed to transparency.",
     },
     {
       question: "Can I whitelist certain websites?",
@@ -93,8 +98,8 @@ export default function GeckoGuardPage() {
     <>
       <Hero
         subtitle="GeckoGuard"
-        title={product.tagline}
-        description={product.description}
+        title="Block Trackers Before They See You - AI-Adaptive Protection (Coming Q4 2025)"
+        description="Stop websites from following you across the internet with AI-powered, self-learning tracker blocking that will adapt to new threats in real-time (AI launching Q4 2025)"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button href="/contact?subject=GeckoGuard%20Waitlist" variant="primary" size="lg">
@@ -104,14 +109,29 @@ export default function GeckoGuardPage() {
         </div>
       </Hero>
 
+      {/* Development Status Banner */}
+      <Section className="bg-blue-50">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <TimelineIndicator timeline="In Web Store Review" format="banner" />
+          <p className="text-lg mt-4 text-gray-700">Development Progress: <strong>90%</strong></p>
+          <p className="text-sm mt-2 text-gray-600">AI-powered tracker blocking available at launch</p>
+        </motion.div>
+      </Section>
+
       {/* Features Grid */}
       <Section>
         <SectionHeader
           subtitle="Features"
           title="Complete Privacy Protection While Browsing"
-          description="Block trackers, ads, and fingerprinting with one powerful extension"
+          description="Block trackers, ads, and fingerprinting with AI-adaptive, self-learning protection"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -131,6 +151,39 @@ export default function GeckoGuardPage() {
               </Card>
             </motion.div>
           ))}
+        </div>
+
+        {/* AI Features Section - Launch Feature */}
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Card className="border-2 border-amber-300 bg-gradient-to-br from-amber-50/50 to-blue-50/50">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-2xl">🤖</span>
+                  <CardTitle className="text-2xl">AI-Powered from Day One</CardTitle>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  GeckoGuard launches with AI capabilities built-in. This is what makes it different from traditional ad blockers.
+                </p>
+                {product.ai && (
+                  <AIFeatureList
+                    currentFeatures={[
+                      "Real-time tracker & ad blocking",
+                      "Privacy dashboard & statistics",
+                      "Custom filter lists"
+                    ]}
+                    aiFeatures={product.ai.aiFeatures}
+                    aiTimeline="Q4 2025"
+                  />
+                )}
+              </CardHeader>
+            </Card>
+          </motion.div>
         </div>
       </Section>
 

@@ -43,6 +43,51 @@ export default function FAQPage() {
       ],
     },
     {
+      category: "AI Features",
+      questions: [
+        {
+          q: "How is Privacy Gecko's AI different from other AI tools?",
+          a: "Most AI tools send your data to the cloud for processing. Ours runs locally on your device. Your data never leaves your computer. It's privacy-first AI—something that's rarely done right.",
+        },
+        {
+          q: "Will AI features cost extra?",
+          a: "Free tier gets limited AI queries per month (e.g., 50 scans). Token holders (Pro users) get unlimited AI access across all products. The token subsidizes AI compute costs.",
+        },
+        {
+          q: "Can I use products without AI?",
+          a: "Absolutely! AI is an enhancement, not a requirement. All core privacy features work with AI disabled. You're always in control.",
+        },
+        {
+          q: "Does the AI learn from my data?",
+          a: "Only if you opt in, and only through privacy-preserving federated learning. Your raw data never leaves your device. Only encrypted, anonymized patterns are shared to improve community protection.",
+        },
+        {
+          q: "What if I don't trust AI?",
+          a: "Good! Skepticism is healthy. That's why we're open-sourcing our AI models, publishing audits, and giving you complete control. You can verify everything we claim.",
+        },
+        {
+          q: "How do you prevent AI bias?",
+          a: "We train on diverse, public datasets. Community governance reviews training data. Open source models allow external bias auditing. Token holders vote on training priorities.",
+        },
+        {
+          q: "Can AI make mistakes?",
+          a: "Yes. That's why AI suggests, you decide. We never automatically block or unblock based purely on AI. Human override always available.",
+        },
+        {
+          q: "Will AI replace human privacy experts?",
+          a: "No. AI enhances human judgment, doesn't replace it. Think of it as a very fast research assistant, not a decision-maker.",
+        },
+        {
+          q: "Why do I need a token for AI features?",
+          a: "AI compute is expensive (GPUs, inference, training). Token staking provides decentralized funding without selling your data. It's the honest way to fund privacy-first AI.",
+        },
+        {
+          q: "What AI models do you use?",
+          a: "Privacy scanning: Custom transformer models (similar to BERT). Threat detection: Ensemble classifiers + anomaly detection. Summarization: Fine-tuned GPT-style models (local inference). All models optimized for on-device performance.",
+        },
+      ],
+    },
+    {
       category: "Billing & Subscriptions",
       questions: [
         {

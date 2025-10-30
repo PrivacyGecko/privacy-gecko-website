@@ -5,6 +5,7 @@ import { LucideIcon } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { AIBadge } from "@/components/ai";
 import { motion } from "framer-motion";
 
 interface ProductCardProps {
@@ -17,6 +18,7 @@ interface ProductCardProps {
   isExternal?: boolean;
   features?: string[];
   progress?: number;
+  hasAI?: boolean;
 }
 
 export function ProductCard({
@@ -29,6 +31,7 @@ export function ProductCard({
   isExternal = false,
   features,
   progress,
+  hasAI = true,
 }: ProductCardProps) {
   return (
     <motion.div
@@ -44,9 +47,12 @@ export function ProductCard({
             <div className="p-3 bg-gecko-green/10 rounded-lg">
               <Icon className="w-6 h-6 text-gecko-green" />
             </div>
-            <Badge variant={status}>
-              {status === "live" ? "Live" : status === "beta" ? "Beta" : comingDate || "Coming Soon"}
-            </Badge>
+            <div className="flex flex-col gap-2 items-end">
+              <Badge variant={status}>
+                {status === "live" ? "Live" : status === "beta" ? "Beta" : comingDate || "Coming Soon"}
+              </Badge>
+              {hasAI && <AIBadge status="coming-soon" timeline="Q4 2025" size="sm" />}
+            </div>
           </div>
           <CardTitle>{name}</CardTitle>
           <CardDescription>{description}</CardDescription>

@@ -6,148 +6,134 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Ca
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { getProductById } from "@/lib/products";
-import { AIFeatureList } from "@/components/ai";
-import { CheckCircle, Shield, Activity, AlertTriangle, FileText, Bell, TrendingUp } from "lucide-react";
+import { AIFeatureList, TimelineIndicator } from "@/components/ai";
+import { CheckCircle, Smartphone, Shield, Zap, Wallet, Eye, Globe, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function GeckoAdvisorPage() {
-  const product = getProductById("advisor");
+export default function GeckoShellPage() {
+  const product = getProductById("shell");
 
   if (!product) return null;
 
   const features = [
     {
       icon: Shield,
-      title: "Device Scanning",
-      description: "Comprehensive scan of your device to identify privacy vulnerabilities and security risks",
+      title: "Automatic Tracker Blocking",
+      description: "Browse privately with built-in tracker and ad blocking on both iOS and Android",
     },
     {
-      icon: Activity,
-      title: "Privacy Score",
-      description: "Get a clear privacy score from 0-100 with detailed breakdown of your privacy posture",
+      icon: Globe,
+      title: "Cross-Platform",
+      description: "Native apps for iOS and Android with seamless sync between devices",
     },
     {
-      icon: AlertTriangle,
-      title: "Vulnerability Detection",
-      description: "Identify outdated software, weak configurations, and potential security holes",
+      icon: Eye,
+      title: "No Browsing History",
+      description: "Your browsing history never leaves your device. We don't collect or store what you browse",
     },
     {
-      icon: FileText,
-      title: "Detailed Reports",
-      description: "Receive comprehensive reports with actionable recommendations to improve your privacy",
+      icon: Wallet,
+      title: "Built-In Solana Wallet",
+      description: "Optional crypto wallet integration for Web3 browsing (completely optional feature)",
     },
     {
-      icon: Bell,
-      title: "Priority Alerts",
-      description: "Get notified about critical privacy threats and emerging security issues",
+      icon: Zap,
+      title: "Fast & Lightweight",
+      description: "Optimized for mobile performance with minimal battery and data usage",
     },
     {
-      icon: TrendingUp,
-      title: "Historical Tracking",
-      description: "Monitor your privacy improvements over time with historical trend analysis",
+      icon: Lock,
+      title: "Privacy-First Design",
+      description: "No analytics, no data collection, no surveillance. Your privacy is the product",
     },
   ];
 
   const howItWorks = [
     {
       step: 1,
-      title: "Install & Scan",
-      description: "Download GeckoAdvisor and run your first privacy scan in under 60 seconds",
+      title: "Download App",
+      description: "Install GeckoShell from App Store or Google Play",
     },
     {
       step: 2,
-      title: "Review Score",
-      description: "See your privacy score and understand which areas need improvement",
+      title: "Browse Privately",
+      description: "Start browsing immediately with automatic tracker blocking enabled",
     },
     {
       step: 3,
-      title: "Take Action",
-      description: "Follow our step-by-step recommendations to enhance your digital privacy",
+      title: "Optional Wallet",
+      description: "Enable Solana wallet if you want Web3 features (completely optional)",
     },
     {
       step: 4,
       title: "Stay Protected",
-      description: "Regular scans ensure your privacy remains secure as threats evolve",
+      description: "Enjoy fast, private browsing on the go with AI-adaptive protection coming Q4 2025",
     },
   ];
 
   const faqs = [
     {
-      question: "How does GeckoAdvisor scan my device?",
-      answer: "GeckoAdvisor performs local scans of your device settings, installed applications, and system configurations. All scanning happens on your device - we never upload your personal data to our servers.",
+      question: "What makes GeckoShell different from Safari or Chrome?",
+      answer: "GeckoShell is built privacy-first from the ground up. Unlike Safari and Chrome, we don't collect your browsing history, don't sync to cloud servers, and block trackers by default. No analytics, no data harvesting, no surveillance capitalism. Plus, optional Solana wallet integration for Web3 browsing.",
     },
     {
-      question: "What's included in the free tier?",
-      answer: "The free tier includes 3 scans per month with basic privacy reports, device scanning, and a privacy score. You'll get fundamental recommendations to improve your privacy.",
+      question: "Is the Solana wallet required?",
+      answer: "No! The built-in Solana wallet is 100% optional. GeckoShell works perfectly as a privacy browser without any crypto features. Enable the wallet only if you want to interact with Web3 dApps or manage crypto assets.",
     },
     {
-      question: "How does GeckoAdvisor use AI?",
-      answer: "GeckoAdvisor will gain AI capabilities in Q4 2025 that generate personalized privacy action plans and provide intelligent alerts based on your specific device configuration. All AI processing happens locally on your device—no data sent to the cloud. AI features will be available to free tier users with monthly limits, or unlimited for Pro subscribers. The core privacy scanning works fully without any AI requirement.",
+      question: "How does GeckoShell use AI?",
+      answer: "GeckoShell will gain AI capabilities in the future (post-Q4 2025) for adaptive content blocking and intelligent cache management. All AI processing happens locally on your device—no browsing data sent to the cloud. AI features will be available to free tier users with monthly limits, or unlimited for Pro subscribers. The browser works fully without any AI requirement.",
     },
     {
-      question: "How is my data protected?",
-      answer: "All scans are performed locally on your device. We only store anonymized scan metadata (not your personal data) to improve our recommendations. Working toward full code transparency after comprehensive security audits.",
+      question: "Which platforms does GeckoShell support?",
+      answer: "GeckoShell is available for iOS (iPhone and iPad) and Android devices. We're focusing on mobile-first privacy since that's where most people browse today.",
     },
     {
-      question: "Can I use GeckoAdvisor on multiple devices?",
-      answer: "Yes! Pro users can scan unlimited devices and sync their privacy scores across all their hardware.",
+      question: "Does GeckoShell slow down browsing?",
+      answer: "No! By blocking ads and trackers, GeckoShell actually makes browsing faster and uses less data. Pages load quicker when you're not downloading tracking scripts and ad networks.",
+    },
+    {
+      question: "Can I import bookmarks from other browsers?",
+      answer: "Yes! You can import bookmarks from Safari, Chrome, Firefox, and other major browsers. Your bookmarks stay local on your device—we don't sync them to our servers unless you enable Pro tier cloud sync (encrypted).",
     },
   ];
 
   return (
     <>
       <Hero
-        subtitle="GeckoAdvisor"
-        title="Find Out If Your Device Is Leaking Data - AI-Powered Recommendations Coming Q4 2025"
-        description={product.description}
+        subtitle="GeckoShell"
+        title="Private Mobile Browser with AI Protection"
+        description="Browse privately on iOS and Android with automatic tracker blocking and built-in Solana wallet (optional). Fast, lightweight, and no browsing history collection."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button href="https://geckoadvisor.com" variant="primary" size="lg">
-            Join Beta Program →
+          <Button href="#pricing" variant="primary" size="lg">
+            Coming Soon
           </Button>
-          <Badge variant="beta">Beta Testing</Badge>
+          <Badge variant="coming">Coming Q4 2025</Badge>
         </div>
       </Hero>
 
-      {/* Beta Status Banner */}
-      <Section className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-8">
+      {/* Development Status Banner */}
+      <Section className="bg-blue-50">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto"
+          className="text-center"
         >
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <Bell className="w-5 h-5" />
-            <h3 className="text-xl font-bold">Currently in Beta Testing</h3>
-          </div>
-          <p className="text-blue-100 mb-4">
-            GeckoAdvisor is in active beta with limited spots available. Early beta users get lifetime discounted pricing and help shape the product.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>Free forever tier</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>Beta pricing: $4.99/mo (vs $9.99 at launch)</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>No payment required during beta</span>
-            </div>
-          </div>
+          <TimelineIndicator timeline="In Development" format="banner" />
+          <p className="text-lg mt-4 text-gray-700">Development Progress: <strong>30%</strong></p>
+          <p className="text-sm mt-2 text-gray-600">AI protection features planned for future release</p>
         </motion.div>
       </Section>
 
-      {/* Features Grid with AI */}
+      {/* Features Grid */}
       <Section>
         <SectionHeader
-          subtitle="Features"
-          title="Everything You Need to Know Your Privacy Score"
-          description="Comprehensive privacy auditing with actionable insights"
+          subtitle="Planned Features"
+          title="Privacy-First Mobile Browsing"
+          description="Everything you need for private browsing on iOS and Android"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {features.map((feature, index) => (
@@ -171,7 +157,7 @@ export default function GeckoAdvisorPage() {
           ))}
         </div>
 
-        {/* AI Features Section */}
+        {/* AI Features Section - Future */}
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -181,16 +167,19 @@ export default function GeckoAdvisorPage() {
           >
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl mb-4">Current & AI-Enhanced Features</CardTitle>
+                <CardTitle className="text-2xl mb-2">Core & AI-Enhanced Features</CardTitle>
+                <p className="text-sm text-gray-600 mb-4">
+                  AI features planned for future release to enhance mobile privacy protection
+                </p>
                 {product.ai && (
                   <AIFeatureList
                     currentFeatures={[
-                      "Device scanning & vulnerability detection",
-                      "Privacy score & actionable recommendations",
-                      "Tracking detection & secure configuration tips"
+                      "Blocks trackers automatically",
+                      "Available on iOS and Android",
+                      "Built-in Solana wallet (optional)"
                     ]}
                     aiFeatures={product.ai.aiFeatures}
-                    aiTimeline="Q4 2025"
+                    aiTimeline="Future Release"
                   />
                 )}
               </CardHeader>
@@ -203,7 +192,7 @@ export default function GeckoAdvisorPage() {
       <Section className="bg-neutral-100">
         <SectionHeader
           subtitle="How It Works"
-          title="Get Your Privacy Score in 4 Simple Steps"
+          title="Private Mobile Browsing in 4 Simple Steps"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {howItWorks.map((item, index) => (
@@ -228,9 +217,9 @@ export default function GeckoAdvisorPage() {
       {/* Pricing */}
       <Section id="pricing">
         <SectionHeader
-          subtitle="Beta Pricing"
-          title="Limited Time Beta Pricing"
-          description="Lock in discounted pricing as an early adopter. No payment required during beta."
+          subtitle="Pricing"
+          title="Choose Your Plan"
+          description="Start free, upgrade when you need advanced features"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <motion.div
@@ -244,8 +233,8 @@ export default function GeckoAdvisorPage() {
                 <CardTitle className="text-2xl mb-2">Free</CardTitle>
                 <div className="text-3xl font-bold mb-4">$0<span className="text-lg text-gray-500 font-normal">/month</span></div>
                 <CardDescription className="mb-6">{product.pricing.free.limit}</CardDescription>
-                <Button href="https://geckoadvisor.com" variant="outline" className="w-full mb-6">
-                  Try Beta →
+                <Button href="#install" variant="outline" className="w-full mb-6">
+                  Download Free
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.free.features.map((feature, index) => (
@@ -275,9 +264,9 @@ export default function GeckoAdvisorPage() {
                   {product.pricing.pro.price.split('/')[0]}
                   <span className="text-lg text-gray-500 font-normal">/month</span>
                 </div>
-                <CardDescription className="mb-6">Unlimited scans, advanced features</CardDescription>
-                <Button href="https://geckoadvisor.com" variant="primary" className="w-full mb-6">
-                  Join Beta →
+                <CardDescription className="mb-6">Advanced features & device sync</CardDescription>
+                <Button href="#checkout" variant="primary" className="w-full mb-6">
+                  Start Pro Trial
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.pro.features.map((feature, index) => (
@@ -323,14 +312,14 @@ export default function GeckoAdvisorPage() {
       <Section>
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Ready to Join the Beta?
+            Ready for Private Mobile Browsing?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Limited beta access available. Start with 3 free scans per month. No credit card required.
+            GeckoShell launches Q4 2025 for iOS and Android. Be among the first to browse privately on mobile.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="https://geckoadvisor.com" variant="primary" size="lg">
-              Join Beta Program →
+            <Button href="#pricing" variant="primary" size="lg">
+              Coming Soon
             </Button>
             <Button href="/products" variant="ghost" size="lg">
               Explore Other Tools

@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Ca
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { getProductById } from "@/lib/products";
+import { AIFeatureList, TimelineIndicator } from "@/components/ai";
 import { CheckCircle, Lock, Shield, Smartphone, Key, Users, AlertCircle, Zap, Eye, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -84,6 +85,10 @@ export default function GeckoLockPage() {
       answer: "The free tier includes unlimited password storage, password generator, basic auto-fill, 2FA authenticator, cross-platform sync (2 devices), and mobile/desktop apps. It's a complete password manager, free forever. Pro adds unlimited devices, priority support, advanced sharing, breach monitoring, and emergency access.",
     },
     {
+      question: "How does Gecko Lock use AI?",
+      answer: "Gecko Lock will gain AI capabilities post-launch that evaluate password strength against latest breaches and detect phishing attempts on login pages. All AI processing happens locally on your device—no passwords sent to the cloud. AI features will be available to free tier users with monthly limits, or unlimited for Pro subscribers. Core password management works fully without any AI requirement.",
+    },
+    {
       question: "How does Gecko Lock integrate with $PRICKO tokens?",
       answer: "$PRICKO token holders will get optional benefits once staking launches (Q4 2025): 10% discount on Pro subscriptions when you stake 50,000+ tokens, early access to new features, and future voting rights on product roadmap decisions. Tokens are completely optional—Gecko Lock works fully without any cryptocurrency requirement.",
     },
@@ -101,8 +106,8 @@ export default function GeckoLockPage() {
     <>
       <Hero
         subtitle="Gecko Lock"
-        title={product.tagline}
-        description="Never forget another password—and never worry about who can see them. Gecko Lock uses military-grade AES-256 encryption with zero-knowledge architecture, meaning your passwords are encrypted before they leave your device. Open-source code, self-hosting options, and a forever-free tier make security accessible to everyone."
+        title="Your Passwords, Locked Away From Everyone - Now with AI Security Insights"
+        description="Never forget another password—and never worry about who can see them. Gecko Lock uses military-grade AES-256 encryption with zero-knowledge architecture, meaning your passwords are encrypted before they leave your device. Coming Q4 2025 with AI-powered breach detection and phishing protection."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button href="#pricing" variant="primary" size="lg">
@@ -111,6 +116,21 @@ export default function GeckoLockPage() {
           <Badge variant="coming">Coming Q4 2025</Badge>
         </div>
       </Hero>
+
+      {/* Development Status Banner */}
+      <Section className="bg-blue-50">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <TimelineIndicator timeline="In Development" format="banner" />
+          <p className="text-lg mt-4 text-gray-700">Development Progress: <strong>65%</strong></p>
+          <p className="text-sm mt-2 text-gray-600">AI security features coming post-launch</p>
+        </motion.div>
+      </Section>
 
       {/* Trust Indicators */}
       <Section>
@@ -172,14 +192,14 @@ export default function GeckoLockPage() {
         </div>
       </Section>
 
-      {/* Features Grid */}
+      {/* Features Grid with AI */}
       <Section className="bg-neutral-100">
         <SectionHeader
-          subtitle="Features"
+          subtitle="Planned Features"
           title="Password Security You Can Actually Trust"
-          description="Everything you need to manage passwords securely across all devices"
+          description="Core password management with AI security insights coming post-launch"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -199,6 +219,36 @@ export default function GeckoLockPage() {
               </Card>
             </motion.div>
           ))}
+        </div>
+
+        {/* AI Features Section - Post-Launch */}
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl mb-2">Core & AI-Enhanced Features</CardTitle>
+                <p className="text-sm text-gray-600 mb-4">
+                  AI security features will be added after initial launch to enhance password protection
+                </p>
+                {product.ai && (
+                  <AIFeatureList
+                    currentFeatures={[
+                      "Military-grade AES-256 encryption",
+                      "Zero-knowledge architecture",
+                      "Cross-platform sync"
+                    ]}
+                    aiFeatures={product.ai.aiFeatures}
+                    aiTimeline="Q4 2025"
+                  />
+                )}
+              </CardHeader>
+            </Card>
+          </motion.div>
         </div>
       </Section>
 

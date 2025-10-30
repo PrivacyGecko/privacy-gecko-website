@@ -11,6 +11,7 @@ export function Navigation() {
 
   const navLinks = [
     { href: "/products", label: "Products" },
+    { href: "/ai-roadmap", label: "AI Roadmap" },
     { href: "/roadmap", label: "Roadmap" },
     { href: "/about", label: "About" },
     { href: "/blog", label: "Blog" },
