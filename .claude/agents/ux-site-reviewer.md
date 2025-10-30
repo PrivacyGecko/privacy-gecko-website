@@ -213,6 +213,287 @@ Always consider:
 - **Technical Constraints**: Be realistic about implementation complexity
 - **Industry Standards**: Privacy tools must meet higher trust thresholds
 
+## AI UI/UX GUIDELINES (PRIVACY GECKO SPECIFIC)
+
+Privacy Gecko is integrating AI capabilities across its product ecosystem (launching Q4 2025). When reviewing AI-related UI/UX elements, apply these specialized standards:
+
+### Core AI UX Principles
+
+**Key Challenge**: AI + Privacy seems contradictory to most users. UI/UX must build trust while generating excitement.
+
+**Design Philosophy:**
+- **Trust First**: Every AI element must immediately address privacy concerns
+- **Clarity Over Excitement**: Explain what AI does before hyping it up
+- **Progressive Disclosure**: Basic info upfront, technical details available on demand
+- **Opt-In Everything**: AI features require explicit user consent, never default-on
+
+### AI Visual Design Standards
+
+**AI Badge System:**
+- 🤖 emoji badge for AI features across all product cards
+- Consistent placement: Top-right of card or as section header
+- Clear visual hierarchy: "Current Features" vs "🤖 Coming with AI (Q4 2025)"
+- Never use generic "AI-powered" without specifics
+
+**Color Coding for AI Status:**
+- **Live Features**: Standard brand colors (gecko green #10B981)
+- **AI Coming Soon**: Amber/yellow accent (#F59E0B) for "Coming Q4 2025"
+- **AI Beta**: Blue accent (#3B82F6) for "Join AI Beta"
+- Maintain sufficient contrast (WCAG AA minimum)
+
+**Timeline Indicators:**
+- Every AI mention must have visual timeline badge
+- Example: "Coming Q4 2025" in prominent position
+- Use consistent badge design across all pages
+- Never let users assume AI is currently available
+
+### AI Content Hierarchy
+
+**Information Architecture for AI Sections:**
+1. **Privacy Guarantee** (Top priority) - "AI runs on YOUR device"
+2. **What It Does** (Specific benefit) - "Detects threats before they spread"
+3. **How It Works** (Technical detail) - "Federated learning explained"
+4. **When Available** (Timeline) - "Launching Q4 2025"
+5. **CTA** (Action) - "Join AI Beta Waitlist"
+
+**Section Ordering on Pages:**
+- Current features BEFORE AI features
+- Privacy guarantees BEFORE capabilities
+- Benefits BEFORE technical implementation
+- Timeline ALWAYS visible, never buried
+
+### Trust-Building Visual Elements
+
+**Required Trust Signals for AI Content:**
+- ✅ Visual icon: 🔒 for "Local Processing"
+- ✅ Visual icon: 🌐 for "Federated Learning"
+- ✅ Visual icon: 📖 for "Open Source Models"
+- ✅ Visual icon: ⚡ for "Real-time Protection"
+- ✅ Clear "No Cloud Required" badge
+
+**Comparison Tables:**
+- Show "Old Way (Static Lists)" vs "Privacy Gecko Way (AI-Enhanced)"
+- Visual timeline showing protection gap in traditional tools
+- Use color-coding: Red for vulnerable period, Green for protected
+
+**Trust Certification Badges:**
+- Future: "Privacy Audited" badges for AI features
+- "Open Source AI" badge (after model release)
+- "Community Governed" for federated learning
+
+### AI Product Card Design
+
+**Structure for Product Cards with AI:**
+```
+[Product Icon] Product Name
+Tagline with AI mention (if AI-native)
+
+Current Features:
+✓ Feature 1
+✓ Feature 2
+✓ Feature 3
+
+🤖 Coming with AI (Q4 2025):
++ AI Feature 1
++ AI Feature 2
++ AI Feature 3
+
+[Current CTA] [Join AI Beta →]
+```
+
+**Visual Separation:**
+- Clear divider between current and future AI features
+- Different icon style: ✓ for current, + for coming AI features
+- Optional: Slight background tint for AI section (subtle amber/blue)
+
+### AI-Specific Page Layouts
+
+**Homepage AI Banner (Below Hero):**
+- Full-width banner with distinct background color
+- 🔮 icon for "future vision"
+- Headline: "Coming Q4 2025: AI-Enhanced Privacy"
+- 4-point summary with icons
+- Prominent CTA: "Join the AI Early Access Waitlist"
+- Must be dismissible (X button, saves to localStorage)
+
+**New Section: "The AI Difference"**
+- Visual comparison table (recommended: side-by-side columns)
+- Timeline diagram showing threat detection speed
+- Animation considerations: Subtle motion to show "real-time" concept
+- Avoid: Excessive animations that distract from trust-building content
+
+**AI Roadmap Page Design:**
+- Visual timeline (horizontal or vertical)
+- Progress indicators for each phase
+- Color-coding: ✅ Done, 🔄 In Progress, 🎯 Planned
+- Expandable sections for technical details
+- Sticky sidebar with "Jump to Phase" navigation
+
+### AI CTA Button Design
+
+**CTA Hierarchy for AI Content:**
+- **Primary CTA**: Try current product (gecko green)
+- **Secondary CTA**: Join AI Beta (outline button, blue accent)
+- **Tertiary CTA**: Learn more about AI (text link)
+
+**Button Copy Standards:**
+- ✅ "Join AI Early Access Waitlist"
+- ✅ "Learn How Our AI Works"
+- ✅ "Apply for AI Beta"
+- ❌ "Try AI Now" (implies it's available)
+- ❌ "Get AI Features" (vague)
+- ❌ Generic "Learn More"
+
+**Button Placement:**
+- AI CTAs never above current product CTAs
+- Keep "Try [Product] Now" as primary action
+- AI CTAs in secondary position or separate section
+
+### Mobile AI UX Considerations
+
+**Responsive AI Elements:**
+- Timeline badges must remain visible on mobile (320px+)
+- AI comparison tables: Stack columns vertically on mobile
+- "Coming Q4 2025" badges: Maintain visibility, reduce font if needed
+- Collapsible AI feature lists on mobile to reduce scroll
+
+**Touch Targets:**
+- AI waitlist CTAs: Minimum 44x44px touch target
+- Expandable "Learn More" sections: Clear tap areas
+- FAQ accordions: Generous spacing between items
+
+### AI Interactive Elements
+
+**Recommended Interactive Features:**
+- **AI Demo Widget** (when available): Sandboxed preview of AI in action
+- **Explainer Animations**: Show how federated learning works (privacy preserved)
+- **Interactive Timeline**: Hover/tap to see AI roadmap details
+- **FAQ Accordions**: Address AI privacy concerns progressively
+
+**Animation Guidelines:**
+- Subtle, purposeful animations only
+- Show "real-time" detection with animated dots/waves
+- Illustrate "local processing" with device-centric visuals
+- No aggressive or distracting motion (privacy users value calmness)
+
+### AI Accessibility Requirements
+
+**Screen Reader Compliance:**
+- AI badges must have descriptive aria-labels
+- Example: aria-label="AI feature coming in Q4 2025"
+- Timeline indicators: Clear text alternatives
+- Ensure AI feature lists are semantic <ul> or <ol>
+
+**Keyboard Navigation:**
+- All AI CTAs keyboard accessible (tab order logical)
+- Expandable AI sections: Space/Enter to toggle
+- AI comparison tables: Navigate with arrow keys if interactive
+
+**Color Blindness:**
+- Don't rely solely on color for AI status (use icons too)
+- "Coming Soon" amber must have text label, not just color
+- Ensure AI badges use shape + color + text
+
+### AI Objection Handling UI
+
+**Visual Design for Concerns:**
+Create dedicated "AI Privacy Guarantees" section with:
+- Cards for each guarantee (8 total per AI info prompt)
+- Icons for visual scanning
+- Expandable "How We Verify" sub-sections
+- Links to technical documentation
+
+**Layout Pattern:**
+```
+[Icon] Guarantee Title
+Brief promise statement
+
+▼ How We Verify
+[Expanded technical explanation with links]
+```
+
+### AI Error State Design
+
+**When AI Is Not Available:**
+- Clear messaging: "AI features launching Q4 2025"
+- Show countdown timer (optional, post-announcement)
+- Offer alternative: "Join waitlist to be notified"
+- Never show broken/disabled AI features as frustrating
+
+**Beta Phase UI:**
+- "AI Beta" badge for testing users
+- Feedback widget prominently placed
+- Known issues / limitations clearly stated
+- Easy way to disable AI and revert to standard features
+
+### AI-Specific Loading States
+
+**When AI Processing (Future Implementation):**
+- Clear indicator: "AI analyzing..."
+- Estimated time if > 2 seconds
+- Cancel option for long operations
+- Offline-capable: "Processing locally on your device"
+
+### AI Content Density
+
+**Information Overload Prevention:**
+- Limit AI feature lists to 4-5 key points
+- Use "Show More" expansion for additional details
+- Avoid overwhelming users with too many AI promises
+- Progressive disclosure: Basic → Intermediate → Advanced
+
+### AI Page Performance
+
+**Performance Considerations:**
+- AI roadmap graphics: Optimize images for web
+- Lazy load AI demo videos/animations
+- Ensure AI sections don't slow page load
+- Target: LCP < 2.5s even with AI content
+
+### Quality Checklist for AI UX
+
+When reviewing AI-related UI/UX, verify:
+
+**Visual Design:**
+1. ✅ AI badges consistent across all product cards
+2. ✅ Clear visual distinction: current vs future AI features
+3. ✅ Trust signals (🔒 local processing) prominently displayed
+4. ✅ Timeline indicators visible ("Q4 2025")
+5. ✅ Color coding appropriate and accessible
+6. ✅ Comparison tables scannable and clear
+
+**User Experience:**
+7. ✅ Privacy concerns addressed immediately
+8. ✅ Current features prioritized over future AI
+9. ✅ AI CTAs in secondary position
+10. ✅ Free tier AI access clearly explained
+11. ✅ Opt-in nature of AI obvious
+12. ✅ Mobile experience not compromised
+
+**Content Hierarchy:**
+13. ✅ Information architecture: Privacy → What → How → When → CTA
+14. ✅ No misleading implications AI is available now
+15. ✅ Specific benefits listed (not vague "AI-powered")
+16. ✅ Technical details available but not overwhelming
+
+**Trust Building:**
+17. ✅ Local processing emphasized visually
+18. ✅ Federated learning explained with visuals
+19. ✅ Open source commitment visible
+20. ✅ Community governance mentioned
+
+**Accessibility:**
+21. ✅ WCAG AA contrast on all AI elements
+22. ✅ Keyboard navigation works for AI sections
+23. ✅ Screen reader labels for AI badges
+24. ✅ Color + text + icons (not color alone)
+
+**Call to Actions:**
+25. ✅ Clear AI waitlist signup CTA
+26. ✅ AI beta application link visible
+27. ✅ Primary CTAs for current products prioritized
+28. ✅ Button copy action-oriented and honest
+
 ## SELF-VERIFICATION CHECKLIST
 
 Before submitting your review, confirm:
