@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface HeroProps {
-  title: string;
+  title: React.ReactNode;
   subtitle?: string;
-  description?: string;
+  description?: React.ReactNode;
   children?: React.ReactNode;
   centered?: boolean;
   className?: string;
