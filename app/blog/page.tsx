@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Hero } from "@/components/sections/Hero";
@@ -53,7 +54,49 @@ export default function BlogPage() {
       setIsSubscribing(false);
     }
   };
+
+  // All blog posts in reverse chronological order (newest first)
   const posts = [
+    {
+      title: "Open Source Privacy Tools: Why It Matters",
+      excerpt: "Why open source matters for privacy tools. Learn how transparency, community audits, and verifiable security make open source the gold standard.",
+      author: "@0xAnonA",
+      date: "November 12, 2025",
+      category: "Privacy Tips",
+      slug: "open-source-privacy-tools",
+    },
+    {
+      title: "How Local AI Protects Your Privacy (vs Cloud AI)",
+      excerpt: "Local AI vs cloud AI for privacy. Learn how on-device AI processing protects your data with federated learning and edge computing in 2025.",
+      author: "@0xAnonA",
+      date: "November 10, 2025",
+      category: "AI & Privacy",
+      slug: "local-ai-privacy-protection",
+    },
+    {
+      title: "Privacy Memecoins: Memes with a Mission Explained",
+      excerpt: "What are privacy memecoins? Learn how $PRICKO and other privacy-focused tokens combine community fun with real privacy utility and sustainable funding.",
+      author: "@0xAnonA",
+      date: "November 8, 2025",
+      category: "Token & Community",
+      slug: "privacy-memecoins-explained",
+    },
+    {
+      title: "Privacy Tools Every Crypto Trader Needs",
+      excerpt: "Essential privacy tools for crypto traders in 2025. Learn how to protect your wallet, transactions, and identity with VPNs, browsers, and privacy-focused tools.",
+      author: "@0xAnonA",
+      date: "November 6, 2025",
+      category: "Crypto Privacy",
+      slug: "crypto-trader-privacy-tools",
+    },
+    {
+      title: "The Complete Guide to Privacy Tools in 2025",
+      excerpt: "Discover the best privacy tools in 2025. Complete guide covering VPNs, password managers, ad blockers, encrypted messaging, and more to protect your digital privacy.",
+      author: "@0xAnonA",
+      date: "November 4, 2025",
+      category: "Privacy Guide",
+      slug: "complete-guide-privacy-tools-2025",
+    },
     {
       title: "Why Privacy Tools Matter in 2025",
       excerpt: "Exploring the growing importance of digital privacy and why accessible privacy tools are more critical than ever.",
