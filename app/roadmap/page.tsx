@@ -21,6 +21,31 @@ export default function RoadmapPage() {
         description="8 integrated privacy tools, transparent timeline, early adopter benefits. We're building thoughtfully, not rushing to market."
       />
 
+      {/* Roadmap Navigation */}
+      <Section>
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 p-4 bg-gray-50 rounded-lg border-b-2 border-gray-200">
+            <a
+              href="/roadmap"
+              className="flex items-center gap-3 px-6 py-3 bg-gecko-green text-white rounded-lg font-semibold border-b-3 border-gecko-green transition-all"
+            >
+              <span className="text-2xl">📦</span>
+              <span>Product Roadmap</span>
+            </a>
+            <a
+              href="/ai-roadmap"
+              className="flex items-center gap-3 px-6 py-3 bg-white text-gray-700 rounded-lg font-semibold border-2 border-gray-200 hover:border-gecko-green hover:text-gecko-green transition-all"
+            >
+              <span className="text-2xl">🤖</span>
+              <span>AI Development Roadmap</span>
+            </a>
+          </div>
+          <p className="text-center text-gray-600 mt-4">
+            View our product development timeline or explore our AI enhancement roadmap
+          </p>
+        </div>
+      </Section>
+
       {/* Philosophy Section */}
       <Section className="bg-neutral-100">
         <div className="max-w-3xl mx-auto text-center">
@@ -116,6 +141,54 @@ export default function RoadmapPage() {
               </motion.div>
             );
           })}
+        </div>
+      </Section>
+
+      {/* AI Announcement Section */}
+      <Section>
+        <div className="max-w-5xl mx-auto">
+          <Card className="bg-gradient-to-br from-purple-50 to-blue-50 border-purple-200">
+            <CardHeader>
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="text-6xl">🤖</div>
+                <div className="flex-1">
+                  <CardTitle className="text-3xl mb-4">AI Enhancement Coming Q4 2025</CardTitle>
+                  <CardDescription className="text-base text-gray-700 mb-6">
+                    Every Privacy Gecko tool will gain AI capabilities that adapt to new threats in real-time—without
+                    ever compromising your privacy. All AI processing happens on YOUR device, not our servers.
+                  </CardDescription>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <div className="flex items-start gap-2">
+                      <span className="text-gecko-green text-lg">✓</span>
+                      <span className="text-sm text-gray-700">Learns new tracking patterns automatically</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-gecko-green text-lg">✓</span>
+                      <span className="text-sm text-gray-700">Adapts to emerging privacy threats</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-gecko-green text-lg">✓</span>
+                      <span className="text-sm text-gray-700">Runs locally - your data stays private</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-gecko-green text-lg">✓</span>
+                      <span className="text-sm text-gray-700">Open source AI models after maturity</span>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button href="/ai-roadmap" variant="primary" size="md">
+                      View Complete AI Roadmap →
+                    </Button>
+                    <Button href="/contact?subject=AI%20Beta" variant="outline" size="md">
+                      Join AI Beta
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </CardHeader>
+          </Card>
         </div>
       </Section>
 

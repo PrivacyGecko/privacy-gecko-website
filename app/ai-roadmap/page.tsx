@@ -3,6 +3,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { Section, SectionHeader } from "@/components/sections/Section";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
 import { TimelineIndicator } from "@/components/ai";
 import { CheckCircle2, Target, Calendar, Users, Code, GraduationCap, Coins, FileText } from "lucide-react";
 import { motion } from "framer-motion";
@@ -117,7 +118,7 @@ export default function AIRoadmapPage() {
         "Basic understanding of privacy concepts",
       ],
       cta: "Join AI Beta Waitlist",
-      ctaLink: "/contact?subject=AI Beta",
+      ctaLink: "/contact?subject=AI%20Beta",
     },
     {
       title: "As a Developer",
@@ -129,8 +130,8 @@ export default function AIRoadmapPage() {
         "Contribute to open source models",
         "Create privacy AI tools",
       ],
-      cta: "Developer Program",
-      ctaLink: "/developers",
+      cta: "Developer Resources",
+      ctaLink: "/resources#developers",
     },
     {
       title: "As a Researcher",
@@ -143,7 +144,7 @@ export default function AIRoadmapPage() {
         "Peer review our models",
       ],
       cta: "Research Partnerships",
-      ctaLink: "/research",
+      ctaLink: "mailto:research@privacygecko.com?subject=Research%20Partnership%20Inquiry",
     },
     {
       title: "As an Investor",
@@ -156,7 +157,7 @@ export default function AIRoadmapPage() {
         "Fund community AI initiatives",
       ],
       cta: "Token Whitelist",
-      ctaLink: "/token",
+      ctaLink: "https://pricko.com#whitelist",
     },
   ];
 
@@ -348,6 +349,99 @@ export default function AIRoadmapPage() {
             </CardContent>
           </Card>
         </motion.div>
+      </Section>
+
+      {/* Token Connection Section */}
+      <Section>
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+                How $PRICKO Powers Our AI Development
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Privacy-first AI is expensive to build and maintain. We fund it through community tokens
+                instead of selling your data or showing ads.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <Card>
+                <CardHeader>
+                  <div className="text-4xl mb-3">💰</div>
+                  <CardTitle>Sustainable Funding</CardTitle>
+                  <CardDescription>
+                    Token holders and stakers fund AI development through a transparent community treasury.
+                    30% of Pro revenue goes to AI infrastructure.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <div className="text-4xl mb-3">🔓</div>
+                  <CardTitle>Unlock AI Features</CardTitle>
+                  <CardDescription>
+                    Hold $PRICKO tokens to get unlimited AI queries across all 8 products.
+                    Free tier users get 50 queries/month, token holders get unlimited.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <div className="text-4xl mb-3">⚡</div>
+                  <CardTitle>Stake & Earn</CardTitle>
+                  <CardDescription>
+                    Stake tokens to provide/subsidize AI compute power and earn rewards.
+                    Help power the network while earning passive income.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <div className="text-4xl mb-3">🗳️</div>
+                  <CardTitle>Govern AI Development</CardTitle>
+                  <CardDescription>
+                    Vote on AI model training priorities, feature development, and community AI initiatives.
+                    Shape the future of privacy AI.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+
+            <Card className="bg-gradient-to-br from-gecko-green/10 to-blue-50 border-gecko-green/30">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl mb-3">Ready to Power Privacy-First AI?</CardTitle>
+                <CardDescription className="text-base mb-6">
+                  Join the $PRICKO whitelist and be part of the AI revolution
+                </CardDescription>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    href="https://pricko.com"
+                    variant="primary"
+                    size="lg"
+                  >
+                    Learn About $PRICKO Token →
+                  </Button>
+                  <Button
+                    href="https://pricko.com#whitelist"
+                    variant="outline"
+                    size="lg"
+                  >
+                    Join Token Waitlist
+                  </Button>
+                </div>
+              </CardHeader>
+            </Card>
+          </motion.div>
+        </div>
       </Section>
 
       <Section className="bg-gray-50">

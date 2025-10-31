@@ -64,7 +64,7 @@ export default function BlogPage() {
     },
     {
       title: "Getting Started with GeckoAdvisor",
-      excerpt: "A complete guide to using GeckoAdvisor to audit your device's privacy and security posture.",
+      excerpt: "A complete guide to using GeckoAdvisor to scan website privacy policies and detect hidden trackers.",
       author: "@0xAnonA",
       date: "January 10, 2025",
       category: "Tutorials",

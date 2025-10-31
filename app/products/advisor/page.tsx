@@ -18,8 +18,8 @@ export default function GeckoAdvisorPage() {
   const features = [
     {
       icon: Shield,
-      title: "Device Scanning",
-      description: "Comprehensive scan of your device to identify privacy vulnerabilities and security risks",
+      title: "Privacy Policy Analysis",
+      description: "Comprehensive scan of website privacy policies to identify hidden trackers and compliance issues",
     },
     {
       icon: Activity,
@@ -51,46 +51,46 @@ export default function GeckoAdvisorPage() {
   const howItWorks = [
     {
       step: 1,
-      title: "Install & Scan",
-      description: "Download GeckoAdvisor and run your first privacy scan in under 60 seconds",
+      title: "Enter URL",
+      description: "Enter any website URL and GeckoAdvisor will analyze its privacy policy in under 60 seconds",
     },
     {
       step: 2,
       title: "Review Score",
-      description: "See your privacy score and understand which areas need improvement",
+      description: "See the website's privacy score and understand which tracking practices they use",
     },
     {
       step: 3,
       title: "Take Action",
-      description: "Follow our step-by-step recommendations to enhance your digital privacy",
+      description: "Follow our step-by-step recommendations to protect yourself from tracking",
     },
     {
       step: 4,
       title: "Stay Protected",
-      description: "Regular scans ensure your privacy remains secure as threats evolve",
+      description: "Regular scans ensure you know how websites track you as policies change",
     },
   ];
 
   const faqs = [
     {
-      question: "How does GeckoAdvisor scan my device?",
-      answer: "GeckoAdvisor performs local scans of your device settings, installed applications, and system configurations. All scanning happens on your device - we never upload your personal data to our servers.",
+      question: "How does GeckoAdvisor scan websites?",
+      answer: "GeckoAdvisor analyzes website privacy policies, terms of service, and cookie declarations to identify hidden trackers, data collection practices, and compliance issues. We never access your personal data - we only scan public website documents.",
     },
     {
       question: "What's included in the free tier?",
-      answer: "The free tier includes 3 scans per month with basic privacy reports, device scanning, and a privacy score. You'll get fundamental recommendations to improve your privacy.",
+      answer: "The free tier includes 3 website scans per month with basic privacy reports, tracker detection, and a privacy score. You'll get fundamental recommendations about what each website tracks.",
     },
     {
       question: "How does GeckoAdvisor use AI?",
-      answer: "GeckoAdvisor will gain AI capabilities in Q4 2025 that generate personalized privacy action plans and provide intelligent alerts based on your specific device configuration. All AI processing happens locally on your device—no data sent to the cloud. AI features will be available to free tier users with monthly limits, or unlimited for Pro subscribers. The core privacy scanning works fully without any AI requirement.",
+      answer: "GeckoAdvisor will gain AI capabilities in Q4 2025 that analyze privacy policies in plain language, detect patterns across policies, and provide intelligent risk scoring. All AI processing happens on our secure servers with no personal data involved. AI features will be available to free tier users with monthly limits, or unlimited for Pro subscribers. The core privacy scanning works fully without any AI requirement.",
     },
     {
       question: "How is my data protected?",
-      answer: "All scans are performed locally on your device. We only store anonymized scan metadata (not your personal data) to improve our recommendations. Working toward full code transparency after comprehensive security audits.",
+      answer: "GeckoAdvisor only scans public website privacy policies - we never access your personal data. We store anonymized scan results to improve our recommendations. Working toward full code transparency after comprehensive security audits.",
     },
     {
-      question: "Can I use GeckoAdvisor on multiple devices?",
-      answer: "Yes! Pro users can scan unlimited devices and sync their privacy scores across all their hardware.",
+      question: "Can I scan multiple websites?",
+      answer: "Yes! Pro users can scan unlimited websites and track privacy policy changes over time for their favorite sites.",
     },
   ];
 
@@ -98,7 +98,7 @@ export default function GeckoAdvisorPage() {
     <>
       <Hero
         subtitle="GeckoAdvisor"
-        title="Find Out If Your Device Is Leaking Data - AI-Powered Recommendations Coming Q4 2025"
+        title="Scan Website Privacy Policies for Hidden Trackers - AI-Powered Analysis Coming Q4 2025"
         description={product.description}
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -185,9 +185,9 @@ export default function GeckoAdvisorPage() {
                 {product.ai && (
                   <AIFeatureList
                     currentFeatures={[
-                      "Device scanning & vulnerability detection",
-                      "Privacy score & actionable recommendations",
-                      "Tracking detection & secure configuration tips"
+                      "Website privacy policy analysis & tracker detection",
+                      "Privacy score & compliance checking",
+                      "GDPR/CCPA compliance & actionable recommendations"
                     ]}
                     aiFeatures={product.ai.aiFeatures}
                     aiTimeline="Q4 2025"

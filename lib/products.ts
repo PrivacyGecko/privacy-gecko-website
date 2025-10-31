@@ -95,7 +95,7 @@ export const products: Product[] = [
     pricing: {
       free: {
         limit: "3 scans/month",
-        features: ["Basic privacy report", "Device scanning", "Privacy score"],
+        features: ["Basic privacy report", "Website policy scanning", "Privacy score"],
       },
       pro: {
         price: "$4.99/mo",

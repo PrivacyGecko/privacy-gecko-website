@@ -38,8 +38,111 @@ export default function ProductsPage() {
               href={product.href}
               isExternal={product.isExternal}
               features={product.features.slice(0, 3)}
+              ai={product.ai}
             />
           ))}
+        </div>
+      </Section>
+
+      {/* AI Enhancement Timeline Section */}
+      <Section className="bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold mb-4">
+              🤖 Coming Q4 2025
+            </div>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              AI-Enhanced Features
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Every Privacy Gecko tool will gain AI capabilities that adapt to new threats in real-time—without ever compromising your privacy. All AI processing happens on YOUR device, not our servers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {/* Phase 1: Q4 2025 */}
+            <div className="bg-white rounded-xl border-2 border-blue-200 p-6 hover:shadow-xl transition-shadow">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-bold text-gray-900">Phase 1: Launch</h3>
+                <span className="px-3 py-1 bg-blue-600 text-white text-sm font-semibold rounded-full">Q4 2025</span>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <strong className="text-blue-600 text-sm">GeckoAdvisor</strong>
+                  <ul className="text-sm text-gray-600 mt-1 space-y-1">
+                    <li>• AI-powered policy analysis in plain language</li>
+                    <li>• Intelligent risk scoring & pattern detection</li>
+                    <li>• Automated compliance gap identification</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong className="text-blue-600 text-sm">GeckoGuard</strong>
+                  <ul className="text-sm text-gray-600 mt-1 space-y-1">
+                    <li>• Learns new tracking patterns in real-time</li>
+                    <li>• Adapts blocking to your browsing style</li>
+                    <li>• Self-updating without manual filter lists</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Phase 2: Q1 2026 */}
+            <div className="bg-white rounded-xl border-2 border-purple-200 p-6 hover:shadow-xl transition-shadow">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-bold text-gray-900">Phase 2: Expansion</h3>
+                <span className="px-3 py-1 bg-purple-600 text-white text-sm font-semibold rounded-full">Q1 2026</span>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <strong className="text-purple-600 text-sm">GeckoShare</strong>
+                  <ul className="text-sm text-gray-600 mt-1 space-y-1">
+                    <li>• AI scans files for hidden metadata/trackers</li>
+                    <li>• Detects suspicious file patterns</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong className="text-purple-600 text-sm">GeckoLock</strong>
+                  <ul className="text-sm text-gray-600 mt-1 space-y-1">
+                    <li>• AI evaluates password strength vs. latest breaches</li>
+                    <li>• Phishing detection on login pages</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Phase 3: Q2 2026 */}
+            <div className="bg-white rounded-xl border-2 border-pink-200 p-6 hover:shadow-xl transition-shadow">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-bold text-gray-900">Phase 3: Intelligence</h3>
+                <span className="px-3 py-1 bg-pink-600 text-white text-sm font-semibold rounded-full">Q2 2026</span>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <strong className="text-pink-600 text-sm">GeckoView</strong>
+                  <ul className="text-sm text-gray-600 mt-1 space-y-1">
+                    <li>• Advanced AI content summarization</li>
+                    <li>• Privacy-aware recommendations</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong className="text-pink-600 text-sm">GeckoWatch</strong>
+                  <ul className="text-sm text-gray-600 mt-1 space-y-1">
+                    <li>• Continuous AI-powered compliance monitoring</li>
+                    <li>• Intelligent change detection & risk forecasting</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <a
+              href="/ai-roadmap"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transition-all"
+            >
+              View Complete AI Development Roadmap →
+            </a>
+          </div>
         </div>
       </Section>
 
@@ -64,26 +167,50 @@ export default function ProductsPage() {
               comingDate={product.comingDate}
               href={product.href}
               features={product.features.slice(0, 3)}
+              progress={product.progress}
+              ai={product.ai}
             />
           ))}
         </div>
       </Section>
 
-      {/* CTA */}
-      <Section>
+      {/* AI-Focused CTA */}
+      <Section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Stay Updated on New Releases
+            Be First to Access AI-Enhanced Privacy Tools
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Be the first to know when new privacy tools launch throughout 2025
+          <p className="text-lg mb-8 opacity-90">
+            Join 10,000+ early adopters preparing for the future of privacy protection
           </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-2xl">✓</span>
+              <span className="text-sm font-medium">Early access to AI beta (Q3 2025)</span>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-2xl">✓</span>
+              <span className="text-sm font-medium">20% lifetime discount on all tools</span>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-2xl">✓</span>
+              <span className="text-sm font-medium">First to access new AI features</span>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/contact?subject=Product%20Updates"
-              className="px-8 py-3 bg-gecko-green text-white rounded-lg font-medium hover:bg-gecko-green/90 transition-all duration-200"
+              href="/contact?subject=AI%20Waitlist"
+              className="px-8 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-gray-100 transition-all duration-200"
             >
-              Get Product Updates
+              Join AI Waitlist
+            </a>
+            <a
+              href="/ai-roadmap"
+              className="px-8 py-3 border-2 border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all duration-200"
+            >
+              View AI Roadmap
             </a>
           </div>
         </div>

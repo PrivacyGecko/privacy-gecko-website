@@ -76,6 +76,170 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      {/* AI Vision Section */}
+      <Section className="bg-neutral-100">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-display font-bold mb-4">Our Vision: AI-Enhanced Privacy</h2>
+              <p className="text-lg text-gray-600">
+                In 2025, we're pioneering privacy-first AI that makes our tools smarter without ever compromising
+                your data. Unlike cloud-based AI that sends your information to servers, our AI runs entirely on
+                your device.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <Card>
+                <CardHeader>
+                  <div className="text-4xl mb-3">🔒</div>
+                  <CardTitle>Local Processing</CardTitle>
+                  <CardDescription>
+                    All AI runs on your device, not our servers. Your data never leaves your control. This is how
+                    privacy-first AI should work.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <div className="text-4xl mb-3">🌐</div>
+                  <CardTitle>Federated Learning</CardTitle>
+                  <CardDescription>
+                    Your device learns locally, then shares only encrypted patterns. The community benefits without
+                    any privacy loss.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <div className="text-4xl mb-3">📖</div>
+                  <CardTitle>Open Source</CardTitle>
+                  <CardDescription>
+                    AI models will be publicly auditable. No black boxes, no secret algorithms. Complete transparency
+                    in how our AI works.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <div className="text-4xl mb-3">💎</div>
+                  <CardTitle>Token-Funded</CardTitle>
+                  <CardDescription>
+                    Community tokens fund development sustainably without selling your data or showing ads.
+                    Privacy-aligned economics.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <Button href="/ai-roadmap" variant="primary" size="lg">
+                Explore Our AI Development Roadmap →
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </Section>
+
+      {/* Token Funding Model Section */}
+      <Section>
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-display font-bold mb-4">How We Fund Development</h2>
+              <p className="text-lg text-gray-600">
+                Most privacy tools either sell your data or charge expensive subscriptions. We're building something
+                different: community-owned development through the $PRICKO token ecosystem.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <Card className="border-red-200 bg-red-50">
+                <CardHeader>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-2xl">❌</span>
+                    <CardTitle>Traditional Privacy Tools</CardTitle>
+                  </div>
+                  <ul className="space-y-3 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1">•</span>
+                      <span>Sell user data to advertisers</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1">•</span>
+                      <span>Show ads (tracking you to "protect" you)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1">•</span>
+                      <span>Expensive subscriptions ($50-100/mo)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1">•</span>
+                      <span>VC-funded with pressure to monetize users</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1">•</span>
+                      <span>No user governance or ownership</span>
+                    </li>
+                  </ul>
+                </CardHeader>
+              </Card>
+
+              <Card className="border-green-200 bg-green-50">
+                <CardHeader>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-2xl">✅</span>
+                    <CardTitle>Privacy Gecko Model</CardTitle>
+                  </div>
+                  <ul className="space-y-3 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1">•</span>
+                      <span>Never sell your data - ever</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1">•</span>
+                      <span>No ads - privacy-first analytics only</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1">•</span>
+                      <span>Always-free tier + affordable Pro</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1">•</span>
+                      <span>Community-funded via $PRICKO tokens</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1">•</span>
+                      <span>Token holders govern development</span>
+                    </li>
+                  </ul>
+                </CardHeader>
+              </Card>
+            </div>
+
+            <div className="text-center p-8 bg-gradient-to-br from-gecko-green/10 to-blue-50 rounded-lg border-2 border-gecko-green/30">
+              <p className="text-lg text-gray-700 mb-4">Want to learn more about how $PRICKO powers our ecosystem?</p>
+              <Button href="https://pricko.com" variant="primary" size="lg">
+                Learn About $PRICKO Token →
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </Section>
+
       {/* Mission */}
       <Section className="bg-neutral-100">
         <div className="max-w-4xl mx-auto text-center">

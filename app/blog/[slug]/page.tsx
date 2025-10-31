@@ -75,7 +75,7 @@ const blogPosts = {
       <p class="lead">GeckoAdvisor is your personal privacy and security assistant. This comprehensive guide will help you get the most out of GeckoAdvisor's powerful features.</p>
 
       <h2>What is GeckoAdvisor?</h2>
-      <p>GeckoAdvisor is an intelligent privacy audit tool that scans your device and provides actionable recommendations to improve your digital security. Think of it as a health checkup for your privacy posture.</p>
+      <p>GeckoAdvisor is an intelligent privacy analysis tool that scans website privacy policies and provides actionable insights about tracking and data collection. Think of it as a health checkup for how websites handle your data.</p>
 
       <h2>Installation and Setup</h2>
       <h3>Web Version</h3>
@@ -167,7 +167,7 @@ const blogPosts = {
       <h2>Common Questions</h2>
 
       <h3>Is my data uploaded during scans?</h3>
-      <p>No. GeckoAdvisor performs all analysis locally on your device. Only anonymous, aggregated statistics are sent to improve our detection algorithms.</p>
+      <p>No. GeckoAdvisor only analyzes public website privacy policies - we never access your personal data. Only anonymous, aggregated statistics are sent to improve our detection algorithms.</p>
 
       <h3>How long does a scan take?</h3>
       <p>A basic scan takes 2-3 minutes. Comprehensive scans (Pro feature) can take 10-15 minutes for thorough analysis.</p>
@@ -212,7 +212,7 @@ const blogPosts = {
       <p>We're building a comprehensive suite of privacy tools:</p>
 
       <h3>GeckoAdvisor (Live)</h3>
-      <p>Your personal privacy auditor. GeckoAdvisor scans your devices and provides actionable recommendations to improve your privacy posture. Think of it as a health checkup for your digital life.</p>
+      <p>Your website privacy auditor. GeckoAdvisor scans website privacy policies and provides actionable insights about how sites track you and collect your data. Think of it as a health checkup for website privacy practices.</p>
 
       <h3>GeckoShare (Coming Soon)</h3>
       <p>Secure file sharing without compromises. Upload, encrypt, and share files with end-to-end encryption. Files are automatically deleted after download or expiration.</p>
