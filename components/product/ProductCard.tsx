@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { AIBadge } from "@/components/ai";
 import { motion } from "framer-motion";
+import { ProductAIFeatures } from "@/lib/products";
 
 interface ProductCardProps {
   name: string;
@@ -19,6 +20,7 @@ interface ProductCardProps {
   features?: string[];
   progress?: number;
   hasAI?: boolean;
+  ai?: ProductAIFeatures;
 }
 
 export function ProductCard({
@@ -32,7 +34,28 @@ export function ProductCard({
   features,
   progress,
   hasAI = true,
+  ai,
 }: ProductCardProps) {
+  // Helper function to get AI timeline display text
+  const getAITimeline = () => {
+    if (!ai) return "Q4 2025";
+    switch (ai.aiTiming) {
+      case "launch-feature":
+        return "Q4 2025";
+      case "ai-native":
+        return "Core Feature";
+      case "post-launch":
+        return "Q1 2026";
+      case "future":
+        return "2026+";
+      default:
+        return "Q4 2025";
+    }
+  };
+
+  // Helper function to determine if AI is native (launches with product)
+  const isAINative = ai?.aiTiming === "ai-native" || ai?.aiTiming === "launch-feature";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -49,9 +72,13 @@ export function ProductCard({
             </div>
             <div className="flex flex-col gap-2 items-end">
               <Badge variant={status}>
-                {status === "live" ? "Live" : status === "beta" ? "Beta" : comingDate || "Coming Soon"}
+                {status === "live" ? "Live Now" : status === "beta" ? "Beta" : comingDate || "Coming Soon"}
               </Badge>
-              {hasAI && <AIBadge status="coming-soon" timeline="Q4 2025" size="sm" />}
+              {isAINative && status === "coming" && (
+                <Badge variant="info" className="bg-purple-600 text-white border-purple-600">
+                  AI-Native
+                </Badge>
+              )}
             </div>
           </div>
           <CardTitle>{name}</CardTitle>
@@ -91,6 +118,40 @@ export function ProductCard({
             </ul>
           </CardContent>
         )}
+
+        {/* AI Features Section */}
+        {ai && ai.aiFeatures && ai.aiFeatures.length > 0 && (
+          <CardContent>
+            <div className={`rounded-lg p-4 ${
+              isAINative
+                ? 'bg-gradient-to-br from-purple-100 to-pink-100 border-2 border-purple-300'
+                : 'bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200'
+            }`}>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-lg">🤖</span>
+                <span className={`text-xs font-bold px-2 py-1 rounded-full ${
+                  isAINative
+                    ? 'bg-purple-600 text-white'
+                    : 'bg-blue-600 text-white'
+                }`}>
+                  {isAINative ? `AI-Powered (${getAITimeline()})` : `AI Features (${getAITimeline()})`}
+                </span>
+              </div>
+              <p className="text-xs font-semibold text-gray-700 mb-2">
+                {isAINative ? 'AI capabilities at launch:' : 'Coming AI features:'}
+              </p>
+              <ul className="space-y-1.5 text-xs text-gray-700">
+                {ai.aiFeatures.map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="mr-1.5 flex-shrink-0">{isAINative ? '★' : '•'}</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </CardContent>
+        )}
+
         <CardContent className="mt-auto pt-4">
           {status === "live" ? (
             isExternal ? (

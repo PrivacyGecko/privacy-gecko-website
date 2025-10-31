@@ -13,7 +13,7 @@ export function AIDifference() {
       <SectionHeader
         subtitle="The AI Difference"
         title="Privacy Tools Are Reactive. Ours Learn."
-        description="Traditional privacy tools block KNOWN threats from static lists. Privacy Gecko will use AI (launching Q4 2025) to detect and adapt to NEW threats in real-time."
+        description="Traditional privacy tools block KNOWN threats from static lists. Starting Q4 2025, Privacy Gecko uses AI to detect and adapt to NEW threats in real-time."
       />
 
       {/* Comparison Table */}
@@ -76,9 +76,7 @@ export function AIDifference() {
           >
             <Card className="h-full flex flex-col border-blue-200 hover:border-blue-400 transition-colors duration-200">
               <CardHeader className="flex-grow">
-                <div className="p-3 bg-blue-100 rounded-lg w-fit mb-4">
-                  <Lock className="w-6 h-6 text-blue-700" />
-                </div>
+                <div className="text-5xl mb-4">🔒</div>
                 <CardTitle>Privacy-First Architecture</CardTitle>
                 <CardDescription>
                   <ul className="text-sm space-y-2 list-none">
@@ -114,9 +112,7 @@ export function AIDifference() {
           >
             <Card className="h-full flex flex-col border-green-200 hover:border-green-400 transition-colors duration-200">
               <CardHeader className="flex-grow">
-                <div className="p-3 bg-green-100 rounded-lg w-fit mb-4">
-                  <Globe className="w-6 h-6 text-green-700" />
-                </div>
+                <div className="text-5xl mb-4">🌐</div>
                 <CardTitle>Federated Learning</CardTitle>
                 <CardDescription>
                   <ul className="text-sm space-y-2 list-none">
@@ -152,9 +148,7 @@ export function AIDifference() {
           >
             <Card className="h-full flex flex-col border-purple-200 hover:border-purple-400 transition-colors duration-200">
               <CardHeader className="flex-grow">
-                <div className="p-3 bg-purple-100 rounded-lg w-fit mb-4">
-                  <Zap className="w-6 h-6 text-purple-700" />
-                </div>
+                <div className="text-5xl mb-4">⚡</div>
                 <CardTitle>Adaptive Protection</CardTitle>
                 <CardDescription>
                   <ul className="text-sm space-y-2 list-none">
@@ -190,9 +184,7 @@ export function AIDifference() {
           >
             <Card className="h-full flex flex-col border-amber-200 hover:border-amber-400 transition-colors duration-200">
               <CardHeader className="flex-grow">
-                <div className="p-3 bg-amber-100 rounded-lg w-fit mb-4">
-                  <BookOpen className="w-6 h-6 text-amber-700" />
-                </div>
+                <div className="text-5xl mb-4">📖</div>
                 <CardTitle>Open Source AI Models</CardTitle>
                 <CardDescription>
                   <ul className="text-sm space-y-2 list-none">

@@ -21,15 +21,15 @@ export default function HomePage() {
       {/* Hero Section */}
       <Hero
         subtitle="Privacy Tools That Evolve With You"
-        title="8 Privacy Tools (AI Coming Q4 2025). Zero Data Collection. Always Free Tier."
-        description="Intelligent privacy protection that adapts to new threats—running on your device, not our servers—without ever compromising your data. 2 live tools today, AI superpowers coming Q4 2025."
+        title="8 Privacy Tools. AI Enhancement Coming Q4 2025. Zero Data Collection."
+        description="Intelligent privacy protection that adapts to new threats—running on your device, not our servers. 2 live tools today, 6 more in development, AI superpowers coming Q4 2025."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="/products" variant="primary" size="lg">
             Explore Products
           </Button>
-          <Button href="#ai-preview" variant="outline" size="lg">
-            Learn About AI Features →
+          <Button href="/waitlist" variant="outline" size="lg">
+            Join AI Waitlist
           </Button>
         </div>
       </Hero>
@@ -75,6 +75,7 @@ export default function HomePage() {
               isExternal={product.isExternal}
               features={product.features.slice(0, 3)}
               progress={product.progress}
+              ai={product.ai}
             />
           ))}
         </div>
@@ -104,11 +105,31 @@ export default function HomePage() {
                   <Zap className="w-6 h-6 text-purple-700" />
                 </div>
                 <CardTitle className="flex items-center gap-2">
-                  AI-Enhanced (Coming Q4 2025)
+                  AI-Enhanced
                   <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-normal">Q4 2025</span>
                 </CardTitle>
                 <CardDescription>
-                  Privacy-first AI that will learn and adapt WITHOUT compromising your data. Local processing, federated learning, open-source models coming Q4 2025.
+                  Privacy-first AI that learns and adapts WITHOUT compromising your data. Local processing, federated learning, open-source models.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="h-full"
+          >
+            <Card className="h-full flex flex-col border-gecko-green hover:border-green-500 transition-colors duration-200">
+              <CardHeader className="flex-grow">
+                <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
+                  <Lock className="w-6 h-6 text-gecko-green" />
+                </div>
+                <CardTitle>Privacy-First</CardTitle>
+                <CardDescription>
+                  We don't track, sell, or monetize your data. Ever. That's our promise. Our AI learns without seeing your personal information.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -570,7 +591,7 @@ export default function HomePage() {
 
       {/* FAQ Section */}
       <Section className="bg-neutral-100">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -582,11 +603,12 @@ export default function HomePage() {
               Common Questions
             </h2>
             <p className="text-lg text-gray-600">
-              Quick answers to questions you may have
+              Quick answers about Privacy Gecko and our AI features
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Existing General Questions */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -600,7 +622,28 @@ export default function HomePage() {
                     <div>
                       <CardTitle className="text-lg mb-2">Can I use the ecosystem without crypto?</CardTitle>
                       <CardDescription>
-                        100%. $PRICKO tokens are optional for additional discounts only. All tools work fully without crypto.
+                        100%. $PRICKO tokens are optional for additional discounts and Pro features. All tools work fully without crypto, and free tiers will always be available.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+            >
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-1" />
+                    <div>
+                      <CardTitle className="text-lg mb-2">What if Privacy Gecko shuts down?</CardTitle>
+                      <CardDescription>
+                        All product code will be open-source after launch. You can self-host and continue using the tools. Your data stays yours, not ours.
                       </CardDescription>
                     </div>
                   </div>
@@ -619,9 +662,9 @@ export default function HomePage() {
                   <div className="flex items-start gap-3">
                     <HelpCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-1" />
                     <div>
-                      <CardTitle className="text-lg mb-2">What if Privacy Gecko shuts down?</CardTitle>
+                      <CardTitle className="text-lg mb-2">Do you collect any data?</CardTitle>
                       <CardDescription>
-                        All product code will be open-source after launch. You can self-host and continue using the tools.
+                        We only collect anonymized usage statistics via Plausible to improve our products. We never sell your data or track your personal information. That's our core promise.
                       </CardDescription>
                     </div>
                   </div>
@@ -633,16 +676,61 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
             >
               <Card className="h-full">
                 <CardHeader>
                   <div className="flex items-start gap-3">
                     <HelpCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-1" />
                     <div>
-                      <CardTitle className="text-lg mb-2">Do you collect any data?</CardTitle>
+                      <CardTitle className="text-lg mb-2">Are your tools really free?</CardTitle>
                       <CardDescription>
-                        We only collect anonymized usage statistics to improve our products. We never sell your data or track your personal information.
+                        Yes! Every tool has a generous free tier with no credit card required. You can upgrade to Pro for advanced features and unlimited AI queries when you're ready.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            {/* NEW: AI-Focused Questions */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Card className="h-full bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-300 relative">
+                <span className="absolute top-3 right-3 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</span>
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <CardTitle className="text-lg mb-2">How is your AI different from ChatGPT or other cloud AI?</CardTitle>
+                      <CardDescription>
+                        Our AI runs <strong>locally on your device</strong>. ChatGPT and similar tools send your data to the cloud for processing. Ours processes everything on your computer, so your data never leaves your control. This is privacy-first AI done right.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+            >
+              <Card className="h-full bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-300 relative">
+                <span className="absolute top-3 right-3 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</span>
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <CardTitle className="text-lg mb-2">Will AI features cost extra?</CardTitle>
+                      <CardDescription>
+                        Free tier users get <strong>50 AI queries per month</strong> across all products. Token holders (Pro tier) get <strong>unlimited AI queries</strong>. The token subsidizes AI compute costs, making it sustainable without selling your data.
                       </CardDescription>
                     </div>
                   </div>
@@ -656,14 +744,125 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Card className="h-full">
+              <Card className="h-full bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-300 relative">
+                <span className="absolute top-3 right-3 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</span>
                 <CardHeader>
                   <div className="flex items-start gap-3">
-                    <HelpCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-1" />
+                    <HelpCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
                     <div>
-                      <CardTitle className="text-lg mb-2">Are your tools really free?</CardTitle>
+                      <CardTitle className="text-lg mb-2">Can I use products without AI enabled?</CardTitle>
                       <CardDescription>
-                        Yes! Every tool has a generous free tier with no credit card required. You can upgrade to Pro for advanced features when needed.
+                        Absolutely! AI enhances existing features but isn't required. All core privacy protection works with AI disabled. You're always in complete control of what features you use.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+            >
+              <Card className="h-full bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-300 relative">
+                <span className="absolute top-3 right-3 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</span>
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <CardTitle className="text-lg mb-2">When exactly does AI launch?</CardTitle>
+                      <CardDescription>
+                        <strong>Q4 2025 (October-December 2025)</strong> concurrent with $PRICKO token launch. GeckoAdvisor and GeckoGuard will be first to get AI features. Other products follow in Q1-Q2 2026.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <Card className="h-full bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-300 relative">
+                <span className="absolute top-3 right-3 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</span>
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <CardTitle className="text-lg mb-2">Does your AI learn from my personal data?</CardTitle>
+                      <CardDescription>
+                        Only if you <strong>opt in to federated learning</strong>. Your raw data never leaves your device. Only encrypted, anonymized patterns are shared to improve community protection. You can disable this at any time.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.45 }}
+            >
+              <Card className="h-full bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-300 relative">
+                <span className="absolute top-3 right-3 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</span>
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <CardTitle className="text-lg mb-2">What AI models do you use?</CardTitle>
+                      <CardDescription>
+                        We use custom-trained transformer models for privacy scanning, ensemble classifiers for threat detection, and fine-tuned GPT-style models for summarization. All models are optimized for on-device performance (50-200MB) and will be open-sourced after maturity.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <Card className="h-full bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-300 relative">
+                <span className="absolute top-3 right-3 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</span>
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <CardTitle className="text-lg mb-2">Can I join the AI beta testing?</CardTitle>
+                      <CardDescription>
+                        Yes! AI beta opens in <strong>Q3 2025</strong>. Active users of 2+ Privacy Gecko products can apply. Beta testers get early access, earn $PRICKO token rewards, and influence feature development.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.55 }}
+            >
+              <Card className="h-full bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-300 relative">
+                <span className="absolute top-3 right-3 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</span>
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
+                    <div>
+                      <CardTitle className="text-lg mb-2">Will AI work offline?</CardTitle>
+                      <CardDescription>
+                        Yes! Basic AI features work completely offline since all processing happens on your device. Some features (like federated learning updates) require occasional internet connection, but core privacy protection never requires cloud access.
                       </CardDescription>
                     </div>
                   </div>
@@ -680,28 +879,79 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Final CTA */}
-      <Section>
-        <div className="text-center max-w-3xl mx-auto">
+      {/* Final CTA - AI-Focused */}
+      <Section className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 text-white">
+        <div className="text-center max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Ready to Take Back Your Privacy?
+            <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
+              Be Part of the AI-Enhanced Privacy Revolution
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Join the GeckoAdvisor beta or explore our other privacy tools. No credit card required.
+            <p className="text-xl mb-8 opacity-95">
+              Join <strong className="underline decoration-2 underline-offset-4">10,000+ early adopters</strong> preparing for the future of privacy protection
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="https://geckoadvisor.com" variant="primary" size="lg">
-                Try Your First Scan Free →
+
+            {/* Benefits Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-10">
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
+                <CheckCircle className="w-6 h-6 flex-shrink-0" />
+                <span className="font-medium">Early access to AI beta (Q3 2025)</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
+                <CheckCircle className="w-6 h-6 flex-shrink-0" />
+                <span className="font-medium">20% lifetime discount on all tools</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
+                <CheckCircle className="w-6 h-6 flex-shrink-0" />
+                <span className="font-medium">Exclusive development updates</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
+                <CheckCircle className="w-6 h-6 flex-shrink-0" />
+                <span className="font-medium">First to access AI features at launch</span>
+              </div>
+            </div>
+
+            {/* Primary CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Button
+                href="/waitlist"
+                variant="outline"
+                size="lg"
+                className="bg-white text-purple-700 hover:bg-gray-100 border-white font-bold text-lg px-8 py-4"
+              >
+                🚀 Join AI Waitlist (Free)
               </Button>
-              <Button href="/products" variant="secondary" size="lg">
-                Browse All Privacy Tools
+              <Button
+                href="https://geckoadvisor.com"
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-purple-700 font-bold text-lg px-8 py-4"
+              >
+                Try Our Tools Now
               </Button>
+            </div>
+
+            {/* Alternative Links */}
+            <div className="border-t border-white/20 pt-8">
+              <p className="text-sm opacity-90 mb-4 font-medium">Or explore our ecosystem:</p>
+              <div className="flex flex-wrap justify-center gap-6 text-sm">
+                <a href="https://geckoadvisor.com" className="hover:underline opacity-90 hover:opacity-100 transition-opacity">
+                  → Scan Website Privacy Policies
+                </a>
+                <a href="https://geckoshare.com" className="hover:underline opacity-90 hover:opacity-100 transition-opacity">
+                  → Send Encrypted Files
+                </a>
+                <a href="/roadmap" className="hover:underline opacity-90 hover:opacity-100 transition-opacity">
+                  → View AI Development Roadmap
+                </a>
+                <a href="https://discord.gg/privacygecko" className="hover:underline opacity-90 hover:opacity-100 transition-opacity">
+                  → Join Our Community
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>
