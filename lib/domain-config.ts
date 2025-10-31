@@ -39,7 +39,7 @@ export const productDomains: Record<string, ProductDomain> = {
   guard: {
     id: 'guard',
     name: 'Gecko Guard',
-    domain: 'geckoguard.app',
+    domain: 'prickoguard.com',
     status: 'planned', // In web store review
     useExternalLink: false,
   },
