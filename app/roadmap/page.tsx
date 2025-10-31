@@ -155,7 +155,7 @@ export default function RoadmapPage() {
                   <CardTitle className="text-3xl mb-4">AI Development Starting Q4 2025 • First Features Q1 2026</CardTitle>
                   <CardDescription className="text-base text-gray-700 mb-6">
                     Every Privacy Gecko tool will gain AI capabilities that adapt to new threats in real-time—without
-                    ever compromising your privacy. Development begins Q4 2025 with first features launching Q1 2026. All AI processing happens on YOUR device, not our servers.
+                    ever compromising your privacy. Token launches Q4 2025, AI beta Q4 2025 (1,000 users), public launch Q1 2026. All AI processing happens on YOUR device, not our servers.
                   </CardDescription>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">

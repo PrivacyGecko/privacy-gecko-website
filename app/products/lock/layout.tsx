@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "GeckoLock: AI-Enhanced Password Manager with Zero-Knowledge Encryption | Privacy Gecko",
-  description: "Open-source password manager with AI-powered security insights, zero-knowledge encryption, and cross-platform sync. Free tier: 50 passwords. Coming soon with federated learning.",
+  title: "GeckoLock - Zero-Knowledge Password Manager | AES-256",
+  description: "Secure password manager with zero-knowledge encryption. We can't see your passwords. AES-256 encryption. Cross-platform sync. Crypto wallet support. Free.",
 };
 
 export default function GeckoLockLayout({

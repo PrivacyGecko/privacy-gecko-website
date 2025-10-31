@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "GeckoShell: AI-Protected Mobile Browser with Web3 Support | Privacy Gecko",
-  description: "Privacy-first mobile browser with AI-enhanced tracker blocking, no browsing history logging, and optional Solana wallet. iOS & Android. Free tier available.",
+  title: "GeckoShell - Private Mobile Browser | iOS & Android",
+  description: "Private mobile browser that blocks trackers automatically. Built-in crypto wallet (optional). iOS & Android. Ad blocking. Privacy dashboard. Free download.",
 };
 
 export default function GeckoShellLayout({

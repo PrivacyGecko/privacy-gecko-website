@@ -3,6 +3,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { Section } from "@/components/sections/Section";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
+import { FAQSchema } from "@/components/seo/FAQSchema";
 import { HelpCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -100,7 +101,7 @@ export default function FAQPage() {
         },
         {
           q: "What's the $PRICKO token integration?",
-          a: "Coming Q4 2025, you'll be able to stake $PRICKO tokens to get discounts on Pro plans and early access to new features. Important: Using $PRICKO is 100% optional—all tools work fully without any token requirement. Token transactions are on Solana (public blockchain), but we don't link wallet addresses to your Privacy Gecko account.",
+          a: "Launching Q4 2025, you'll be able to stake $PRICKO tokens to get discounts on Pro plans and early access to new features. Important: Using $PRICKO is 100% optional—all tools work fully without any token requirement. Token transactions are on Solana (public blockchain), but we don't link wallet addresses to your Privacy Gecko account.",
         },
         {
           q: "Why integrate a token? Doesn't that conflict with privacy?",
@@ -156,6 +157,12 @@ export default function FAQPage() {
           ))}
         </div>
       </Section>
+
+      <FAQSchema
+        faqs={faqs.flatMap(category =>
+          category.questions.map(q => ({ question: q.q, answer: q.a }))
+        )}
+      />
     </>
   );
 }

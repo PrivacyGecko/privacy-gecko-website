@@ -13,7 +13,7 @@ export function AIDifference() {
       <SectionHeader
         subtitle="The AI Difference"
         title="Privacy Tools Are Reactive. Ours Learn."
-        description="Traditional privacy tools block KNOWN threats from static lists. Starting Q4 2025, Privacy Gecko uses AI to detect and adapt to NEW threats in real-time."
+        description="Traditional privacy tools block KNOWN threats from static lists. Starting Q4 2025, Privacy Gecko uses AI to detect and adapt to NEW threats in real-time. Token launch Q4 2025, AI features Q1 2026."
       />
 
       {/* Comparison Table */}
@@ -36,7 +36,7 @@ export function AIDifference() {
             problem: "You're vulnerable during steps 1-3 (days or weeks)",
           }}
           newWay={{
-            title: "The Privacy Gecko Way (AI-Enhanced - Coming Q4 2025)",
+            title: "The Privacy Gecko Way (AI-Enhanced - Q1 2026)",
             steps: [
               "Threat appears",
               "AI detects anomaly",

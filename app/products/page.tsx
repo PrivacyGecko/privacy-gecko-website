@@ -60,11 +60,11 @@ export default function ProductsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {/* Phase 1: Q1 2026 - First AI Integration */}
+            {/* Phase 1: February 2026 - First AI Integration */}
             <div className="bg-white rounded-xl border-2 border-blue-200 p-6 hover:shadow-xl transition-shadow">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-xl font-bold text-gray-900">Phase 1: First AI Integration</h3>
-                <span className="px-3 py-1 bg-blue-600 text-white text-sm font-semibold rounded-full">Q1 2026</span>
+                <span className="px-3 py-1 bg-blue-600 text-white text-sm font-semibold rounded-full">Feb 2026</span>
               </div>
               <div className="space-y-4">
                 <div>
@@ -204,7 +204,7 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="flex items-center justify-center gap-3">
               <span className="text-2xl">✓</span>
-              <span className="text-sm font-medium">Early access to AI beta (Q3 2025)</span>
+              <span className="text-sm font-medium">Early access to AI beta (Q4 2025)</span>
             </div>
             <div className="flex items-center justify-center gap-3">
               <span className="text-2xl">✓</span>

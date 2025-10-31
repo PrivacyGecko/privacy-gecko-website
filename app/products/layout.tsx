@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "All Products: Password Manager, VPN, File Sharing - Privacy Gecko",
-  description: "8 privacy tools: GeckoAdvisor (website privacy scanner), GeckoShare (encrypted files), GeckoGuard (ad blocking) live now. Password manager, VPN, email aliases in development."
+  title: "Privacy Tools - Password Manager, VPN & More | Privacy Gecko",
+  description: "Complete privacy tool ecosystem: password manager, VPN, encrypted file sharing, ad blocker, policy scanner & more. Free tier available on all 8 tools."
 };
 
 export default function ProductsLayout({

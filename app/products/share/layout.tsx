@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "GeckoShare: AI-Powered Encrypted File Sharing | Privacy Gecko",
-  description: "End-to-end encrypted file sharing with AI-enhanced security detection, expiring links, and password protection. Share anything securely without registration.",
+  title: "GeckoShare - Secure Encrypted File Sharing | Auto-Delete",
+  description: "Send encrypted files that automatically delete. End-to-end encryption (AES-256). Password protection & expiring links. No registration. 100MB free.",
 };
 
 export default function GeckoShareLayout({

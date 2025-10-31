@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "GeckoWatch: AI-Powered Privacy Compliance Monitoring | Privacy Gecko",
-  description: "AI-driven privacy auditing tool. Scan websites for GDPR/CCPA compliance, analyze cookies & trackers, monitor policy changes, and generate compliance reports.",
+  title: "Gecko Watch - Privacy Compliance Monitoring | GDPR & CCPA",
+  description: "Monitor privacy compliance of any website. GDPR & CCPA checking. Cookie & tracker analysis. Automated compliance reports. AI-powered change detection. Free.",
 };
 
 export default function GeckoWatchLayout({

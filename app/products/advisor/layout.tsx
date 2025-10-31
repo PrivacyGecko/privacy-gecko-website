@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "GeckoAdvisor: AI-Powered Website Privacy Policy Scanner | Privacy Gecko",
-  description: "AI-enhanced website privacy policy analysis. Scan any website for hidden trackers, compliance issues, and data collection practices. Beta pricing $4.99/mo. Free tier: 3 scans/month.",
+  title: "GeckoAdvisor - Privacy Policy Scanner & GDPR Checker",
+  description: "Scan any website's privacy policy for hidden trackers & compliance issues. GDPR & CCPA checker. Detect cookies, trackers & compliance gaps. Free scans.",
 };
 
 export default function AdvisorLayout({

@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "GeckoGuard: AI-Adaptive Ad & Tracker Blocker Extension | Privacy Gecko",
-  description: "AI-enhanced browser extension with adaptive tracker blocking on Chrome, Firefox, Safari. Blocks ads, trackers, fingerprinting. Faster browsing, better privacy. Free tier available.",
+  title: "GeckoGuard - Privacy Ad Blocker & Tracker Blocker",
+  description: "Block trackers & ads automatically. Real-time privacy dashboard. Custom filter lists. Learns new tracking patterns with AI. Chrome & Firefox extension.",
 };
 
 export default function GeckoGuardLayout({
