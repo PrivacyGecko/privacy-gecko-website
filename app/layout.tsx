@@ -10,7 +10,7 @@ import { MobileStickyCTA } from "@/components/ui/MobileStickyCTA";
 
 export const metadata: Metadata = {
   title: "Privacy Gecko - 8 AI-Enhanced Privacy Tools. Zero Data Collection. Always Free Tier.",
-  description: "8 AI-enhanced privacy tools with local processing. Intelligent protection that adapts to new threats—without compromising your data. 2 live tools today, AI coming Q4 2025. Free tier always available.",
+  description: "8 AI-enhanced privacy tools with local processing. Intelligent protection that adapts to new threats—without compromising your data. 2 live tools today, AI development starting Q4 2025, first features Q1 2026. Free tier always available.",
   keywords: ["privacy", "security", "encryption", "open source", "privacy tools", "AI privacy", "federated learning", "GDPR", "data protection"],
   authors: [{ name: "@0xAnonA" }],
   creator: "@0xAnonA",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Privacy Gecko - 8 AI-Enhanced Privacy Tools. Zero Data Collection. Always Free Tier.",
-    description: "Intelligent privacy protection with local AI processing. Adapts to new threats without compromising your data. 2 live tools today, AI coming Q4 2025.",
+    description: "Intelligent privacy protection with local AI processing. Adapts to new threats without compromising your data. 2 live tools today, AI development starting Q4 2025, first features Q1 2026.",
     type: "website",
     url: "https://privacygecko.com",
     siteName: "Privacy Gecko",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     site: "@privacygecko",
     creator: "@0xAnonA",
     title: "Privacy Gecko - 8 AI-Enhanced Privacy Tools. Zero Data Collection. Always Free Tier.",
-    description: "Intelligent privacy protection with local AI processing. Adapts to new threats without compromising your data. 2 live tools today, AI coming Q4 2025.",
+    description: "Intelligent privacy protection with local AI processing. Adapts to new threats without compromising your data. 2 live tools today, AI development starting Q4 2025, first features Q1 2026.",
     images: ["/twitter-image"],
   },
   icons: {

@@ -21,8 +21,8 @@ export default function HomePage() {
       {/* Hero Section */}
       <Hero
         subtitle="Privacy Tools That Evolve With You"
-        title="8 Privacy Tools. AI Enhancement Coming Q4 2025. Zero Data Collection."
-        description="Intelligent privacy protection that adapts to new threats—running on your device, not our servers. 2 live tools today, 6 more in development, AI superpowers coming Q4 2025."
+        title="8 Privacy Tools. AI Development Starting Q4 2025. Zero Data Collection."
+        description="Intelligent privacy protection that adapts to new threats—running on your device, not our servers. 2 live tools today, 6 more in development, AI features launching Q1 2026."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="/products" variant="primary" size="lg">
@@ -106,10 +106,10 @@ export default function HomePage() {
                 </div>
                 <CardTitle className="flex items-center gap-2">
                   AI-Enhanced
-                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-normal">Q4 2025</span>
+                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-normal">Q1 2026</span>
                 </CardTitle>
                 <CardDescription>
-                  Privacy-first AI that learns and adapts WITHOUT compromising your data. Local processing, federated learning, open-source models.
+                  Privacy-first AI that learns and adapts WITHOUT compromising your data. Development starting Q4 2025, first features Q1 2026. Local processing, federated learning, open-source models.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -430,10 +430,10 @@ export default function HomePage() {
               Powered by $PRICKO (Optional)
             </h2>
             <p className="text-lg mb-2 max-w-2xl mx-auto">
-              Coming Q4 2025: The token that funds AI-enhanced privacy for everyone.
+              Launching Q4 2025: The token that funds AI-enhanced privacy for everyone.
             </p>
             <p className="text-sm opacity-90 max-w-2xl mx-auto">
-              All tools work fully without any token requirement.
+              All tools work fully without any token requirement. AI features launch Q1 2026.
             </p>
           </motion.div>
 
@@ -774,7 +774,7 @@ export default function HomePage() {
                     <div>
                       <CardTitle className="text-lg mb-2">When exactly does AI launch?</CardTitle>
                       <CardDescription>
-                        <strong>Q4 2025 (October-December 2025)</strong> concurrent with $PRICKO token launch. GeckoAdvisor and GeckoGuard will be first to get AI features. Other products follow in Q1-Q2 2026.
+                        AI development starts <strong>Q4 2025</strong> concurrent with $PRICKO token launch. <strong>First AI features launch Q1 2026</strong> (GeckoAdvisor and GeckoGuard). Other products follow in Q2 2026 and beyond.
                       </CardDescription>
                     </div>
                   </div>
@@ -840,7 +840,7 @@ export default function HomePage() {
                     <div>
                       <CardTitle className="text-lg mb-2">Can I join the AI beta testing?</CardTitle>
                       <CardDescription>
-                        Yes! AI beta opens in <strong>Q3 2025</strong>. Active users of 2+ Privacy Gecko products can apply. Beta testers get early access, earn $PRICKO token rewards, and influence feature development.
+                        Yes! AI beta opens in <strong>late Q4 2025</strong> before public launch in Q1 2026. Active users of 2+ Privacy Gecko products can apply. Beta testers get early access, earn $PRICKO token rewards, and influence feature development.
                       </CardDescription>
                     </div>
                   </div>
@@ -899,7 +899,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-10">
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />
-                <span className="font-medium">Early access to AI beta (Q3 2025)</span>
+                <span className="font-medium">Early access to AI beta (Late Q4 2025)</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />

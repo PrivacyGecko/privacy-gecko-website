@@ -49,7 +49,7 @@ export default function ProductsPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold mb-4">
-              🤖 Coming Q4 2025
+              🤖 Development Starting Q4 2025 • First Features Q1 2026
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
               AI-Enhanced Features
@@ -60,15 +60,16 @@ export default function ProductsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {/* Phase 1: Q4 2025 */}
+            {/* Phase 1: Q1 2026 - First AI Integration */}
             <div className="bg-white rounded-xl border-2 border-blue-200 p-6 hover:shadow-xl transition-shadow">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-gray-900">Phase 1: Launch</h3>
-                <span className="px-3 py-1 bg-blue-600 text-white text-sm font-semibold rounded-full">Q4 2025</span>
+                <h3 className="text-xl font-bold text-gray-900">Phase 1: First AI Integration</h3>
+                <span className="px-3 py-1 bg-blue-600 text-white text-sm font-semibold rounded-full">Q1 2026</span>
               </div>
               <div className="space-y-4">
                 <div>
                   <strong className="text-blue-600 text-sm">GeckoAdvisor</strong>
+                  <span className="text-xs text-gray-500"> (First to get AI)</span>
                   <ul className="text-sm text-gray-600 mt-1 space-y-1">
                     <li>• AI-powered policy analysis in plain language</li>
                     <li>• Intelligent risk scoring & pattern detection</li>
@@ -77,6 +78,7 @@ export default function ProductsPage() {
                 </div>
                 <div>
                   <strong className="text-blue-600 text-sm">GeckoGuard</strong>
+                  <span className="text-xs text-gray-500"> (AI added to existing extension)</span>
                   <ul className="text-sm text-gray-600 mt-1 space-y-1">
                     <li>• Learns new tracking patterns in real-time</li>
                     <li>• Adapts blocking to your browsing style</li>
@@ -86,11 +88,11 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            {/* Phase 2: Q1 2026 */}
+            {/* Phase 2: Q2 2026 - AI Expansion */}
             <div className="bg-white rounded-xl border-2 border-purple-200 p-6 hover:shadow-xl transition-shadow">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-gray-900">Phase 2: Expansion</h3>
-                <span className="px-3 py-1 bg-purple-600 text-white text-sm font-semibold rounded-full">Q1 2026</span>
+                <h3 className="text-xl font-bold text-gray-900">Phase 2: AI Expansion</h3>
+                <span className="px-3 py-1 bg-purple-600 text-white text-sm font-semibold rounded-full">Q2 2026</span>
               </div>
               <div className="space-y-4">
                 <div>
@@ -103,32 +105,47 @@ export default function ProductsPage() {
                 <div>
                   <strong className="text-purple-600 text-sm">GeckoLock</strong>
                   <ul className="text-sm text-gray-600 mt-1 space-y-1">
-                    <li>• AI evaluates password strength vs. latest breaches</li>
+                    <li>• AI evaluates password strength vs. breaches</li>
                     <li>• Phishing detection on login pages</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong className="text-purple-600 text-sm">GeckoWatch</strong>
+                  <ul className="text-sm text-gray-600 mt-1 space-y-1">
+                    <li>• Continuous AI-powered compliance monitoring</li>
+                    <li>• Intelligent change detection</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong className="text-purple-600 text-sm">GeckoView</strong>
+                  <span className="text-xs text-gray-500"> (AI-Native Launch)</span>
+                  <ul className="text-sm text-gray-600 mt-1 space-y-1">
+                    <li>• Launches WITH AI built-in from day one</li>
+                    <li>• AI content summarization & extraction</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            {/* Phase 3: Q2 2026 */}
+            {/* Phase 3: Q3-Q4 2026+ - Full AI Ecosystem */}
             <div className="bg-white rounded-xl border-2 border-pink-200 p-6 hover:shadow-xl transition-shadow">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-gray-900">Phase 3: Intelligence</h3>
-                <span className="px-3 py-1 bg-pink-600 text-white text-sm font-semibold rounded-full">Q2 2026</span>
+                <h3 className="text-xl font-bold text-gray-900">Phase 3: Full AI Ecosystem</h3>
+                <span className="px-3 py-1 bg-pink-600 text-white text-sm font-semibold rounded-full">Q3-Q4 2026+</span>
               </div>
               <div className="space-y-4">
                 <div>
-                  <strong className="text-pink-600 text-sm">GeckoView</strong>
+                  <strong className="text-pink-600 text-sm">GeckoShell</strong>
                   <ul className="text-sm text-gray-600 mt-1 space-y-1">
-                    <li>• Advanced AI content summarization</li>
-                    <li>• Privacy-aware recommendations</li>
+                    <li>• Adaptive content blocking</li>
+                    <li>• Intelligent cache management</li>
                   </ul>
                 </div>
                 <div>
-                  <strong className="text-pink-600 text-sm">GeckoWatch</strong>
+                  <strong className="text-pink-600 text-sm">Gecko VPN</strong>
                   <ul className="text-sm text-gray-600 mt-1 space-y-1">
-                    <li>• Continuous AI-powered compliance monitoring</li>
-                    <li>• Intelligent change detection & risk forecasting</li>
+                    <li>• Smart server selection (2027)</li>
+                    <li>• Threat-based routing</li>
                   </ul>
                 </div>
               </div>

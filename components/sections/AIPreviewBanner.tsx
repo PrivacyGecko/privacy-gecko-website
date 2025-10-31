@@ -83,13 +83,13 @@ export function AIPreviewBanner() {
 
               {/* Headline */}
               <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-3">
-                Coming Q4 2025: AI-Enhanced Privacy
+                AI Development Starting Q4 2025 • First Features Q1 2026
               </h2>
 
               {/* Subheading */}
               <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
                 Every Privacy Gecko tool will gain AI capabilities that adapt, learn, and protect better—while running locally on{" "}
-                <span className="font-bold text-purple-700">YOUR device</span>. No cloud. No data sharing.
+                <span className="font-bold text-purple-700">YOUR device</span>. Development begins Q4 2025. First features launch Q1 2026. No cloud. No data sharing.
               </p>
             </motion.div>
 

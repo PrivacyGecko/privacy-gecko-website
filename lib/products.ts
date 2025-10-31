@@ -33,6 +33,16 @@ export interface ProductAIFeatures {
   aiFeatures: string[];
 
   /**
+   * Quarter when AI features launch (e.g., "Q1 2026")
+   */
+  aiLaunchDate?: string;
+
+  /**
+   * Quarter when base product launches (for products with post-launch AI)
+   */
+  productLaunch?: string;
+
+  /**
    * Development progress percentage (0-100)
    * Only for products in development (status: "coming")
    */
@@ -85,6 +95,7 @@ export const products: Product[] = [
     ],
     ai: {
       aiTiming: "post-launch",
+      aiLaunchDate: "Q1 2026",
       aiFeatures: [
         "AI-powered privacy policy analysis in plain language",
         "Intelligent risk scoring & pattern detection",
@@ -128,6 +139,7 @@ export const products: Product[] = [
     ],
     ai: {
       aiTiming: "post-launch",
+      aiLaunchDate: "Q2 2026",
       aiFeatures: [
         "AI scans files for hidden metadata/trackers",
         "Detects suspicious file patterns before sharing",
@@ -172,7 +184,9 @@ export const products: Product[] = [
       "Cross-device sync",
     ],
     ai: {
-      aiTiming: "launch-feature",
+      aiTiming: "post-launch",
+      aiLaunchDate: "Q1 2026",
+      productLaunch: "Q4 2025",
       developmentProgress: 90,
       aiFeatures: [
         "Learns NEW tracking patterns in real-time",
@@ -220,6 +234,8 @@ export const products: Product[] = [
     ],
     ai: {
       aiTiming: "post-launch",
+      aiLaunchDate: "Q2 2026",
+      productLaunch: "Q1 2026",
       developmentProgress: 65,
       aiFeatures: [
         "AI evaluates password strength against latest breaches",
@@ -267,6 +283,8 @@ export const products: Product[] = [
     ],
     ai: {
       aiTiming: "ai-native",
+      aiLaunchDate: "Q2 2026",
+      productLaunch: "Q2 2026",
       developmentProgress: 45,
       aiFeatures: [
         "One-click AI summaries (GPT-3.5 & GPT-4)",
@@ -315,6 +333,8 @@ export const products: Product[] = [
     ],
     ai: {
       aiTiming: "future",
+      aiLaunchDate: "Q3-Q4 2026",
+      productLaunch: "Q2 2026",
       developmentProgress: 30,
       aiFeatures: [
         "Adaptive content blocking",
@@ -368,6 +388,8 @@ export const products: Product[] = [
     ],
     ai: {
       aiTiming: "future",
+      aiLaunchDate: "2027",
+      productLaunch: "Q3 2026",
       developmentProgress: 20,
       aiFeatures: [
         "Smart server selection",
@@ -413,7 +435,9 @@ export const products: Product[] = [
       "Detailed reports",
     ],
     ai: {
-      aiTiming: "launch-feature",
+      aiTiming: "post-launch",
+      aiLaunchDate: "Q2 2026",
+      productLaunch: "Q1 2026",
       developmentProgress: 55,
       aiFeatures: [
         "Continuous compliance monitoring",
