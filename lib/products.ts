@@ -225,9 +225,9 @@ export const products: Product[] = [
     href: "/products/lock",
     isExternal: false,
     features: [
-      "Military-grade AES-256 encryption",
+      "AES-256 encryption",
       "Zero-knowledge architecture (we can't see your passwords)",
-      "Cross-platform sync (web, mobile, desktop)",
+      "Cross-platform sync (web, extension, mobile)",
       "Password generator with customizable complexity",
       "Built-in 2FA authenticator",
       "Easy import from LastPass, 1Password, Bitwarden",
@@ -274,7 +274,7 @@ export const products: Product[] = [
     lastUpdated: "2025-01-10",
     href: "/products/view",
     features: [
-      "One-click AI summaries with GPT-3.5 & GPT-4",
+      "One-click AI summaries",
       "End-to-end encrypted bookmark vault",
       "Browser extension with right-click integration",
       "Mobile apps for iOS and Android",
@@ -287,8 +287,6 @@ export const products: Product[] = [
       productLaunch: "Q2 2026",
       developmentProgress: 45,
       aiFeatures: [
-        "One-click AI summaries (GPT-3.5 & GPT-4)",
-        "End-to-end encrypted bookmark vault",
         "Intelligent content extraction",
         "Privacy-preserving recommendations",
         "Runs locally - your reading stays private",
@@ -296,13 +294,13 @@ export const products: Product[] = [
     },
     pricing: {
       free: {
-        limit: "10 summaries/day with GPT-3.5",
+        limit: "10 summaries/day",
         features: ["AI summarization", "Encrypted local storage", "Smart tagging", "Basic organization"],
       },
       pro: {
         price: "$9.99/mo",
         features: [
-          "Unlimited summaries with GPT-4",
+          "Unlimited AI summaries",
           "Cross-device sync",
           "IPFS decentralized storage",
           "PDF exports",
