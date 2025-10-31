@@ -65,8 +65,8 @@ export function ProductCard({
       className="h-full"
     >
       <Card className="h-full flex flex-col">
-        <CardHeader>
-          <div className="flex items-start justify-between mb-4">
+        <CardHeader className="mb-3">
+          <div className="flex items-start justify-between mb-3">
             <div className="p-3 bg-gecko-green/10 rounded-lg">
               <Icon className="w-6 h-6 text-gecko-green" />
             </div>
@@ -81,38 +81,36 @@ export function ProductCard({
               )}
             </div>
           </div>
-          <CardTitle>{name}</CardTitle>
+          <CardTitle className="mb-2">{name}</CardTitle>
           <CardDescription>{description}</CardDescription>
         </CardHeader>
         {progress !== undefined && (
-          <CardContent>
-            <div className="mb-4">
-              <div className="flex justify-between items-center mb-2">
-                <p className="text-xs font-semibold text-gray-700">Development Progress</p>
-                <p className="text-xs font-bold text-gecko-green">{progress}%</p>
-              </div>
-              <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-full h-2.5 shadow-inner overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${progress}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                  className="bg-gradient-to-r from-green-600 to-green-700 h-2.5 rounded-full shadow-sm"
-                  style={{
-                    boxShadow: '0 0 8px rgba(21, 128, 61, 0.4)'
-                  }}
-                />
-              </div>
+          <CardContent className="mb-3">
+            <div className="flex justify-between items-center mb-1.5">
+              <p className="text-xs font-semibold text-gray-700">Development Progress</p>
+              <p className="text-xs font-bold text-gecko-green">{progress}%</p>
+            </div>
+            <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-full h-2.5 shadow-inner overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: `${progress}%` }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                className="bg-gradient-to-r from-green-600 to-green-700 h-2.5 rounded-full shadow-sm"
+                style={{
+                  boxShadow: '0 0 8px rgba(21, 128, 61, 0.4)'
+                }}
+              />
             </div>
           </CardContent>
         )}
         {features && features.length > 0 && (
-          <CardContent className="flex-grow">
-            <ul className="space-y-2 text-sm text-gray-600">
+          <CardContent className="flex-grow mb-3">
+            <ul className="space-y-1.5 text-sm text-gray-600">
               {features.slice(0, 3).map((feature, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="text-gecko-green mr-2">✓</span>
-                  {feature}
+                  <span className="text-gecko-green mr-2 flex-shrink-0">✓</span>
+                  <span>{feature}</span>
                 </li>
               ))}
             </ul>
@@ -121,15 +119,15 @@ export function ProductCard({
 
         {/* AI Features Section */}
         {ai && ai.aiFeatures && ai.aiFeatures.length > 0 && (
-          <CardContent>
-            <div className={`rounded-lg p-4 ${
+          <CardContent className="mb-3">
+            <div className={`rounded-lg p-3 ${
               isAINative
                 ? 'bg-gradient-to-br from-purple-100 to-pink-100 border-2 border-purple-300'
                 : 'bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200'
             }`}>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-lg">🤖</span>
-                <span className={`text-xs font-bold px-2 py-1 rounded-full ${
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-base">🤖</span>
+                <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
                   isAINative
                     ? 'bg-purple-600 text-white'
                     : 'bg-blue-600 text-white'
@@ -137,10 +135,10 @@ export function ProductCard({
                   {isAINative ? `AI-Powered (${getAITimeline()})` : `AI Features (${getAITimeline()})`}
                 </span>
               </div>
-              <p className="text-xs font-semibold text-gray-700 mb-2">
+              <p className="text-xs font-semibold text-gray-700 mb-1.5">
                 {isAINative ? 'AI capabilities at launch:' : 'Coming AI features:'}
               </p>
-              <ul className="space-y-1.5 text-xs text-gray-700">
+              <ul className="space-y-1 text-xs text-gray-700">
                 {ai.aiFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start">
                     <span className="mr-1.5 flex-shrink-0">{isAINative ? '★' : '•'}</span>
@@ -152,7 +150,7 @@ export function ProductCard({
           </CardContent>
         )}
 
-        <CardContent className="mt-auto pt-4">
+        <CardContent className="mt-auto">
           {status === "live" ? (
             isExternal ? (
               <a
@@ -177,7 +175,7 @@ export function ProductCard({
               <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="outline" size="sm" className="w-full">
                 Join Waitlist
               </Button>
-              <p className="text-xs text-gray-600 text-center mt-2">
+              <p className="text-xs text-gray-600 text-center mt-1.5">
                 Includes 20% lifetime discount
               </p>
             </div>

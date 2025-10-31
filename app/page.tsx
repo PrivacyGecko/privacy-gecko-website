@@ -19,21 +19,49 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero Section */}
+
+      {/* Hero Section - REWRITTEN FOR PROFESSIONAL SAAS POSITIONING */}
       <Hero
-        subtitle="Privacy Tools That Evolve With You"
-        title="8 Privacy Tools. Token Launch Q4 2025. AI Development Starting. Zero Data Collection."
-        description="Intelligent privacy protection that adapts to new threats—running on your device, not our servers. 2 live tools today, 6 more in development. Token launch Q4 2025, AI features Q1 2026."
+        subtitle="Privacy Protection for the Modern Internet"
+        title={
+          <>
+            Complete Privacy Toolkit.
+            <br />
+            AI-Enhanced Protection.
+          </>
+        }
+        description={
+          <>
+            8 powerful privacy tools protecting everything from your browsing to your passwords. 
+            2 tools live today, 6 more launching through 2026. 
+            Start with generous{" "}
+            <span className="text-gecko-green font-semibold">free tiers</span>
+            , upgrade when ready.
+          </>
+        }
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="/products" variant="primary" size="lg">
-            Explore Products
+            Explore Privacy Tools
           </Button>
           <Button href="/waitlist" variant="outline" size="lg">
-            Join AI Waitlist
+            Join Early Access
           </Button>
         </div>
       </Hero>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* AI Preview Banner */}
       <AIPreviewBanner />
@@ -92,35 +120,15 @@ export default function HomePage() {
           title="We Practice What We Preach"
           description="Building privacy tools the right way: AI-enhanced. Open source. No tracking. No data selling."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* FIRST ROW: Most Important Cards */}
+          
+          {/* Card 1: Privacy-First (Core Value) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="h-full"
-          >
-            <Card className="h-full flex flex-col border-purple-200 hover:border-purple-400 transition-colors duration-200">
-              <CardHeader className="flex-grow">
-                <div className="p-3 bg-gradient-to-br from-purple-100 to-blue-100 rounded-lg w-fit mb-4">
-                  <Zap className="w-6 h-6 text-purple-700" />
-                </div>
-                <CardTitle className="flex items-center gap-2">
-                  AI-Enhanced
-                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-normal">Q1 2026</span>
-                </CardTitle>
-                <CardDescription>
-                  Privacy-first AI that learns and adapts WITHOUT compromising your data. Token launch Q4 2025, AI beta Q4 2025, public launch Q1 2026. Local processing, federated learning, open-source models.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.05 }}
             className="h-full"
           >
             <Card className="h-full flex flex-col border-gecko-green hover:border-green-500 transition-colors duration-200">
@@ -136,6 +144,28 @@ export default function HomePage() {
             </Card>
           </motion.div>
 
+          {/* Card 2: Free Tier Always (Removes Friction) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="h-full"
+          >
+            <Card className="h-full flex flex-col">
+              <CardHeader className="flex-grow">
+                <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
+                  <Zap className="w-6 h-6 text-gecko-green" />
+                </div>
+                <CardTitle>Free Tier Always</CardTitle>
+                <CardDescription>
+                  Every tool has a generous free tier. No credit card required to start. AI features available to free users with monthly limits.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </motion.div>
+
+          {/* Card 3: Complete Ecosystem (Differentiator) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -156,6 +186,33 @@ export default function HomePage() {
             </Card>
           </motion.div>
 
+          {/* SECOND ROW: Important Cards */}
+
+          {/* Card 4: AI-Enhanced (Future Value) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="h-full"
+          >
+            <Card className="h-full flex flex-col border-purple-200 hover:border-purple-400 transition-colors duration-200">
+              <CardHeader className="flex-grow">
+                <div className="p-3 bg-gradient-to-br from-purple-100 to-blue-100 rounded-lg w-fit mb-4">
+                  <Zap className="w-6 h-6 text-purple-700" />
+                </div>
+                <CardTitle className="flex items-center gap-2">
+                  AI-Enhanced
+                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-normal">Q1 2026</span>
+                </CardTitle>
+                <CardDescription>
+                  Privacy-first AI that learns and adapts WITHOUT compromising your data. Token launch Q4 2025, AI beta Q4 2025, public launch Q1 2026. Local processing, federated learning, open-source models.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </motion.div>
+
+          {/* Card 5: Always Improving (Ongoing Benefit) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -166,21 +223,22 @@ export default function HomePage() {
             <Card className="h-full flex flex-col">
               <CardHeader className="flex-grow">
                 <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
-                  <Zap className="w-6 h-6 text-gecko-green" />
+                  <Lock className="w-6 h-6 text-gecko-green" />
                 </div>
-                <CardTitle>Free Tier Always</CardTitle>
+                <CardTitle>Always Improving</CardTitle>
                 <CardDescription>
-                  Every tool has a generous free tier. No credit card required to start. AI features available to free users with monthly limits.
+                  Static blocklists become outdated. Our AI evolves with the threat landscape. Continuous protection that gets smarter every day.
                 </CardDescription>
               </CardHeader>
             </Card>
           </motion.div>
 
+          {/* Card 6: Open Development (Trust Signal) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
             className="h-full"
           >
             <Card className="h-full flex flex-col">
@@ -191,26 +249,6 @@ export default function HomePage() {
                 <CardTitle>Open Development</CardTitle>
                 <CardDescription>
                   Committed to transparency. Website is open source, product code in development. Core AI models will be open-sourced after maturity.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="h-full"
-          >
-            <Card className="h-full flex flex-col">
-              <CardHeader className="flex-grow">
-                <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
-                  <Lock className="w-6 h-6 text-gecko-green" />
-                </div>
-                <CardTitle>Always Improving</CardTitle>
-                <CardDescription>
-                  Static blocklists become outdated. Our AI evolves with the threat landscape. Continuous protection that gets smarter every day.
                 </CardDescription>
               </CardHeader>
             </Card>
