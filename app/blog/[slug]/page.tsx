@@ -10,7 +10,7 @@ const blogPosts = {
   "complete-guide-privacy-tools-2025": {
     title: "The Complete Guide to Privacy Tools in 2025",
     author: "@0xAnonA",
-    date: "November 4, 2025",
+    date: "July 15, 2025",
     category: "Privacy Guide",
     excerpt: "Discover the best privacy tools in 2025. Complete guide covering VPNs, password managers, ad blockers, encrypted messaging, and more to protect your digital privacy.",
     content: `
@@ -317,7 +317,7 @@ const blogPosts = {
   "crypto-trader-privacy-tools": {
     title: "Privacy Tools Every Crypto Trader Needs",
     author: "@0xAnonA",
-    date: "November 6, 2025",
+    date: "August 8, 2025",
     category: "Crypto Privacy",
     excerpt: "Essential privacy tools for crypto traders in 2025. Learn how to protect your wallet, transactions, and identity with VPNs, browsers, and privacy-focused tools.",
     content: `
@@ -608,7 +608,7 @@ const blogPosts = {
   "privacy-memecoins-explained": {
     title: "Privacy Memecoins: Memes with a Mission Explained",
     author: "@0xAnonA",
-    date: "November 8, 2025",
+    date: "September 12, 2025",
     category: "Token & Community",
     excerpt: "What are privacy memecoins? Learn how $PRICKO and other privacy-focused tokens combine community fun with real privacy utility and sustainable funding.",
     content: `
@@ -955,7 +955,7 @@ const blogPosts = {
   "local-ai-privacy-protection": {
     title: "How Local AI Protects Your Privacy (vs Cloud AI)",
     author: "@0xAnonA",
-    date: "November 10, 2025",
+    date: "October 3, 2025",
     category: "AI & Privacy",
     excerpt: "Local AI vs cloud AI for privacy. Learn how on-device AI processing protects your data with federated learning and edge computing in 2025.",
     content: `
@@ -1374,7 +1374,7 @@ const blogPosts = {
   "open-source-privacy-tools": {
     title: "Open Source Privacy Tools: Why It Matters",
     author: "@0xAnonA",
-    date: "November 12, 2025",
+    date: "October 31, 2025",
     category: "Privacy Tips",
     excerpt: "Why open source matters for privacy tools. Learn how transparency, community audits, and verifiable security make open source the gold standard.",
     content: `
