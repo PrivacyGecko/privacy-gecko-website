@@ -32,8 +32,8 @@ export default function HomePage() {
         }
         description={
           <>
-            8 powerful privacy tools protecting everything from your browsing to your passwords. 
-            2 tools live today, 6 more launching through 2026. 
+            8 powerful privacy tools protecting everything from your browsing to your passwords.
+            4 tools live today, 4 more launching through 2026.
             Start with generous{" "}
             <span className="text-gecko-green font-semibold">free tiers</span>
             , upgrade when ready.
@@ -89,7 +89,7 @@ export default function HomePage() {
         <SectionHeader
           subtitle="Our Ecosystem"
           title="Complete Privacy Toolkit"
-          description="8 powerful tools to protect your privacy across all aspects of your digital life. 2 available now, 6 in active development."
+          description="8 powerful tools to protect your privacy across all aspects of your digital life. 4 available now, 4 in active development."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
@@ -403,9 +403,9 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-gecko-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-gecko-green" />
               </div>
-              <div className="text-4xl font-bold text-gecko-green mb-2">2</div>
+              <div className="text-4xl font-bold text-gecko-green mb-2">4</div>
               <p className="text-gray-600">Live Privacy Tools</p>
-              <p className="text-sm text-gray-500 mt-1">Available now for free</p>
+              <p className="text-sm text-gray-500 mt-1">Available now with free tiers</p>
             </motion.div>
 
             <motion.div

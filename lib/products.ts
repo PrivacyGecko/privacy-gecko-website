@@ -56,6 +56,7 @@ export interface Product {
   description: string;
   icon: LucideIcon;
   status: "live" | "beta" | "coming";
+  badge?: string; // Optional badge text (e.g., "Newly Launched", "Beta")
   comingDate?: string;
   progress?: number; // Percentage complete for coming-soon/beta products
   lastUpdated?: string; // Last progress update date
@@ -170,11 +171,10 @@ export const products: Product[] = [
     tagline: "Block Trackers Before They See You",
     description: "Stop websites from following you across the internet with automatic blocking",
     icon: Eye,
-    status: "coming",
-    comingDate: "In Web Store Review",
-    progress: 90,
-    lastUpdated: "2025-10-14",
-    href: "/products/guard",
+    status: "live",
+    badge: "Newly Launched",
+    href: "https://geckoguard.app",
+    isExternal: true,
     features: [
       "Real-time tracker & ad blocking",
       "Privacy dashboard & statistics",
@@ -186,13 +186,11 @@ export const products: Product[] = [
     ai: {
       aiTiming: "post-launch",
       aiLaunchDate: "Q1 2026",
-      productLaunch: "Q4 2025",
-      developmentProgress: 90,
       aiFeatures: [
-        "Learns NEW tracking patterns in real-time",
-        "Adapts blocking to your browsing style",
-        "Predicts and blocks emerging threats",
-        "Self-updating without filter list updates",
+        "AI-powered tracker pattern learning",
+        "Adaptive blocking for your browsing style",
+        "Predictive threat blocking",
+        "Self-updating protection",
       ],
     },
     pricing: {
@@ -218,12 +216,10 @@ export const products: Product[] = [
     tagline: "Your Passwords, Locked Away From Everyone",
     description: "Password manager where only you can see your passwords - not even we can access them",
     icon: Key,
-    status: "coming",
-    comingDate: "In Development",
-    progress: 65,
-    lastUpdated: "2025-01-15",
-    href: "/products/lock",
-    isExternal: false,
+    status: "live",
+    badge: "Newly Launched",
+    href: "https://geckolock.com",
+    isExternal: true,
     features: [
       "AES-256 encryption",
       "Zero-knowledge architecture (we can't see your passwords)",
@@ -235,13 +231,11 @@ export const products: Product[] = [
     ai: {
       aiTiming: "post-launch",
       aiLaunchDate: "Q2 2026",
-      productLaunch: "Q1 2026",
-      developmentProgress: 65,
       aiFeatures: [
-        "AI evaluates password strength against latest breaches",
-        "Detects phishing attempts on login pages",
-        "Intelligent password generation",
-        "Breach monitoring with smart alerts",
+        "AI-powered password strength analysis",
+        "Phishing detection on login pages",
+        "Smart password generation",
+        "Proactive breach monitoring",
       ],
     },
     pricing: {
