@@ -33,7 +33,7 @@ export default function TokenPage() {
     },
     {
       icon: Coins,
-      title: "Staking Rewards (Q4 2025)",
+      title: "Staking Rewards (November 2025)",
       description: "Once launched, earn rewards by staking tokens and supporting the ecosystem",
     },
   ];
@@ -61,14 +61,14 @@ export default function TokenPage() {
       <Hero
         subtitle="$PRICKO Token"
         title="Stake Tokens, Unlock Premium Benefits"
-        description="Join the Privacy Gecko ecosystem with $PRICKO tokens (launching Q4 2025) and get exclusive discounts, early access, and future governance rights."
+        description="Join the Privacy Gecko ecosystem with $PRICKO tokens (launching November 2025) and get exclusive discounts, early access, and future governance rights."
       />
 
       {/* Coming Soon Banner */}
       <Section className="bg-yellow-50 border-y border-yellow-200 py-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-lg font-semibold text-yellow-900 mb-2">
-            🚀 Launching Q4 2025
+            🚀 Launching November 2025
           </p>
           <p className="text-gray-700">
             Token staking and benefits program is currently in development. Join our waitlist to be notified at launch.
@@ -88,7 +88,7 @@ export default function TokenPage() {
           />
           <div className="prose prose-lg max-w-none text-gray-600">
             <p>
-              $PRICKO is the official utility token of the Privacy Gecko ecosystem. Once staking launches in Q4 2025, by holding and staking $PRICKO tokens,
+              $PRICKO is the official utility token of the Privacy Gecko ecosystem. Once staking launches in November 2025, by holding and staking $PRICKO tokens,
               you will unlock significant benefits including discounts on Pro subscriptions, early access to new tools,
               and the ability to participate in future community governance.
             </p>
@@ -275,7 +275,7 @@ export default function TokenPage() {
           {[
             {
               q: "When will $PRICKO launch?",
-              a: "Token staking is scheduled to launch in Q4 2025. Join our waitlist to be notified when it's live.",
+              a: "Token staking is scheduled to launch in November 2025. Join our waitlist to be notified when it's live.",
             },
             {
               q: "What blockchain is $PRICKO on?",

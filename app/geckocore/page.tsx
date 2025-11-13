@@ -52,7 +52,7 @@ const timelineData = [
     quarter: "Q4 2026",
     milestone: "Public Launch & Full Integration",
     description:
-      "GeckoCore Protocol launches publicly. All eight products—including newly launched GeckoView, GeckoShell, Gecko VPN, and Gecko Watch—unified under one authentication system. Token staking features activate across the ecosystem.",
+      "GeckoCore Protocol will launch publicly. All eight products—including newly launched GeckoView, GeckoShell, Gecko VPN, and Gecko Watch—unified under one authentication system. Token staking features activate across the ecosystem.",
   },
 ];
 
@@ -64,7 +64,7 @@ const featuresData = [
     name: "Universal Wallet Login",
     headline: "One Wallet. Every Product. No Passwords Required.",
     description:
-      "Connect your Solana wallet once to access all eight Privacy Gecko products. No email addresses collected. No password databases to breach. Just cryptographic authentication that proves you're you—without revealing who you are. Disconnect anytime, and your session across all products ends instantly.",
+      "Connect your Solana wallet once to access (when launched) all eight Privacy Gecko products. No email addresses collected. No password databases to breach. Just cryptographic authentication that proves you're you—without revealing who you are. Disconnect anytime, and your session across all products ends instantly.",
   },
   {
     id: "token-utility",
@@ -72,7 +72,7 @@ const featuresData = [
     name: "$PRICKO Token Utility",
     headline: "Stake Tokens to Unlock Enhanced Privacy Features",
     description:
-      "Staking $PRICKO tokens unlocks premium capabilities across the entire ecosystem. GeckoAdvisor's advanced AI policy analysis. GeckoShare's extended file storage. GeckoView's unlimited summaries. Gecko VPN's priority servers. Token holders don't just access products—they access the best versions of each tool, all with one stake.",
+      "Staking $PRICKO tokens will unlock premium capabilities across the entire ecosystem. GeckoAdvisor's advanced AI policy analysis. GeckoShare's extended file storage. GeckoView's unlimited summaries. Gecko VPN's priority servers. Token holders won't just access products—they will access the best versions of each tool, all with one stake.",
   },
   {
     id: "privacy-infrastructure",
@@ -80,7 +80,7 @@ const featuresData = [
     name: "Privacy-Preserving Infrastructure",
     headline: "Services Communicate. Your Data Stays Encrypted.",
     description:
-      "GeckoCore enables products to work together without exposing your data. Cross-product features—like using GeckoLock to secure GeckoShare files—happen with zero-knowledge proofs. We can verify you're authorized without seeing what you're doing. Even our own systems can't read your encrypted information. That's privacy by design.",
+      "GeckoCore will enable products to work together without exposing your data. Cross-product features—like using GeckoLock to secure GeckoShare files—will happen with zero-knowledge proofs. We will be able to verify you're authorized without seeing what you're doing. Even our own systems won't be able to read your encrypted information. That's privacy by design.",
   },
   {
     id: "unified-navigation",
@@ -88,7 +88,7 @@ const featuresData = [
     name: "Unified Ecosystem Navigation",
     headline: "Switch Between Tools Without Breaking Your Flow",
     description:
-      "Move from scanning a privacy policy in GeckoAdvisor to sharing the report via GeckoShare in one click. Access your GeckoLock passwords while browsing with GeckoShell. Monitor website changes with Gecko Watch while connected to Gecko VPN. GeckoCore makes all eight products feel like one cohesive privacy command center.",
+      "Move from scanning a privacy policy in GeckoAdvisor to sharing the report via GeckoShare in one click. Access your GeckoLock passwords while browsing with GeckoShell. Monitor website changes with Gecko Watch while connected to Gecko VPN. GeckoCore will make all eight products feel like one cohesive privacy command center.",
   },
 ];
 
@@ -99,14 +99,14 @@ const guaranteesData = [
     icon: Database,
     headline: "We Don't Collect What We Don't Need",
     description:
-      "GeckoCore authentication uses cryptographic wallet signatures, not email addresses or personal information. We don't build user profiles. We don't track your activity across products. When you use GeckoCore, we verify your wallet ownership—that's it. Your usage patterns, preferences, and data remain yours.",
+      "GeckoCore authentication will use cryptographic wallet signatures, not email addresses or personal information. We won't build user profiles. We won't track your activity across products. When you use GeckoCore, we will verify your wallet ownership—that's it. Your usage patterns, preferences, and data remain yours.",
   },
   {
     id: "on-chain",
     icon: CheckCircle2,
     headline: "Trust Through Transparency",
     description:
-      "Token staking and authentication happen on Solana's blockchain, providing cryptographic proof of your access rights. Smart contracts are publicly auditable—you can verify exactly how GeckoCore handles your wallet interactions. No hidden backend logic. No secret data collection. Everything provable on-chain.",
+      "Token staking and authentication will happen on Solana's blockchain, providing cryptographic proof of your access rights. Smart contracts will be publicly auditable—you will be able to verify exactly how GeckoCore handles your wallet interactions. No hidden backend logic. No secret data collection. Everything provable on-chain.",
   },
   {
     id: "open-source",
@@ -130,7 +130,7 @@ const faqData = [
     id: "what-is",
     question: "What is GeckoCore Protocol?",
     answer:
-      "GeckoCore Protocol is the privacy-preserving infrastructure layer that unifies all eight Privacy Gecko products into one seamless ecosystem. Instead of managing separate logins and accounts across GeckoAdvisor, GeckoShare, GeckoGuard, GeckoLock, GeckoView, GeckoShell, Gecko VPN, and Gecko Watch, GeckoCore lets you authenticate once with your Solana wallet and access everything. It also powers token-gated features, cross-product functionality, and zero-knowledge data sharing between services—all while maintaining complete privacy.",
+      "GeckoCore Protocol will be the privacy-preserving infrastructure layer that unifies all eight Privacy Gecko products into one seamless ecosystem. Instead of managing separate logins and accounts across GeckoAdvisor, GeckoShare, GeckoGuard, GeckoLock, GeckoView, GeckoShell, Gecko VPN, and Gecko Watch, GeckoCore will let you authenticate once with your Solana wallet and access everything. It will also power token-gated features, cross-product functionality, and zero-knowledge data sharing between services—all while maintaining complete privacy.",
   },
   {
     id: "when-launch",
@@ -142,19 +142,19 @@ const faqData = [
     id: "need-tokens",
     question: "Do I need $PRICKO tokens to use Privacy Gecko products?",
     answer:
-      "No. Every Privacy Gecko product has a free tier accessible with email/password authentication, and that won't change with GeckoCore. You can use individual products without any wallet or tokens. GeckoCore's universal wallet login enables seamless SSO across all 8 products—you can connect a wallet without staking for this convenience. Token holders who stake $PRICKO unlock premium features (unlimited AI summaries, extended file storage, priority VPN servers), but core functionality remains free for everyone. We build privacy tools for people, not just investors.",
+      "No. Every Privacy Gecko product has a free tier accessible with email/password authentication, and that won't change with GeckoCore. You can use individual products without any wallet or tokens. GeckoCore's universal wallet login will enable seamless SSO across all 8 products—you can connect a wallet without staking for this convenience. Token holders who stake $PRICKO unlock premium features (unlimited AI summaries, extended file storage, priority VPN servers), but core functionality remains free for everyone. We build privacy tools for people, not just investors.",
   },
   {
     id: "token-benefits",
     question: "What are the benefits of staking $PRICKO with GeckoCore?",
     answer:
-      "Staking $PRICKO tokens unlocks premium features across all eight products simultaneously. One stake gives you unlimited AI summaries (GeckoView), advanced privacy policy analysis (GeckoAdvisor), extended file storage (GeckoShare), premium tracker filters (GeckoGuard), unlimited device sync (GeckoLock), priority VPN servers (Gecko VPN), and more. Token holders also get priority support, early access to new features, and governance voting rights on ecosystem development. Think of it as a universal upgrade key for the entire Privacy Gecko ecosystem.",
+      "Staking $PRICKO tokens will unlock premium features across all eight products simultaneously. One stake gives you unlimited AI summaries (GeckoView), advanced privacy policy analysis (GeckoAdvisor), extended file storage (GeckoShare), premium tracker filters (GeckoGuard), unlimited device sync (GeckoLock), priority VPN servers (Gecko VPN), and more. Token holders also get priority support, early access to new features, and governance voting rights on ecosystem development. Think of it as a universal upgrade key for the entire Privacy Gecko ecosystem.",
   },
   {
     id: "data-migration",
     question: "Will my existing accounts/data migrate to GeckoCore?",
     answer:
-      "Yes, with your explicit permission. When GeckoCore launches in Q4 2026, existing users of live products (GeckoAdvisor, GeckoShare, GeckoGuard, GeckoLock) will have seamless migration options. You'll connect your Solana wallet and choose to link existing accounts—or start fresh. All encrypted data remains encrypted during migration, with keys you control. No forced migration, no data exposure. You decide when and how to transition to GeckoCore authentication.",
+      "Yes, with your explicit permission. When GeckoCore launches in Q4 2026, existing users of live products (GeckoAdvisor, GeckoShare) will have (GeckoAdvisor, GeckoShare, GeckoGuard, GeckoLock) will have seamless migration options. You will connect your Solana wallet and choose to link existing accounts—or start fresh. All encrypted data remains encrypted during migration, with keys you control. No forced migration, no data exposure. You decide when and how to transition to GeckoCore authentication.",
   },
   {
     id: "centralized-decentralized",
@@ -172,13 +172,13 @@ const faqData = [
     id: "privacy-communication",
     question: "How does GeckoCore maintain privacy if products communicate?",
     answer:
-      "Zero-knowledge architecture. When GeckoCore enables cross-product features—like using GeckoLock to secure a GeckoShare file—services exchange cryptographic proofs, not your actual data. Example: GeckoShare can verify you're authorized to access a file without seeing your GeckoLock password database. All communication happens through encrypted channels, and services only receive the minimum information needed to function. We can't read your data, even when products work together.",
+      "Zero-knowledge architecture. When GeckoCore enables (post-launch) cross-product features—like using GeckoLock to secure a GeckoShare file—services will exchange cryptographic proofs, not your actual data. Example: GeckoShare will be able to verify you're authorized to access a file without seeing your GeckoLock password database. All communication will happen through encrypted channels, and services will only receive the minimum information needed to function. We won't be able to read your data, even when products work together.",
   },
   {
     id: "without-wallet",
     question: "Can I use Privacy Gecko products without connecting a wallet?",
     answer:
-      "Yes. Free tier users can authenticate with email/password on individual products, just like today. GeckoCore's wallet-based authentication is required for token-gated features and cross-product SSO, but it's not mandatory for basic access. If you want to use GeckoAdvisor's free plan without a wallet, you can. If you want to unlock premium features across all eight products with one wallet connection, GeckoCore makes that possible.",
+      "Yes. Free tier users can authenticate with email/password on individual products, just like today. GeckoCore's wallet-based authentication is required for token-gated features and cross-product SSO, but it's not mandatory for basic access. If you want to use GeckoAdvisor's free plan without a wallet, you can. If you want to unlock premium features across all eight products with one wallet connection, GeckoCore will make that possible.",
   },
   {
     id: "whitepaper",
@@ -236,10 +236,10 @@ export default function GeckoCorePage() {
               Coming 2026
             </Badge>
             <br />
-            GeckoCore Protocol is the privacy-preserving backbone connecting all
-            Privacy Gecko products into a unified ecosystem. Launch your wallet
+            GeckoCore Protocol will be the privacy-preserving backbone connecting all
+            Privacy Gecko products into a unified ecosystem. When launched, connect your wallet
             once, access everything. Development begins Q1 2026, with full
-            deployment by Q4 2026. No passwords. No tracking. Your data stays
+            deployment by Q4 2026. No passwords. Privacy-friendly analytics only. Your data stays
             yours.
           </>
         }
@@ -282,7 +282,7 @@ export default function GeckoCorePage() {
               <span className="text-red-600">The Problem</span>
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Right now, Privacy Gecko delivers eight powerful privacy
+              Currently, Privacy Gecko offers eight powerful privacy
               tools—GeckoAdvisor, GeckoShare, GeckoGuard, GeckoLock, and four
               more launching through 2026. Each product works independently,
               which means separate logins, disconnected experiences, and
@@ -302,12 +302,12 @@ export default function GeckoCorePage() {
               <span className="text-gecko-green">The Solution</span>
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              GeckoCore Protocol changes everything. One Solana wallet becomes
+              GeckoCore Protocol will change everything. One Solana wallet will become
               your universal key to the entire Privacy Gecko ecosystem. Seamless
               navigation between tools. Enhanced features unlocked by staking
               $PRICKO tokens. Zero-knowledge architecture means even when
               services communicate, your data remains encrypted and private.
-              GeckoCore delivers the unified privacy experience you
+              GeckoCore will deliver the unified privacy experience you
               deserve—without compromising the security you demand.
             </p>
           </motion.div>

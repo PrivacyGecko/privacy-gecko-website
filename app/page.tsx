@@ -131,7 +131,7 @@ export default function HomePage() {
         <SectionHeader
           subtitle="Why Choose Us"
           title="We Practice What We Preach"
-          description="Building privacy tools the right way: AI-enhanced. Open source. No tracking. No data selling."
+          description="Building privacy tools the right way: AI-enhanced. Open source. Privacy-friendly analytics only. No invasive tracking. No data selling."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* FIRST ROW: Most Important Cards */}
@@ -151,7 +151,7 @@ export default function HomePage() {
                 </div>
                 <CardTitle>Privacy-First</CardTitle>
                 <CardDescription>
-                  We don't track, sell, or monetize your data. Ever. That's our promise. Our AI learns without seeing your personal information.
+                  We don't use invasive tracking, sell data, or monetize your information. We use privacy-friendly Plausible Analytics (no cookies, no personal data collection). That's our promise. Our AI learns without seeing your personal information.
                 </CardDescription>
               </CardHeader>
             </Card>

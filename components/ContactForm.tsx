@@ -88,6 +88,8 @@ export function ContactForm() {
               <option value="billing">Billing Question</option>
               <option value="partnership">Partnership</option>
               <option value="press">Press/Media</option>
+              <option value="GeckoCore Waitlist">GeckoCore Waitlist</option>
+              <option value="GeckoCore Newsletter">GeckoCore Newsletter</option>
               <option value="AI Beta Waitlist">AI Beta Waitlist</option>
               <option value="Early Adopter Waitlist">Early Adopter Waitlist</option>
               <option value="other">Other</option>

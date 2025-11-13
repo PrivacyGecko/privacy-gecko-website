@@ -250,7 +250,7 @@ export function Footer() {
             </ExternalLink>
             <div className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg text-sm">
               <Shield size={16} className="text-gecko-green" />
-              <span className="text-gray-300">No Tracking</span>
+              <span className="text-gray-300">Privacy-Friendly Analytics</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg text-sm">
               <Shield size={16} className="text-gecko-green" />
