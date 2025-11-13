@@ -9,8 +9,9 @@ import { Button } from "@/components/ui/Button";
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
+  const navLinks: Array<{ href: string; label: string; badge?: string }> = [
     { href: "/products", label: "Products" },
+    { href: "/geckocore", label: "GeckoCore", badge: "Coming 2026" },
     { href: "/roadmap", label: "Roadmap" },
     { href: "/about", label: "About" },
     { href: "/resources", label: "Resources" },
@@ -48,9 +49,14 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-neutral-900 hover:text-gecko-green transition-colors font-medium"
+                className="text-neutral-900 hover:text-gecko-green transition-colors font-medium inline-flex items-center gap-2"
               >
                 {link.label}
+                {link.badge && (
+                  <span className="px-2 py-0.5 bg-blue-900 text-white text-xs rounded-full">
+                    {link.badge}
+                  </span>
+                )}
               </Link>
             ))}
           </div>
@@ -83,10 +89,15 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-2 text-neutral-900 hover:text-gecko-green transition-colors font-medium"
+                className="flex items-center justify-between py-2 text-neutral-900 hover:text-gecko-green transition-colors font-medium"
                 onClick={() => setIsOpen(false)}
               >
-                {link.label}
+                <span>{link.label}</span>
+                {link.badge && (
+                  <span className="px-2 py-0.5 bg-blue-900 text-white text-xs rounded-full">
+                    {link.badge}
+                  </span>
+                )}
               </Link>
             ))}
             <div className="pt-2">

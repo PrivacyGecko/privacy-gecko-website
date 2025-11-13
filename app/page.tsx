@@ -6,6 +6,7 @@ import { AIDifference } from "@/components/sections/AIDifference";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 import { products } from "@/lib/products";
@@ -49,11 +50,27 @@ export default function HomePage() {
         </div>
       </Hero>
 
-
-
-
-
-
+      {/* GeckoCore Protocol Teaser */}
+      <Section className="bg-neutral-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <Badge variant="coming" className="mb-4">Coming 2026</Badge>
+          <SectionHeader
+            title="Introducing GeckoCore Protocol"
+            subtitle="One wallet. Eight privacy tools. Zero compromises."
+          />
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            GeckoCore unifies all Privacy Gecko products into a seamless ecosystem. Connect your Solana wallet once, access everything. Token holders unlock <strong>unlimited AI queries, extended file storage (5GB), priority VPN servers, and cross-product premium features</strong> across all 8 tools.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/geckocore" variant="primary" size="lg">
+              Learn About GeckoCore →
+            </Button>
+            <Button href="/geckocore#faq" variant="outline" size="lg">
+              View Development Roadmap
+            </Button>
+          </div>
+        </div>
+      </Section>
 
 
 

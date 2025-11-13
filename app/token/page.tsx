@@ -2,7 +2,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Section, SectionHeader } from "@/components/sections/Section";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Coins, TrendingUp, Users, Zap, Shield, Gift } from "lucide-react";
+import { Coins, TrendingUp, Users, Zap, Shield, Gift, Key, ShieldCheck, Grid3x3 } from "lucide-react";
 
 export default function TokenPage() {
   const benefits = [
@@ -158,6 +158,65 @@ export default function TokenPage() {
               </CardHeader>
             </Card>
           ))}
+        </div>
+      </Section>
+
+      {/* GeckoCore Protocol Utility */}
+      <Section>
+        <SectionHeader
+          title="GeckoCore Protocol: Unified Token Utility"
+          subtitle="Stake once. Unlock premium features across all 8 products."
+        />
+        <div className="grid md:grid-cols-2 gap-8 mt-12">
+          {/* Feature Card 1 */}
+          <Card className="p-6">
+            <div className="w-12 h-12 bg-gecko-green/10 rounded-lg p-3 mb-4">
+              <Key className="w-6 h-6 text-gecko-green" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Universal Authentication</h3>
+            <p className="text-gray-600">
+              Connect your Solana wallet once to access all Privacy Gecko products. No passwords, no multiple accounts—just cryptographic proof of ownership.
+            </p>
+          </Card>
+
+          {/* Feature Card 2 */}
+          <Card className="p-6">
+            <div className="w-12 h-12 bg-gecko-green/10 rounded-lg p-3 mb-4">
+              <Coins className="w-6 h-6 text-gecko-green" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Token-Gated Features</h3>
+            <p className="text-gray-600">
+              Staking $PRICKO unlocks premium capabilities: unlimited AI summaries (GeckoView), extended file storage (GeckoShare), priority VPN servers, and more.
+            </p>
+          </Card>
+
+          {/* Feature Card 3 */}
+          <Card className="p-6">
+            <div className="w-12 h-12 bg-gecko-green/10 rounded-lg p-3 mb-4">
+              <ShieldCheck className="w-6 h-6 text-gecko-green" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Zero-Knowledge Privacy</h3>
+            <p className="text-gray-600">
+              Products communicate through encrypted channels. We verify your authorization without seeing your data—privacy by design.
+            </p>
+          </Card>
+
+          {/* Feature Card 4 */}
+          <Card className="p-6">
+            <div className="w-12 h-12 bg-gecko-green/10 rounded-lg p-3 mb-4">
+              <Grid3x3 className="w-6 h-6 text-gecko-green" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Seamless Ecosystem</h3>
+            <p className="text-gray-600">
+              Switch between GeckoAdvisor, GeckoShare, GeckoGuard, GeckoLock, and 4 more tools without breaking your flow. One ecosystem, complete privacy.
+            </p>
+          </Card>
+        </div>
+
+        <div className="mt-12 text-center">
+          <Button href="/geckocore" variant="primary" size="lg">
+            Explore GeckoCore Protocol →
+          </Button>
         </div>
       </Section>
 

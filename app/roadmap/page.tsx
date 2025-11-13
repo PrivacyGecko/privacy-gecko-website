@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Section, SectionHeader } from "@/components/sections/Section";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
 import { TimelineVisual, PhaseCard, TabNavigation, ProductMilestone } from "@/components/roadmap";
 import { products } from "@/lib/products";
 import {
@@ -1022,6 +1023,72 @@ export default function UnifiedRoadmapPage() {
                 </CardDescription>
               </CardHeader>
             </Card>
+          </div>
+        </div>
+      </Section>
+
+      {/* GeckoCore Protocol Timeline */}
+      <Section className="bg-neutral-100">
+        <SectionHeader
+          title="GeckoCore Protocol: 2026 Development Timeline"
+          subtitle="Transparent development. Public progress. Proven delivery."
+        />
+
+        <div className="mt-12 max-w-6xl mx-auto">
+          {/* Timeline Container */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Q1 2026 */}
+            <Card className="p-6 border-2 border-gray-200 hover:border-gecko-green hover:shadow-md transition-all">
+              <Badge variant="coming" className="bg-gecko-green/10 text-gecko-green mb-3">
+                Q1 2026
+              </Badge>
+              <h4 className="text-lg font-bold mb-2">Foundation & Community Input</h4>
+              <p className="text-sm text-gray-600">
+                Whitepaper publication, architecture finalization, community feedback period opens for early adopters.
+              </p>
+            </Card>
+
+            {/* Q2 2026 */}
+            <Card className="p-6 border-2 border-gray-200 hover:border-gecko-green hover:shadow-md transition-all">
+              <Badge variant="coming" className="bg-gecko-green/10 text-gecko-green mb-3">
+                Q2 2026
+              </Badge>
+              <h4 className="text-lg font-bold mb-2">Core Services Development</h4>
+              <p className="text-sm text-gray-600">
+                Building authentication engine, token-gating mechanisms, and privacy-preserving analytics infrastructure.
+              </p>
+            </Card>
+
+            {/* Q3 2026 */}
+            <Card className="p-6 border-2 border-gray-200 hover:border-gecko-green hover:shadow-md transition-all">
+              <Badge variant="coming" className="bg-gecko-green/10 text-gecko-green mb-3">
+                Q3 2026
+              </Badge>
+              <h4 className="text-lg font-bold mb-2">Beta Testing & Integration</h4>
+              <p className="text-sm text-gray-600">
+                Private beta with 1,000 early adopters. First product integrations go live (GeckoAdvisor, GeckoShare, GeckoGuard).
+              </p>
+            </Card>
+
+            {/* Q4 2026 */}
+            <Card className="p-6 border-2 border-gecko-green border-opacity-50 hover:border-gecko-green hover:shadow-md transition-all bg-gecko-green/5">
+              <Badge variant="live" className="bg-gecko-green text-white mb-3">
+                Q4 2026
+              </Badge>
+              <h4 className="text-lg font-bold mb-2">Public Launch</h4>
+              <p className="text-sm text-gray-600">
+                GeckoCore Protocol launches publicly. All 8 products unified under one authentication system.
+              </p>
+            </Card>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 mb-6">
+              Want to be among the first 1,000 beta testers in Q3 2026?
+            </p>
+            <Button href="/contact?subject=GeckoCore%20Waitlist" variant="primary" size="lg">
+              Join the Waitlist →
+            </Button>
           </div>
         </div>
       </Section>
