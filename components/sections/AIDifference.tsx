@@ -13,7 +13,7 @@ export function AIDifference() {
       <SectionHeader
         subtitle="The AI Difference"
         title="Privacy Tools Are Reactive. Ours Learn."
-        description="Traditional privacy tools block KNOWN threats from static lists. Privacy Gecko will use AI to detect and adapt to NEW threats in real-time. Token launches December 2025, AI beta Q1 2026 (1,000 users), public launch Q2 2026."
+        description="Traditional privacy tools block KNOWN threats from static lists. Privacy Gecko will use AI to detect and adapt to NEW threats in real-time. Token launches November 2025, AI beta Q1 2026 (1,000 users), public launch Q2 2026."
       />
 
       {/* Comparison Table */}
