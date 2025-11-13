@@ -23,7 +23,6 @@ export function Footer() {
     { href: "/resources/docs", label: "Documentation" },
     { href: "/resources/faq", label: "FAQ" },
     { href: "/resources/support", label: "Support" },
-    { href: "/ai-whitepaper", label: "AI Architecture" },
     { href: "/ai-ethics", label: "AI Ethics" },
   ];
 
