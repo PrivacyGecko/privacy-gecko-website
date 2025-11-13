@@ -282,7 +282,7 @@ export default function UnifiedRoadmapPage() {
       </Section>
 
       {/* Interactive Timeline */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <SectionHeader
           subtitle="DEVELOPMENT TIMELINE"
           title="Our Journey: From Foundation to Full Ecosystem"
@@ -292,7 +292,7 @@ export default function UnifiedRoadmapPage() {
       </Section>
 
       {/* Philosophy Section */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
             Our Development Philosophy
@@ -329,7 +329,7 @@ export default function UnifiedRoadmapPage() {
       </Section>
 
       {/* Products Section */}
-      <Section id="products">
+      <Section id="products" className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
         <SectionHeader
           title="Available Today"
           description="Start using these privacy tools now - free tiers available for all"
@@ -372,7 +372,7 @@ export default function UnifiedRoadmapPage() {
       </Section>
 
       {/* Coming Soon Products */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-gray-50 via-white to-emerald-50/20">
         <SectionHeader
           title="In Active Development"
           description="4 privacy tools being built in public - join waitlist for early adopter benefits"
@@ -842,7 +842,7 @@ export default function UnifiedRoadmapPage() {
       </Section>
 
       {/* Early Adopter Benefits */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-emerald-50 via-blue-50/30 to-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
@@ -910,7 +910,7 @@ export default function UnifiedRoadmapPage() {
       </Section>
 
       {/* Why This Timeline */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-8">
             Why This Timeline?
@@ -968,7 +968,7 @@ export default function UnifiedRoadmapPage() {
       </Section>
 
       {/* FAQ */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-12">
             Frequently Asked Questions
@@ -1028,7 +1028,7 @@ export default function UnifiedRoadmapPage() {
       </Section>
 
       {/* GeckoCore Protocol Timeline */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-emerald-50 to-blue-50/40">
         <SectionHeader
           title="GeckoCore Protocol: 2026 Development Timeline"
           subtitle="Transparent development. Public progress. Proven delivery."

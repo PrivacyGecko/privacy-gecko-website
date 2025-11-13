@@ -51,15 +51,21 @@ export default function HomePage() {
       </Hero>
 
       {/* GeckoCore Protocol Teaser */}
-      <Section className="bg-neutral-100">
-        <div className="max-w-4xl mx-auto text-center">
+      <Section className="bg-gradient-to-br from-emerald-50 via-blue-50 to-purple-50 relative overflow-hidden">
+        {/* Decorative gradient orbs */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gecko-green/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-privacy-blue/5 rounded-full blur-3xl" />
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <Badge variant="coming" className="mb-4">Coming 2026</Badge>
           <SectionHeader
             title="Introducing GeckoCore Protocol"
             subtitle="One wallet. Eight privacy tools. Zero compromises."
           />
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            GeckoCore unifies all Privacy Gecko products into a seamless ecosystem. Connect your Solana wallet once, access everything. Token holders unlock <strong>unlimited AI queries, extended file storage (5GB), priority VPN servers, and cross-product premium features</strong> across all 8 tools.
+          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+            GeckoCore unifies all Privacy Gecko products into a seamless ecosystem. Connect your Solana wallet once, access everything. Token holders unlock <strong className="text-gray-900">unlimited AI queries, extended file storage (5GB), priority VPN servers, and cross-product premium features</strong> across all 8 tools.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/geckocore" variant="primary" size="lg">
@@ -98,7 +104,7 @@ export default function HomePage() {
       </Section>
 
       {/* Product Showcase */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <SectionHeader
           subtitle="Our Ecosystem"
           title="Complete Privacy Toolkit"
@@ -270,7 +276,7 @@ export default function HomePage() {
       </Section>
 
       {/* How It Works */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-gray-50 to-white">
         <SectionHeader
           subtitle="Getting Started"
           title="How It Works"
@@ -374,7 +380,7 @@ export default function HomePage() {
       </Section>
 
       {/* Social Proof Section */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -642,7 +648,7 @@ export default function HomePage() {
       </Section>
 
       {/* FAQ Section */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -18,7 +18,7 @@ export default function ProductsPage() {
       />
 
       {/* Live Products */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <div className="mb-12">
           <h2 className="text-3xl font-display font-bold text-center mb-4">
             Available Now
@@ -164,7 +164,7 @@ export default function ProductsPage() {
       </Section>
 
       {/* Coming Soon Products */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-gray-50 via-white to-emerald-50/20">
         <div className="mb-12">
           <h2 className="text-3xl font-display font-bold text-center mb-4">
             Coming Soon

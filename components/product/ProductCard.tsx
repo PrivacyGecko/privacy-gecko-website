@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { AIBadge } from "@/components/ai";
 import { motion } from "framer-motion";
 import { ProductAIFeatures } from "@/lib/products";
+import { cn } from "@/lib/utils";
 
 interface ProductCardProps {
   name: string;
@@ -65,7 +66,16 @@ export function ProductCard({
       transition={{ duration: 0.5 }}
       className="h-full"
     >
-      <Card className="h-full flex flex-col">
+      <Card className={cn(
+        "h-full flex flex-col group",
+        "hover:shadow-2xl hover:shadow-gecko-green/10 transition-all duration-300",
+        "relative",
+        "before:absolute before:inset-0 before:rounded-xl before:p-[2px]",
+        "before:bg-gradient-to-br before:from-gecko-green/20 before:via-transparent",
+        "before:to-privacy-blue/20 before:-z-10 before:opacity-0",
+        "hover:border-gecko-green/50 hover:before:opacity-100",
+        "hover:-translate-y-1"
+      )}>
         <CardHeader className="mb-3">
           <div className="flex items-start justify-between mb-3">
             <div className="p-3 bg-gecko-green/10 rounded-lg">

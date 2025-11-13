@@ -123,7 +123,7 @@ export default function FAQPage() {
         description="Find answers to common questions about Privacy Gecko"
       />
 
-      <Section>
+      <Section className="bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="max-w-4xl mx-auto space-y-12">
           {faqs.map((category, catIndex) => (
             <div key={category.category}>

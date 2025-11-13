@@ -131,7 +131,7 @@ export default function BlogPage() {
         description="Tips, tutorials, and news about digital privacy and our products"
       />
 
-      <Section>
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto space-y-6">
           {posts.map((post, index) => (
             <motion.div
@@ -181,7 +181,7 @@ export default function BlogPage() {
       </Section>
 
       {/* Newsletter Signup */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-emerald-50 via-blue-50/30 to-white">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

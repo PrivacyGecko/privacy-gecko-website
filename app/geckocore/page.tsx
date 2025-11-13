@@ -265,7 +265,7 @@ export default function GeckoCorePage() {
       </Hero>
 
       {/* Problem/Solution Section */}
-      <Section className="bg-white">
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <SectionHeader
           title="Privacy Tools Shouldn't Feel Like Eight Different Apps"
           centered={false}
@@ -315,7 +315,7 @@ export default function GeckoCorePage() {
       </Section>
 
       {/* Four Key Features Grid */}
-      <Section id="features">
+      <Section id="features" className="bg-gradient-to-br from-gray-50 via-white to-emerald-50/20">
         <SectionHeader
           subtitle="Key Features"
           title="What Makes GeckoCore Different"
@@ -347,7 +347,7 @@ export default function GeckoCorePage() {
       </Section>
 
       {/* Development Timeline */}
-      <Section id="timeline" className="bg-white">
+      <Section id="timeline" className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
         <SectionHeader
           subtitle="Development Roadmap"
           title="Building GeckoCore in Four Quarters"
@@ -463,7 +463,7 @@ export default function GeckoCorePage() {
       </Section>
 
       {/* Benefits Comparison Table */}
-      <Section>
+      <Section className="bg-gradient-to-br from-gray-50 to-white">
         <SectionHeader
           subtitle="Free vs Token Holders"
           title="What You Get at Each Tier"
@@ -554,7 +554,7 @@ export default function GeckoCorePage() {
       </Section>
 
       {/* Privacy Guarantees Grid */}
-      <Section className="bg-white">
+      <Section className="bg-gradient-to-br from-emerald-50 via-blue-50/30 to-white">
         <SectionHeader
           subtitle="Our Commitments"
           title="Privacy Guarantees Built Into GeckoCore"
@@ -586,7 +586,7 @@ export default function GeckoCorePage() {
       </Section>
 
       {/* FAQ Section */}
-      <Section id="faq">
+      <Section id="faq" className="bg-gradient-to-b from-white to-gray-50">
         <SectionHeader
           subtitle="Frequently Asked Questions"
           title="Everything You Need to Know About GeckoCore"

@@ -80,7 +80,7 @@ export default function TokenPage() {
       </Section>
 
       {/* What is $PRICKO */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto">
           <SectionHeader
             title="What is $PRICKO?"
@@ -102,7 +102,7 @@ export default function TokenPage() {
       </Section>
 
       {/* Benefits Grid */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-gray-50 via-white to-emerald-50/20">
         <SectionHeader
           subtitle="Benefits"
           title="Why Stake $PRICKO?"
@@ -124,7 +124,7 @@ export default function TokenPage() {
       </Section>
 
       {/* Staking Tiers */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
         <SectionHeader
           title="Staking Tiers"
           description="The more you stake, the more you save"
@@ -162,7 +162,7 @@ export default function TokenPage() {
       </Section>
 
       {/* GeckoCore Protocol Utility */}
-      <Section>
+      <Section className="bg-gradient-to-br from-gray-50 to-white">
         <SectionHeader
           title="GeckoCore Protocol: Unified Token Utility"
           subtitle="Stake once. Unlock premium features across all 8 products."
@@ -221,7 +221,7 @@ export default function TokenPage() {
       </Section>
 
       {/* How It Works */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-emerald-50 via-blue-50/30 to-white">
         <SectionHeader
           title="How It Works"
           description="Simple steps to start saving with $PRICKO"
@@ -267,7 +267,7 @@ export default function TokenPage() {
       </Section>
 
       {/* FAQ */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <SectionHeader
           title="Token FAQ"
         />

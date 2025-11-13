@@ -41,7 +41,7 @@ export default function AboutPage() {
       />
 
       {/* Our Story */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -77,7 +77,7 @@ export default function AboutPage() {
       </Section>
 
       {/* AI Vision Section */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -150,7 +150,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Token Funding Model Section */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -241,7 +241,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Mission */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-emerald-50 via-blue-50/30 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -259,7 +259,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Values */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <SectionHeader
           subtitle="Our Values"
           title="What We Stand For"
@@ -289,7 +289,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Team */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-gray-50 to-white">
         <SectionHeader
           subtitle="Team"
           title="Built by Privacy Advocates"
@@ -328,7 +328,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Open Source */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-emerald-50 to-blue-50/40">
         <div className="text-center max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -360,7 +360,7 @@ export default function AboutPage() {
       </Section>
 
       {/* CTA */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Join Our Mission
