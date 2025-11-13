@@ -37,7 +37,7 @@ export default function ProductsPage() {
               status={product.status}
               href={product.href}
               isExternal={product.isExternal}
-              features={product.features.slice(0, 3)}
+              features={product.features.slice(0, 4)}
               ai={product.ai}
             />
           ))}
@@ -183,7 +183,7 @@ export default function ProductsPage() {
               status={product.status}
               comingDate={product.comingDate}
               href={product.href}
-              features={product.features.slice(0, 3)}
+              features={product.features.slice(0, 4)}
               progress={product.progress}
               ai={product.ai}
             />
