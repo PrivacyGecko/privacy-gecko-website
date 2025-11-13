@@ -69,7 +69,7 @@ export default function UnifiedRoadmapPage() {
     {
       id: "ai-launch",
       title: "AI Public Launch",
-      quarter: "Q1-Q2 2026",
+      quarter: "Q2 2026",
       status: "upcoming" as const,
       description: "AI features go live",
     },
@@ -111,7 +111,7 @@ export default function UnifiedRoadmapPage() {
       status: "in-progress" as const,
       statusLabel: "In Progress",
       deliverables: [
-        "$PRICKO token launches on Solana (THIS MONTH)",
+        "$PRICKO token launches on Solana in November 2025",
         "Token staking infrastructure goes live",
         "Community treasury established",
         "Early adopter rewards program begins",
@@ -135,7 +135,7 @@ export default function UnifiedRoadmapPage() {
     },
     {
       phase: "Phase 4: AI Public Launch",
-      timeline: "Q1-Q2 2026",
+      timeline: "Q2 2026",
       status: "upcoming" as const,
       statusLabel: "Upcoming",
       products: [

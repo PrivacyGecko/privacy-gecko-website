@@ -154,7 +154,7 @@ const faqData = [
     id: "data-migration",
     question: "Will my existing accounts/data migrate to GeckoCore?",
     answer:
-      "Yes, with your explicit permission. When GeckoCore launches in Q4 2026, existing users of live products (GeckoAdvisor, GeckoShare) will have (GeckoAdvisor, GeckoShare, GeckoGuard, GeckoLock) will have seamless migration options. You will connect your Solana wallet and choose to link existing accounts—or start fresh. All encrypted data remains encrypted during migration, with keys you control. No forced migration, no data exposure. You decide when and how to transition to GeckoCore authentication.",
+      "Yes, with your explicit permission. When GeckoCore launches in Q4 2026, existing users of live products (GeckoAdvisor, GeckoShare, GeckoGuard, GeckoLock) will have seamless migration options. You will connect your Solana wallet and choose to link existing accounts—or start fresh. All encrypted data remains encrypted during migration, with keys you control. No forced migration, no data exposure. You decide when and how to transition to GeckoCore authentication.",
   },
   {
     id: "centralized-decentralized",
