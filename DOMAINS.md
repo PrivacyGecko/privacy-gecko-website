@@ -11,7 +11,7 @@
 | **GeckoGuard** | geckoguard.app | .app | 📝 Review | Browser Extension (Web store) |
 | **GeckoPass** | geckopass.com | .com | 💤 Future | Password Manager |
 | **GeckoShell** | geckoshell.app | .app | 💤 Future | Secure Terminal |
-| **GeckoView** | geckoview.app | .app | 💤 Future | Privacy Browser |
+| **GeckoView** | geckoview.app | .app | 💤 Future | AI Summarization & Bookmark Vault |
 | **VPN MVP** | prickovpn.com | .com | 🧪 Testing | VPN Testing Environment |
 
 ## Domain Configuration
