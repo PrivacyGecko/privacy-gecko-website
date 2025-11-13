@@ -41,18 +41,18 @@ export default function TokenPage() {
   const tiers = [
     {
       amount: "1,000 $PRICKO",
-      discount: "20% off",
-      benefits: ["20% discount on all Pro plans", "Early access notifications", "Community badge"],
+      discount: "Starter Benefits",
+      benefits: ["Pro plan discounts on live products", "Early access notifications", "Community badge"],
     },
     {
       amount: "5,000 $PRICKO",
-      discount: "35% off",
-      benefits: ["35% discount on all Pro plans", "Priority support", "Beta feature access", "Governance voting rights (when staking launches)"],
+      discount: "Enhanced Benefits",
+      benefits: ["Larger Pro plan discounts", "Priority support", "Beta feature access", "Governance voting rights (when staking launches)"],
     },
     {
       amount: "10,000+ $PRICKO",
-      discount: "50% off",
-      benefits: ["50% discount on all Pro plans", "Lifetime discount guarantee", "VIP support channel", "Full governance rights (when staking launches)", "Exclusive features"],
+      discount: "Premium Benefits",
+      benefits: ["Maximum Pro plan discounts", "Lifetime discount guarantee", "VIP support channel", "Full governance rights (when staking launches)", "Exclusive features"],
     },
   ];
 

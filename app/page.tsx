@@ -72,7 +72,7 @@ export default function HomePage() {
           className="text-center"
         >
           <p className="text-lg md:text-xl font-semibold mb-4">
-            🎉 Early Adopter Special: Lock in 20% off for life on all upcoming privacy tools
+            🎉 Early Adopter Benefits: Lock in best pricing for life when products launch
           </p>
           <Button href="/roadmap" variant="outline" className="bg-white text-gecko-green hover:bg-gray-100 border-white">
             View Roadmap & Join Waitlist →
@@ -938,7 +938,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />
-                <span className="font-medium">20% lifetime discount on all tools</span>
+                <span className="font-medium">Lock in best pricing for life on all tools</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />

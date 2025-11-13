@@ -217,71 +217,63 @@ export default function GeckoWatchPage() {
         </div>
       </Section>
 
-      {/* Pricing */}
+      {/* Pricing & Waitlist */}
       <Section id="pricing">
         <SectionHeader
           subtitle="Pricing"
-          title="Choose Your Plan"
-          description="Start free, upgrade when you need continuous monitoring"
+          title="Join the Waitlist"
+          description="Pricing will be announced at launch. Be first to know and secure early access."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="h-full">
-              <CardHeader>
-                <CardTitle className="text-2xl mb-2">Free</CardTitle>
-                <div className="text-3xl font-bold mb-4">$0<span className="text-lg text-gray-500 font-normal">/month</span></div>
-                <CardDescription className="mb-6">{product.pricing.free.limit}</CardDescription>
-                <Button href="#scan" variant="outline" className="w-full mb-6">
-                  Start Scanning
-                </Button>
-                <div className="space-y-3">
-                  {product.pricing.free.features.map((feature, index) => (
-                    <div key={index} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-gecko-green mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
+            <Card className="border-gecko-green border-2">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl mb-4">Get Early Access</CardTitle>
+                <CardDescription className="text-base mb-6">
+                  Gecko Watch launches Q1 2026. Join the waitlist to:
+                </CardDescription>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-6">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm">Be notified when pricing is announced</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm">Get early access to beta testing</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm">Lock in launch pricing for life</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm">Access to exclusive founder updates</span>
+                  </div>
                 </div>
+                <Button href="/waitlist" variant="primary" size="lg" className="w-full md:w-auto">
+                  Join Waitlist (Free)
+                </Button>
+                <p className="text-xs text-gray-500 mt-4">
+                  No credit card required. Just your email for launch notifications.
+                </p>
               </CardHeader>
             </Card>
           </motion.div>
+        </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <Card className="h-full border-gecko-green border-2">
-              <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <CardTitle className="text-2xl">Pro</CardTitle>
-                  <Badge variant="live">Popular</Badge>
-                </div>
-                <div className="text-3xl font-bold mb-4">
-                  {product.pricing.pro.price.split('/')[0]}
-                  <span className="text-lg text-gray-500 font-normal">/month</span>
-                </div>
-                <CardDescription className="mb-6">Unlimited scans & continuous monitoring</CardDescription>
-                <Button href="#checkout" variant="primary" className="w-full mb-6">
-                  Start Pro Trial
-                </Button>
-                <div className="space-y-3">
-                  {product.pricing.pro.features.map((feature, index) => (
-                    <div key={index} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-gecko-green mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardHeader>
-            </Card>
-          </motion.div>
+        <div className="text-center mt-8 max-w-2xl mx-auto">
+          <p className="text-sm text-gray-600">
+            <strong>What we know:</strong> Gecko Watch will have a free tier (basic compliance scanning) 
+            and a Pro tier (continuous monitoring, competitor analysis, advanced features). Pricing details coming soon.
+          </p>
+          <p className="text-sm text-gray-600 mt-3">
+            💎 <strong>Token Holders:</strong> $PRICKO holders will receive Pro tier benefits. Token integration is 100% optional.
+          </p>
         </div>
       </Section>
 

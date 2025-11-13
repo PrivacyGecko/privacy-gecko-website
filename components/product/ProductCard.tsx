@@ -143,7 +143,7 @@ export function ProductCard({
                 Join Waitlist
               </Button>
               <p className="text-xs text-gray-600 text-center mt-1.5">
-                Includes 20% lifetime discount
+                Early adopter benefits
               </p>
             </div>
           )}

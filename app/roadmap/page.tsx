@@ -252,7 +252,7 @@ export default function RoadmapPage() {
                     <div className="bg-gray-50 rounded-lg p-3 mb-4">
                       <p className="text-xs text-gray-600 mb-1">Pricing TBA</p>
                       <p className="text-sm font-semibold text-gecko-green">
-                        Early adopters: 20% lifetime discount
+                        Early adopters: Lock in launch pricing
                       </p>
                     </div>
                     <div>
@@ -265,7 +265,7 @@ export default function RoadmapPage() {
                         Join Waitlist
                       </Button>
                       <p className="text-sm font-medium text-gecko-green text-center mt-2">
-                        Includes 20% lifetime discount
+                        Early adopter benefits
                       </p>
                     </div>
                   </CardContent>
@@ -294,10 +294,10 @@ export default function RoadmapPage() {
                   <div className="w-10 h-10 bg-gecko-green/10 rounded-lg flex items-center justify-center">
                     <CheckCircle className="w-5 h-5 text-gecko-green" />
                   </div>
-                  <CardTitle>20% Lifetime Discount</CardTitle>
+                  <CardTitle>Lock in Best Pricing</CardTitle>
                 </div>
                 <CardDescription>
-                  Lock in launch pricing with 20% off forever. Your rate never increases.
+                  Join the waitlist to lock in launch pricing for life. Your rate never increases.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -474,7 +474,7 @@ export default function RoadmapPage() {
                 Join Waitlist
               </Button>
               <p className="text-sm font-medium text-gecko-green text-center mt-2">
-                Includes 20% lifetime discount
+                Early adopter benefits
               </p>
             </div>
             <Button
