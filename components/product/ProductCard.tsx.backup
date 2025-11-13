@@ -75,8 +75,8 @@ export function ProductCard({
                 {status === "live" ? "Live Now" : status === "beta" ? "Beta" : comingDate || "Coming Soon"}
               </Badge>
               {isAINative && status === "coming" && (
-                <Badge variant="info" className="bg-purple-600 text-white border-purple-600">
-                  AI-Native
+                <Badge variant="info" className="bg-purple-100 text-purple-700 border-purple-300 font-medium text-[10px]">
+                  AI-Powered
                 </Badge>
               )}
             </div>
@@ -107,7 +107,7 @@ export function ProductCard({
         {features && features.length > 0 && (
           <CardContent className="flex-grow mb-3">
             <ul className="space-y-1.5 text-sm text-gray-600">
-              {features.slice(0, 3).map((feature, index) => (
+              {features.map((feature, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-gecko-green mr-2 flex-shrink-0">✓</span>
                   <span>{feature}</span>
@@ -117,40 +117,7 @@ export function ProductCard({
           </CardContent>
         )}
 
-        {/* AI Features Section */}
-        {ai && ai.aiFeatures && ai.aiFeatures.length > 0 && (
-          <CardContent className="mb-3">
-            <div className={`rounded-lg p-3 ${
-              isAINative
-                ? 'bg-gradient-to-br from-purple-100 to-pink-100 border-2 border-purple-300'
-                : 'bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200'
-            }`}>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-base">🤖</span>
-                <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
-                  isAINative
-                    ? 'bg-purple-600 text-white'
-                    : 'bg-blue-600 text-white'
-                }`}>
-                  {isAINative ? `AI-Powered (${getAITimeline()})` : `AI Features (${getAITimeline()})`}
-                </span>
-              </div>
-              <p className="text-xs font-semibold text-gray-700 mb-1.5">
-                {isAINative ? 'AI capabilities at launch:' : 'Coming AI features:'}
-              </p>
-              <ul className="space-y-1 text-xs text-gray-700">
-                {ai.aiFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="mr-1.5 flex-shrink-0">{isAINative ? '★' : '•'}</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </CardContent>
-        )}
-
-        <CardContent className="mt-auto">
+        <CardContent className="mt-auto pt-4">
           {status === "live" ? (
             isExternal ? (
               <a
@@ -176,9 +143,22 @@ export function ProductCard({
                 Join Waitlist
               </Button>
               <p className="text-xs text-gray-600 text-center mt-1.5">
-                Includes 20% lifetime discount
+                Early adopter benefits
               </p>
             </div>
+          )}
+          
+          {/* Subtle AI Indicator - ONLY for coming products with AI features */}
+          {status === "coming" && ai && ai.aiFeatures && ai.aiFeatures.length > 0 && (
+            <p className="text-xs text-gray-500 text-center mt-3 flex items-center justify-center gap-1.5">
+              <span className="text-[10px]">✨</span>
+              <span>
+                {isAINative 
+                  ? `AI-powered at launch (${ai.aiLaunchDate || getAITimeline()})` 
+                  : `AI features coming ${ai.aiLaunchDate || "2026"}`
+                }
+              </span>
+            </p>
           )}
         </CardContent>
       </Card>

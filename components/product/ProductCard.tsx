@@ -38,6 +38,7 @@ export function ProductCard({
 }: ProductCardProps) {
   // Helper function to get AI timeline display text
   const getAITimeline = () => {
+    // Note: Q4 2025 represents products launching/in-development during Q4 2025
     if (!ai) return "Q4 2025";
     switch (ai.aiTiming) {
       case "launch-feature":

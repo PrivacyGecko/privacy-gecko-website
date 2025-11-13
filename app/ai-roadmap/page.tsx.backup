@@ -14,8 +14,8 @@ export default function AIRoadmapPage() {
     {
       phase: "Phase 1: Foundation Building",
       timeline: "Q2-Q3 2025",
-      status: "completed" as const,
-      statusLabel: "Completed",
+      status: "in-development" as const,
+      statusLabel: "In Development",
       deliverables: [
         "GeckoAI Core Service architecture designed",
         "Federated learning framework prototyped",
@@ -28,8 +28,8 @@ export default function AIRoadmapPage() {
     {
       phase: "Phase 2: Token Launch",
       timeline: "Q4 2025",
-      status: "in-development" as const,
-      statusLabel: "In Progress",
+      status: "upcoming" as const,
+      statusLabel: "Upcoming",
       deliverables: [
         "$PRICKO token launches on Solana",
         "Token staking infrastructure goes live",
@@ -170,8 +170,6 @@ export default function AIRoadmapPage() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case "completed":
-        return "bg-purple-100 text-purple-800 border-purple-300";
       case "in-development":
         return "bg-green-100 text-green-800 border-green-300";
       case "upcoming":
@@ -185,8 +183,6 @@ export default function AIRoadmapPage() {
 
   const getStatusIcon = (status: string) => {
     switch (status) {
-      case "completed":
-        return <CheckCircle2 className="w-5 h-5 text-purple-600" />;
       case "in-development":
         return <CheckCircle2 className="w-5 h-5" />;
       case "upcoming":
@@ -552,7 +548,7 @@ export default function AIRoadmapPage() {
               </ul>
               <div className="p-4 bg-white rounded-lg border border-amber-200">
                 <p className="text-sm font-semibold text-neutral-900">
-                  Next Report: <span className="text-amber-700">Q4 2025</span>
+                  Next Report: <span className="text-amber-700">Q2 2025</span>
                 </p>
               </div>
             </CardContent>

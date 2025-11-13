@@ -465,7 +465,7 @@ export default function HomePage() {
               Powered by $PRICKO (Optional)
             </h2>
             <p className="text-lg mb-2 max-w-2xl mx-auto">
-              Launching November 2025: The token that funds AI-enhanced privacy for everyone.
+              Launching December 2025: The token that funds AI-enhanced privacy for everyone.
             </p>
             <p className="text-sm opacity-90 max-w-2xl mx-auto">
               All tools work fully without any token requirement. AI public launch Q2 2026.
@@ -809,7 +809,7 @@ export default function HomePage() {
                     <div>
                       <CardTitle className="text-lg mb-2">When exactly does AI launch?</CardTitle>
                       <CardDescription>
-                        <strong>$PRICKO token launches November 2025.</strong> AI beta opens <strong>Q1 2026</strong> (1,000 users). <strong>AI public launch Q2 2026</strong> (GeckoAdvisor and GeckoGuard). Other products follow in Q2-Q4 2026.
+                        <strong>$PRICKO token launches December 2025.</strong> AI beta opens <strong>Q1 2026</strong> (1,000 users). <strong>AI public launch Q2 2026</strong> (GeckoAdvisor and GeckoGuard). Other products follow in Q2-Q4 2026.
                       </CardDescription>
                     </div>
                   </div>
