@@ -98,31 +98,16 @@ export default function GeckoGuardPage() {
     <>
       <Hero
         subtitle="GeckoGuard"
-        title="Block Trackers Before They See You - AI-Adaptive Protection (Coming Q4 2025)"
-        description="Stop websites from following you across the internet with AI-powered, self-learning tracker blocking that will adapt to new threats in real-time (AI launching Q4 2025)"
+        title="Block Trackers Before They See You"
+        description="Stop websites from following you across the internet with intelligent tracker blocking. Newly launched and protecting your privacy today."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button href="/contact?subject=GeckoGuard%20Waitlist" variant="primary" size="lg">
-            Join Waitlist
+          <Button href="https://geckoguard.app" variant="primary" size="lg">
+            Try GeckoGuard Free
           </Button>
-          <Badge variant="coming">In Web Store Review (90% Complete)</Badge>
+          <Badge variant="live">Live Now - Newly Launched</Badge>
         </div>
       </Hero>
-
-      {/* Development Status Banner */}
-      <Section className="bg-blue-50">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <TimelineIndicator timeline="In Web Store Review" format="banner" />
-          <p className="text-lg mt-4 text-gray-700">Development Progress: <strong>90%</strong></p>
-          <p className="text-sm mt-2 text-gray-600">AI-powered tracker blocking available at launch</p>
-        </motion.div>
-      </Section>
 
       {/* Features Grid */}
       <Section>
@@ -296,8 +281,8 @@ export default function GeckoGuardPage() {
                 <CardTitle className="text-2xl mb-2">Free</CardTitle>
                 <div className="text-3xl font-bold mb-4">$0<span className="text-lg text-gray-500 font-normal">/month</span></div>
                 <CardDescription className="mb-6">{product.pricing.free.limit}</CardDescription>
-                <Button href="/contact?subject=GeckoGuard%20Waitlist" variant="outline" className="w-full mb-6">
-                  Join Waitlist (Free)
+                <Button href="https://geckoguard.app" variant="primary" className="w-full mb-6">
+                  Get Started Free
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.free.features.map((feature, index) => (
@@ -328,8 +313,8 @@ export default function GeckoGuardPage() {
                   <span className="text-lg text-gray-500 font-normal">/month</span>
                 </div>
                 <CardDescription className="mb-6">Advanced features and device sync</CardDescription>
-                <Button href="/contact?subject=GeckoGuard%20Pro%20Waitlist" variant="primary" className="w-full mb-6">
-                  Join Waitlist (Pro)
+                <Button href="https://geckoguard.app" variant="primary" className="w-full mb-6">
+                  Try Pro Free
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.pro.features.map((feature, index) => (
@@ -378,11 +363,11 @@ export default function GeckoGuardPage() {
             Ready to Browse Without Being Tracked?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            GeckoGuard is currently in Chrome/Firefox web store review. Be among the first to protect your privacy when it launches soon.
+            Join users protecting their privacy with GeckoGuard's intelligent tracker blocking. Newly launched with a generous free tier.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact?subject=GeckoGuard%20Waitlist" variant="primary" size="lg">
-              Join Waitlist
+            <Button href="https://geckoguard.app" variant="primary" size="lg">
+              Try Free Today
             </Button>
             <Button href="/products" variant="ghost" size="lg">
               Explore Other Tools

@@ -39,16 +39,16 @@ export const productDomains: Record<string, ProductDomain> = {
   guard: {
     id: 'guard',
     name: 'Gecko Guard',
-    domain: 'prickoguard.com',
-    status: 'planned', // In web store review
-    useExternalLink: false,
+    domain: 'geckoguard.app',
+    status: 'live', // ✅ LIVE - Newly launched
+    useExternalLink: true, // Link to geckoguard.app
   },
   lock: {
     id: 'lock',
     name: 'Gecko Lock',
     domain: 'geckolock.com',
-    status: 'planned', // In development
-    useExternalLink: false,
+    status: 'live', // ✅ LIVE - Newly launched
+    useExternalLink: true, // Link to geckolock.com
   },
   shell: {
     id: 'shell',

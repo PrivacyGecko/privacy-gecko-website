@@ -5,9 +5,10 @@ import { ExternalLink } from "@/components/ui/ExternalLink";
 
 export function Footer() {
   const productLinks = [
-    { href: "/products/advisor", label: "GeckoAdvisor" },
-    { href: "/products/share", label: "GeckoShare" },
-    { href: "/products/guard", label: "GeckoGuard" },
+    { href: "https://geckoadvisor.com", label: "GeckoAdvisor", external: true },
+    { href: "https://geckoshare.com", label: "GeckoShare", external: true },
+    { href: "https://geckoguard.app", label: "GeckoGuard", external: true },
+    { href: "https://geckolock.com", label: "GeckoLock", external: true },
     { href: "/products", label: "All Products" },
   ];
 
@@ -128,12 +129,22 @@ export function Footer() {
             <ul className="space-y-2">
               {productLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-gecko-green transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.external ? (
+                    <ExternalLink
+                      href={link.href}
+                      className="text-gray-400 hover:text-gecko-green transition-colors text-sm"
+                      showIcon={false}
+                    >
+                      {link.label}
+                    </ExternalLink>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-gecko-green transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

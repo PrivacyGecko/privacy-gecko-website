@@ -106,31 +106,16 @@ export default function GeckoLockPage() {
     <>
       <Hero
         subtitle="Gecko Lock"
-        title="Your Passwords, Locked Away From Everyone - Now with AI Security Insights"
-        description="Never forget another password—and never worry about who can see them. Gecko Lock uses military-grade AES-256 encryption with zero-knowledge architecture, meaning your passwords are encrypted before they leave your device. Coming Q4 2025 with AI-powered breach detection and phishing protection."
+        title="Your Passwords, Locked Away From Everyone"
+        description="Never forget another password—and never worry about who can see them. Zero-knowledge encryption means only you can access your vault. Newly launched and securing passwords today."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button href="#pricing" variant="primary" size="lg">
-            Coming Soon
+          <Button href="https://geckolock.com" variant="primary" size="lg">
+            Get Started Free
           </Button>
-          <Badge variant="coming">Coming Q4 2025</Badge>
+          <Badge variant="live">Live Now - Newly Launched</Badge>
         </div>
       </Hero>
-
-      {/* Development Status Banner */}
-      <Section className="bg-blue-50">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <TimelineIndicator timeline="In Development" format="banner" />
-          <p className="text-lg mt-4 text-gray-700">Development Progress: <strong>65%</strong></p>
-          <p className="text-sm mt-2 text-gray-600">AI security features coming post-launch</p>
-        </motion.div>
-      </Section>
 
       {/* Trust Indicators */}
       <Section>
@@ -195,9 +180,9 @@ export default function GeckoLockPage() {
       {/* Features Grid with AI */}
       <Section className="bg-neutral-100">
         <SectionHeader
-          subtitle="Planned Features"
+          subtitle="Features"
           title="Password Security You Can Actually Trust"
-          description="Core password management with AI security insights coming post-launch"
+          description="Complete password management with AI security insights coming Q2 2026"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {features.map((feature, index) => (
@@ -344,8 +329,8 @@ export default function GeckoLockPage() {
                 <CardTitle className="text-2xl mb-2">Free</CardTitle>
                 <div className="text-3xl font-bold mb-4">$0<span className="text-lg text-gray-500 font-normal">/month</span></div>
                 <CardDescription className="mb-6">{product.pricing.free.limit}</CardDescription>
-                <Button href="#install" variant="outline" className="w-full mb-6">
-                  Get Started
+                <Button href="https://geckolock.com" variant="primary" className="w-full mb-6">
+                  Start Free
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.free.features.map((feature, index) => (
@@ -376,8 +361,8 @@ export default function GeckoLockPage() {
                   <span className="text-lg text-gray-500 font-normal">/month</span>
                 </div>
                 <CardDescription className="mb-6">Advanced features & unlimited devices</CardDescription>
-                <Button href="#checkout" variant="primary" className="w-full mb-6">
-                  Start Pro Trial
+                <Button href="https://geckolock.com" variant="primary" className="w-full mb-6">
+                  Try Pro Free
                 </Button>
                 <div className="space-y-3">
                   {product.pricing.pro.features.map((feature, index) => (
@@ -432,11 +417,11 @@ export default function GeckoLockPage() {
             Ready to Take Control of Your Passwords?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Gecko Lock launches Q4 2025 with zero-knowledge encryption and open-source transparency. Be among the first to experience true password privacy.
+            Join users securing their passwords with zero-knowledge encryption. Newly launched with a generous free tier and AI security features coming Q2 2026.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="#pricing" variant="primary" size="lg">
-              Coming Soon
+            <Button href="https://geckolock.com" variant="primary" size="lg">
+              Try Free Today
             </Button>
             <Button href="/products" variant="ghost" size="lg">
               Explore Other Tools
