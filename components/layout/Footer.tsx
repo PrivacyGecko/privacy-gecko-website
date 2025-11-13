@@ -28,7 +28,7 @@ export function Footer() {
   ];
 
   const aiLinks = [
-    { href: "/ai-roadmap", label: "AI Roadmap" },
+    { href: "/roadmap#ai-development", label: "AI Roadmap" },
     { href: "/contact?subject=AI Beta Waitlist", label: "AI Beta Program" },
     { href: "/developers", label: "Developer Program", comingSoon: true },
     { href: "/research", label: "Research Partners", comingSoon: true },

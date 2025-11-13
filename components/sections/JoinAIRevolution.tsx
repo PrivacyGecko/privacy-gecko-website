@@ -292,7 +292,7 @@ export function JoinAIRevolution() {
                 how we build AI that respects privacy. Join us.
               </p>
               <Link
-                href="/ai-roadmap"
+                href="/roadmap#ai-development"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-gecko-green font-bold rounded-lg hover:bg-gray-100 transition-colors text-lg"
               >
                 View Full AI Roadmap

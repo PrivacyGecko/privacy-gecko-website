@@ -26,7 +26,7 @@ export default function ResourcesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Link href="/ai-roadmap" className="block h-full">
+            <Link href="/roadmap#ai-development" className="block h-full">
               <Card className="h-full bg-gradient-to-br from-purple-50 to-blue-50 border-purple-200 hover:shadow-lg transition-all">
                 <CardHeader>
                   <div className="text-4xl mb-3">🤖</div>
@@ -177,7 +177,7 @@ export default function ResourcesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Link href="/ai-roadmap">
+            <Link href="/roadmap#ai-development">
               <Card className="h-full hover:shadow-md transition-all">
                 <CardHeader>
                   <CardTitle className="text-lg">AI Development Roadmap</CardTitle>

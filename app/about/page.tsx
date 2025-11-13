@@ -141,7 +141,7 @@ export default function AboutPage() {
             </div>
 
             <div className="text-center">
-              <Button href="/ai-roadmap" variant="primary" size="lg">
+              <Button href="/roadmap#ai-development" variant="primary" size="lg">
                 Explore Our AI Development Roadmap →
               </Button>
             </div>

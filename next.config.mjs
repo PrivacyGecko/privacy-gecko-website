@@ -61,6 +61,17 @@ const nextConfig = {
       },
     ]
   },
+
+  // 301 Redirects for roadmap merger
+  async redirects() {
+    return [
+      {
+        source: '/ai-roadmap',
+        destination: '/roadmap#ai-development',
+        permanent: true, // 301 redirect
+      },
+    ]
+  },
 }
 
 const withMDX = createMDX({

@@ -154,7 +154,7 @@ export default function ProductsPage() {
 
           <div className="text-center">
             <a
-              href="/ai-roadmap"
+              href="/roadmap#ai-development"
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transition-all"
             >
               View Complete AI Development Roadmap →
@@ -224,7 +224,7 @@ export default function ProductsPage() {
               Join AI Waitlist
             </a>
             <a
-              href="/ai-roadmap"
+              href="/roadmap#ai-development"
               className="px-8 py-3 border-2 border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all duration-200"
             >
               View AI Roadmap
