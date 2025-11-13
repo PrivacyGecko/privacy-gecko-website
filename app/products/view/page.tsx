@@ -82,7 +82,7 @@ export default function GeckoViewPage() {
     },
     {
       question: "What's the difference between free and Pro tiers?",
-      answer: "Free tier includes 10 summaries per day using GPT-3.5, local storage in your browser, and basic features. Pro tier ($9.99/mo OR free with 100K+ $PRICKO tokens) unlocks unlimited summaries, GPT-4 access for higher-quality insights, IPFS sync for decentralized storage, PDF exports, priority support, and cross-device sync via encrypted cloud storage. Both tiers include end-to-end encryption and full privacy protection.",
+      answer: "Free tier includes limited summaries per day using GPT-3.5, local storage in your browser, and basic features. Pro tier unlocks unlimited summaries, GPT-4 access for higher-quality insights, IPFS sync for decentralized storage, PDF exports, priority support, and cross-device sync via encrypted cloud storage. Both tiers include end-to-end encryption and full privacy protection.",
     },
     {
       question: "Why use Gecko View instead of regular bookmarks?",
@@ -110,7 +110,7 @@ export default function GeckoViewPage() {
         description="Turn hours of reading into minutes with privacy-preserving AI summaries. This is an AI-native product where AI powers core functionality while maintaining end-to-end encryption. Save to your encrypted vault and access across all devices."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button href="#pricing" variant="primary" size="lg">
+          <Button href="#plans" variant="primary" size="lg">
             Coming Soon
           </Button>
           <Badge variant="coming">Coming Q4 2025</Badge>
@@ -331,12 +331,12 @@ export default function GeckoViewPage() {
         </div>
       </Section>
 
-      {/* Pricing & Waitlist */}
-      <Section id="pricing">
+      {/* Plans & Waitlist */}
+      <Section id="plans">
         <SectionHeader
-          subtitle="Pricing"
+          subtitle="Plans"
           title="Join the Waitlist"
-          description="Pricing will be announced at launch. Be first to know and secure early access."
+          description="Be among the first to access GeckoView when it launches."
         />
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -354,7 +354,7 @@ export default function GeckoViewPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-6">
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
-                    <span className="text-sm">Be notified when pricing is announced</span>
+                    <span className="text-sm">Get early access to the beta</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
@@ -362,7 +362,7 @@ export default function GeckoViewPage() {
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
-                    <span className="text-sm">Lock in launch pricing for life</span>
+                    <span className="text-sm">Lock in early adopter benefits</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
@@ -383,7 +383,7 @@ export default function GeckoViewPage() {
         <div className="text-center mt-8 max-w-2xl mx-auto">
           <p className="text-sm text-gray-600">
             <strong>What we know:</strong> Gecko View will have a generous free tier (AI-powered summaries with monthly limits) 
-            and a Pro tier (unlimited AI features, GPT-4 access, cross-device sync). Pricing details coming soon.
+            and a Pro tier (unlimited AI features, GPT-4 access, cross-device sync).
           </p>
           <p className="text-sm text-gray-600 mt-3">
             💎 <strong>Token Holders:</strong> $PRICKO holders will receive Pro tier benefits. Token integration is 100% optional.
@@ -427,7 +427,7 @@ export default function GeckoViewPage() {
             Gecko View launches Q4 2025. Be among the first to experience AI-powered summarization with true privacy protection.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="#pricing" variant="primary" size="lg">
+            <Button href="#plans" variant="primary" size="lg">
               Coming Soon
             </Button>
             <Button href="/products" variant="ghost" size="lg">

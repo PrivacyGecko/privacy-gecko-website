@@ -9,7 +9,7 @@ export default function TokenPage() {
     {
       icon: TrendingUp,
       title: "Pro Discounts",
-      description: "Stake $PRICKO to get 20-50% off all Pro subscriptions",
+      description: "Stake $PRICKO to get discounts on all Pro subscriptions",
     },
     {
       icon: Zap,
@@ -127,7 +127,7 @@ export default function TokenPage() {
       <Section className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
         <SectionHeader
           title="Staking Tiers"
-          description="The more you stake, the more you save"
+          description="The more you stake, the more benefits you unlock"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {tiers.map((tier, index) => (
@@ -224,7 +224,7 @@ export default function TokenPage() {
       <Section className="bg-gradient-to-br from-emerald-50 via-blue-50/30 to-white">
         <SectionHeader
           title="How It Works"
-          description="Simple steps to start saving with $PRICKO"
+          description="Simple steps to start unlocking benefits with $PRICKO"
         />
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
           <div className="text-center">
@@ -251,7 +251,7 @@ export default function TokenPage() {
             </div>
             <h3 className="font-bold mb-2">Stake Tokens</h3>
             <p className="text-sm text-gray-600">
-              Stake your tokens to unlock your discount tier and benefits
+              Stake your tokens to unlock your tier and benefits
             </p>
           </div>
           <div className="text-center">
@@ -260,7 +260,7 @@ export default function TokenPage() {
             </div>
             <h3 className="font-bold mb-2">Enjoy Benefits</h3>
             <p className="text-sm text-gray-600">
-              Your discounts and perks are automatically applied to all subscriptions
+              Your benefits are automatically applied to all subscriptions
             </p>
           </div>
         </div>
@@ -283,11 +283,11 @@ export default function TokenPage() {
             },
             {
               q: "Can I unstake my tokens?",
-              a: "Yes, you can unstake at any time. Note that discounts will only apply while tokens are actively staked.",
+              a: "Yes, you can unstake at any time. Note that benefits will only apply while tokens are actively staked.",
             },
             {
-              q: "Do discounts apply to existing subscriptions?",
-              a: "Yes! Stake tokens and your discount will be applied starting from your next billing cycle.",
+              q: "Do benefits apply to existing subscriptions?",
+              a: "Yes! Stake tokens and your benefits will be applied starting from your next billing cycle.",
             },
             {
               q: "Is there a minimum staking period?",
@@ -308,7 +308,7 @@ export default function TokenPage() {
       <Section className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Ready to Save with $PRICKO?
+            Ready to Join the Ecosystem?
           </h2>
           <p className="text-lg mb-8 opacity-90">
             Join the waitlist and be the first to know when token staking launches

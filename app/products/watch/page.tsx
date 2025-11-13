@@ -86,7 +86,7 @@ export default function GeckoWatchPage() {
     },
     {
       question: "Can I monitor multiple websites?",
-      answer: "Yes! Free tier allows 3 scans per month. Pro tier ($14.99/mo) includes unlimited scans, continuous monitoring for up to 10 websites, and API access for automated scanning.",
+      answer: "Yes! Free tier allows limited scans per month. Pro tier includes unlimited scans, continuous monitoring for up to 10 websites, and API access for automated scanning.",
     },
     {
       question: "How accurate are the compliance reports?",
@@ -106,7 +106,7 @@ export default function GeckoWatchPage() {
         description="Analyze and monitor privacy compliance of any website. Detect cookies, trackers, and GDPR violations with AI-powered continuous monitoring and intelligent change detection."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button href="#pricing" variant="primary" size="lg">
+          <Button href="#plans" variant="primary" size="lg">
             Coming Soon
           </Button>
           <Badge variant="coming">Coming Q4 2025</Badge>
@@ -217,12 +217,12 @@ export default function GeckoWatchPage() {
         </div>
       </Section>
 
-      {/* Pricing & Waitlist */}
-      <Section id="pricing">
+      {/* Plans & Waitlist */}
+      <Section id="plans">
         <SectionHeader
-          subtitle="Pricing"
+          subtitle="Plans"
           title="Join the Waitlist"
-          description="Pricing will be announced at launch. Be first to know and secure early access."
+          description="Be among the first to access GeckoWatch when it launches."
         />
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -240,7 +240,7 @@ export default function GeckoWatchPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-6">
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
-                    <span className="text-sm">Be notified when pricing is announced</span>
+                    <span className="text-sm">Get early access to the beta</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
@@ -248,7 +248,7 @@ export default function GeckoWatchPage() {
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
-                    <span className="text-sm">Lock in launch pricing for life</span>
+                    <span className="text-sm">Lock in early adopter benefits</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
@@ -269,7 +269,7 @@ export default function GeckoWatchPage() {
         <div className="text-center mt-8 max-w-2xl mx-auto">
           <p className="text-sm text-gray-600">
             <strong>What we know:</strong> Gecko Watch will have a free tier (basic compliance scanning) 
-            and a Pro tier (continuous monitoring, competitor analysis, advanced features). Pricing details coming soon.
+            and a Pro tier (continuous monitoring, competitor analysis, advanced features).
           </p>
           <p className="text-sm text-gray-600 mt-3">
             💎 <strong>Token Holders:</strong> $PRICKO holders will receive Pro tier benefits. Token integration is 100% optional.
@@ -313,7 +313,7 @@ export default function GeckoWatchPage() {
             GeckoWatch launches Q4 2025 with AI-powered compliance monitoring. Be among the first to audit website privacy practices.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="#pricing" variant="primary" size="lg">
+            <Button href="#plans" variant="primary" size="lg">
               Coming Soon
             </Button>
             <Button href="/products" variant="ghost" size="lg">

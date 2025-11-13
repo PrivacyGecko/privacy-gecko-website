@@ -208,7 +208,7 @@ export default function ProductsPage() {
             </div>
             <div className="flex items-center justify-center gap-3">
               <span className="text-2xl">✓</span>
-              <span className="text-sm font-medium">Lock in best pricing for life</span>
+              <span className="text-sm font-medium">Get early adopter benefits</span>
             </div>
             <div className="flex items-center justify-center gap-3">
               <span className="text-2xl">✓</span>

@@ -106,8 +106,8 @@ export default function GeckoShellPage() {
         description="Browse privately on iOS and Android with automatic tracker blocking and built-in Solana wallet (optional). Fast, lightweight, and no browsing history collection."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button href="#pricing" variant="primary" size="lg">
-            Coming Soon
+          <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="primary" size="lg">
+            Join Waitlist
           </Button>
           <Badge variant="coming">Coming Q4 2025</Badge>
         </div>
@@ -214,68 +214,8 @@ export default function GeckoShellPage() {
         </div>
       </Section>
 
-      {/* Pricing & Waitlist */}
-      <Section id="pricing">
-        <SectionHeader
-          subtitle="Pricing"
-          title="Join the Waitlist"
-          description="Pricing will be announced at launch. Be first to know and secure early access."
-        />
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <Card className="border-gecko-green border-2">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl mb-4">Get Early Access</CardTitle>
-                <CardDescription className="text-base mb-6">
-                  GeckoShell launches Q4 2025 for iOS and Android. Join the waitlist to:
-                </CardDescription>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-6">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
-                    <span className="text-sm">Be notified when pricing is announced</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
-                    <span className="text-sm">Get early access to beta testing</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
-                    <span className="text-sm">Lock in launch pricing for life</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
-                    <span className="text-sm">Access to exclusive founder updates</span>
-                  </div>
-                </div>
-                <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="primary" size="lg" className="w-full md:w-auto">
-                  Join Waitlist (Free)
-                </Button>
-                <p className="text-xs text-gray-500 mt-4">
-                  No credit card required. Just your email for launch notifications.
-                </p>
-              </CardHeader>
-            </Card>
-          </motion.div>
-        </div>
-
-        <div className="text-center mt-8 max-w-2xl mx-auto">
-          <p className="text-sm text-gray-600">
-            <strong>What we know:</strong> GeckoShell will have a free version (tracker blocking, private browsing) 
-            and a Pro tier (advanced features, encrypted cloud sync, unlimited protection). Pricing details coming soon.
-          </p>
-          <p className="text-sm text-gray-600 mt-3">
-            💎 <strong>Token Holders:</strong> $PRICKO holders will receive Pro tier benefits. Token integration is 100% optional.
-          </p>
-        </div>
-      </Section>
-
       {/* FAQ */}
-      <Section className="bg-neutral-100">
+      <Section>
         <SectionHeader
           subtitle="FAQ"
           title="Frequently Asked Questions"
@@ -301,7 +241,7 @@ export default function GeckoShellPage() {
       </Section>
 
       {/* Final CTA */}
-      <Section>
+      <Section className="bg-neutral-100">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Ready for Private Mobile Browsing?
@@ -310,8 +250,8 @@ export default function GeckoShellPage() {
             GeckoShell launches Q4 2025 for iOS and Android. Be among the first to browse privately on mobile.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="#pricing" variant="primary" size="lg">
-              Coming Soon
+            <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="primary" size="lg">
+              Join Waitlist
             </Button>
             <Button href="/products" variant="ghost" size="lg">
               Explore Other Tools
