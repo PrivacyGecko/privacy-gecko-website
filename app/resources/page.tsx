@@ -335,14 +335,6 @@ export default function ResourcesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <a href="https://discord.gg/privacygecko" target="_blank" rel="noopener noreferrer">
-              <Card className="h-full hover:shadow-md transition-all">
-                <CardHeader>
-                  <CardTitle className="text-lg">Discord Community</CardTitle>
-                  <CardDescription>Chat with the team and other privacy advocates</CardDescription>
-                </CardHeader>
-              </Card>
-            </a>
 
             <a href="https://t.me/privacygecko" target="_blank" rel="noopener noreferrer">
               <Card className="h-full hover:shadow-md transition-all">

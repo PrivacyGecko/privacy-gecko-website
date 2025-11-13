@@ -421,7 +421,7 @@ export default function GeckoLockPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="https://geckolock.com" variant="primary" size="lg">
-              Try Free Today
+              Try Free
             </Button>
             <Button href="/products" variant="ghost" size="lg">
               Explore Other Tools

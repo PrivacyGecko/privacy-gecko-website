@@ -252,7 +252,7 @@ export default function GeckoShellPage() {
                     <span className="text-sm">Access to exclusive founder updates</span>
                   </div>
                 </div>
-                <Button href="/waitlist" variant="primary" size="lg" className="w-full md:w-auto">
+                <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="primary" size="lg" className="w-full md:w-auto">
                   Join Waitlist (Free)
                 </Button>
                 <p className="text-xs text-gray-500 mt-4">

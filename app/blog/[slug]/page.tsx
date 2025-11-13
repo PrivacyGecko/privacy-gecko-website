@@ -304,7 +304,7 @@ const blogPosts = {
       <p><strong>Get started:</strong></p>
       <ul>
         <li><a href="/products/advisor">Scan your first privacy policy</a> (free, no signup)</li>
-        <li><a href="/waitlist">Join the waitlist</a> for upcoming tools</li>
+        <li><a href="/contact?subject=Early%20Adopter%20Waitlist">Join the waitlist</a> for upcoming tools</li>
         <li><a href="/blog">Read our privacy guides</a> for tips and tutorials</li>
         <li><a href="/compare">Compare privacy tools</a> to find the best fit</li>
       </ul>
@@ -911,7 +911,7 @@ const blogPosts = {
 
       <h3>How to Participate</h3>
       <ol>
-        <li><strong><a href="/waitlist">Join the waitlist</a></strong> - Get notified of exact launch date</li>
+        <li><strong><a href="/contact?subject=Early%20Adopter%20Waitlist">Join the waitlist</a></strong> - Get notified of exact launch date</li>
         <li><strong><a href="/products/advisor">Try GeckoAdvisor</a></strong> - Use the tools before buying tokens</li>
         <li><strong><a href="/roadmap">Review the roadmap</a></strong> - Verify development progress</li>
         <li><strong>Follow updates:</strong> Twitter <a href="https://twitter.com/privacygecko" target="_blank" rel="noopener noreferrer">@privacygecko</a> | Telegram <a href="https://t.me/privacygecko" target="_blank" rel="noopener noreferrer">Community</a></li>

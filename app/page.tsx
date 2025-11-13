@@ -43,7 +43,7 @@ export default function HomePage() {
           <Button href="/products" variant="primary" size="lg">
             Explore Privacy Tools
           </Button>
-          <Button href="/waitlist" variant="outline" size="lg">
+          <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="outline" size="lg">
             Join Early Access
           </Button>
         </div>
@@ -953,7 +953,7 @@ export default function HomePage() {
             {/* Primary CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button
-                href="/waitlist"
+                href="/contact?subject=Early%20Adopter%20Waitlist"
                 variant="outline"
                 size="lg"
                 className="bg-white text-purple-700 hover:bg-gray-100 border-white font-bold text-lg px-8 py-4"
@@ -983,9 +983,7 @@ export default function HomePage() {
                 <a href="/roadmap" className="hover:underline opacity-90 hover:opacity-100 transition-opacity">
                   → View AI Development Roadmap
                 </a>
-                <a href="https://discord.gg/privacygecko" className="hover:underline opacity-90 hover:opacity-100 transition-opacity">
-                  → Join Our Community
-                </a>
+
               </div>
             </div>
           </motion.div>

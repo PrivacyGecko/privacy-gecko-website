@@ -80,7 +80,7 @@ export function Footer() {
                   showIcon={false}
                 >
                   <Send size={16} className="mr-2" />
-                  $PRICKO Community
+                  $PRICKO Token
                 </ExternalLink>
               </div>
             </div>
@@ -105,7 +105,7 @@ export function Footer() {
                   showIcon={false}
                 >
                   <Send size={16} className="mr-2" />
-                  Ask Developer
+                  Developer Chat
                 </ExternalLink>
               </div>
             </div>

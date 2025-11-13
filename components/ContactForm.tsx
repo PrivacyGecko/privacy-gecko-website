@@ -1,16 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Card, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Info } from "lucide-react";
 import Link from "next/link";
 
 export function ContactForm() {
+  const searchParams = useSearchParams();
   const [submitStatus, setSubmitStatus] = useState<{
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
+  
+  // Pre-select subject from URL parameter
+  const [selectedSubject, setSelectedSubject] = useState<string>("");
+  
+  useEffect(() => {
+    const subjectParam = searchParams.get("subject");
+    if (subjectParam) {
+      setSelectedSubject(subjectParam);
+    }
+  }, [searchParams]);
 
   return (
     <Card>
@@ -66,6 +78,8 @@ export function ContactForm() {
               id="subject"
               name="subject"
               required
+              value={selectedSubject}
+              onChange={(e) => setSelectedSubject(e.target.value)}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gecko-green focus:border-transparent outline-none transition-all"
             >
               <option value="">Select a subject</option>
@@ -74,6 +88,8 @@ export function ContactForm() {
               <option value="billing">Billing Question</option>
               <option value="partnership">Partnership</option>
               <option value="press">Press/Media</option>
+              <option value="AI Beta Waitlist">AI Beta Waitlist</option>
+              <option value="Early Adopter Waitlist">Early Adopter Waitlist</option>
               <option value="other">Other</option>
             </select>
           </div>
@@ -99,7 +115,7 @@ export function ContactForm() {
               <div className="text-sm text-gray-700">
                 <p className="font-semibold text-blue-900 mb-1">Your Privacy Matters</p>
                 <p>
-                  Your message is encrypted in transit (TLS). We'll respond within 48 hours and never share your email with third parties.
+                  Your message is encrypted in transit (TLS). We will respond within 48 hours and never share your email with third parties.
                   Messages are retained for 90 days, then permanently deleted.{' '}
                   <Link href="/legal/privacy" className="text-gecko-green underline hover:no-underline font-medium">
                     Privacy Policy

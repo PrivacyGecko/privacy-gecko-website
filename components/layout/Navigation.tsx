@@ -58,7 +58,7 @@ export function Navigation() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button href="https://geckoadvisor.com" variant="primary">
-              Join Beta (Free)
+              Get Started
             </Button>
           </div>
 
@@ -67,6 +67,8 @@ export function Navigation() {
             className="md:hidden p-2 rounded-lg hover:bg-gray-100"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -75,7 +77,7 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
+        <div id="mobile-menu" className="md:hidden border-t border-gray-200 bg-white">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <Link
@@ -89,7 +91,7 @@ export function Navigation() {
             ))}
             <div className="pt-2">
               <Button href="https://geckoadvisor.com" variant="primary" className="w-full">
-                Join Beta (Free)
+                Get Started
               </Button>
             </div>
           </div>

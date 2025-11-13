@@ -103,7 +103,7 @@ export default function GeckoAdvisorPage() {
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button href="https://geckoadvisor.com" variant="primary" size="lg">
-            Join Beta Program →
+            Join Beta →
           </Button>
           <Badge variant="beta">Beta Testing</Badge>
         </div>
@@ -330,7 +330,7 @@ export default function GeckoAdvisorPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="https://geckoadvisor.com" variant="primary" size="lg">
-              Join Beta Program →
+              Join Beta →
             </Button>
             <Button href="/products" variant="ghost" size="lg">
               Explore Other Tools
