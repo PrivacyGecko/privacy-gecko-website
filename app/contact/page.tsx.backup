@@ -3,7 +3,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { Section } from "@/components/sections/Section";
 import { ContactForm } from "@/components/ContactForm";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/Card";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Mail, Send, HelpCircle } from "lucide-react";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 
@@ -45,25 +45,25 @@ export default function ContactPage() {
                   <Send className="w-6 h-6 text-gecko-green" />
                 </div>
                 <CardTitle>Social</CardTitle>
+                <CardDescription className="space-y-2">
+                  <div>
+                    <ExternalLink
+                      href="https://twitter.com/privacygecko"
+                      className="text-gecko-green hover:underline"
+                    >
+                      Twitter
+                    </ExternalLink>
+                  </div>
+                  <div>
+                    <ExternalLink
+                      href="https://t.me/privacygecko"
+                      className="text-gecko-green hover:underline"
+                    >
+                      Telegram
+                    </ExternalLink>
+                  </div>
+                </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-2 -mt-2 text-sm text-gray-600">
-                <div>
-                  <ExternalLink
-                    href="https://twitter.com/privacygecko"
-                    className="text-gecko-green hover:underline"
-                  >
-                    Twitter
-                  </ExternalLink>
-                </div>
-                <div>
-                  <ExternalLink
-                    href="https://t.me/privacygecko"
-                    className="text-gecko-green hover:underline"
-                  >
-                    Telegram
-                  </ExternalLink>
-                </div>
-              </CardContent>
             </Card>
 
             <Card>

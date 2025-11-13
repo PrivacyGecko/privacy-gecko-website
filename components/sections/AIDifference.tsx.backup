@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Lock, Globe, Zap, BookOpen, X, CheckCircle } from "lucide-react";
 import { Section, SectionHeader } from "@/components/sections/Section";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { ComparisonTable } from "@/components/ai";
 
@@ -75,30 +75,30 @@ export function AIDifference() {
             className="h-full"
           >
             <Card className="h-full flex flex-col border-blue-200 hover:border-blue-400 transition-colors duration-200">
-              <CardHeader>
+              <CardHeader className="flex-grow">
                 <div className="text-5xl mb-4">🔒</div>
                 <CardTitle>Privacy-First Architecture</CardTitle>
+                <CardDescription>
+                  <ul className="text-sm space-y-2 list-none">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>All AI processing happens on YOUR device</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>No data sent to our servers or cloud</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Models trained on anonymized, opt-in datasets</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>You control what the AI learns</span>
+                    </li>
+                  </ul>
+                </CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow">
-                <ul className="text-sm space-y-2 list-none text-gray-600">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                    <span>All AI processing happens on YOUR device</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                    <span>No data sent to our servers or cloud</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                    <span>Models trained on anonymized, opt-in datasets</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                    <span>You control what the AI learns</span>
-                  </li>
-                </ul>
-              </CardContent>
             </Card>
           </motion.div>
 
@@ -111,30 +111,30 @@ export function AIDifference() {
             className="h-full"
           >
             <Card className="h-full flex flex-col border-green-200 hover:border-green-400 transition-colors duration-200">
-              <CardHeader>
+              <CardHeader className="flex-grow">
                 <div className="text-5xl mb-4">🌐</div>
                 <CardTitle>Federated Learning</CardTitle>
+                <CardDescription>
+                  <ul className="text-sm space-y-2 list-none">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span>Your device learns locally from your browsing</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span>Updates shared as encrypted patterns only</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span>Community benefits without privacy loss</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span>No central data collection</span>
+                    </li>
+                  </ul>
+                </CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow">
-                <ul className="text-sm space-y-2 list-none text-gray-600">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span>Your device learns locally from your browsing</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span>Updates shared as encrypted patterns only</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span>Community benefits without privacy loss</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span>No central data collection</span>
-                  </li>
-                </ul>
-              </CardContent>
             </Card>
           </motion.div>
 
@@ -147,30 +147,30 @@ export function AIDifference() {
             className="h-full"
           >
             <Card className="h-full flex flex-col border-purple-200 hover:border-purple-400 transition-colors duration-200">
-              <CardHeader>
+              <CardHeader className="flex-grow">
                 <div className="text-5xl mb-4">⚡</div>
                 <CardTitle>Adaptive Protection</CardTitle>
+                <CardDescription>
+                  <ul className="text-sm space-y-2 list-none">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                      <span>Recognizes new tracking techniques automatically</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                      <span>Adjusts to emerging privacy threats</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                      <span>Personalizes to your usage patterns</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                      <span>Evolves faster than manual filter lists</span>
+                    </li>
+                  </ul>
+                </CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow">
-                <ul className="text-sm space-y-2 list-none text-gray-600">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
-                    <span>Recognizes new tracking techniques automatically</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
-                    <span>Adjusts to emerging privacy threats</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
-                    <span>Personalizes to your usage patterns</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
-                    <span>Evolves faster than manual filter lists</span>
-                  </li>
-                </ul>
-              </CardContent>
             </Card>
           </motion.div>
 
@@ -183,30 +183,30 @@ export function AIDifference() {
             className="h-full"
           >
             <Card className="h-full flex flex-col border-amber-200 hover:border-amber-400 transition-colors duration-200">
-              <CardHeader>
+              <CardHeader className="flex-grow">
                 <div className="text-5xl mb-4">📖</div>
                 <CardTitle>Open Source AI Models</CardTitle>
+                <CardDescription>
+                  <ul className="text-sm space-y-2 list-none">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span>Core AI models will be open-sourced</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span>Community can audit and verify</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span>No black boxes or secret algorithms</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span>Transparent and trustworthy</span>
+                    </li>
+                  </ul>
+                </CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow">
-                <ul className="text-sm space-y-2 list-none text-gray-600">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
-                    <span>Core AI models will be open-sourced</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
-                    <span>Community can audit and verify</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
-                    <span>No black boxes or secret algorithms</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
-                    <span>Transparent and trustworthy</span>
-                  </li>
-                </ul>
-              </CardContent>
             </Card>
           </motion.div>
         </div>

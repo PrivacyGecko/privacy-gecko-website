@@ -102,7 +102,7 @@ export default function HomePage() {
               comingDate={product.comingDate}
               href={product.href}
               isExternal={product.isExternal}
-              features={product.features.slice(0, 3)}
+              features={product.features.slice(0, 4)}
               progress={product.progress}
               ai={product.ai}
             />
