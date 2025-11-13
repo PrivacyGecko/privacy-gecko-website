@@ -2,7 +2,6 @@
 
 import { Hero } from "@/components/sections/Hero";
 import { Section, SectionHeader } from "@/components/sections/Section";
-import { AIPreviewBanner } from "@/components/sections/AIPreviewBanner";
 import { AIDifference } from "@/components/sections/AIDifference";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
@@ -62,9 +61,6 @@ export default function HomePage() {
 
 
 
-
-      {/* AI Preview Banner */}
-      <AIPreviewBanner />
 
       {/* Early Adopter Discount Banner */}
       <Section className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white py-8">
@@ -203,10 +199,10 @@ export default function HomePage() {
                 </div>
                 <CardTitle className="flex items-center gap-2">
                   AI-Enhanced
-                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-normal">Q1 2026</span>
+                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-normal">Q2 2026</span>
                 </CardTitle>
                 <CardDescription>
-                  Privacy-first AI that learns and adapts WITHOUT compromising your data. Token launch Q4 2025, AI beta Q4 2025, public launch Q1 2026. Local processing, federated learning, open-source models.
+                  Privacy-first AI that learns and adapts WITHOUT compromising your data. Token launching December 2025, AI beta Q1 2026 (1,000 users), public launch Q2 2026. Local processing, federated learning, open-source models.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -469,10 +465,10 @@ export default function HomePage() {
               Powered by $PRICKO (Optional)
             </h2>
             <p className="text-lg mb-2 max-w-2xl mx-auto">
-              Launching Q4 2025: The token that funds AI-enhanced privacy for everyone.
+              Launching December 2025: The token that funds AI-enhanced privacy for everyone.
             </p>
             <p className="text-sm opacity-90 max-w-2xl mx-auto">
-              All tools work fully without any token requirement. AI public launch Q1 2026.
+              All tools work fully without any token requirement. AI public launch Q2 2026.
             </p>
           </motion.div>
 
@@ -813,7 +809,7 @@ export default function HomePage() {
                     <div>
                       <CardTitle className="text-lg mb-2">When exactly does AI launch?</CardTitle>
                       <CardDescription>
-                        <strong>$PRICKO token launches Q4 2025.</strong> AI beta testing opens <strong>Q4 2025</strong> (1,000 users). <strong>AI public launch Q1 2026</strong> (GeckoAdvisor and GeckoGuard). Other products follow in Q2-Q4 2026.
+                        <strong>$PRICKO token launches December 2025.</strong> AI beta opens <strong>Q1 2026</strong> (1,000 users). <strong>AI public launch Q2 2026</strong> (GeckoAdvisor and GeckoGuard). Other products follow in Q2-Q4 2026.
                       </CardDescription>
                     </div>
                   </div>
@@ -879,7 +875,7 @@ export default function HomePage() {
                     <div>
                       <CardTitle className="text-lg mb-2">Can I join the AI beta testing?</CardTitle>
                       <CardDescription>
-                        Yes! AI beta opens <strong>Q4 2025</strong> (limited to 1,000 users) before public launch in <strong>Q1 2026</strong>. Active users of 2+ Privacy Gecko products can apply. Beta testers get early access, earn $PRICKO token rewards, and influence feature development.
+                        Yes! AI beta opens <strong>Q1 2026</strong> (limited to 1,000 users) before public launch in <strong>Q2 2026</strong>. Active users of 2+ Privacy Gecko products can apply. Beta testers get early access, earn $PRICKO token rewards, and influence feature development.
                       </CardDescription>
                     </div>
                   </div>
@@ -938,7 +934,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-10">
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />
-                <span className="font-medium">Early access to AI beta (Q4 2025)</span>
+                <span className="font-medium">Early access to AI beta (Q1 2026)</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />
