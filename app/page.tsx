@@ -90,25 +90,6 @@ export default function HomePage() {
 
 
 
-
-      {/* Early Adopter Discount Banner */}
-      <Section className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white py-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <p className="text-lg md:text-xl font-semibold mb-4">
-            🎉 Early Adopter Benefits: Lifetime 30% discount on all 8 products + unlimited AI features
-          </p>
-          <Button href="/roadmap" variant="outline" className="bg-white text-gecko-green hover:bg-gray-100 border-white">
-            View Roadmap & Join Waitlist →
-          </Button>
-        </motion.div>
-      </Section>
-
       {/* Product Showcase */}
       <Section className="bg-gradient-to-b from-white to-gray-50">
         <SectionHeader
@@ -967,7 +948,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />
-                <span className="font-medium">Lifetime 30% discount on all 8 products</span>
+                <span className="font-medium">Priority support and onboarding</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />
