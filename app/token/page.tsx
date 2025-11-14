@@ -24,7 +24,7 @@ export default function TokenPage() {
     {
       icon: Users,
       title: "Community Governance",
-      description: "Vote on feature priorities and product roadmap decisions through GeckoCore Protocol",
+      description: "Vote on feature priorities and product roadmap decisions through GeckoCore Protocol (launching 2027+)",
     },
     {
       icon: Shield,
@@ -47,12 +47,12 @@ export default function TokenPage() {
     {
       amount: "5,000 $PRICKO",
       discount: "Enhanced Benefits",
-      benefits: ["Larger Pro plan discounts", "Priority support", "Beta feature access", "Governance voting rights via GeckoCore"],
+      benefits: ["Larger Pro plan discounts", "Priority support", "Beta feature access", "Governance voting rights via GeckoCore (2027+)"],
     },
     {
       amount: "10,000+ $PRICKO",
       discount: "Premium Benefits",
-      benefits: ["Maximum Pro plan discounts", "Lifetime discount guarantee", "VIP support channel", "Full governance rights via GeckoCore", "Exclusive features"],
+      benefits: ["Maximum Pro plan discounts", "Lifetime discount guarantee", "VIP support channel", "Full governance rights via GeckoCore (2027+)", "Exclusive features"],
     },
   ];
 

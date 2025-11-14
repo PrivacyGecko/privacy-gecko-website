@@ -20,6 +20,7 @@ export function Footer() {
   ];
 
   const resourceLinks = [
+    { href: "/whitepaper", label: "Whitepaper" },
     { href: "/resources/docs", label: "Documentation" },
     { href: "/resources/faq", label: "FAQ" },
     { href: "/resources/support", label: "Support" },

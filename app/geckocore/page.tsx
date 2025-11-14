@@ -255,6 +255,14 @@ export default function GeckoCorePage() {
             Join Waitlist
           </Button>
           <Button
+            href="/whitepaper"
+            size="lg"
+            variant="outline"
+            className="min-w-[200px]"
+          >
+            Read Whitepaper
+          </Button>
+          <Button
             href="#timeline"
             size="lg"
             variant="outline"

@@ -27,7 +27,7 @@ export default function HomePage() {
           <>
             Growing Privacy Ecosystem.
             <br />
-            AI-Enhanced Protection.
+            AI-Enhancement Coming 2026.
           </>
         }
         description={
@@ -95,7 +95,7 @@ export default function HomePage() {
           className="text-center"
         >
           <p className="text-lg md:text-xl font-semibold mb-4">
-            🎉 Early Adopter Benefits: Lock in best pricing for life when products launch
+            🎉 Early Adopter Benefits: Lifetime 30% discount on all 8 products + unlimited AI features
           </p>
           <Button href="/roadmap" variant="outline" className="bg-white text-gecko-green hover:bg-gray-100 border-white">
             View Roadmap & Join Waitlist →
@@ -157,7 +157,7 @@ export default function HomePage() {
                 </div>
                 <CardTitle>Privacy-First</CardTitle>
                 <CardDescription>
-                  We don't use invasive tracking, sell data, or monetize your information. We use privacy-friendly Plausible Analytics (no cookies, no personal data collection). That's our promise. Our AI learns without seeing your personal information.
+                  We don't use invasive tracking, sell data, or monetize your information. We use privacy-friendly Plausible Analytics (no cookies, no personal data collection). That's our promise. Our AI will learn without seeing your personal information.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -246,7 +246,7 @@ export default function HomePage() {
                 </div>
                 <CardTitle>Always Improving</CardTitle>
                 <CardDescription>
-                  Static blocklists become outdated. Our AI evolves with the threat landscape. Continuous protection that gets smarter every day.
+                  Static blocklists become outdated. When AI launches (Q2 2026), it will evolve with the threat landscape, learning from new threats automatically. Protection that gets smarter every day.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -408,8 +408,8 @@ export default function HomePage() {
                 <Users className="w-8 h-8 text-gecko-green" />
               </div>
               <div className="text-4xl font-bold text-gecko-green mb-2">500+</div>
-              <p className="text-gray-600">Beta Testers</p>
-              <p className="text-sm text-gray-500 mt-1">Helping shape our tools</p>
+              <p className="text-gray-600">Active Beta Testers</p>
+              <p className="text-sm text-gray-500 mt-1">Testing products daily (as of Jan 2025)</p>
             </motion.div>
 
             <motion.div
@@ -950,7 +950,7 @@ export default function HomePage() {
               Be Part of the AI-Enhanced Privacy Revolution
             </h2>
             <p className="text-xl mb-8 opacity-95">
-              Join <strong className="underline decoration-2 underline-offset-4">10,000+ early adopters</strong> preparing for the future of privacy protection
+              Join <strong className="underline decoration-2 underline-offset-4">10,000+ community members</strong> (email subscribers, beta testers, and waitlist) preparing for the future of privacy protection
             </p>
 
             {/* Benefits Grid */}
@@ -961,7 +961,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />
-                <span className="font-medium">Lock in best pricing for life on all tools</span>
+                <span className="font-medium">Lifetime 30% discount on all 8 products</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />

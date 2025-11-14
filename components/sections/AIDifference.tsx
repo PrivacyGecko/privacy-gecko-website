@@ -12,7 +12,7 @@ export function AIDifference() {
     <Section>
       <SectionHeader
         subtitle="The AI Difference"
-        title="Privacy Tools Are Reactive. Ours Learn."
+        title="Privacy Tools Are Reactive. Ours Will Learn."
         description="Traditional privacy tools block KNOWN threats from static lists. Privacy Gecko will use AI to detect and adapt to NEW threats in real-time. Token launches November 2025, AI beta Q1 2026 (1,000 users), public launch Q2 2026."
       />
 
@@ -300,10 +300,9 @@ export function AIDifference() {
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <Button href="/ai-whitepaper" variant="outline" size="lg">
-          Read Our AI Architecture Whitepaper →
+        <Button href="/whitepaper" variant="outline" size="lg">
+          Read GeckoCore Technical Whitepaper →
         </Button>
-        <p className="text-sm text-gray-500 mt-2">Coming soon</p>
       </motion.div>
     </Section>
   );
