@@ -110,13 +110,16 @@
   <text x="482" y="216" font-size="24" fill="#FFD700" text-anchor="middle">⚠️</text>
   <text x="482" y="241" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Watch</text>
 
+  <!-- Gecko Logo (top-right) -->
+  <circle cx="1130" cy="50" r="25" fill="#00D98A"/>
+  <circle cx="1130" cy="43" r="6" fill="#1a1d29"/>
+  <ellipse cx="1130" cy="53" rx="12" ry="15" fill="#1a1d29"/>
+  <circle cx="1126" cy="41" r="1.5" fill="#00D98A"/>
+  <circle cx="1134" cy="41" r="1.5" fill="#00D98A"/>
+
+  <text x="1165" y="58" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#00D98A">PRICKO</text>
+
   <!-- Launch Badge (bottom-right) -->
   <rect x="1020" y="550" width="160" height="50" rx="25" fill="#00D98A"/>
   <text x="1100" y="581" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#1a1d29" text-anchor="middle">Launching Q4 2026</text>
-
-  <!-- Privacy Gecko Brand (bottom-left) -->
-  <circle cx="50" cy="580" r="18" fill="#00D98A"/>
-  <text x="45" y="585" font-size="18" fill="#1a1d29">🦎</text>
-  <text x="80" y="583" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Privacy Gecko</text>
-  <text x="80" y="603" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#9ca3af">Memes With a Mission</text>
 </svg>
