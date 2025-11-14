@@ -13,6 +13,7 @@ const blogPosts = {
     date: "July 15, 2025",
     category: "Privacy Guide",
     excerpt: "Discover the best privacy tools in 2025. Complete guide covering VPNs, password managers, ad blockers, encrypted messaging, and more to protect your digital privacy.",
+    ogImage: "/images/og-products.png",
     content: `
       <p class="lead">In 2025, digital privacy isn't just a luxury—it's a necessity. With data breaches affecting billions of users, AI-powered tracking becoming ubiquitous, and governments expanding surveillance capabilities, understanding and using privacy tools has never been more critical. This comprehensive guide covers everything you need to protect your digital life.</p>
 
@@ -320,6 +321,7 @@ const blogPosts = {
     date: "August 8, 2025",
     category: "Crypto Privacy",
     excerpt: "Essential privacy tools for crypto traders in 2025. Learn how to protect your wallet, transactions, and identity with VPNs, browsers, and privacy-focused tools.",
+    ogImage: "/images/og-guard.png",
     content: `
       <p class="lead">Cryptocurrency promises financial privacy and freedom, but blockchain's permanent public ledger creates unique privacy challenges. Every transaction, wallet balance, and trading pattern is visible to anyone who knows your wallet address. Here's how to protect your privacy as a crypto trader in 2025.</p>
 
@@ -611,6 +613,7 @@ const blogPosts = {
     date: "September 12, 2025",
     category: "Token & Community",
     excerpt: "What are privacy memecoins? Learn how $PRICKO and other privacy-focused tokens combine community fun with real privacy utility and sustainable funding.",
+    ogImage: "/images/og-token.png",
     content: `
       <p class="lead">Memecoins have dominated crypto headlines for years, but most lack real utility beyond speculation and community engagement. Privacy memecoins represent a new category: tokens that combine the viral appeal of memes with genuine privacy-focused utility and sustainable project funding. Here's everything you need to know about this emerging category.</p>
 
@@ -958,6 +961,7 @@ const blogPosts = {
     date: "October 3, 2025",
     category: "AI & Privacy",
     excerpt: "Local AI vs cloud AI for privacy. Learn how on-device AI processing protects your data with federated learning and edge computing in 2025.",
+    ogImage: "/images/og-advisor.png",
     content: `
       <p class="lead">Artificial intelligence is transforming every aspect of technology, from search engines to photo editing to personal assistants. But there's a critical privacy difference between AI that processes your data in the cloud versus AI that runs entirely on your device. Here's why local AI matters for privacy and how it works.</p>
 
@@ -1377,6 +1381,7 @@ const blogPosts = {
     date: "October 31, 2025",
     category: "Privacy Tips",
     excerpt: "Why open source matters for privacy tools. Learn how transparency, community audits, and verifiable security make open source the gold standard.",
+    ogImage: "/images/og-shell.png",
     content: `
       <p class="lead">When it comes to privacy tools, you're trusting software with your most sensitive data: passwords, messages, browsing history, files. How can you verify that a "privacy" tool actually protects your privacy and doesn't secretly collect data? The answer: open source code. Here's why open source is essential for privacy tools.</p>
 
@@ -1764,6 +1769,7 @@ const blogPosts = {
     date: "January 15, 2025",
     category: "Privacy Tips",
     excerpt: "Exploring the growing importance of digital privacy and why accessible privacy tools are more critical than ever.",
+    ogImage: "/images/og-lock.png",
     content: `
       <p class="lead">In an era where our digital footprint grows exponentially every day, understanding and protecting our online privacy has never been more critical. Let's explore why privacy tools are essential in 2025 and beyond.</p>
 
@@ -1825,6 +1831,7 @@ const blogPosts = {
     date: "January 10, 2025",
     category: "Tutorials",
     excerpt: "A complete guide to using GeckoAdvisor to scan website privacy policies and detect hidden trackers.",
+    ogImage: "/images/og-advisor.png",
     content: `
       <p class="lead">GeckoAdvisor is your personal privacy and security assistant. This comprehensive guide will help you get the most out of GeckoAdvisor's powerful features.</p>
 
@@ -1939,6 +1946,7 @@ const blogPosts = {
     date: "January 5, 2025",
     category: "Product Updates",
     excerpt: "Learn about the mission behind Privacy Gecko and why we're building the privacy tools we wished existed.",
+    ogImage: "/images/og-products.png",
     content: `
       <p class="lead">Privacy Gecko was born from a simple frustration: existing privacy tools were either too complex for regular users or too simplistic to provide real protection. We set out to change that.</p>
 
@@ -2072,9 +2080,59 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
+  const siteUrl = "https://privacygecko.com";
+  const url = `${siteUrl}/blog/${params.slug}`;
+  const ogImage = post.ogImage || "/images/og-products.png";
+  const ogImageUrl = `${siteUrl}${ogImage}`;
+
+  // Convert date to ISO format for OpenGraph
+  const dateToISO = (dateString: string): string => {
+    try {
+      const date = new Date(dateString);
+      return date.toISOString();
+    } catch {
+      return new Date().toISOString();
+    }
+  };
+
   return {
     title: `${post.title} - Privacy Gecko Blog`,
     description: post.excerpt || `${post.title} by ${post.author}`,
+    
+    // OpenGraph metadata
+    openGraph: {
+      title: post.title,
+      description: post.excerpt || `${post.title} by ${post.author}`,
+      url: url,
+      type: "article",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${post.title} - Privacy Gecko`,
+        },
+      ],
+      publishedTime: dateToISO(post.date),
+      authors: [post.author],
+      section: post.category,
+      siteName: "Privacy Gecko",
+    },
+
+    // Twitter Card metadata
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt || `${post.title} by ${post.author}`,
+      images: [ogImageUrl],
+      creator: "@PrivacyGecko",
+      site: "@PrivacyGecko",
+    },
+
+    // Canonical URL
+    alternates: {
+      canonical: url,
+    },
   };
 }
 
