@@ -59,23 +59,51 @@ export default function HomePage() {
         </div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <Badge variant="coming" className="mb-4">Coming 2026</Badge>
+          <Badge variant="coming" className="mb-4">SDK Launches Q2 2026</Badge>
           <SectionHeader
-            title="Introducing GeckoCore Protocol"
-            subtitle="Extensible Privacy Infrastructure for Web3"
+            title="GeckoCore Protocol"
+            subtitle="Privacy Infrastructure Any App Can Use"
           />
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            GeckoCore is an open privacy protocol layer built on Solana, providing <strong className="text-gray-900">Five Privacy Feeds</strong> (PrivacyFeed, ThreatFeed, MetaProof, AccessProof, ReputationFeed) that any application can integrate. <strong className="text-gray-900">Phase 1:</strong> Privacy Gecko builds 8 products as proof-of-concept. <strong className="text-gray-900">Phase 2+:</strong> SDK launches Q2 2026 for DeFi protocols, wallets, browsers, and dApps to build privacy-first features on GeckoCore infrastructure.
+
+          {/* Key Value Props - Scannable */}
+          <div className="grid md:grid-cols-3 gap-6 mb-10 text-left">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+              <div className="text-4xl mb-3">🛡️</div>
+              <h3 className="font-bold text-lg text-gray-900 mb-2">5 Privacy Feeds</h3>
+              <p className="text-sm text-gray-600">
+                PrivacyFeed, ThreatFeed, MetaProof, AccessProof, ReputationFeed
+              </p>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+              <div className="text-4xl mb-3">⛓️</div>
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Built on Solana</h3>
+              <p className="text-sm text-gray-600">
+                Fast, low-cost, decentralized proof registry
+              </p>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+              <div className="text-4xl mb-3">🔓</div>
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Open Protocol</h3>
+              <p className="text-sm text-gray-600">
+                DeFi, wallets, dApps can integrate via SDK
+              </p>
+            </div>
+          </div>
+
+          {/* Phase Explanation */}
+          <p className="text-base text-gray-700 mb-8 max-w-2xl mx-auto">
+            <strong className="text-gecko-green">Phase 1 (2025-2026):</strong> We build 8 products as proof-of-concept.
+            <br />
+            <strong className="text-privacy-blue">Phase 2+ (2026+):</strong> Any developer can build privacy features on GeckoCore.
           </p>
+
+          {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/geckocore" variant="primary" size="lg">
-              Learn About GeckoCore →
+            <Button href="/whitepaper" variant="primary" size="lg">
+              Read Whitepaper
             </Button>
-            <Button href="/whitepaper" variant="outline" size="lg">
-              Read Technical Whitepaper
-            </Button>
-            <Button href="/roadmap" variant="outline" size="lg">
-              View Development Roadmap
+            <Button href="/geckocore" variant="outline" size="lg">
+              Explore GeckoCore
             </Button>
           </div>
         </div>
