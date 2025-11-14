@@ -276,7 +276,6 @@ export default function UnifiedRoadmapPage() {
               <div className="text-sm text-gray-600">Token Launch</div>
             </div>
           </div>
-          <p className="text-center text-xs text-gray-500 mt-6">Last updated: November 13, 2025</p>
         </div>
       </Section>
 
