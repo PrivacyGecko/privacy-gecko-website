@@ -59,6 +59,15 @@ export default function BlogPage() {
   // All blog posts in reverse chronological order (newest first)
   const posts = [
     {
+      title: "Introducing GeckoCore Protocol: The Hub for Privacy Tools",
+      excerpt: "GeckoCore Protocol unifies 8 privacy tools with one wallet login powered by $PRICKO. Open-source, zero-knowledge, launching Q4 2026. Learn how it works.",
+      author: "@0xAnonA",
+      date: "November 14, 2025",
+      category: "Product Updates",
+      slug: "introducing-geckocore-protocol",
+      image: "/images/og-geckocore-protocol.png",
+    },
+    {
       title: "Open Source Privacy Tools: Why It Matters",
       excerpt: "Why open source matters for privacy tools. Learn how transparency, community audits, and verifiable security make open source the gold standard.",
       author: "@0xAnonA",

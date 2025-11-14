@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Blog post slugs (all 8 posts)
   const blogPosts = [
+    'introducing-geckocore-protocol',
     'why-privacy-tools-matter-2025',
     'getting-started-geckoadvisor',
     'introducing-privacy-gecko',
