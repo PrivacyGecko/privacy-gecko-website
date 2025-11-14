@@ -23,14 +23,14 @@ export function Footer() {
     { href: "/resources/docs", label: "Documentation" },
     { href: "/resources/faq", label: "FAQ" },
     { href: "/resources/support", label: "Support" },
-    { href: "/ai-ethics", label: "AI Ethics" },
+    { href: "/about#privacy-principles", label: "AI Ethics" },
   ];
 
   const aiLinks = [
     { href: "/roadmap#ai-development", label: "AI Roadmap" },
     { href: "/contact?subject=AI Beta Waitlist", label: "AI Beta Program" },
-    { href: "/developers", label: "Developer Program", comingSoon: true },
-    { href: "/research", label: "Research Partners", comingSoon: true },
+    { href: "/contact?subject=Developer Program Interest", label: "Developer Program", comingSoon: true },
+    { href: "/contact?subject=Research Partnership Inquiry", label: "Research Partners", comingSoon: true },
   ];
 
   const legalLinks = [

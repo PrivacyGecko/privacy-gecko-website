@@ -279,7 +279,7 @@ const blogPosts = {
       <h3>For Early Adopters</h3>
       <ul>
         <li><strong>Try GeckoAdvisor now:</strong> <a href="/products/advisor">Scan your first privacy policy for free</a></li>
-        <li><strong>Join the waitlist:</strong> <a href="/waitlist">Get notified when new products launch</a></li>
+        <li><strong>Join the waitlist:</strong> <a href="/contact?subject=Early Adopter Waitlist">Get notified when new products launch</a></li>
         <li><strong>Follow the roadmap:</strong> <a href="/roadmap">See what we're building and when</a></li>
         <li><strong>Prepare for token launch:</strong> <a href="/token">Learn about $PRICKO tokenomics</a></li>
       </ul>
@@ -311,7 +311,7 @@ const blogPosts = {
       <p>Welcome to Privacy Gecko. Welcome to "Memes With a Mission." Welcome to the future of privacy-first tools that actually work.</p>
 
       <p class="text-center mt-8 mb-4">
-        <a href="/waitlist" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-gecko-green rounded-lg hover:bg-gecko-green-dark transition-colors">Join the Waitlist for Early Access</a>
+        <a href="/contact?subject=Early Adopter Waitlist" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-gecko-green rounded-lg hover:bg-gecko-green-dark transition-colors">Join the Waitlist for Early Access</a>
       </p>
 
       <h2>Frequently Asked Questions</h2>
