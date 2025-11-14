@@ -15,40 +15,44 @@ async function generateHomeOGImage() {
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 1200, 630);
 
-    // Load and draw logo - make it smaller to fit better
+    // Load and draw logo - centered at top
     const logoPath = path.join(__dirname, '../public/images/logo.png');
     const logo = await loadImage(logoPath);
 
-    // Use smaller logo size for better layout
-    const logoWidth = 280;
+    // Use appropriate logo size
+    const logoWidth = 320;
     const logoHeight = (logo.height / logo.width) * logoWidth;
     const logoX = (1200 - logoWidth) / 2;
-    const logoY = 40;
+    const logoY = 50;
 
     ctx.drawImage(logo, logoX, logoY, logoWidth, logoHeight);
 
+    // Calculate where content should start (below logo with spacing)
+    const contentStartY = logoY + logoHeight + 30;
+
     // Subheading: "8 AI-Enhanced Privacy Tools"
     ctx.fillStyle = '#00D98A'; // Gecko Green
-    ctx.font = 'bold 32px Inter, sans-serif';
+    ctx.font = 'bold 30px Inter, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('8 AI-Enhanced Privacy Tools', 600, 190);
+    ctx.fillText('8 AI-Enhanced Privacy Tools', 600, contentStartY);
 
     // Tagline
     ctx.fillStyle = '#9ca3af'; // Medium Gray
-    ctx.font = '22px Inter, sans-serif';
-    ctx.fillText('Privacy Tools That Actually Work', 600, 225);
+    ctx.font = '20px Inter, sans-serif';
+    ctx.fillText('Privacy Tools That Actually Work', 600, contentStartY + 35);
 
     // Divider line
     ctx.strokeStyle = '#00D98A';
     ctx.globalAlpha = 0.3;
     ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.moveTo(300, 250);
-    ctx.lineTo(900, 250);
+    ctx.moveTo(300, contentStartY + 60);
+    ctx.lineTo(900, contentStartY + 60);
     ctx.stroke();
     ctx.globalAlpha = 1.0;
 
-    // Feature Cards
+    // Feature Cards - position based on content
+    const cardsY = contentStartY + 90;
     const cards = [
       { x: 130, icon: '🔧', title: '8 Products', subtitle: 'Complete Toolkit' },
       { x: 400, icon: '🔒', title: 'Zero Data', subtitle: 'No Collection' },
@@ -62,32 +66,34 @@ async function generateHomeOGImage() {
       ctx.strokeStyle = '#00D98A';
       ctx.lineWidth = 2;
       ctx.globalAlpha = 0.9;
-      roundRect(ctx, card.x, 290, 240, 120, 12);
+      roundRect(ctx, card.x, cardsY, 240, 110, 12);
       ctx.fill();
       ctx.globalAlpha = 1.0;
       ctx.stroke();
 
       // Icon
-      ctx.font = '32px Arial';
-      ctx.fillText(card.icon, card.x + 120, 330);
+      ctx.font = '28px Arial';
+      ctx.fillText(card.icon, card.x + 120, cardsY + 35);
 
       // Title
       ctx.fillStyle = '#00D98A';
-      ctx.font = 'bold 20px Inter, sans-serif';
-      ctx.fillText(card.title, card.x + 120, 365);
+      ctx.font = 'bold 18px Inter, sans-serif';
+      ctx.fillText(card.title, card.x + 120, cardsY + 65);
 
       // Subtitle
       ctx.fillStyle = '#9ca3af';
-      ctx.font = '14px Inter, sans-serif';
-      ctx.fillText(card.subtitle, card.x + 120, 390);
+      ctx.font = '13px Inter, sans-serif';
+      ctx.fillText(card.subtitle, card.x + 120, cardsY + 85);
     });
 
     // Product Icons Row Label
+    const iconsLabelY = cardsY + 140;
     ctx.fillStyle = '#9ca3af';
-    ctx.font = '600 16px Inter, sans-serif';
-    ctx.fillText('ALL 8 PRIVACY TOOLS', 600, 460);
+    ctx.font = '600 14px Inter, sans-serif';
+    ctx.fillText('ALL 8 PRIVACY TOOLS', 600, iconsLabelY);
 
     // Product Icons
+    const iconsY = iconsLabelY + 35;
     const products = [
       { cx: 280, icon: '🔍', color: '#00D98A' },
       { cx: 380, icon: '📤', color: '#00D98A' },
@@ -103,7 +109,7 @@ async function generateHomeOGImage() {
       // Circle background
       ctx.fillStyle = '#1e3a8a';
       ctx.beginPath();
-      ctx.arc(product.cx, 520, 30, 0, Math.PI * 2);
+      ctx.arc(product.cx, iconsY, 28, 0, Math.PI * 2);
       ctx.fill();
 
       // Circle border
@@ -112,9 +118,9 @@ async function generateHomeOGImage() {
       ctx.stroke();
 
       // Icon
-      ctx.font = '20px Arial';
+      ctx.font = '18px Arial';
       ctx.fillStyle = 'white';
-      ctx.fillText(product.icon, product.cx, 528);
+      ctx.fillText(product.icon, product.cx, iconsY + 6);
     });
 
     // Gecko Logo (top-right) - simple version
