@@ -7,7 +7,7 @@ import { Section, SectionHeader } from "@/components/sections/Section";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { EcosystemCanvas } from "@/components/geckocore/EcosystemCanvas";
+import { ArchitectureDiagram } from "@/components/geckocore/ArchitectureDiagram";
 import {
   Key,
   Coins,
@@ -273,15 +273,15 @@ export default function GeckoCorePage() {
         </div>
       </Hero>
 
-      {/* Ecosystem Canvas Visualization */}
+      {/* Protocol Architecture Visualization */}
       <Section className="bg-white">
         <SectionHeader
-          subtitle="Ecosystem Overview"
-          title="Eight Products. One Unified Protocol."
-          description="GeckoCore connects all Privacy Gecko tools through a privacy-preserving authentication layer, enabling seamless navigation and enhanced features across the ecosystem."
+          subtitle="Protocol Architecture"
+          title="Extensible Privacy Infrastructure"
+          description="GeckoCore's three-layer architecture with Five Privacy Feeds enables unlimited future applications while delivering our Phase 1 commitment of 8 products by end of 2026."
         />
         <div className="flex justify-center">
-          <EcosystemCanvas />
+          <ArchitectureDiagram />
         </div>
       </Section>
 
