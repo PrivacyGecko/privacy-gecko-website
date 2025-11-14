@@ -120,6 +120,6 @@
   <text x="1165" y="58" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#00D98A">PRICKO</text>
 
   <!-- Launch Badge (bottom-right) -->
-  <rect x="1020" y="550" width="160" height="50" rx="25" fill="#00D98A"/>
-  <text x="1100" y="581" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#1a1d29" text-anchor="middle">Launching Q4 2026</text>
+  <rect x="1055" y="550" width="130" height="50" rx="25" fill="#00D98A"/>
+  <text x="1120" y="581" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#1a1d29" text-anchor="middle">Coming 2026</text>
 </svg>
