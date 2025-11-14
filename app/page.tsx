@@ -44,9 +44,6 @@ export default function HomePage() {
           <Button href="/products" variant="primary" size="lg">
             Explore Privacy Tools
           </Button>
-          <Button href="/whitepaper" variant="outline" size="lg">
-            Read Whitepaper
-          </Button>
           <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="outline" size="lg">
             Join Early Access
           </Button>
@@ -54,7 +51,7 @@ export default function HomePage() {
       </Hero>
 
       {/* GeckoCore Protocol Teaser */}
-      <Section className="bg-gradient-to-br from-emerald-50 via-blue-50 to-purple-50 relative overflow-hidden">
+      <Section className="bg-gradient-to-br from-emerald-50 via-blue-50 to-purple-50 relative overflow-hidden pt-24 md:pt-32">
         {/* Decorative gradient orbs */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gecko-green/5 rounded-full blur-3xl" />
@@ -65,10 +62,10 @@ export default function HomePage() {
           <Badge variant="coming" className="mb-4">Coming 2026</Badge>
           <SectionHeader
             title="Introducing GeckoCore Protocol"
-            subtitle="One wallet. Eight privacy tools. Zero compromises."
+            subtitle="Extensible Privacy Infrastructure for Web3"
           />
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            GeckoCore unifies all Privacy Gecko products into a seamless ecosystem. Connect your Solana wallet once, access everything. Token holders unlock <strong className="text-gray-900">unlimited AI queries, extended file storage, priority VPN servers, and cross-product premium features</strong> across all 8 tools.
+            GeckoCore is an open privacy protocol layer built on Solana, providing <strong className="text-gray-900">Five Privacy Feeds</strong> (PrivacyFeed, ThreatFeed, MetaProof, AccessProof, ReputationFeed) that any application can integrate. <strong className="text-gray-900">Phase 1:</strong> Privacy Gecko builds 8 products as proof-of-concept. <strong className="text-gray-900">Phase 2+:</strong> SDK launches Q2 2026 for DeFi protocols, wallets, browsers, and dApps to build privacy-first features on GeckoCore infrastructure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/geckocore" variant="primary" size="lg">
@@ -77,7 +74,7 @@ export default function HomePage() {
             <Button href="/whitepaper" variant="outline" size="lg">
               Read Technical Whitepaper
             </Button>
-            <Button href="/geckocore#faq" variant="outline" size="lg">
+            <Button href="/roadmap" variant="outline" size="lg">
               View Development Roadmap
             </Button>
           </div>
