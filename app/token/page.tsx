@@ -9,7 +9,7 @@ export default function TokenPage() {
     {
       icon: TrendingUp,
       title: "Pro Discounts",
-      description: "Stake $PRICKO to get discounts on all Pro subscriptions",
+      description: "Hold $PRICKO to get discounts on all Pro subscriptions",
     },
     {
       icon: Zap,
@@ -19,12 +19,12 @@ export default function TokenPage() {
     {
       icon: Gift,
       title: "Premium Features",
-      description: "Unlock exclusive features not available in standard Pro tiers",
+      description: "Unlock exclusive features not available in standard Pro tiers through GeckoCore Protocol",
     },
     {
       icon: Users,
-      title: "Community Governance (Coming Soon)",
-      description: "When staking launches, vote on feature priorities and product roadmap decisions",
+      title: "Community Governance",
+      description: "Vote on feature priorities and product roadmap decisions through GeckoCore Protocol",
     },
     {
       icon: Shield,
@@ -33,8 +33,8 @@ export default function TokenPage() {
     },
     {
       icon: Coins,
-      title: "Staking Rewards (November 2025)",
-      description: "Once launched, earn rewards by staking tokens and supporting the ecosystem",
+      title: "Ecosystem Access",
+      description: "Seamless access across all 8 Privacy Gecko products through GeckoCore Protocol",
     },
   ];
 
@@ -47,12 +47,12 @@ export default function TokenPage() {
     {
       amount: "5,000 $PRICKO",
       discount: "Enhanced Benefits",
-      benefits: ["Larger Pro plan discounts", "Priority support", "Beta feature access", "Governance voting rights (when staking launches)"],
+      benefits: ["Larger Pro plan discounts", "Priority support", "Beta feature access", "Governance voting rights via GeckoCore"],
     },
     {
       amount: "10,000+ $PRICKO",
       discount: "Premium Benefits",
-      benefits: ["Maximum Pro plan discounts", "Lifetime discount guarantee", "VIP support channel", "Full governance rights (when staking launches)", "Exclusive features"],
+      benefits: ["Maximum Pro plan discounts", "Lifetime discount guarantee", "VIP support channel", "Full governance rights via GeckoCore", "Exclusive features"],
     },
   ];
 
@@ -60,8 +60,8 @@ export default function TokenPage() {
     <>
       <Hero
         subtitle="$PRICKO Token"
-        title="Stake Tokens, Unlock Premium Benefits"
-        description="Join the Privacy Gecko ecosystem with $PRICKO tokens (launching November 2025) and get exclusive discounts, early access, and future governance rights."
+        title="Hold Tokens, Unlock Premium Benefits"
+        description="Join the Privacy Gecko ecosystem with $PRICKO tokens (launching November 2025) and get exclusive discounts, early access, and community benefits."
       />
 
       {/* Coming Soon Banner */}
@@ -71,7 +71,7 @@ export default function TokenPage() {
             🚀 Launching November 2025
           </p>
           <p className="text-gray-700">
-            Token staking and benefits program is currently in development. Join our waitlist to be notified at launch.
+            Token benefits program is currently in development. Join our waitlist to be notified at launch.
           </p>
           <Button href="/contact?subject=PRICKO%20Token%20Waitlist" variant="primary" size="md" className="mt-4">
             Join Waitlist
@@ -88,14 +88,14 @@ export default function TokenPage() {
           />
           <div className="prose prose-lg max-w-none text-gray-600">
             <p>
-              $PRICKO is the official utility token of the Privacy Gecko ecosystem. Once staking launches in November 2025, by holding and staking $PRICKO tokens,
+              $PRICKO is the official utility token of the Privacy Gecko ecosystem, launching November 2025. By holding $PRICKO tokens,
               you will unlock significant benefits including discounts on Pro subscriptions, early access to new tools,
-              and the ability to participate in future community governance.
+              and the ability to participate in community governance through the GeckoCore Protocol.
             </p>
             <p>
               Unlike traditional subscription models, $PRICKO creates a sustainable ecosystem where early supporters
-              and community members will be rewarded with lifetime benefits. The more you stake, the more you save—and
-              the more influence you will have over the project's direction.
+              and community members are rewarded with lifetime benefits. Token holders gain access to premium features
+              and help shape the project's direction through governance.
             </p>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function TokenPage() {
       <Section className="bg-gradient-to-br from-gray-50 via-white to-emerald-50/20">
         <SectionHeader
           subtitle="Benefits"
-          title="Why Stake $PRICKO?"
+          title="Why Hold $PRICKO?"
           description="Unlock exclusive perks and savings by joining the Privacy Gecko token ecosystem"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -123,11 +123,11 @@ export default function TokenPage() {
         </div>
       </Section>
 
-      {/* Staking Tiers */}
+      {/* Token Tiers */}
       <Section className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
         <SectionHeader
-          title="Staking Tiers"
-          description="The more you stake, the more benefits you unlock"
+          title="Token Holder Tiers"
+          description="The more tokens you hold, the more benefits you unlock"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {tiers.map((tier, index) => (
@@ -141,7 +141,7 @@ export default function TokenPage() {
                   </div>
                 )}
                 <div className="text-center mb-4">
-                  <p className="text-sm font-semibold text-gecko-green mb-2">Stake</p>
+                  <p className="text-sm font-semibold text-gecko-green mb-2">Hold</p>
                   <p className="text-2xl font-bold mb-2">{tier.amount}</p>
                   <div className="inline-block bg-gecko-green text-white px-4 py-1 rounded-full">
                     {tier.discount}
@@ -249,9 +249,9 @@ export default function TokenPage() {
             <div className="w-12 h-12 bg-gecko-green text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
               3
             </div>
-            <h3 className="font-bold mb-2">Stake Tokens</h3>
+            <h3 className="font-bold mb-2">Connect to GeckoCore</h3>
             <p className="text-sm text-gray-600">
-              Stake your tokens to unlock your tier and benefits
+              Connect your wallet to GeckoCore Protocol to activate benefits
             </p>
           </div>
           <div className="text-center">
@@ -275,23 +275,23 @@ export default function TokenPage() {
           {[
             {
               q: "When will $PRICKO launch?",
-              a: "Token staking is scheduled to launch in November 2025. Join our waitlist to be notified when it's live.",
+              a: "The $PRICKO token is scheduled to launch in November 2025. Join our waitlist to be notified when it's live.",
             },
             {
               q: "What blockchain is $PRICKO on?",
               a: "$PRICKO is a Solana-based token (SPL token), chosen for fast transactions and low fees.",
             },
             {
-              q: "Can I unstake my tokens?",
-              a: "Yes, you can unstake at any time. Note that benefits will only apply while tokens are actively staked.",
+              q: "How do I activate my benefits?",
+              a: "Simply hold $PRICKO tokens in your wallet and connect to GeckoCore Protocol. Your benefits activate automatically based on your token balance.",
             },
             {
               q: "Do benefits apply to existing subscriptions?",
-              a: "Yes! Stake tokens and your benefits will be applied starting from your next billing cycle.",
+              a: "Yes! Hold tokens and connect to GeckoCore, and your benefits will be applied starting from your next billing cycle.",
             },
             {
-              q: "Is there a minimum staking period?",
-              a: "No minimum. Stake and unstake freely. However, longer staking may unlock bonus rewards in the future.",
+              q: "Do I need to lock my tokens?",
+              a: "No. Token benefits are based on your current holdings in your connected wallet. You maintain full custody and can transfer tokens anytime.",
             },
           ].map((faq, index) => (
             <Card key={index} hover={false}>
@@ -311,7 +311,7 @@ export default function TokenPage() {
             Ready to Join the Ecosystem?
           </h2>
           <p className="text-lg mb-8 opacity-90">
-            Join the waitlist and be the first to know when token staking launches
+            Join the waitlist and be the first to know when the token launches
           </p>
           <Button
             href="/contact?subject=PRICKO%20Token%20Waitlist"

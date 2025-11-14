@@ -65,7 +65,7 @@ export default function HomePage() {
             subtitle="One wallet. Eight privacy tools. Zero compromises."
           />
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            GeckoCore unifies all Privacy Gecko products into a seamless ecosystem. Connect your Solana wallet once, access everything. Token holders unlock <strong className="text-gray-900">unlimited AI queries, extended file storage (5GB), priority VPN servers, and cross-product premium features</strong> across all 8 tools.
+            GeckoCore unifies all Privacy Gecko products into a seamless ecosystem. Connect your Solana wallet once, access everything. Token holders unlock <strong className="text-gray-900">unlimited AI queries, extended file storage, priority VPN servers, and cross-product premium features</strong> across all 8 tools.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/geckocore" variant="primary" size="lg">

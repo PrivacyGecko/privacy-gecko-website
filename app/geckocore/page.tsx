@@ -7,6 +7,7 @@ import { Section, SectionHeader } from "@/components/sections/Section";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { EcosystemCanvas } from "@/components/geckocore/EcosystemCanvas";
 import {
   Key,
   Coins,
@@ -263,6 +264,18 @@ export default function GeckoCorePage() {
           </Button>
         </div>
       </Hero>
+
+      {/* Ecosystem Canvas Visualization */}
+      <Section className="bg-white">
+        <SectionHeader
+          subtitle="Ecosystem Overview"
+          title="Eight Products. One Unified Protocol."
+          description="GeckoCore connects all Privacy Gecko tools through a privacy-preserving authentication layer, enabling seamless navigation and enhanced features across the ecosystem."
+        />
+        <div className="flex justify-center">
+          <EcosystemCanvas />
+        </div>
+      </Section>
 
       {/* Problem/Solution Section */}
       <Section className="bg-gradient-to-b from-white to-gray-50">
