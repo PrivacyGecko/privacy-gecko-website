@@ -148,7 +148,6 @@ export default function UnifiedRoadmapPage() {
         "Federated learning network live",
         "Token-gated Pro AI features active",
         "Community governance begins",
-        "Free tier: 50 AI queries/month",
       ],
     },
     {
@@ -299,8 +298,7 @@ export default function UnifiedRoadmapPage() {
           </h2>
           <p className="text-lg text-gray-600 mb-6">
             We're building 8 integrated privacy tools the right way - with security audits,
-            community feedback, and transparent development. We won't rush pricing or features
-            just to launch faster.
+            community feedback, and transparent development.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             <div className="text-center">
@@ -332,7 +330,7 @@ export default function UnifiedRoadmapPage() {
       <Section id="products" className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
         <SectionHeader
           title="Available Today"
-          description="Start using these privacy tools now - free tiers available for all"
+          description="Start using these privacy tools now"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {liveProducts.map((product, index) => (
@@ -347,24 +345,6 @@ export default function UnifiedRoadmapPage() {
               features={product.features}
               href={product.href}
               isExternal={product.isExternal}
-              pricing={{
-                free:
-                  product.id === "advisor"
-                    ? "3 scans/month"
-                    : product.id === "share"
-                    ? "100MB, 24hr expiry"
-                    : product.id === "guard"
-                    ? "Basic blocking"
-                    : "Unlimited passwords, 2 devices",
-                pro:
-                  product.id === "advisor"
-                    ? "$4.99/mo beta (reg $9.99)"
-                    : product.id === "share"
-                    ? "$7.99/mo - 5GB"
-                    : product.id === "guard"
-                    ? "$4.99/mo - advanced"
-                    : "$4.99/mo - unlimited devices",
-              }}
               index={index}
             />
           ))}
@@ -390,10 +370,6 @@ export default function UnifiedRoadmapPage() {
               progress={product.progress}
               features={product.features}
               href={product.href}
-              pricing={{
-                free: "Free tier available",
-                pro: "Early adopter pricing TBA",
-              }}
               index={index}
             />
           ))}
@@ -712,7 +688,6 @@ export default function UnifiedRoadmapPage() {
                 <CardTitle>Sustainable Funding</CardTitle>
                 <CardDescription>
                   Token holders and stakers fund AI development through a transparent community treasury.
-                  30% of Pro revenue goes to AI infrastructure.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -723,7 +698,6 @@ export default function UnifiedRoadmapPage() {
                 <CardTitle>Unlock AI Features</CardTitle>
                 <CardDescription>
                   Hold $PRICKO tokens to get unlimited AI queries across all 8 products.
-                  Free tier users get 50 queries/month, token holders get unlimited.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -859,10 +833,10 @@ export default function UnifiedRoadmapPage() {
                   <div className="w-10 h-10 bg-gecko-green/10 rounded-lg flex items-center justify-center">
                     <CheckCircle className="w-5 h-5 text-gecko-green" />
                   </div>
-                  <CardTitle>Lock in Best Pricing</CardTitle>
+                  <CardTitle>Early Access Benefits</CardTitle>
                 </div>
                 <CardDescription>
-                  Join the waitlist to lock in launch pricing for life. Your rate never increases.
+                  Join the waitlist to get exclusive early access and benefits.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -976,14 +950,6 @@ export default function UnifiedRoadmapPage() {
           <div className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Will prices increase later?</CardTitle>
-                <CardDescription>
-                  Not for early adopters. Your launch price is locked in for life. We honor our commitments.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
                 <CardTitle>What if a product gets delayed?</CardTitle>
                 <CardDescription>
                   We'll extend your early adopter benefits and keep you updated. Transparency over deadlines.
@@ -994,7 +960,7 @@ export default function UnifiedRoadmapPage() {
               <CardHeader>
                 <CardTitle>Can I use the ecosystem without crypto?</CardTitle>
                 <CardDescription>
-                  100%. $PRICKO tokens are optional for additional discounts only. All tools work fully without crypto.
+                  Yes. $PRICKO tokens are optional. All tools work fully without crypto.
                 </CardDescription>
               </CardHeader>
             </Card>

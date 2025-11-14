@@ -20,7 +20,7 @@ export interface ProductMilestoneProps {
   features: string[];
   href: string;
   isExternal?: boolean;
-  pricing: {
+  pricing?: {
     free: string;
     pro: string;
   };
@@ -77,29 +77,6 @@ export function ProductMilestone({
               </li>
             ))}
           </ul>
-
-          {/* Pricing */}
-          {status === "live" && (
-            <div className="space-y-3">
-              <div>
-                <p className="text-sm font-semibold text-gray-700">Free Tier:</p>
-                <p className="text-sm text-gray-600">{pricing.free}</p>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-gray-700">Pro Tier:</p>
-                <p className="text-sm text-gray-600">{pricing.pro}</p>
-              </div>
-            </div>
-          )}
-
-          {status === "coming" && (
-            <div className="bg-gray-50 rounded-lg p-3">
-              <p className="text-xs text-gray-600 mb-1">Pricing TBA</p>
-              <p className="text-sm font-semibold text-gecko-green">
-                Early adopters: Lock in launch pricing
-              </p>
-            </div>
-          )}
 
           {/* CTA */}
           <Button
