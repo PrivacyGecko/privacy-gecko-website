@@ -20,23 +20,23 @@ export default function HomePage() {
   return (
     <>
 
-      {/* Hero Section - REWRITTEN FOR PROFESSIONAL SAAS POSITIONING */}
+      {/* Hero Section - v1.3: Infrastructure Vision with Honest Timelines */}
       <Hero
         subtitle="Privacy Protection for the Modern Internet"
         title={
           <>
-            Complete Privacy Toolkit.
+            Growing Privacy Ecosystem.
             <br />
             AI-Enhanced Protection.
           </>
         }
         description={
           <>
-            8 powerful privacy tools protecting everything from your browsing to your passwords.
-            4 tools live today, 4 more launching through 2026.
-            Start with generous{" "}
-            <span className="text-gecko-green font-semibold">free tiers</span>
-            , upgrade when ready.
+            A growing ecosystem of privacy tools built on the{" "}
+            <span className="text-gecko-green font-semibold">GeckoCore Protocol</span> —{" "}
+            <strong>4 products live today, 4 more launching through 2026</strong>, with
+            continuous innovation as new privacy threats emerge. Start with generous{" "}
+            <span className="text-gecko-green font-semibold">free tiers</span>, upgrade when ready.
           </>
         }
       >
@@ -106,9 +106,9 @@ export default function HomePage() {
       {/* Product Showcase */}
       <Section className="bg-gradient-to-b from-white to-gray-50">
         <SectionHeader
-          subtitle="Our Ecosystem"
-          title="Complete Privacy Toolkit"
-          description="8 powerful tools to protect your privacy across all aspects of your digital life. 4 available now, 4 in active development."
+          subtitle="Phase 1: Our Commitment"
+          title="The Privacy Gecko Ecosystem"
+          description="8 products by end of 2026. 4 live now, 4 launching through 2026. Each product built on the GeckoCore Protocol — infrastructure designed to evolve as privacy threats change."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (

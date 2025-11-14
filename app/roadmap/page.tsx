@@ -992,6 +992,178 @@ export default function UnifiedRoadmapPage() {
         </div>
       </Section>
 
+      {/* Beyond Phase 1: Infrastructure Vision (v1.3) */}
+      <Section className="bg-gradient-to-b from-white to-emerald-50/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <Badge variant="coming" className="mb-4">Infrastructure Vision</Badge>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              Beyond Phase 1: Continuous Innovation
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our commitment: <strong className="text-gray-900">8 products by end of 2026.</strong>{" "}
+              But GeckoCore Protocol is designed for continuous evolution as privacy threats change.
+            </p>
+          </div>
+
+          {/* Two Columns: Why Evolve / How GeckoCore Enables */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+
+            {/* Why Privacy Tools Must Evolve */}
+            <Card className="border-2 border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-2xl mb-6">Why Privacy Tools Must Evolve</CardTitle>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <span className="text-gecko-green text-xl font-bold">→</span>
+                    <div>
+                      <div className="font-semibold text-gray-900 mb-1">New Threats Emerge</div>
+                      <div className="text-sm text-gray-600">
+                        Trackers evolve, regulations change, attack vectors shift
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-gecko-green text-xl font-bold">→</span>
+                    <div>
+                      <div className="font-semibold text-gray-900 mb-1">User Needs Expand</div>
+                      <div className="text-sm text-gray-600">
+                        Web3 adoption, AI tools, IoT devices create new challenges
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-gecko-green text-xl font-bold">→</span>
+                    <div>
+                      <div className="font-semibold text-gray-900 mb-1">Technology Advances</div>
+                      <div className="text-sm text-gray-600">
+                        New cryptographic techniques unlock new capabilities
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p className="mt-6 text-sm text-gray-600 italic">
+                  Static tools become obsolete. Extensible infrastructure adapts.
+                </p>
+              </CardHeader>
+            </Card>
+
+            {/* How GeckoCore Enables This */}
+            <Card className="border-2 border-gecko-green/30 bg-gradient-to-br from-gecko-green/5 to-blue-50/30">
+              <CardHeader>
+                <CardTitle className="text-2xl mb-6">How GeckoCore Enables This</CardTitle>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-gray-900 mb-1">Modular Architecture</div>
+                      <div className="text-sm text-gray-600">
+                        New feeds can be added without breaking existing tools
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-gray-900 mb-1">Designed for Extensibility</div>
+                      <div className="text-sm text-gray-600">
+                        Protocol built to support future tools (SDK launching Q2 2026)
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-gray-900 mb-1">AI-Native</div>
+                      <div className="text-sm text-gray-600">
+                        Models improve with federated learning from network
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-gray-900 mb-1">Community Governance</div>
+                      <div className="text-sm text-gray-600">
+                        GeckoDAO decides future direction (launching 2027+)
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+
+          </div>
+
+          {/* Potential Future Additions (Concepts) */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-center mb-4">
+              Potential Future Additions (Concepts)
+            </h3>
+            <p className="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+              These are explorations, not commitments. Community governance will help decide what to build after Phase 1.
+            </p>
+
+            <div className="grid md:grid-cols-4 gap-6">
+
+              <Card className="border-gray-300">
+                <CardHeader>
+                  <CardTitle className="text-lg mb-2">Privacy DNS</CardTitle>
+                  <CardDescription className="mb-3">
+                    Encrypted DNS with tracker blocking
+                  </CardDescription>
+                  <Badge variant="coming" className="bg-gray-100 text-gray-600">Concept</Badge>
+                </CardHeader>
+              </Card>
+
+              <Card className="border-gray-300">
+                <CardHeader>
+                  <CardTitle className="text-lg mb-2">Identity Layer</CardTitle>
+                  <CardDescription className="mb-3">
+                    Zero-knowledge identity for Web3
+                  </CardDescription>
+                  <Badge variant="coming" className="bg-gray-100 text-gray-600">Concept</Badge>
+                </CardHeader>
+              </Card>
+
+              <Card className="border-gray-300">
+                <CardHeader>
+                  <CardTitle className="text-lg mb-2">Privacy AI</CardTitle>
+                  <CardDescription className="mb-3">
+                    AI assistant running locally
+                  </CardDescription>
+                  <Badge variant="coming" className="bg-gray-100 text-gray-600">Concept</Badge>
+                </CardHeader>
+              </Card>
+
+              <Card className="border-2 border-gecko-green/30 bg-gradient-to-br from-gecko-green/5 to-green-50">
+                <CardHeader>
+                  <CardTitle className="text-lg mb-2">Your Idea?</CardTitle>
+                  <CardDescription className="mb-3">
+                    Community proposals via governance
+                  </CardDescription>
+                  <Badge variant="coming" className="bg-gecko-green/20 text-gecko-green font-semibold">Vote 2027+</Badge>
+                </CardHeader>
+              </Card>
+
+            </div>
+          </div>
+
+          {/* Key Message Callout */}
+          <Card className="bg-gradient-to-r from-gecko-green/10 to-blue-50 border-2 border-gecko-green/30">
+            <CardHeader className="text-center">
+              <CardTitle className="text-xl mb-2">
+                Phase 1: 8 products by end of 2026 (our commitment)
+              </CardTitle>
+              <CardDescription className="text-base">
+                Phase 2+: GeckoCore Protocol designed to enable continuous innovation as the privacy landscape evolves
+              </CardDescription>
+            </CardHeader>
+          </Card>
+
+        </div>
+      </Section>
+
       {/* GeckoCore Protocol Timeline */}
       <Section className="bg-gradient-to-br from-emerald-50 to-blue-50/40">
         <SectionHeader

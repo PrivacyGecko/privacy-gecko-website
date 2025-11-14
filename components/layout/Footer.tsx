@@ -56,7 +56,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-gray-400 text-sm mb-4">
-              Privacy tools that actually work. <span className="text-gray-500">($PRICKO token optional)</span>
+              Privacy ecosystem powered by GeckoCore Protocol. <span className="text-gray-500">($PRICKO token optional)</span>
             </p>
 
             {/* Brand Social Links */}
