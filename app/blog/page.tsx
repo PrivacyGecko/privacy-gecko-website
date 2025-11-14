@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function BlogPage() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -64,6 +65,7 @@ export default function BlogPage() {
       date: "October 31, 2025",
       category: "Privacy Tips",
       slug: "open-source-privacy-tools",
+      image: "/images/og-shell.png",
     },
     {
       title: "How Local AI Protects Your Privacy (vs Cloud AI)",
@@ -72,6 +74,7 @@ export default function BlogPage() {
       date: "October 3, 2025",
       category: "AI & Privacy",
       slug: "local-ai-privacy-protection",
+      image: "/images/og-advisor.png",
     },
     {
       title: "Privacy Memecoins: Memes with a Mission Explained",
@@ -80,6 +83,7 @@ export default function BlogPage() {
       date: "September 12, 2025",
       category: "Token & Community",
       slug: "privacy-memecoins-explained",
+      image: "/images/og-token.png",
     },
     {
       title: "Privacy Tools Every Crypto Trader Needs",
@@ -88,6 +92,7 @@ export default function BlogPage() {
       date: "August 8, 2025",
       category: "Crypto Privacy",
       slug: "crypto-trader-privacy-tools",
+      image: "/images/og-guard.png",
     },
     {
       title: "The Complete Guide to Privacy Tools in 2025",
@@ -96,6 +101,7 @@ export default function BlogPage() {
       date: "July 15, 2025",
       category: "Privacy Guide",
       slug: "complete-guide-privacy-tools-2025",
+      image: "/images/og-products.png",
     },
     {
       title: "Why Privacy Tools Matter in 2025",
@@ -104,6 +110,7 @@ export default function BlogPage() {
       date: "January 15, 2025",
       category: "Privacy Tips",
       slug: "why-privacy-tools-matter-2025",
+      image: "/images/og-lock.png",
     },
     {
       title: "Getting Started with GeckoAdvisor",
@@ -112,6 +119,7 @@ export default function BlogPage() {
       date: "January 10, 2025",
       category: "Tutorials",
       slug: "getting-started-geckoadvisor",
+      image: "/images/og-advisor.png",
     },
     {
       title: "Introducing Privacy Gecko: Our Story",
@@ -120,6 +128,7 @@ export default function BlogPage() {
       date: "January 5, 2025",
       category: "Product Updates",
       slug: "introducing-privacy-gecko",
+      image: "/images/og-products.png",
     },
   ];
 
@@ -141,40 +150,55 @@ export default function BlogPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-sm text-gecko-green mb-2">
-                    <span className="font-semibold">{post.category}</span>
-                  </div>
-                  <CardTitle className="text-2xl mb-3">
-                    <a href={`/blog/${post.slug}`} className="hover:text-gecko-green transition-colors">
-                      {post.title}
-                    </a>
-                  </CardTitle>
-                  <CardDescription className="text-base mb-4">
-                    {post.excerpt}
-                  </CardDescription>
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <div className="flex items-center gap-4 text-sm text-gray-600">
-                      <div className="flex items-center gap-1">
-                        <User className="w-4 h-4" />
-                        <span>{post.author}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>{post.date}</span>
+              <a href={`/blog/${post.slug}`} className="block">
+                <Card>
+                  <div className="md:flex md:gap-6">
+                    {/* Image Section */}
+                    <div className="md:w-80 md:flex-shrink-0">
+                      <div className="relative w-full h-48 md:h-full md:min-h-[200px]">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 320px"
+                        />
                       </div>
                     </div>
-                    <a
-                      href={`/blog/${post.slug}`}
-                      className="text-gecko-green hover:underline flex items-center gap-1 text-sm font-medium"
-                    >
-                      Read more
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
+
+                    {/* Content Section */}
+                    <div className="flex-1">
+                      <CardHeader>
+                        <div className="flex items-center gap-2 text-sm text-gecko-green mb-2">
+                          <span className="font-semibold">{post.category}</span>
+                        </div>
+                        <CardTitle className="text-2xl mb-3 hover:text-gecko-green transition-colors">
+                          {post.title}
+                        </CardTitle>
+                        <CardDescription className="text-base mb-4">
+                          {post.excerpt}
+                        </CardDescription>
+                        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                          <div className="flex items-center gap-4 text-sm text-gray-600">
+                            <div className="flex items-center gap-1">
+                              <User className="w-4 h-4" />
+                              <span>{post.author}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Calendar className="w-4 h-4" />
+                              <span>{post.date}</span>
+                            </div>
+                          </div>
+                          <span className="text-gecko-green flex items-center gap-1 text-sm font-medium">
+                            Read more
+                            <ArrowRight className="w-4 h-4" />
+                          </span>
+                        </div>
+                      </CardHeader>
+                    </div>
                   </div>
-                </CardHeader>
-              </Card>
+                </Card>
+              </a>
             </motion.div>
           ))}
         </div>
