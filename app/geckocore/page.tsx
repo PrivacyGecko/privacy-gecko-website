@@ -183,9 +183,9 @@ const faqData = [
   },
   {
     id: "whitepaper",
-    question: "When will the GeckoCore whitepaper be available?",
+    question: "Where can I read the GeckoCore whitepaper?",
     answer:
-      "The GeckoCore technical whitepaper will be published in Q1 2026, coinciding with the community feedback period. It will include detailed architecture specifications, zero-knowledge proof implementations, token-gating mechanisms, security audits, and integration APIs. We'll release drafts for community review before finalization. Follow our blog and join the waitlist to receive notification when the whitepaper goes live.",
+      "The GeckoCore technical whitepaper (v1.0) is now available at privacygecko.com/whitepaper. It includes comprehensive documentation on our architecture, the five privacy feeds (PrivacyFeed, ThreatFeed, MetaProof, AccessProof, ReputationFeed), zero-knowledge proof implementations, token economics, security model, and complete roadmap through 2027. Published November 2025, the whitepaper demonstrates our commitment to transparency and technical rigor.",
   },
 ];
 

@@ -44,6 +44,9 @@ export default function HomePage() {
           <Button href="/products" variant="primary" size="lg">
             Explore Privacy Tools
           </Button>
+          <Button href="/whitepaper" variant="outline" size="lg">
+            Read Whitepaper
+          </Button>
           <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="outline" size="lg">
             Join Early Access
           </Button>
@@ -70,6 +73,9 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/geckocore" variant="primary" size="lg">
               Learn About GeckoCore →
+            </Button>
+            <Button href="/whitepaper" variant="outline" size="lg">
+              Read Technical Whitepaper
             </Button>
             <Button href="/geckocore#faq" variant="outline" size="lg">
               View Development Roadmap
