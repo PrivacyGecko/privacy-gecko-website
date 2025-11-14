@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { Hero } from "@/components/sections/Hero";
 import { Section } from "@/components/sections/Section";
 import { ContactForm } from "@/components/ContactForm";
@@ -20,7 +21,9 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <ContactForm />
+            <Suspense fallback={<div className="text-center p-8">Loading form...</div>}>
+              <ContactForm />
+            </Suspense>
           </div>
 
           {/* Contact Info */}

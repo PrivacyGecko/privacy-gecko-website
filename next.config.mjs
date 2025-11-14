@@ -50,7 +50,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https:",
               "font-src 'self' data:",
-              "connect-src 'self' plausible.io",
+              "connect-src 'self' plausible.io https://formspree.io",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self' https://formspree.io",
