@@ -77,10 +77,10 @@ export function WhitepaperContent({ content }: WhitepaperContentProps) {
       <div className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-6">
-            <Badge variant="outline" className="bg-white/20 text-white border-white/40">
+            <Badge variant="info" className="bg-white/20 text-white border-white/40">
               Version 1.0
             </Badge>
-            <Badge variant="outline" className="bg-white/20 text-white border-white/40">
+            <Badge variant="info" className="bg-white/20 text-white border-white/40">
               Published November 2025
             </Badge>
           </div>
