@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
 
 interface WhitepaperContentProps {
   content: string;
@@ -18,17 +19,17 @@ export function WhitepaperContent({ content }: WhitepaperContentProps) {
   // Table of Contents structure
   const tableOfContents = [
     { id: "abstract", title: "Abstract", level: 2 },
-    { id: "executive-summary", title: "1. Executive Summary", level: 2 },
-    { id: "the-privacy-problem", title: "2. The Privacy Problem", level: 2 },
-    { id: "geckocore-solution", title: "3. GeckoCore Solution", level: 2 },
-    { id: "technical-architecture", title: "4. Technical Architecture", level: 2 },
-    { id: "the-five-privacy-feeds", title: "5. The Five Privacy Feeds", level: 2 },
-    { id: "protocol-design", title: "6. Protocol Design", level: 2 },
-    { id: "privacy-gecko-phase-1-reference", title: "7. Privacy Gecko: Phase 1 Reference", level: 2 },
-    { id: "roadmap", title: "8. Roadmap", level: 2 },
-    { id: "token-economics", title: "9. Token Economics", level: 2 },
-    { id: "security-model", title: "10. Security Model", level: 2 },
-    { id: "team--governance", title: "11. Team & Governance", level: 2 },
+    { id: "1-executive-summary", title: "1. Executive Summary", level: 2 },
+    { id: "2-the-privacy-problem", title: "2. The Privacy Problem", level: 2 },
+    { id: "3-geckocore-solution", title: "3. GeckoCore Solution", level: 2 },
+    { id: "4-technical-architecture", title: "4. Technical Architecture", level: 2 },
+    { id: "5-the-five-privacy-feeds", title: "5. The Five Privacy Feeds", level: 2 },
+    { id: "6-protocol-design", title: "6. Protocol Design", level: 2 },
+    { id: "7-privacy-gecko-phase-1-reference", title: "7. Privacy Gecko: Phase 1 Reference", level: 2 },
+    { id: "8-roadmap", title: "8. Roadmap", level: 2 },
+    { id: "9-token-economics", title: "9. Token Economics", level: 2 },
+    { id: "10-security-model", title: "10. Security Model", level: 2 },
+    { id: "11-team--governance", title: "11. Team & Governance", level: 2 },
   ];
 
   // Scroll spy for active section
@@ -166,7 +167,7 @@ export function WhitepaperContent({ content }: WhitepaperContentProps) {
                 prose-ul:my-6 prose-li:my-2
                 prose-blockquote:border-l-gecko-green prose-blockquote:bg-emerald-50 prose-blockquote:p-4 prose-blockquote:rounded-r
               ">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeSlug]}>
                   {content}
                 </ReactMarkdown>
               </article>

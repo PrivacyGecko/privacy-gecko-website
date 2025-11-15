@@ -13,17 +13,17 @@ GeckoCore is an open privacy infrastructure protocol on Solana that enables any 
 
 ## Table of Contents
 
-1. [Executive Summary](#executive-summary)
-2. [The Privacy Problem](#the-privacy-problem)
-3. [GeckoCore Solution](#geckocore-solution)
-4. [Technical Architecture](#technical-architecture)
-5. [The Five Privacy Feeds](#the-five-privacy-feeds)
-6. [Protocol Design](#protocol-design)
-7. [Privacy Gecko: Phase 1 Reference](#privacy-gecko-phase-1-reference)
-8. [Roadmap](#roadmap)
-9. [Token Economics](#token-economics)
-10. [Security Model](#security-model)
-11. [Team & Governance](#team--governance)
+1. [Executive Summary](#1-executive-summary)
+2. [The Privacy Problem](#2-the-privacy-problem)
+3. [GeckoCore Solution](#3-geckocore-solution)
+4. [Technical Architecture](#4-technical-architecture)
+5. [The Five Privacy Feeds](#5-the-five-privacy-feeds)
+6. [Protocol Design](#6-protocol-design)
+7. [Privacy Gecko: Phase 1 Reference](#7-privacy-gecko-phase-1-reference)
+8. [Roadmap](#8-roadmap)
+9. [Token Economics](#9-token-economics)
+10. [Security Model](#10-security-model)
+11. [Team & Governance](#11-team--governance)
 
 ---
 
