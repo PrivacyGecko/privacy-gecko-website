@@ -22,6 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@privacygecko",
+    creator: "@0xAnonA",
     title: "GeckoCore Protocol Whitepaper v1.0",
     description: "The Privacy Proof Layer for Solana - Building open privacy infrastructure on blockchain.",
     images: ["/images/og-whitepaper.png"],
