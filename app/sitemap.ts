@@ -3,8 +3,9 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://privacygecko.com'
 
-  // Blog post slugs (all 8 posts)
+  // Blog post slugs (all 10 posts)
   const blogPosts = [
+    'geckocore-protocol-whitepaper-v1-launch',
     'introducing-geckocore-protocol',
     'why-privacy-tools-matter-2025',
     'getting-started-geckoadvisor',
@@ -202,7 +203,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/blog/${slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: slug.includes('complete-guide') || slug.includes('privacy-memecoins') ? 0.75 : 0.6,
+      priority: slug.includes('whitepaper') || slug.includes('complete-guide') || slug.includes('privacy-memecoins') ? 0.75 : 0.6,
     })),
   ]
 }
