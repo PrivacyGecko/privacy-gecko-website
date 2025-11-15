@@ -1206,18 +1206,23 @@ async function createWhitepaperImage() {
   });
 
   // Technical badge
+  const badgeWidth = 260;
+  const badgeHeight = 50;
+  const badgeX = textX;
+  const badgeY = 530;
+
   ctx.fillStyle = 'rgba(0, 217, 138, 0.15)';
-  roundRect(ctx, textX, 540, 220, 50, 25);
+  roundRect(ctx, badgeX, badgeY, badgeWidth, badgeHeight, 25);
   ctx.fill();
   ctx.strokeStyle = COLORS.geckoGreen;
   ctx.lineWidth = 2;
-  roundRect(ctx, textX, 540, 220, 50, 25);
+  roundRect(ctx, badgeX, badgeY, badgeWidth, badgeHeight, 25);
   ctx.stroke();
 
   ctx.fillStyle = COLORS.geckoGreen;
-  ctx.font = 'bold 24px Inter, sans-serif';
+  ctx.font = 'bold 22px Inter, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('TECHNICAL OVERVIEW', textX + 110, 571);
+  ctx.fillText('TECHNICAL OVERVIEW', badgeX + badgeWidth / 2, badgeY + 32);
 
   // Logo (top right)
   try {
