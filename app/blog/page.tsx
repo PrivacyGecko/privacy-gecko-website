@@ -59,6 +59,15 @@ export default function BlogPage() {
   // All blog posts in reverse chronological order (newest first)
   const posts = [
     {
+      title: "GeckoCore Protocol Whitepaper v1.0: The Privacy Proof Layer for Solana",
+      excerpt: "The GeckoCore Protocol Whitepaper v1.0 is officially live. Discover the Privacy Proof Layer for Solana with zero-knowledge proofs, 5 Privacy Feeds, and token economics.",
+      author: "@0xAnonA",
+      date: "November 15, 2025",
+      category: "Product Updates",
+      slug: "geckocore-protocol-whitepaper-v1-launch",
+      image: "/images/og-whitepaper.png",
+    },
+    {
       title: "Introducing GeckoCore Protocol: The Hub for Privacy Tools",
       excerpt: "GeckoCore Protocol unifies 8 privacy tools with one wallet login powered by $PRICKO. Open-source, zero-knowledge, launching Q4 2026. Learn how it works.",
       author: "@0xAnonA",
