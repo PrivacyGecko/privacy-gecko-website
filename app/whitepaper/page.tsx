@@ -11,11 +11,20 @@ export const metadata: Metadata = {
     description: "The Privacy Proof Layer for Solana - Technical architecture, token economics, and roadmap for decentralized privacy infrastructure.",
     type: "article",
     publishedTime: "2025-11-01T00:00:00Z",
+    images: [
+      {
+        url: "/images/og-whitepaper.png",
+        width: 1200,
+        height: 630,
+        alt: "GeckoCore Protocol Whitepaper - The Privacy Proof Layer for Solana",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "GeckoCore Protocol Whitepaper v1.0",
     description: "The Privacy Proof Layer for Solana - Building open privacy infrastructure on blockchain.",
+    images: ["/images/og-whitepaper.png"],
   },
 };
 

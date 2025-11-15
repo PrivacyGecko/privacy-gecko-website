@@ -1020,7 +1020,219 @@ async function createWatchImage() {
   return canvas;
 }
 
-// 10. og-products.png - Products Hub
+// 10. og-whitepaper.png - GeckoCore Protocol Whitepaper
+async function createWhitepaperImage() {
+  const canvas = createCanvas(WIDTH, HEIGHT);
+  const ctx = canvas.getContext('2d');
+
+  // Background - sophisticated gradient
+  const gradient = ctx.createLinearGradient(0, 0, WIDTH, HEIGHT);
+  gradient.addColorStop(0, '#0F172A');
+  gradient.addColorStop(0.5, '#1E293B');
+  gradient.addColorStop(1, '#334155');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+  // Accent gradient overlay
+  const accentGradient = ctx.createRadialGradient(WIDTH * 0.3, HEIGHT * 0.5, 0, WIDTH * 0.3, HEIGHT * 0.5, 400);
+  accentGradient.addColorStop(0, 'rgba(0, 217, 138, 0.15)');
+  accentGradient.addColorStop(1, 'rgba(0, 217, 138, 0)');
+  ctx.fillStyle = accentGradient;
+  ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+  // Left side - Document/whitepaper visual
+  const docX = WIDTH * 0.28;
+  const docY = HEIGHT / 2;
+  const docWidth = 240;
+  const docHeight = 340;
+
+  // Document shadow
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+  roundRect(ctx, docX - docWidth / 2 + 10, docY - docHeight / 2 + 10, docWidth, docHeight, 12);
+  ctx.fill();
+
+  // Main document
+  ctx.fillStyle = COLORS.white;
+  roundRect(ctx, docX - docWidth / 2, docY - docHeight / 2, docWidth, docHeight, 12);
+  ctx.fill();
+
+  // Document header bar (branded)
+  const headerGradient = ctx.createLinearGradient(
+    docX - docWidth / 2,
+    docY - docHeight / 2,
+    docX + docWidth / 2,
+    docY - docHeight / 2 + 60
+  );
+  headerGradient.addColorStop(0, COLORS.geckoGreen);
+  headerGradient.addColorStop(1, COLORS.darkGreen);
+  ctx.fillStyle = headerGradient;
+  roundRect(ctx, docX - docWidth / 2, docY - docHeight / 2, docWidth, 60, 12);
+  ctx.fill();
+  ctx.fillRect(docX - docWidth / 2, docY - docHeight / 2 + 50, docWidth, 10);
+
+  // Version badge on header
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+  roundRect(ctx, docX - docWidth / 2 + 15, docY - docHeight / 2 + 15, 60, 24, 12);
+  ctx.fill();
+  ctx.fillStyle = COLORS.white;
+  ctx.font = 'bold 14px Inter, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('v1.0', docX - docWidth / 2 + 45, docY - docHeight / 2 + 32);
+
+  // Content lines on document
+  ctx.fillStyle = COLORS.mediumGray;
+  const lineStartY = docY - docHeight / 2 + 80;
+  const contentLines = [
+    { width: 180, bold: true },
+    { width: 160, bold: false },
+    { width: 0, bold: false },
+    { width: 140, bold: true },
+    { width: 170, bold: false },
+    { width: 150, bold: false },
+    { width: 0, bold: false },
+    { width: 120, bold: true },
+    { width: 165, bold: false },
+    { width: 155, bold: false }
+  ];
+
+  contentLines.forEach((line, i) => {
+    if (line.width > 0) {
+      ctx.globalAlpha = line.bold ? 0.8 : 0.4;
+      const lineHeight = line.bold ? 6 : 4;
+      roundRect(
+        ctx,
+        docX - docWidth / 2 + 25,
+        lineStartY + i * 22,
+        line.width,
+        lineHeight,
+        2
+      );
+      ctx.fill();
+    }
+  });
+  ctx.globalAlpha = 1;
+
+  // Protocol architecture diagram overlay
+  const diagramX = docX;
+  const diagramY = docY + docHeight / 2 - 80;
+  const diagramSize = 80;
+
+  // Simplified protocol stack diagram
+  ctx.strokeStyle = COLORS.geckoGreen;
+  ctx.lineWidth = 3;
+  ctx.globalAlpha = 0.6;
+
+  // Three layers
+  for (let i = 0; i < 3; i++) {
+    const layerY = diagramY - (i * 25);
+    roundRect(
+      ctx,
+      diagramX - diagramSize / 2,
+      layerY,
+      diagramSize,
+      20,
+      4
+    );
+    ctx.stroke();
+  }
+
+  // Connecting lines
+  ctx.beginPath();
+  ctx.moveTo(diagramX, diagramY - 20);
+  ctx.lineTo(diagramX, diagramY - 25);
+  ctx.moveTo(diagramX, diagramY - 45);
+  ctx.lineTo(diagramX, diagramY - 50);
+  ctx.stroke();
+
+  ctx.globalAlpha = 1;
+
+  // Shield with ZK symbol overlay
+  const shieldSize = 100;
+  const shieldX = docX + docWidth / 2 - 30;
+  const shieldY = docY - docHeight / 2 + 40;
+
+  ctx.save();
+  ctx.shadowColor = COLORS.geckoGreen;
+  ctx.shadowBlur = 30;
+  drawShield(ctx, shieldX - shieldSize / 2, shieldY, shieldSize, COLORS.geckoGreen);
+  ctx.restore();
+
+  // ZK-SNARK text on shield
+  ctx.fillStyle = COLORS.white;
+  ctx.font = 'bold 16px monospace';
+  ctx.textAlign = 'center';
+  ctx.fillText('ZK', shieldX, shieldY + shieldSize * 0.5);
+
+  // Right side - Text content
+  const textX = WIDTH * 0.58;
+  const contentWidth = WIDTH - textX - TEXT_MARGIN;
+
+  // Subtitle
+  ctx.fillStyle = COLORS.geckoGreen;
+  ctx.font = 'bold 36px Inter, sans-serif';
+  ctx.textAlign = 'left';
+  ctx.fillText('GeckoCore Protocol', textX, 140);
+
+  // Title
+  ctx.fillStyle = COLORS.white;
+  ctx.font = 'bold 68px Inter, sans-serif';
+  ctx.fillText('Whitepaper', textX, 210);
+
+  // Version and date
+  ctx.fillStyle = COLORS.lightGray;
+  ctx.font = '28px Inter, sans-serif';
+  ctx.fillText('Version 1.0 • November 2025', textX, 260);
+
+  // Tagline
+  ctx.fillStyle = COLORS.white;
+  ctx.font = '32px Inter, sans-serif';
+  const tagline = 'The Privacy Proof Layer for Solana';
+  const taglineLines = wrapText(ctx, tagline, contentWidth);
+  taglineLines.forEach((line, i) => {
+    ctx.fillText(line, textX, 320 + i * 42);
+  });
+
+  // Key features - with icons
+  const features = [
+    '• Zero-Knowledge Proofs',
+    '• 5 Privacy Feeds',
+    '• Open Infrastructure'
+  ];
+
+  ctx.fillStyle = COLORS.geckoGreen;
+  ctx.font = 'bold 26px Inter, sans-serif';
+  features.forEach((feature, i) => {
+    ctx.fillText(feature, textX, 420 + i * 40);
+  });
+
+  // Technical badge
+  ctx.fillStyle = 'rgba(0, 217, 138, 0.15)';
+  roundRect(ctx, textX, 540, 220, 50, 25);
+  ctx.fill();
+  ctx.strokeStyle = COLORS.geckoGreen;
+  ctx.lineWidth = 2;
+  roundRect(ctx, textX, 540, 220, 50, 25);
+  ctx.stroke();
+
+  ctx.fillStyle = COLORS.geckoGreen;
+  ctx.font = 'bold 24px Inter, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('TECHNICAL OVERVIEW', textX + 110, 571);
+
+  // Logo (top right)
+  try {
+    const logo = await loadImage(path.join(__dirname, '../public/images/PrivacyGecko_logo.png'));
+    const logoHeight = 50;
+    const logoWidth = (logo.width / logo.height) * logoHeight;
+    ctx.drawImage(logo, WIDTH - logoWidth - LOGO_MARGIN, LOGO_MARGIN, logoWidth, logoHeight);
+  } catch (err) {
+    console.log('Logo not found, skipping');
+  }
+
+  return canvas;
+}
+
+// 11. og-products.png - Products Hub
 async function createProductsImage() {
   const canvas = createCanvas(WIDTH, HEIGHT);
   const ctx = canvas.getContext('2d');
@@ -1139,6 +1351,7 @@ async function generateAllImages() {
 
   const images = [
     { name: 'og-token.png', generator: createTokenImage, priority: 'HIGHEST' },
+    { name: 'og-whitepaper.png', generator: createWhitepaperImage, priority: 'HIGHEST' },
     { name: 'og-share.png', generator: createShareImage, priority: 'HIGH' },
     { name: 'og-guard.png', generator: createGuardImage, priority: 'HIGH' },
     { name: 'og-lock.png', generator: createLockImage, priority: 'HIGH' },
