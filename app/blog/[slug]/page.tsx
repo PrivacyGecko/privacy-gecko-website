@@ -15,22 +15,28 @@ const blogPosts = {
     excerpt: "The GeckoCore Protocol Whitepaper v1.0 is officially live. Discover the Privacy Proof Layer for Solana with zero-knowledge proofs, 5 Privacy Feeds, and token economics.",
     ogImage: "/images/og-whitepaper.png",
     content: `
-      <p class="lead">Today, we're publishing the GeckoCore Protocol Whitepaper v1.0—the complete technical blueprint for the Privacy Proof Layer on Solana. After shipping eight real privacy tools throughout 2025, we're ready to show you the infrastructure that unifies them all. This isn't vaporware. This isn't "coming soon." This is the technical foundation for a privacy-preserving ecosystem that's already delivering utility. <a href="/whitepaper">Read the full whitepaper now</a>.</p>
+      <p class="lead">Today, we're publishing the GeckoCore Protocol Whitepaper v1.0—the complete technical blueprint for the Privacy Proof Layer on Solana. With four privacy tools already live and four more launching Q1 2026, we're ready to show you the infrastructure that unifies them all. This isn't vaporware. This isn't "coming soon." This is the technical foundation for a privacy-preserving ecosystem that's already delivering utility. <a href="/whitepaper">Read the full whitepaper now</a>.</p>
 
       <h2>Why This Whitepaper Matters</h2>
 
       <p>Most crypto whitepapers are promises written before a single line of code ships. The GeckoCore Protocol Whitepaper is different. It's documentation of real infrastructure supporting real products used by real people.</p>
 
-      <p>By November 2025, Privacy Gecko has already launched:</p>
+      <p>By November 2025, Privacy Gecko has launched 4 privacy tools, with 4 more launching Q1 2026:</p>
+
+      <p><strong>Live Now:</strong></p>
       <ul>
-        <li><strong><a href="/products/advisor">GeckoAdvisor</a></strong>: AI-powered privacy policy analysis (live since Q1)</li>
-        <li><strong><a href="/products/share">GeckoShare</a></strong>: End-to-end encrypted file sharing (live since Q1)</li>
-        <li><strong><a href="/products/guard">GeckoGuard</a></strong>: Advanced tracker blocking (live since Q2)</li>
-        <li><strong><a href="/products/lock">GeckoLock</a></strong>: Zero-knowledge password management (live since Q2)</li>
-        <li><strong><a href="/products/view">GeckoView</a></strong>: Privacy-first bookmark manager (live since Q3)</li>
-        <li><strong><a href="/products/shell">GeckoShell</a></strong>: Ephemeral browsing protection (live since Q3)</li>
-        <li><strong><a href="/products/vpn">Gecko VPN</a></strong>: No-logs VPN infrastructure (launching Q4)</li>
-        <li><strong><a href="/products/watch">Gecko Watch</a></strong>: Data breach monitoring (launching Q4)</li>
+        <li><strong><a href="/products/advisor">GeckoAdvisor</a></strong>: AI-powered privacy policy analysis</li>
+        <li><strong><a href="/products/share">GeckoShare</a></strong>: End-to-end encrypted file sharing</li>
+        <li><strong><a href="/products/guard">GeckoGuard</a></strong>: Advanced tracker blocking</li>
+        <li><strong><a href="/products/lock">GeckoLock</a></strong>: Zero-knowledge password management</li>
+      </ul>
+
+      <p><strong>Launching Q1 2026:</strong></p>
+      <ul>
+        <li><strong><a href="/products/view">GeckoView</a></strong>: Privacy-first bookmark manager</li>
+        <li><strong><a href="/products/shell">GeckoShell</a></strong>: Ephemeral browsing protection</li>
+        <li><strong><a href="/products/vpn">Gecko VPN</a></strong>: No-logs VPN infrastructure</li>
+        <li><strong><a href="/products/watch">Gecko Watch</a></strong>: Data breach monitoring</li>
       </ul>
 
       <p>The whitepaper explains how GeckoCore Protocol connects these standalone tools into one privacy-preserving ecosystem. It's the missing infrastructure layer that makes "privacy by default" actually work at scale.</p>
@@ -100,9 +106,9 @@ const blogPosts = {
       <p>GeckoCore's development follows a unique "products-first, protocol-second" approach:</p>
 
       <ul>
-        <li><strong>Phase 1 (2025)</strong>: Ship all eight standalone privacy tools (7 live, 2 launching Q4)</li>
-        <li><strong>Phase 2 (Q1-Q2 2026)</strong>: Deploy GeckoCore Protocol infrastructure and unified authentication</li>
-        <li><strong>Phase 3 (Q3-Q4 2026)</strong>: Launch Privacy Feeds, developer SDK, and third-party integrations</li>
+        <li><strong>Phase 1 (2025-Q1 2026)</strong>: Ship all eight standalone privacy tools (4 live, 4 launching Q1 2026)</li>
+        <li><strong>Phase 2 (Q2-Q3 2026)</strong>: Deploy GeckoCore Protocol infrastructure and unified authentication</li>
+        <li><strong>Phase 3 (Q4 2026)</strong>: Launch Privacy Feeds, developer SDK, and third-party integrations</li>
         <li><strong>Phase 4 (2027+)</strong>: Open governance transition and protocol decentralization</li>
       </ul>
 
@@ -150,7 +156,7 @@ const blogPosts = {
 
       <p>Most crypto projects have whitepapers full of future promises. GeckoCore's whitepaper documents present reality. Evaluate:</p>
       <ul>
-        <li>Eight already-shipped products generating real usage</li>
+        <li>Four products live with four more launching Q1 2026</li>
         <li>Token economics backed by live product integrations</li>
         <li>Sustainable funding model supporting long-term development</li>
         <li>Transparent roadmap with verifiable milestones</li>
@@ -163,7 +169,7 @@ const blogPosts = {
       <p>The crypto space is full of privacy projects making big claims. Here's what makes GeckoCore Protocol different:</p>
 
       <p><strong>We Ship First, Market Second</strong><br>
-      Seven products already live. Two launching Q4 2025. GeckoCore Protocol follows in Q1 2026. We prove products work before writing whitepapers about them.</p>
+      Four products already live. Four more launching Q1 2026. GeckoCore Protocol follows in Q2 2026. We prove products work before writing whitepapers about them.</p>
 
       <p><strong>Open-Source Everything</strong><br>
       Every line of code is publicly auditable on GitHub. Every privacy claim is verifiable. Every security assumption is documented. Transparency isn't optional—it's foundational.</p>
