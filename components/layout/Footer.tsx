@@ -19,18 +19,18 @@ export function Footer() {
     {
       title: "Company",
       links: [
-        { href: "/about", label: "About" },
-        { href: "/blog", label: "Blog" },
-        { href: "/roadmap", label: "Roadmap" },
-        { href: "/contact", label: "Contact" },
+        { href: "/about", label: "About", external: false },
+        { href: "/blog", label: "Blog", external: false },
+        { href: "/roadmap", label: "Roadmap", external: false },
+        { href: "/contact", label: "Contact", external: false },
       ],
     },
     {
       title: "Legal",
       links: [
-        { href: "/legal/privacy", label: "Privacy" },
-        { href: "/legal/terms", label: "Terms" },
-        { href: "/security", label: "Security" },
+        { href: "/legal/privacy", label: "Privacy", external: false },
+        { href: "/legal/terms", label: "Terms", external: false },
+        { href: "/security", label: "Security", external: false },
       ],
     },
   ];
