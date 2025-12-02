@@ -1,270 +1,127 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { Twitter, Send, Github, Shield } from "lucide-react";
-import { ExternalLink } from "@/components/ui/ExternalLink";
+import { Twitter, Send, Github, ArrowUpRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function Footer() {
-  const productLinks = [
-    { href: "https://geckoadvisor.com", label: "GeckoAdvisor", external: true },
-    { href: "https://geckoshare.com", label: "GeckoShare", external: true },
-    { href: "https://geckoguard.app", label: "GeckoGuard", external: true },
-    { href: "https://geckolock.com", label: "GeckoLock", external: true },
-    { href: "/products", label: "All Products" },
+  const footerLinks = [
+    {
+      title: "Products",
+      links: [
+        { href: "https://geckoadvisor.com", label: "GeckoAdvisor", external: true },
+        { href: "https://geckoshare.com", label: "GeckoShare", external: true },
+        { href: "https://geckoguard.app", label: "GeckoGuard", external: true },
+        { href: "https://geckolock.com", label: "GeckoLock", external: true },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { href: "/about", label: "About" },
+        { href: "/blog", label: "Blog" },
+        { href: "/roadmap", label: "Roadmap" },
+        { href: "/contact", label: "Contact" },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { href: "/legal/privacy", label: "Privacy" },
+        { href: "/legal/terms", label: "Terms" },
+        { href: "/security", label: "Security" },
+      ],
+    },
   ];
 
-  const companyLinks = [
-    { href: "/about", label: "About" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
-    { href: "/roadmap", label: "Roadmap" },
-  ];
-
-  const resourceLinks = [
-    { href: "/whitepaper", label: "Whitepaper" },
-    { href: "/resources/docs", label: "Documentation" },
-    { href: "/resources/faq", label: "FAQ" },
-    { href: "/resources/support", label: "Support" },
-    { href: "/about#privacy-principles", label: "AI Ethics" },
-  ];
-
-  const aiLinks = [
-    { href: "/roadmap#ai-development", label: "AI Roadmap" },
-    { href: "/contact?subject=AI Beta Waitlist", label: "AI Beta Program" },
-    { href: "/contact?subject=Developer Program Interest", label: "Developer Program", comingSoon: true },
-    { href: "/contact?subject=Research Partnership Inquiry", label: "Research Partners", comingSoon: true },
-  ];
-
-  const legalLinks = [
-    { href: "/legal/privacy", label: "Privacy Policy" },
-    { href: "/legal/terms", label: "Terms of Service" },
-    { href: "/legal/cookies", label: "Cookie Policy" },
-    { href: "/security", label: "Security" },
+  const socialLinks = [
+    { href: "https://twitter.com/PrivacyGecko", icon: Twitter, label: "Twitter" },
+    { href: "https://t.me/pricko_official", icon: Send, label: "Telegram" },
+    { href: "https://github.com/privacygecko", icon: Github, label: "GitHub" },
   ];
 
   return (
-    <footer className="bg-neutral-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
-          {/* Brand Column */}
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="inline-block mb-3">
+    <footer className="border-t border-slate-200">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Main Footer */}
+        <div className="py-16 grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
+          {/* Brand */}
+          <div className="col-span-2">
+            <Link href="/">
               <Image
                 src="/images/privacygecko_logo_320x100.png"
-                alt="Privacy Gecko Logo"
+                alt="Privacy Gecko"
                 width={320}
                 height={100}
-                className="h-16 w-auto"
+                className="h-10 w-auto mb-4"
               />
             </Link>
-            <p className="text-gray-400 text-sm mb-4">
-              Privacy ecosystem powered by GeckoCore Protocol. <span className="text-gray-500">($PRICKO token optional)</span>
+            <p className="text-slate-500 text-sm leading-relaxed max-w-xs mb-6">
+              Privacy products that work. No tracking, no data selling, just tools that respect you.
             </p>
 
-            {/* Brand Social Links */}
-            <div className="mb-4">
-              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-                Community
-              </p>
-              <div className="flex flex-col space-y-2 text-sm">
-                <ExternalLink
-                  href="https://twitter.com/PrivacyGecko"
-                  className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
-                  showIcon={false}
+            {/* Social */}
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.href}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-blue-600 hover:text-white transition-colors"
+                  aria-label={social.label}
                 >
-                  <Twitter size={16} className="mr-2" />
-                  @PrivacyGecko
-                </ExternalLink>
-                <ExternalLink
-                  href="https://t.me/pricko_official"
-                  className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
-                  showIcon={false}
-                >
-                  <Send size={16} className="mr-2" />
-                  $PRICKO Token
-                </ExternalLink>
-              </div>
-            </div>
-
-            {/* Developer Social Links */}
-            <div className="mb-4">
-              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-                Developer
-              </p>
-              <div className="flex flex-col space-y-2 text-sm">
-                <ExternalLink
-                  href="https://twitter.com/0xAnonA"
-                  className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
-                  showIcon={false}
-                >
-                  <Twitter size={16} className="mr-2" />
-                  @0xAnonA
-                </ExternalLink>
-                <ExternalLink
-                  href="https://t.me/askAnonA"
-                  className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
-                  showIcon={false}
-                >
-                  <Send size={16} className="mr-2" />
-                  Developer Chat
-                </ExternalLink>
-              </div>
-            </div>
-
-            {/* GitHub Link */}
-            <div className="flex flex-col space-y-2 text-sm">
-              <ExternalLink
-                href="https://github.com/privacygecko"
-                className="text-gray-400 hover:text-gecko-green transition-colors flex items-center"
-                showIcon={false}
-              >
-                <Github size={16} className="mr-2" />
-                View Source
-              </ExternalLink>
+                  <social.icon size={16} />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Products */}
-          <div>
-            <h3 className="font-semibold mb-4">Products</h3>
-            <ul className="space-y-2">
-              {productLinks.map((link) => (
-                <li key={link.href}>
-                  {link.external ? (
-                    <ExternalLink
-                      href={link.href}
-                      className="text-gray-400 hover:text-gecko-green transition-colors text-sm"
-                      showIcon={false}
-                    >
-                      {link.label}
-                    </ExternalLink>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 hover:text-gecko-green transition-colors text-sm"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
-              {companyLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-gecko-green transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2">
-              {resourceLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-gecko-green transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* AI & Research */}
-          <div>
-            <h3 className="font-semibold mb-4">AI & Research</h3>
-            <ul className="space-y-2">
-              {aiLinks.map((link) => (
-                <li key={link.href}>
-                  {link.comingSoon ? (
-                    <span className="text-gray-500 text-sm flex items-center gap-2">
-                      {link.label}
-                      <span className="text-xs bg-gray-700 px-2 py-0.5 rounded">Coming Soon</span>
-                    </span>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 hover:text-gecko-green transition-colors text-sm"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
-              {legalLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-gecko-green transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Trust Badges */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-wrap items-center justify-center gap-6 mb-6">
-            <ExternalLink
-              href="https://github.com/privacygecko"
-              className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-sm"
-              showIcon={false}
-            >
-              <Github size={16} />
-              <span className="text-gray-300">Open Source</span>
-            </ExternalLink>
-            <ExternalLink
-              href="https://plausible.io/privacygecko.com"
-              className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-sm"
-              showIcon={false}
-            >
-              <svg className="w-4 h-4 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.1 2C6.6 2 2.1 6.5 2.1 12s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
-                <path d="M13 7h-2v6h6v-2h-4z"/>
-              </svg>
-              <span className="text-gray-300">Privacy Analytics</span>
-            </ExternalLink>
-            <div className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg text-sm">
-              <Shield size={16} className="text-gecko-green" />
-              <span className="text-gray-300">Privacy-Friendly Analytics</span>
+          {/* Link Columns */}
+          {footerLinks.map((column) => (
+            <div key={column.title}>
+              <h3 className="font-display font-semibold text-slate-900 text-sm mb-4">
+                {column.title}
+              </h3>
+              <ul className="space-y-3">
+                {column.links.map((link) => (
+                  <li key={link.href}>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-slate-500 hover:text-blue-600 transition-colors inline-flex items-center gap-1 group"
+                      >
+                        {link.label}
+                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm text-slate-500 hover:text-blue-600 transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg text-sm">
-              <Shield size={16} className="text-gecko-green" />
-              <span className="text-gray-300">No Data Selling</span>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-          <p>
-            © {new Date().getFullYear()} Privacy Gecko. All rights reserved.
-            Built with ❤️ for privacy.
+        <div className="py-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-slate-400 text-sm">
+            © {new Date().getFullYear()} Privacy Gecko
           </p>
+          <div className="flex items-center gap-6">
+            <span className="text-xs text-slate-400 uppercase tracking-wider">No tracking</span>
+            <span className="text-xs text-slate-400 uppercase tracking-wider">Open source</span>
+            <span className="text-xs text-slate-400 uppercase tracking-wider">GDPR compliant</span>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "$PRICKO Token - Powering Privacy-First AI | Launch November 2025",
-  description: "The utility token funding AI-enhanced privacy for everyone. Stake to earn, unlock unlimited AI queries, vote on development. Fair launch November 2025. No VCs, no pre-sales.",
+  title: "$PRICKO Token - Powering Privacy-First AI | Launch December 2025",
+  description: "The utility token funding AI-enhanced privacy for everyone. Stake to earn, unlock unlimited AI queries, vote on development. Fair launch December 2025. No VCs, no pre-sales.",
   keywords: [
     "$PRICKO token",
     "privacy token",
@@ -12,14 +12,14 @@ export const metadata: Metadata = {
     "privacy cryptocurrency",
     "AI funding token",
     "Web3 privacy",
-    "token launch November 2025",
+    "token launch December 2025",
     "Privacy Gecko token",
     "stake to earn",
     "crypto governance",
   ],
   openGraph: {
     title: "$PRICKO Token - Powering Privacy-First AI",
-    description: "Fair launch November 2025. Stake to earn, unlock unlimited AI, vote on development. No VCs, no pre-sales.",
+    description: "Fair launch December 2025. Stake to earn, unlock unlimited AI, vote on development. No VCs, no pre-sales.",
     url: "https://privacygecko.com/token",
     siteName: "Privacy Gecko",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "$PRICKO Token - Powering Privacy-First AI",
-    description: "Fair launch November 2025. Stake to earn, unlock unlimited AI, vote on development.",
+    description: "Fair launch December 2025. Stake to earn, unlock unlimited AI, vote on development.",
     images: ["https://privacygecko.com/images/og-token.png"],
   },
   alternates: {

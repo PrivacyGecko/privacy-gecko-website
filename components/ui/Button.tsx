@@ -3,23 +3,31 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
   {
     variants: {
       variant: {
+        // Premium blue - main CTA
         primary:
-          "bg-gecko-green text-white hover:bg-gecko-green/90 focus:ring-gecko-green shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0",
+          "bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl shadow-blue hover:shadow-blue-lg hover:-translate-y-0.5 focus:ring-blue-500 active:translate-y-0",
+        // Green accent
         secondary:
-          "bg-gecko-blue text-white hover:bg-gecko-blue/90 focus:ring-gecko-blue shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0",
+          "bg-gradient-to-r from-gecko-green to-gecko-dark text-white rounded-xl shadow-green hover:shadow-lg hover:-translate-y-0.5 focus:ring-gecko-green active:translate-y-0",
+        // White/outline
         outline:
-          "border-2 border-gecko-green text-gecko-green hover:bg-gecko-green hover:text-white focus:ring-gecko-green hover:shadow-md hover:-translate-y-0.5 active:translate-y-0",
+          "border-2 border-slate-200 text-slate-700 bg-white rounded-xl hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50/50 hover:-translate-y-0.5 focus:ring-blue-500 active:translate-y-0 shadow-soft",
+        // Ghost/minimal
         ghost:
-          "text-neutral-900 hover:bg-gray-100 focus:ring-gray-300 hover:shadow-sm",
+          "text-slate-600 rounded-xl hover:bg-slate-100 hover:text-slate-900 focus:ring-slate-300",
+        // White button (for dark backgrounds)
+        white:
+          "bg-white text-blue-600 rounded-xl shadow-soft hover:shadow-lg hover:-translate-y-0.5 focus:ring-white active:translate-y-0",
       },
       size: {
         sm: "px-4 py-2 text-sm",
         md: "px-6 py-2.5 text-base",
-        lg: "px-8 py-3 text-lg",
+        lg: "px-8 py-3.5 text-lg",
+        xl: "px-10 py-4 text-lg",
       },
     },
     defaultVariants: {

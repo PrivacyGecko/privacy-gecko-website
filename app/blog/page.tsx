@@ -1,14 +1,19 @@
-
 "use client";
 
-import { Hero } from "@/components/sections/Hero";
-import { Section } from "@/components/sections/Section";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
-import { Calendar, User, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Image from "next/image";
+import { ArrowRight, Calendar } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+const stagger = {
+  visible: { transition: { staggerChildren: 0.1 } }
+};
 
 export default function BlogPage() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -46,7 +51,7 @@ export default function BlogPage() {
           message: data.error || "Failed to subscribe. Please try again.",
         });
       }
-    } catch (error) {
+    } catch {
       setSubscribeStatus({
         type: "error",
         message: "Network error. Please try again.",
@@ -56,21 +61,19 @@ export default function BlogPage() {
     }
   };
 
-  // All blog posts in reverse chronological order (newest first)
   const posts = [
     {
       title: "GeckoCore Protocol Whitepaper v1.0: The Privacy Proof Layer for Solana",
       excerpt: "The GeckoCore Protocol Whitepaper v1.0 is officially live. Discover the Privacy Proof Layer for Solana with zero-knowledge proofs, 5 Privacy Feeds, and token economics.",
-      author: "@0xAnonA",
       date: "November 15, 2025",
       category: "Product Updates",
       slug: "geckocore-protocol-whitepaper-v1-launch",
       image: "/images/og-whitepaper.png",
+      featured: true,
     },
     {
       title: "Introducing GeckoCore Protocol: The Hub for Privacy Tools",
-      excerpt: "GeckoCore Protocol unifies 8 privacy tools with one wallet login powered by $PRICKO. Open-source, zero-knowledge, launching Q4 2026. Learn how it works.",
-      author: "@0xAnonA",
+      excerpt: "GeckoCore Protocol unifies 8 privacy tools with one wallet login powered by $PRICKO. Open-source, zero-knowledge, launching Q4 2026.",
       date: "November 14, 2025",
       category: "Product Updates",
       slug: "introducing-geckocore-protocol",
@@ -79,7 +82,6 @@ export default function BlogPage() {
     {
       title: "Open Source Privacy Tools: Why It Matters",
       excerpt: "Why open source matters for privacy tools. Learn how transparency, community audits, and verifiable security make open source the gold standard.",
-      author: "@0xAnonA",
       date: "October 31, 2025",
       category: "Privacy Tips",
       slug: "open-source-privacy-tools",
@@ -87,8 +89,7 @@ export default function BlogPage() {
     },
     {
       title: "How Local AI Protects Your Privacy (vs Cloud AI)",
-      excerpt: "Local AI vs cloud AI for privacy. Learn how on-device AI processing protects your data with federated learning and edge computing in 2025.",
-      author: "@0xAnonA",
+      excerpt: "Local AI vs cloud AI for privacy. Learn how on-device AI processing protects your data with federated learning and edge computing.",
       date: "October 3, 2025",
       category: "AI & Privacy",
       slug: "local-ai-privacy-protection",
@@ -96,8 +97,7 @@ export default function BlogPage() {
     },
     {
       title: "Privacy Memecoins: Memes with a Mission Explained",
-      excerpt: "What are privacy memecoins? Learn how $PRICKO and other privacy-focused tokens combine community fun with real privacy utility and sustainable funding.",
-      author: "@0xAnonA",
+      excerpt: "What are privacy memecoins? Learn how $PRICKO and other privacy-focused tokens combine community fun with real privacy utility.",
       date: "September 12, 2025",
       category: "Token & Community",
       slug: "privacy-memecoins-explained",
@@ -105,8 +105,7 @@ export default function BlogPage() {
     },
     {
       title: "Privacy Tools Every Crypto Trader Needs",
-      excerpt: "Essential privacy tools for crypto traders in 2025. Learn how to protect your wallet, transactions, and identity with VPNs, browsers, and privacy-focused tools.",
-      author: "@0xAnonA",
+      excerpt: "Essential privacy tools for crypto traders in 2025. Learn how to protect your wallet, transactions, and identity.",
       date: "August 8, 2025",
       category: "Crypto Privacy",
       slug: "crypto-trader-privacy-tools",
@@ -114,8 +113,7 @@ export default function BlogPage() {
     },
     {
       title: "The Complete Guide to Privacy Tools in 2025",
-      excerpt: "Discover the best privacy tools in 2025. Complete guide covering VPNs, password managers, ad blockers, encrypted messaging, and more to protect your digital privacy.",
-      author: "@0xAnonA",
+      excerpt: "Discover the best privacy tools in 2025. Complete guide covering VPNs, password managers, ad blockers, and more.",
       date: "July 15, 2025",
       category: "Privacy Guide",
       slug: "complete-guide-privacy-tools-2025",
@@ -124,7 +122,6 @@ export default function BlogPage() {
     {
       title: "Why Privacy Tools Matter in 2025",
       excerpt: "Exploring the growing importance of digital privacy and why accessible privacy tools are more critical than ever.",
-      author: "@0xAnonA",
       date: "January 15, 2025",
       category: "Privacy Tips",
       slug: "why-privacy-tools-matter-2025",
@@ -133,7 +130,6 @@ export default function BlogPage() {
     {
       title: "Getting Started with GeckoAdvisor",
       excerpt: "A complete guide to using GeckoAdvisor to scan website privacy policies and detect hidden trackers.",
-      author: "@0xAnonA",
       date: "January 10, 2025",
       category: "Tutorials",
       slug: "getting-started-geckoadvisor",
@@ -142,7 +138,6 @@ export default function BlogPage() {
     {
       title: "Introducing Privacy Gecko: Our Story",
       excerpt: "Learn about the mission behind Privacy Gecko and why we're building the privacy tools we wished existed.",
-      author: "@0xAnonA",
       date: "January 5, 2025",
       category: "Product Updates",
       slug: "introducing-privacy-gecko",
@@ -150,126 +145,237 @@ export default function BlogPage() {
     },
   ];
 
+  const featuredPost = posts.find(p => p.featured);
+  const regularPosts = posts.filter(p => !p.featured);
+
   return (
     <>
-      <Hero
-        subtitle="Blog"
-        title="Privacy Insights & Updates"
-        description="Tips, tutorials, and news about digital privacy and our products"
-      />
-
-      <Section className="bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-4xl mx-auto space-y-6">
-          {posts.map((post, index) => (
-            <motion.div
-              key={post.slug}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+      {/* Hero */}
+      <section className="pt-16 pb-12 md:pt-20 md:pb-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={stagger}
+            className="max-w-3xl"
+          >
+            <motion.p
+              variants={fadeUp}
+              className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-4"
             >
-              <a href={`/blog/${post.slug}`} className="block">
-                <Card>
-                  <div className="md:flex md:gap-6">
-                    {/* Image Section */}
-                    <div className="md:w-80 md:flex-shrink-0">
-                      <div className="relative w-full h-48 md:h-full md:min-h-[200px]">
-                        <Image
-                          src={post.image}
-                          alt={post.title}
-                          fill
-                          className="object-contain"
-                          sizes="(max-width: 768px) 100vw, 320px"
-                        />
-                      </div>
+              Blog
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight text-slate-900 mb-6"
+            >
+              Privacy insights
+              <br />
+              <span className="text-blue-600">& updates</span>
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="text-xl text-slate-600 leading-relaxed"
+            >
+              Tips, tutorials, and news about digital privacy and our products.
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Featured Post */}
+      {featuredPost && (
+        <section className="pb-16 md:pb-24">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+            >
+              <Link
+                href={`/blog/${featuredPost.slug}`}
+                className="group block bg-slate-50 rounded-3xl overflow-hidden hover:bg-slate-100 transition-colors"
+              >
+                <div className="grid lg:grid-cols-2 gap-0">
+                  {/* Image */}
+                  <div className="relative h-64 lg:h-auto lg:min-h-[400px] bg-slate-100">
+                    <Image
+                      src={featuredPost.image}
+                      alt={featuredPost.title}
+                      fill
+                      className="object-contain p-8"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
+                        {featuredPost.category}
+                      </span>
+                      <span className="text-slate-300">•</span>
+                      <span className="text-xs text-slate-500">{featuredPost.date}</span>
                     </div>
 
-                    {/* Content Section */}
-                    <div className="flex-1">
-                      <CardHeader>
-                        <div className="flex items-center gap-2 text-sm text-gecko-green mb-2">
-                          <span className="font-semibold">{post.category}</span>
-                        </div>
-                        <CardTitle className="text-2xl mb-3 hover:text-gecko-green transition-colors">
-                          {post.title}
-                        </CardTitle>
-                        <CardDescription className="text-base mb-4">
-                          {post.excerpt}
-                        </CardDescription>
-                        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                          <div className="flex items-center gap-4 text-sm text-gray-600">
-                            <div className="flex items-center gap-1">
-                              <User className="w-4 h-4" />
-                              <span>{post.author}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <Calendar className="w-4 h-4" />
-                              <span>{post.date}</span>
-                            </div>
-                          </div>
-                          <span className="text-gecko-green flex items-center gap-1 text-sm font-medium">
-                            Read more
-                            <ArrowRight className="w-4 h-4" />
-                          </span>
-                        </div>
-                      </CardHeader>
+                    <h2 className="text-2xl lg:text-3xl font-display font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                      {featuredPost.title}
+                    </h2>
+
+                    <p className="text-slate-600 leading-relaxed mb-6">
+                      {featuredPost.excerpt}
+                    </p>
+
+                    <div className="flex items-center text-blue-600 font-semibold">
+                      Read article
+                      <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>
-                </Card>
-              </a>
+                </div>
+              </Link>
             </motion.div>
-          ))}
-        </div>
-      </Section>
+          </div>
+        </section>
+      )}
 
-      {/* Newsletter Signup */}
-      <Section className="bg-gradient-to-br from-emerald-50 via-blue-50/30 to-white">
-        <div className="max-w-2xl mx-auto text-center">
+      {/* All Posts */}
+      <section className="py-16 md:py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={stagger}
           >
-            <h2 className="text-3xl font-display font-bold mb-4">
-              Stay Updated
-            </h2>
-            <p className="text-gray-600 mb-6">
-              Get privacy tips, product updates, and exclusive insights delivered to your inbox
-            </p>
+            <motion.h2
+              variants={fadeUp}
+              className="text-2xl font-display font-bold text-slate-900 mb-10"
+            >
+              All articles
+            </motion.h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {regularPosts.map((post) => (
+                <motion.div key={post.slug} variants={fadeUp}>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="group block bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-slate-300 hover:shadow-lg transition-all h-full"
+                  >
+                    {/* Image */}
+                    <div className="relative h-48 bg-slate-100">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-contain p-4"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
+                          {post.category}
+                        </span>
+                      </div>
+
+                      <h3 className="text-lg font-display font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                        {post.title}
+                      </h3>
+
+                      <p className="text-sm text-slate-600 mb-4 line-clamp-2">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="flex items-center text-xs text-slate-500">
+                        <Calendar className="w-3 h-3 mr-1" />
+                        {post.date}
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="max-w-2xl mx-auto text-center"
+          >
+            <motion.p
+              variants={fadeUp}
+              className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-4"
+            >
+              Newsletter
+            </motion.p>
+            <motion.h2
+              variants={fadeUp}
+              className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6"
+            >
+              Stay updated
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="text-xl text-slate-600 mb-10"
+            >
+              Get privacy tips, product updates, and exclusive insights delivered to your inbox.
+            </motion.p>
 
             {subscribeStatus.type && (
-              <div
-                className={`p-4 rounded-lg mb-4 max-w-md mx-auto ${
+              <motion.div
+                variants={fadeUp}
+                className={`p-4 rounded-xl mb-6 ${
                   subscribeStatus.type === "success"
-                    ? "bg-green-50 text-green-800 border border-green-200"
+                    ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
                     : "bg-red-50 text-red-800 border border-red-200"
                 }`}
               >
                 {subscribeStatus.message}
-              </div>
+              </motion.div>
             )}
 
-            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <motion.form
+              variants={fadeUp}
+              onSubmit={handleNewsletterSubmit}
+              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            >
               <input
                 type="email"
-                placeholder="your.email@example.com"
+                placeholder="your@email.com"
                 required
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
                 disabled={isSubscribing}
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gecko-green focus:border-transparent outline-none transition-all disabled:opacity-50"
+                className="flex-1 px-5 py-4 bg-slate-50 border border-slate-200 rounded-full text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all disabled:opacity-50"
               />
-              <Button type="submit" variant="primary" size="md" disabled={isSubscribing}>
+              <button
+                type="submit"
+                disabled={isSubscribing}
+                className="px-8 py-4 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors disabled:opacity-50 shadow-lg shadow-blue-600/25"
+              >
                 {isSubscribing ? "Subscribing..." : "Subscribe"}
-              </Button>
-            </form>
-            <p className="text-xs text-gray-500 mt-3">
+              </button>
+            </motion.form>
+
+            <motion.p
+              variants={fadeUp}
+              className="text-sm text-slate-500 mt-4"
+            >
               We respect your privacy. Unsubscribe anytime.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
-      </Section>
+      </section>
     </>
   );
 }

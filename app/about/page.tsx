@@ -1,384 +1,317 @@
 "use client";
 
-import Image from "next/image";
-import { Hero } from "@/components/sections/Hero";
-import { Section, SectionHeader } from "@/components/sections/Section";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
-import { Shield, Users, Target, Heart, Github, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { Shield, Users, Target, Heart, Github, ArrowRight, Check, ExternalLink } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+const stagger = {
+  visible: { transition: { staggerChildren: 0.1 } }
+};
 
 export default function AboutPage() {
   const values = [
     {
       icon: Shield,
       title: "Transparency",
-      description: "Clear privacy policies and honest communication about our practices. Website is open source now. Product code releasing throughout Q4 2025 - Q1 2026 after security audits.",
+      description: "Open source code, clear privacy policies, honest communication. No hidden agendas.",
     },
     {
       icon: Users,
       title: "Accessibility",
-      description: "Privacy tools should be available to everyone, not just tech experts or those who can pay.",
+      description: "Privacy tools for everyone—not just tech experts or those who can afford premium subscriptions.",
     },
     {
       icon: Target,
       title: "Community",
-      description: "Built with and for our users. We listen, iterate, and improve based on your feedback.",
+      description: "Built with our users. We listen, iterate, and improve based on real feedback.",
     },
     {
       icon: Heart,
       title: "Trust",
-      description: "We earn your trust through actions, not words. No data selling, ever.",
+      description: "We earn trust through actions. No data selling, no tracking, no compromises.",
     },
+  ];
+
+  const principles = [
+    "Your data stays on your device whenever possible",
+    "We can't access what we don't have",
+    "Open source for public audit",
+    "Free tiers without hidden catches",
+    "No tracking, no ads, no data selling",
+    "Privacy-first analytics only",
   ];
 
   return (
     <>
-      <Hero
-        subtitle="About Us"
-        title="Making Privacy Tools Accessible to Everyone"
-        description="Privacy Gecko was founded with a simple mission: create privacy tools that actually work and don't require a PhD to use."
-      />
-
-      {/* Our Story */}
-      <Section className="bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-4xl mx-auto">
+      {/* Hero */}
+      <section className="pt-16 pb-20 md:pt-20 md:pb-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            initial="hidden"
+            animate="visible"
+            variants={stagger}
+            className="max-w-3xl"
           >
-            <h2 className="text-3xl font-display font-bold mb-6">Our Story</h2>
-            <div className="prose prose-lg max-w-none text-gray-600 space-y-4">
-              <p>
-                In 2024, privacy advocate @0xAnonA noticed a troubling trend: while privacy concerns were growing,
-                the tools available were either too complex, too expensive, or worse—claiming to be private while
-                secretly collecting user data.
-              </p>
-              <p>
-                Privacy Gecko was born from a simple question: "What if we built privacy tools that were actually
-                private, genuinely useful, and accessible to everyone?"
-              </p>
-              <p>
-                We started with GeckoAdvisor, a tool to help people understand their privacy posture. The response
-                was overwhelming. People wanted more. So we built GeckoShare for encrypted file sharing, GeckoGuard
-                for tracking protection, and we're not stopping there.
-              </p>
-              <p>
-                Today, Privacy Gecko is an ecosystem of 8 tools (4 live, 4 in development) available to
-                privacy-conscious users worldwide. As an early-stage project launched in January 2025, we're focused on
-                building trust through transparency and delivering on our promises. We're committed to open source transparency,
-                community-driven development, and our original mission: making privacy accessible to everyone.
-              </p>
-            </div>
+            <motion.p
+              variants={fadeUp}
+              className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-4"
+            >
+              About Us
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight text-slate-900 mb-6"
+            >
+              Privacy should be
+              <br />
+              <span className="text-blue-600">simple</span>
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="text-xl text-slate-600 leading-relaxed"
+            >
+              We build privacy tools that actually work—without requiring a PhD to use
+              or a premium subscription to access.
+            </motion.p>
           </motion.div>
         </div>
-      </Section>
+      </section>
 
-      {/* AI Vision Section */}
-      <Section className="bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto">
+      {/* Story */}
+      <section className="pb-24 md:pb-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={stagger}
+            className="grid lg:grid-cols-2 gap-16 items-center"
           >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-display font-bold mb-4">Our Vision: AI-Enhanced Privacy</h2>
-              <p className="text-lg text-gray-600">
-                In 2025, we're pioneering privacy-first AI that makes our tools smarter without ever compromising
-                your data. Unlike cloud-based AI that sends your information to servers, our AI runs entirely on
-                your device.
-              </p>
-            </div>
+            <motion.div variants={fadeUp}>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6">
+                Our story
+              </h2>
+              <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
+                <p>
+                  In 2024, we noticed a troubling pattern: privacy tools were either too complex,
+                  too expensive, or secretly collecting the same data they promised to protect.
+                </p>
+                <p>
+                  Privacy Gecko started with a simple question: <em>"What if privacy tools were
+                  actually private, genuinely useful, and free to start?"</em>
+                </p>
+                <p>
+                  Today, we're building an ecosystem of eight products—four live, four coming—all
+                  designed around the principle that you should control your digital life.
+                </p>
+              </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <Card>
-                <CardHeader>
-                  <div className="text-4xl mb-3">🔒</div>
-                  <CardTitle>Local Processing</CardTitle>
-                  <CardDescription>
-                    All AI runs on your device, not our servers. Your data never leaves your control. This is how
-                    privacy-first AI should work.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <div className="text-4xl mb-3">🌐</div>
-                  <CardTitle>Federated Learning</CardTitle>
-                  <CardDescription>
-                    Your device learns locally, then shares only encrypted patterns. The community benefits without
-                    any privacy loss.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <div className="text-4xl mb-3">📖</div>
-                  <CardTitle>Open Source</CardTitle>
-                  <CardDescription>
-                    AI models will be publicly auditable. No black boxes, no secret algorithms. Complete transparency
-                    in how our AI works.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <div className="text-4xl mb-3">💎</div>
-                  <CardTitle>Token-Funded</CardTitle>
-                  <CardDescription>
-                    Community tokens fund development sustainably without selling your data or showing ads.
-                    Privacy-aligned economics.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-
-            <div className="text-center">
-              <Button href="/roadmap#ai-development" variant="primary" size="lg">
-                Explore Our AI Development Roadmap →
-              </Button>
-            </div>
+            <motion.div variants={fadeUp}>
+              <div className="bg-slate-50 rounded-3xl p-8 lg:p-10">
+                <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-4">
+                  Our Principles
+                </p>
+                <div className="space-y-4">
+                  {principles.map((principle) => (
+                    <div key={principle} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-slate-700">{principle}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
-      </Section>
-
-      {/* Token Funding Model Section */}
-      <Section className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-display font-bold mb-4">How We Fund Development</h2>
-              <p className="text-lg text-gray-600">
-                Most privacy tools either sell your data or charge expensive subscriptions. We're building something
-                different: community-owned development through the $PRICKO token ecosystem.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <Card className="border-red-200 bg-red-50">
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="text-2xl">❌</span>
-                    <CardTitle>Traditional Privacy Tools</CardTitle>
-                  </div>
-                  <ul className="space-y-3 text-gray-700">
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1">•</span>
-                      <span>Sell user data to advertisers</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1">•</span>
-                      <span>Show ads (tracking you to "protect" you)</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1">•</span>
-                      <span>Expensive subscriptions ($50-100/mo)</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1">•</span>
-                      <span>VC-funded with pressure to monetize users</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1">•</span>
-                      <span>No user governance or ownership</span>
-                    </li>
-                  </ul>
-                </CardHeader>
-              </Card>
-
-              <Card className="border-green-200 bg-green-50">
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="text-2xl">✅</span>
-                    <CardTitle>Privacy Gecko Model</CardTitle>
-                  </div>
-                  <ul className="space-y-3 text-gray-700">
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1">•</span>
-                      <span>Never sell your data - ever</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1">•</span>
-                      <span>No ads - privacy-first analytics only</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1">•</span>
-                      <span>Always-free tier + affordable Pro</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1">•</span>
-                      <span>Community-funded via $PRICKO tokens</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1">•</span>
-                      <span>Token holders govern development</span>
-                    </li>
-                  </ul>
-                </CardHeader>
-              </Card>
-            </div>
-
-            <div className="text-center p-8 bg-gradient-to-br from-gecko-green/10 to-blue-50 rounded-lg border-2 border-gecko-green/30">
-              <p className="text-lg text-gray-700 mb-4">Want to learn more about how $PRICKO powers our ecosystem?</p>
-              <Button href="https://pricko.com" variant="primary" size="lg">
-                Learn About $PRICKO Token →
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </Section>
-
-      {/* Mission */}
-      <Section className="bg-gradient-to-br from-emerald-50 via-blue-50/30 to-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-3xl font-display font-bold mb-6">Our Mission</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              "To empower individuals with simple, effective privacy tools that protect their digital lives
-              without requiring technical expertise or breaking the bank."
-            </p>
-          </motion.div>
-        </div>
-      </Section>
+      </section>
 
       {/* Values */}
-      <Section className="bg-gradient-to-b from-white to-gray-50">
-        <SectionHeader
-          subtitle="Our Values"
-          title="What We Stand For"
-          description="The principles that guide everything we build"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((value, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card>
-                <CardHeader>
-                  <div className="p-3 bg-gecko-green/10 rounded-lg w-fit mb-4">
-                    <value.icon className="w-6 h-6 text-gecko-green" />
-                  </div>
-                  <CardTitle>{value.title}</CardTitle>
-                  <CardDescription>{value.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Team */}
-      <Section className="bg-gradient-to-br from-gray-50 to-white">
-        <SectionHeader
-          subtitle="Team"
-          title="Built by Privacy Advocates"
-        />
-        <div className="max-w-3xl mx-auto">
+      <section className="py-24 md:py-32 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={stagger}
           >
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-4 mb-4">
-                  <Image
-                    src="/images/PrivacyGecko_logo.png"
-                    alt="Privacy Gecko Logo"
-                    width={64}
-                    height={64}
-                    className="rounded-full"
-                  />
-                  <div>
-                    <CardTitle>@0xAnonA</CardTitle>
-                    <CardDescription>Founder & Privacy Advocate</CardDescription>
+            <motion.div variants={fadeUp} className="max-w-2xl mb-16">
+              <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-4">
+                Our Values
+              </p>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6">
+                What we stand for
+              </h2>
+              <p className="text-xl text-slate-600">
+                The principles that guide everything we build.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {values.map((value) => (
+                <motion.div
+                  key={value.title}
+                  variants={fadeUp}
+                  className="bg-white rounded-2xl p-8 border border-slate-200"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
+                    <value.icon className="w-6 h-6 text-blue-600" />
                   </div>
-                </div>
-                <p className="text-gray-600">
-                  Privacy advocate since 2014. Built Privacy Gecko to democratize digital privacy.
-                  Previously worked in cybersecurity and saw firsthand how difficult it was for regular
-                  people to protect themselves online.
-                </p>
-              </CardHeader>
-            </Card>
+                  <h3 className="text-xl font-display font-bold text-slate-900 mb-3">
+                    {value.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    {value.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
-      </Section>
+      </section>
+
+      {/* Mission Statement */}
+      <section className="py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <motion.p
+              variants={fadeUp}
+              className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-6"
+            >
+              Our Mission
+            </motion.p>
+            <motion.blockquote
+              variants={fadeUp}
+              className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-slate-900 leading-tight mb-8"
+            >
+              "To empower everyone with simple, effective privacy tools that protect their digital lives."
+            </motion.blockquote>
+            <motion.p variants={fadeUp} className="text-xl text-slate-500">
+              No technical expertise required. No premium subscription needed.
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Open Source */}
-      <Section className="bg-gradient-to-br from-emerald-50 to-blue-50/40">
-        <div className="text-center max-w-3xl mx-auto">
+      <section className="py-24 md:py-32 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            variants={stagger}
+            className="grid lg:grid-cols-2 gap-16 items-center"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gecko-green rounded-full mb-4">
-              <Github className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-3xl font-display font-bold mb-4">Open Source & Transparent</h2>
-            <p className="text-lg text-gray-600 mb-6">
-              Privacy Gecko is committed to transparency. Our website code is open source and available
-              for anyone to review, audit, and contribute to. Product code releasing Q4 2025 - Q1 2026
-              after comprehensive security audits.
-            </p>
-            <a
-              href="https://github.com/privacygecko"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
-            >
-              <Github className="w-5 h-5" />
-              View on GitHub
-              <ExternalLink className="w-4 h-4" />
-            </a>
+            <motion.div variants={fadeUp}>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center">
+                  <Github className="w-7 h-7 text-white" />
+                </div>
+                <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">
+                  Open Source
+                </span>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
+                Transparency by default
+              </h2>
+              <p className="text-lg text-slate-400 leading-relaxed mb-8">
+                Our website is fully open source. Product code releases throughout 2025-2026
+                after security audits. Anyone can review, audit, and contribute.
+              </p>
+
+              <a
+                href="https://github.com/privacygecko"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-500 transition-colors group shadow-lg shadow-blue-600/30"
+              >
+                <Github className="w-5 h-5" />
+                View on GitHub
+                <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              </a>
+            </motion.div>
+
+            <motion.div variants={fadeUp}>
+              <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
+                <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-6">
+                  Why Open Source?
+                </p>
+                <div className="space-y-4">
+                  {[
+                    "Trust through verification, not promises",
+                    "Community can audit our security claims",
+                    "Catch vulnerabilities faster together",
+                    "Build confidence in our privacy practices",
+                  ].map((reason) => (
+                    <div key={reason} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-slate-300">{reason}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
-      </Section>
+      </section>
 
       {/* CTA */}
-      <Section className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Join Our Mission
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Help us make privacy accessible to everyone. Use our tools, provide feedback,
-            or spread the word about privacy-first software.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/products" variant="primary" size="lg">
-              Explore Our Tools
-            </Button>
-            <Button href="/contact" variant="outline" size="lg">
-              Get in Touch
-            </Button>
-          </div>
+      <section className="py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="text-center"
+          >
+            <motion.h2
+              variants={fadeUp}
+              className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6"
+            >
+              Join our mission
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="text-xl text-slate-600 max-w-2xl mx-auto mb-10"
+            >
+              Help us make privacy accessible to everyone. Use our products, provide feedback,
+              or spread the word.
+            </motion.p>
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Link
+                href="/products"
+                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-full font-semibold text-lg transition-all duration-300 hover:bg-blue-700 hover:scale-[1.02] group shadow-lg shadow-blue-600/25"
+              >
+                Explore products
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-slate-900 rounded-full font-semibold text-lg border-2 border-slate-200 transition-all duration-300 hover:border-blue-600 hover:text-blue-600 hover:scale-[1.02]"
+              >
+                Get in touch
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
-      </Section>
+      </section>
     </>
   );
 }

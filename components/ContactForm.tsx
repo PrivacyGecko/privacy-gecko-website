@@ -2,9 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Card, CardHeader, CardTitle } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
-import { Info, CheckCircle } from "lucide-react";
+import { Info, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export function ContactForm() {
@@ -16,8 +14,6 @@ export function ContactForm() {
   }>({ type: null, message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(3);
-
-  // Pre-select subject from URL parameter
   const [selectedSubject, setSelectedSubject] = useState<string>("");
 
   useEffect(() => {
@@ -27,7 +23,6 @@ export function ContactForm() {
     }
   }, [searchParams]);
 
-  // Countdown timer for redirect after successful submission
   useEffect(() => {
     if (submitStatus.type === "success" && countdown > 0) {
       const timer = setTimeout(() => {
@@ -59,18 +54,18 @@ export function ContactForm() {
       if (response.ok) {
         setSubmitStatus({
           type: "success",
-          message: "Thank you! Your message has been sent successfully. We'll respond within 48 hours.",
+          message: "Thank you! Your message has been sent. We'll respond within 48 hours.",
         });
-        setCountdown(3); // Reset countdown
+        setCountdown(3);
         form.reset();
         setSelectedSubject("");
       } else {
         throw new Error("Form submission failed");
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: "error",
-        message: "Oops! Something went wrong. Please try again or email us directly at support@privacygecko.com",
+        message: "Something went wrong. Please try again or email us directly.",
       });
     } finally {
       setIsSubmitting(false);
@@ -82,49 +77,48 @@ export function ContactForm() {
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-2xl mb-6">Send Us a Message</CardTitle>
+    <div className="bg-slate-50 rounded-2xl p-8 lg:p-10">
+      <h2 className="text-2xl font-display font-bold text-slate-900 mb-8">
+        Send a message
+      </h2>
 
-        {submitStatus.type && (
-          <div
-            className={`p-4 rounded-lg mb-6 ${
-              submitStatus.type === "success"
-                ? "bg-green-50 text-green-800 border border-green-200"
-                : "bg-red-50 text-red-800 border border-red-200"
-            }`}
-          >
-            {submitStatus.type === "success" && (
-              <div className="flex items-start gap-3 mb-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold">{submitStatus.message}</p>
-                  <p className="text-sm mt-2">
-                    Redirecting to homepage in {countdown} second{countdown !== 1 ? 's' : ''}...
-                  </p>
-                </div>
+      {submitStatus.type && (
+        <div
+          className={`p-6 rounded-xl mb-8 ${
+            submitStatus.type === "success"
+              ? "bg-emerald-50 border border-emerald-200"
+              : "bg-red-50 border border-red-200"
+          }`}
+        >
+          {submitStatus.type === "success" && (
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-emerald-900">{submitStatus.message}</p>
+                <p className="text-sm text-emerald-700 mt-2">
+                  Redirecting to homepage in {countdown} second{countdown !== 1 ? "s" : ""}...
+                </p>
+                <button
+                  type="button"
+                  onClick={handleManualRedirect}
+                  className="mt-3 text-sm text-emerald-700 font-medium hover:text-emerald-800 transition-colors inline-flex items-center"
+                >
+                  Return now
+                  <ArrowRight className="w-3 h-3 ml-1" />
+                </button>
               </div>
-            )}
-            {submitStatus.type === "error" && (
-              <p>{submitStatus.message}</p>
-            )}
-            {submitStatus.type === "success" && (
-              <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                onClick={handleManualRedirect}
-                className="mt-2"
-              >
-                Return to Homepage Now
-              </Button>
-            )}
-          </div>
-        )}
+            </div>
+          )}
+          {submitStatus.type === "error" && (
+            <p className="text-red-800">{submitStatus.message}</p>
+          )}
+        </div>
+      )}
 
-        <form onSubmit={handleSubmit} method="POST" className="space-y-6">
+      <form onSubmit={handleSubmit} method="POST" className="space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
               Name
             </label>
             <input
@@ -132,13 +126,13 @@ export function ContactForm() {
               id="name"
               name="name"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gecko-green focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
               placeholder="Your name"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
               Email
             </label>
             <input
@@ -146,79 +140,76 @@ export function ContactForm() {
               id="email"
               name="_replyto"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gecko-green focus:border-transparent outline-none transition-all"
-              placeholder="your.email@example.com"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              placeholder="your@email.com"
             />
           </div>
+        </div>
 
-          <div>
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-              Subject
-            </label>
-            <select
-              id="subject"
-              name="subject"
-              required
-              value={selectedSubject}
-              onChange={(e) => setSelectedSubject(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gecko-green focus:border-transparent outline-none transition-all"
-            >
-              <option value="">Select a subject</option>
-              <option value="general">General Inquiry</option>
-              <option value="support">Technical Support</option>
-              <option value="billing">Billing Question</option>
-              <option value="partnership">Partnership</option>
-              <option value="press">Press/Media</option>
-              <option value="GeckoCore Waitlist">GeckoCore Waitlist</option>
-              <option value="GeckoCore Newsletter">GeckoCore Newsletter</option>
-              <option value="AI Beta Waitlist">AI Beta Waitlist</option>
-              <option value="Early Adopter Waitlist">Early Adopter Waitlist</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
+        <div>
+          <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
+            Subject
+          </label>
+          <select
+            id="subject"
+            name="subject"
+            required
+            value={selectedSubject}
+            onChange={(e) => setSelectedSubject(e.target.value)}
+            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+          >
+            <option value="">Select a subject</option>
+            <option value="general">General Inquiry</option>
+            <option value="support">Technical Support</option>
+            <option value="billing">Billing Question</option>
+            <option value="partnership">Partnership</option>
+            <option value="press">Press/Media</option>
+            <option value="GeckoCore Waitlist">GeckoCore Waitlist</option>
+            <option value="GeckoCore Newsletter">GeckoCore Newsletter</option>
+            <option value="AI Beta Waitlist">AI Beta Waitlist</option>
+            <option value="Early Adopter Waitlist">Early Adopter Waitlist</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
 
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows={6}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gecko-green focus:border-transparent outline-none transition-all resize-none"
-              placeholder="Tell us how we can help..."
-            />
-          </div>
+        <div>
+          <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows={6}
+            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+            placeholder="How can we help you?"
+          />
+        </div>
 
-          {/* Privacy Notice */}
-          <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <div className="flex items-start gap-3">
-              <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-              <div className="text-sm text-gray-700">
-                <p className="font-semibold text-blue-900 mb-1">Your Privacy Matters</p>
-                <p>
-                  Your message is encrypted in transit (TLS). We will respond within 48 hours and never share your email with third parties.
-                  Messages are retained for 90 days, then permanently deleted.{' '}
-                  <Link href="/legal/privacy" className="text-gecko-green underline hover:no-underline font-medium">
-                    Privacy Policy
-                  </Link>
-                </p>
-              </div>
+        {/* Privacy Notice */}
+        <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
+          <div className="flex items-start gap-3">
+            <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="text-sm text-blue-800">
+              <p className="font-semibold mb-1">Your privacy matters</p>
+              <p className="text-blue-700">
+                Encrypted in transit. Never shared with third parties. Messages deleted after 90 days.{" "}
+                <Link href="/legal/privacy" className="underline hover:no-underline">
+                  Privacy Policy
+                </Link>
+              </p>
             </div>
           </div>
+        </div>
 
-          <Button
-            type="submit"
-            variant="primary"
-            size="lg"
-            className="w-full"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </Button>
-        </form>
-      </CardHeader>
-    </Card>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full px-8 py-4 bg-blue-600 text-white rounded-full font-semibold text-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-600/25"
+        >
+          {isSubmitting ? "Sending..." : "Send message"}
+        </button>
+      </form>
+    </div>
   );
 }
