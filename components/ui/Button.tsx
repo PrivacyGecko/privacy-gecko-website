@@ -8,13 +8,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-gecko-green text-white hover:bg-gecko-green/90 focus:ring-gecko-green shadow-sm hover:shadow-md",
+          "bg-gecko-green text-white hover:bg-gecko-green/90 focus:ring-gecko-green shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0",
         secondary:
-          "bg-gecko-blue text-white hover:bg-gecko-blue/90 focus:ring-gecko-blue shadow-sm hover:shadow-md",
+          "bg-gecko-blue text-white hover:bg-gecko-blue/90 focus:ring-gecko-blue shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0",
         outline:
-          "border-2 border-gecko-green text-gecko-green hover:bg-gecko-green hover:text-white focus:ring-gecko-green",
+          "border-2 border-gecko-green text-gecko-green hover:bg-gecko-green hover:text-white focus:ring-gecko-green hover:shadow-md hover:-translate-y-0.5 active:translate-y-0",
         ghost:
-          "text-neutral-900 hover:bg-gray-100 focus:ring-gray-300",
+          "text-neutral-900 hover:bg-gray-100 focus:ring-gray-300 hover:shadow-sm",
       },
       size: {
         sm: "px-4 py-2 text-sm",

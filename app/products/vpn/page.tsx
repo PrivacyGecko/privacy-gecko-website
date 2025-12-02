@@ -44,7 +44,7 @@ export default function GeckoVPNPage() {
     {
       icon: Server,
       title: "Multi-Device Support",
-      description: "Connect up to 5 devices simultaneously with one Pro subscription",
+      description: "Connect multiple devices simultaneously with Pro tier",
     },
   ];
 
@@ -106,8 +106,8 @@ export default function GeckoVPNPage() {
         description="Privacy-first VPN with global server network and WireGuard protocol. No-logs policy, kill switch protection, and AI-optimized routing coming Q4 2025. Fast, secure, and private."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button href="#pricing" variant="primary" size="lg">
-            Coming Soon
+          <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="primary" size="lg">
+            Join Waitlist
           </Button>
           <Badge variant="coming">Coming Q4 2025</Badge>
         </div>
@@ -255,76 +255,8 @@ export default function GeckoVPNPage() {
         </div>
       </Section>
 
-      {/* Pricing */}
-      <Section id="pricing" className="bg-neutral-100">
-        <SectionHeader
-          subtitle="Pricing"
-          title="Choose Your Plan"
-          description="Start free, upgrade when you need more bandwidth"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <Card className="h-full">
-              <CardHeader>
-                <CardTitle className="text-2xl mb-2">Free</CardTitle>
-                <div className="text-3xl font-bold mb-4">$0<span className="text-lg text-gray-500 font-normal">/month</span></div>
-                <CardDescription className="mb-6">{product.pricing.free.limit}</CardDescription>
-                <Button href="#install" variant="outline" className="w-full mb-6">
-                  Download Free
-                </Button>
-                <div className="space-y-3">
-                  {product.pricing.free.features.map((feature, index) => (
-                    <div key={index} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-gecko-green mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardHeader>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <Card className="h-full border-gecko-green border-2">
-              <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <CardTitle className="text-2xl">Pro</CardTitle>
-                  <Badge variant="live">Popular</Badge>
-                </div>
-                <div className="text-3xl font-bold mb-4">
-                  {product.pricing.pro.price.split('/')[0]}
-                  <span className="text-lg text-gray-500 font-normal">/month</span>
-                </div>
-                <CardDescription className="mb-6">Unlimited bandwidth & all servers</CardDescription>
-                <Button href="#checkout" variant="primary" className="w-full mb-6">
-                  Start Pro Trial
-                </Button>
-                <div className="space-y-3">
-                  {product.pricing.pro.features.map((feature, index) => (
-                    <div key={index} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-gecko-green mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardHeader>
-            </Card>
-          </motion.div>
-        </div>
-      </Section>
-
       {/* FAQ */}
-      <Section>
+      <Section className="bg-neutral-100">
         <SectionHeader
           subtitle="FAQ"
           title="Frequently Asked Questions"
@@ -350,7 +282,7 @@ export default function GeckoVPNPage() {
       </Section>
 
       {/* Final CTA */}
-      <Section className="bg-neutral-100">
+      <Section>
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Ready for Private Internet Access?
@@ -359,8 +291,8 @@ export default function GeckoVPNPage() {
             Gecko VPN launches Q4 2025 with WireGuard protocol and no-logs policy. Be among the first to browse privately with AI-optimized routing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="#pricing" variant="primary" size="lg">
-              Coming Soon
+            <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="primary" size="lg">
+              Join Waitlist
             </Button>
             <Button href="/products" variant="ghost" size="lg">
               Explore Other Tools

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { AIBadge } from "@/components/ai";
 import { motion } from "framer-motion";
 import { ProductAIFeatures } from "@/lib/products";
+import { cn } from "@/lib/utils";
 
 interface ProductCardProps {
   name: string;
@@ -38,6 +39,7 @@ export function ProductCard({
 }: ProductCardProps) {
   // Helper function to get AI timeline display text
   const getAITimeline = () => {
+    // Note: Q4 2025 represents products launching/in-development during Q4 2025
     if (!ai) return "Q4 2025";
     switch (ai.aiTiming) {
       case "launch-feature":
@@ -64,7 +66,16 @@ export function ProductCard({
       transition={{ duration: 0.5 }}
       className="h-full"
     >
-      <Card className="h-full flex flex-col">
+      <Card className={cn(
+        "h-full flex flex-col group",
+        "hover:shadow-2xl hover:shadow-gecko-green/10 transition-all duration-300",
+        "relative",
+        "before:absolute before:inset-0 before:rounded-xl before:p-[2px]",
+        "before:bg-gradient-to-br before:from-gecko-green/20 before:via-transparent",
+        "before:to-privacy-blue/20 before:-z-10 before:opacity-0",
+        "hover:border-gecko-green/50 hover:before:opacity-100",
+        "hover:-translate-y-1"
+      )}>
         <CardHeader className="mb-3">
           <div className="flex items-start justify-between mb-3">
             <div className="p-3 bg-gecko-green/10 rounded-lg">
@@ -120,14 +131,15 @@ export function ProductCard({
         <CardContent className="mt-auto pt-4">
           {status === "live" ? (
             isExternal ? (
-              <a
+              <Button 
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border-2 border-gecko-green text-gecko-green hover:bg-gecko-green hover:text-white focus:ring-gecko-green px-6 py-2.5 text-sm w-full"
+                variant="outline" 
+                size="sm" 
+                className="w-full"
+                
               >
-                Visit Site →
-              </a>
+                Try Free →
+              </Button>
             ) : (
               <Button href={href} variant="outline" size="sm" className="w-full">
                 Learn More
@@ -143,7 +155,7 @@ export function ProductCard({
                 Join Waitlist
               </Button>
               <p className="text-xs text-gray-600 text-center mt-1.5">
-                Includes 20% lifetime discount
+                Early adopter benefits
               </p>
             </div>
           )}

@@ -20,18 +20,18 @@ export function Footer() {
   ];
 
   const resourceLinks = [
+    { href: "/whitepaper", label: "Whitepaper" },
     { href: "/resources/docs", label: "Documentation" },
     { href: "/resources/faq", label: "FAQ" },
     { href: "/resources/support", label: "Support" },
-    { href: "/ai-whitepaper", label: "AI Architecture" },
-    { href: "/ai-ethics", label: "AI Ethics" },
+    { href: "/about#privacy-principles", label: "AI Ethics" },
   ];
 
   const aiLinks = [
-    { href: "/ai-roadmap", label: "AI Roadmap" },
+    { href: "/roadmap#ai-development", label: "AI Roadmap" },
     { href: "/contact?subject=AI Beta Waitlist", label: "AI Beta Program" },
-    { href: "/developers", label: "Developer Program", comingSoon: true },
-    { href: "/research", label: "Research Partners", comingSoon: true },
+    { href: "/contact?subject=Developer Program Interest", label: "Developer Program", comingSoon: true },
+    { href: "/contact?subject=Research Partnership Inquiry", label: "Research Partners", comingSoon: true },
   ];
 
   const legalLinks = [
@@ -57,7 +57,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-gray-400 text-sm mb-4">
-              Privacy tools that actually work. <span className="text-gray-500">($PRICKO token optional)</span>
+              Privacy ecosystem powered by GeckoCore Protocol. <span className="text-gray-500">($PRICKO token optional)</span>
             </p>
 
             {/* Brand Social Links */}
@@ -80,7 +80,7 @@ export function Footer() {
                   showIcon={false}
                 >
                   <Send size={16} className="mr-2" />
-                  $PRICKO Community
+                  $PRICKO Token
                 </ExternalLink>
               </div>
             </div>
@@ -105,7 +105,7 @@ export function Footer() {
                   showIcon={false}
                 >
                   <Send size={16} className="mr-2" />
-                  Ask Developer
+                  Developer Chat
                 </ExternalLink>
               </div>
             </div>
@@ -250,7 +250,7 @@ export function Footer() {
             </ExternalLink>
             <div className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg text-sm">
               <Shield size={16} className="text-gecko-green" />
-              <span className="text-gray-300">No Tracking</span>
+              <span className="text-gray-300">Privacy-Friendly Analytics</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg text-sm">
               <Shield size={16} className="text-gecko-green" />

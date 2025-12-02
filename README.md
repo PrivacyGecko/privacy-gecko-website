@@ -1,6 +1,11 @@
 # Privacy Gecko Website
 
-Official website for Privacy Gecko - a suite of 8 privacy-focused tools.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+Official open-source website for Privacy Gecko - a suite of 8 privacy-focused tools.
 
 ## 🦎 About
 
@@ -193,7 +198,18 @@ NEXT_PUBLIC_SITE_URL=https://privacygecko.com
 
 ## 🤝 Contributing
 
-This is a private repository. For suggestions or issues, contact the team.
+We welcome contributions from the community! Privacy Gecko is open source because we believe privacy tools should be transparent and community-driven.
+
+**Ways to contribute:**
+- 🐛 Report bugs or suggest features via [GitHub Issues](https://github.com/PrivacyGecko/privacy-gecko-website/issues)
+- 💻 Submit pull requests for bug fixes or enhancements
+- 📝 Improve documentation
+- 🎨 Suggest UI/UX improvements
+- 🌍 Help with translations (future)
+
+Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting PRs.
+
+**Security vulnerabilities?** See [SECURITY.md](SECURITY.md) for responsible disclosure.
 
 ## 📧 Contact
 
@@ -203,7 +219,17 @@ This is a private repository. For suggestions or issues, contact the team.
 
 ## 📜 License
 
-Copyright © 2025 Privacy Gecko. All rights reserved.
+This project is open source and available under the [MIT License](LICENSE).
+
+```
+MIT License - Copyright (c) 2025 Privacy Gecko
+```
+
+**What this means:**
+- ✅ Free to use, modify, and distribute
+- ✅ Commercial use allowed
+- ✅ Just keep the copyright notice
+- 📖 See [LICENSE](LICENSE) for full details
 
 ---
 

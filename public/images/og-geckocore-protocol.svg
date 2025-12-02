@@ -1,0 +1,123 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow effect for center hub -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle glow for connection lines -->
+    <filter id="lineGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Title Section -->
+  <text x="600" y="80" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="700" fill="#ffffff" text-anchor="middle">GeckoCore Protocol</text>
+  <text x="600" y="125" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="500" fill="#9ca3af" text-anchor="middle">The Hub for Privacy Tools</text>
+
+  <!-- Connection Lines (from center to each product) -->
+  <!-- GeckoAdvisor (top) -->
+  <line x1="600" y1="315" x2="600" y2="215" stroke="#00D98A" stroke-width="2" opacity="0.6" filter="url(#lineGlow)"/>
+
+  <!-- GeckoShare (top-right) -->
+  <line x1="600" y1="315" x2="718" y2="246" stroke="#00D98A" stroke-width="2" opacity="0.6" filter="url(#lineGlow)"/>
+
+  <!-- GeckoGuard (right) -->
+  <line x1="600" y1="315" x2="770" y2="315" stroke="#00D98A" stroke-width="2" opacity="0.6" filter="url(#lineGlow)"/>
+
+  <!-- GeckoLock (bottom-right) -->
+  <line x1="600" y1="315" x2="718" y2="384" stroke="#00D98A" stroke-width="2" opacity="0.6" filter="url(#lineGlow)"/>
+
+  <!-- GeckoView (bottom) -->
+  <line x1="600" y1="315" x2="600" y2="415" stroke="#00D98A" stroke-width="2" opacity="0.6" filter="url(#lineGlow)"/>
+
+  <!-- GeckoShell (bottom-left) -->
+  <line x1="600" y1="315" x2="482" y2="384" stroke="#00D98A" stroke-width="2" opacity="0.6" filter="url(#lineGlow)"/>
+
+  <!-- Gecko VPN (left) -->
+  <line x1="600" y1="315" x2="430" y2="315" stroke="#00D98A" stroke-width="2" opacity="0.6" filter="url(#lineGlow)"/>
+
+  <!-- Gecko Watch (top-left) -->
+  <line x1="600" y1="315" x2="482" y2="246" stroke="#00D98A" stroke-width="2" opacity="0.6" filter="url(#lineGlow)"/>
+
+  <!-- Center Hub - GeckoCore -->
+  <circle cx="600" cy="315" r="75" fill="#00D98A" filter="url(#glow)"/>
+  <circle cx="600" cy="315" r="70" fill="#1a1d29"/>
+  <circle cx="600" cy="315" r="65" fill="#00D98A" opacity="0.1"/>
+
+  <!-- Gecko icon in center (simplified gecko shape) -->
+  <circle cx="600" cy="305" r="8" fill="#00D98A"/>
+  <ellipse cx="600" cy="318" rx="18" ry="22" fill="#00D98A"/>
+  <circle cx="595" cy="302" r="2" fill="#1a1d29"/>
+  <circle cx="605" cy="302" r="2" fill="#1a1d29"/>
+
+  <text x="600" y="350" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">GeckoCore</text>
+
+  <!-- Product 1: GeckoAdvisor (top) -->
+  <circle cx="600" cy="195" r="40" fill="#1e3a8a" stroke="#00D98A" stroke-width="3"/>
+  <text x="600" y="185" font-size="24" fill="#00D98A" text-anchor="middle">🔍</text>
+  <text x="600" y="210" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Advisor</text>
+
+  <!-- Product 2: GeckoShare (top-right) -->
+  <circle cx="718" cy="226" r="40" fill="#1e3a8a" stroke="#00D98A" stroke-width="3"/>
+  <text x="718" y="216" font-size="24" fill="#00D98A" text-anchor="middle">📤</text>
+  <text x="718" y="241" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Share</text>
+
+  <!-- Product 3: GeckoGuard (right) -->
+  <circle cx="790" cy="315" r="40" fill="#1e3a8a" stroke="#3b82f6" stroke-width="3"/>
+  <text x="790" y="305" font-size="24" fill="#3b82f6" text-anchor="middle">🛡️</text>
+  <text x="790" y="330" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Guard</text>
+
+  <!-- Product 4: GeckoLock (bottom-right) -->
+  <circle cx="718" cy="404" r="40" fill="#1e3a8a" stroke="#FFD700" stroke-width="3"/>
+  <text x="718" y="394" font-size="24" fill="#FFD700" text-anchor="middle">🔒</text>
+  <text x="718" y="419" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Lock</text>
+
+  <!-- Product 5: GeckoView (bottom) -->
+  <circle cx="600" cy="435" r="40" fill="#1e3a8a" stroke="#a855f7" stroke-width="3"/>
+  <text x="600" y="425" font-size="24" fill="#a855f7" text-anchor="middle">👁️</text>
+  <text x="600" y="450" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">View</text>
+
+  <!-- Product 6: GeckoShell (bottom-left) -->
+  <circle cx="482" cy="404" r="40" fill="#1e3a8a" stroke="#00D98A" stroke-width="3"/>
+  <text x="482" y="394" font-size="24" fill="#00D98A" text-anchor="middle">💻</text>
+  <text x="482" y="419" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Shell</text>
+
+  <!-- Product 7: Gecko VPN (left) -->
+  <circle cx="410" cy="315" r="40" fill="#1e3a8a" stroke="#3b82f6" stroke-width="3"/>
+  <text x="410" y="305" font-size="24" fill="#3b82f6" text-anchor="middle">🌐</text>
+  <text x="410" y="330" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">VPN</text>
+
+  <!-- Product 8: Gecko Watch (top-left) -->
+  <circle cx="482" cy="226" r="40" fill="#1e3a8a" stroke="#FFD700" stroke-width="3"/>
+  <text x="482" y="216" font-size="24" fill="#FFD700" text-anchor="middle">⚠️</text>
+  <text x="482" y="241" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Watch</text>
+
+  <!-- Gecko Logo (top-right) -->
+  <circle cx="1130" cy="50" r="25" fill="#00D98A"/>
+  <circle cx="1130" cy="43" r="6" fill="#1a1d29"/>
+  <ellipse cx="1130" cy="53" rx="12" ry="15" fill="#1a1d29"/>
+  <circle cx="1126" cy="41" r="1.5" fill="#00D98A"/>
+  <circle cx="1134" cy="41" r="1.5" fill="#00D98A"/>
+
+  <!-- Launch Badge (bottom-right) -->
+  <rect x="1055" y="550" width="130" height="50" rx="25" fill="#00D98A"/>
+  <text x="1120" y="581" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#1a1d29" text-anchor="middle">Coming 2026</text>
+</svg>

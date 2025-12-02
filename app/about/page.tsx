@@ -13,7 +13,7 @@ export default function AboutPage() {
     {
       icon: Shield,
       title: "Transparency",
-      description: "Clear privacy policies and honest communication about our practices. Website is open source now. Product code releasing Q4 2025 after security audits.",
+      description: "Clear privacy policies and honest communication about our practices. Website is open source now. Product code releasing throughout Q4 2025 - Q1 2026 after security audits.",
     },
     {
       icon: Users,
@@ -41,7 +41,7 @@ export default function AboutPage() {
       />
 
       {/* Our Story */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ export default function AboutPage() {
                 for tracking protection, and we're not stopping there.
               </p>
               <p>
-                Today, Privacy Gecko is an ecosystem of 8 tools (2 live, 6 in development) available to
+                Today, Privacy Gecko is an ecosystem of 8 tools (4 live, 4 in development) available to
                 privacy-conscious users worldwide. As an early-stage project launched in January 2025, we're focused on
                 building trust through transparency and delivering on our promises. We're committed to open source transparency,
                 community-driven development, and our original mission: making privacy accessible to everyone.
@@ -77,7 +77,7 @@ export default function AboutPage() {
       </Section>
 
       {/* AI Vision Section */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -141,7 +141,7 @@ export default function AboutPage() {
             </div>
 
             <div className="text-center">
-              <Button href="/ai-roadmap" variant="primary" size="lg">
+              <Button href="/roadmap#ai-development" variant="primary" size="lg">
                 Explore Our AI Development Roadmap →
               </Button>
             </div>
@@ -150,7 +150,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Token Funding Model Section */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -241,7 +241,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Mission */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-emerald-50 via-blue-50/30 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -259,7 +259,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Values */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <SectionHeader
           subtitle="Our Values"
           title="What We Stand For"
@@ -289,7 +289,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Team */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-gray-50 to-white">
         <SectionHeader
           subtitle="Team"
           title="Built by Privacy Advocates"
@@ -328,7 +328,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Open Source */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-emerald-50 to-blue-50/40">
         <div className="text-center max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -342,7 +342,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-display font-bold mb-4">Open Source & Transparent</h2>
             <p className="text-lg text-gray-600 mb-6">
               Privacy Gecko is committed to transparency. Our website code is open source and available
-              for anyone to review, audit, and contribute to. Product code will be released in Q4 2025
+              for anyone to review, audit, and contribute to. Product code releasing Q4 2025 - Q1 2026
               after comprehensive security audits.
             </p>
             <a
@@ -360,7 +360,7 @@ export default function AboutPage() {
       </Section>
 
       {/* CTA */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Join Our Mission

@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { Hero } from "@/components/sections/Hero";
 import { Section } from "@/components/sections/Section";
 import { ContactForm } from "@/components/ContactForm";
@@ -16,11 +17,13 @@ export default function ContactPage() {
         description="Have questions? Want to collaborate? We'd love to hear from you."
       />
 
-      <Section>
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <ContactForm />
+            <Suspense fallback={<div className="text-center p-8">Loading form...</div>}>
+              <ContactForm />
+            </Suspense>
           </div>
 
           {/* Contact Info */}

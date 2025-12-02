@@ -1,0 +1,136 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow effect for feature cards -->
+    <filter id="cardGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Glow for product icons -->
+    <filter id="iconGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Subtle grid pattern overlay -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Logo -->
+  <image href="/images/logo.png" x="450" y="60" width="300" height="80" />
+
+  <!-- Subheading -->
+  <text x="600" y="170" font-family="Inter, system-ui, sans-serif" font-size="36" font-weight="600" fill="#00D98A" text-anchor="middle">8 AI-Enhanced Privacy Tools</text>
+
+  <!-- Tagline -->
+  <text x="600" y="215" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400" fill="#9ca3af" text-anchor="middle">Privacy Tools That Actually Work</text>
+
+  <!-- Divider line -->
+  <line x1="300" y1="250" x2="900" y2="250" stroke="#00D98A" stroke-width="2" opacity="0.3"/>
+
+  <!-- Feature Cards Container -->
+  <!-- Card 1: 8 Products -->
+  <rect x="130" y="290" width="240" height="120" rx="12" fill="#1a1d29" stroke="#00D98A" stroke-width="2" opacity="0.9" filter="url(#cardGlow)"/>
+  <circle cx="250" cy="318" r="14" fill="#00D98A"/>
+  <path d="M 245 318 L 250 313 L 255 318 L 250 323 Z" fill="#1a1d29"/>
+  <text x="250" y="365" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#00D98A" text-anchor="middle">8 Products</text>
+  <text x="250" y="390" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400" fill="#9ca3af" text-anchor="middle">Complete Toolkit</text>
+
+  <!-- Card 2: Zero Data Collection -->
+  <rect x="400" y="290" width="240" height="120" rx="12" fill="#1a1d29" stroke="#00D98A" stroke-width="2" opacity="0.9" filter="url(#cardGlow)"/>
+  <rect x="513" y="308" width="14" height="20" rx="3" fill="#00D98A"/>
+  <rect x="516" y="304" width="8" height="6" rx="2" fill="#00D98A"/>
+  <text x="520" y="365" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#00D98A" text-anchor="middle">Zero Data</text>
+  <text x="520" y="390" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400" fill="#9ca3af" text-anchor="middle">No Collection</text>
+
+  <!-- Card 3: Open Source -->
+  <rect x="670" y="290" width="240" height="120" rx="12" fill="#1a1d29" stroke="#00D98A" stroke-width="2" opacity="0.9" filter="url(#cardGlow)"/>
+  <rect x="780" y="308" width="20" height="16" rx="2" fill="#00D98A"/>
+  <rect x="783" y="311" width="14" height="10" fill="#1a1d29"/>
+  <text x="790" y="365" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#00D98A" text-anchor="middle">Open Source</text>
+  <text x="790" y="390" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400" fill="#9ca3af" text-anchor="middle">Fully Transparent</text>
+
+  <!-- Card 4: Free Tier -->
+  <rect x="940" y="290" width="240" height="120" rx="12" fill="#1a1d29" stroke="#00D98A" stroke-width="2" opacity="0.9" filter="url(#cardGlow)"/>
+  <circle cx="1060" cy="318" r="2" fill="#FFD700"/>
+  <circle cx="1055" cy="313" r="2" fill="#FFD700"/>
+  <circle cx="1065" cy="313" r="2" fill="#FFD700"/>
+  <circle cx="1052" cy="320" r="2" fill="#FFD700"/>
+  <circle cx="1068" cy="320" r="2" fill="#FFD700"/>
+  <text x="1060" y="365" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#00D98A" text-anchor="middle">Free Tier</text>
+  <text x="1060" y="390" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400" fill="#9ca3af" text-anchor="middle">Always Available</text>
+
+  <!-- Product Icons Row -->
+  <text x="600" y="460" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#9ca3af" text-anchor="middle">ALL 8 PRIVACY TOOLS</text>
+
+  <!-- Icon circles for 8 products -->
+  <!-- GeckoAdvisor - Search -->
+  <circle cx="280" cy="520" r="30" fill="#1e3a8a" stroke="#00D98A" stroke-width="2" filter="url(#iconGlow)"/>
+  <circle cx="280" cy="520" r="10" fill="none" stroke="#00D98A" stroke-width="2"/>
+  <line x1="287" y1="527" x2="293" y2="533" stroke="#00D98A" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- GeckoShare - Upload -->
+  <circle cx="380" cy="520" r="30" fill="#1e3a8a" stroke="#00D98A" stroke-width="2" filter="url(#iconGlow)"/>
+  <path d="M 380 528 L 380 512 M 375 517 L 380 512 L 385 517" stroke="#00D98A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- GeckoGuard - Shield -->
+  <circle cx="480" cy="520" r="30" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2" filter="url(#iconGlow)"/>
+  <path d="M 480 510 L 490 515 L 490 525 Q 490 530 480 532 Q 470 530 470 525 L 470 515 Z" fill="#3b82f6"/>
+
+  <!-- GeckoLock - Padlock -->
+  <circle cx="580" cy="520" r="30" fill="#1e3a8a" stroke="#FFD700" stroke-width="2" filter="url(#iconGlow)"/>
+  <rect x="574" y="520" width="12" height="10" rx="1" fill="#FFD700"/>
+  <rect x="577" y="515" width="6" height="7" rx="3" fill="none" stroke="#FFD700" stroke-width="2"/>
+
+  <!-- GeckoView - Eye -->
+  <circle cx="680" cy="520" r="30" fill="#1e3a8a" stroke="#a855f7" stroke-width="2" filter="url(#iconGlow)"/>
+  <ellipse cx="680" cy="520" rx="12" ry="7" fill="none" stroke="#a855f7" stroke-width="2"/>
+  <circle cx="680" cy="520" r="4" fill="#a855f7"/>
+
+  <!-- GeckoShell - Terminal -->
+  <circle cx="780" cy="520" r="30" fill="#1e3a8a" stroke="#00D98A" stroke-width="2" filter="url(#iconGlow)"/>
+  <rect x="770" y="513" width="20" height="14" rx="1" fill="none" stroke="#00D98A" stroke-width="2"/>
+  <path d="M 773 517 L 777 520 L 773 523" stroke="#00D98A" stroke-width="1.5" fill="none"/>
+
+  <!-- GeckoVPN - Globe -->
+  <circle cx="880" cy="520" r="30" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2" filter="url(#iconGlow)"/>
+  <circle cx="880" cy="520" r="10" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <ellipse cx="880" cy="520" rx="4" ry="10" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
+  <line x1="870" y1="520" x2="890" y2="520" stroke="#3b82f6" stroke-width="1.5"/>
+
+  <!-- GeckoWatch - Alert -->
+  <circle cx="980" cy="520" r="30" fill="#1e3a8a" stroke="#FFD700" stroke-width="2" filter="url(#iconGlow)"/>
+  <path d="M 980 510 L 990 530 L 970 530 Z" fill="#FFD700"/>
+  <circle cx="980" cy="526" r="1.5" fill="#1e3a8a"/>
+
+  <!-- Gecko Logo (top-right) -->
+  <circle cx="1130" cy="50" r="25" fill="#00D98A"/>
+  <circle cx="1130" cy="43" r="6" fill="#1a1d29"/>
+  <ellipse cx="1130" cy="53" rx="12" ry="15" fill="#1a1d29"/>
+  <circle cx="1126" cy="41" r="1.5" fill="#00D98A"/>
+  <circle cx="1134" cy="41" r="1.5" fill="#00D98A"/>
+
+  <!-- Launch Badge (bottom-right) -->
+  <rect x="1055" y="550" width="130" height="50" rx="25" fill="#00D98A"/>
+  <text x="1120" y="581" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#1a1d29" text-anchor="middle">Nov 2025</text>
+</svg>

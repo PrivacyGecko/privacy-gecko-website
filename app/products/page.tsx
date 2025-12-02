@@ -18,7 +18,7 @@ export default function ProductsPage() {
       />
 
       {/* Live Products */}
-      <Section>
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <div className="mb-12">
           <h2 className="text-3xl font-display font-bold text-center mb-4">
             Available Now
@@ -49,7 +49,7 @@ export default function ProductsPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold mb-4">
-              🤖 Development Starting Q4 2025 • First Features Q1 2026
+              🤖 Development Q4 2025 - Q1 2026 • First Features Q1 2026
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
               AI-Enhanced Features
@@ -154,7 +154,7 @@ export default function ProductsPage() {
 
           <div className="text-center">
             <a
-              href="/ai-roadmap"
+              href="/roadmap#ai-development"
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transition-all"
             >
               View Complete AI Development Roadmap →
@@ -164,7 +164,7 @@ export default function ProductsPage() {
       </Section>
 
       {/* Coming Soon Products */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-gray-50 via-white to-emerald-50/20">
         <div className="mb-12">
           <h2 className="text-3xl font-display font-bold text-center mb-4">
             Coming Soon
@@ -204,11 +204,11 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="flex items-center justify-center gap-3">
               <span className="text-2xl">✓</span>
-              <span className="text-sm font-medium">Early access to AI beta (Q4 2025)</span>
+              <span className="text-sm font-medium">Early access to AI beta (Q1 2026)</span>
             </div>
             <div className="flex items-center justify-center gap-3">
               <span className="text-2xl">✓</span>
-              <span className="text-sm font-medium">20% lifetime discount on all tools</span>
+              <span className="text-sm font-medium">Get early adopter benefits</span>
             </div>
             <div className="flex items-center justify-center gap-3">
               <span className="text-2xl">✓</span>
@@ -224,7 +224,7 @@ export default function ProductsPage() {
               Join AI Waitlist
             </a>
             <a
-              href="/ai-roadmap"
+              href="/roadmap#ai-development"
               className="px-8 py-3 border-2 border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all duration-200"
             >
               View AI Roadmap

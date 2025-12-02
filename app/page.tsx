@@ -2,11 +2,11 @@
 
 import { Hero } from "@/components/sections/Hero";
 import { Section, SectionHeader } from "@/components/sections/Section";
-import { AIPreviewBanner } from "@/components/sections/AIPreviewBanner";
 import { AIDifference } from "@/components/sections/AIDifference";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 import { products } from "@/lib/products";
@@ -20,23 +20,23 @@ export default function HomePage() {
   return (
     <>
 
-      {/* Hero Section - REWRITTEN FOR PROFESSIONAL SAAS POSITIONING */}
+      {/* Hero Section - v1.3: Infrastructure Vision with Honest Timelines */}
       <Hero
         subtitle="Privacy Protection for the Modern Internet"
         title={
           <>
-            Complete Privacy Toolkit.
+            Growing Privacy Ecosystem.
             <br />
-            AI-Enhanced Protection.
+            AI-Enhancement Coming 2026.
           </>
         }
         description={
           <>
-            8 powerful privacy tools protecting everything from your browsing to your passwords.
-            4 tools live today, 4 more launching through 2026.
-            Start with generous{" "}
-            <span className="text-gecko-green font-semibold">free tiers</span>
-            , upgrade when ready.
+            A growing ecosystem of privacy tools built on the{" "}
+            <span className="text-gecko-green font-semibold">GeckoCore Protocol</span> —{" "}
+            <strong>4 products live today, 4 more launching through 2026</strong>, with
+            continuous innovation as new privacy threats emerge. Start with generous{" "}
+            <span className="text-gecko-green font-semibold">free tiers</span>, upgrade when ready.
           </>
         }
       >
@@ -44,52 +44,83 @@ export default function HomePage() {
           <Button href="/products" variant="primary" size="lg">
             Explore Privacy Tools
           </Button>
-          <Button href="/waitlist" variant="outline" size="lg">
+          <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="outline" size="lg">
             Join Early Access
           </Button>
         </div>
       </Hero>
 
+      {/* GeckoCore Protocol Teaser */}
+      <Section className="bg-gradient-to-br from-emerald-50 via-blue-50 to-purple-50 relative overflow-hidden pt-24 md:pt-32">
+        {/* Decorative gradient orbs */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gecko-green/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-privacy-blue/5 rounded-full blur-3xl" />
+        </div>
 
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <Badge variant="coming" className="mb-4">SDK Launches Q2 2026</Badge>
+          <SectionHeader
+            title="GeckoCore Protocol"
+            subtitle="Privacy Infrastructure Any App Can Use"
+          />
 
+          {/* Key Value Props - Scannable */}
+          <div className="grid md:grid-cols-3 gap-6 mb-10 text-left">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+              <div className="text-4xl mb-3">🛡️</div>
+              <h3 className="font-bold text-lg text-gray-900 mb-2">5 Privacy Feeds</h3>
+              <p className="text-sm text-gray-600">
+                PrivacyFeed, ThreatFeed, MetaProof, AccessProof, ReputationFeed
+              </p>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+              <div className="text-4xl mb-3">⛓️</div>
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Built on Solana</h3>
+              <p className="text-sm text-gray-600">
+                Fast, low-cost, decentralized proof registry
+              </p>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
+              <div className="text-4xl mb-3">🔓</div>
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Open Protocol</h3>
+              <p className="text-sm text-gray-600">
+                DeFi, wallets, dApps can integrate via SDK
+              </p>
+            </div>
+          </div>
 
-
-
-
-
-
-
-
-
-
-
-      {/* AI Preview Banner */}
-      <AIPreviewBanner />
-
-      {/* Early Adopter Discount Banner */}
-      <Section className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white py-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <p className="text-lg md:text-xl font-semibold mb-4">
-            🎉 Early Adopter Special: Lock in 20% off for life on all upcoming privacy tools
+          {/* Phase Explanation */}
+          <p className="text-base text-gray-700 mb-8 max-w-2xl mx-auto">
+            <strong className="text-gecko-green">Phase 1 (2025-2026):</strong> We build 8 products as proof-of-concept.
+            <br />
+            <strong className="text-privacy-blue">Phase 2+ (2026+):</strong> Any developer can build privacy features on GeckoCore.
           </p>
-          <Button href="/roadmap" variant="outline" className="bg-white text-gecko-green hover:bg-gray-100 border-white">
-            View Roadmap & Join Waitlist →
-          </Button>
-        </motion.div>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/whitepaper" variant="primary" size="lg">
+              Read Whitepaper
+            </Button>
+            <Button href="/geckocore" variant="outline" size="lg">
+              Explore GeckoCore
+            </Button>
+          </div>
+        </div>
       </Section>
 
+
+
+
+
+
+
       {/* Product Showcase */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-b from-white to-gray-50">
         <SectionHeader
-          subtitle="Our Ecosystem"
-          title="Complete Privacy Toolkit"
-          description="8 powerful tools to protect your privacy across all aspects of your digital life. 4 available now, 4 in active development."
+          subtitle="Phase 1: Our Commitment"
+          title="The Privacy Gecko Ecosystem"
+          description="8 products by end of 2026. 4 live now, 4 launching through 2026. Each product built on the GeckoCore Protocol — infrastructure designed to evolve as privacy threats change."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
@@ -118,7 +149,7 @@ export default function HomePage() {
         <SectionHeader
           subtitle="Why Choose Us"
           title="We Practice What We Preach"
-          description="Building privacy tools the right way: AI-enhanced. Open source. No tracking. No data selling."
+          description="Building privacy tools the right way: AI-enhanced. Open source. Privacy-friendly analytics only. No invasive tracking. No data selling."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* FIRST ROW: Most Important Cards */}
@@ -138,7 +169,7 @@ export default function HomePage() {
                 </div>
                 <CardTitle>Privacy-First</CardTitle>
                 <CardDescription>
-                  We don't track, sell, or monetize your data. Ever. That's our promise. Our AI learns without seeing your personal information.
+                  We don't use invasive tracking, sell data, or monetize your information. We use privacy-friendly Plausible Analytics (no cookies, no personal data collection). That's our promise. Our AI will learn without seeing your personal information.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -203,10 +234,10 @@ export default function HomePage() {
                 </div>
                 <CardTitle className="flex items-center gap-2">
                   AI-Enhanced
-                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-normal">Q1 2026</span>
+                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-normal">Q2 2026</span>
                 </CardTitle>
                 <CardDescription>
-                  Privacy-first AI that learns and adapts WITHOUT compromising your data. Token launch Q4 2025, AI beta Q4 2025, public launch Q1 2026. Local processing, federated learning, open-source models.
+                  Privacy-first AI that learns and adapts WITHOUT compromising your data. Token launching November 2025, AI beta Q1 2026 (1,000 users), public launch Q2 2026. Local processing, federated learning, open-source models.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -227,7 +258,7 @@ export default function HomePage() {
                 </div>
                 <CardTitle>Always Improving</CardTitle>
                 <CardDescription>
-                  Static blocklists become outdated. Our AI evolves with the threat landscape. Continuous protection that gets smarter every day.
+                  Static blocklists become outdated. When AI launches (Q2 2026), it will evolve with the threat landscape, learning from new threats automatically. Protection that gets smarter every day.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -257,7 +288,7 @@ export default function HomePage() {
       </Section>
 
       {/* How It Works */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-br from-gray-50 to-white">
         <SectionHeader
           subtitle="Getting Started"
           title="How It Works"
@@ -361,7 +392,7 @@ export default function HomePage() {
       </Section>
 
       {/* Social Proof Section */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-b from-white via-emerald-50/20 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -389,8 +420,8 @@ export default function HomePage() {
                 <Users className="w-8 h-8 text-gecko-green" />
               </div>
               <div className="text-4xl font-bold text-gecko-green mb-2">500+</div>
-              <p className="text-gray-600">Beta Testers</p>
-              <p className="text-sm text-gray-500 mt-1">Helping shape our tools</p>
+              <p className="text-gray-600">Active Beta Testers</p>
+              <p className="text-sm text-gray-500 mt-1">Testing products daily (as of Jan 2025)</p>
             </motion.div>
 
             <motion.div
@@ -469,10 +500,10 @@ export default function HomePage() {
               Powered by $PRICKO (Optional)
             </h2>
             <p className="text-lg mb-2 max-w-2xl mx-auto">
-              Launching Q4 2025: The token that funds AI-enhanced privacy for everyone.
+              Launching November 2025: The token that funds AI-enhanced privacy for everyone.
             </p>
             <p className="text-sm opacity-90 max-w-2xl mx-auto">
-              All tools work fully without any token requirement. AI public launch Q1 2026.
+              All tools work fully without any token requirement. AI public launch Q2 2026.
             </p>
           </motion.div>
 
@@ -629,7 +660,7 @@ export default function HomePage() {
       </Section>
 
       {/* FAQ Section */}
-      <Section className="bg-neutral-100">
+      <Section className="bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -813,7 +844,7 @@ export default function HomePage() {
                     <div>
                       <CardTitle className="text-lg mb-2">When exactly does AI launch?</CardTitle>
                       <CardDescription>
-                        <strong>$PRICKO token launches Q4 2025.</strong> AI beta testing opens <strong>Q4 2025</strong> (1,000 users). <strong>AI public launch Q1 2026</strong> (GeckoAdvisor and GeckoGuard). Other products follow in Q2-Q4 2026.
+                        <strong>$PRICKO token launches November 2025.</strong> AI beta opens <strong>Q1 2026</strong> (1,000 users). <strong>AI public launch Q2 2026</strong> (GeckoAdvisor and GeckoGuard). Other products follow in Q2-Q4 2026.
                       </CardDescription>
                     </div>
                   </div>
@@ -879,7 +910,7 @@ export default function HomePage() {
                     <div>
                       <CardTitle className="text-lg mb-2">Can I join the AI beta testing?</CardTitle>
                       <CardDescription>
-                        Yes! AI beta opens <strong>Q4 2025</strong> (limited to 1,000 users) before public launch in <strong>Q1 2026</strong>. Active users of 2+ Privacy Gecko products can apply. Beta testers get early access, earn $PRICKO token rewards, and influence feature development.
+                        Yes! AI beta opens <strong>Q1 2026</strong> (limited to 1,000 users) before public launch in <strong>Q2 2026</strong>. Active users of 2+ Privacy Gecko products can apply. Beta testers get early access, earn $PRICKO token rewards, and influence feature development.
                       </CardDescription>
                     </div>
                   </div>
@@ -931,18 +962,18 @@ export default function HomePage() {
               Be Part of the AI-Enhanced Privacy Revolution
             </h2>
             <p className="text-xl mb-8 opacity-95">
-              Join <strong className="underline decoration-2 underline-offset-4">10,000+ early adopters</strong> preparing for the future of privacy protection
+              Join <strong className="underline decoration-2 underline-offset-4">10,000+ community members</strong> (email subscribers, beta testers, and waitlist) preparing for the future of privacy protection
             </p>
 
             {/* Benefits Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-10">
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />
-                <span className="font-medium">Early access to AI beta (Q4 2025)</span>
+                <span className="font-medium">Early access to AI beta (Q1 2026)</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />
-                <span className="font-medium">20% lifetime discount on all tools</span>
+                <span className="font-medium">Priority support and onboarding</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
                 <CheckCircle className="w-6 h-6 flex-shrink-0" />
@@ -957,7 +988,7 @@ export default function HomePage() {
             {/* Primary CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button
-                href="/waitlist"
+                href="/contact?subject=Early%20Adopter%20Waitlist"
                 variant="outline"
                 size="lg"
                 className="bg-white text-purple-700 hover:bg-gray-100 border-white font-bold text-lg px-8 py-4"
@@ -987,9 +1018,7 @@ export default function HomePage() {
                 <a href="/roadmap" className="hover:underline opacity-90 hover:opacity-100 transition-opacity">
                   → View AI Development Roadmap
                 </a>
-                <a href="https://discord.gg/privacygecko" className="hover:underline opacity-90 hover:opacity-100 transition-opacity">
-                  → Join Our Community
-                </a>
+
               </div>
             </div>
           </motion.div>

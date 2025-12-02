@@ -3,8 +3,10 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://privacygecko.com'
 
-  // Blog post slugs (all 8 posts)
+  // Blog post slugs (all 10 posts)
   const blogPosts = [
+    'geckocore-protocol-whitepaper-v1-launch',
+    'introducing-geckocore-protocol',
     'why-privacy-tools-matter-2025',
     'getting-started-geckoadvisor',
     'introducing-privacy-gecko',
@@ -83,7 +85,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/ai-roadmap`,
+      url: `${baseUrl}/geckocore`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/whitepaper`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/token`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -137,7 +151,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/token`,
+      url: `${baseUrl}/resources/docs`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/resources/support`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/security`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/ai-roadmap`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
@@ -151,27 +183,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/legal/privacy`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
     {
       url: `${baseUrl}/legal/terms`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
     {
       url: `${baseUrl}/legal/cookies`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
     // Blog posts (higher priority for new SEO-optimized posts)
     ...blogPosts.map((slug) => ({
       url: `${baseUrl}/blog/${slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: slug.includes('complete-guide') || slug.includes('privacy-memecoins') ? 0.75 : 0.6,
+      priority: slug.includes('whitepaper') || slug.includes('complete-guide') || slug.includes('privacy-memecoins') ? 0.75 : 0.6,
     })),
   ]
 }

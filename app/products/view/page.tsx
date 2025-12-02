@@ -82,7 +82,7 @@ export default function GeckoViewPage() {
     },
     {
       question: "What's the difference between free and Pro tiers?",
-      answer: "Free tier includes 10 summaries per day using GPT-3.5, local storage in your browser, and basic features. Pro tier ($9.99/mo OR free with 100K+ $PRICKO tokens) unlocks unlimited summaries, GPT-4 access for higher-quality insights, IPFS sync for decentralized storage, PDF exports, priority support, and cross-device sync via encrypted cloud storage. Both tiers include end-to-end encryption and full privacy protection.",
+      answer: "Free tier includes limited summaries per day using GPT-3.5, local storage in your browser, and basic features. Pro tier unlocks unlimited summaries, GPT-4 access for higher-quality insights, IPFS sync for decentralized storage, PDF exports, priority support, and cross-device sync via encrypted cloud storage. Both tiers include end-to-end encryption and full privacy protection.",
     },
     {
       question: "Why use Gecko View instead of regular bookmarks?",
@@ -110,7 +110,7 @@ export default function GeckoViewPage() {
         description="Turn hours of reading into minutes with privacy-preserving AI summaries. This is an AI-native product where AI powers core functionality while maintaining end-to-end encryption. Save to your encrypted vault and access across all devices."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button href="#pricing" variant="primary" size="lg">
+          <Button href="#plans" variant="primary" size="lg">
             Coming Soon
           </Button>
           <Badge variant="coming">Coming Q4 2025</Badge>
@@ -331,76 +331,62 @@ export default function GeckoViewPage() {
         </div>
       </Section>
 
-      {/* Pricing */}
-      <Section id="pricing">
+      {/* Plans & Waitlist */}
+      <Section id="plans">
         <SectionHeader
-          subtitle="Pricing"
-          title="Choose Your Plan"
-          description="Start free, upgrade when you need unlimited summaries"
+          subtitle="Plans"
+          title="Join the Waitlist"
+          description="Be among the first to access GeckoView when it launches."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="h-full">
-              <CardHeader>
-                <CardTitle className="text-2xl mb-2">Free</CardTitle>
-                <div className="text-3xl font-bold mb-4">$0<span className="text-lg text-gray-500 font-normal">/month</span></div>
-                <CardDescription className="mb-6">{product.pricing.free.limit}</CardDescription>
-                <Button href="#install" variant="outline" className="w-full mb-6">
-                  Get Started Free
+            <Card className="border-gecko-green border-2">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl mb-4">Get Early Access</CardTitle>
+                <CardDescription className="text-base mb-6">
+                  Gecko View launches Q4 2025 with both free and Pro tiers. Join the waitlist to:
+                </CardDescription>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-6">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm">Get early access to the beta</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm">Get early access to beta testing</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm">Lock in early adopter benefits</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-gecko-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm">Access to exclusive founder updates</span>
+                  </div>
+                </div>
+                <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="primary" size="lg" className="w-full md:w-auto">
+                  Join Waitlist (Free)
                 </Button>
-                <div className="space-y-3">
-                  {product.pricing.free.features.map((feature, index) => (
-                    <div key={index} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-gecko-green mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardHeader>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <Card className="h-full border-gecko-green border-2">
-              <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <CardTitle className="text-2xl">Pro</CardTitle>
-                  <Badge variant="live">Popular</Badge>
-                </div>
-                <div className="text-3xl font-bold mb-4">
-                  {product.pricing.pro.price.split('/')[0]}
-                  <span className="text-lg text-gray-500 font-normal">/month</span>
-                </div>
-                <CardDescription className="mb-6">Unlimited summaries with GPT-4</CardDescription>
-                <Button href="#checkout" variant="primary" className="w-full mb-6">
-                  Start Pro Trial
-                </Button>
-                <div className="space-y-3">
-                  {product.pricing.pro.features.map((feature, index) => (
-                    <div key={index} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-gecko-green mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+                <p className="text-xs text-gray-500 mt-4">
+                  No credit card required. Just your email for launch notifications.
+                </p>
               </CardHeader>
             </Card>
           </motion.div>
         </div>
 
-        <div className="text-center mt-8">
-          <p className="text-gray-600">
-            💎 <strong>Token Holders:</strong> Hold 100K+ $PRICKO tokens to get Pro features free forever. Token integration is 100% optional.
+        <div className="text-center mt-8 max-w-2xl mx-auto">
+          <p className="text-sm text-gray-600">
+            <strong>What we know:</strong> Gecko View will have a generous free tier (AI-powered summaries with monthly limits) 
+            and a Pro tier (unlimited AI features, GPT-4 access, cross-device sync).
+          </p>
+          <p className="text-sm text-gray-600 mt-3">
+            💎 <strong>Token Holders:</strong> $PRICKO holders will receive Pro tier benefits. Token integration is 100% optional.
           </p>
         </div>
       </Section>
@@ -441,7 +427,7 @@ export default function GeckoViewPage() {
             Gecko View launches Q4 2025. Be among the first to experience AI-powered summarization with true privacy protection.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="#pricing" variant="primary" size="lg">
+            <Button href="#plans" variant="primary" size="lg">
               Coming Soon
             </Button>
             <Button href="/products" variant="ghost" size="lg">

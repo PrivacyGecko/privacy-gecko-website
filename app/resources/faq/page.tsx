@@ -22,7 +22,7 @@ export default function FAQPage() {
         },
         {
           q: "Is Privacy Gecko open source?",
-          a: "We're committed to open source transparency. Core privacy features are currently in security audit before public release (Q4 2025). Our website is already open source. Sign up for our newsletter to be notified when product repositories go public.",
+          a: "We're committed to open source transparency. Core privacy features are currently in security audit before public release (Q4 2025 - Q1 2026). Our website is already open source. Sign up for our newsletter to be notified when product repositories go public.",
         },
       ],
     },
@@ -101,7 +101,7 @@ export default function FAQPage() {
         },
         {
           q: "What's the $PRICKO token integration?",
-          a: "Launching Q4 2025, you'll be able to stake $PRICKO tokens to get discounts on Pro plans and early access to new features. Important: Using $PRICKO is 100% optional—all tools work fully without any token requirement. Token transactions are on Solana (public blockchain), but we don't link wallet addresses to your Privacy Gecko account.",
+          a: "Launching November 2025, you'll be able to stake $PRICKO tokens to get discounts on Pro plans and early access to new features. Important: Using $PRICKO is 100% optional—all tools work fully without any token requirement. Token transactions are on Solana (public blockchain), but we don't link wallet addresses to your Privacy Gecko account.",
         },
         {
           q: "Why integrate a token? Doesn't that conflict with privacy?",
@@ -123,7 +123,7 @@ export default function FAQPage() {
         description="Find answers to common questions about Privacy Gecko"
       />
 
-      <Section>
+      <Section className="bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="max-w-4xl mx-auto space-y-12">
           {faqs.map((category, catIndex) => (
             <div key={category.category}>

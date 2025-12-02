@@ -6,17 +6,47 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
+type BadgeStyle = "coming-soon" | "launch-date";
+
+interface NavLink {
+  href: string;
+  label: string;
+  badge?: string;
+  badgeStyle?: BadgeStyle;
+}
+
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { href: "/products", label: "Products" },
-    { href: "/ai-roadmap", label: "AI Roadmap" },
+    { 
+      href: "/geckocore", 
+      label: "GeckoCore", 
+      badge: "Coming 2026",
+      badgeStyle: "coming-soon"
+    },
+    { 
+      href: "/token", 
+      label: "Token", 
+      badge: "Nov 2025",
+      badgeStyle: "launch-date"
+    },
     { href: "/roadmap", label: "Roadmap" },
     { href: "/about", label: "About" },
-    { href: "/blog", label: "Blog" },
     { href: "/resources", label: "Resources" },
+    { href: "/blog", label: "Blog" },
   ];
+
+  const getBadgeStyles = (style?: BadgeStyle) => {
+    switch (style) {
+      case "launch-date":
+        return "px-2 py-0.5 bg-amber-500 text-white text-xs rounded-full font-semibold";
+      case "coming-soon":
+      default:
+        return "px-2 py-0.5 bg-blue-900 text-white text-xs rounded-full";
+    }
+  };
 
   return (
     <>
@@ -49,9 +79,14 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-neutral-900 hover:text-gecko-green transition-colors font-medium"
+                className="text-neutral-900 hover:text-gecko-green transition-colors font-medium inline-flex flex-col items-center gap-1"
               >
-                {link.label}
+                <span>{link.label}</span>
+                {link.badge && (
+                  <span className={getBadgeStyles(link.badgeStyle)}>
+                    {link.badge}
+                  </span>
+                )}
               </Link>
             ))}
           </div>
@@ -59,7 +94,7 @@ export function Navigation() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button href="https://geckoadvisor.com" variant="primary">
-              Join Beta (Free)
+              Get Started
             </Button>
           </div>
 
@@ -68,6 +103,8 @@ export function Navigation() {
             className="md:hidden p-2 rounded-lg hover:bg-gray-100"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -76,21 +113,26 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
+        <div id="mobile-menu" className="md:hidden border-t border-gray-200 bg-white">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-2 text-neutral-900 hover:text-gecko-green transition-colors font-medium"
+                className="flex flex-col items-start gap-1 py-2 text-neutral-900 hover:text-gecko-green transition-colors font-medium"
                 onClick={() => setIsOpen(false)}
               >
-                {link.label}
+                <span>{link.label}</span>
+                {link.badge && (
+                  <span className={getBadgeStyles(link.badgeStyle)}>
+                    {link.badge}
+                  </span>
+                )}
               </Link>
             ))}
             <div className="pt-2">
               <Button href="https://geckoadvisor.com" variant="primary" className="w-full">
-                Join Beta (Free)
+                Get Started
               </Button>
             </div>
           </div>

@@ -74,7 +74,7 @@ export function JoinAIRevolution() {
                   <Rocket className="w-8 h-8 text-gecko-green" />
                 </div>
                 <div>
-                  <CardTitle className="text-2xl">Join the AI Beta (Q3 2025)</CardTitle>
+                  <CardTitle className="text-2xl">Join the AI Beta (Q1 2026)</CardTitle>
                   <CardDescription className="text-base mt-1">
                     Get early access to AI features before public release
                   </CardDescription>
@@ -292,7 +292,7 @@ export function JoinAIRevolution() {
                 how we build AI that respects privacy. Join us.
               </p>
               <Link
-                href="/ai-roadmap"
+                href="/roadmap#ai-development"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-gecko-green font-bold rounded-lg hover:bg-gray-100 transition-colors text-lg"
               >
                 View Full AI Roadmap

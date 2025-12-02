@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/images/og-home.png",
         width: 1200,
         height: 630,
         alt: "Privacy Gecko - 8 AI-Enhanced Privacy Tools. Zero Data Collection.",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     creator: "@0xAnonA",
     title: "Privacy Gecko - 8 AI-Enhanced Privacy Tools | Free Tier",
     description: "8 AI-enhanced privacy tools with local processing. Password manager, VPN, encrypted file sharing & more. Free tier available. Zero data collection.",
-    images: ["/twitter-image"],
+    images: ["/images/og-home.png"],
   },
   icons: {
     icon: [

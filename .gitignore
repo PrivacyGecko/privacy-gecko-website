@@ -12,6 +12,7 @@
 /test-results/
 /assets/logs/
 .playwright-mcp/
+project-docs/
 
 # testing
 /coverage

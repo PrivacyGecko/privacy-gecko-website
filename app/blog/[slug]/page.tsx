@@ -7,12 +7,559 @@ import { BlogSchema } from "@/components/seo/BlogSchema";
 
 // Blog post data
 const blogPosts = {
+  "geckocore-protocol-whitepaper-v1-launch": {
+    title: "GeckoCore Protocol Whitepaper v1.0: The Privacy Proof Layer for Solana",
+    author: "@0xAnonA",
+    date: "November 15, 2025",
+    category: "Product Updates",
+    excerpt: "The GeckoCore Protocol Whitepaper v1.0 is officially live. Discover the Privacy Proof Layer for Solana with zero-knowledge proofs, 5 Privacy Feeds, and token economics.",
+    ogImage: "/images/og-whitepaper.png",
+    content: `
+      <p class="lead">Today, we're publishing the GeckoCore Protocol Whitepaper v1.0—the complete technical blueprint for the Privacy Proof Layer on Solana. With four privacy tools already live and four more launching Q1 2026, we're ready to show you the infrastructure that unifies them all. This isn't vaporware. This isn't "coming soon." This is the technical foundation for a privacy-preserving ecosystem that's already delivering utility. <a href="/whitepaper">Read the full whitepaper now</a>.</p>
+
+      <h2>Why This Whitepaper Matters</h2>
+
+      <p>Most crypto whitepapers are promises written before a single line of code ships. The GeckoCore Protocol Whitepaper is different. It's documentation of real infrastructure supporting real products used by real people.</p>
+
+      <p>By November 2025, Privacy Gecko has launched 4 privacy tools, with 4 more launching Q1 2026:</p>
+
+      <p><strong>Live Now:</strong></p>
+      <ul>
+        <li><strong><a href="/products/advisor">GeckoAdvisor</a></strong>: AI-powered privacy policy analysis</li>
+        <li><strong><a href="/products/share">GeckoShare</a></strong>: End-to-end encrypted file sharing</li>
+        <li><strong><a href="/products/guard">GeckoGuard</a></strong>: Advanced tracker blocking</li>
+        <li><strong><a href="/products/lock">GeckoLock</a></strong>: Zero-knowledge password management</li>
+      </ul>
+
+      <p><strong>Launching Q1 2026:</strong></p>
+      <ul>
+        <li><strong><a href="/products/view">GeckoView</a></strong>: Privacy-first bookmark manager</li>
+        <li><strong><a href="/products/shell">GeckoShell</a></strong>: Ephemeral browsing protection</li>
+        <li><strong><a href="/products/vpn">Gecko VPN</a></strong>: No-logs VPN infrastructure</li>
+        <li><strong><a href="/products/watch">Gecko Watch</a></strong>: Data breach monitoring</li>
+      </ul>
+
+      <p>The whitepaper explains how GeckoCore Protocol connects these standalone tools into one privacy-preserving ecosystem. It's the missing infrastructure layer that makes "privacy by default" actually work at scale.</p>
+
+      <h2>What's Inside the Whitepaper</h2>
+
+      <p>The GeckoCore Protocol Whitepaper v1.0 spans 11 comprehensive sections covering technical architecture, privacy design, economics, and governance. Here's what you'll discover:</p>
+
+      <h3>The Privacy Proof Layer Architecture</h3>
+
+      <p>GeckoCore introduces the concept of a "Privacy Proof Layer"—infrastructure that enables applications to prove privacy guarantees without revealing underlying data. Think of it like TLS/SSL for web encryption, but for privacy verification on Solana.</p>
+
+      <p>The whitepaper details:</p>
+      <ul>
+        <li><strong>Zero-knowledge proof implementation</strong> using ZK-SNARKs for privacy verification</li>
+        <li><strong>Universal wallet authentication</strong> eliminating passwords and email requirements</li>
+        <li><strong>Client-side encryption architecture</strong> ensuring even Privacy Gecko can't access your data</li>
+        <li><strong>On-chain verification mechanisms</strong> providing transparent proof of privacy claims</li>
+      </ul>
+
+      <p>This isn't theoretical cryptography. The whitepaper includes specific implementation patterns, gas optimization strategies, and security trade-offs for builders.</p>
+
+      <h3>The Five Privacy Feeds: Modular Privacy Infrastructure</h3>
+
+      <p>GeckoCore organizes privacy functionality into five modular feeds that applications can integrate independently:</p>
+
+      <ol>
+        <li><strong>Identity Feed</strong>: Wallet-based authentication with zero personal data collection</li>
+        <li><strong>Storage Feed</strong>: Encrypted data storage with client-side key management</li>
+        <li><strong>Communication Feed</strong>: End-to-end encrypted messaging and file sharing</li>
+        <li><strong>Computation Feed</strong>: Privacy-preserving analytics and AI processing</li>
+        <li><strong>Verification Feed</strong>: On-chain proof of privacy guarantees</li>
+      </ol>
+
+      <p>Each feed operates independently but integrates seamlessly through GeckoCore's unified API. The whitepaper provides technical specifications, API documentation references, and integration examples for developers.</p>
+
+      <h3>Token Economics: Real Utility, Not Speculation</h3>
+
+      <p>The <a href="/token">$PRICKO token</a> powers the GeckoCore ecosystem through a utility-first economic model. The whitepaper details:</p>
+
+      <ul>
+        <li><strong>Token-gated feature access</strong>: How staking unlocks premium capabilities across all eight products</li>
+        <li><strong>Sustainable funding model</strong>: Revenue streams supporting open-source development</li>
+        <li><strong>Governance participation</strong>: Community voting rights for protocol upgrades</li>
+        <li><strong>Staking mechanics</strong>: On-chain verification, reward distribution, and unstaking periods</li>
+        <li><strong>Token supply and distribution</strong>: Transparent allocation across development, community, and ecosystem growth</li>
+      </ul>
+
+      <p>Unlike most token whitepapers filled with vague "utility" promises, GeckoCore's economics section includes live product integrations, usage metrics, and verifiable on-chain data. Every claim is provable. Every feature is shippable (or already shipped).</p>
+
+      <h3>Security Model: Privacy You Can Verify</h3>
+
+      <p>Privacy requires trust. GeckoCore's security model minimizes what you need to trust through:</p>
+
+      <ul>
+        <li><strong>Open-source everything</strong>: All code publicly auditable on GitHub</li>
+        <li><strong>On-chain verification</strong>: Privacy guarantees validated through smart contracts</li>
+        <li><strong>Third-party audits</strong>: Independent security reviews from reputable firms</li>
+        <li><strong>Bug bounty program</strong>: Financial incentives for responsible disclosure</li>
+        <li><strong>Transparent incident response</strong>: Public documentation of any security events</li>
+      </ul>
+
+      <p>The whitepaper includes threat modeling, attack surface analysis, and security assumptions for every component. Builders can verify security claims. Users can audit privacy guarantees. Transparency isn't optional—it's architectural.</p>
+
+      <h3>Roadmap: From Tools to Protocol</h3>
+
+      <p>GeckoCore's development follows a unique "products-first, protocol-second" approach:</p>
+
+      <ul>
+        <li><strong>Phase 1 (2025-Q1 2026)</strong>: Ship all eight standalone privacy tools (4 live, 4 launching Q1 2026)</li>
+        <li><strong>Phase 2 (Q2-Q3 2026)</strong>: Deploy GeckoCore Protocol infrastructure and unified authentication</li>
+        <li><strong>Phase 3 (Q4 2026)</strong>: Launch Privacy Feeds, developer SDK, and third-party integrations</li>
+        <li><strong>Phase 4 (2027+)</strong>: Open governance transition and protocol decentralization</li>
+      </ul>
+
+      <p>This roadmap prioritizes real utility over hype. We're building the products first, proving they work, then connecting them through GeckoCore. The whitepaper provides quarterly milestones, technical deliverables, and success metrics for each phase.</p>
+
+      <h2>Who Should Read This Whitepaper</h2>
+
+      <h3>Developers Building Privacy-First dApps</h3>
+
+      <p>If you're building on Solana and need privacy infrastructure, GeckoCore provides ready-to-integrate feeds. The whitepaper includes:</p>
+      <ul>
+        <li>Technical architecture diagrams for each Privacy Feed</li>
+        <li>API integration examples and code snippets</li>
+        <li>Gas optimization strategies for on-chain verification</li>
+        <li>Client-side encryption implementation patterns</li>
+      </ul>
+
+      <p>Developer SDK launches Q2 2026. <a href="/contact?subject=Developer%20SDK%20Waitlist">Join the waitlist</a> for early access.</p>
+
+      <h3>Crypto Traders Protecting Wallet Privacy</h3>
+
+      <p>GeckoCore's Identity Feed enables wallet-based authentication across privacy tools without exposing transaction history. The whitepaper explains:</p>
+      <ul>
+        <li>How zero-knowledge proofs protect wallet activities</li>
+        <li>Privacy-preserving token-gating for feature access</li>
+        <li>Protection against blockchain surveillance and front-running</li>
+        <li>Wallet security best practices for GeckoCore integration</li>
+      </ul>
+
+      <p>Your transactions stay private. Your data stays yours. The whitepaper proves how.</p>
+
+      <h3>Privacy Advocates Demanding Transparency</h3>
+
+      <p>Every "privacy" claim in the whitepaper is backed by technical specifications, open-source code references, or on-chain verification methods. Read how GeckoCore delivers:</p>
+      <ul>
+        <li>True zero-knowledge architecture (not just marketing buzzwords)</li>
+        <li>Data minimization at the protocol level</li>
+        <li>Transparent audit trails for all privacy guarantees</li>
+        <li>Open-source code for community verification</li>
+      </ul>
+
+      <p>Privacy isn't a promise. It's a provable technical property.</p>
+
+      <h3>Investors Evaluating Real Utility</h3>
+
+      <p>Most crypto projects have whitepapers full of future promises. GeckoCore's whitepaper documents present reality. Evaluate:</p>
+      <ul>
+        <li>Four products live with four more launching Q1 2026</li>
+        <li>Token economics backed by live product integrations</li>
+        <li>Sustainable funding model supporting long-term development</li>
+        <li>Transparent roadmap with verifiable milestones</li>
+      </ul>
+
+      <p>Due diligence requires facts. The whitepaper provides them.</p>
+
+      <h2>What Makes GeckoCore Different</h2>
+
+      <p>The crypto space is full of privacy projects making big claims. Here's what makes GeckoCore Protocol different:</p>
+
+      <p><strong>We Ship First, Market Second</strong><br>
+      Four products already live. Four more launching Q1 2026. GeckoCore Protocol follows in Q2 2026. We prove products work before writing whitepapers about them.</p>
+
+      <p><strong>Open-Source Everything</strong><br>
+      Every line of code is publicly auditable on GitHub. Every privacy claim is verifiable. Every security assumption is documented. Transparency isn't optional—it's foundational.</p>
+
+      <p><strong>Real Utility, Real Economics</strong><br>
+      $PRICKO unlocks features across eight real products. Token economics are based on actual usage data, not speculative projections. Revenue supports development, not just founder pockets.</p>
+
+      <p><strong>Privacy You Can Prove</strong><br>
+      Zero-knowledge proofs, on-chain verification, and client-side encryption aren't buzzwords—they're architectural requirements. The whitepaper shows exactly how privacy works at the technical level.</p>
+
+      <p><strong>Community-First Governance</strong><br>
+      GeckoCore transitions to community governance after protocol maturity (2027+). Token holders vote on upgrades. Developers contribute to open-source repos. Users verify privacy claims. Decentralization through earned trust, not day-one chaos.</p>
+
+      <h2>Read the Whitepaper Now</h2>
+
+      <p>The GeckoCore Protocol Whitepaper v1.0 is available now at <a href="/whitepaper">privacygecko.com/whitepaper</a>. Whether you're evaluating Privacy Gecko for the first time or you've been following since day one, this document provides the complete technical foundation.</p>
+
+      <p><strong>Inside the 50+ page whitepaper:</strong></p>
+      <ul>
+        <li>Complete Privacy Proof Layer technical architecture</li>
+        <li>Five Privacy Feeds specifications and integration guides</li>
+        <li>Zero-knowledge proof implementation details</li>
+        <li>Token economics with live product utility</li>
+        <li>Security model and audit transparency</li>
+        <li>Full roadmap from 2025 through 2027</li>
+        <li>Team backgrounds and governance transition plan</li>
+      </ul>
+
+      <div style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(to right, #f0fdf4, #eff6ff); border-left: 4px solid #10b981; border-radius: 0.5rem;">
+        <h3 style="margin-top: 0; color: #1f2937;">Ready to Dive In?</h3>
+        <p style="margin-bottom: 1rem; color: #4b5563;">Access the complete GeckoCore Protocol Whitepaper v1.0 and discover the Privacy Proof Layer for Solana.</p>
+        <a href="/whitepaper" style="display: inline-block; padding: 0.75rem 1.5rem; background: #10b981; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">Read the Whitepaper →</a>
+      </div>
+
+      <h2>Join the Privacy Gecko Community</h2>
+
+      <p>The GeckoCore Protocol Whitepaper represents months of technical development, community feedback, and real-world product testing. But this is just the beginning.</p>
+
+      <p><strong>Get Involved:</strong></p>
+      <ul>
+        <li><strong><a href="/contact?subject=Developer%20SDK%20Waitlist">Join Developer Waitlist</a></strong>: Early SDK access for builders (Q2 2026)</li>
+        <li><strong><a href="/token">Learn About $PRICKO</a></strong>: Explore token utility and ecosystem access</li>
+        <li><strong><a href="/products">Try Privacy Tools</a></strong>: Seven products live now, two launching Q4</li>
+        <li><strong><a href="/contact">Contact Us</a></strong>: Questions, partnerships, or feedback welcome</li>
+      </ul>
+
+      <p>Privacy Gecko is building the privacy infrastructure Solana deserves. The whitepaper shows you exactly how. Now it's time to build together.</p>
+
+      <p><strong>Memes With a Mission. Privacy With Proof.</strong></p>
+
+      <hr>
+
+      <p><em>The GeckoCore Protocol Whitepaper v1.0 is published for informational and educational purposes. This document describes technical architecture and planned development but does not constitute financial advice or investment recommendations. Always conduct your own research. Read the complete whitepaper at <a href="/whitepaper">privacygecko.com/whitepaper</a>.</em></p>
+    `,
+  },
+  "introducing-geckocore-protocol": {
+    title: "Introducing GeckoCore Protocol: The Hub for Privacy Tools",
+    author: "@0xAnonA",
+    date: "November 14, 2025",
+    category: "Product Updates",
+    excerpt: "GeckoCore Protocol unifies 8 privacy tools with one wallet login powered by $PRICKO. Open-source, zero-knowledge, launching Q4 2026. Learn how it works.",
+    ogImage: "/images/og-geckocore-protocol.png",
+    content: `
+      <p class="lead">In November 2025, Privacy Gecko is launching something that doesn't exist anywhere else: a memecoin with actual, usable privacy products. While most crypto projects promise future utility, we're shipping real tools today. And in Q4 2026, we're launching GeckoCore Protocol—the infrastructure that unifies all eight Privacy Gecko products into one privacy-first ecosystem. This is how "Memes With a Mission" becomes reality.</p>
+
+      <h2>The Privacy Tools Problem: Fragmentation and False Promises</h2>
+
+      <p>If you care about digital privacy in 2025, you're juggling disconnected tools: one VPN, one password manager, one tracker blocker, one encrypted file sharing service, one ad blocker. Each requires a separate account. Each collects its own data. Each charges its own subscription. None of them work together.</p>
+
+      <p>Worse, many "privacy" tools are built by companies that track you themselves. Free VPNs that sell your browsing data. Password managers owned by ad-tech companies. Browser extensions that inject tracking code. The privacy tool ecosystem is broken—fragmented for users and untrustworthy by design.</p>
+
+      <p>Then there's crypto. Thousands of memecoins with no utility beyond speculation. Promises of "coming soon" features that never ship. Communities built on hype instead of value. We're building the opposite: real products first, token second, community always.</p>
+
+      <h2>What is GeckoCore Protocol?</h2>
+
+      <p>GeckoCore Protocol is the privacy-preserving infrastructure layer that unifies all eight Privacy Gecko products under one authentication system, powered by the <a href="/token">$PRICKO token</a>. Instead of managing separate logins across GeckoAdvisor, GeckoShare, GeckoGuard, GeckoLock, GeckoView, GeckoShell, Gecko VPN, and Gecko Watch, GeckoCore lets you authenticate once with your Solana wallet and access everything.</p>
+
+      <p>But GeckoCore is more than just single sign-on. It's the technical foundation that enables:</p>
+
+      <ul>
+        <li><strong>Universal wallet authentication:</strong> One Solana wallet connection across all eight products</li>
+        <li><strong>Token-gated features:</strong> Stake $PRICKO to unlock premium capabilities ecosystem-wide</li>
+        <li><strong>Cross-product functionality:</strong> Products work together without exposing your data</li>
+        <li><strong>Zero-knowledge privacy:</strong> Services communicate through cryptographic proofs, not raw data</li>
+        <li><strong>Transparent infrastructure:</strong> Open-source code, on-chain verification, public audits</li>
+      </ul>
+
+      <p>GeckoCore launches Q4 2026, after all eight products are live and battle-tested. We're building the foundation after proving the products work—not making promises before shipping anything.</p>
+
+      <h2>How GeckoCore Protocol Works: Technical Architecture</h2>
+
+      <p>GeckoCore uses a hybrid architecture that combines blockchain transparency with privacy-first service infrastructure. Here's how it works:</p>
+
+      <h3>1. Universal Wallet Authentication</h3>
+
+      <p>Traditional privacy tools require email addresses, passwords, and personal information to create accounts. GeckoCore flips this model: authenticate with your Solana wallet using cryptographic signatures. No email required. No password databases to breach. No personal information collected.</p>
+
+      <p>When you connect your wallet to GeckoCore:</p>
+      <ol>
+        <li>Your wallet signs a challenge message (proving you control the private key)</li>
+        <li>GeckoCore verifies the signature on-chain (confirming wallet ownership)</li>
+        <li>You receive a session token granting access to all eight products</li>
+        <li>Disconnect your wallet anytime to instantly revoke access across the ecosystem</li>
+      </ol>
+
+      <p>This authentication flow never exposes your private key, doesn't require personal information, and can't be phished (no passwords to steal). It's cryptographically secure and privacy-preserving by design.</p>
+
+      <h3>2. Token-Gated Feature Access</h3>
+
+      <p>The <a href="/token">$PRICKO token</a> powers the Privacy Gecko ecosystem by enabling token-gated features. When you stake $PRICKO tokens in GeckoCore's smart contracts:</p>
+
+      <ul>
+        <li><strong><a href="/products/advisor">GeckoAdvisor</a>:</strong> Unlimited AI-powered privacy policy analysis (free tier: 10/month)</li>
+        <li><strong><a href="/products/share">GeckoShare</a>:</strong> Extended file storage and longer expiration windows</li>
+        <li><strong><a href="/products/guard">GeckoGuard</a>:</strong> Advanced tracker filters and custom blocking rules</li>
+        <li><strong><a href="/products/lock">GeckoLock</a>:</strong> Unlimited device sync and family sharing</li>
+        <li><strong><a href="/products/view">GeckoView</a>:</strong> Unlimited AI summaries for saved bookmarks</li>
+        <li><strong><a href="/products/shell">GeckoShell</a>:</strong> Premium privacy features and tab management</li>
+        <li><strong><a href="/products/vpn">Gecko VPN</a>:</strong> Priority servers and multi-hop connections</li>
+        <li><strong><a href="/products/watch">Gecko Watch</a>:</strong> Continuous monitoring and instant alerts</li>
+      </ul>
+
+      <p>Staking verification happens on-chain through Solana smart contracts. You can verify your access rights publicly, unstake anytime, and retain full control over your tokens. No centralized gatekeeper. No arbitrary feature revocation. Just cryptographic proof of your stake, validated transparently on the blockchain.</p>
+
+      <h3>3. Privacy-Preserving Data Sync</h3>
+
+      <p>GeckoCore enables cross-product features without exposing your data to Privacy Gecko servers. Example: using <a href="/products/lock">GeckoLock</a> to password-protect a file you're sharing via <a href="/products/share">GeckoShare</a>.</p>
+
+      <p>Traditional approach (privacy-violating):</p>
+      <ul>
+        <li>GeckoShare receives the file (we see the contents)</li>
+        <li>GeckoShare requests your GeckoLock password (we see your credentials)</li>
+        <li>GeckoShare encrypts the file server-side (we have the keys)</li>
+      </ul>
+
+      <p>GeckoCore approach (zero-knowledge):</p>
+      <ul>
+        <li>GeckoLock encrypts the file client-side (you control the keys)</li>
+        <li>GeckoShare receives encrypted blob (we can't read it)</li>
+        <li>GeckoCore verifies you own both services (cryptographic proof, no data exposed)</li>
+        <li>Recipient decrypts client-side (end-to-end encryption)</li>
+      </ul>
+
+      <p>This architecture uses zero-knowledge proofs to verify authorization without revealing data. Even Privacy Gecko can't decrypt your files, read your passwords, or access your browsing history. That's privacy by design, not privacy by promise.</p>
+
+      <h3>4. Client-Side Encryption & Local-First Architecture</h3>
+
+      <p>All sensitive data processing happens on your device, not our servers:</p>
+
+      <ul>
+        <li><strong>GeckoAdvisor:</strong> AI policy analysis runs locally using on-device models (no cloud uploads)</li>
+        <li><strong>GeckoShare:</strong> Files encrypted in your browser before upload (we store encrypted blobs)</li>
+        <li><strong>GeckoLock:</strong> Password database encrypted with keys only you control</li>
+        <li><strong>GeckoView:</strong> Bookmark summaries generated on-device (private by default)</li>
+      </ul>
+
+      <p>GeckoCore's infrastructure supports this local-first model by providing authentication and authorization without requiring data transmission. We verify who you are and what you're allowed to do—but we don't need to see what you're actually doing.</p>
+
+      <p>Read more about our approach: <a href="/blog/local-ai-privacy-protection">How Local AI Protects Your Privacy (vs Cloud AI)</a></p>
+
+      <h3>5. Open-Source Transparency</h3>
+
+      <p>GeckoCore's authentication libraries, zero-knowledge proof implementations, and integration APIs will be open-sourced under permissive licenses. This means:</p>
+
+      <ul>
+        <li><strong>Security researchers</strong> can audit our cryptography and report vulnerabilities</li>
+        <li><strong>Developers</strong> can verify our privacy claims by reading the actual code</li>
+        <li><strong>Privacy advocates</strong> can confirm we're not collecting hidden telemetry</li>
+        <li><strong>Community contributors</strong> can improve the protocol and suggest enhancements</li>
+      </ul>
+
+      <p>We believe privacy tools must be transparent to be trustworthy. If you can't inspect the code, you can't verify the privacy promises. GeckoCore will be fully auditable from day one.</p>
+
+      <p>Learn why this matters: <a href="/blog/open-source-privacy-tools">Open Source Privacy Tools: Why It Matters</a></p>
+
+      <h2>The 8 Privacy Gecko Products</h2>
+
+      <p>GeckoCore unifies eight production-grade privacy tools, each solving a specific privacy challenge:</p>
+
+      <h3>1. GeckoAdvisor: Privacy Policy Scanner (Live Now)</h3>
+      <p>Automatically scans website privacy policies and detects hidden trackers, data sharing practices, and GDPR/CCPA compliance issues. Free tier provides 10 scans/month; token holders get unlimited AI-powered analysis.</p>
+      <p><a href="/products/advisor">Try GeckoAdvisor</a> | <a href="/blog/getting-started-geckoadvisor">Getting Started Guide</a></p>
+
+      <h3>2. GeckoShare: Encrypted File Sharing (Launching Q4 2025)</h3>
+      <p>Zero-knowledge file sharing with automatic deletion after download. No account required. Files encrypted client-side before upload. We can't see what you share—even if we wanted to.</p>
+      <p><a href="/products/share">Learn About GeckoShare</a></p>
+
+      <h3>3. GeckoGuard: Ad & Tracker Blocker (Q1 2026)</h3>
+      <p>Comprehensive tracker blocking with privacy-first filtering. Stops third-party cookies, prevents fingerprinting, blocks CNAME cloaking, and eliminates WebRTC leaks. Customizable rules for power users.</p>
+      <p><a href="/products/guard">Learn About GeckoGuard</a></p>
+
+      <h3>4. GeckoLock: Password Manager (Q1 2026)</h3>
+      <p>Zero-knowledge password management with end-to-end encryption. Generate unique passwords for every account. Cross-device sync with keys only you control. Optional self-hosting for complete sovereignty.</p>
+      <p><a href="/products/lock">Learn About GeckoLock</a></p>
+
+      <h3>5. GeckoView: Private Bookmark Manager (Q2 2026)</h3>
+      <p>Save and organize bookmarks with AI-generated summaries (processed locally). Search your saved content privately without cloud uploads. Never lose important articles, research, or resources.</p>
+      <p><a href="/products/view">Learn About GeckoView</a></p>
+
+      <h3>6. GeckoShell: Privacy Browser (Q2 2026)</h3>
+      <p>Privacy-first mobile browser for iOS and Android. Built-in tracker blocking, fingerprinting protection, and zero telemetry. Browses the web without being tracked—by us or anyone else.</p>
+      <p><a href="/products/shell">Learn About GeckoShell</a></p>
+
+      <h3>7. Gecko VPN: Private Network (Q2 2026)</h3>
+      <p>Truly private VPN with independently audited no-logs policy. RAM-only servers (data wiped on reboot). Cryptocurrency payment options for maximum anonymity. Based in privacy-friendly jurisdictions.</p>
+      <p><a href="/products/vpn">Learn About Gecko VPN</a></p>
+
+      <h3>8. Gecko Watch: Privacy Compliance Monitor (Q3 2026)</h3>
+      <p>Monitors the services you use and alerts you to privacy policy changes. Tracks data handling practices over time. Warns you when companies deteriorate their privacy protections.</p>
+      <p><a href="/products/watch">Learn About Gecko Watch</a></p>
+
+      <p>See the complete <a href="/roadmap">product roadmap</a> for launch timelines and development status.</p>
+
+      <h2>The $PRICKO Token: Memes With a Mission</h2>
+
+      <p>Most memecoins are jokes without utility. Privacy memecoins are jokes with a mission. The $PRICKO token combines community-driven memecoin culture with real privacy utility:</p>
+
+      <h3>Token Utility</h3>
+      <ul>
+        <li><strong>Stake to unlock features:</strong> One stake provides premium access across all eight products</li>
+        <li><strong>Governance rights:</strong> Token holders vote on ecosystem development priorities</li>
+        <li><strong>Priority support:</strong> Stakers receive priority customer support and bug fixes</li>
+        <li><strong>Early access:</strong> Token holders get first access to new features and beta programs</li>
+        <li><strong>Community rewards:</strong> Active community members earn token rewards</li>
+      </ul>
+
+      <h3>Why Solana?</h3>
+      <p>Privacy Gecko chose Solana for $PRICKO because:</p>
+      <ul>
+        <li><strong>Low transaction costs:</strong> Gas fees don't eat your staking rewards</li>
+        <li><strong>Fast confirmation:</strong> Near-instant authentication and feature access</li>
+        <li><strong>Proven infrastructure:</strong> Mature DeFi ecosystem and wallet support</li>
+        <li><strong>Developer tools:</strong> Strong development ecosystem for building privacy-first dApps</li>
+      </ul>
+
+      <h3>Token Economics</h3>
+      <p>We're publishing full tokenomics, distribution schedules, and vesting terms before the November 2025 launch. No surprises. No last-minute changes. Complete transparency from day one.</p>
+
+      <p>Read the full token details: <a href="/token">$PRICKO Token Overview</a> | <a href="/blog/privacy-memecoins-explained">What Are Privacy Memecoins?</a></p>
+
+      <h2>Launch Timeline: November 2025 to Q4 2026</h2>
+
+      <h3>November 2025: $PRICKO Token Launch</h3>
+      <ul>
+        <li>$PRICKO token launches on Solana</li>
+        <li>Community-driven liquidity pool opens</li>
+        <li>Early adopters can stake tokens (before products launch)</li>
+        <li>Full tokenomics and distribution transparency published</li>
+      </ul>
+
+      <h3>Q4 2025: GeckoShare Public Launch</h3>
+      <ul>
+        <li>GeckoShare completes development and launches publicly</li>
+        <li>Two live products (GeckoAdvisor + GeckoShare) serving users</li>
+        <li>First proof of utility: real tools, not just promises</li>
+      </ul>
+
+      <h3>Q1 2026: GeckoCore Planning & GeckoGuard/GeckoLock Launch</h3>
+      <ul>
+        <li>GeckoCore technical whitepaper published for community review</li>
+        <li>Architecture finalization with developer feedback</li>
+        <li>GeckoGuard and GeckoLock launch publicly (4 live products)</li>
+      </ul>
+
+      <h3>Q2 2026: Core Services Development & GeckoView/GeckoShell/VPN Launch</h3>
+      <ul>
+        <li>GeckoCore authentication engine development begins</li>
+        <li>Token-gating mechanisms built and tested internally</li>
+        <li>GeckoView, GeckoShell, and Gecko VPN launch (7 live products)</li>
+      </ul>
+
+      <h3>Q3 2026: Beta Testing & Gecko Watch Launch</h3>
+      <ul>
+        <li>Private beta launches with 1,000 early adopters</li>
+        <li>First product integrations go live (GeckoAdvisor + GeckoShare + GeckoGuard + GeckoLock)</li>
+        <li>Gecko Watch launches (all 8 products now live)</li>
+        <li>Beta feedback drives rapid iteration and security hardening</li>
+      </ul>
+
+      <h3>Q4 2026: GeckoCore Public Launch</h3>
+      <ul>
+        <li>GeckoCore Protocol launches publicly</li>
+        <li>Universal wallet authentication goes live across all eight products</li>
+        <li>Token staking features activate ecosystem-wide</li>
+        <li>Cross-product functionality enabled with zero-knowledge privacy</li>
+      </ul>
+
+      <p>We're publishing this timeline over a year in advance to demonstrate our commitment to transparency. No hype. No "coming soon" without dates. Just honest, realistic planning.</p>
+
+      <h2>Privacy Commitments: What We Guarantee</h2>
+
+      <h3>Zero Data Collection</h3>
+      <p>GeckoCore authentication uses cryptographic wallet signatures, not email addresses or personal information. We don't build user profiles. We don't track your activity across products. We verify your wallet ownership—that's it.</p>
+
+      <h3>On-Chain Transparency</h3>
+      <p>Token staking and authentication happen on Solana's blockchain, providing cryptographic proof of your access rights. Smart contracts are publicly auditable—verify exactly how GeckoCore handles your wallet interactions.</p>
+
+      <h3>Open-Source Code</h3>
+      <p>GeckoCore's authentication libraries, zero-knowledge proof implementations, and integration APIs will be open-sourced under permissive licenses. Security researchers, developers, and privacy advocates can audit our code.</p>
+
+      <h3>User Sovereignty</h3>
+      <p>Disconnect your wallet, and your GeckoCore access ends instantly across all products. We can't lock you in. We can't prevent you from leaving. Your data stays in your control—encrypted with keys only you possess.</p>
+
+      <h3>No Third-Party Data Sharing</h3>
+      <p>We never sell user data. We never share analytics with advertisers. We never integrate third-party trackers. Privacy Gecko exists to protect you from surveillance—not participate in it.</p>
+
+      <h2>Why This Matters: Proof of Development Over Promises</h2>
+
+      <p>Crypto is full of promises. Whitepapers describing revolutionary technology that never ships. Roadmaps announcing features that never launch. Communities built on hype instead of delivered value.</p>
+
+      <p>Privacy Gecko is different:</p>
+
+      <ul>
+        <li><strong>GeckoAdvisor is live now:</strong> You can use it today at <a href="/products/advisor">privacygecko.com/products/advisor</a></li>
+        <li><strong>GeckoShare launches Q4 2025:</strong> Before GeckoCore even begins development</li>
+        <li><strong>All 8 products launch before GeckoCore goes live:</strong> We're building the foundation after proving the products work</li>
+        <li><strong>Public roadmap with realistic timelines:</strong> Published over a year in advance, not vague "coming soon" promises</li>
+        <li><strong>Open-source code you can inspect:</strong> Verify our privacy claims by reading the actual implementation</li>
+      </ul>
+
+      <p>This is what "Memes With a Mission" means: community-driven memecoin culture combined with real, usable privacy tools. Not promises. Products.</p>
+
+      <h2>Join the Privacy Gecko Ecosystem</h2>
+
+      <h3>For Early Adopters</h3>
+      <ul>
+        <li><strong>Try GeckoAdvisor now:</strong> <a href="/products/advisor">Scan your first privacy policy for free</a></li>
+        <li><strong>Join the waitlist:</strong> <a href="/contact?subject=Early Adopter Waitlist">Get notified when new products launch</a></li>
+        <li><strong>Follow the roadmap:</strong> <a href="/roadmap">See what we're building and when</a></li>
+        <li><strong>Prepare for token launch:</strong> <a href="/token">Learn about $PRICKO tokenomics</a></li>
+      </ul>
+
+      <h3>For Developers</h3>
+      <ul>
+        <li><strong>Read the GeckoCore whitepaper:</strong> Available Q1 2026 with full technical specifications</li>
+        <li><strong>Contribute to open-source projects:</strong> All code will be available on GitHub</li>
+        <li><strong>Build integrations:</strong> GeckoCore APIs will support third-party developers</li>
+        <li><strong>Join the community:</strong> Help shape the protocol's development</li>
+      </ul>
+
+      <h3>For Privacy Advocates</h3>
+      <ul>
+        <li><strong>Audit our claims:</strong> Review open-source code when it's published</li>
+        <li><strong>Test our products:</strong> Join beta programs and provide feedback</li>
+        <li><strong>Spread the word:</strong> Help others discover privacy-first alternatives</li>
+        <li><strong>Hold us accountable:</strong> Demand transparency and deliver on promises</li>
+      </ul>
+
+      <h2>The Future of Privacy is Unified, Transparent, and User-Controlled</h2>
+
+      <p>Privacy tools today are fragmented, opaque, and often untrustworthy. Companies promise privacy while selling your data. Services require personal information to protect your privacy (ironic, right?). Tools don't work together, forcing you to juggle disconnected accounts.</p>
+
+      <p>GeckoCore Protocol changes this. One wallet authentication. Eight privacy tools. Zero data collection. Open-source transparency. Token-powered utility. User sovereignty.</p>
+
+      <p>This is privacy built on proof, not promises. Products before hype. Community before profit. Transparency before trust-us marketing.</p>
+
+      <p>Welcome to Privacy Gecko. Welcome to "Memes With a Mission." Welcome to the future of privacy-first tools that actually work.</p>
+
+      <p class="text-center mt-8 mb-4">
+        <a href="/contact?subject=Early Adopter Waitlist" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-gecko-green rounded-lg hover:bg-gecko-green-dark transition-colors">Join the Waitlist for Early Access</a>
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>When does GeckoCore launch?</h3>
+      <p>GeckoCore Protocol launches publicly in Q4 2026. Development begins Q1 2026 with community feedback, followed by core services development (Q2 2026), beta testing (Q3 2026), and public launch (Q4 2026). We're publishing this timeline 18+ months in advance for complete transparency.</p>
+
+      <h3>Do I need $PRICKO tokens to use Privacy Gecko products?</h3>
+      <p>No. Every Privacy Gecko product has a free tier accessible without tokens. GeckoCore's universal wallet login provides seamless SSO convenience (no tokens required for basic access). Staking $PRICKO unlocks premium features across all eight products, but core functionality remains free forever.</p>
+
+      <h3>What wallets are supported?</h3>
+      <p>GeckoCore supports all major Solana wallets: Phantom, Solflare, Backpack, Ledger hardware wallets, and more. We use the WalletAdapter standard, which means any Solana-compatible wallet works. For users who prefer email/password authentication (free tier), that option remains available.</p>
+
+      <h3>Is my data safe if products communicate through GeckoCore?</h3>
+      <p>Yes. GeckoCore uses zero-knowledge architecture. When products work together, they exchange cryptographic proofs—not your actual data. We can't read your files, passwords, or browsing history, even when services interact. Privacy by design, not just privacy by promise.</p>
+
+      <h3>Can I self-host Privacy Gecko products?</h3>
+      <p>Yes, starting with GeckoLock in Q1 2026. We're committed to providing self-hosting options for users who want complete control. Open-source code enables community-run instances and independent verification of our privacy claims.</p>
+
+      <p>More questions? Read the <a href="/geckocore">complete GeckoCore FAQ</a> or <a href="/contact">contact our team</a>.</p>
+    `,
+  },
+
   "complete-guide-privacy-tools-2025": {
     title: "The Complete Guide to Privacy Tools in 2025",
     author: "@0xAnonA",
     date: "July 15, 2025",
     category: "Privacy Guide",
     excerpt: "Discover the best privacy tools in 2025. Complete guide covering VPNs, password managers, ad blockers, encrypted messaging, and more to protect your digital privacy.",
+    ogImage: "/images/og-products.png",
     content: `
       <p class="lead">In 2025, digital privacy isn't just a luxury—it's a necessity. With data breaches affecting billions of users, AI-powered tracking becoming ubiquitous, and governments expanding surveillance capabilities, understanding and using privacy tools has never been more critical. This comprehensive guide covers everything you need to protect your digital life.</p>
 
@@ -304,7 +851,7 @@ const blogPosts = {
       <p><strong>Get started:</strong></p>
       <ul>
         <li><a href="/products/advisor">Scan your first privacy policy</a> (free, no signup)</li>
-        <li><a href="/waitlist">Join the waitlist</a> for upcoming tools</li>
+        <li><a href="/contact?subject=Early%20Adopter%20Waitlist">Join the waitlist</a> for upcoming tools</li>
         <li><a href="/blog">Read our privacy guides</a> for tips and tutorials</li>
         <li><a href="/compare">Compare privacy tools</a> to find the best fit</li>
       </ul>
@@ -320,6 +867,7 @@ const blogPosts = {
     date: "August 8, 2025",
     category: "Crypto Privacy",
     excerpt: "Essential privacy tools for crypto traders in 2025. Learn how to protect your wallet, transactions, and identity with VPNs, browsers, and privacy-focused tools.",
+    ogImage: "/images/og-guard.png",
     content: `
       <p class="lead">Cryptocurrency promises financial privacy and freedom, but blockchain's permanent public ledger creates unique privacy challenges. Every transaction, wallet balance, and trading pattern is visible to anyone who knows your wallet address. Here's how to protect your privacy as a crypto trader in 2025.</p>
 
@@ -611,6 +1159,7 @@ const blogPosts = {
     date: "September 12, 2025",
     category: "Token & Community",
     excerpt: "What are privacy memecoins? Learn how $PRICKO and other privacy-focused tokens combine community fun with real privacy utility and sustainable funding.",
+    ogImage: "/images/og-token.png",
     content: `
       <p class="lead">Memecoins have dominated crypto headlines for years, but most lack real utility beyond speculation and community engagement. Privacy memecoins represent a new category: tokens that combine the viral appeal of memes with genuine privacy-focused utility and sustainable project funding. Here's everything you need to know about this emerging category.</p>
 
@@ -911,7 +1460,7 @@ const blogPosts = {
 
       <h3>How to Participate</h3>
       <ol>
-        <li><strong><a href="/waitlist">Join the waitlist</a></strong> - Get notified of exact launch date</li>
+        <li><strong><a href="/contact?subject=Early%20Adopter%20Waitlist">Join the waitlist</a></strong> - Get notified of exact launch date</li>
         <li><strong><a href="/products/advisor">Try GeckoAdvisor</a></strong> - Use the tools before buying tokens</li>
         <li><strong><a href="/roadmap">Review the roadmap</a></strong> - Verify development progress</li>
         <li><strong>Follow updates:</strong> Twitter <a href="https://twitter.com/privacygecko" target="_blank" rel="noopener noreferrer">@privacygecko</a> | Telegram <a href="https://t.me/privacygecko" target="_blank" rel="noopener noreferrer">Community</a></li>
@@ -958,6 +1507,7 @@ const blogPosts = {
     date: "October 3, 2025",
     category: "AI & Privacy",
     excerpt: "Local AI vs cloud AI for privacy. Learn how on-device AI processing protects your data with federated learning and edge computing in 2025.",
+    ogImage: "/images/og-advisor.png",
     content: `
       <p class="lead">Artificial intelligence is transforming every aspect of technology, from search engines to photo editing to personal assistants. But there's a critical privacy difference between AI that processes your data in the cloud versus AI that runs entirely on your device. Here's why local AI matters for privacy and how it works.</p>
 
@@ -1377,6 +1927,7 @@ const blogPosts = {
     date: "October 31, 2025",
     category: "Privacy Tips",
     excerpt: "Why open source matters for privacy tools. Learn how transparency, community audits, and verifiable security make open source the gold standard.",
+    ogImage: "/images/og-shell.png",
     content: `
       <p class="lead">When it comes to privacy tools, you're trusting software with your most sensitive data: passwords, messages, browsing history, files. How can you verify that a "privacy" tool actually protects your privacy and doesn't secretly collect data? The answer: open source code. Here's why open source is essential for privacy tools.</p>
 
@@ -1764,6 +2315,7 @@ const blogPosts = {
     date: "January 15, 2025",
     category: "Privacy Tips",
     excerpt: "Exploring the growing importance of digital privacy and why accessible privacy tools are more critical than ever.",
+    ogImage: "/images/og-lock.png",
     content: `
       <p class="lead">In an era where our digital footprint grows exponentially every day, understanding and protecting our online privacy has never been more critical. Let's explore why privacy tools are essential in 2025 and beyond.</p>
 
@@ -1825,6 +2377,7 @@ const blogPosts = {
     date: "January 10, 2025",
     category: "Tutorials",
     excerpt: "A complete guide to using GeckoAdvisor to scan website privacy policies and detect hidden trackers.",
+    ogImage: "/images/og-advisor.png",
     content: `
       <p class="lead">GeckoAdvisor is your personal privacy and security assistant. This comprehensive guide will help you get the most out of GeckoAdvisor's powerful features.</p>
 
@@ -1939,6 +2492,7 @@ const blogPosts = {
     date: "January 5, 2025",
     category: "Product Updates",
     excerpt: "Learn about the mission behind Privacy Gecko and why we're building the privacy tools we wished existed.",
+    ogImage: "/images/og-products.png",
     content: `
       <p class="lead">Privacy Gecko was born from a simple frustration: existing privacy tools were either too complex for regular users or too simplistic to provide real protection. We set out to change that.</p>
 
@@ -2072,9 +2626,59 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
+  const siteUrl = "https://privacygecko.com";
+  const url = `${siteUrl}/blog/${params.slug}`;
+  const ogImage = post.ogImage || "/images/og-products.png";
+  const ogImageUrl = `${siteUrl}${ogImage}`;
+
+  // Convert date to ISO format for OpenGraph
+  const dateToISO = (dateString: string): string => {
+    try {
+      const date = new Date(dateString);
+      return date.toISOString();
+    } catch {
+      return new Date().toISOString();
+    }
+  };
+
   return {
     title: `${post.title} - Privacy Gecko Blog`,
     description: post.excerpt || `${post.title} by ${post.author}`,
+    
+    // OpenGraph metadata
+    openGraph: {
+      title: post.title,
+      description: post.excerpt || `${post.title} by ${post.author}`,
+      url: url,
+      type: "article",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${post.title} - Privacy Gecko`,
+        },
+      ],
+      publishedTime: dateToISO(post.date),
+      authors: [post.author],
+      section: post.category,
+      siteName: "Privacy Gecko",
+    },
+
+    // Twitter Card metadata
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt || `${post.title} by ${post.author}`,
+      images: [ogImageUrl],
+      creator: "@PrivacyGecko",
+      site: "@PrivacyGecko",
+    },
+
+    // Canonical URL
+    alternates: {
+      canonical: url,
+    },
   };
 }
 
