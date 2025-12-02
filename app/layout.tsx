@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
-import { PrivacyNotice } from "@/components/PrivacyNotice";
 import { MobileStickyCTA } from "@/components/ui/MobileStickyCTA";
 
 // Google Fonts removed for privacy - using system font stack instead
@@ -73,7 +72,6 @@ export default function RootLayout({
         <Navigation />
         <main id="main-content" className="pb-28 md:pb-0">{children}</main>
         <Footer />
-        <PrivacyNotice />
         <MobileStickyCTA />
       </body>
     </html>
