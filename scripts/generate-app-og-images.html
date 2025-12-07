@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application OG Image Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gecko-green: #00D98A;
+      --gecko-light: #34FFAA;
+      --slate-900: #0F172A;
+      --slate-800: #1E293B;
+      --slate-700: #334155;
+      --slate-400: #94A3B8;
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: #1a1a2e;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+    }
+
+    h1 {
+      color: white;
+      font-family: 'Instrument Serif', serif;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .og-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .og-label {
+      color: var(--gecko-green);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    /* Base OG Image Card */
+    .og-image {
+      width: 1200px;
+      height: 630px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    /* Background image layer */
+    .og-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.35) saturate(1.2);
+    }
+
+    /* Gradient overlay */
+    .og-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.95) 0%,
+        rgba(15, 23, 42, 0.7) 50%,
+        rgba(15, 23, 42, 0.85) 100%
+      );
+    }
+
+    /* Accent glow */
+    .og-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 217, 138, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .og-glow.top-right {
+      top: -200px;
+      right: -200px;
+    }
+
+    .og-glow.bottom-left {
+      bottom: -300px;
+      left: -200px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+    }
+
+    /* Content wrapper */
+    .og-content {
+      position: relative;
+      z-index: 10;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 80px 80px 120px 100px;
+    }
+
+    /* Category badge */
+    .og-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(0, 217, 138, 0.15);
+      border: 1px solid rgba(0, 217, 138, 0.3);
+      border-radius: 100px;
+      color: var(--gecko-green);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      width: fit-content;
+      margin-bottom: 24px;
+    }
+
+    .og-category::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--gecko-green);
+      border-radius: 50%;
+    }
+
+    /* Title */
+    .og-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 72px;
+      line-height: 1.1;
+      color: white;
+      max-width: 900px;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .og-title em {
+      color: var(--gecko-green);
+      font-style: italic;
+    }
+
+    /* Subtitle/Description */
+    .og-subtitle {
+      font-size: 24px;
+      color: var(--slate-400);
+      max-width: 700px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    /* Grid pattern overlay */
+    .og-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* Bottom bar */
+    .og-bottom {
+      position: absolute;
+      bottom: 56px;
+      left: 80px;
+      right: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .og-url {
+      color: var(--slate-400);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .og-tagline {
+      color: var(--gecko-green);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    /* Noise texture */
+    .og-noise {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+    }
+
+    /* Product variant - different accent colors */
+    .og-image.product-advisor .og-category { background: rgba(34, 197, 94, 0.15); border-color: rgba(34, 197, 94, 0.3); color: #22c55e; }
+    .og-image.product-advisor .og-category::before { background: #22c55e; }
+    .og-image.product-advisor .og-title em { color: #22c55e; }
+
+    .og-image.product-share .og-category { background: rgba(0, 217, 138, 0.15); border-color: rgba(0, 217, 138, 0.3); color: #00D98A; }
+    .og-image.product-share .og-category::before { background: #00D98A; }
+
+    .og-image.product-guard .og-category { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.3); color: #3B82F6; }
+    .og-image.product-guard .og-category::before { background: #3B82F6; }
+    .og-image.product-guard .og-title em { color: #3B82F6; }
+
+    .og-image.product-lock .og-category { background: rgba(250, 204, 21, 0.15); border-color: rgba(250, 204, 21, 0.3); color: #FACC15; }
+    .og-image.product-lock .og-category::before { background: #FACC15; }
+    .og-image.product-lock .og-title em { color: #FACC15; }
+
+    .og-image.product-view .og-category { background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.3); color: #A855F7; }
+    .og-image.product-view .og-category::before { background: #A855F7; }
+    .og-image.product-view .og-title em { color: #A855F7; }
+
+    .og-image.product-shell .og-category { background: rgba(34, 211, 238, 0.15); border-color: rgba(34, 211, 238, 0.3); color: #22D3EE; }
+    .og-image.product-shell .og-category::before { background: #22D3EE; }
+    .og-image.product-shell .og-title em { color: #22D3EE; }
+
+    .og-image.product-vpn .og-category { background: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.3); color: #6366F1; }
+    .og-image.product-vpn .og-category::before { background: #6366F1; }
+    .og-image.product-vpn .og-title em { color: #6366F1; }
+
+    .og-image.product-watch .og-category { background: rgba(249, 115, 22, 0.15); border-color: rgba(249, 115, 22, 0.3); color: #F97316; }
+    .og-image.product-watch .og-category::before { background: #F97316; }
+    .og-image.product-watch .og-title em { color: #F97316; }
+
+    .og-image.token .og-category { background: rgba(250, 204, 21, 0.15); border-color: rgba(250, 204, 21, 0.3); color: #FACC15; }
+    .og-image.token .og-category::before { background: #FACC15; }
+    .og-image.token .og-title em { color: #FACC15; }
+  </style>
+</head>
+<body>
+  <h1>Application OG Images - Privacy Gecko</h1>
+
+  <!-- 1. Homepage -->
+  <div class="og-container">
+    <div class="og-label">og-home.png</div>
+    <div class="og-image" id="og-home">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">Privacy First</div>
+          <h2 class="og-title"><em>Privacy Gecko</em></h2>
+          <p class="og-subtitle">8 privacy products. One mission. Protecting your digital life with open-source, zero-knowledge technology.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com</span>
+          <span class="og-tagline">Memes With a Mission</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Products Page -->
+  <div class="og-container">
+    <div class="og-label">og-products.png</div>
+    <div class="og-image" id="og-products">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">8 Products</div>
+          <h2 class="og-title">Privacy <em>Suite</em></h2>
+          <p class="og-subtitle">Complete privacy protection. From AI policy analysis to encrypted file sharing.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com/products</span>
+          <span class="og-tagline">Powered by $PRICKO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Token Page -->
+  <div class="og-container">
+    <div class="og-label">og-token.png</div>
+    <div class="og-image token" id="og-token">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">Solana Token</div>
+          <h2 class="og-title"><em>$PRICKO</em></h2>
+          <p class="og-subtitle">Powering privacy-first AI. Fair launch December 2025. Real utility across all products.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com/token</span>
+          <span class="og-tagline">Memes With a Mission</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Whitepaper Page -->
+  <div class="og-container">
+    <div class="og-label">og-whitepaper.png</div>
+    <div class="og-image" id="og-whitepaper">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">Technical Docs</div>
+          <h2 class="og-title">GeckoCore <em>Whitepaper</em></h2>
+          <p class="og-subtitle">The Privacy Proof Layer for Solana. Zero-knowledge proofs, 5 Privacy Feeds, and open infrastructure.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com/whitepaper</span>
+          <span class="og-tagline">Version 1.0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. GeckoCore Protocol -->
+  <div class="og-container">
+    <div class="og-label">og-geckocore-protocol.png</div>
+    <div class="og-image" id="og-geckocore-protocol">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">Protocol</div>
+          <h2 class="og-title"><em>GeckoCore</em> Protocol</h2>
+          <p class="og-subtitle">The hub for privacy products. One wallet login, unified privacy ecosystem.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com</span>
+          <span class="og-tagline">Coming Q2 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. GeckoAdvisor -->
+  <div class="og-container">
+    <div class="og-label">og-advisor.png</div>
+    <div class="og-image product-advisor" id="og-advisor">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">Live Now</div>
+          <h2 class="og-title"><em>GeckoAdvisor</em></h2>
+          <p class="og-subtitle">AI-powered privacy policy analysis. Understand what you're agreeing to in seconds.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com/products/advisor</span>
+          <span class="og-tagline">Privacy Gecko</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. GeckoShare -->
+  <div class="og-container">
+    <div class="og-label">og-share.png</div>
+    <div class="og-image product-share" id="og-share">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">Live Now</div>
+          <h2 class="og-title"><em>GeckoShare</em></h2>
+          <p class="og-subtitle">End-to-end encrypted file sharing. Your files, fully protected, zero-knowledge.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com/products/share</span>
+          <span class="og-tagline">Privacy Gecko</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. GeckoGuard -->
+  <div class="og-container">
+    <div class="og-label">og-guard.png</div>
+    <div class="og-image product-guard" id="og-guard">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">Live Now</div>
+          <h2 class="og-title"><em>GeckoGuard</em></h2>
+          <p class="og-subtitle">AI-powered tracker blocker. Block tracking scripts and protect your browsing.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com/products/guard</span>
+          <span class="og-tagline">Privacy Gecko</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. GeckoLock -->
+  <div class="og-container">
+    <div class="og-label">og-lock.png</div>
+    <div class="og-image product-lock" id="og-lock">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">Live Now</div>
+          <h2 class="og-title"><em>GeckoLock</em></h2>
+          <p class="og-subtitle">Zero-knowledge password manager. Your passwords, encrypted locally, never exposed.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com/products/lock</span>
+          <span class="og-tagline">Privacy Gecko</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. GeckoView -->
+  <div class="og-container">
+    <div class="og-label">og-view.png</div>
+    <div class="og-image product-view" id="og-view">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1481487196290-c152efe083f5?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">Coming Q1 2026</div>
+          <h2 class="og-title"><em>GeckoView</em></h2>
+          <p class="og-subtitle">Privacy-first bookmark manager. Organize your web without being tracked.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com/products/view</span>
+          <span class="og-tagline">Privacy Gecko</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. GeckoShell -->
+  <div class="og-container">
+    <div class="og-label">og-shell.png</div>
+    <div class="og-image product-shell" id="og-shell">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">Coming Q1 2026</div>
+          <h2 class="og-title"><em>GeckoShell</em></h2>
+          <p class="og-subtitle">Ephemeral browsing protection. Browse without leaving a trace.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com/products/shell</span>
+          <span class="og-tagline">Privacy Gecko</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. Gecko VPN -->
+  <div class="og-container">
+    <div class="og-label">og-vpn.png</div>
+    <div class="og-image product-vpn" id="og-vpn">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">Coming Q1 2026</div>
+          <h2 class="og-title">Gecko <em>VPN</em></h2>
+          <p class="og-subtitle">No-logs VPN infrastructure. True privacy for your internet connection.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com/products/vpn</span>
+          <span class="og-tagline">Privacy Gecko</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13. Gecko Watch -->
+  <div class="og-container">
+    <div class="og-label">og-watch.png</div>
+    <div class="og-image product-watch" id="og-watch">
+      <div class="og-bg" style="background-image: url('https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=1200&q=80');"></div>
+      <div class="og-overlay"></div>
+      <div class="og-grid"></div>
+      <div class="og-glow top-right"></div>
+      <div class="og-glow bottom-left"></div>
+      <div class="og-noise"></div>
+      <div class="og-content">
+        <div>
+          <div class="og-category">Coming Q1 2026</div>
+          <h2 class="og-title">Gecko <em>Watch</em></h2>
+          <p class="og-subtitle">Data breach monitoring. Know when your data is exposed, take action fast.</p>
+        </div>
+        <div class="og-bottom">
+          <span class="og-url">privacygecko.com/products/watch</span>
+          <span class="og-tagline">Privacy Gecko</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
