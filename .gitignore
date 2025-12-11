@@ -20,6 +20,8 @@ project-docs/
 # next.js
 /.next/
 /out/
+apps/**/.next/
+packages/**/.next/
 
 # production
 /build
@@ -43,3 +45,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# archive folder for old/unused code
+_archive/
+
+# turbo
+.turbo/
+
+# monorepo specific
+apps/**/node_modules
+packages/**/node_modules
