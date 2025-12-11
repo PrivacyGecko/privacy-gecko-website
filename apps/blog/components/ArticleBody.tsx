@@ -5,7 +5,7 @@ interface ArticleBodyProps {
 export function ArticleBody({ content }: ArticleBodyProps) {
   return (
     <div
-      className="prose-gecko prose prose-lg max-w-none"
+      className="prose-editorial has-dropcap pl-6"
       dangerouslySetInnerHTML={{ __html: content }}
     />
   );

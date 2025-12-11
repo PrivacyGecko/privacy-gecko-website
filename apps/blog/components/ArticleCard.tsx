@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Clock, Calendar } from "lucide-react";
+import { Clock, ArrowUpRight } from "lucide-react";
 
 interface Article {
   id: number;
@@ -13,80 +13,76 @@ interface Article {
 
 interface ArticleCardProps {
   article: Article;
+  index?: number;
 }
 
-export function ArticleCard({ article }: ArticleCardProps) {
+const categoryStyles: Record<string, string> = {
+  privacy: "category-pill-privacy",
+  security: "category-pill-security",
+  crypto: "category-pill-crypto",
+  tools: "category-pill-tools",
+};
+
+export function ArticleCard({ article, index = 1 }: ArticleCardProps) {
   const formattedDate = article.publishedAt
     ? new Intl.DateTimeFormat("en-US", {
         month: "short",
         day: "numeric",
-        year: "numeric",
       }).format(new Date(article.publishedAt))
     : null;
 
+  const categoryStyle = categoryStyles[article.category.slug] || "category-pill-privacy";
+  const paddedIndex = String(index).padStart(2, "0");
+
   return (
-    <article className="group bg-white rounded-2xl border border-slate-100 shadow-card overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1">
-      {/* Category Badge */}
-      <div className="p-6 pb-0">
+    <article className="group card-editorial rounded-xl p-6 relative">
+      {/* Large Number Watermark */}
+      <span className="article-number">{paddedIndex}</span>
+
+      {/* Category & Date Row */}
+      <div className="flex items-center justify-between mb-5 relative z-10">
         <Link
           href={`/${article.category.slug}`}
-          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-blue-100 text-blue-700 border border-blue-200 hover:bg-blue-200 transition-colors"
+          className={`category-pill ${categoryStyle}`}
         >
           {article.category.name}
         </Link>
+        {formattedDate && (
+          <span className="text-xs text-slate-400 font-medium tracking-wide">
+            {formattedDate}
+          </span>
+        )}
       </div>
 
-      {/* Content */}
-      <div className="p-6">
-        <Link href={`/${article.category.slug}/${article.slug}`}>
-          <h3 className="text-lg font-bold text-slate-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors font-display">
-            {article.title}
-          </h3>
-        </Link>
+      {/* Title */}
+      <Link href={`/${article.category.slug}/${article.slug}`} className="block relative z-10">
+        <h3 className="font-editorial text-xl font-medium text-[var(--color-charcoal)] mb-3 leading-snug group-hover:text-emerald-600 transition-colors duration-300">
+          {article.title}
+        </h3>
+      </Link>
 
-        {article.excerpt && (
-          <p className="text-slate-600 text-sm line-clamp-2 mb-4">
-            {article.excerpt}
-          </p>
+      {/* Excerpt */}
+      {article.excerpt && (
+        <p className="text-[var(--color-charcoal-light)] text-sm leading-relaxed mb-5 line-clamp-2 relative z-10">
+          {article.excerpt}
+        </p>
+      )}
+
+      {/* Footer */}
+      <div className="flex items-center justify-between pt-5 border-t border-[var(--color-border)] relative z-10">
+        {article.readingTime && (
+          <span className="flex items-center gap-1.5 text-xs text-slate-400">
+            <Clock className="w-3.5 h-3.5" />
+            {article.readingTime} min read
+          </span>
         )}
 
-        {/* Meta */}
-        <div className="flex items-center gap-4 text-sm text-slate-500">
-          {formattedDate && (
-            <span className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
-              {formattedDate}
-            </span>
-          )}
-          {article.readingTime && (
-            <span className="flex items-center gap-1">
-              <Clock className="w-4 h-4" />
-              {article.readingTime} min read
-            </span>
-          )}
-        </div>
-      </div>
-
-      {/* Read More Link */}
-      <div className="px-6 pb-6">
         <Link
           href={`/${article.category.slug}/${article.slug}`}
-          className="inline-flex items-center text-blue-600 font-medium text-sm group-hover:text-blue-700"
+          className="flex items-center gap-1 text-sm font-medium text-emerald-600 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-8px] group-hover:translate-x-0"
         >
-          Read more
-          <svg
-            className="ml-1 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
+          Read
+          <ArrowUpRight className="w-3.5 h-3.5" />
         </Link>
       </div>
     </article>

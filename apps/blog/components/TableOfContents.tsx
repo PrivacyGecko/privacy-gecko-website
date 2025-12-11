@@ -57,32 +57,45 @@ export function TableOfContents({ content }: TableOfContentsProps) {
 
   if (headings.length === 0) return null;
 
+  const scrollToHeading = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <div className="bg-slate-50 rounded-2xl p-6 mb-6">
-      <h4 className="flex items-center gap-2 font-semibold text-slate-900 mb-4">
-        <List className="w-5 h-5" />
-        Table of Contents
-      </h4>
-      <nav>
-        <ul className="space-y-2 text-sm">
-          {headings.map((heading) => (
-            <li
-              key={heading.id}
-              className={`${heading.level === 3 ? "ml-4" : ""}`}
-            >
-              <a
-                href={`#${heading.id}`}
-                className={`block py-1 transition-colors ${
-                  activeId === heading.id
-                    ? "text-blue-600 font-medium"
-                    : "text-slate-600 hover:text-slate-900"
-                }`}
-              >
-                {heading.text}
-              </a>
-            </li>
-          ))}
-        </ul>
+    <div className="sidebar-card">
+      {/* Header */}
+      <div className="flex items-center gap-2 mb-5 pb-4 border-b border-[var(--color-border)]">
+        <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center">
+          <List className="w-4 h-4 text-emerald-600" />
+        </div>
+        <h4 className="font-semibold text-[var(--color-charcoal)]">
+          In this article
+        </h4>
+      </div>
+
+      {/* TOC Links */}
+      <nav className="toc-editorial">
+        {headings.map((heading) => (
+          <button
+            key={heading.id}
+            onClick={() => scrollToHeading(heading.id)}
+            className={`toc-link w-full text-left ${
+              activeId === heading.id ? "active" : ""
+            } ${heading.level === 3 ? "level-3" : ""}`}
+          >
+            {heading.text}
+          </button>
+        ))}
       </nav>
     </div>
   );

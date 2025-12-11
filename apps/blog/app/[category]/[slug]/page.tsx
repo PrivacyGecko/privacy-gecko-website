@@ -7,6 +7,8 @@ import { RelatedPosts } from "@/components/RelatedPosts";
 import { ProductCTA } from "@/components/ProductCTA";
 import { AuthorBio } from "@/components/AuthorBio";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ShareButtons } from "@/components/ShareButtons";
+import { ReadingProgress } from "@/components/ReadingProgress";
 
 export const revalidate = false; // Only revalidate on-demand
 
@@ -28,6 +30,10 @@ const mockArticles = [
       <p>Your digital footprint reveals more about you than you might think. Every search, every click, and every interaction is being tracked and analyzed. Understanding this is the first step to protecting yourself.</p>
       <p>Privacy is not about having something to hide—it's about maintaining control over your personal information and deciding who gets access to it.</p>
 
+      <blockquote>
+        Privacy is not about having something to hide. It's about maintaining control over your personal information.
+      </blockquote>
+
       <h2 id="essential-privacy-tools">Essential Privacy Tools</h2>
       <p>Here are the must-have tools for anyone serious about online privacy:</p>
       <ul>
@@ -39,19 +45,19 @@ const mockArticles = [
 
       <h2 id="browser-privacy-settings">Browser Privacy Settings</h2>
       <p>Your browser is your window to the internet, and it's also a major source of data leakage. Configure these settings for better privacy:</p>
-      <ul>
+      <ol>
         <li>Block third-party cookies</li>
         <li>Enable Do Not Track</li>
         <li>Use private/incognito mode for sensitive browsing</li>
         <li>Clear browsing data regularly</li>
-      </ul>
+      </ol>
 
       <h3 id="recommended-extensions">Recommended Browser Extensions</h3>
       <p>Enhance your browser's privacy with these extensions:</p>
       <ul>
-        <li>uBlock Origin - Ad and tracker blocker</li>
-        <li>Privacy Badger - Learns to block invisible trackers</li>
-        <li>HTTPS Everywhere - Forces secure connections</li>
+        <li><strong>uBlock Origin</strong> - Ad and tracker blocker</li>
+        <li><strong>Privacy Badger</strong> - Learns to block invisible trackers</li>
+        <li><strong>HTTPS Everywhere</strong> - Forces secure connections</li>
       </ul>
 
       <h2 id="social-media-privacy">Social Media Privacy</h2>
@@ -83,18 +89,16 @@ const mockArticles = [
 ];
 
 const mockRelatedArticles = [
-  { id: 5, title: "Browser Privacy Settings You Should Change Today", slug: "browser-privacy-settings", categoryId: 1 },
-  { id: 6, title: "How to Choose a VPN: Complete Guide", slug: "how-to-choose-vpn", categoryId: 1 },
-  { id: 7, title: "Understanding Data Collection: What Companies Know", slug: "understanding-data-collection", categoryId: 1 },
+  { id: 5, title: "Browser Privacy Settings You Should Change Today", slug: "browser-privacy-settings", categoryId: 1, readingTime: 7 },
+  { id: 6, title: "How to Choose a VPN: Complete Guide", slug: "how-to-choose-vpn", categoryId: 1, readingTime: 10 },
+  { id: 7, title: "Understanding Data Collection: What Companies Know", slug: "understanding-data-collection", categoryId: 1, readingTime: 8 },
 ];
 
 async function getArticle(slug: string) {
-  // TODO: Replace with database query
   return mockArticles.find((a) => a.slug === slug) || null;
 }
 
 async function getRelatedArticles(categoryId: number, currentId: number) {
-  // TODO: Replace with database query
   return mockRelatedArticles.filter((a) => a.id !== currentId);
 }
 
@@ -144,43 +148,80 @@ export default async function ArticlePage({ params }: Props) {
   const relatedArticles = await getRelatedArticles(article.categoryId, article.id);
 
   return (
-    <article className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <Breadcrumbs
-        items={[
-          { label: "Blog", href: "/" },
-          { label: article.category.name, href: `/${article.category.slug}` },
-          { label: article.title, href: `/${article.category.slug}/${article.slug}` },
-        ]}
-      />
+    <>
+      {/* Reading Progress Bar */}
+      <ReadingProgress />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
-        {/* Main Content */}
-        <div className="lg:col-span-8">
-          <ArticleHeader
-            title={article.title}
-            excerpt={article.excerpt}
-            publishedAt={article.publishedAt}
-            readingTime={article.readingTime}
-            category={article.category}
+      <article className="min-h-screen bg-[var(--color-cream)]">
+        {/* Breadcrumbs */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-8">
+          <Breadcrumbs
+            items={[
+              { label: "Blog", href: "/" },
+              { label: article.category.name, href: `/${article.category.slug}` },
+              { label: article.title, href: `/${article.category.slug}/${article.slug}` },
+            ]}
           />
-
-          <ArticleBody content={article.content} />
-
-          {article.targetProducts && article.targetProducts.length > 0 && (
-            <ProductCTA products={article.targetProducts} />
-          )}
-
-          <AuthorBio />
         </div>
 
-        {/* Sidebar */}
-        <aside className="lg:col-span-4">
-          <div className="sticky top-24 space-y-6">
-            <TableOfContents content={article.content} />
-            <RelatedPosts articles={relatedArticles} categorySlug={article.category.slug} />
+        {/* Article Header - Full Width Hero */}
+        <ArticleHeader
+          title={article.title}
+          excerpt={article.excerpt}
+          publishedAt={article.publishedAt}
+          updatedAt={article.updatedAt}
+          readingTime={article.readingTime}
+          wordCount={article.wordCount}
+          category={article.category}
+        />
+
+        {/* Main Content Area */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            {/* Main Content */}
+            <div className="lg:col-span-8">
+              <ArticleBody content={article.content} />
+
+              {/* Product CTA - After Article */}
+              {article.targetProducts && article.targetProducts.length > 0 && (
+                <ProductCTA products={article.targetProducts} />
+              )}
+
+              {/* Author Bio */}
+              <AuthorBio />
+
+              {/* Share Section - Mobile */}
+              <div className="lg:hidden mt-12 pt-8 border-t border-[var(--color-border)]">
+                <p className="text-sm font-medium text-[var(--color-charcoal)] mb-4">Share this article</p>
+                <ShareButtons
+                  title={article.title}
+                  url={`/${article.category.slug}/${article.slug}`}
+                />
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <aside className="lg:col-span-4">
+              <div className="sticky top-28 space-y-6">
+                {/* Table of Contents */}
+                <TableOfContents content={article.content} />
+
+                {/* Share Buttons - Desktop */}
+                <div className="hidden lg:block sidebar-card">
+                  <p className="text-sm font-semibold text-[var(--color-charcoal)] mb-4">Share this article</p>
+                  <ShareButtons
+                    title={article.title}
+                    url={`/${article.category.slug}/${article.slug}`}
+                  />
+                </div>
+
+                {/* Related Posts */}
+                <RelatedPosts articles={relatedArticles} categorySlug={article.category.slug} />
+              </div>
+            </aside>
           </div>
-        </aside>
-      </div>
-    </article>
+        </div>
+      </article>
+    </>
   );
 }
