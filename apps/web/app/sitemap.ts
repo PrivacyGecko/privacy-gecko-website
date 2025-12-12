@@ -3,18 +3,19 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://privacygecko.com'
 
-  // Blog post slugs (all 10 posts)
+  // Legacy blog posts - now redirected to category-based URLs
+  // These URLs will 301 redirect to new structure via blog app
   const blogPosts = [
-    'geckocore-protocol-whitepaper-v1-launch',
-    'introducing-geckocore-protocol',
-    'why-privacy-tools-matter-2025',
-    'getting-started-geckoadvisor',
-    'introducing-privacy-gecko',
-    'complete-guide-privacy-tools-2025',
-    'crypto-trader-privacy-tools',
-    'privacy-memecoins-explained',
-    'local-ai-privacy-protection',
-    'open-source-privacy-tools',
+    { slug: 'geckocore-protocol-whitepaper-v1-launch', category: 'product-updates' },
+    { slug: 'introducing-geckocore-protocol', category: 'product-updates' },
+    { slug: 'introducing-privacy-gecko', category: 'product-updates' },
+    { slug: 'why-privacy-tools-matter-2025', category: 'privacy' },
+    { slug: 'open-source-privacy-tools', category: 'privacy' },
+    { slug: 'getting-started-geckoadvisor', category: 'tutorials' },
+    { slug: 'complete-guide-privacy-tools-2025', category: 'privacy' },
+    { slug: 'crypto-trader-privacy-tools', category: 'crypto-safety' },
+    { slug: 'privacy-memecoins-explained', category: 'crypto-safety' },
+    { slug: 'local-ai-privacy-protection', category: 'privacy' },
   ]
 
   return [
@@ -198,12 +199,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
-    // Blog posts (higher priority for new SEO-optimized posts)
-    ...blogPosts.map((slug) => ({
-      url: `${baseUrl}/blog/${slug}`,
+    // Blog posts - now with category-based URLs for clean SEO structure
+    ...blogPosts.map((post) => ({
+      url: `${baseUrl}/blog/${post.category}/${post.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: slug.includes('whitepaper') || slug.includes('complete-guide') || slug.includes('privacy-memecoins') ? 0.75 : 0.6,
+      priority: post.slug.includes('whitepaper') || post.slug.includes('complete-guide') || post.slug.includes('privacy-memecoins') ? 0.75 : 0.6,
     })),
   ]
 }
