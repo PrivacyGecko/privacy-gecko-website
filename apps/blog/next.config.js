@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // No basePath needed - blog is on its own subdomain (blog.privacygecko.com)
+  // Asset prefix ensures JS/CSS load from blog subdomain when accessed via /blog rewrite
+  assetPrefix: process.env.ASSET_PREFIX || 'https://blog.stage.privacygecko.com',
   transpilePackages: ['@privacygecko/ui', '@privacygecko/database'],
   images: {
     remotePatterns: [
