@@ -1,0 +1,265 @@
+"use client";
+
+import { Editor } from "@tiptap/react";
+import {
+  Bold,
+  Italic,
+  Strikethrough,
+  Code,
+  Heading2,
+  Heading3,
+  List,
+  ListOrdered,
+  Quote,
+  Minus,
+  Undo,
+  Redo,
+  Link as LinkIcon,
+  Unlink,
+  Image as ImageIcon,
+} from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useCallback, useState } from "react";
+
+interface EditorToolbarProps {
+  editor: Editor;
+}
+
+interface ToolbarButtonProps {
+  onClick: () => void;
+  isActive?: boolean;
+  disabled?: boolean;
+  children: React.ReactNode;
+  title?: string;
+}
+
+function ToolbarButton({
+  onClick,
+  isActive,
+  disabled,
+  children,
+  title,
+}: ToolbarButtonProps) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      title={title}
+      className={cn(
+        "flex items-center justify-center w-8 h-8 rounded transition-colors",
+        isActive
+          ? "bg-[var(--color-accent)] text-white"
+          : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-elevated)] hover:text-[var(--color-text-primary)]",
+        disabled && "opacity-50 cursor-not-allowed"
+      )}
+    >
+      {children}
+    </button>
+  );
+}
+
+function ToolbarDivider() {
+  return <div className="w-px h-6 bg-[var(--color-border)] mx-1" />;
+}
+
+export function EditorToolbar({ editor }: EditorToolbarProps) {
+  const [showLinkInput, setShowLinkInput] = useState(false);
+  const [linkUrl, setLinkUrl] = useState("");
+
+  const setLink = useCallback(() => {
+    if (linkUrl === "") {
+      editor.chain().focus().extendMarkRange("link").unsetLink().run();
+      return;
+    }
+
+    const url = linkUrl.startsWith("http") ? linkUrl : `https://${linkUrl}`;
+    editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
+    setLinkUrl("");
+    setShowLinkInput(false);
+  }, [editor, linkUrl]);
+
+  const addImage = useCallback(() => {
+    const url = window.prompt("Enter image URL:");
+    if (url) {
+      editor.chain().focus().setImage({ src: url }).run();
+    }
+  }, [editor]);
+
+  return (
+    <div className="tiptap-toolbar">
+      <div className="flex flex-wrap items-center gap-0.5">
+        {/* Text formatting */}
+        <ToolbarButton
+          onClick={() => editor.chain().focus().toggleBold().run()}
+          isActive={editor.isActive("bold")}
+          title="Bold (Ctrl+B)"
+        >
+          <Bold className="w-4 h-4" />
+        </ToolbarButton>
+        <ToolbarButton
+          onClick={() => editor.chain().focus().toggleItalic().run()}
+          isActive={editor.isActive("italic")}
+          title="Italic (Ctrl+I)"
+        >
+          <Italic className="w-4 h-4" />
+        </ToolbarButton>
+        <ToolbarButton
+          onClick={() => editor.chain().focus().toggleStrike().run()}
+          isActive={editor.isActive("strike")}
+          title="Strikethrough"
+        >
+          <Strikethrough className="w-4 h-4" />
+        </ToolbarButton>
+        <ToolbarButton
+          onClick={() => editor.chain().focus().toggleCode().run()}
+          isActive={editor.isActive("code")}
+          title="Inline code"
+        >
+          <Code className="w-4 h-4" />
+        </ToolbarButton>
+
+        <ToolbarDivider />
+
+        {/* Headings */}
+        <ToolbarButton
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 2 }).run()
+          }
+          isActive={editor.isActive("heading", { level: 2 })}
+          title="Heading 2"
+        >
+          <Heading2 className="w-4 h-4" />
+        </ToolbarButton>
+        <ToolbarButton
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 3 }).run()
+          }
+          isActive={editor.isActive("heading", { level: 3 })}
+          title="Heading 3"
+        >
+          <Heading3 className="w-4 h-4" />
+        </ToolbarButton>
+
+        <ToolbarDivider />
+
+        {/* Lists */}
+        <ToolbarButton
+          onClick={() => editor.chain().focus().toggleBulletList().run()}
+          isActive={editor.isActive("bulletList")}
+          title="Bullet list"
+        >
+          <List className="w-4 h-4" />
+        </ToolbarButton>
+        <ToolbarButton
+          onClick={() => editor.chain().focus().toggleOrderedList().run()}
+          isActive={editor.isActive("orderedList")}
+          title="Numbered list"
+        >
+          <ListOrdered className="w-4 h-4" />
+        </ToolbarButton>
+
+        <ToolbarDivider />
+
+        {/* Blocks */}
+        <ToolbarButton
+          onClick={() => editor.chain().focus().toggleBlockquote().run()}
+          isActive={editor.isActive("blockquote")}
+          title="Quote"
+        >
+          <Quote className="w-4 h-4" />
+        </ToolbarButton>
+        <ToolbarButton
+          onClick={() => editor.chain().focus().setHorizontalRule().run()}
+          title="Horizontal rule"
+        >
+          <Minus className="w-4 h-4" />
+        </ToolbarButton>
+
+        <ToolbarDivider />
+
+        {/* Links & Images */}
+        {showLinkInput ? (
+          <div className="flex items-center gap-1">
+            <input
+              type="url"
+              value={linkUrl}
+              onChange={(e) => setLinkUrl(e.target.value)}
+              placeholder="Enter URL..."
+              className="input h-8 text-sm w-40"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  setLink();
+                }
+                if (e.key === "Escape") {
+                  setShowLinkInput(false);
+                  setLinkUrl("");
+                }
+              }}
+              autoFocus
+            />
+            <button
+              type="button"
+              onClick={setLink}
+              className="btn btn-primary btn-sm h-8"
+            >
+              Add
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setShowLinkInput(false);
+                setLinkUrl("");
+              }}
+              className="btn btn-ghost btn-sm h-8"
+            >
+              Cancel
+            </button>
+          </div>
+        ) : (
+          <>
+            <ToolbarButton
+              onClick={() => setShowLinkInput(true)}
+              isActive={editor.isActive("link")}
+              title="Add link"
+            >
+              <LinkIcon className="w-4 h-4" />
+            </ToolbarButton>
+            {editor.isActive("link") && (
+              <ToolbarButton
+                onClick={() =>
+                  editor.chain().focus().extendMarkRange("link").unsetLink().run()
+                }
+                title="Remove link"
+              >
+                <Unlink className="w-4 h-4" />
+              </ToolbarButton>
+            )}
+            <ToolbarButton onClick={addImage} title="Add image">
+              <ImageIcon className="w-4 h-4" />
+            </ToolbarButton>
+          </>
+        )}
+
+        <ToolbarDivider />
+
+        {/* Undo/Redo */}
+        <ToolbarButton
+          onClick={() => editor.chain().focus().undo().run()}
+          disabled={!editor.can().undo()}
+          title="Undo (Ctrl+Z)"
+        >
+          <Undo className="w-4 h-4" />
+        </ToolbarButton>
+        <ToolbarButton
+          onClick={() => editor.chain().focus().redo().run()}
+          disabled={!editor.can().redo()}
+          title="Redo (Ctrl+Shift+Z)"
+        >
+          <Redo className="w-4 h-4" />
+        </ToolbarButton>
+      </div>
+    </div>
+  );
+}

@@ -1,4 +1,4 @@
-import { eq, desc } from 'drizzle-orm'
+import { eq, desc, inArray } from 'drizzle-orm'
 import { db } from './client'
 import {
   categories,
@@ -185,4 +185,62 @@ export async function deleteCategory(id: number): Promise<boolean> {
     .where(eq(categories.id, id))
     .returning({ id: categories.id })
   return result.length > 0
+}
+
+// ============================================
+// BULK ACTIONS
+// ============================================
+
+/**
+ * Bulk publish articles
+ */
+export async function bulkPublishArticles(ids: number[]): Promise<number> {
+  if (ids.length === 0) return 0
+
+  const now = new Date()
+  const result = await db
+    .update(articles)
+    .set({
+      status: 'published',
+      publishedAt: now,
+      updatedAt: now,
+    })
+    .where(inArray(articles.id, ids))
+    .returning({ id: articles.id })
+
+  return result.length
+}
+
+/**
+ * Bulk delete articles
+ */
+export async function bulkDeleteArticles(ids: number[]): Promise<number> {
+  if (ids.length === 0) return 0
+
+  const result = await db
+    .delete(articles)
+    .where(inArray(articles.id, ids))
+    .returning({ id: articles.id })
+
+  return result.length
+}
+
+/**
+ * Schedule an article for future publishing
+ */
+export async function scheduleArticle(
+  id: number,
+  publishAt: Date
+): Promise<Article | null> {
+  const [article] = await db
+    .update(articles)
+    .set({
+      status: 'queued',
+      publishedAt: publishAt,
+      updatedAt: new Date(),
+    })
+    .where(eq(articles.id, id))
+    .returning()
+
+  return article ?? null
 }

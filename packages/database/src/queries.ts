@@ -191,3 +191,39 @@ export async function getCategoryWithArticleCount() {
     .groupBy(categories.id)
     .orderBy(categories.name)
 }
+
+// ============================================
+// DASHBOARD STATS (Admin)
+// ============================================
+export async function getArticleCountByStatus(): Promise<Record<string, number>> {
+  const result = await db
+    .select({
+      status: articles.status,
+      count: sql<number>`count(*)::int`,
+    })
+    .from(articles)
+    .groupBy(articles.status)
+
+  const counts: Record<string, number> = {
+    draft: 0,
+    queued: 0,
+    published: 0,
+    rejected: 0,
+    total: 0,
+  }
+
+  for (const row of result) {
+    counts[row.status] = row.count
+    counts.total += row.count
+  }
+
+  return counts
+}
+
+export async function getRecentlyUpdatedArticles(limit: number = 5): Promise<Article[]> {
+  return db
+    .select()
+    .from(articles)
+    .orderBy(desc(articles.updatedAt))
+    .limit(limit)
+}
