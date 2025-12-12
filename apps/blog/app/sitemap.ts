@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
 
-// Get base URL for sitemap
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blog.privacygecko.com'
+// Use main domain for SEO authority (subdirectory > subdomain)
+// Even though app is hosted on subdomain, we want Google to index privacygecko.com/blog/*
+const baseUrl = 'https://privacygecko.com/blog'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [

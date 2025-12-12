@@ -3,7 +3,14 @@ import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 
+// Use main domain for SEO authority (subdirectory > subdomain)
+const canonicalBase = "https://privacygecko.com/blog";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(canonicalBase),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     template: "%s | PrivacyGecko Blog",
     default: "PrivacyGecko Blog - Privacy, Security & Crypto Safety",
@@ -13,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://privacygecko.com/blog",
+    url: canonicalBase,
     siteName: "PrivacyGecko Blog",
     images: [
       {

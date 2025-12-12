@@ -53,7 +53,7 @@ async function getRelatedArticles(articleId: number, categoryId: number) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { category, slug } = await params;
   const article = await getArticle(slug);
 
   if (!article) {
@@ -63,15 +63,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const description = article.metaDescription || article.excerpt || undefined;
+  const canonicalUrl = `/${category}/${slug}`;
 
   return {
     title: article.metaTitle || article.title,
     description,
     keywords: article.keywords || undefined,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: article.metaTitle || article.title,
       description,
       type: "article",
+      url: canonicalUrl,
       publishedTime: article.publishedAt?.toISOString(),
       modifiedTime: article.updatedAt?.toISOString(),
       authors: ["PrivacyGecko Team"],
