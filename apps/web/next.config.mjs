@@ -73,24 +73,6 @@ const nextConfig = {
     ]
   },
 
-  // Rewrites to proxy /blog to the blog app
-  async rewrites() {
-    const blogUrl = process.env.BLOG_URL || 'http://localhost:3001';
-    return {
-      beforeFiles: [
-        // Proxy /blog to blog app
-        {
-          source: '/blog',
-          destination: `${blogUrl}/blog`,
-        },
-        {
-          source: '/blog/:path*',
-          destination: `${blogUrl}/blog/:path*`,
-        },
-      ],
-    };
-  },
-
   // Transpile shared packages
   transpilePackages: ['@privacygecko/ui', '@privacygecko/database'],
 }
