@@ -16,90 +16,40 @@ interface Props {
   params: Promise<{ category: string; slug: string }>;
 }
 
-// Mock data - will be replaced with database queries
-const mockArticles = [
-  {
-    id: 1,
-    title: "The Complete Guide to Online Privacy in 2025",
-    slug: "complete-guide-online-privacy-2025",
-    excerpt: "Learn everything you need to know about protecting your digital privacy in the modern age.",
-    content: `
-      <p class="lead">In an era where data is the new currency, protecting your online privacy has never been more important. This comprehensive guide will walk you through everything you need to know to stay safe online in 2025.</p>
-
-      <h2 id="why-privacy-matters">Why Privacy Matters</h2>
-      <p>Your digital footprint reveals more about you than you might think. Every search, every click, and every interaction is being tracked and analyzed. Understanding this is the first step to protecting yourself.</p>
-      <p>Privacy is not about having something to hide—it's about maintaining control over your personal information and deciding who gets access to it.</p>
-
-      <blockquote>
-        Privacy is not about having something to hide. It's about maintaining control over your personal information.
-      </blockquote>
-
-      <h2 id="essential-privacy-tools">Essential Privacy Tools</h2>
-      <p>Here are the must-have tools for anyone serious about online privacy:</p>
-      <ul>
-        <li><strong>VPN (Virtual Private Network)</strong> - Encrypts your internet connection and masks your IP address</li>
-        <li><strong>Password Manager</strong> - Generates and stores strong, unique passwords for all your accounts</li>
-        <li><strong>Encrypted Messaging</strong> - End-to-end encrypted communication apps</li>
-        <li><strong>Privacy-focused Browser</strong> - Browsers that don't track your activity</li>
-      </ul>
-
-      <h2 id="browser-privacy-settings">Browser Privacy Settings</h2>
-      <p>Your browser is your window to the internet, and it's also a major source of data leakage. Configure these settings for better privacy:</p>
-      <ol>
-        <li>Block third-party cookies</li>
-        <li>Enable Do Not Track</li>
-        <li>Use private/incognito mode for sensitive browsing</li>
-        <li>Clear browsing data regularly</li>
-      </ol>
-
-      <h3 id="recommended-extensions">Recommended Browser Extensions</h3>
-      <p>Enhance your browser's privacy with these extensions:</p>
-      <ul>
-        <li><strong>uBlock Origin</strong> - Ad and tracker blocker</li>
-        <li><strong>Privacy Badger</strong> - Learns to block invisible trackers</li>
-        <li><strong>HTTPS Everywhere</strong> - Forces secure connections</li>
-      </ul>
-
-      <h2 id="social-media-privacy">Social Media Privacy</h2>
-      <p>Social media platforms are designed to collect as much data as possible. Here's how to limit what they know about you:</p>
-      <ul>
-        <li>Review and restrict privacy settings</li>
-        <li>Limit what you share publicly</li>
-        <li>Use separate email addresses for different platforms</li>
-        <li>Consider using a pseudonym</li>
-      </ul>
-
-      <h2 id="conclusion">Conclusion</h2>
-      <p>Taking control of your online privacy doesn't have to be overwhelming. Start with the basics and gradually implement more advanced protections as you become comfortable. Remember, every step you take makes you safer online.</p>
-
-      <p class="signature">Stay safe, stay private. 🦎</p>
-    `,
-    metaTitle: "Complete Guide to Online Privacy in 2025 | PrivacyGecko",
-    metaDescription: "Learn essential privacy practices, tools, and strategies to protect your digital identity in 2025. Expert guide from PrivacyGecko.",
-    keywords: ["online privacy", "digital privacy", "privacy guide", "internet privacy", "data protection"],
-    categoryId: 1,
-    category: { name: "Privacy", slug: "privacy" },
-    targetProducts: ["geckoguard", "geckoadvisor"],
-    publishedAt: new Date("2025-01-15"),
-    updatedAt: new Date("2025-01-15"),
-    readingTime: 12,
-    wordCount: 1500,
-    status: "published",
-  },
-];
-
-const mockRelatedArticles = [
-  { id: 5, title: "Browser Privacy Settings You Should Change Today", slug: "browser-privacy-settings", categoryId: 1, readingTime: 7 },
-  { id: 6, title: "How to Choose a VPN: Complete Guide", slug: "how-to-choose-vpn", categoryId: 1, readingTime: 10 },
-  { id: 7, title: "Understanding Data Collection: What Companies Know", slug: "understanding-data-collection", categoryId: 1, readingTime: 8 },
-];
-
+// Helper to fetch article from database with fallback
 async function getArticle(slug: string) {
-  return mockArticles.find((a) => a.slug === slug) || null;
+  try {
+    if (process.env.DATABASE_URL) {
+      const { getArticleWithCategory } = await import("@privacygecko/database");
+      const article = await getArticleWithCategory(slug);
+      if (article && article.status === "published") {
+        return article;
+      }
+    }
+  } catch (error) {
+    console.error("Database error fetching article:", error);
+  }
+  return null;
 }
 
-async function getRelatedArticles(categoryId: number, currentId: number) {
-  return mockRelatedArticles.filter((a) => a.id !== currentId);
+async function getRelatedArticles(articleId: number, categoryId: number) {
+  try {
+    if (process.env.DATABASE_URL) {
+      const { getRelatedArticles: getRelated, getAllCategories } = await import("@privacygecko/database");
+      const articles = await getRelated(articleId, categoryId, 4);
+      if (articles.length > 0) {
+        const categories = await getAllCategories();
+        const categoryMap = new Map(categories.map(c => [c.id, { name: c.name, slug: c.slug }]));
+        return articles.map(a => ({
+          ...a,
+          category: categoryMap.get(a.categoryId) || { name: "Uncategorized", slug: "uncategorized" }
+        }));
+      }
+    }
+  } catch (error) {
+    console.error("Database error fetching related articles:", error);
+  }
+  return [];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -145,7 +95,7 @@ export default async function ArticlePage({ params }: Props) {
     notFound();
   }
 
-  const relatedArticles = await getRelatedArticles(article.categoryId, article.id);
+  const relatedArticles = await getRelatedArticles(article.id, article.categoryId);
 
   return (
     <>
