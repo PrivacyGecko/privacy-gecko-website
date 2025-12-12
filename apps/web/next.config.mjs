@@ -77,6 +77,31 @@ const nextConfig = {
   async rewrites() {
     // Use environment variable for flexibility between staging and production
     const blogUrl = process.env.BLOG_URL || 'https://blog.stage.privacygecko.com';
+
+    // Blog category slugs that need to be rewritten
+    const blogCategories = [
+      'privacy',
+      'security',
+      'crypto-safety',
+      'browser-protection',
+      'file-security',
+      'passwords-identity',
+      'product-updates',
+      'tutorials',
+    ];
+
+    // Generate rewrites for category paths (for internal blog navigation)
+    const categoryRewrites = blogCategories.flatMap(category => [
+      {
+        source: `/${category}`,
+        destination: `${blogUrl}/${category}`,
+      },
+      {
+        source: `/${category}/:path*`,
+        destination: `${blogUrl}/${category}/:path*`,
+      },
+    ]);
+
     return {
       beforeFiles: [
         {
@@ -87,6 +112,7 @@ const nextConfig = {
           source: '/blog/:path*',
           destination: `${blogUrl}/:path*`,
         },
+        ...categoryRewrites,
       ],
     };
   },
