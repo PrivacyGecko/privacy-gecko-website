@@ -12,10 +12,10 @@ export function Footer() {
     {
       title: "Products",
       links: [
-        { href: "https://geckoadvisor.com", label: "GeckoAdvisor", external: true },
-        { href: "https://geckoshare.com", label: "GeckoShare", external: true },
-        { href: "https://geckoguard.app", label: "GeckoGuard", external: true },
-        { href: "https://geckolock.com", label: "GeckoLock", external: true },
+        { href: "https://geckoadvisor.com", label: "GeckoAdvisor", external: true, isMainSite: false },
+        { href: "https://geckoshare.com", label: "GeckoShare", external: true, isMainSite: false },
+        { href: "https://geckoguard.app", label: "GeckoGuard", external: true, isMainSite: false },
+        { href: "https://geckolock.com", label: "GeckoLock", external: true, isMainSite: false },
       ],
     },
     {
