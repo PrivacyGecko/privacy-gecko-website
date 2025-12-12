@@ -11,103 +11,221 @@ interface Props {
   params: Promise<{ category: string }>;
 }
 
-// Mock data - will be replaced with database queries
+// Mock data - fallback until database is connected
 const mockCategories = [
-  { id: 1, name: "Privacy", slug: "privacy", description: "Digital privacy guides and tutorials for protecting your online identity", articleCount: 12 },
-  { id: 2, name: "Security", slug: "security", description: "Cybersecurity tips and best practices to keep you safe", articleCount: 8 },
-  { id: 3, name: "Crypto", slug: "crypto", description: "Cryptocurrency safety and security guides", articleCount: 15 },
-  { id: 4, name: "Tools", slug: "tools", description: "Privacy tool reviews and comparisons", articleCount: 6 },
+  { id: 1, name: "Privacy", slug: "privacy", description: "Digital privacy guides and tutorials for protecting your online identity", createdAt: new Date(), updatedAt: new Date() },
+  { id: 2, name: "Security", slug: "security", description: "Cybersecurity tips and best practices to keep you safe", createdAt: new Date(), updatedAt: new Date() },
+  { id: 3, name: "Crypto Safety", slug: "crypto-safety", description: "Cryptocurrency safety and security guides", createdAt: new Date(), updatedAt: new Date() },
+  { id: 4, name: "Browser Protection", slug: "browser-protection", description: "Browser security tips", createdAt: new Date(), updatedAt: new Date() },
+  { id: 5, name: "File Security", slug: "file-security", description: "Secure file sharing guides", createdAt: new Date(), updatedAt: new Date() },
+  { id: 6, name: "Passwords & Identity", slug: "passwords-identity", description: "Password and identity protection", createdAt: new Date(), updatedAt: new Date() },
 ];
 
-const mockArticles = [
-  {
-    id: 1,
-    title: "The Complete Guide to Online Privacy in 2025",
-    slug: "complete-guide-online-privacy-2025",
-    excerpt: "Learn everything you need to know about protecting your digital privacy in the modern age. From browser settings to encrypted communication, we cover it all.",
-    categoryId: 1,
-    category: { name: "Privacy", slug: "privacy" },
-    publishedAt: new Date("2025-01-15"),
-    readingTime: 12,
-    status: "published",
-  },
-  {
-    id: 5,
-    title: "Browser Privacy Settings You Should Change Today",
-    slug: "browser-privacy-settings",
-    excerpt: "Configure your browser for maximum privacy with these essential settings. Stop trackers, block fingerprinting, and take control of your data.",
-    categoryId: 1,
-    category: { name: "Privacy", slug: "privacy" },
-    publishedAt: new Date("2025-01-12"),
-    readingTime: 7,
-    status: "published",
-  },
-  {
-    id: 8,
-    title: "Understanding Data Collection: What Companies Know",
-    slug: "understanding-data-collection",
-    excerpt: "A deep dive into the data collection practices of major tech companies and what you can do to limit your exposure.",
-    categoryId: 1,
-    category: { name: "Privacy", slug: "privacy" },
-    publishedAt: new Date("2025-01-08"),
-    readingTime: 10,
-    status: "published",
-  },
-  {
-    id: 2,
-    title: "How to Secure Your Crypto Wallet: A Step-by-Step Guide",
-    slug: "secure-crypto-wallet-guide",
-    excerpt: "Protect your cryptocurrency investments with these essential security practices and wallet management techniques.",
-    categoryId: 3,
-    category: { name: "Crypto", slug: "crypto" },
-    publishedAt: new Date("2025-01-10"),
-    readingTime: 8,
-    status: "published",
-  },
-  {
-    id: 3,
-    title: "VPN vs Proxy: Which Should You Use?",
-    slug: "vpn-vs-proxy-comparison",
-    excerpt: "Understand the key differences between VPNs and proxies to make the right choice for your privacy needs.",
-    categoryId: 4,
-    category: { name: "Tools", slug: "tools" },
-    publishedAt: new Date("2025-01-05"),
-    readingTime: 6,
-    status: "published",
-  },
-  {
-    id: 4,
-    title: "Password Security Best Practices",
-    slug: "password-security-best-practices",
-    excerpt: "Create and manage strong passwords to keep your accounts safe from hackers and data breaches.",
-    categoryId: 2,
-    category: { name: "Security", slug: "security" },
-    publishedAt: new Date("2025-01-01"),
-    readingTime: 5,
-    status: "published",
-  },
-];
+const mockArticlesByCategory: Record<string, Array<{
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string | null;
+  content: string;
+  categoryId: number;
+  pillarId: number | null;
+  metaTitle: string | null;
+  metaDescription: string | null;
+  keywords: string[] | null;
+  targetProducts: string[] | null;
+  searchIntent: string | null;
+  depthScore: number | null;
+  originalityScore: number | null;
+  usefulnessScore: number | null;
+  spamScore: number | null;
+  overallScore: number | null;
+  status: string;
+  createdAt: Date;
+  updatedAt: Date;
+  publishedAt: Date | null;
+  wordCount: number | null;
+  readingTime: number | null;
+  category: { name: string; slug: string };
+}>> = {
+  privacy: [
+    {
+      id: 1,
+      title: "The Complete Guide to Online Privacy in 2025",
+      slug: "complete-guide-online-privacy-2025",
+      excerpt: "Learn everything you need to know about protecting your digital privacy in the modern age. From browser settings to encrypted communication, we cover it all.",
+      content: "",
+      categoryId: 1,
+      pillarId: null,
+      metaTitle: null,
+      metaDescription: null,
+      keywords: null,
+      targetProducts: null,
+      searchIntent: null,
+      depthScore: null,
+      originalityScore: null,
+      usefulnessScore: null,
+      spamScore: null,
+      overallScore: null,
+      status: "published",
+      createdAt: new Date("2025-01-15"),
+      updatedAt: new Date("2025-01-15"),
+      publishedAt: new Date("2025-01-15"),
+      wordCount: null,
+      readingTime: 12,
+      category: { name: "Privacy", slug: "privacy" },
+    },
+  ],
+  security: [
+    {
+      id: 4,
+      title: "Password Security Best Practices",
+      slug: "password-security-best-practices",
+      excerpt: "Create and manage strong passwords to keep your accounts safe from hackers and data breaches.",
+      content: "",
+      categoryId: 2,
+      pillarId: null,
+      metaTitle: null,
+      metaDescription: null,
+      keywords: null,
+      targetProducts: null,
+      searchIntent: null,
+      depthScore: null,
+      originalityScore: null,
+      usefulnessScore: null,
+      spamScore: null,
+      overallScore: null,
+      status: "published",
+      createdAt: new Date("2025-01-01"),
+      updatedAt: new Date("2025-01-01"),
+      publishedAt: new Date("2025-01-01"),
+      wordCount: null,
+      readingTime: 5,
+      category: { name: "Security", slug: "security" },
+    },
+  ],
+  "crypto-safety": [
+    {
+      id: 2,
+      title: "How to Secure Your Crypto Wallet: A Step-by-Step Guide",
+      slug: "secure-crypto-wallet-guide",
+      excerpt: "Protect your cryptocurrency investments with these essential security practices and wallet management techniques.",
+      content: "",
+      categoryId: 3,
+      pillarId: null,
+      metaTitle: null,
+      metaDescription: null,
+      keywords: null,
+      targetProducts: null,
+      searchIntent: null,
+      depthScore: null,
+      originalityScore: null,
+      usefulnessScore: null,
+      spamScore: null,
+      overallScore: null,
+      status: "published",
+      createdAt: new Date("2025-01-10"),
+      updatedAt: new Date("2025-01-10"),
+      publishedAt: new Date("2025-01-10"),
+      wordCount: null,
+      readingTime: 8,
+      category: { name: "Crypto Safety", slug: "crypto-safety" },
+    },
+  ],
+  "browser-protection": [
+    {
+      id: 3,
+      title: "VPN vs Proxy: Which Should You Use?",
+      slug: "vpn-vs-proxy-comparison",
+      excerpt: "Understand the key differences between VPNs and proxies to make the right choice for your privacy needs.",
+      content: "",
+      categoryId: 4,
+      pillarId: null,
+      metaTitle: null,
+      metaDescription: null,
+      keywords: null,
+      targetProducts: null,
+      searchIntent: null,
+      depthScore: null,
+      originalityScore: null,
+      usefulnessScore: null,
+      spamScore: null,
+      overallScore: null,
+      status: "published",
+      createdAt: new Date("2025-01-05"),
+      updatedAt: new Date("2025-01-05"),
+      publishedAt: new Date("2025-01-05"),
+      wordCount: null,
+      readingTime: 6,
+      category: { name: "Browser Protection", slug: "browser-protection" },
+    },
+  ],
+};
 
 const categoryIcons: Record<string, React.ElementType> = {
   privacy: Shield,
   security: Lock,
-  crypto: Coins,
-  tools: Wrench,
+  "crypto-safety": Coins,
+  "browser-protection": Wrench,
+  "file-security": Shield,
+  "passwords-identity": Lock,
 };
 
 const categoryColors: Record<string, { bg: string; text: string; accent: string }> = {
   privacy: { bg: "from-emerald-50 to-emerald-100/50", text: "text-emerald-700", accent: "bg-emerald-500" },
   security: { bg: "from-amber-50 to-amber-100/50", text: "text-amber-700", accent: "bg-amber-500" },
-  crypto: { bg: "from-indigo-50 to-indigo-100/50", text: "text-indigo-700", accent: "bg-indigo-500" },
-  tools: { bg: "from-rose-50 to-rose-100/50", text: "text-rose-700", accent: "bg-rose-500" },
+  "crypto-safety": { bg: "from-indigo-50 to-indigo-100/50", text: "text-indigo-700", accent: "bg-indigo-500" },
+  "browser-protection": { bg: "from-rose-50 to-rose-100/50", text: "text-rose-700", accent: "bg-rose-500" },
+  "file-security": { bg: "from-cyan-50 to-cyan-100/50", text: "text-cyan-700", accent: "bg-cyan-500" },
+  "passwords-identity": { bg: "from-purple-50 to-purple-100/50", text: "text-purple-700", accent: "bg-purple-500" },
 };
 
 async function getCategory(slug: string) {
+  try {
+    if (process.env.DATABASE_URL) {
+      const { getCategoryBySlug } = await import("@privacygecko/database");
+      const category = await getCategoryBySlug(slug);
+      if (category) return category;
+    }
+  } catch (error) {
+    console.error("Database error, using mock category:", error);
+  }
   return mockCategories.find((c) => c.slug === slug) || null;
 }
 
 async function getCategoryArticles(categorySlug: string) {
-  return mockArticles.filter((a) => a.category.slug === categorySlug);
+  try {
+    if (process.env.DATABASE_URL) {
+      const { getCategoryBySlug, getArticlesByCategory, getAllCategories } = await import("@privacygecko/database");
+      const category = await getCategoryBySlug(categorySlug);
+      if (category) {
+        const articles = await getArticlesByCategory(category.id);
+        if (articles.length > 0) {
+          const categories = await getAllCategories();
+          const categoryMap = new Map(categories.map(c => [c.id, { name: c.name, slug: c.slug }]));
+          return articles.map(a => ({
+            ...a,
+            category: categoryMap.get(a.categoryId) || { name: "Uncategorized", slug: "uncategorized" }
+          }));
+        }
+      }
+    }
+  } catch (error) {
+    console.error("Database error, using mock articles:", error);
+  }
+  return mockArticlesByCategory[categorySlug] || [];
+}
+
+async function getAllCategoriesForNav() {
+  try {
+    if (process.env.DATABASE_URL) {
+      const { getAllCategories } = await import("@privacygecko/database");
+      const categories = await getAllCategories();
+      if (categories.length > 0) return categories;
+    }
+  } catch (error) {
+    console.error("Database error, using mock categories:", error);
+  }
+  return mockCategories;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -132,13 +250,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CategoryPage({ params }: Props) {
   const { category: categorySlug } = await params;
-  const category = await getCategory(categorySlug);
+  const [category, articles, allCategories] = await Promise.all([
+    getCategory(categorySlug),
+    getCategoryArticles(categorySlug),
+    getAllCategoriesForNav(),
+  ]);
 
   if (!category) {
     notFound();
   }
 
-  const articles = await getCategoryArticles(categorySlug);
   const Icon = categoryIcons[category.slug] || Shield;
   const colors = categoryColors[category.slug] || categoryColors.privacy;
 
@@ -195,7 +316,7 @@ export default async function CategoryPage({ params }: Props) {
       {/* Category Navigation */}
       <section className="border-b border-[var(--color-border)] bg-white/50 backdrop-blur-sm sticky top-20 z-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
-          <CategoryNav categories={mockCategories} />
+          <CategoryNav categories={allCategories} />
         </div>
       </section>
 
@@ -276,7 +397,7 @@ export default async function CategoryPage({ params }: Props) {
           </h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {mockCategories
+            {allCategories
               .filter((c) => c.slug !== category.slug)
               .map((cat) => {
                 const CatIcon = categoryIcons[cat.slug] || Shield;
@@ -296,7 +417,7 @@ export default async function CategoryPage({ params }: Props) {
                         {cat.name}
                       </h4>
                       <p className="text-sm text-[var(--color-slate)]">
-                        {cat.articleCount} articles
+                        {cat.description ? cat.description.slice(0, 50) + "..." : "Browse articles"}
                       </p>
                     </div>
                     <ArrowRight className="w-4 h-4 text-[var(--color-slate)] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />

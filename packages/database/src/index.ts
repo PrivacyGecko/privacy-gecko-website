@@ -1,8 +1,8 @@
-// Re-export everything from schema
-export * from "./schema";
+// Client
+export { db, createMigrationClient, type Database } from './client'
 
-// Re-export database client
-export { db, getDatabase, isDatabaseAvailable, type Database } from "./client";
+// Schema
+export * from './schema'
 
-// Re-export drizzle operators for convenience
-export { eq, ne, gt, gte, lt, lte, and, or, desc, asc, sql } from "drizzle-orm";
+// Queries
+export * from './queries'

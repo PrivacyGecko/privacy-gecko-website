@@ -12,11 +12,12 @@ export const metadata: Metadata = {
     "Expert guides on online privacy, cybersecurity, and crypto safety. Learn how to protect your digital life with our comprehensive articles.",
 };
 
+// Mock data as fallback until database is connected
 const mockCategories = [
-  { id: 1, name: "Privacy", slug: "privacy", description: "Digital privacy guides" },
-  { id: 2, name: "Security", slug: "security", description: "Cybersecurity tips" },
-  { id: 3, name: "Crypto", slug: "crypto", description: "Crypto safety guides" },
-  { id: 4, name: "Tools", slug: "tools", description: "Privacy tool reviews" },
+  { id: 1, name: "Privacy", slug: "privacy", description: "Digital privacy guides", createdAt: new Date(), updatedAt: new Date() },
+  { id: 2, name: "Security", slug: "security", description: "Cybersecurity tips", createdAt: new Date(), updatedAt: new Date() },
+  { id: 3, name: "Crypto Safety", slug: "crypto-safety", description: "Crypto safety guides", createdAt: new Date(), updatedAt: new Date() },
+  { id: 4, name: "Browser Protection", slug: "browser-protection", description: "Browser security tips", createdAt: new Date(), updatedAt: new Date() },
 ];
 
 const mockArticles = [
@@ -26,11 +27,26 @@ const mockArticles = [
     slug: "complete-guide-online-privacy-2025",
     excerpt:
       "Learn everything you need to know about protecting your digital privacy in the modern age.",
+    content: "",
     categoryId: 1,
-    category: { name: "Privacy", slug: "privacy" },
-    publishedAt: new Date("2025-01-15"),
-    readingTime: 12,
+    pillarId: null,
+    metaTitle: null,
+    metaDescription: null,
+    keywords: null,
+    targetProducts: null,
+    searchIntent: null,
+    depthScore: null,
+    originalityScore: null,
+    usefulnessScore: null,
+    spamScore: null,
+    overallScore: null,
     status: "published",
+    createdAt: new Date("2025-01-15"),
+    updatedAt: new Date("2025-01-15"),
+    publishedAt: new Date("2025-01-15"),
+    wordCount: null,
+    readingTime: 12,
+    category: { name: "Privacy", slug: "privacy" },
   },
   {
     id: 2,
@@ -38,11 +54,26 @@ const mockArticles = [
     slug: "secure-crypto-wallet-guide",
     excerpt:
       "Protect your cryptocurrency investments with these essential security practices.",
+    content: "",
     categoryId: 3,
-    category: { name: "Crypto", slug: "crypto" },
-    publishedAt: new Date("2025-01-10"),
-    readingTime: 8,
+    pillarId: null,
+    metaTitle: null,
+    metaDescription: null,
+    keywords: null,
+    targetProducts: null,
+    searchIntent: null,
+    depthScore: null,
+    originalityScore: null,
+    usefulnessScore: null,
+    spamScore: null,
+    overallScore: null,
     status: "published",
+    createdAt: new Date("2025-01-10"),
+    updatedAt: new Date("2025-01-10"),
+    publishedAt: new Date("2025-01-10"),
+    wordCount: null,
+    readingTime: 8,
+    category: { name: "Crypto Safety", slug: "crypto-safety" },
   },
   {
     id: 3,
@@ -50,11 +81,26 @@ const mockArticles = [
     slug: "vpn-vs-proxy-comparison",
     excerpt:
       "Understand the key differences between VPNs and proxies to make the right choice for your privacy needs.",
+    content: "",
     categoryId: 4,
-    category: { name: "Tools", slug: "tools" },
-    publishedAt: new Date("2025-01-05"),
-    readingTime: 6,
+    pillarId: null,
+    metaTitle: null,
+    metaDescription: null,
+    keywords: null,
+    targetProducts: null,
+    searchIntent: null,
+    depthScore: null,
+    originalityScore: null,
+    usefulnessScore: null,
+    spamScore: null,
+    overallScore: null,
     status: "published",
+    createdAt: new Date("2025-01-05"),
+    updatedAt: new Date("2025-01-05"),
+    publishedAt: new Date("2025-01-05"),
+    wordCount: null,
+    readingTime: 6,
+    category: { name: "Browser Protection", slug: "browser-protection" },
   },
   {
     id: 4,
@@ -62,17 +108,72 @@ const mockArticles = [
     slug: "password-security-best-practices",
     excerpt:
       "Create and manage strong passwords to keep your accounts safe from hackers.",
+    content: "",
     categoryId: 2,
-    category: { name: "Security", slug: "security" },
-    publishedAt: new Date("2025-01-01"),
-    readingTime: 5,
+    pillarId: null,
+    metaTitle: null,
+    metaDescription: null,
+    keywords: null,
+    targetProducts: null,
+    searchIntent: null,
+    depthScore: null,
+    originalityScore: null,
+    usefulnessScore: null,
+    spamScore: null,
+    overallScore: null,
     status: "published",
+    createdAt: new Date("2025-01-01"),
+    updatedAt: new Date("2025-01-01"),
+    publishedAt: new Date("2025-01-01"),
+    wordCount: null,
+    readingTime: 5,
+    category: { name: "Security", slug: "security" },
   },
 ];
 
+// Helper to fetch data from database with fallback to mock data
+async function getLatestArticlesWithFallback() {
+  try {
+    // Only import database if DATABASE_URL is set
+    if (process.env.DATABASE_URL) {
+      const { getLatestArticles, getAllCategories } = await import("@privacygecko/database");
+      const articles = await getLatestArticles(20);
+      if (articles.length > 0) {
+        // Fetch categories to map article categoryId to category
+        const categories = await getAllCategories();
+        const categoryMap = new Map(categories.map(c => [c.id, { name: c.name, slug: c.slug }]));
+        return articles.map(a => ({
+          ...a,
+          category: categoryMap.get(a.categoryId) || { name: "Uncategorized", slug: "uncategorized" }
+        }));
+      }
+    }
+  } catch (error) {
+    console.error("Database error, using mock data:", error);
+  }
+  return mockArticles;
+}
+
+async function getAllCategoriesWithFallback() {
+  try {
+    if (process.env.DATABASE_URL) {
+      const { getAllCategories } = await import("@privacygecko/database");
+      const categories = await getAllCategories();
+      if (categories.length > 0) {
+        return categories;
+      }
+    }
+  } catch (error) {
+    console.error("Database error, using mock categories:", error);
+  }
+  return mockCategories;
+}
+
 export default async function BlogHomePage() {
-  const latestArticles = mockArticles;
-  const allCategories = mockCategories;
+  const [latestArticles, allCategories] = await Promise.all([
+    getLatestArticlesWithFallback(),
+    getAllCategoriesWithFallback(),
+  ]);
   const featuredArticle = latestArticles[0];
 
   return (
