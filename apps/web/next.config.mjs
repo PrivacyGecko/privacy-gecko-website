@@ -73,6 +73,24 @@ const nextConfig = {
     ]
   },
 
+  // Rewrites to proxy /blog to the blog subdomain
+  async rewrites() {
+    // Use environment variable for flexibility between staging and production
+    const blogUrl = process.env.BLOG_URL || 'https://blog.stage.privacygecko.com';
+    return {
+      beforeFiles: [
+        {
+          source: '/blog',
+          destination: `${blogUrl}/`,
+        },
+        {
+          source: '/blog/:path*',
+          destination: `${blogUrl}/:path*`,
+        },
+      ],
+    };
+  },
+
   // Transpile shared packages
   transpilePackages: ['@privacygecko/ui', '@privacygecko/database'],
 }
