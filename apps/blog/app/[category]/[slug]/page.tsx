@@ -62,13 +62,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const description = article.metaDescription || article.excerpt || undefined;
+
   return {
     title: article.metaTitle || article.title,
-    description: article.metaDescription || article.excerpt,
-    keywords: article.keywords,
+    description,
+    keywords: article.keywords || undefined,
     openGraph: {
       title: article.metaTitle || article.title,
-      description: article.metaDescription || article.excerpt,
+      description,
       type: "article",
       publishedTime: article.publishedAt?.toISOString(),
       modifiedTime: article.updatedAt?.toISOString(),
@@ -77,7 +79,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: article.metaTitle || article.title,
-      description: article.metaDescription || article.excerpt,
+      description,
     },
   };
 }
@@ -90,8 +92,8 @@ export default async function ArticlePage({ params }: Props) {
     notFound();
   }
 
-  // Verify category matches
-  if (article.category.slug !== categorySlug) {
+  // Verify category exists and matches
+  if (!article.category || article.category.slug !== categorySlug) {
     notFound();
   }
 

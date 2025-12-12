@@ -6,7 +6,8 @@ interface Article {
   title: string;
   slug: string;
   categoryId: number | null;
-  readingTime?: number;
+  readingTime?: number | null;
+  category?: { name: string; slug: string };
 }
 
 interface RelatedPostsProps {
