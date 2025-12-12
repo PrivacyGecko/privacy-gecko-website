@@ -11,7 +11,7 @@
   "dependencies": {
     "@privacygecko/ui": "workspace:*",
     "@privacygecko/database": "workspace:*",
-    "next": "15.1.2",
+    "next": "15.5.9",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "reading-time": "^1.5.0",
