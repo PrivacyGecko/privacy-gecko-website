@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Twitter, Send, Github, ArrowUpRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 // Base URL for main site links (empty for same domain)
 const MAIN_SITE_BASE = "";
@@ -44,10 +43,10 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-slate-200 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
         {/* Main Footer */}
-        <div className="py-16 grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
+        <div className="py-12 grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-10">
           {/* Brand */}
           <div className="col-span-2">
             <a href={`${MAIN_SITE_BASE}/`}>
@@ -55,22 +54,22 @@ export function Footer() {
               <img
                 src="/images/privacygecko_logo_320x100.png"
                 alt="Privacy Gecko"
-                className="h-10 w-auto mb-4"
+                className="h-9 w-auto mb-4"
               />
             </a>
-            <p className="text-slate-500 text-sm leading-relaxed max-w-xs mb-6">
+            <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed max-w-xs mb-5">
               Privacy products that work. No tracking, no data selling, just tools that respect you.
             </p>
 
             {/* Social */}
-            <div className="flex gap-3">
+            <div className="flex gap-2">
               {socialLinks.map((social) => (
                 <a
                   key={social.href}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-blue-600 hover:text-white transition-colors"
+                  className="share-btn"
                   aria-label={social.label}
                 >
                   <social.icon size={16} />
@@ -82,10 +81,10 @@ export function Footer() {
           {/* Link Columns */}
           {footerLinks.map((column) => (
             <div key={column.title}>
-              <h3 className="font-display font-semibold text-slate-900 text-sm mb-4">
+              <h3 className="font-display font-medium text-[var(--color-text-primary)] text-sm mb-3">
                 {column.title}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {column.links.map((link) => (
                   <li key={link.href}>
                     {link.external ? (
@@ -93,7 +92,7 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-slate-500 hover:text-blue-600 transition-colors inline-flex items-center gap-1 group"
+                        className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-1 group"
                       >
                         {link.label}
                         <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -101,14 +100,14 @@ export function Footer() {
                     ) : link.isMainSite ? (
                       <a
                         href={link.href}
-                        className="text-sm text-slate-500 hover:text-blue-600 transition-colors"
+                        className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-sm text-slate-500 hover:text-blue-600 transition-colors"
+                        className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -121,14 +120,14 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-400 text-sm">
+        <div className="py-5 border-t border-[var(--color-border-subtle)] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[var(--color-text-tertiary)] text-xs">
             © {new Date().getFullYear()} Privacy Gecko
           </p>
-          <div className="flex items-center gap-6">
-            <span className="text-xs text-slate-400 uppercase tracking-wider">No tracking</span>
-            <span className="text-xs text-slate-400 uppercase tracking-wider">Open source</span>
-            <span className="text-xs text-slate-400 uppercase tracking-wider">GDPR compliant</span>
+          <div className="flex items-center gap-5">
+            <span className="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium">No tracking</span>
+            <span className="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium">Open source</span>
+            <span className="text-[10px] text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium">GDPR compliant</span>
           </div>
         </div>
       </div>

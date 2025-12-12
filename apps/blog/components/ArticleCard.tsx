@@ -16,14 +16,22 @@ interface ArticleCardProps {
   index?: number;
 }
 
-const categoryStyles: Record<string, string> = {
-  privacy: "category-pill-privacy",
-  security: "category-pill-security",
-  crypto: "category-pill-crypto",
-  tools: "category-pill-tools",
-};
+// Get category badge class based on slug
+function getCategoryBadgeClass(slug: string): string {
+  const categoryMap: Record<string, string> = {
+    "privacy": "category-badge-privacy",
+    "security": "category-badge-security",
+    "crypto-safety": "category-badge-crypto-safety",
+    "browser-protection": "category-badge-browser-protection",
+    "file-security": "category-badge-file-security",
+    "passwords-identity": "category-badge-passwords-identity",
+    "product-updates": "category-badge-product-updates",
+    "tutorials": "category-badge-tutorials",
+  };
+  return categoryMap[slug] || "category-badge-privacy";
+}
 
-export function ArticleCard({ article, index = 1 }: ArticleCardProps) {
+export function ArticleCard({ article }: ArticleCardProps) {
   const formattedDate = article.publishedAt
     ? new Intl.DateTimeFormat("en-US", {
         month: "short",
@@ -31,55 +39,51 @@ export function ArticleCard({ article, index = 1 }: ArticleCardProps) {
       }).format(new Date(article.publishedAt))
     : null;
 
-  const categoryStyle = categoryStyles[article.category.slug] || "category-pill-privacy";
-  const paddedIndex = String(index).padStart(2, "0");
+  const categoryBadgeClass = getCategoryBadgeClass(article.category.slug);
 
   return (
-    <article className="group card-editorial rounded-xl p-6 relative">
-      {/* Large Number Watermark */}
-      <span className="article-number">{paddedIndex}</span>
-
+    <article className="article-card group p-6">
       {/* Category & Date Row */}
-      <div className="flex items-center justify-between mb-5 relative z-10">
+      <div className="flex items-center justify-between mb-4">
         <Link
           href={`/${article.category.slug}`}
-          className={`category-pill ${categoryStyle}`}
+          className={`category-badge ${categoryBadgeClass}`}
         >
           {article.category.name}
         </Link>
         {formattedDate && (
-          <span className="text-xs text-slate-400 font-medium tracking-wide">
+          <span className="text-xs text-[var(--color-text-tertiary)] font-medium">
             {formattedDate}
           </span>
         )}
       </div>
 
       {/* Title */}
-      <Link href={`/${article.category.slug}/${article.slug}`} className="block relative z-10">
-        <h3 className="font-editorial text-xl font-medium text-[var(--color-charcoal)] mb-3 leading-snug group-hover:text-emerald-600 transition-colors duration-300">
+      <Link href={`/${article.category.slug}/${article.slug}`} className="block">
+        <h3 className="font-display text-lg text-[var(--color-text-primary)] mb-3 leading-snug group-hover:text-[var(--color-accent)] transition-colors">
           {article.title}
         </h3>
       </Link>
 
       {/* Excerpt */}
       {article.excerpt && (
-        <p className="text-[var(--color-charcoal-light)] text-sm leading-relaxed mb-5 line-clamp-2 relative z-10">
+        <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-4 line-clamp-2">
           {article.excerpt}
         </p>
       )}
 
       {/* Footer */}
-      <div className="flex items-center justify-between pt-5 border-t border-[var(--color-border)] relative z-10">
+      <div className="flex items-center justify-between pt-4 border-t border-[var(--color-border-subtle)]">
         {article.readingTime && (
-          <span className="flex items-center gap-1.5 text-xs text-slate-400">
+          <span className="flex items-center gap-1.5 text-xs text-[var(--color-text-tertiary)]">
             <Clock className="w-3.5 h-3.5" />
-            {article.readingTime} min read
+            {article.readingTime} min
           </span>
         )}
 
         <Link
           href={`/${article.category.slug}/${article.slug}`}
-          className="flex items-center gap-1 text-sm font-medium text-emerald-600 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-8px] group-hover:translate-x-0"
+          className="flex items-center gap-1 text-sm font-medium text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-all translate-x-[-8px] group-hover:translate-x-0"
         >
           Read
           <ArrowUpRight className="w-3.5 h-3.5" />

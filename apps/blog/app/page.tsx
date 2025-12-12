@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArticleCard } from "@/components/ArticleCard";
 import { CategoryNav } from "@/components/CategoryNav";
-import { Shield, Lock, ArrowRight, Sparkles } from "lucide-react";
+import { Shield, ArrowRight } from "lucide-react";
 
 export const revalidate = 3600;
 
@@ -169,6 +169,21 @@ async function getAllCategoriesWithFallback() {
   return mockCategories;
 }
 
+// Get category badge class based on slug
+function getCategoryBadgeClass(slug: string): string {
+  const categoryMap: Record<string, string> = {
+    "privacy": "category-badge-privacy",
+    "security": "category-badge-security",
+    "crypto-safety": "category-badge-crypto-safety",
+    "browser-protection": "category-badge-browser-protection",
+    "file-security": "category-badge-file-security",
+    "passwords-identity": "category-badge-passwords-identity",
+    "product-updates": "category-badge-product-updates",
+    "tutorials": "category-badge-tutorials",
+  };
+  return categoryMap[slug] || "category-badge-privacy";
+}
+
 export default async function BlogHomePage() {
   const [latestArticles, allCategories] = await Promise.all([
     getLatestArticlesWithFallback(),
@@ -177,130 +192,112 @@ export default async function BlogHomePage() {
   const featuredArticle = latestArticles[0];
 
   return (
-    <div className="min-h-screen bg-editorial-grid">
-      {/* Editorial Hero Section */}
+    <div className="min-h-screen hero-gradient pattern-grid">
+      {/* Hero Section - Clean & Editorial */}
       <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-20">
-          {/* Decorative Elements */}
-          <div className="absolute top-20 left-10 w-20 h-20 border border-emerald-200 rounded-full opacity-40" />
-          <div className="absolute top-40 right-20 w-32 h-32 border border-amber-200 rounded-full opacity-30" />
-
-          <div className="text-center max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 pt-20 pb-16">
+          <div className="text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-100 mb-8 opacity-0 animate-fade-up">
-              <Shield className="w-4 h-4 text-emerald-600" />
-              <span className="text-sm font-medium text-emerald-700 tracking-wide">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-subtle)] border border-[var(--color-accent-muted)] mb-8 animate-fade-up">
+              <Shield className="w-4 h-4 text-[var(--color-accent)]" />
+              <span className="text-sm font-medium text-[var(--color-accent-hover)] tracking-wide">
                 Privacy-First Knowledge
               </span>
             </div>
 
             {/* Main Title */}
-            <h1 className="font-editorial text-5xl md:text-6xl lg:text-7xl font-light text-[var(--color-charcoal)] mb-6 opacity-0 animate-fade-up animation-delay-100">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-[var(--color-text-primary)] mb-6 animate-fade-up delay-100">
               The Privacy
-              <span className="block font-medium italic text-emerald-600">Journal</span>
+              <span className="block font-normal italic text-[var(--color-accent)]">Journal</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-[var(--color-charcoal-light)] max-w-xl mx-auto leading-relaxed opacity-0 animate-fade-up animation-delay-200">
+            <p className="text-lg md:text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto leading-relaxed animate-fade-up delay-200">
               Expert insights on digital privacy, security practices, and protecting your crypto assets in the modern age.
             </p>
-
-            {/* Decorative Line */}
-            <div className="flex items-center justify-center gap-4 mt-10 opacity-0 animate-fade-up animation-delay-300">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-emerald-300" />
-              <Lock className="w-5 h-5 text-emerald-400" />
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-emerald-300" />
-            </div>
           </div>
         </div>
       </section>
 
       {/* Category Navigation */}
-      <section className="border-y border-[var(--color-border)] bg-white/50 backdrop-blur-sm sticky top-20 z-40">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+      <section className="border-y border-[var(--color-border)] bg-[var(--color-bg-elevated)]/80 backdrop-blur-sm sticky top-20 z-40">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 py-4">
           <CategoryNav categories={allCategories} />
         </div>
       </section>
 
-      {/* Featured Article - Editorial Split Layout */}
+      {/* Featured Article */}
       {featuredArticle && (
-        <section className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-          <div className="grid lg:grid-cols-2 gap-0 featured-gradient rounded-2xl overflow-hidden texture-noise">
-            {/* Left - Content */}
-            <div className="p-10 lg:p-14 flex flex-col justify-center relative z-10">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="category-pill category-pill-privacy">
-                  {featuredArticle.category.name}
-                </span>
-                <span className="text-emerald-400/60 text-sm font-medium">
-                  Featured
-                </span>
-              </div>
+        <section className="max-w-5xl mx-auto px-6 lg:px-8 py-16">
+          <Link
+            href={`/${featuredArticle.category.slug}/${featuredArticle.slug}`}
+            className="featured-card block group"
+          >
+            <div className="grid lg:grid-cols-5 gap-0">
+              {/* Content */}
+              <div className="lg:col-span-3 p-8 lg:p-12 flex flex-col justify-center relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className={`category-badge ${getCategoryBadgeClass(featuredArticle.category.slug)}`}>
+                    {featuredArticle.category.name}
+                  </span>
+                  <span className="text-[var(--color-accent)]/60 text-xs font-semibold uppercase tracking-wider">
+                    Featured
+                  </span>
+                </div>
 
-              <h2 className="font-editorial text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight mb-6">
-                {featuredArticle.title}
-              </h2>
+                <h2 className="font-display text-2xl md:text-3xl lg:text-4xl text-[var(--color-text-inverse)] leading-tight mb-4 group-hover:text-[var(--color-accent)] transition-colors">
+                  {featuredArticle.title}
+                </h2>
 
-              <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-lg">
-                {featuredArticle.excerpt}
-              </p>
+                <p className="text-neutral-400 text-base leading-relaxed mb-6 max-w-lg line-clamp-2">
+                  {featuredArticle.excerpt}
+                </p>
 
-              <div className="flex items-center gap-6">
-                <Link
-                  href={`/${featuredArticle.category.slug}/${featuredArticle.slug}`}
-                  className="group inline-flex items-center gap-3 px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-white rounded-lg font-medium transition-all duration-300 hover:shadow-emerald"
-                >
-                  Read Article
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-                <span className="text-slate-400 text-sm">
-                  {featuredArticle.readingTime} min read
-                </span>
-              </div>
-            </div>
-
-            {/* Right - Decorative */}
-            <div className="hidden lg:flex items-center justify-center relative">
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-slate-900/50" />
-              <div className="relative">
-                {/* Large decorative number */}
-                <span className="font-editorial text-[12rem] font-light text-white/5 select-none">
-                  01
-                </span>
-                {/* Floating elements */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-32 h-32 border-2 border-emerald-500/20 rounded-full animate-pulse" />
-                  <div className="absolute inset-4 border border-emerald-500/30 rounded-full" />
-                  <Sparkles className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 text-emerald-400/60" />
+                <div className="flex items-center gap-4">
+                  <span className="inline-flex items-center gap-2 text-[var(--color-accent)] font-medium text-sm group-hover:gap-3 transition-all">
+                    Read article
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                  <span className="text-neutral-500 text-sm">
+                    {featuredArticle.readingTime} min read
+                  </span>
                 </div>
               </div>
+
+              {/* Decorative Right Section */}
+              <div className="hidden lg:flex lg:col-span-2 items-center justify-center relative">
+                <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[var(--color-bg-dark)]/50" />
+                <span className="font-display text-[10rem] font-normal text-white/[0.03] select-none">
+                  01
+                </span>
+              </div>
             </div>
-          </div>
+          </Link>
         </section>
       )}
 
-      {/* Latest Articles - Magazine Grid */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="flex items-end justify-between mb-12">
+      {/* Latest Articles Grid */}
+      <section className="max-w-5xl mx-auto px-6 lg:px-8 py-12">
+        <div className="flex items-end justify-between mb-10">
           <div>
-            <span className="text-sm font-semibold text-emerald-600 tracking-wider uppercase mb-2 block">
+            <span className="text-xs font-semibold text-[var(--color-accent)] tracking-widest uppercase mb-2 block">
               Latest Stories
             </span>
-            <h2 className="font-editorial text-3xl md:text-4xl font-light text-[var(--color-charcoal)]">
+            <h2 className="font-display text-2xl md:text-3xl text-[var(--color-text-primary)]">
               Fresh from the <span className="italic">press</span>
             </h2>
           </div>
           <Link
             href="/privacy"
-            className="group hidden sm:flex items-center gap-2 text-[var(--color-charcoal)] hover:text-emerald-600 font-medium transition-colors"
+            className="hidden sm:flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] text-sm font-medium transition-colors"
           >
-            View archive
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            View all
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
         {/* Article Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
           {latestArticles.slice(1).map((article, index) => (
             <ArticleCard key={article.id} article={article} index={index + 2} />
           ))}
@@ -310,7 +307,7 @@ export default async function BlogHomePage() {
         <div className="mt-10 text-center sm:hidden">
           <Link
             href="/privacy"
-            className="inline-flex items-center gap-2 text-emerald-600 font-medium"
+            className="inline-flex items-center gap-2 text-[var(--color-accent)] font-medium text-sm"
           >
             View all articles
             <ArrowRight className="w-4 h-4" />
@@ -318,50 +315,45 @@ export default async function BlogHomePage() {
         </div>
       </section>
 
-      {/* Newsletter Section - Editorial Style */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-16 mb-16">
-        <div className="newsletter-section rounded-2xl p-10 lg:p-16 relative overflow-hidden">
-          <div className="relative z-10 max-w-2xl mx-auto text-center">
-            {/* Decorative */}
+      {/* Newsletter Section */}
+      <section className="max-w-5xl mx-auto px-6 lg:px-8 py-12 mb-16">
+        <div className="newsletter-section p-8 lg:p-12 text-center">
+          <div className="relative z-10 max-w-lg mx-auto">
+            {/* Decorative Header */}
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="h-px w-12 bg-emerald-300" />
-              <span className="text-xs font-semibold tracking-[0.2em] text-emerald-600 uppercase">
+              <div className="h-px w-10 bg-[var(--color-accent-muted)]" />
+              <span className="text-xs font-semibold tracking-[0.15em] text-[var(--color-accent)] uppercase">
                 Newsletter
               </span>
-              <div className="h-px w-12 bg-emerald-300" />
+              <div className="h-px w-10 bg-[var(--color-accent-muted)]" />
             </div>
 
-            <h2 className="font-editorial text-3xl md:text-4xl font-light text-[var(--color-charcoal)] mb-4">
-              Stay <span className="italic">informed</span>, stay secure
+            <h2 className="font-display text-2xl md:text-3xl text-[var(--color-text-primary)] mb-3">
+              Stay <span className="italic">informed</span>
             </h2>
 
-            <p className="text-[var(--color-charcoal-light)] mb-8 max-w-md mx-auto">
-              Weekly privacy insights, security alerts, and expert guides delivered thoughtfully to your inbox.
+            <p className="text-[var(--color-text-secondary)] text-sm mb-6 max-w-sm mx-auto">
+              Weekly privacy insights and security guides delivered to your inbox.
             </p>
 
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <form className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
               <input
                 type="email"
                 placeholder="your@email.com"
-                className="flex-1 px-5 py-3.5 rounded-lg bg-white border border-[var(--color-border)] text-[var(--color-charcoal)] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                className="flex-1 px-4 py-3 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-tertiary)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/20 focus:border-[var(--color-accent)] transition-all"
               />
               <button
                 type="submit"
-                className="px-8 py-3.5 bg-[var(--color-charcoal)] hover:bg-emerald-600 text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg"
+                className="btn-primary whitespace-nowrap"
               >
                 Subscribe
               </button>
             </form>
 
-            <p className="text-slate-400 text-sm mt-6 flex items-center justify-center gap-2">
-              <Lock className="w-3.5 h-3.5" />
+            <p className="text-[var(--color-text-tertiary)] text-xs mt-4">
               No spam. Privacy respected. Unsubscribe anytime.
             </p>
           </div>
-
-          {/* Corner decorations */}
-          <div className="absolute top-6 left-6 w-16 h-16 border-l-2 border-t-2 border-emerald-200/50" />
-          <div className="absolute bottom-6 right-6 w-16 h-16 border-r-2 border-b-2 border-emerald-200/50" />
         </div>
       </section>
     </div>
