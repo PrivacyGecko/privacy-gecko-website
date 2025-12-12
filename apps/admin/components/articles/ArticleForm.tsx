@@ -37,6 +37,13 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
     article?.keywords?.join(", ") || ""
   );
 
+  // Publish date (for backdating)
+  const [publishedAt, setPublishedAt] = useState(
+    article?.publishedAt
+      ? new Date(article.publishedAt).toISOString().slice(0, 16)
+      : ""
+  );
+
   // Status
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -62,6 +69,15 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
     setError("");
 
     try {
+      // Use custom date if provided, otherwise use current date when publishing
+      const effectivePublishedAt = publishNow
+        ? publishedAt
+          ? new Date(publishedAt).toISOString()
+          : new Date().toISOString()
+        : publishedAt
+          ? new Date(publishedAt).toISOString()
+          : null;
+
       const payload = {
         title,
         slug,
@@ -74,7 +90,7 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
           ? keywords.split(",").map((k) => k.trim()).filter(Boolean)
           : null,
         status: publishNow ? "published" : "draft",
-        publishedAt: publishNow ? new Date().toISOString() : null,
+        publishedAt: effectivePublishedAt,
       };
 
       const url = isEditing
@@ -179,6 +195,20 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
             <span>{wordCount} words</span>
             <span>{readingTime} min read</span>
           </div>
+        </div>
+
+        {/* Publish Date */}
+        <div>
+          <label className="label">Publish Date</label>
+          <input
+            type="datetime-local"
+            value={publishedAt}
+            onChange={(e) => setPublishedAt(e.target.value)}
+            className="input"
+          />
+          <p className="text-xs text-[var(--color-text-tertiary)] mt-1">
+            Set a past date to backdate the article. Leave empty for current date when publishing.
+          </p>
         </div>
 
         {/* SEO Fields (Collapsible) */}
