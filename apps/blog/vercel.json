@@ -1,5 +1,3 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "pnpm install --filter=blog...",
-  "buildCommand": "cd ../.. && pnpm build:blog"
+  "$schema": "https://openapi.vercel.sh/vercel.json"
 }
