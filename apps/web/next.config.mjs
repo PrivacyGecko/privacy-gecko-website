@@ -45,12 +45,12 @@ const nextConfig = {
           {
             key: 'Content-Security-Policy',
             value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' plausible.io",
-              "style-src 'self' 'unsafe-inline'",
+              "default-src 'self' *.privacygecko.com",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' plausible.io *.privacygecko.com",
+              "style-src 'self' 'unsafe-inline' *.privacygecko.com",
               "img-src 'self' data: https:",
-              "font-src 'self' data:",
-              "connect-src 'self' plausible.io https://formspree.io",
+              "font-src 'self' data: *.privacygecko.com",
+              "connect-src 'self' plausible.io https://formspree.io *.privacygecko.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self' https://formspree.io",
