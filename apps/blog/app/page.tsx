@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArticleCard } from "@/components/ArticleCard";
 import { CategoryNav } from "@/components/CategoryNav";
+import { NewsletterForm } from "@/components/NewsletterForm";
 import { Shield, ArrowRight } from "lucide-react";
 
 export const revalidate = 3600;
@@ -336,23 +337,7 @@ export default async function BlogHomePage() {
               Weekly privacy insights and security guides delivered to your inbox.
             </p>
 
-            <form className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 px-4 py-3 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-tertiary)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/20 focus:border-[var(--color-accent)] transition-all"
-              />
-              <button
-                type="submit"
-                className="btn-primary whitespace-nowrap"
-              >
-                Subscribe
-              </button>
-            </form>
-
-            <p className="text-[var(--color-text-tertiary)] text-xs mt-4">
-              No spam. Privacy respected. Unsubscribe anytime.
-            </p>
+            <NewsletterForm />
           </div>
         </div>
       </section>

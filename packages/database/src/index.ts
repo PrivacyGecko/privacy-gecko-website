@@ -6,3 +6,6 @@ export * from './schema'
 
 // Queries
 export * from './queries'
+
+// Mutations (Admin)
+export * from './mutations'

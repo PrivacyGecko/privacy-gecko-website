@@ -1,8 +1,28 @@
 /** @type {import('next').NextConfig} */
+
+// Determine asset prefix based on environment
+// When accessed via /blog rewrite, assets must load from blog subdomain
+function getAssetPrefix() {
+  // Use explicit ASSET_PREFIX if set
+  if (process.env.ASSET_PREFIX) {
+    return process.env.ASSET_PREFIX;
+  }
+
+  // Auto-detect for Vercel deployments
+  if (process.env.VERCEL_ENV === 'production') {
+    return 'https://blog.privacygecko.com';
+  }
+  if (process.env.VERCEL_ENV === 'preview') {
+    return 'https://blog.stage.privacygecko.com';
+  }
+
+  // Local development - no prefix needed
+  return undefined;
+}
+
 const nextConfig = {
   // Asset prefix ensures JS/CSS load from blog subdomain when accessed via /blog rewrite
-  // Only set in production (via ASSET_PREFIX env var)
-  assetPrefix: process.env.ASSET_PREFIX || undefined,
+  assetPrefix: getAssetPrefix(),
   transpilePackages: ['@privacygecko/ui', '@privacygecko/database'],
   images: {
     remotePatterns: [
