@@ -18,19 +18,47 @@ export function TableOfContents({ content }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    // Parse headings from content
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(content, "text/html");
-    const headingElements = doc.querySelectorAll("h2, h3");
+    // Function to create slug from text
+    const slugify = (text: string) =>
+      text
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .trim();
 
-    const items: TocItem[] = Array.from(headingElements).map((heading, index) => {
-      const id = heading.id || `heading-${index}`;
-      return {
-        id,
-        text: heading.textContent || "",
-        level: parseInt(heading.tagName.charAt(1)),
-      };
-    });
+    // Check if content is markdown
+    const isMarkdown = /^#+ /m.test(content);
+
+    let items: TocItem[] = [];
+
+    if (isMarkdown) {
+      // Parse markdown headings (## and ###)
+      const headingRegex = /^(#{2,3})\s+(.+)$/gm;
+      let match;
+      let index = 0;
+
+      while ((match = headingRegex.exec(content)) !== null) {
+        const level = match[1].length;
+        const text = match[2].trim();
+        const id = slugify(text) || `heading-${index}`;
+        items.push({ id, text, level });
+        index++;
+      }
+    } else {
+      // Parse HTML headings
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(content, "text/html");
+      const headingElements = doc.querySelectorAll("h2, h3");
+
+      items = Array.from(headingElements).map((heading, index) => {
+        const id = heading.id || slugify(heading.textContent || "") || `heading-${index}`;
+        return {
+          id,
+          text: heading.textContent || "",
+          level: parseInt(heading.tagName.charAt(1)),
+        };
+      });
+    }
 
     setHeadings(items);
   }, [content]);
