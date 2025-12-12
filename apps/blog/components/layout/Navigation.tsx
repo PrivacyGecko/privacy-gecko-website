@@ -49,7 +49,7 @@ export function Navigation() {
   const navLinks = [
     { href: `${MAIN_SITE_BASE}/about`, label: "About", isMainSite: true },
     { href: `${MAIN_SITE_BASE}/roadmap`, label: "Roadmap", isMainSite: true },
-    { href: "/", label: "Blog", isMainSite: false }, // This becomes /blog due to basePath
+    { href: "/", label: "Blog", isMainSite: false }, // Blog home on subdomain
   ];
 
   return (
@@ -76,7 +76,7 @@ export function Navigation() {
             <a href={`${MAIN_SITE_BASE}/`} className="relative z-10">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/blog/images/privacygecko_logo_320x100.png"
+                src="/images/privacygecko_logo_320x100.png"
                 alt="Privacy Gecko"
                 className="h-11 w-auto"
               />

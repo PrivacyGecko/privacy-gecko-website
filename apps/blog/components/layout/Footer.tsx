@@ -53,7 +53,7 @@ export function Footer() {
             <a href={`${MAIN_SITE_BASE}/`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/blog/images/privacygecko_logo_320x100.png"
+                src="/images/privacygecko_logo_320x100.png"
                 alt="Privacy Gecko"
                 className="h-10 w-auto mb-4"
               />

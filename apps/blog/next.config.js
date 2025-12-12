@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/blog',
+  // No basePath needed - blog is on its own subdomain (blog.privacygecko.com)
   transpilePackages: ['@privacygecko/ui', '@privacygecko/database'],
   images: {
     remotePatterns: [
