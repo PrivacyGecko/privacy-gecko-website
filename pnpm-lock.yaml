@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@aws-sdk/client-s3':
+        specifier: ^3.712.0
+        version: 3.948.0
     devDependencies:
       turbo:
         specifier: ^2.3.3

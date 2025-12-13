@@ -185,19 +185,22 @@ function getCategoryColor(slug: string): string {
   return colors[slug] || "#635BFF";
 }
 
+// R2 CDN base URL
+const R2_CDN_URL = "https://pub-ee83597c43b94030b8793a2e4e9d013a.r2.dev";
+
 // Get category image based on slug
 function getCategoryImage(slug: string): string {
   const images: Record<string, string> = {
-    "privacy": "/images/categories/privacy.jpg",
-    "security": "/images/categories/security.jpg",
-    "crypto-safety": "/images/categories/crypto-safety.jpg",
-    "browser-protection": "/images/categories/browser-protection.jpg",
-    "file-security": "/images/categories/file-security.jpg",
-    "passwords-identity": "/images/categories/passwords-identity.jpg",
-    "product-updates": "/images/categories/security.jpg",
-    "tutorials": "/images/categories/privacy.jpg",
+    "privacy": `${R2_CDN_URL}/images/categories/privacy.jpg`,
+    "security": `${R2_CDN_URL}/images/categories/security.jpg`,
+    "crypto-safety": `${R2_CDN_URL}/images/categories/crypto-safety.jpg`,
+    "browser-protection": `${R2_CDN_URL}/images/categories/browser-protection.jpg`,
+    "file-security": `${R2_CDN_URL}/images/categories/file-security.jpg`,
+    "passwords-identity": `${R2_CDN_URL}/images/categories/passwords-identity.jpg`,
+    "product-updates": `${R2_CDN_URL}/images/categories/security.jpg`,
+    "tutorials": `${R2_CDN_URL}/images/categories/privacy.jpg`,
   };
-  return images[slug] || "/images/categories/privacy.jpg";
+  return images[slug] || `${R2_CDN_URL}/images/categories/privacy.jpg`;
 }
 
 export default async function BlogHomePage() {
