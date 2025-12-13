@@ -9,6 +9,19 @@ import { AuthorBio } from "@/components/AuthorBio";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ShareButtons } from "@/components/ShareButtons";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import {
+  JsonLd,
+  generateArticleSchema,
+  generateBreadcrumbSchema,
+  generateFAQSchema,
+  generateHowToSchema,
+} from "@/components/seo/JsonLd";
+import {
+  extractFAQFromContent,
+  extractHowToSteps,
+  isHowToArticle,
+  estimateReadingTime,
+} from "@/lib/seo-utils";
 
 export const revalidate = false; // Only revalidate on-demand
 
@@ -104,21 +117,62 @@ export default async function ArticlePage({ params }: Props) {
 
   const relatedArticles = await getRelatedArticles(article.id, article.categoryId);
 
+  // Generate structured data for SEO
+  const breadcrumbItems = [
+    { label: "Blog", href: "/" },
+    { label: article.category.name, href: `/${article.category.slug}` },
+    { label: article.title, href: `/${article.category.slug}/${article.slug}` },
+  ];
+
+  const articleSchema = generateArticleSchema({
+    title: article.title,
+    description: article.metaDescription || article.excerpt || "",
+    slug: article.slug,
+    categorySlug: article.category.slug,
+    publishedAt: article.publishedAt,
+    updatedAt: article.updatedAt,
+    wordCount: article.wordCount,
+    keywords: Array.isArray(article.keywords) ? article.keywords.join(", ") : article.keywords,
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbItems);
+
+  // Extract FAQ and HowTo schemas from content
+  const schemas: Record<string, unknown>[] = [articleSchema, breadcrumbSchema];
+
+  // Add FAQ schema if FAQs found in content
+  const faqs = extractFAQFromContent(article.content);
+  if (faqs.length > 0) {
+    schemas.push(generateFAQSchema(faqs));
+  }
+
+  // Add HowTo schema for tutorial articles
+  if (isHowToArticle(article.title, article.content)) {
+    const steps = extractHowToSteps(article.content);
+    if (steps.length > 0) {
+      schemas.push(
+        generateHowToSchema({
+          name: article.title,
+          description: article.metaDescription || article.excerpt || "",
+          totalTime: estimateReadingTime(article.wordCount),
+          steps,
+        })
+      );
+    }
+  }
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <JsonLd schemas={schemas} />
+
       {/* Reading Progress Bar */}
       <ReadingProgress />
 
       <article className="min-h-screen bg-[var(--color-cream)]">
         {/* Breadcrumbs */}
         <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-8">
-          <Breadcrumbs
-            items={[
-              { label: "Blog", href: "/" },
-              { label: article.category.name, href: `/${article.category.slug}` },
-              { label: article.title, href: `/${article.category.slug}/${article.slug}` },
-            ]}
-          />
+          <Breadcrumbs items={breadcrumbItems} />
         </div>
 
         {/* Article Header - Full Width Hero */}

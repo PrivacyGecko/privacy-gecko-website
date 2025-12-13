@@ -4,6 +4,11 @@ import Link from "next/link";
 import { ArticleCard } from "@/components/ArticleCard";
 import { CategoryNav } from "@/components/CategoryNav";
 import { Shield, Lock, Coins, Wrench, Clock, ArrowRight, Search, SlidersHorizontal } from "lucide-react";
+import {
+  JsonLd,
+  generateCollectionSchema,
+  generateBreadcrumbSchema,
+} from "@/components/seo/JsonLd";
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -238,12 +243,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const description = category.description || `Read our latest ${category.name.toLowerCase()} articles and guides. Expert tips on ${category.name.toLowerCase()} from Privacy Gecko.`;
+  const canonicalUrl = `/${categorySlug}`;
+
   return {
-    title: `${category.name} Articles | PrivacyGecko Blog`,
-    description: category.description || `Read our latest ${category.name.toLowerCase()} articles and guides.`,
+    title: `${category.name} Articles & Guides`,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
-      title: `${category.name} Articles | PrivacyGecko Blog`,
-      description: category.description || `Read our latest ${category.name.toLowerCase()} articles and guides.`,
+      title: `${category.name} Articles & Guides | PrivacyGecko Blog`,
+      description,
+      type: "website",
+      url: canonicalUrl,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${category.name} Articles & Guides`,
+      description,
     },
   };
 }
@@ -263,9 +281,28 @@ export default async function CategoryPage({ params }: Props) {
   const Icon = categoryIcons[category.slug] || Shield;
   const colors = categoryColors[category.slug] || categoryColors.privacy;
 
+  // Generate structured data for SEO
+  const breadcrumbItems = [
+    { label: "Blog", href: "/" },
+    { label: category.name, href: `/${category.slug}` },
+  ];
+
+  const collectionSchema = generateCollectionSchema({
+    name: category.name,
+    slug: category.slug,
+    description: category.description,
+    articleCount: articles.length,
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbItems);
+
   return (
-    <div className="min-h-screen bg-[var(--color-cream)]">
-      {/* Hero Section */}
+    <>
+      {/* JSON-LD Structured Data */}
+      <JsonLd schemas={[collectionSchema, breadcrumbSchema]} />
+
+      <div className="min-h-screen bg-[var(--color-cream)]">
+        {/* Hero Section */}
       <section className={`relative overflow-hidden bg-gradient-to-br ${colors.bg}`}>
         {/* Decorative Pattern */}
         <div className="absolute inset-0 opacity-30">
@@ -427,6 +464,7 @@ export default async function CategoryPage({ params }: Props) {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

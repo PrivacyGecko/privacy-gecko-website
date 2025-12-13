@@ -5,6 +5,7 @@ import { ArticleCard } from "@/components/ArticleCard";
 import { CategoryNav } from "@/components/CategoryNav";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { ArrowRight } from "lucide-react";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export const revalidate = 3600;
 
@@ -216,9 +217,13 @@ export default async function BlogHomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Decorative gradient blob - Stripe style */}
-      <div className="gradient-decoration" />
+    <>
+      {/* JSON-LD Structured Data - Organization & Website schemas */}
+      <JsonLd schemas={[]} />
+
+      <div className="min-h-screen bg-white">
+        {/* Decorative gradient blob - Stripe style */}
+        <div className="gradient-decoration" />
 
       {/* Breadcrumb & Social */}
       <div className="max-w-6xl mx-auto px-6 lg:px-8 pt-8">
@@ -383,6 +388,7 @@ export default async function BlogHomePage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
