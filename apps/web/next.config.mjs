@@ -74,45 +74,22 @@ const nextConfig = {
   },
 
   // Rewrites to proxy /blog to the blog subdomain
+  // Blog app uses basePath: '/blog', so all paths are under /blog/*
   async rewrites() {
     // Use environment variable for flexibility between staging and production
     const blogUrl = process.env.BLOG_URL || 'https://blog.stage.privacygecko.com';
 
-    // Blog category slugs that need to be rewritten
-    const blogCategories = [
-      'privacy',
-      'security',
-      'crypto-safety',
-      'browser-protection',
-      'file-security',
-      'passwords-identity',
-      'product-updates',
-      'tutorials',
-    ];
-
-    // Generate rewrites for category paths (for internal blog navigation)
-    const categoryRewrites = blogCategories.flatMap(category => [
-      {
-        source: `/${category}`,
-        destination: `${blogUrl}/${category}`,
-      },
-      {
-        source: `/${category}/:path*`,
-        destination: `${blogUrl}/${category}/:path*`,
-      },
-    ]);
-
     return {
       beforeFiles: [
+        // Proxy all /blog/* requests to the blog subdomain
         {
           source: '/blog',
-          destination: `${blogUrl}/`,
+          destination: `${blogUrl}/blog`,
         },
         {
           source: '/blog/:path*',
-          destination: `${blogUrl}/:path*`,
+          destination: `${blogUrl}/blog/:path*`,
         },
-        ...categoryRewrites,
       ],
     };
   },

@@ -21,6 +21,9 @@ function getAssetPrefix() {
 }
 
 const nextConfig = {
+  // basePath ensures all blog URLs are under /blog
+  // This provides clean URL structure: /blog, /blog/privacy, /blog/crypto-safety, etc.
+  basePath: '/blog',
   // Asset prefix ensures JS/CSS load from blog subdomain when accessed via /blog rewrite
   assetPrefix: getAssetPrefix(),
   transpilePackages: ['@privacygecko/ui', '@privacygecko/database'],
@@ -51,7 +54,8 @@ const nextConfig = {
     ];
   },
   // 301 redirects for legacy blog posts (preserves SEO)
-  // Old URL format: /slug → New URL format: /category/slug
+  // Note: With basePath: '/blog', these sources/destinations are relative to /blog
+  // e.g., source: '/old-slug' actually matches /blog/old-slug
   async redirects() {
     return [
       // Product Updates category
