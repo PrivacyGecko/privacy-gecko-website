@@ -17,9 +17,11 @@ import {
   Link as LinkIcon,
   Unlink,
   Image as ImageIcon,
+  Upload,
+  Loader2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useRef } from "react";
 
 interface EditorToolbarProps {
   editor: Editor;
@@ -66,6 +68,11 @@ function ToolbarDivider() {
 export function EditorToolbar({ editor }: EditorToolbarProps) {
   const [showLinkInput, setShowLinkInput] = useState(false);
   const [linkUrl, setLinkUrl] = useState("");
+  const [showImageOptions, setShowImageOptions] = useState(false);
+  const [imageUrl, setImageUrl] = useState("");
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadError, setUploadError] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const setLink = useCallback(() => {
     if (linkUrl === "") {
@@ -79,12 +86,51 @@ export function EditorToolbar({ editor }: EditorToolbarProps) {
     setShowLinkInput(false);
   }, [editor, linkUrl]);
 
-  const addImage = useCallback(() => {
-    const url = window.prompt("Enter image URL:");
-    if (url) {
+  const addImageByUrl = useCallback(() => {
+    if (imageUrl) {
+      const url = imageUrl.startsWith("http") ? imageUrl : `https://${imageUrl}`;
       editor.chain().focus().setImage({ src: url }).run();
+      setImageUrl("");
+      setShowImageOptions(false);
+    }
+  }, [editor, imageUrl]);
+
+  const handleFileUpload = useCallback(async (file: File) => {
+    setIsUploading(true);
+    setUploadError("");
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Upload failed");
+      }
+
+      editor.chain().focus().setImage({ src: data.url }).run();
+      setShowImageOptions(false);
+    } catch (error) {
+      setUploadError(error instanceof Error ? error.message : "Upload failed");
+    } finally {
+      setIsUploading(false);
     }
   }, [editor]);
+
+  const onFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      handleFileUpload(file);
+    }
+    // Reset input so same file can be selected again
+    e.target.value = "";
+  }, [handleFileUpload]);
 
   return (
     <div className="tiptap-toolbar">
@@ -178,7 +224,7 @@ export function EditorToolbar({ editor }: EditorToolbarProps) {
 
         <ToolbarDivider />
 
-        {/* Links & Images */}
+        {/* Links */}
         {showLinkInput ? (
           <div className="flex items-center gap-1">
             <input
@@ -217,6 +263,75 @@ export function EditorToolbar({ editor }: EditorToolbarProps) {
               Cancel
             </button>
           </div>
+        ) : showImageOptions ? (
+          <div className="flex items-center gap-1">
+            {/* Hidden file input */}
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/jpeg,image/png,image/gif,image/webp"
+              onChange={onFileSelect}
+              className="hidden"
+            />
+            {isUploading ? (
+              <div className="flex items-center gap-2 px-2 text-sm text-[var(--color-text-secondary)]">
+                <Loader2 className="w-4 h-4 animate-spin" />
+                Uploading...
+              </div>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="btn btn-primary btn-sm h-8 flex items-center gap-1"
+                >
+                  <Upload className="w-3 h-3" />
+                  Upload
+                </button>
+                <span className="text-xs text-[var(--color-text-tertiary)]">or</span>
+                <input
+                  type="url"
+                  value={imageUrl}
+                  onChange={(e) => setImageUrl(e.target.value)}
+                  placeholder="Image URL..."
+                  className="input h-8 text-sm w-32"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      addImageByUrl();
+                    }
+                    if (e.key === "Escape") {
+                      setShowImageOptions(false);
+                      setImageUrl("");
+                      setUploadError("");
+                    }
+                  }}
+                />
+                <button
+                  type="button"
+                  onClick={addImageByUrl}
+                  disabled={!imageUrl}
+                  className="btn btn-secondary btn-sm h-8"
+                >
+                  Add
+                </button>
+              </>
+            )}
+            {uploadError && (
+              <span className="text-xs text-red-500">{uploadError}</span>
+            )}
+            <button
+              type="button"
+              onClick={() => {
+                setShowImageOptions(false);
+                setImageUrl("");
+                setUploadError("");
+              }}
+              className="btn btn-ghost btn-sm h-8"
+            >
+              Cancel
+            </button>
+          </div>
         ) : (
           <>
             <ToolbarButton
@@ -236,7 +351,10 @@ export function EditorToolbar({ editor }: EditorToolbarProps) {
                 <Unlink className="w-4 h-4" />
               </ToolbarButton>
             )}
-            <ToolbarButton onClick={addImage} title="Add image">
+            <ToolbarButton
+              onClick={() => setShowImageOptions(true)}
+              title="Add image"
+            >
               <ImageIcon className="w-4 h-4" />
             </ToolbarButton>
           </>
