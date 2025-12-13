@@ -1,12 +1,47 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
+import { marked } from "marked";
 import { TiptapEditor } from "@/components/editor";
 import { Input, Textarea, Select } from "@/components/ui";
 import { slugify, calculateReadingTime } from "@/lib/utils";
 import { Loader2, Save, Send, Eye, ChevronDown, ChevronUp } from "lucide-react";
 import type { Article, Category } from "@privacygecko/database";
+
+// Check if content appears to be markdown (not HTML)
+function isMarkdown(content: string): boolean {
+  if (!content) return false;
+  const trimmed = content.trim();
+  // If it starts with HTML tag, it's probably HTML
+  if (trimmed.startsWith("<")) return false;
+  // Check for common markdown patterns
+  const markdownPatterns = [
+    /^#+ /m,           // Headings
+    /^\* /m,           // Unordered lists
+    /^- /m,            // Unordered lists
+    /^\d+\. /m,        // Ordered lists
+    /\[.+\]\(.+\)/,    // Links
+    /\*\*.+\*\*/,      // Bold
+    /^>/m,             // Blockquotes
+    /```/,             // Code blocks
+  ];
+  return markdownPatterns.some(pattern => pattern.test(content));
+}
+
+// Convert markdown to HTML
+function markdownToHtml(content: string): string {
+  if (!content) return "";
+  if (!isMarkdown(content)) return content;
+
+  // Configure marked for safe HTML output
+  marked.setOptions({
+    gfm: true,
+    breaks: true,
+  });
+
+  return marked.parse(content) as string;
+}
 
 interface ArticleFormProps {
   article?: Article | null;
@@ -17,12 +52,17 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
   const router = useRouter();
   const isEditing = !!article;
 
+  // Convert markdown to HTML on initial load (memoized to run once)
+  const initialContent = useMemo(() => {
+    return markdownToHtml(article?.content || "");
+  }, [article?.content]);
+
   // Form state
   const [title, setTitle] = useState(article?.title || "");
   const [slug, setSlug] = useState(article?.slug || "");
   const [slugManuallyEdited, setSlugManuallyEdited] = useState(false);
   const [excerpt, setExcerpt] = useState(article?.excerpt || "");
-  const [content, setContent] = useState(article?.content || "");
+  const [content, setContent] = useState(initialContent);
   const [categoryId, setCategoryId] = useState(
     article?.categoryId?.toString() || ""
   );
