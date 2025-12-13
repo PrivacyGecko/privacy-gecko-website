@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 interface Article {
@@ -29,6 +30,21 @@ function getCategoryColor(slug: string): string {
     "tutorials": "#FF6B35",
   };
   return colors[slug] || "#635BFF";
+}
+
+// Get category image based on slug
+function getCategoryImage(slug: string): string {
+  const images: Record<string, string> = {
+    "privacy": "/images/categories/privacy.jpg",
+    "security": "/images/categories/security.jpg",
+    "crypto-safety": "/images/categories/crypto-safety.jpg",
+    "browser-protection": "/images/categories/browser-protection.jpg",
+    "file-security": "/images/categories/file-security.jpg",
+    "passwords-identity": "/images/categories/passwords-identity.jpg",
+    "product-updates": "/images/categories/security.jpg",
+    "tutorials": "/images/categories/privacy.jpg",
+  };
+  return images[slug] || "/images/categories/privacy.jpg";
 }
 
 export function ArticleCard({ article }: ArticleCardProps) {
@@ -101,25 +117,17 @@ export function ArticleCard({ article }: ArticleCardProps) {
           </div>
         </div>
 
-        {/* Image Placeholder */}
-        <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-gradient-to-br from-[var(--color-bg-subtle)] to-[var(--color-bg-muted)] hidden lg:block">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div
-              className="w-16 h-16 rounded-xl flex items-center justify-center"
-              style={{ background: `${categoryColor}15` }}
-            >
-              <span className="text-2xl">🦎</span>
-            </div>
-          </div>
-          {/* Decorative elements */}
-          <div
-            className="absolute top-3 right-3 w-12 h-12 rounded-full opacity-20"
-            style={{ background: categoryColor }}
+        {/* Category Image */}
+        <div className="relative aspect-[16/10] rounded-xl overflow-hidden hidden lg:block">
+          <Image
+            src={getCategoryImage(article.category.slug)}
+            alt={article.category.name}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 1024px) 100vw, 300px"
           />
-          <div
-            className="absolute bottom-4 left-4 w-8 h-8 rounded-lg opacity-15"
-            style={{ background: categoryColor }}
-          />
+          {/* Subtle overlay for text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         </div>
       </div>
     </article>

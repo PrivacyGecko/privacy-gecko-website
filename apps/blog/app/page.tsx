@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArticleCard } from "@/components/ArticleCard";
 import { CategoryNav } from "@/components/CategoryNav";
 import { NewsletterForm } from "@/components/NewsletterForm";
@@ -175,8 +176,27 @@ function getCategoryColor(slug: string): string {
     "security": "#FF6B35",
     "crypto-safety": "#00B4D8",
     "browser-protection": "#E83E8C",
+    "file-security": "#00D98A",
+    "passwords-identity": "#6366F1",
+    "product-updates": "#00B876",
+    "tutorials": "#FF6B35",
   };
   return colors[slug] || "#635BFF";
+}
+
+// Get category image based on slug
+function getCategoryImage(slug: string): string {
+  const images: Record<string, string> = {
+    "privacy": "/images/categories/privacy.jpg",
+    "security": "/images/categories/security.jpg",
+    "crypto-safety": "/images/categories/crypto-safety.jpg",
+    "browser-protection": "/images/categories/browser-protection.jpg",
+    "file-security": "/images/categories/file-security.jpg",
+    "passwords-identity": "/images/categories/passwords-identity.jpg",
+    "product-updates": "/images/categories/security.jpg",
+    "tutorials": "/images/categories/privacy.jpg",
+  };
+  return images[slug] || "/images/categories/privacy.jpg";
 }
 
 export default async function BlogHomePage() {
@@ -269,16 +289,18 @@ export default async function BlogHomePage() {
                 </span>
               </div>
 
-              {/* Featured Image Placeholder */}
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-gradient-to-br from-[var(--color-bg-subtle)] to-[var(--color-bg-muted)]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-2xl bg-white/80 shadow-lg flex items-center justify-center">
-                    <span className="text-4xl">🦎</span>
-                  </div>
-                </div>
-                {/* Decorative elements */}
-                <div className="absolute top-4 right-4 w-20 h-20 rounded-full bg-[var(--color-accent)]/10" />
-                <div className="absolute bottom-8 left-8 w-12 h-12 rounded-lg bg-[var(--color-gecko-green)]/20" />
+              {/* Featured Image */}
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                <Image
+                  src={getCategoryImage(featuredArticle.category.slug)}
+                  alt={featuredArticle.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 500px"
+                  priority
+                />
+                {/* Subtle overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
               </div>
             </div>
           </article>
