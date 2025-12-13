@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArticleCard } from "@/components/ArticleCard";
 import { CategoryNav } from "@/components/CategoryNav";
 import { NewsletterForm } from "@/components/NewsletterForm";
-import { Shield, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const revalidate = 3600;
 
@@ -27,7 +27,7 @@ const mockArticles = [
     title: "The Complete Guide to Online Privacy in 2025",
     slug: "complete-guide-online-privacy-2025",
     excerpt:
-      "Learn everything you need to know about protecting your digital privacy in the modern age.",
+      "Learn everything you need to know about protecting your digital privacy in the modern age. We cover VPNs, secure browsers, encrypted messaging, and more.",
     content: "",
     categoryId: 1,
     pillarId: null,
@@ -54,7 +54,7 @@ const mockArticles = [
     title: "How to Secure Your Crypto Wallet: A Step-by-Step Guide",
     slug: "secure-crypto-wallet-guide",
     excerpt:
-      "Protect your cryptocurrency investments with these essential security practices.",
+      "Protect your cryptocurrency investments with these essential security practices. Learn about hardware wallets, seed phrases, and common attack vectors.",
     content: "",
     categoryId: 3,
     pillarId: null,
@@ -81,7 +81,7 @@ const mockArticles = [
     title: "VPN vs Proxy: Which Should You Use?",
     slug: "vpn-vs-proxy-comparison",
     excerpt:
-      "Understand the key differences between VPNs and proxies to make the right choice for your privacy needs.",
+      "Understand the key differences between VPNs and proxies to make the right choice for your privacy needs. We break down speed, security, and use cases.",
     content: "",
     categoryId: 4,
     pillarId: null,
@@ -105,10 +105,10 @@ const mockArticles = [
   },
   {
     id: 4,
-    title: "Password Security Best Practices",
+    title: "Password Security Best Practices for 2025",
     slug: "password-security-best-practices",
     excerpt:
-      "Create and manage strong passwords to keep your accounts safe from hackers.",
+      "Create and manage strong passwords to keep your accounts safe from hackers. Learn about password managers, 2FA, and passkeys.",
     content: "",
     categoryId: 2,
     pillarId: null,
@@ -135,12 +135,10 @@ const mockArticles = [
 // Helper to fetch data from database with fallback to mock data
 async function getLatestArticlesWithFallback() {
   try {
-    // Only import database if DATABASE_URL is set
     if (process.env.DATABASE_URL) {
       const { getLatestArticles, getAllCategories } = await import("@privacygecko/database");
       const articles = await getLatestArticles(20);
       if (articles.length > 0) {
-        // Fetch categories to map article categoryId to category
         const categories = await getAllCategories();
         const categoryMap = new Map(categories.map(c => [c.id, { name: c.name, slug: c.slug }]));
         return articles.map(a => ({
@@ -170,19 +168,15 @@ async function getAllCategoriesWithFallback() {
   return mockCategories;
 }
 
-// Get category badge class based on slug
-function getCategoryBadgeClass(slug: string): string {
-  const categoryMap: Record<string, string> = {
-    "privacy": "category-badge-privacy",
-    "security": "category-badge-security",
-    "crypto-safety": "category-badge-crypto-safety",
-    "browser-protection": "category-badge-browser-protection",
-    "file-security": "category-badge-file-security",
-    "passwords-identity": "category-badge-passwords-identity",
-    "product-updates": "category-badge-product-updates",
-    "tutorials": "category-badge-tutorials",
+// Get category color
+function getCategoryColor(slug: string): string {
+  const colors: Record<string, string> = {
+    "privacy": "#635BFF",
+    "security": "#FF6B35",
+    "crypto-safety": "#00B4D8",
+    "browser-protection": "#E83E8C",
   };
-  return categoryMap[slug] || "category-badge-privacy";
+  return colors[slug] || "#635BFF";
 }
 
 export default async function BlogHomePage() {
@@ -192,152 +186,178 @@ export default async function BlogHomePage() {
   ]);
   const featuredArticle = latestArticles[0];
 
+  const formatDate = (date: Date | null) => {
+    if (!date) return null;
+    return new Intl.DateTimeFormat("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    }).format(new Date(date));
+  };
+
   return (
-    <div className="min-h-screen hero-gradient pattern-grid">
-      {/* Hero Section - Clean & Editorial */}
-      <section className="relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8 pt-20 pb-16">
-          <div className="text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-subtle)] border border-[var(--color-accent-muted)] mb-8 animate-fade-up">
-              <Shield className="w-4 h-4 text-[var(--color-accent)]" />
-              <span className="text-sm font-medium text-[var(--color-accent-hover)] tracking-wide">
-                Privacy-First Knowledge
-              </span>
+    <div className="min-h-screen bg-white">
+      {/* Decorative gradient blob - Stripe style */}
+      <div className="gradient-decoration" />
+
+      {/* Breadcrumb & Social */}
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 pt-8">
+        <div className="flex items-center justify-between">
+          <span className="text-[15px] font-semibold text-[var(--color-accent)]">Blog</span>
+          <Link
+            href="https://twitter.com/PrivacyGecko"
+            className="text-[14px] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors flex items-center gap-1"
+          >
+            PrivacyGecko on X
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      </div>
+
+      {/* Featured Article - Two Column Editorial Layout */}
+      {featuredArticle && (
+        <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-12 pb-16 lg:pt-16 lg:pb-24">
+          <article className="featured-article">
+            {/* Left Column - Content */}
+            <div className="animate-fade-up">
+              {/* Category Pill */}
+              <Link
+                href={`/${featuredArticle.category.slug}`}
+                className="inline-flex items-center px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-wide text-white mb-6 hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: getCategoryColor(featuredArticle.category.slug) }}
+              >
+                {featuredArticle.category.name}
+              </Link>
+
+              {/* Title */}
+              <Link href={`/${featuredArticle.category.slug}/${featuredArticle.slug}`}>
+                <h1 className="font-display text-[2.75rem] lg:text-[3.25rem] leading-[1.1] text-[var(--color-text-primary)] mb-6 hover:text-[var(--color-accent)] transition-colors">
+                  {featuredArticle.title}
+                </h1>
+              </Link>
+
+              {/* Author */}
+              <div className="author-block mb-8">
+                <div className="author-avatar">PG</div>
+                <div className="author-info">
+                  <span className="author-name">Privacy Gecko Team</span>
+                  <span className="author-role">Security Researchers</span>
+                </div>
+              </div>
+
+              {/* Excerpt */}
+              <p className="text-[17px] leading-relaxed text-[var(--color-text-secondary)] mb-8 max-w-lg">
+                {featuredArticle.excerpt}
+              </p>
+
+              {/* Read More */}
+              <Link
+                href={`/${featuredArticle.category.slug}/${featuredArticle.slug}`}
+                className="read-more"
+              >
+                Read more
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
 
-            {/* Main Title */}
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-[var(--color-text-primary)] mb-6 animate-fade-up delay-100">
-              The Privacy
-              <span className="block font-normal italic text-[var(--color-accent)]">Journal</span>
-            </h1>
+            {/* Right Column - Metadata & Image Placeholder */}
+            <div className="animate-fade-up delay-200">
+              {/* Date */}
+              <div className="mb-6">
+                <span className="text-[14px] text-[var(--color-text-tertiary)] font-medium">
+                  {formatDate(featuredArticle.publishedAt)}
+                </span>
+              </div>
 
-            {/* Subtitle */}
-            <p className="text-lg md:text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto leading-relaxed animate-fade-up delay-200">
-              Expert insights on digital privacy, security practices, and protecting your crypto assets in the modern age.
-            </p>
-          </div>
-        </div>
-      </section>
+              {/* Featured Image Placeholder */}
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-gradient-to-br from-[var(--color-bg-subtle)] to-[var(--color-bg-muted)]">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-24 h-24 rounded-2xl bg-white/80 shadow-lg flex items-center justify-center">
+                    <span className="text-4xl">🦎</span>
+                  </div>
+                </div>
+                {/* Decorative elements */}
+                <div className="absolute top-4 right-4 w-20 h-20 rounded-full bg-[var(--color-accent)]/10" />
+                <div className="absolute bottom-8 left-8 w-12 h-12 rounded-lg bg-[var(--color-gecko-green)]/20" />
+              </div>
+            </div>
+          </article>
+        </section>
+      )}
 
       {/* Category Navigation */}
-      <section className="border-y border-[var(--color-border)] bg-[var(--color-bg-elevated)]/80 backdrop-blur-sm sticky top-20 z-40">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8 py-4">
+      <section className="bg-white sticky top-0 z-40">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-4">
           <CategoryNav categories={allCategories} />
         </div>
       </section>
 
-      {/* Featured Article */}
-      {featuredArticle && (
-        <section className="max-w-5xl mx-auto px-6 lg:px-8 py-16">
-          <Link
-            href={`/${featuredArticle.category.slug}/${featuredArticle.slug}`}
-            className="featured-card block group"
-          >
-            <div className="grid lg:grid-cols-5 gap-0">
-              {/* Content */}
-              <div className="lg:col-span-3 p-8 lg:p-12 flex flex-col justify-center relative z-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className={`category-badge ${getCategoryBadgeClass(featuredArticle.category.slug)}`}>
-                    {featuredArticle.category.name}
-                  </span>
-                  <span className="text-[var(--color-accent)]/60 text-xs font-semibold uppercase tracking-wider">
-                    Featured
-                  </span>
-                </div>
-
-                <h2 className="font-display text-2xl md:text-3xl lg:text-4xl text-[var(--color-text-inverse)] leading-tight mb-4 group-hover:text-[var(--color-accent)] transition-colors">
-                  {featuredArticle.title}
-                </h2>
-
-                <p className="text-neutral-400 text-base leading-relaxed mb-6 max-w-lg line-clamp-2">
-                  {featuredArticle.excerpt}
-                </p>
-
-                <div className="flex items-center gap-4">
-                  <span className="inline-flex items-center gap-2 text-[var(--color-accent)] font-medium text-sm group-hover:gap-3 transition-all">
-                    Read article
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                  <span className="text-neutral-500 text-sm">
-                    {featuredArticle.readingTime} min read
-                  </span>
-                </div>
-              </div>
-
-              {/* Decorative Right Section */}
-              <div className="hidden lg:flex lg:col-span-2 items-center justify-center relative">
-                <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[var(--color-bg-dark)]/50" />
-                <span className="font-display text-[10rem] font-normal text-white/[0.03] select-none">
-                  01
-                </span>
-              </div>
-            </div>
-          </Link>
-        </section>
-      )}
-
-      {/* Latest Articles Grid */}
-      <section className="max-w-5xl mx-auto px-6 lg:px-8 py-12">
-        <div className="flex items-end justify-between mb-10">
-          <div>
-            <span className="text-xs font-semibold text-[var(--color-accent)] tracking-widest uppercase mb-2 block">
-              Latest Stories
-            </span>
-            <h2 className="font-display text-2xl md:text-3xl text-[var(--color-text-primary)]">
-              Fresh from the <span className="italic">press</span>
-            </h2>
-          </div>
-          <Link
-            href="/privacy"
-            className="hidden sm:flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] text-sm font-medium transition-colors"
-          >
-            View all
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-
-        {/* Article Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
-          {latestArticles.slice(1).map((article, index) => (
-            <ArticleCard key={article.id} article={article} index={index + 2} />
+      {/* Articles List - Editorial Style */}
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+        <div className="stagger-children">
+          {latestArticles.slice(1).map((article) => (
+            <ArticleCard key={article.id} article={article} />
           ))}
         </div>
 
-        {/* Mobile View All */}
-        <div className="mt-10 text-center sm:hidden">
+        {/* View All */}
+        <div className="mt-12 pt-8 border-t border-[var(--color-border)]">
           <Link
             href="/privacy"
-            className="inline-flex items-center gap-2 text-[var(--color-accent)] font-medium text-sm"
+            className="read-more"
           >
-            View all articles
+            View all posts
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
 
       {/* Newsletter Section */}
-      <section className="max-w-5xl mx-auto px-6 lg:px-8 py-12 mb-16">
-        <div className="newsletter-section p-8 lg:p-12 text-center">
-          <div className="relative z-10 max-w-lg mx-auto">
-            {/* Decorative Header */}
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="h-px w-10 bg-[var(--color-accent-muted)]" />
-              <span className="text-xs font-semibold tracking-[0.15em] text-[var(--color-accent)] uppercase">
-                Newsletter
-              </span>
-              <div className="h-px w-10 bg-[var(--color-accent-muted)]" />
-            </div>
-
-            <h2 className="font-display text-2xl md:text-3xl text-[var(--color-text-primary)] mb-3">
-              Stay <span className="italic">informed</span>
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 pb-20">
+        <div className="grid lg:grid-cols-3 gap-6">
+          {/* Newsletter */}
+          <div className="newsletter-section p-8">
+            <h2 className="font-display text-xl text-[var(--color-text-primary)] mb-3">
+              Subscribe to the Privacy Gecko Blog
             </h2>
-
-            <p className="text-[var(--color-text-secondary)] text-sm mb-6 max-w-sm mx-auto">
-              Weekly privacy insights and security guides delivered to your inbox.
+            <p className="text-[var(--color-text-secondary)] text-[15px] mb-6">
+              Stay connected and receive new blog posts in your inbox.
             </p>
-
             <NewsletterForm />
+          </div>
+
+          {/* Join Team Card */}
+          <div className="newsletter-section p-8 flex flex-col">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-3xl">🦎</span>
+              <h2 className="font-display text-xl text-[var(--color-text-primary)]">
+                Like this blog? Join our community.
+              </h2>
+            </div>
+            <p className="text-[var(--color-text-secondary)] text-[15px] mb-6 flex-grow">
+              Privacy Gecko builds tools that protect your digital life.
+            </p>
+            <Link href="/about" className="read-more">
+              Learn more
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* Contact Card */}
+          <div className="newsletter-section p-8 flex flex-col">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-3xl">💬</span>
+              <h2 className="font-display text-xl text-[var(--color-text-primary)]">
+                Have any feedback or questions?
+              </h2>
+            </div>
+            <p className="text-[var(--color-text-secondary)] text-[15px] mb-6 flex-grow">
+              We&apos;d love to hear from you.
+            </p>
+            <Link href="/contact" className="read-more">
+              Contact us
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
