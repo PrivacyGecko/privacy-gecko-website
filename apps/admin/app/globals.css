@@ -1951,6 +1951,27 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1.25rem;
 }
 
+.form-hint {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  margin-top: 0.5rem;
+}
+
+.featured-image-preview {
+  margin-top: 0.75rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.featured-image-preview img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
 /* Editor Stats Bar */
 .editor-stats-bar {
   display: flex;

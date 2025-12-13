@@ -24,6 +24,7 @@ import {
   BookOpen,
   Clock,
   Sparkles,
+  ImageIcon,
 } from "lucide-react";
 import type { Article, Category } from "@privacygecko/database";
 
@@ -86,6 +87,11 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
     article?.keywords?.join(", ") || ""
   );
 
+  // Featured image
+  const [featuredImage, setFeaturedImage] = useState(
+    article?.featuredImage || ""
+  );
+
   // Publish date
   const [publishedAt, setPublishedAt] = useState(
     article?.publishedAt
@@ -135,6 +141,7 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
         excerpt: excerpt || null,
         content,
         categoryId: parseInt(categoryId, 10),
+        featuredImage: featuredImage || null,
         metaTitle: metaTitle || null,
         metaDescription: metaDescription || null,
         keywords: keywords
@@ -347,6 +354,38 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
             />
             <p className="form-hint">
               Set a date to backdate or schedule. Leave empty for current time.
+            </p>
+          </div>
+        </div>
+
+        {/* Featured Image Card */}
+        <div className="form-card">
+          <div className="form-card-header">
+            <div className="form-card-icon">
+              <ImageIcon className="w-4 h-4" />
+            </div>
+            <span className="form-card-title">Featured Image</span>
+          </div>
+          <div className="form-card-body">
+            <Input
+              label=""
+              value={featuredImage}
+              onChange={(e) => setFeaturedImage(e.target.value)}
+              placeholder="https://example.com/image.jpg"
+            />
+            {featuredImage && (
+              <div className="featured-image-preview">
+                <img
+                  src={featuredImage}
+                  alt="Featured preview"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = "none";
+                  }}
+                />
+              </div>
+            )}
+            <p className="form-hint">
+              Enter image URL. Each article should have a unique image.
             </p>
           </div>
         </div>

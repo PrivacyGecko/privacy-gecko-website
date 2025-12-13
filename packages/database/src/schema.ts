@@ -95,6 +95,9 @@ export const articles = pgTable(
     excerpt: text('excerpt'),
     content: text('content').notNull(),
 
+    // Featured image URL (article-specific image)
+    featuredImage: varchar('featured_image', { length: 500 }),
+
     // Relations
     categoryId: integer('category_id')
       .references(() => categories.id, { onDelete: 'cascade' })

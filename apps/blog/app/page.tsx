@@ -297,10 +297,10 @@ export default async function BlogHomePage() {
                 </span>
               </div>
 
-              {/* Featured Image */}
+              {/* Featured Image (use article-specific image if available, otherwise category fallback) */}
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
                 <Image
-                  src={getCategoryImage(featuredArticle.category.slug)}
+                  src={(featuredArticle as any).featuredImage || getCategoryImage(featuredArticle.category.slug)}
                   alt={featuredArticle.title}
                   fill
                   className="object-cover"

@@ -7,6 +7,7 @@ interface Article {
   title: string;
   slug: string;
   excerpt: string | null;
+  featuredImage?: string | null;
   category: { name: string; slug: string };
   publishedAt: Date | null;
   readingTime: number | null;
@@ -120,11 +121,11 @@ export function ArticleCard({ article }: ArticleCardProps) {
           </div>
         </div>
 
-        {/* Category Image */}
+        {/* Article Image (use article-specific image if available, otherwise category fallback) */}
         <div className="relative aspect-[16/10] rounded-xl overflow-hidden hidden lg:block">
           <Image
-            src={getCategoryImage(article.category.slug)}
-            alt={article.category.name}
+            src={article.featuredImage || getCategoryImage(article.category.slug)}
+            alt={article.title}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 1024px) 100vw, 300px"
