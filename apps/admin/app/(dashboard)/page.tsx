@@ -11,6 +11,10 @@ import {
   Layers,
   Sparkles,
   ArrowUpRight,
+  Zap,
+  PenTool,
+  Target,
+  BarChart3,
 } from "lucide-react";
 import { Badge } from "@/components/ui";
 import { formatDate } from "@/lib/utils";
@@ -33,37 +37,47 @@ export default async function DashboardPage() {
   const hour = new Date().getHours();
   const greeting =
     hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
+  const greetingEmoji = hour < 12 ? "☀️" : hour < 18 ? "🌤️" : "🌙";
+
+  // Calculate productivity stats
+  const publishRate = articleCounts.total > 0
+    ? Math.round((articleCounts.published / articleCounts.total) * 100)
+    : 0;
 
   return (
-    <div className="space-y-8">
-      {/* Hero Header */}
-      <div className="animate-slide-up">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse-glow" />
-          <span className="text-sm font-medium text-[var(--color-text-tertiary)] uppercase tracking-wider">
-            Command Center
-          </span>
+    <div className="dashboard-container">
+      {/* Hero Header with Gradient */}
+      <div className="hero-section">
+        <div className="hero-glow" />
+        <div className="hero-content">
+          <div className="hero-badge">
+            <div className="hero-badge-dot" />
+            <span>Command Center</span>
+          </div>
+          <h1 className="hero-title">
+            <span className="hero-greeting">{greeting}</span>
+            <span className="hero-emoji">{greetingEmoji}</span>
+          </h1>
+          <p className="hero-subtitle">
+            Here&apos;s what&apos;s happening with your blog today
+          </p>
         </div>
-        <h1 className="text-3xl font-bold text-[var(--color-text-primary)] mb-2">
-          {greeting}
-        </h1>
-        <p className="text-[var(--color-text-secondary)] text-lg">
-          Here&apos;s what&apos;s happening with your blog today
-        </p>
       </div>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      {/* Stats Grid - Enhanced */}
+      <div className="stats-grid">
         <StatCard
           value={articleCounts.total}
           label="Total Articles"
           icon={<Layers className="w-6 h-6" />}
+          color="#5B8DEF"
           delay={1}
         />
         <StatCard
           value={articleCounts.published}
           label="Published"
           icon={<Send className="w-6 h-6" />}
+          color="#00D98A"
           accent
           delay={2}
         />
@@ -71,31 +85,61 @@ export default async function DashboardPage() {
           value={articleCounts.draft}
           label="Drafts"
           icon={<FileText className="w-6 h-6" />}
+          color="#FFB800"
           delay={3}
         />
         <StatCard
           value={categories.length}
           label="Categories"
           icon={<FolderOpen className="w-6 h-6" />}
+          color="#A855F7"
           delay={4}
         />
       </div>
 
-      {/* Quick Actions */}
-      <div className="animate-slide-up stagger-2">
-        <div className="flex items-center gap-2 mb-4">
-          <Sparkles className="w-4 h-4 text-[var(--color-accent)]" />
-          <h2 className="text-sm font-semibold text-[var(--color-text-secondary)] uppercase tracking-wider">
-            Quick Actions
-          </h2>
+      {/* Productivity Banner */}
+      <div className="productivity-banner">
+        <div className="productivity-left">
+          <div className="productivity-icon">
+            <Target className="w-5 h-5" />
+          </div>
+          <div className="productivity-info">
+            <span className="productivity-label">Publish Rate</span>
+            <div className="productivity-bar-container">
+              <div className="productivity-bar">
+                <div className="productivity-fill" style={{ width: `${publishRate}%` }} />
+              </div>
+              <span className="productivity-value">{publishRate}%</span>
+            </div>
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="productivity-right">
+          <div className="productivity-stat">
+            <BarChart3 className="w-4 h-4" />
+            <span><strong>{articleCounts.published}</strong> live</span>
+          </div>
+          <div className="productivity-divider" />
+          <div className="productivity-stat">
+            <PenTool className="w-4 h-4" />
+            <span><strong>{articleCounts.draft}</strong> drafts</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Actions - Enhanced */}
+      <div className="section-block">
+        <div className="section-header">
+          <Sparkles className="w-4 h-4 text-[var(--color-accent)]" />
+          <h2>Quick Actions</h2>
+        </div>
+        <div className="actions-grid">
           <ActionCard
             href="/articles/new"
             icon={<Plus className="w-5 h-5" />}
             title="New Article"
             description="Create a new post"
             color="#00D98A"
+            primary
           />
           <ActionCard
             href="/articles"
@@ -123,39 +167,32 @@ export default async function DashboardPage() {
       </div>
 
       {/* Two Column Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 animate-slide-up stagger-3">
-        {/* Recent Articles - Takes 3 columns */}
-        <div className="lg:col-span-3 card card-glow">
-          <div className="card-header flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[var(--color-accent-subtle)] flex items-center justify-center">
-                <TrendingUp className="w-4 h-4 text-[var(--color-accent)]" />
+      <div className="content-grid">
+        {/* Recent Articles */}
+        <div className="activity-card">
+          <div className="activity-header">
+            <div className="activity-header-left">
+              <div className="activity-icon-wrapper">
+                <TrendingUp className="w-5 h-5" />
               </div>
-              <h2 className="font-semibold text-[var(--color-text-primary)]">
-                Recent Activity
-              </h2>
+              <div>
+                <h2>Recent Activity</h2>
+                <p>Latest updates</p>
+              </div>
             </div>
-            <Link
-              href="/articles"
-              className="text-sm text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] transition-colors flex items-center gap-1 group"
-            >
+            <Link href="/articles" className="view-all-link">
               View all
-              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
-          <div>
+          <div className="activity-list">
             {recentArticles.length === 0 ? (
-              <div className="p-8 text-center">
-                <div className="w-12 h-12 rounded-full bg-[var(--color-bg-subtle)] flex items-center justify-center mx-auto mb-3">
-                  <FileText className="w-6 h-6 text-[var(--color-text-tertiary)]" />
+              <div className="empty-state">
+                <div className="empty-icon">
+                  <FileText className="w-8 h-8" />
                 </div>
-                <p className="text-[var(--color-text-secondary)]">
-                  No articles yet
-                </p>
-                <Link
-                  href="/articles/new"
-                  className="text-[var(--color-accent)] text-sm mt-2 inline-block hover:underline"
-                >
+                <p>No articles yet</p>
+                <Link href="/articles/new" className="empty-link">
                   Create your first article
                 </Link>
               </div>
@@ -164,28 +201,19 @@ export default async function DashboardPage() {
                 <Link
                   key={article.id}
                   href={`/articles/${article.id}`}
-                  className="activity-item group"
+                  className="activity-item"
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
-                  <div className="min-w-0 flex-1">
-                    <div className="font-medium text-[var(--color-text-primary)] truncate group-hover:text-[var(--color-accent)] transition-colors">
-                      {article.title}
-                    </div>
-                    <div className="flex items-center gap-3 mt-1.5">
-                      <span className="text-xs text-[var(--color-text-tertiary)] flex items-center gap-1.5">
-                        <Clock className="w-3 h-3" />
-                        {formatDate(article.updatedAt)}
-                      </span>
-                    </div>
+                  <div className="activity-dot" />
+                  <div className="activity-content">
+                    <span className="activity-title">{article.title}</span>
+                    <span className="activity-meta">
+                      <Clock className="w-3 h-3" />
+                      {formatDate(article.updatedAt)}
+                    </span>
                   </div>
                   <Badge
-                    variant={
-                      article.status as
-                        | "draft"
-                        | "published"
-                        | "queued"
-                        | "rejected"
-                    }
+                    variant={article.status as "draft" | "published" | "queued" | "rejected"}
                   >
                     {article.status}
                   </Badge>
@@ -195,45 +223,44 @@ export default async function DashboardPage() {
           </div>
         </div>
 
-        {/* Status Breakdown - Takes 2 columns */}
-        <div className="lg:col-span-2 card card-glow">
-          <div className="card-header">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[var(--color-accent-subtle)] flex items-center justify-center">
-                <Layers className="w-4 h-4 text-[var(--color-accent)]" />
-              </div>
-              <h2 className="font-semibold text-[var(--color-text-primary)]">
-                Content Status
-              </h2>
+        {/* Status Breakdown */}
+        <div className="status-card">
+          <div className="status-header">
+            <div className="status-icon-wrapper">
+              <Layers className="w-5 h-5" />
+            </div>
+            <div>
+              <h2>Content Status</h2>
+              <p>Overview</p>
             </div>
           </div>
-          <div className="p-5 space-y-5">
+          <div className="status-list">
             <StatusBar
               label="Published"
               count={articleCounts.published}
               total={articleCounts.total}
-              color="var(--color-published)"
+              color="#00D98A"
               icon={<Send className="w-4 h-4" />}
             />
             <StatusBar
               label="Drafts"
               count={articleCounts.draft}
               total={articleCounts.total}
-              color="var(--color-draft)"
+              color="#6B6B7A"
               icon={<FileText className="w-4 h-4" />}
             />
             <StatusBar
               label="Queued"
               count={articleCounts.queued}
               total={articleCounts.total}
-              color="var(--color-queued)"
+              color="#FFB800"
               icon={<Clock className="w-4 h-4" />}
             />
             <StatusBar
               label="Rejected"
               count={articleCounts.rejected}
               total={articleCounts.total}
-              color="var(--color-rejected)"
+              color="#FF4757"
               icon={<Archive className="w-4 h-4" />}
             />
           </div>
@@ -247,23 +274,28 @@ function StatCard({
   value,
   label,
   icon,
+  color,
   accent = false,
   delay = 0,
 }: {
   value: number;
   label: string;
   icon: React.ReactNode;
+  color: string;
   accent?: boolean;
   delay?: number;
 }) {
   return (
     <div
-      className={`stat-card animate-slide-up stagger-${delay}`}
-      style={{ animationFillMode: "backwards" }}
+      className="stat-card-new"
+      style={{ "--stat-color": color, animationDelay: `${delay * 0.1}s` } as React.CSSProperties}
     >
-      <div className="stat-card-icon">{icon}</div>
-      <div className={`stat-card-value ${accent ? "" : "plain"}`}>{value}</div>
-      <div className="stat-card-label">{label}</div>
+      <div className="stat-glow" />
+      <div className="stat-icon" style={{ background: `${color}18`, color }}>
+        {icon}
+      </div>
+      <div className={`stat-value ${accent ? "accent" : ""}`}>{value}</div>
+      <div className="stat-label">{label}</div>
     </div>
   );
 }
@@ -275,6 +307,7 @@ function ActionCard({
   description,
   color,
   external = false,
+  primary = false,
 }: {
   href: string;
   icon: React.ReactNode;
@@ -282,38 +315,30 @@ function ActionCard({
   description: string;
   color: string;
   external?: boolean;
+  primary?: boolean;
 }) {
   const Component = external ? "a" : Link;
-  const props = external
-    ? { target: "_blank", rel: "noopener noreferrer" }
-    : {};
+  const props = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
 
   return (
     <Component
       href={href}
-      className="action-card group"
+      className={`action-card-new ${primary ? "primary" : ""}`}
       style={{ "--action-color": color } as React.CSSProperties}
       {...props}
     >
-      <div className="flex items-center gap-4">
-        <div
-          className="action-icon group-hover:scale-110"
-          style={{ background: `${color}15`, color }}
-        >
-          {icon}
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors flex items-center gap-1.5">
-            {title}
-            {external && (
-              <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-            )}
-          </div>
-          <div className="text-sm text-[var(--color-text-tertiary)]">
-            {description}
-          </div>
-        </div>
+      {primary && <div className="action-shine" />}
+      <div className="action-icon-new" style={{ background: `${color}18`, color }}>
+        {icon}
       </div>
+      <div className="action-text">
+        <span className="action-title-new">
+          {title}
+          {external && <ArrowUpRight className="w-3.5 h-3.5" />}
+        </span>
+        <span className="action-desc-new">{description}</span>
+      </div>
+      {primary && <Zap className="action-zap" />}
     </Component>
   );
 }
@@ -334,35 +359,26 @@ function StatusBar({
   const percentage = total > 0 ? (count / total) * 100 : 0;
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2.5">
-          <div
-            className="w-7 h-7 rounded-md flex items-center justify-center"
-            style={{ background: `${color}15`, color }}
-          >
+    <div className="status-bar-new">
+      <div className="status-bar-top">
+        <div className="status-bar-left">
+          <div className="status-bar-icon" style={{ background: `${color}18`, color }}>
             {icon}
           </div>
-          <span className="text-sm font-medium text-[var(--color-text-primary)]">
-            {label}
-          </span>
+          <span>{label}</span>
         </div>
-        <div className="text-right">
-          <span className="text-sm font-semibold text-[var(--color-text-primary)]">
-            {count}
-          </span>
-          <span className="text-xs text-[var(--color-text-tertiary)] ml-1">
-            ({percentage.toFixed(0)}%)
-          </span>
+        <div className="status-bar-right">
+          <span className="status-count">{count}</span>
+          <span className="status-percent">({percentage.toFixed(0)}%)</span>
         </div>
       </div>
-      <div className="h-1.5 bg-[var(--color-bg-subtle)] rounded-full overflow-hidden">
+      <div className="status-track">
         <div
-          className="h-full rounded-full transition-all duration-700 ease-out"
+          className="status-fill"
           style={{
             width: `${percentage}%`,
-            backgroundColor: color,
-            boxShadow: percentage > 0 ? `0 0 8px ${color}40` : "none",
+            background: color,
+            boxShadow: percentage > 0 ? `0 0 12px ${color}50` : "none",
           }}
         />
       </div>

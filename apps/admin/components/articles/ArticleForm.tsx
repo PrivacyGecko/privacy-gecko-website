@@ -6,40 +6,50 @@ import { marked } from "marked";
 import { TiptapEditor } from "@/components/editor";
 import { Input, Textarea, Select } from "@/components/ui";
 import { slugify, calculateReadingTime } from "@/lib/utils";
-import { Loader2, Save, Send, Eye, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  Loader2,
+  Save,
+  Send,
+  Eye,
+  ChevronDown,
+  ChevronUp,
+  FileText,
+  Settings,
+  Calendar,
+  Search,
+  Type,
+  Hash,
+  FolderOpen,
+  AlignLeft,
+  BookOpen,
+  Clock,
+  Sparkles,
+} from "lucide-react";
 import type { Article, Category } from "@privacygecko/database";
 
 // Check if content appears to be markdown (not HTML)
 function isMarkdown(content: string): boolean {
   if (!content) return false;
   const trimmed = content.trim();
-  // If it starts with HTML tag, it's probably HTML
   if (trimmed.startsWith("<")) return false;
-  // Check for common markdown patterns
   const markdownPatterns = [
-    /^#+ /m,           // Headings
-    /^\* /m,           // Unordered lists
-    /^- /m,            // Unordered lists
-    /^\d+\. /m,        // Ordered lists
-    /\[.+\]\(.+\)/,    // Links
-    /\*\*.+\*\*/,      // Bold
-    /^>/m,             // Blockquotes
-    /```/,             // Code blocks
+    /^#+ /m,
+    /^\* /m,
+    /^- /m,
+    /^\d+\. /m,
+    /\[.+\]\(.+\)/,
+    /\*\*.+\*\*/,
+    /^>/m,
+    /```/,
   ];
-  return markdownPatterns.some(pattern => pattern.test(content));
+  return markdownPatterns.some((pattern) => pattern.test(content));
 }
 
 // Convert markdown to HTML
 function markdownToHtml(content: string): string {
   if (!content) return "";
   if (!isMarkdown(content)) return content;
-
-  // Configure marked for safe HTML output
-  marked.setOptions({
-    gfm: true,
-    breaks: true,
-  });
-
+  marked.setOptions({ gfm: true, breaks: true });
   return marked.parse(content) as string;
 }
 
@@ -52,7 +62,6 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
   const router = useRouter();
   const isEditing = !!article;
 
-  // Convert markdown to HTML on initial load (memoized to run once)
   const initialContent = useMemo(() => {
     return markdownToHtml(article?.content || "");
   }, [article?.content]);
@@ -77,7 +86,7 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
     article?.keywords?.join(", ") || ""
   );
 
-  // Publish date (for backdating)
+  // Publish date
   const [publishedAt, setPublishedAt] = useState(
     article?.publishedAt
       ? new Date(article.publishedAt).toISOString().slice(0, 16)
@@ -96,7 +105,10 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
   }, [title, slugManuallyEdited]);
 
   // Calculate stats
-  const wordCount = content.replace(/<[^>]*>/g, "").split(/\s+/).filter(Boolean).length;
+  const wordCount = content
+    .replace(/<[^>]*>/g, "")
+    .split(/\s+/)
+    .filter(Boolean).length;
   const readingTime = calculateReadingTime(content.replace(/<[^>]*>/g, ""));
 
   async function handleSubmit(publishNow: boolean = false) {
@@ -109,7 +121,6 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
     setError("");
 
     try {
-      // Use custom date if provided, otherwise use current date when publishing
       const effectivePublishedAt = publishNow
         ? publishedAt
           ? new Date(publishedAt).toISOString()
@@ -127,15 +138,16 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
         metaTitle: metaTitle || null,
         metaDescription: metaDescription || null,
         keywords: keywords
-          ? keywords.split(",").map((k) => k.trim()).filter(Boolean)
+          ? keywords
+              .split(",")
+              .map((k) => k.trim())
+              .filter(Boolean)
           : null,
         status: publishNow ? "published" : "draft",
         publishedAt: effectivePublishedAt,
       };
 
-      const url = isEditing
-        ? `/api/articles/${article.id}`
-        : "/api/articles";
+      const url = isEditing ? `/api/articles/${article.id}` : "/api/articles";
       const method = isEditing ? "PUT" : "POST";
 
       const response = await fetch(url, {
@@ -159,7 +171,6 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
   }
 
   function handlePreview() {
-    // Open preview in new tab (blog URL)
     if (article?.slug) {
       const category = categories.find((c) => c.id === article.categoryId);
       if (category) {
@@ -177,162 +188,224 @@ export function ArticleForm({ article, categories }: ArticleFormProps) {
   }));
 
   return (
-    <div className="max-w-4xl">
-      {error && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
-          {error}
-        </div>
-      )}
+    <div className="article-form-container">
+      {/* Main Content Area */}
+      <div className="article-main">
+        {error && (
+          <div className="form-error-banner">
+            <span>{error}</span>
+          </div>
+        )}
 
-      <div className="space-y-6">
-        {/* Title */}
-        <Input
-          label="Title *"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Enter article title"
-        />
-
-        {/* Slug */}
-        <Input
-          label="Slug *"
-          value={slug}
-          onChange={(e) => {
-            setSlug(e.target.value);
-            setSlugManuallyEdited(true);
-          }}
-          placeholder="article-url-slug"
-          helperText="URL-friendly identifier (auto-generated from title)"
-        />
-
-        {/* Category */}
-        <Select
-          label="Category *"
-          value={categoryId}
-          onChange={(e) => setCategoryId(e.target.value)}
-          options={categoryOptions}
-          placeholder="Select a category"
-        />
-
-        {/* Excerpt */}
-        <Textarea
-          label="Excerpt"
-          value={excerpt}
-          onChange={(e) => setExcerpt(e.target.value)}
-          placeholder="Brief summary of the article (optional)"
-          rows={3}
-        />
-
-        {/* Content Editor */}
-        <div>
-          <label className="label">Content *</label>
-          <TiptapEditor
-            content={content}
-            onChange={setContent}
-            placeholder="Start writing your article..."
-          />
-          <div className="flex justify-between mt-2 text-xs text-[var(--color-text-tertiary)]">
-            <span>{wordCount} words</span>
-            <span>{readingTime} min read</span>
+        {/* Title Card */}
+        <div className="form-card">
+          <div className="form-card-header">
+            <div className="form-card-icon">
+              <Type className="w-4 h-4" />
+            </div>
+            <span className="form-card-title">Article Details</span>
+          </div>
+          <div className="form-card-body">
+            <div className="form-fields-grid">
+              <div className="form-field">
+                <Input
+                  label="Title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Enter an engaging title..."
+                />
+              </div>
+              <div className="form-field-row">
+                <div className="form-field flex-1">
+                  <Input
+                    label="URL Slug"
+                    value={slug}
+                    onChange={(e) => {
+                      setSlug(e.target.value);
+                      setSlugManuallyEdited(true);
+                    }}
+                    placeholder="article-url-slug"
+                  />
+                </div>
+                <div className="form-field" style={{ width: "200px" }}>
+                  <Select
+                    label="Category"
+                    value={categoryId}
+                    onChange={(e) => setCategoryId(e.target.value)}
+                    options={categoryOptions}
+                    placeholder="Select..."
+                  />
+                </div>
+              </div>
+              <div className="form-field">
+                <Textarea
+                  label="Excerpt"
+                  value={excerpt}
+                  onChange={(e) => setExcerpt(e.target.value)}
+                  placeholder="Write a brief summary that appears in previews..."
+                  rows={2}
+                />
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Publish Date */}
-        <div>
-          <label className="label">Publish Date</label>
-          <input
-            type="datetime-local"
-            value={publishedAt}
-            onChange={(e) => setPublishedAt(e.target.value)}
-            className="input"
-          />
-          <p className="text-xs text-[var(--color-text-tertiary)] mt-1">
-            Set a past date to backdate the article. Leave empty for current date when publishing.
-          </p>
+        {/* Content Editor Card */}
+        <div className="form-card editor-card">
+          <div className="form-card-header">
+            <div className="form-card-icon">
+              <FileText className="w-4 h-4" />
+            </div>
+            <span className="form-card-title">Content</span>
+            <div className="editor-header-stats">
+              <span className="editor-stat-pill">
+                <BookOpen className="w-3 h-3" />
+                {wordCount} words
+              </span>
+              <span className="editor-stat-pill">
+                <Clock className="w-3 h-3" />
+                {readingTime} min read
+              </span>
+            </div>
+          </div>
+          <div className="editor-wrapper">
+            <TiptapEditor
+              content={content}
+              onChange={setContent}
+              placeholder="Start writing your article..."
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Sidebar */}
+      <div className="article-sidebar">
+        {/* Publish Actions */}
+        <div className="form-card publish-card">
+          <div className="form-card-header">
+            <div className="form-card-icon publish-icon">
+              <Sparkles className="w-4 h-4" />
+            </div>
+            <span className="form-card-title">Publish</span>
+          </div>
+          <div className="form-card-body">
+            <div className="publish-actions">
+              <button
+                type="button"
+                onClick={() => handleSubmit(true)}
+                disabled={isSubmitting}
+                className="publish-btn-primary"
+              >
+                {isSubmitting ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <Send className="w-4 h-4" />
+                )}
+                {isEditing ? "Update & Publish" : "Publish Now"}
+              </button>
+              <button
+                type="button"
+                onClick={() => handleSubmit(false)}
+                disabled={isSubmitting}
+                className="publish-btn-secondary"
+              >
+                {isSubmitting ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <Save className="w-4 h-4" />
+                )}
+                Save as Draft
+              </button>
+              {isEditing && article?.status === "published" && (
+                <button
+                  type="button"
+                  onClick={handlePreview}
+                  className="publish-btn-secondary"
+                >
+                  <Eye className="w-4 h-4" />
+                  Preview Live
+                </button>
+              )}
+            </div>
+          </div>
         </div>
 
-        {/* SEO Fields (Collapsible) */}
-        <div className="border border-[var(--color-border)] rounded-lg">
+        {/* Schedule Card */}
+        <div className="form-card">
+          <div className="form-card-header">
+            <div className="form-card-icon">
+              <Calendar className="w-4 h-4" />
+            </div>
+            <span className="form-card-title">Schedule</span>
+          </div>
+          <div className="form-card-body">
+            <input
+              type="datetime-local"
+              value={publishedAt}
+              onChange={(e) => setPublishedAt(e.target.value)}
+              className="input"
+            />
+            <p className="form-hint">
+              Set a date to backdate or schedule. Leave empty for current time.
+            </p>
+          </div>
+        </div>
+
+        {/* SEO Settings Card */}
+        <div className="form-card collapsible-card">
           <button
             type="button"
             onClick={() => setShowSeoFields(!showSeoFields)}
-            className="w-full flex items-center justify-between p-4 text-left hover:bg-[var(--color-bg-subtle)] transition-colors"
+            className="collapsible-header"
           >
-            <span className="font-medium text-[var(--color-text-primary)]">
-              SEO Settings
-            </span>
+            <div className="collapsible-header-left">
+              <div className="form-card-icon">
+                <Search className="w-4 h-4" />
+              </div>
+              <span>SEO Settings</span>
+            </div>
             {showSeoFields ? (
-              <ChevronUp className="w-5 h-5 text-[var(--color-text-tertiary)]" />
+              <ChevronUp className="w-4 h-4 text-[var(--color-text-tertiary)]" />
             ) : (
-              <ChevronDown className="w-5 h-5 text-[var(--color-text-tertiary)]" />
+              <ChevronDown className="w-4 h-4 text-[var(--color-text-tertiary)]" />
             )}
           </button>
           {showSeoFields && (
-            <div className="p-4 pt-0 space-y-4 border-t border-[var(--color-border)]">
+            <div className="collapsible-content">
               <Input
                 label="Meta Title"
                 value={metaTitle}
                 onChange={(e) => setMetaTitle(e.target.value)}
-                placeholder="SEO title (defaults to article title)"
-                helperText={`${metaTitle.length}/60 characters`}
+                placeholder="SEO title"
               />
+              <div className="char-count">{metaTitle.length}/60</div>
               <Textarea
                 label="Meta Description"
                 value={metaDescription}
                 onChange={(e) => setMetaDescription(e.target.value)}
-                placeholder="SEO description for search results"
+                placeholder="Description for search results"
                 rows={2}
-                helperText={`${metaDescription.length}/160 characters`}
               />
+              <div className="char-count">{metaDescription.length}/160</div>
               <Input
                 label="Keywords"
                 value={keywords}
                 onChange={(e) => setKeywords(e.target.value)}
-                placeholder="privacy, security, crypto (comma-separated)"
+                placeholder="keyword1, keyword2, keyword3"
               />
             </div>
           )}
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-3 pt-4 border-t border-[var(--color-border)]">
-          <button
-            type="button"
-            onClick={() => handleSubmit(false)}
-            disabled={isSubmitting}
-            className="btn btn-secondary"
-          >
-            {isSubmitting ? (
-              <Loader2 className="w-4 h-4 animate-spin" />
-            ) : (
-              <Save className="w-4 h-4" />
-            )}
-            Save as Draft
-          </button>
-          <button
-            type="button"
-            onClick={() => handleSubmit(true)}
-            disabled={isSubmitting}
-            className="btn btn-primary"
-          >
-            {isSubmitting ? (
-              <Loader2 className="w-4 h-4 animate-spin" />
-            ) : (
-              <Send className="w-4 h-4" />
-            )}
-            {isEditing ? "Update & Publish" : "Save & Publish"}
-          </button>
-          {isEditing && article?.status === "published" && (
-            <button
-              type="button"
-              onClick={handlePreview}
-              className="btn btn-ghost ml-auto"
-            >
-              <Eye className="w-4 h-4" />
-              Preview
-            </button>
-          )}
-        </div>
+        {/* Status Indicator */}
+        {isEditing && (
+          <div className="status-indicator-card">
+            <div className="status-indicator-dot" data-status={article.status} />
+            <span className="status-indicator-text">
+              Status: <strong>{article.status}</strong>
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );
