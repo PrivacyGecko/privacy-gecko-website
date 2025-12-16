@@ -16,14 +16,22 @@ interface Props {
   params: Promise<{ category: string }>;
 }
 
-// Mock data - fallback until database is connected
+// Approved categories (per SEO guide - Security merged into Privacy)
+const APPROVED_CATEGORY_SLUGS = [
+  "privacy",
+  "crypto-safety",
+  "browser-protection",
+  "file-security",
+  "passwords-identity",
+];
+
+// Mock data - fallback until database is connected (5 core categories only)
 const mockCategories = [
-  { id: 1, name: "Privacy", slug: "privacy", description: "Digital privacy guides and tutorials for protecting your online identity", createdAt: new Date(), updatedAt: new Date() },
-  { id: 2, name: "Security", slug: "security", description: "Cybersecurity tips and best practices to keep you safe", createdAt: new Date(), updatedAt: new Date() },
-  { id: 3, name: "Crypto Safety", slug: "crypto-safety", description: "Cryptocurrency safety and security guides", createdAt: new Date(), updatedAt: new Date() },
-  { id: 4, name: "Browser Protection", slug: "browser-protection", description: "Browser security tips", createdAt: new Date(), updatedAt: new Date() },
-  { id: 5, name: "File Security", slug: "file-security", description: "Secure file sharing guides", createdAt: new Date(), updatedAt: new Date() },
-  { id: 6, name: "Passwords & Identity", slug: "passwords-identity", description: "Password and identity protection", createdAt: new Date(), updatedAt: new Date() },
+  { id: 1, name: "Privacy", slug: "privacy", description: "Data protection, tracking prevention, and digital privacy guides", createdAt: new Date(), updatedAt: new Date() },
+  { id: 2, name: "Crypto Safety", slug: "crypto-safety", description: "Privacy-focused cryptocurrency and wallet security", createdAt: new Date(), updatedAt: new Date() },
+  { id: 3, name: "Browser Protection", slug: "browser-protection", description: "Browser fingerprinting, extensions, and tracker blocking", createdAt: new Date(), updatedAt: new Date() },
+  { id: 4, name: "File Security", slug: "file-security", description: "Secure file sharing, encryption, and metadata protection", createdAt: new Date(), updatedAt: new Date() },
+  { id: 5, name: "Passwords & Identity", slug: "passwords-identity", description: "Password security, identity protection, and authentication", createdAt: new Date(), updatedAt: new Date() },
 ];
 
 const mockArticlesByCategory: Record<string, Array<{
@@ -80,14 +88,14 @@ const mockArticlesByCategory: Record<string, Array<{
       category: { name: "Privacy", slug: "privacy" },
     },
   ],
-  security: [
+  "passwords-identity": [
     {
       id: 4,
-      title: "Password Security Best Practices",
+      title: "Password Security Best Practices for 2025",
       slug: "password-security-best-practices",
-      excerpt: "Create and manage strong passwords to keep your accounts safe from hackers and data breaches.",
+      excerpt: "Create and manage strong passwords to keep your accounts safe from hackers. Learn about password managers, 2FA, and passkeys.",
       content: "",
-      categoryId: 2,
+      categoryId: 5,
       pillarId: null,
       metaTitle: null,
       metaDescription: null,
@@ -105,7 +113,7 @@ const mockArticlesByCategory: Record<string, Array<{
       publishedAt: new Date("2025-01-01"),
       wordCount: null,
       readingTime: 5,
-      category: { name: "Security", slug: "security" },
+      category: { name: "Passwords & Identity", slug: "passwords-identity" },
     },
   ],
   "crypto-safety": [
@@ -166,18 +174,18 @@ const mockArticlesByCategory: Record<string, Array<{
   ],
 };
 
+// Category icons (5 core categories only)
 const categoryIcons: Record<string, React.ElementType> = {
-  privacy: Shield,
-  security: Lock,
+  "privacy": Shield,
   "crypto-safety": Coins,
   "browser-protection": Wrench,
   "file-security": Shield,
   "passwords-identity": Lock,
 };
 
+// Category colors (5 core categories only)
 const categoryColors: Record<string, { bg: string; text: string; accent: string }> = {
-  privacy: { bg: "from-emerald-50 to-emerald-100/50", text: "text-emerald-700", accent: "bg-emerald-500" },
-  security: { bg: "from-amber-50 to-amber-100/50", text: "text-amber-700", accent: "bg-amber-500" },
+  "privacy": { bg: "from-emerald-50 to-emerald-100/50", text: "text-emerald-700", accent: "bg-emerald-500" },
   "crypto-safety": { bg: "from-indigo-50 to-indigo-100/50", text: "text-indigo-700", accent: "bg-indigo-500" },
   "browser-protection": { bg: "from-rose-50 to-rose-100/50", text: "text-rose-700", accent: "bg-rose-500" },
   "file-security": { bg: "from-cyan-50 to-cyan-100/50", text: "text-cyan-700", accent: "bg-cyan-500" },
@@ -225,7 +233,10 @@ async function getAllCategoriesForNav() {
     if (process.env.DATABASE_URL) {
       const { getAllCategories } = await import("@privacygecko/database");
       const categories = await getAllCategories();
-      if (categories.length > 0) return categories;
+      if (categories.length > 0) {
+        // Filter to only approved categories (per SEO guide)
+        return categories.filter(c => APPROVED_CATEGORY_SLUGS.includes(c.slug));
+      }
     }
   } catch (error) {
     console.error("Database error, using mock categories:", error);
