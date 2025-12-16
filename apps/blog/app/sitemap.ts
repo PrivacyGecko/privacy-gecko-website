@@ -10,44 +10,58 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 1,
+      priority: 1.0,
     },
   ]
 
-  // Fetch articles and categories from database
+  // Fetch articles, categories, and pillars from database
   let articleUrls: MetadataRoute.Sitemap = []
   let categoryUrls: MetadataRoute.Sitemap = []
+  let pillarUrls: MetadataRoute.Sitemap = []
 
   try {
     if (process.env.DATABASE_URL) {
-      const { getLatestArticles, getAllCategories } = await import('@privacygecko/database')
+      const { getLatestArticles, getAllCategories, getAllPillars } = await import(
+        '@privacygecko/database'
+      )
 
-      // Get all published articles
-      const articles = await getLatestArticles(1000) // Get up to 1000 articles
-      const categories = await getAllCategories()
+      // Get all data
+      const [articles, categories, pillars] = await Promise.all([
+        getLatestArticles(1000), // Get up to 1000 articles
+        getAllCategories(),
+        getAllPillars(),
+      ])
 
       // Create category map for article URLs
-      const categoryMap = new Map(categories.map(c => [c.id, c.slug]))
+      const categoryMap = new Map(categories.map((c) => [c.id, c.slug]))
 
-      // Generate article URLs
-      articleUrls = articles.map(article => ({
-        url: `${baseUrl}/${categoryMap.get(article.categoryId) || 'uncategorized'}/${article.slug}`,
-        lastModified: article.updatedAt || article.publishedAt || new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.8,
-      }))
-
-      // Generate category URLs
-      categoryUrls = categories.map(category => ({
+      // Generate category URLs (high priority - hub pages)
+      categoryUrls = categories.map((category) => ({
         url: `${baseUrl}/${category.slug}`,
         lastModified: new Date(),
         changeFrequency: 'daily' as const,
         priority: 0.9,
+      }))
+
+      // Generate pillar URLs (highest priority after home - cornerstone content)
+      pillarUrls = pillars.map((pillar) => ({
+        url: `${baseUrl}/pillar/${pillar.slug}`,
+        lastModified: pillar.updatedAt || new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.95,
+      }))
+
+      // Generate article URLs
+      articleUrls = articles.map((article) => ({
+        url: `${baseUrl}/${categoryMap.get(article.categoryId) || 'uncategorized'}/${article.slug}`,
+        lastModified: article.updatedAt || article.publishedAt || new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
       }))
     }
   } catch (error) {
     console.error('Error generating sitemap from database:', error)
   }
 
-  return [...staticPages, ...categoryUrls, ...articleUrls]
+  return [...staticPages, ...pillarUrls, ...categoryUrls, ...articleUrls]
 }

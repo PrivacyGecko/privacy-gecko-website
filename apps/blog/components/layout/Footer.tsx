@@ -45,6 +45,14 @@ export function Footer() {
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
+        {/* Independence Statement */}
+        <div className="py-8 border-b border-[var(--color-border-subtle)]">
+          <p className="text-sm text-[var(--color-text-secondary)] italic text-center max-w-2xl mx-auto">
+            PrivacyGecko publishes independent privacy research and education.
+            Our products support user protection but do not influence our analysis or conclusions.
+          </p>
+        </div>
+
         {/* Main Footer */}
         <div className="py-12 grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-10">
           {/* Brand */}

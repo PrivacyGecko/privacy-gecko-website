@@ -52,6 +52,7 @@ export const pillars = pgTable(
     // SEO
     metaTitle: varchar('meta_title', { length: 255 }),
     metaDescription: varchar('meta_description', { length: 320 }),
+    ogImage: varchar('og_image', { length: 500 }),
 
     // Targeting
     targetProducts: text('target_products').array(),
@@ -63,6 +64,7 @@ export const pillars = pgTable(
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
     publishedAt: timestamp('published_at'),
+    lastReviewedAt: timestamp('last_reviewed_at').defaultNow(),
 
     // Reading stats
     wordCount: integer('word_count'),
@@ -110,6 +112,9 @@ export const articles = pgTable(
     metaTitle: varchar('meta_title', { length: 255 }),
     metaDescription: varchar('meta_description', { length: 320 }),
     keywords: text('keywords').array(),
+    ogImage: varchar('og_image', { length: 500 }),
+    canonicalUrl: varchar('canonical_url', { length: 500 }),
+    noIndex: boolean('no_index').default(false),
 
     // Targeting
     targetProducts: text('target_products').array(),

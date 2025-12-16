@@ -9,3 +9,6 @@ export * from './queries'
 
 // Mutations (Admin)
 export * from './mutations'
+
+// Quality gate exports
+export { QualityGateError, validateArticleForPublish } from './mutations'

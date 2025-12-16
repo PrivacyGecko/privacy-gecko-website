@@ -21,8 +21,10 @@ async function seed() {
   // ============================================
   // SEED CATEGORIES
   // ============================================
+  // NOTE: Security category merged into Privacy per SEO guide
+  // 5 categories total (removed separate Security category)
   console.log('Seeding categories...')
-  const [privacy, security, cryptoSafety, browserProtection, fileSecurity, passwordsIdentity] =
+  const [privacy, cryptoSafety, browserProtection, fileSecurity, passwordsIdentity] =
     await db
       .insert(categories)
       .values([
@@ -30,53 +32,48 @@ async function seed() {
           name: 'Privacy',
           slug: 'privacy',
           description:
-            'Guides on online privacy, data collection, tracking, and staying anonymous across the web.',
-        },
-        {
-          name: 'Security',
-          slug: 'security',
-          description:
-            'Protect yourself from phishing, malware, account takeovers, and common attack vectors.',
+            'Data protection, tracking prevention, security fundamentals, and digital privacy guides.',
         },
         {
           name: 'Crypto Safety',
           slug: 'crypto-safety',
           description:
-            'Staying safe while trading, using wallets, DeFi, Solana, and on-chain tools.',
+            'Privacy-focused cryptocurrency, wallet security, DeFi safety, and on-chain privacy.',
         },
         {
           name: 'Browser Protection',
           slug: 'browser-protection',
           description:
-            'Hardening your browser: fingerprinting, trackers, extensions, browser settings, and GeckoGuard tips.',
+            'Browser fingerprinting, extensions, tracker blocking, and browser hardening.',
         },
         {
           name: 'File Security',
           slug: 'file-security',
           description:
-            'Secure file sharing, encrypted uploads, metadata leaks, and GeckoShare workflows.',
+            'Secure file sharing, encryption, metadata protection, and GeckoShare workflows.',
         },
         {
           name: 'Passwords & Identity',
           slug: 'passwords-identity',
           description:
-            'Password strategy, MFA, identity theft prevention, and GeckoLock use-cases.',
+            'Password security, identity protection, MFA, and authentication best practices.',
         },
       ])
       .returning()
 
-  console.log(`✅ Seeded ${6} categories`)
+  console.log(`✅ Seeded ${5} categories`)
 
   // ============================================
   // SEED PILLARS
   // ============================================
+  // NOTE: Pillar slugs are evergreen (no years) per SEO guide
   console.log('Seeding pillars...')
   const seededPillars = await db
     .insert(pillars)
     .values([
       {
-        title: 'Online Privacy in 2025: The Complete Beginner–Pro Guide',
-        slug: 'online-privacy-guide-2025',
+        title: 'The Complete Online Privacy Guide',
+        slug: 'online-privacy-guide',
         excerpt:
           'Everything you need to know about protecting your privacy online, from basic browser settings to advanced anonymity techniques.',
         categoryId: privacy.id,
@@ -86,25 +83,25 @@ async function seed() {
           TargetProduct.GECKO_LOCK,
         ],
         status: ArticleStatus.DRAFT,
-        metaTitle: 'Online Privacy Guide 2025 | Complete Privacy Protection',
+        metaTitle: 'Complete Online Privacy Guide | Protect Your Digital Life',
         metaDescription:
-          'Master online privacy in 2025. Learn how websites track you, essential browser settings, must-have privacy tools, and daily habits that protect your data.',
+          'Master online privacy. Learn how websites track you, essential browser settings, must-have privacy tools, and daily habits that protect your data.',
       },
       {
-        title: 'Secure File Sharing: How to Send Files Safely in 2025',
-        slug: 'secure-file-sharing-guide-2025',
+        title: 'Secure File Sharing Guide',
+        slug: 'secure-file-sharing-guide',
         excerpt:
           'Learn why normal file sharing is risky and how to send sensitive documents securely with encryption and access controls.',
         categoryId: fileSecurity.id,
         targetProducts: [TargetProduct.GECKO_SHARE],
         status: ArticleStatus.DRAFT,
-        metaTitle: 'Secure File Sharing Guide 2025 | Send Files Safely',
+        metaTitle: 'Secure File Sharing Guide | Send Files Safely',
         metaDescription:
           'Stop sharing files insecurely. Learn about encrypted file sharing, time-limited links, and how to send sensitive documents without risk.',
       },
       {
-        title: 'Browser Fingerprinting & Trackers: How You\'re Really Tracked Online',
-        slug: 'browser-fingerprinting-and-trackers',
+        title: 'Browser Fingerprinting & Tracker Protection',
+        slug: 'browser-fingerprinting-protection',
         excerpt:
           'Discover how advertisers and trackers identify you without cookies, and what you can do to reduce your fingerprint.',
         categoryId: browserProtection.id,
@@ -125,15 +122,15 @@ async function seed() {
   console.log('Seeding sample articles...')
 
   const fileSharingPillar = seededPillars.find(
-    (p) => p.slug === 'secure-file-sharing-guide-2025'
+    (p) => p.slug === 'secure-file-sharing-guide'
   )!
 
   const browserPillar = seededPillars.find(
-    (p) => p.slug === 'browser-fingerprinting-and-trackers'
+    (p) => p.slug === 'browser-fingerprinting-protection'
   )!
 
   const privacyPillar = seededPillars.find(
-    (p) => p.slug === 'online-privacy-guide-2025'
+    (p) => p.slug === 'online-privacy-guide'
   )!
 
   const seededArticles = await db
@@ -215,8 +212,8 @@ async function seed() {
   console.log('\n🎉 Database seeding complete!')
   console.log(`
 Summary:
-- ${6} categories
-- ${seededPillars.length} pillars
+- ${5} categories (Security merged into Privacy)
+- ${seededPillars.length} pillars (evergreen slugs, no years)
 - ${seededArticles.length} sample articles (drafts)
 
 Next steps:

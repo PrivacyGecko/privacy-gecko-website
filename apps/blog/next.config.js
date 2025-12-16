@@ -27,7 +27,10 @@ const nextConfig = {
   // Asset prefix ensures JS/CSS load from blog subdomain when accessed via /blog rewrite
   assetPrefix: getAssetPrefix(),
   transpilePackages: ['@privacygecko/ui', '@privacygecko/database'],
+
+  // Image optimization for Core Web Vitals
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -42,6 +45,16 @@ const nextConfig = {
         hostname: 'pub-ee83597c43b94030b8793a2e4e9d013a.r2.dev',
       },
     ],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+  },
+
+  // Enable compression
+  compress: true,
+
+  // Optimize package imports for smaller bundles
+  experimental: {
+    optimizePackageImports: ['lucide-react', '@privacygecko/ui'],
   },
   async headers() {
     return [

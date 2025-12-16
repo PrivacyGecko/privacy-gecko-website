@@ -11,12 +11,14 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
+  preload: true,
 });
 
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
+  preload: true,
 });
 
 // Use main domain for SEO authority (subdirectory > subdomain)
@@ -24,36 +26,66 @@ const canonicalBase = "https://privacygecko.com/blog";
 
 export const metadata: Metadata = {
   metadataBase: new URL(canonicalBase),
-  alternates: {
-    canonical: "/",
-  },
   title: {
-    template: "%s | PrivacyGecko Blog",
-    default: "PrivacyGecko Blog - Privacy, Security & Crypto Safety",
+    template: "%s | Privacy Gecko",
+    default: "Privacy Gecko Blog — Privacy Research & Education",
   },
   description:
-    "Expert guides on online privacy, cybersecurity, and crypto safety. Learn how to protect your digital life.",
+    "Independent privacy research and education. Learn how websites track you, how data brokers operate, and how to protect your digital privacy.",
+  keywords: [
+    "privacy",
+    "security",
+    "tracking",
+    "data protection",
+    "browser fingerprinting",
+    "crypto safety",
+    "online privacy",
+  ],
+  authors: [{ name: "Privacy Gecko Team" }],
+  creator: "Privacy Gecko",
+  publisher: "Privacy Gecko",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: canonicalBase,
-    siteName: "PrivacyGecko Blog",
+    siteName: "Privacy Gecko",
+    title: "Privacy Gecko Blog — Privacy Research & Education",
+    description:
+      "Independent privacy research and education. Learn how websites track you and protect your digital privacy.",
     images: [
       {
         url: "https://privacygecko.com/images/og-home.png",
         width: 1200,
         height: 630,
-        alt: "PrivacyGecko Blog",
+        alt: "Privacy Gecko Blog",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@PrivacyGecko",
+    creator: "@PrivacyGecko",
   },
-  robots: {
-    index: true,
-    follow: true,
+  alternates: {
+    canonical: canonicalBase,
+    types: {
+      "application/rss+xml": "/blog/feed.xml",
+    },
+  },
+  verification: {
+    // Add your Google Search Console verification code here
+    // google: "your-google-verification-code",
   },
 };
 
@@ -64,6 +96,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${instrumentSerif.variable} ${geist.variable} scroll-smooth`}>
+      <head>
+        {/* Preconnect to critical origins for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* DNS prefetch for analytics */}
+        <link rel="dns-prefetch" href="https://plausible.io" />
+      </head>
       <body className="font-body antialiased bg-[var(--color-bg)] text-[var(--color-text-primary)]">
         <Navigation />
 
