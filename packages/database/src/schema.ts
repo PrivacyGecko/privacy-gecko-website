@@ -112,9 +112,9 @@ export const articles = pgTable(
     metaTitle: varchar('meta_title', { length: 255 }),
     metaDescription: varchar('meta_description', { length: 320 }),
     keywords: text('keywords').array(),
-    ogImage: varchar('og_image', { length: 500 }),
     canonicalUrl: varchar('canonical_url', { length: 500 }),
     noIndex: boolean('no_index').default(false),
+    // Note: featuredImage serves as OG image fallback; dynamic OG generation is primary
 
     // Targeting
     targetProducts: text('target_products').array(),
