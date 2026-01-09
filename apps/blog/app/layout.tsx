@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     "tracking",
     "data protection",
     "browser fingerprinting",
-    "crypto safety",
     "online privacy",
   ],
   authors: [{ name: "Privacy Gecko Team" }],

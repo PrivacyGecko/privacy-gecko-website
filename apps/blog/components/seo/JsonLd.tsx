@@ -19,7 +19,6 @@ export const organizationSchema = {
   sameAs: [
     "https://twitter.com/PrivacyGecko",
     "https://github.com/privacygecko",
-    "https://t.me/pricko_official",
   ],
 };
 
@@ -29,7 +28,7 @@ export const websiteSchema = {
   "@id": `${BASE_URL}/#website`,
   url: BASE_URL,
   name: "PrivacyGecko Blog",
-  description: "Expert guides on online privacy, cybersecurity, and crypto safety.",
+  description: "Expert guides on online privacy and cybersecurity.",
   publisher: {
     "@id": `${SITE_URL}/#organization`,
   },

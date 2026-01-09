@@ -6,15 +6,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Legacy blog posts - now redirected to category-based URLs
   // These URLs will 301 redirect to new structure via blog app
   const blogPosts = [
-    { slug: 'geckocore-protocol-whitepaper-v1-launch', category: 'product-updates' },
-    { slug: 'introducing-geckocore-protocol', category: 'product-updates' },
     { slug: 'introducing-privacy-gecko', category: 'product-updates' },
     { slug: 'why-privacy-tools-matter-2025', category: 'privacy' },
     { slug: 'open-source-privacy-tools', category: 'privacy' },
     { slug: 'getting-started-geckoadvisor', category: 'tutorials' },
     { slug: 'complete-guide-privacy-tools-2025', category: 'privacy' },
-    { slug: 'crypto-trader-privacy-tools', category: 'crypto-safety' },
-    { slug: 'privacy-memecoins-explained', category: 'crypto-safety' },
     { slug: 'local-ai-privacy-protection', category: 'privacy' },
   ]
 
@@ -86,24 +82,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/geckocore`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/whitepaper`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/token`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/compare`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -170,12 +148,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/ai-roadmap`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/success`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -204,7 +176,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/blog/${post.category}/${post.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: post.slug.includes('whitepaper') || post.slug.includes('complete-guide') || post.slug.includes('privacy-memecoins') ? 0.75 : 0.6,
+      priority: post.slug.includes('complete-guide') ? 0.75 : 0.6,
     })),
   ]
 }

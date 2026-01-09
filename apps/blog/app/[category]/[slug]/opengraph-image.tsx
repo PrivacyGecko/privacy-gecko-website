@@ -11,7 +11,6 @@ export const contentType = "image/png";
 const categoryColors: Record<string, { bg: string; accent: string }> = {
   privacy: { bg: "#635BFF", accent: "#8B85FF" },
   security: { bg: "#FF6B35", accent: "#FF8F5E" },
-  "crypto-safety": { bg: "#00B4D8", accent: "#48CAE4" },
   "browser-protection": { bg: "#E83E8C", accent: "#F06AA3" },
   "file-security": { bg: "#00D98A", accent: "#33E3A3" },
   "passwords-identity": { bg: "#6366F1", accent: "#8B8DF5" },
@@ -23,7 +22,6 @@ const categoryColors: Record<string, { bg: string; accent: string }> = {
 const categoryNames: Record<string, string> = {
   privacy: "Privacy",
   security: "Security",
-  "crypto-safety": "Crypto Safety",
   "browser-protection": "Browser Protection",
   "file-security": "File Security",
   "passwords-identity": "Passwords & Identity",

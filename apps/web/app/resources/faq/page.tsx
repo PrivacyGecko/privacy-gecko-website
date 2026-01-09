@@ -52,7 +52,7 @@ export default function FAQPage() {
         },
         {
           q: "Will AI features cost extra?",
-          a: "Free tier gets limited AI queries per month (e.g., 50 scans). Token holders (Pro users) get unlimited AI access across all products. The token subsidizes AI compute costs.",
+          a: "Free tier gets limited AI queries per month (e.g., 50 scans). Pro subscribers get unlimited AI access across all products.",
         },
         {
           q: "Can I use products without AI?",
@@ -68,7 +68,7 @@ export default function FAQPage() {
         },
         {
           q: "How do you prevent AI bias?",
-          a: "We train on diverse, public datasets. Community governance reviews training data. Open source models allow external bias auditing. Token holders vote on training priorities.",
+          a: "We train on diverse, public datasets. Community governance reviews training data. Open source models allow external bias auditing.",
         },
         {
           q: "Can AI make mistakes?",
@@ -77,10 +77,6 @@ export default function FAQPage() {
         {
           q: "Will AI replace human privacy experts?",
           a: "No. AI enhances human judgment, doesn't replace it. Think of it as a very fast research assistant, not a decision-maker.",
-        },
-        {
-          q: "Why do I need a token for AI features?",
-          a: "AI compute is expensive (GPUs, inference, training). Token staking provides decentralized funding without selling your data. It's the honest way to fund privacy-first AI.",
         },
         {
           q: "What AI models do you use?",
@@ -100,16 +96,12 @@ export default function FAQPage() {
           a: "Yes, we offer a 30-day money-back guarantee on all Pro plans. No questions asked.",
         },
         {
-          q: "What's the $PRICKO token integration?",
-          a: "Launching December 2025, you'll be able to stake $PRICKO tokens to get discounts on Pro plans and early access to new features. Important: Using $PRICKO is 100% optional—all tools work fully without any token requirement. Token transactions are on Solana (public blockchain), but we don't link wallet addresses to your Privacy Gecko account.",
-        },
-        {
-          q: "Why integrate a token? Doesn't that conflict with privacy?",
-          a: "Fair question. Using $PRICKO is completely optional—all tools have free and paid tiers without any token requirement. Token transactions are on Solana (public blockchain), but we don't link wallet addresses to accounts. We're experimenting with this as an alternative to VC funding, which often pressures companies to monetize user data. If token integration ever conflicts with privacy principles, we'll remove it. Privacy comes first.",
-        },
-        {
           q: "Who funds Privacy Gecko? Any investors?",
-          a: "Privacy Gecko is currently bootstrapped by founder @0xAnonA. We have taken no venture capital and have no external investors. Our business model: free tiers supported by optional Pro subscriptions. We will never take funding from companies that sell user data, accept acquisition offers from data brokers, or compromise privacy to satisfy investor growth demands.",
+          a: "Privacy Gecko is currently bootstrapped. We have taken no venture capital and have no external investors. Our business model: free tiers supported by optional Pro subscriptions. We will never take funding from companies that sell user data, accept acquisition offers from data brokers, or compromise privacy to satisfy investor growth demands.",
+        },
+        {
+          q: "What payment methods do you accept?",
+          a: "We accept all major credit cards through Stripe. Your payment information is processed securely and we never store your full card details.",
         },
       ],
     },

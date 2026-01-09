@@ -14,7 +14,6 @@ import {
   Globe,
   Wifi,
   FileSearch,
-  Cpu,
   Sparkles
 } from "lucide-react";
 
@@ -41,20 +40,9 @@ export default function RoadmapPage() {
       ],
     },
     {
-      phase: "Token Launch",
-      date: "December 2025",
-      status: "current",
-      items: [
-        "$PRICKO token on Solana",
-        "Staking infrastructure live",
-        "Community treasury established",
-        "Early adopter rewards begin",
-      ],
-    },
-    {
       phase: "AI Beta",
       date: "Q1 2026",
-      status: "upcoming",
+      status: "current",
       items: [
         "1,000 beta testers",
         "AI privacy scanning in GeckoAdvisor",
@@ -70,7 +58,7 @@ export default function RoadmapPage() {
         "AI features go public",
         "Federated learning network live",
         "4 remaining products launch",
-        "GeckoCore Protocol beta",
+        "Unified privacy dashboard",
       ],
     },
     {
@@ -149,7 +137,7 @@ export default function RoadmapPage() {
               { value: "4", label: "Products Live" },
               { value: "4", label: "In Development" },
               { value: "Q1 2026", label: "AI Beta Launch" },
-              { value: "Nov 2025", label: "Token Launch" },
+              { value: "2026", label: "Full Ecosystem" },
             ].map((stat) => (
               <motion.div key={stat.label} variants={fadeUp} className="text-center">
                 <p className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-2">
@@ -179,7 +167,7 @@ export default function RoadmapPage() {
                 From foundation to full ecosystem
               </h2>
               <p className="text-xl text-slate-600">
-                Five phases of development, each building on the last.
+                Four phases of development, each building on the last.
               </p>
             </motion.div>
 
@@ -390,61 +378,6 @@ export default function RoadmapPage() {
                   ))}
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* GeckoCore Protocol */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={stagger}
-            className="text-center"
-          >
-            <motion.div variants={fadeUp} className="mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold mb-6">
-                <Cpu className="w-4 h-4" />
-                Coming Q4 2026
-              </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6">
-                GeckoCore Protocol
-              </h2>
-              <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-                The infrastructure that connects all 8 products. One account, unified privacy,
-                token-gated features.
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
-            >
-              {[
-                { title: "Unified Auth", desc: "One account across all products" },
-                { title: "Token Gating", desc: "$PRICKO unlocks premium AI features" },
-                { title: "Privacy Analytics", desc: "Usage insights without tracking" },
-              ].map((feature) => (
-                <div key={feature.title} className="bg-slate-50 rounded-2xl p-8">
-                  <h3 className="text-lg font-display font-bold text-slate-900 mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-slate-600">{feature.desc}</p>
-                </div>
-              ))}
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="mt-12">
-              <Link
-                href="/geckocore"
-                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors"
-              >
-                Learn about GeckoCore
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
             </motion.div>
           </motion.div>
         </div>

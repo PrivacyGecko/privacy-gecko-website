@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Eye, Share2, Shield, Lock, Bookmark, Globe, Wifi, FileSearch, ArrowRight, ArrowUpRight, Check, Cpu } from "lucide-react";
+import { Eye, Share2, Shield, Lock, Bookmark, Globe, Wifi, FileSearch, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -268,106 +268,6 @@ export default function ProductsPage() {
                   </Link>
                 </motion.div>
               ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* GeckoCore Protocol */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={stagger}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-10 lg:p-16"
-          >
-            {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
-
-            <div className="relative grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div variants={fadeUp}>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                    <Cpu className="w-6 h-6 text-white" />
-                  </div>
-                  <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full">
-                    Coming 2026
-                  </span>
-                </div>
-
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-                  GeckoCore Protocol
-                </h2>
-                <p className="text-lg text-slate-400 leading-relaxed mb-8">
-                  The AI-powered infrastructure connecting all Privacy Gecko products.
-                  Local AI processing means your data never leaves your device.
-                </p>
-
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  {[
-                    "On-device AI processing",
-                    "Cross-product intelligence",
-                    "Real-time threat detection",
-                    "Privacy-first architecture",
-                  ].map((feature) => (
-                    <div key={feature} className="flex items-center gap-2 text-slate-300 text-sm">
-                      <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-
-                <Link
-                  href="/geckocore"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-500 transition-colors group shadow-lg shadow-blue-600/30"
-                >
-                  Learn about GeckoCore
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                </Link>
-              </motion.div>
-
-              <motion.div variants={fadeUp} className="hidden lg:block">
-                <div className="relative">
-                  {/* Central hub */}
-                  <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-2xl shadow-blue-500/30">
-                    <Cpu className="w-12 h-12 text-white" />
-                  </div>
-
-                  {/* Orbiting products */}
-                  {[Eye, Share2, Shield, Lock].map((Icon, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center"
-                      style={{
-                        top: `${50 + 45 * Math.sin((i * Math.PI) / 2)}%`,
-                        left: `${50 + 45 * Math.cos((i * Math.PI) / 2)}%`,
-                        transform: "translate(-50%, -50%)",
-                      }}
-                    >
-                      <Icon className="w-6 h-6 text-slate-400" />
-                    </div>
-                  ))}
-
-                  {/* Connection lines */}
-                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
-                    {[0, 1, 2, 3].map((i) => (
-                      <line
-                        key={i}
-                        x1="50"
-                        y1="50"
-                        x2={50 + 35 * Math.cos((i * Math.PI) / 2)}
-                        y2={50 + 35 * Math.sin((i * Math.PI) / 2)}
-                        stroke="rgba(59, 130, 246, 0.3)"
-                        strokeWidth="0.5"
-                        strokeDasharray="2,2"
-                      />
-                    ))}
-                  </svg>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </div>

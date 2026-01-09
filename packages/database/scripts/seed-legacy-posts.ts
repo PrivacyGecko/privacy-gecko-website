@@ -6,43 +6,6 @@ import { eq } from 'drizzle-orm'
 // Legacy blog posts from main site that need to be migrated
 const legacyPosts = [
   {
-    slug: 'geckocore-protocol-whitepaper-v1-launch',
-    title: 'GeckoCore Protocol Whitepaper v1.0: The Privacy Proof Layer for Solana',
-    excerpt: 'The GeckoCore Protocol Whitepaper v1.0 is officially live. Discover the Privacy Proof Layer for Solana with zero-knowledge proofs, 5 Privacy Feeds, and token economics.',
-    category: 'product-updates',
-    content: `# GeckoCore Protocol Whitepaper v1.0
-
-The GeckoCore Protocol Whitepaper v1.0 is officially live. This document outlines the Privacy Proof Layer for Solana with zero-knowledge proofs, 5 Privacy Feeds, and token economics.
-
-## Key Features
-
-- Zero-knowledge proofs for privacy verification
-- 5 Privacy Feeds for comprehensive coverage
-- Token economics designed for sustainability
-
-Read the full whitepaper for complete details.`,
-    targetProducts: ['geckocore'],
-  },
-  {
-    slug: 'introducing-geckocore-protocol',
-    title: 'Introducing GeckoCore Protocol: The Hub for Privacy Tools',
-    excerpt: 'GeckoCore Protocol unifies 8 privacy tools with one wallet login powered by $PRICKO. Open-source, zero-knowledge, launching Q4 2026.',
-    category: 'product-updates',
-    content: `# Introducing GeckoCore Protocol
-
-GeckoCore Protocol is the central hub that unifies all 8 Privacy Gecko tools with a single wallet login, powered by the $PRICKO token.
-
-## What is GeckoCore?
-
-- Unified authentication across all privacy tools
-- Zero-knowledge architecture
-- Open-source and auditable
-- Launching Q4 2026
-
-Stay tuned for more updates on our development progress.`,
-    targetProducts: ['geckocore'],
-  },
-  {
     slug: 'introducing-privacy-gecko',
     title: 'Introducing Privacy Gecko: Our Story',
     excerpt: "Learn about the mission behind Privacy Gecko and why we're building the privacy tools we wished existed.",
@@ -176,69 +139,6 @@ Share files without exposing your data.
 
 Privacy Gecko offers tools across several of these categories, all built with privacy-first principles.`,
     targetProducts: ['geckoadvisor', 'geckoshare', 'geckoguard', 'geckolock'],
-  },
-  {
-    slug: 'crypto-trader-privacy-tools',
-    title: 'Privacy Tools Every Crypto Trader Needs',
-    excerpt: 'Essential privacy tools for crypto traders in 2025. Learn how to protect your wallet, transactions, and identity.',
-    category: 'crypto-safety',
-    content: `# Privacy Tools Every Crypto Trader Needs
-
-Crypto trading requires extra privacy considerations. Your wallet addresses are public, but your identity doesn't have to be.
-
-## Essential Privacy Practices
-
-### 1. Wallet Privacy
-- Use multiple wallets
-- Consider privacy-focused chains
-- Never share private keys
-
-### 2. Transaction Privacy
-- Mix or tumble when appropriate
-- Use privacy tokens for sensitive transactions
-- Be aware of chain analysis
-
-### 3. Identity Protection
-- Use VPNs when trading
-- Separate trading email from personal
-- Enable 2FA everywhere
-
-### 4. Operational Security
-- Use hardware wallets
-- Keep software updated
-- Verify all addresses carefully
-
-Stay safe out there, traders.`,
-    targetProducts: ['geckoguard', 'geckolock'],
-  },
-  {
-    slug: 'privacy-memecoins-explained',
-    title: 'Privacy Memecoins: Memes with a Mission Explained',
-    excerpt: 'What are privacy memecoins? Learn how $PRICKO and other privacy-focused tokens combine community fun with real privacy utility.',
-    category: 'crypto-safety',
-    content: `# Privacy Memecoins: Memes with a Mission
-
-Memecoins don't have to be just about the memes. Privacy memecoins combine community engagement with real utility.
-
-## What Makes a Privacy Memecoin?
-
-### Community + Utility
-- Fun, engaging community
-- Real products and services
-- Sustainable tokenomics
-
-### $PRICKO: Our Approach
-
-$PRICKO powers the Privacy Gecko ecosystem:
-- Access to premium features
-- Governance rights
-- Staking rewards
-- Community incentives
-
-## Memes With a Mission
-
-We believe crypto can be fun AND useful. $PRICKO represents this philosophy—building real privacy tools while maintaining an engaging, meme-friendly community.`,
-    targetProducts: ['geckocore'],
   },
   {
     slug: 'local-ai-privacy-protection',

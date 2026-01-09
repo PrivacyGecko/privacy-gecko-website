@@ -251,7 +251,6 @@ export const products: Product[] = [
           "Emergency access",
           "Priority support (4hr response)",
           "Advanced sharing & folders",
-          "10% off with 50K+ $PRICKO tokens (optional)",
         ],
       },
     },
@@ -299,7 +298,6 @@ export const products: Product[] = [
           "IPFS decentralized storage",
           "PDF exports",
           "Priority support",
-          "Free with 100K+ $PRICKO tokens (optional)",
         ],
       },
     },
@@ -308,7 +306,7 @@ export const products: Product[] = [
     id: "shell",
     name: "GeckoShell",
     tagline: "Private Mobile Browser",
-    description: "Private mobile browser that blocks trackers on iOS and Android. Built-in crypto wallet optional.",
+    description: "Private mobile browser that blocks trackers on iOS and Android. Fast and lightweight.",
     icon: Smartphone,
     status: "coming",
     comingDate: "In Development",
@@ -318,10 +316,10 @@ export const products: Product[] = [
     features: [
       "Blocks trackers automatically",
       "Available on iOS and Android",
-      "Built-in Solana wallet (optional)",
       "Privacy-focused browsing",
       "No browsing history collection",
       "Fast and lightweight",
+      "Battery-efficient design",
     ],
     ai: {
       aiTiming: "future",
@@ -342,8 +340,8 @@ export const products: Product[] = [
           "Private mobile browsing",
           "Automatic tracker blocking",
           "No browsing history saved",
-          "Basic crypto wallet",
-          "Ad blocking"
+          "Ad blocking",
+          "Battery-efficient design"
         ],
       },
       pro: {

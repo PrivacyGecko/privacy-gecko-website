@@ -10,15 +10,14 @@ import { JsonLd } from "@/components/seo/JsonLd";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "PrivacyGecko Blog - Privacy, Security & Crypto Safety",
+  title: "PrivacyGecko Blog - Privacy & Security Guides",
   description:
-    "Expert guides on online privacy, cybersecurity, and crypto safety. Learn how to protect your digital life with our comprehensive articles.",
+    "Expert guides on online privacy and cybersecurity. Learn how to protect your digital life with our comprehensive articles.",
 };
 
 // Approved categories (per SEO guide - Security merged into Privacy)
 const APPROVED_CATEGORY_SLUGS = [
   "privacy",
-  "crypto-safety",
   "browser-protection",
   "file-security",
   "passwords-identity",
@@ -27,10 +26,9 @@ const APPROVED_CATEGORY_SLUGS = [
 // Mock data as fallback until database is connected
 const mockCategories = [
   { id: 1, name: "Privacy", slug: "privacy", description: "Data protection, tracking prevention, and digital privacy guides", createdAt: new Date(), updatedAt: new Date() },
-  { id: 2, name: "Crypto Safety", slug: "crypto-safety", description: "Privacy-focused cryptocurrency and wallet security", createdAt: new Date(), updatedAt: new Date() },
-  { id: 3, name: "Browser Protection", slug: "browser-protection", description: "Browser fingerprinting, extensions, and tracker blocking", createdAt: new Date(), updatedAt: new Date() },
-  { id: 4, name: "File Security", slug: "file-security", description: "Secure file sharing, encryption, and metadata protection", createdAt: new Date(), updatedAt: new Date() },
-  { id: 5, name: "Passwords & Identity", slug: "passwords-identity", description: "Password security, identity protection, and authentication", createdAt: new Date(), updatedAt: new Date() },
+  { id: 2, name: "Browser Protection", slug: "browser-protection", description: "Browser fingerprinting, extensions, and tracker blocking", createdAt: new Date(), updatedAt: new Date() },
+  { id: 3, name: "File Security", slug: "file-security", description: "Secure file sharing, encryption, and metadata protection", createdAt: new Date(), updatedAt: new Date() },
+  { id: 4, name: "Passwords & Identity", slug: "passwords-identity", description: "Password security, identity protection, and authentication", createdAt: new Date(), updatedAt: new Date() },
 ];
 
 const mockArticles = [
@@ -63,12 +61,12 @@ const mockArticles = [
   },
   {
     id: 2,
-    title: "How to Secure Your Crypto Wallet: A Step-by-Step Guide",
-    slug: "secure-crypto-wallet-guide",
+    title: "VPN vs Proxy: Which Should You Use?",
+    slug: "vpn-vs-proxy-comparison",
     excerpt:
-      "Protect your cryptocurrency investments with these essential security practices. Learn about hardware wallets, seed phrases, and common attack vectors.",
+      "Understand the key differences between VPNs and proxies to make the right choice for your privacy needs. We break down speed, security, and use cases.",
     content: "",
-    categoryId: 3,
+    categoryId: 2,
     pillarId: null,
     metaTitle: null,
     metaDescription: null,
@@ -85,15 +83,15 @@ const mockArticles = [
     updatedAt: new Date("2025-01-10"),
     publishedAt: new Date("2025-01-10"),
     wordCount: null,
-    readingTime: 8,
-    category: { name: "Crypto Safety", slug: "crypto-safety" },
+    readingTime: 6,
+    category: { name: "Browser Protection", slug: "browser-protection" },
   },
   {
     id: 3,
-    title: "VPN vs Proxy: Which Should You Use?",
-    slug: "vpn-vs-proxy-comparison",
+    title: "Password Security Best Practices for 2025",
+    slug: "password-security-best-practices",
     excerpt:
-      "Understand the key differences between VPNs and proxies to make the right choice for your privacy needs. We break down speed, security, and use cases.",
+      "Create and manage strong passwords to keep your accounts safe from hackers. Learn about password managers, 2FA, and passkeys.",
     content: "",
     categoryId: 4,
     pillarId: null,
@@ -111,33 +109,6 @@ const mockArticles = [
     createdAt: new Date("2025-01-05"),
     updatedAt: new Date("2025-01-05"),
     publishedAt: new Date("2025-01-05"),
-    wordCount: null,
-    readingTime: 6,
-    category: { name: "Browser Protection", slug: "browser-protection" },
-  },
-  {
-    id: 4,
-    title: "Password Security Best Practices for 2025",
-    slug: "password-security-best-practices",
-    excerpt:
-      "Create and manage strong passwords to keep your accounts safe from hackers. Learn about password managers, 2FA, and passkeys.",
-    content: "",
-    categoryId: 2,
-    pillarId: null,
-    metaTitle: null,
-    metaDescription: null,
-    keywords: null,
-    targetProducts: null,
-    searchIntent: null,
-    depthScore: null,
-    originalityScore: null,
-    usefulnessScore: null,
-    spamScore: null,
-    overallScore: null,
-    status: "published",
-    createdAt: new Date("2025-01-01"),
-    updatedAt: new Date("2025-01-01"),
-    publishedAt: new Date("2025-01-01"),
     wordCount: null,
     readingTime: 5,
     category: { name: "Passwords & Identity", slug: "passwords-identity" },
@@ -181,11 +152,10 @@ async function getAllCategoriesWithFallback() {
   return mockCategories;
 }
 
-// Get category color (5 core categories only)
+// Get category color (4 core categories only)
 function getCategoryColor(slug: string): string {
   const colors: Record<string, string> = {
     "privacy": "#635BFF",
-    "crypto-safety": "#00B4D8",
     "browser-protection": "#E83E8C",
     "file-security": "#00D98A",
     "passwords-identity": "#6366F1",
@@ -196,11 +166,10 @@ function getCategoryColor(slug: string): string {
 // R2 CDN base URL
 const R2_CDN_URL = "https://pub-ee83597c43b94030b8793a2e4e9d013a.r2.dev";
 
-// Get category image based on slug (5 core categories only)
+// Get category image based on slug (4 core categories only)
 function getCategoryImage(slug: string): string {
   const images: Record<string, string> = {
     "privacy": `${R2_CDN_URL}/images/categories/privacy.jpg`,
-    "crypto-safety": `${R2_CDN_URL}/images/categories/crypto-safety.jpg`,
     "browser-protection": `${R2_CDN_URL}/images/categories/browser-protection.jpg`,
     "file-security": `${R2_CDN_URL}/images/categories/file-security.jpg`,
     "passwords-identity": `${R2_CDN_URL}/images/categories/passwords-identity.jpg`,

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { getProductById } from "@/lib/products";
 import { AIFeatureList, TimelineIndicator } from "@/components/ai";
-import { CheckCircle, Smartphone, Shield, Zap, Wallet, Eye, Globe, Lock } from "lucide-react";
+import { CheckCircle, Smartphone, Shield, Zap, Eye, Globe, Lock, Battery } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function GeckoShellPage() {
@@ -32,14 +32,14 @@ export default function GeckoShellPage() {
       description: "Your browsing history never leaves your device. We don't collect or store what you browse",
     },
     {
-      icon: Wallet,
-      title: "Built-In Solana Wallet",
-      description: "Optional crypto wallet integration for Web3 browsing (completely optional feature)",
-    },
-    {
       icon: Zap,
       title: "Fast & Lightweight",
       description: "Optimized for mobile performance with minimal battery and data usage",
+    },
+    {
+      icon: Battery,
+      title: "Battery Efficient",
+      description: "Designed to minimize battery drain while providing full privacy protection",
     },
     {
       icon: Lock,
@@ -61,8 +61,8 @@ export default function GeckoShellPage() {
     },
     {
       step: 3,
-      title: "Optional Wallet",
-      description: "Enable Solana wallet if you want Web3 features (completely optional)",
+      title: "Customize Settings",
+      description: "Configure your privacy preferences and blocking rules",
     },
     {
       step: 4,
@@ -74,11 +74,7 @@ export default function GeckoShellPage() {
   const faqs = [
     {
       question: "What makes GeckoShell different from Safari or Chrome?",
-      answer: "GeckoShell is built privacy-first from the ground up. Unlike Safari and Chrome, we don't collect your browsing history, don't sync to cloud servers, and block trackers by default. No analytics, no data harvesting, no surveillance capitalism. Plus, optional Solana wallet integration for Web3 browsing.",
-    },
-    {
-      question: "Is the Solana wallet required?",
-      answer: "No! The built-in Solana wallet is 100% optional. GeckoShell works perfectly as a privacy browser without any crypto features. Enable the wallet only if you want to interact with Web3 dApps or manage crypto assets.",
+      answer: "GeckoShell is built privacy-first from the ground up. Unlike Safari and Chrome, we don't collect your browsing history, don't sync to cloud servers, and block trackers by default. No analytics, no data harvesting, no surveillance capitalism.",
     },
     {
       question: "How does GeckoShell use AI?",
@@ -96,6 +92,10 @@ export default function GeckoShellPage() {
       question: "Can I import bookmarks from other browsers?",
       answer: "Yes! You can import bookmarks from Safari, Chrome, Firefox, and other major browsers. Your bookmarks stay local on your device—we don't sync them to our servers unless you enable Pro tier cloud sync (encrypted).",
     },
+    {
+      question: "How does GeckoShell save battery?",
+      answer: "By blocking ads and trackers, GeckoShell reduces the amount of data your device needs to process. Fewer scripts running means less CPU usage and longer battery life.",
+    },
   ];
 
   return (
@@ -103,7 +103,7 @@ export default function GeckoShellPage() {
       <Hero
         subtitle="GeckoShell"
         title="Private Mobile Browser with AI Protection"
-        description="Browse privately on iOS and Android with automatic tracker blocking and built-in Solana wallet (optional). Fast, lightweight, and no browsing history collection."
+        description="Browse privately on iOS and Android with automatic tracker blocking. Fast, lightweight, battery-efficient, and no browsing history collection."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button href="/contact?subject=Early%20Adopter%20Waitlist" variant="primary" size="lg">
@@ -176,7 +176,7 @@ export default function GeckoShellPage() {
                     currentFeatures={[
                       "Blocks trackers automatically",
                       "Available on iOS and Android",
-                      "Built-in Solana wallet (optional)"
+                      "Battery-efficient design"
                     ]}
                     aiFeatures={product.ai.aiFeatures}
                     aiTimeline="Future Release"

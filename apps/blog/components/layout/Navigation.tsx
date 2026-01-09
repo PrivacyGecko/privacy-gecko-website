@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ArrowRight, Eye, Share2, Shield, Lock, Bookmark, Globe, Wifi, FileSearch, ChevronDown, Cpu } from "lucide-react";
+import { Menu, X, ArrowRight, Eye, Share2, Shield, Lock, Bookmark, Globe, Wifi, FileSearch, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Base URL for main site links (empty for same domain)
@@ -149,27 +149,6 @@ export function Navigation() {
                               </div>
                             </a>
                           ))}
-                        </div>
-
-                        {/* GeckoCore Protocol */}
-                        <div className="border-t border-[var(--color-border-subtle)] pt-3">
-                          <a
-                            href={`${MAIN_SITE_BASE}/geckocore`}
-                            className="flex items-center gap-3 p-3 rounded-lg hover:bg-[var(--color-accent-subtle)] transition-colors group"
-                            onClick={() => setProductsOpen(false)}
-                          >
-                            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-hover)] flex items-center justify-center text-white">
-                              <Cpu className="w-4 h-4" />
-                            </div>
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2">
-                                <p className="font-medium text-[var(--color-text-primary)] text-sm">GeckoCore Protocol</p>
-                                <span className="text-[9px] font-bold text-[var(--color-accent)] bg-[var(--color-accent-subtle)] px-1.5 py-0.5 rounded">2026</span>
-                              </div>
-                              <p className="text-xs text-[var(--color-text-tertiary)]">AI-powered privacy infrastructure</p>
-                            </div>
-                            <ArrowRight className="w-4 h-4 text-[var(--color-text-tertiary)] group-hover:text-[var(--color-accent)] group-hover:translate-x-0.5 transition-all" />
-                          </a>
                         </div>
 
                         {/* View All */}

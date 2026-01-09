@@ -16,9 +16,8 @@ export function JoinAIRevolution() {
   const betaBenefits = [
     "Test cutting-edge privacy AI",
     "Influence feature development",
-    "Earn $PRICKO token rewards",
     "Direct feedback to dev team",
-    "Exclusive beta tester NFT",
+    "Exclusive early access to new features",
   ];
 
   const contributionTracks = [

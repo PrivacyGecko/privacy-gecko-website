@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Twitter, Send, Github, ArrowUpRight } from "lucide-react";
+import { Twitter, Github, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Footer() {
@@ -37,7 +37,6 @@ export function Footer() {
 
   const socialLinks = [
     { href: "https://twitter.com/PrivacyGecko", icon: Twitter, label: "Twitter" },
-    { href: "https://t.me/pricko_official", icon: Send, label: "Telegram" },
     { href: "https://github.com/privacygecko", icon: Github, label: "GitHub" },
   ];
 

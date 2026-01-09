@@ -65,22 +65,12 @@ All Privacy Gecko tools are open source for important reasons:
 
 You can find all our code on [GitHub](https://github.com/privacygecko).
 
-## The $PRICKO Token
-
-Privacy Gecko is powered by the $PRICKO token, which will enable (launching Q4 2025):
-
-- **Community Governance (Coming Soon):** Once staking launches, token holders will vote on feature priorities
-- **Rewards:** Earn tokens by contributing to the ecosystem
-- **Premium Access:** Use tokens to access Pro features
-- **Sustainable Funding:** Support development without selling user data
-
 ## Our Business Model
 
 We're frequently asked: "If it's free, how do you make money?" Here's our transparent approach:
 
 - **Freemium Model:** Core features are free forever; advanced features require Pro
 - **Pro Subscriptions:** Optional paid tiers for power users and businesses
-- **Token Economics:** Sustainable funding through $PRICKO utility
 - **No Data Selling:** We will NEVER sell user data or serve ads
 
 ## Our Values
@@ -115,7 +105,6 @@ We're just getting started. Here's what's coming in 2025:
 Privacy Gecko is more than a product—it's a movement. Join us:
 
 - **Twitter:** [@privacygecko](https://twitter.com/privacygecko) for updates and privacy tips
-- **Telegram:** [Privacy Gecko Community](https://t.me/privacygecko) for discussions
 - **GitHub:** [Contribute code](https://github.com/privacygecko) or report issues
 - **Newsletter:** Monthly privacy insights and product updates
 

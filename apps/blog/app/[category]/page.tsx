@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArticleCard } from "@/components/ArticleCard";
 import { CategoryNav } from "@/components/CategoryNav";
-import { Shield, Lock, Coins, Wrench, Clock, ArrowRight, Search, SlidersHorizontal } from "lucide-react";
+import { Shield, Lock, Wrench, Clock, ArrowRight, Search, SlidersHorizontal } from "lucide-react";
 import {
   JsonLd,
   generateCollectionSchema,
@@ -19,19 +19,17 @@ interface Props {
 // Approved categories (per SEO guide - Security merged into Privacy)
 const APPROVED_CATEGORY_SLUGS = [
   "privacy",
-  "crypto-safety",
   "browser-protection",
   "file-security",
   "passwords-identity",
 ];
 
-// Mock data - fallback until database is connected (5 core categories only)
+// Mock data - fallback until database is connected (4 core categories only)
 const mockCategories = [
   { id: 1, name: "Privacy", slug: "privacy", description: "Data protection, tracking prevention, and digital privacy guides", createdAt: new Date(), updatedAt: new Date() },
-  { id: 2, name: "Crypto Safety", slug: "crypto-safety", description: "Privacy-focused cryptocurrency and wallet security", createdAt: new Date(), updatedAt: new Date() },
-  { id: 3, name: "Browser Protection", slug: "browser-protection", description: "Browser fingerprinting, extensions, and tracker blocking", createdAt: new Date(), updatedAt: new Date() },
-  { id: 4, name: "File Security", slug: "file-security", description: "Secure file sharing, encryption, and metadata protection", createdAt: new Date(), updatedAt: new Date() },
-  { id: 5, name: "Passwords & Identity", slug: "passwords-identity", description: "Password security, identity protection, and authentication", createdAt: new Date(), updatedAt: new Date() },
+  { id: 2, name: "Browser Protection", slug: "browser-protection", description: "Browser fingerprinting, extensions, and tracker blocking", createdAt: new Date(), updatedAt: new Date() },
+  { id: 3, name: "File Security", slug: "file-security", description: "Secure file sharing, encryption, and metadata protection", createdAt: new Date(), updatedAt: new Date() },
+  { id: 4, name: "Passwords & Identity", slug: "passwords-identity", description: "Password security, identity protection, and authentication", createdAt: new Date(), updatedAt: new Date() },
 ];
 
 const mockArticlesByCategory: Record<string, Array<{
@@ -116,34 +114,6 @@ const mockArticlesByCategory: Record<string, Array<{
       category: { name: "Passwords & Identity", slug: "passwords-identity" },
     },
   ],
-  "crypto-safety": [
-    {
-      id: 2,
-      title: "How to Secure Your Crypto Wallet: A Step-by-Step Guide",
-      slug: "secure-crypto-wallet-guide",
-      excerpt: "Protect your cryptocurrency investments with these essential security practices and wallet management techniques.",
-      content: "",
-      categoryId: 3,
-      pillarId: null,
-      metaTitle: null,
-      metaDescription: null,
-      keywords: null,
-      targetProducts: null,
-      searchIntent: null,
-      depthScore: null,
-      originalityScore: null,
-      usefulnessScore: null,
-      spamScore: null,
-      overallScore: null,
-      status: "published",
-      createdAt: new Date("2025-01-10"),
-      updatedAt: new Date("2025-01-10"),
-      publishedAt: new Date("2025-01-10"),
-      wordCount: null,
-      readingTime: 8,
-      category: { name: "Crypto Safety", slug: "crypto-safety" },
-    },
-  ],
   "browser-protection": [
     {
       id: 3,
@@ -174,19 +144,17 @@ const mockArticlesByCategory: Record<string, Array<{
   ],
 };
 
-// Category icons (5 core categories only)
+// Category icons (4 core categories only)
 const categoryIcons: Record<string, React.ElementType> = {
   "privacy": Shield,
-  "crypto-safety": Coins,
   "browser-protection": Wrench,
   "file-security": Shield,
   "passwords-identity": Lock,
 };
 
-// Category colors (5 core categories only)
+// Category colors (4 core categories only)
 const categoryColors: Record<string, { bg: string; text: string; accent: string }> = {
   "privacy": { bg: "from-emerald-50 to-emerald-100/50", text: "text-emerald-700", accent: "bg-emerald-500" },
-  "crypto-safety": { bg: "from-indigo-50 to-indigo-100/50", text: "text-indigo-700", accent: "bg-indigo-500" },
   "browser-protection": { bg: "from-rose-50 to-rose-100/50", text: "text-rose-700", accent: "bg-rose-500" },
   "file-security": { bg: "from-cyan-50 to-cyan-100/50", text: "text-cyan-700", accent: "bg-cyan-500" },
   "passwords-identity": { bg: "from-purple-50 to-purple-100/50", text: "text-purple-700", accent: "bg-purple-500" },

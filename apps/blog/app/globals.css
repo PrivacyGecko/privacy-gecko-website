@@ -29,7 +29,6 @@
   /* Category Colors */
   --color-privacy: #635BFF;
   --color-security: #FF6B35;
-  --color-crypto: #00B4D8;
   --color-browser: #E83E8C;
   --color-product: #635BFF;
 
@@ -253,11 +252,6 @@ body {
 .category-badge-security {
   background: rgba(255, 107, 53, 0.1);
   color: #FF6B35;
-}
-
-.category-badge-crypto-safety {
-  background: rgba(0, 180, 216, 0.1);
-  color: #0891B2;
 }
 
 .category-badge-browser-protection {

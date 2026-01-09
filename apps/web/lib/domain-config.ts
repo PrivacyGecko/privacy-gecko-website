@@ -14,8 +14,6 @@ export type ProductDomain = {
 };
 
 export const MAIN_HUB_DOMAIN = 'www.privacygecko.com';
-export const TOKEN_DOMAIN = 'pricko.com';
-export const TOKEN_SITE_LIVE = true; // Token site is live
 
 /**
  * Product domain mappings
@@ -67,7 +65,7 @@ export const productDomains: Record<string, ProductDomain> = {
   vpn: {
     id: 'vpn',
     name: 'Gecko VPN',
-    domain: 'prickovpn.com',
+    domain: 'geckovpn.com',
     status: 'testing',
     useExternalLink: false,
   },
@@ -96,18 +94,6 @@ export function getProductLink(productId: string): string {
   }
 
   return `/products/${productId}`;
-}
-
-/**
- * Get the token page link
- * Returns pricko.com when token site is live
- */
-export function getTokenLink(): string {
-  if (TOKEN_SITE_LIVE) {
-    return `https://${TOKEN_DOMAIN}`;
-  }
-
-  return '/token';
 }
 
 /**

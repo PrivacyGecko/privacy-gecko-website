@@ -19,7 +19,6 @@ function getCategoryColor(slug: string): string {
   const colors: Record<string, string> = {
     "privacy": "#635BFF",
     "security": "#FF6B35",
-    "crypto-safety": "#00B4D8",
     "browser-protection": "#E83E8C",
     "file-security": "#00D98A",
     "passwords-identity": "#6366F1",

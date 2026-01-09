@@ -201,7 +201,7 @@
     background-size: 48px 48px;
   }
 
-  /* GeckoCore hub pulse animation */
+  /* Pulse glow animation */
   @keyframes pulse-glow {
     0%, 100% {
       opacity: 0.4;

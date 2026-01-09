@@ -89,10 +89,6 @@ export default function GeckoViewPage() {
       answer: "Browser bookmarks are just URLs—you save the link but forget why it mattered. Gecko View creates AI-generated summaries of the content, capturing the key insights so you can actually remember and find information later. Plus, it adds searchable text, tone analysis, smart tags, and cross-device sync. You're building a searchable knowledge base, not just a messy list of links. And unlike browser sync, your vault is end-to-end encrypted.",
     },
     {
-      question: "How does the $PRICKO token benefit work?",
-      answer: "Hold 100,000+ $PRICKO tokens in your wallet and get Pro tier features completely free—no monthly subscription needed. Token integration is 100% optional. All features work perfectly without any tokens. If you already hold $PRICKO for other Privacy Gecko tools, you get Gecko View Pro as a bonus. No staking required, just wallet verification.",
-    },
-    {
       question: "What happens to my data?",
       answer: "Your summaries and bookmarks are encrypted using end-to-end encryption (AES-256-GCM) before storage. Encryption keys are derived from your account credentials and never touch our servers. We can see metadata (number of summaries, storage size) but cannot read your actual content. For Pro users using IPFS sync, your encrypted vault is stored on IPFS (decentralized storage), meaning your data isn't controlled by any single company. We never sell reading data, browsing history, or AI-generated summaries to third parties.",
     },
@@ -382,11 +378,8 @@ export default function GeckoViewPage() {
 
         <div className="text-center mt-8 max-w-2xl mx-auto">
           <p className="text-sm text-gray-600">
-            <strong>What we know:</strong> Gecko View will have a generous free tier (AI-powered summaries with monthly limits) 
+            <strong>What we know:</strong> Gecko View will have a generous free tier (AI-powered summaries with monthly limits)
             and a Pro tier (unlimited AI features, GPT-4 access, cross-device sync).
-          </p>
-          <p className="text-sm text-gray-600 mt-3">
-            💎 <strong>Token Holders:</strong> $PRICKO holders will receive Pro tier benefits. Token integration is 100% optional.
           </p>
         </div>
       </Section>

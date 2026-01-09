@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ArrowRight, Eye, Share2, Shield, Lock, Bookmark, Globe, Wifi, FileSearch, ChevronDown, Cpu } from "lucide-react";
+import { Menu, X, ArrowRight, Eye, Share2, Shield, Lock, Bookmark, Globe, Wifi, FileSearch, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -159,27 +159,6 @@ export function Navigation() {
                               </div>
                             </Link>
                           ))}
-                        </div>
-
-                        {/* GeckoCore Protocol */}
-                        <div className="border-t border-slate-100 pt-3">
-                          <Link
-                            href="/geckocore"
-                            className="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group"
-                            onClick={() => setProductsOpen(false)}
-                          >
-                            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white">
-                              <Cpu className="w-5 h-5" />
-                            </div>
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2">
-                                <p className="font-semibold text-slate-900 text-sm">GeckoCore Protocol</p>
-                                <span className="text-[10px] font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">2026</span>
-                              </div>
-                              <p className="text-xs text-slate-500">AI-powered privacy infrastructure</p>
-                            </div>
-                            <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all" />
-                          </Link>
                         </div>
 
                         {/* View All */}

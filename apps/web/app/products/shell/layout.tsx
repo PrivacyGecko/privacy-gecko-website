@@ -2,23 +2,21 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "GeckoShell - Privacy Mobile Browser for iOS & Android | Privacy Gecko",
-  description: "Private mobile browser that blocks trackers on iOS and Android. Built-in Solana wallet (optional). No browsing history collection. Fast and lightweight. Coming Q2 2026.",
+  description: "Private mobile browser that blocks trackers on iOS and Android. No browsing history collection. Fast and lightweight. Coming Q2 2026.",
   keywords: [
     "privacy browser",
     "mobile browser",
     "tracker blocking browser",
-    "crypto browser",
     "private browsing",
     "iOS browser",
     "Android browser",
-    "Solana wallet",
     "privacy-first browser",
     "Privacy Gecko",
     "GeckoShell",
   ],
   openGraph: {
     title: "GeckoShell - Privacy Mobile Browser for iOS & Android",
-    description: "Private mobile browser that blocks trackers on iOS and Android. Built-in Solana wallet (optional). No browsing history collection. Fast and lightweight.",
+    description: "Private mobile browser that blocks trackers on iOS and Android. No browsing history collection. Fast and lightweight.",
     url: "https://privacygecko.com/products/shell",
     siteName: "Privacy Gecko",
     images: [
@@ -35,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GeckoShell - Privacy Mobile Browser for iOS & Android",
-    description: "Private mobile browser that blocks trackers on iOS and Android. Built-in Solana wallet (optional). No browsing history collection.",
+    description: "Private mobile browser that blocks trackers on iOS and Android. No browsing history collection.",
     images: ["https://privacygecko.com/images/og-shell.png"],
   },
   alternates: {

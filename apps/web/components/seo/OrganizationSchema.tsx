@@ -13,7 +13,6 @@ export function OrganizationSchema() {
     },
     "sameAs": [
       "https://twitter.com/PrivacyGecko",
-      "https://t.me/pricko_official",
       "https://github.com/privacygecko",
     ],
     "contactPoint": {

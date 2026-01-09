@@ -89,10 +89,6 @@ export default function GeckoLockPage() {
       answer: "Gecko Lock will gain AI capabilities post-launch that evaluate password strength against latest breaches and detect phishing attempts on login pages. All AI processing happens locally on your device—no passwords sent to the cloud. AI features will be available to free tier users with monthly limits, or unlimited for Pro subscribers. Core password management works fully without any AI requirement.",
     },
     {
-      question: "How does Gecko Lock integrate with $PRICKO tokens?",
-      answer: "$PRICKO token holders will get optional benefits once staking launches (Q4 2025): discounts on Pro subscriptions, early access to new features, and future voting rights on product roadmap decisions. Tokens are completely optional—Gecko Lock works fully without any cryptocurrency requirement.",
-    },
-    {
       question: "Can I self-host Gecko Lock on my own servers?",
       answer: "Yes. Gecko Lock is open-source and supports self-hosting. You can deploy it on your own infrastructure using our Docker container or manual installation guide. Self-hosted instances give you complete control over data location and server infrastructure while maintaining compatibility with our mobile apps (just point them to your server URL).",
     },

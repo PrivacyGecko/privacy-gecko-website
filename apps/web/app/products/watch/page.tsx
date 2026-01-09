@@ -268,11 +268,8 @@ export default function GeckoWatchPage() {
 
         <div className="text-center mt-8 max-w-2xl mx-auto">
           <p className="text-sm text-gray-600">
-            <strong>What we know:</strong> Gecko Watch will have a free tier (basic compliance scanning) 
+            <strong>What we know:</strong> Gecko Watch will have a free tier (basic compliance scanning)
             and a Pro tier (continuous monitoring, competitor analysis, advanced features).
-          </p>
-          <p className="text-sm text-gray-600 mt-3">
-            💎 <strong>Token Holders:</strong> $PRICKO holders will receive Pro tier benefits. Token integration is 100% optional.
           </p>
         </div>
       </Section>

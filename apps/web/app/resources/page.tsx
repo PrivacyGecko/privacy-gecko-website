@@ -54,22 +54,6 @@ export default function ResourcesPage() {
             </Link>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <a href="https://pricko.com" target="_blank" rel="noopener noreferrer" className="block h-full">
-              <Card className="h-full bg-gradient-to-br from-amber-50 to-yellow-50 border-amber-200 hover:shadow-lg transition-all">
-                <CardHeader>
-                  <div className="text-4xl mb-3">💎</div>
-                  <CardTitle>$PRICKO Token</CardTitle>
-                  <CardDescription>Learn about our community token economy</CardDescription>
-                </CardHeader>
-              </Card>
-            </a>
-          </motion.div>
         </div>
       </Section>
 
@@ -211,57 +195,6 @@ export default function ResourcesPage() {
                 <CardHeader>
                   <CardTitle className="text-lg">Join AI Beta Program</CardTitle>
                   <CardDescription>Get early access to AI features before public launch</CardDescription>
-                </CardHeader>
-              </Card>
-            </Link>
-          </div>
-        </div>
-      </Section>
-
-      {/* Token & Ecosystem Category */}
-      <Section className="bg-neutral-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="text-5xl">💎</div>
-            <div>
-              <h2 className="text-3xl font-display font-bold">Token & Ecosystem</h2>
-              <p className="text-gray-600">Understanding the $PRICKO token economy</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <a href="https://pricko.com" target="_blank" rel="noopener noreferrer">
-              <Card className="h-full hover:shadow-md transition-all">
-                <CardHeader>
-                  <CardTitle className="text-lg">$PRICKO Token Website</CardTitle>
-                  <CardDescription>Complete token information and whitelist signup</CardDescription>
-                </CardHeader>
-              </Card>
-            </a>
-
-            <a href="https://pricko.com#tokenomics" target="_blank" rel="noopener noreferrer">
-              <Card className="h-full hover:shadow-md transition-all">
-                <CardHeader>
-                  <CardTitle className="text-lg">Tokenomics</CardTitle>
-                  <CardDescription>Distribution, utility, and deflationary mechanics</CardDescription>
-                </CardHeader>
-              </Card>
-            </a>
-
-            <a href="https://pricko.com#benefits" target="_blank" rel="noopener noreferrer">
-              <Card className="h-full hover:shadow-md transition-all">
-                <CardHeader>
-                  <CardTitle className="text-lg">Token Holder Benefits</CardTitle>
-                  <CardDescription>Unlock Pro features, staking rewards, and governance</CardDescription>
-                </CardHeader>
-              </Card>
-            </a>
-
-            <Link href="/roadmap">
-              <Card className="h-full hover:shadow-md transition-all">
-                <CardHeader>
-                  <CardTitle className="text-lg">Ecosystem Roadmap</CardTitle>
-                  <CardDescription>8-product development timeline and milestones</CardDescription>
                 </CardHeader>
               </Card>
             </Link>

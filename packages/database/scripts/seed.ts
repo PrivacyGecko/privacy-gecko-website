@@ -22,9 +22,9 @@ async function seed() {
   // SEED CATEGORIES
   // ============================================
   // NOTE: Security category merged into Privacy per SEO guide
-  // 5 categories total (removed separate Security category)
+  // 4 categories total (removed separate Security category)
   console.log('Seeding categories...')
-  const [privacy, cryptoSafety, browserProtection, fileSecurity, passwordsIdentity] =
+  const [privacy, browserProtection, fileSecurity, passwordsIdentity] =
     await db
       .insert(categories)
       .values([
@@ -33,12 +33,6 @@ async function seed() {
           slug: 'privacy',
           description:
             'Data protection, tracking prevention, security fundamentals, and digital privacy guides.',
-        },
-        {
-          name: 'Crypto Safety',
-          slug: 'crypto-safety',
-          description:
-            'Privacy-focused cryptocurrency, wallet security, DeFi safety, and on-chain privacy.',
         },
         {
           name: 'Browser Protection',
@@ -61,7 +55,7 @@ async function seed() {
       ])
       .returning()
 
-  console.log(`✅ Seeded ${5} categories`)
+  console.log(`✅ Seeded ${4} categories`)
 
   // ============================================
   // SEED PILLARS
@@ -212,7 +206,7 @@ async function seed() {
   console.log('\n🎉 Database seeding complete!')
   console.log(`
 Summary:
-- ${5} categories (Security merged into Privacy)
+- ${4} categories (Security merged into Privacy)
 - ${seededPillars.length} pillars (evergreen slugs, no years)
 - ${seededArticles.length} sample articles (drafts)
 

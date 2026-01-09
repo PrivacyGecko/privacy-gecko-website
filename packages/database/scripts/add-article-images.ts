@@ -7,20 +7,8 @@ const articleImages: Record<number, string> = {
   // How Local AI Protects Your Privacy (vs Cloud AI) - AI chip/processor
   30: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80',
 
-  // Privacy Memecoins: Memes with a Mission - Colorful crypto/blockchain
-  29: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&q=80',
-
-  // Privacy Tools Every Crypto Trader Needs - Crypto security/trading
-  28: 'https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=1200&q=80',
-
   // The Complete Guide to Privacy Tools in 2025 - Privacy/security concept
   27: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80',
-
-  // Introducing GeckoCore Protocol - Network/blockchain nodes
-  22: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1200&q=80',
-
-  // GeckoCore Protocol Whitepaper - Technical document/blueprint
-  21: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
 
   // Getting Started with GeckoAdvisor - Dashboard/tutorial
   26: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',

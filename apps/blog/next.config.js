@@ -22,7 +22,7 @@ function getAssetPrefix() {
 
 const nextConfig = {
   // basePath ensures all blog URLs are under /blog
-  // This provides clean URL structure: /blog, /blog/privacy, /blog/crypto-safety, etc.
+  // This provides clean URL structure: /blog, /blog/privacy, /blog/browser-protection, etc.
   basePath: '/blog',
   // Asset prefix ensures JS/CSS load from blog subdomain when accessed via /blog rewrite
   assetPrefix: getAssetPrefix(),
@@ -73,16 +73,6 @@ const nextConfig = {
     return [
       // Product Updates category
       {
-        source: '/geckocore-protocol-whitepaper-v1-launch',
-        destination: '/product-updates/geckocore-protocol-whitepaper-v1-launch',
-        permanent: true,
-      },
-      {
-        source: '/introducing-geckocore-protocol',
-        destination: '/product-updates/introducing-geckocore-protocol',
-        permanent: true,
-      },
-      {
         source: '/introducing-privacy-gecko',
         destination: '/product-updates/introducing-privacy-gecko',
         permanent: true,
@@ -108,18 +98,6 @@ const nextConfig = {
       {
         source: '/complete-guide-privacy-tools-2025',
         destination: '/privacy/complete-guide-privacy-tools-2025',
-        permanent: true,
-      },
-      // Crypto Privacy category
-      {
-        source: '/crypto-trader-privacy-tools',
-        destination: '/crypto-safety/crypto-trader-privacy-tools',
-        permanent: true,
-      },
-      // Token & Community category
-      {
-        source: '/privacy-memecoins-explained',
-        destination: '/crypto-safety/privacy-memecoins-explained',
         permanent: true,
       },
       // AI & Privacy category

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Twitter, Send, Github, ArrowUpRight } from "lucide-react";
+import { Twitter, Github, ArrowUpRight } from "lucide-react";
 
 // Base URL for main site links (empty for same domain)
 const MAIN_SITE_BASE = "";
@@ -38,7 +38,6 @@ export function Footer() {
 
   const socialLinks = [
     { href: "https://twitter.com/PrivacyGecko", icon: Twitter, label: "Twitter" },
-    { href: "https://t.me/pricko_official", icon: Send, label: "Telegram" },
     { href: "https://github.com/privacygecko", icon: Github, label: "GitHub" },
   ];
 

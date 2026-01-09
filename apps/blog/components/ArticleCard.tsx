@@ -18,11 +18,10 @@ interface ArticleCardProps {
   index?: number;
 }
 
-// Get category color based on slug (5 core categories only)
+// Get category color based on slug (4 core categories only)
 function getCategoryColor(slug: string): string {
   const colors: Record<string, string> = {
     "privacy": "#635BFF",
-    "crypto-safety": "#00B4D8",
     "browser-protection": "#E83E8C",
     "file-security": "#00D98A",
     "passwords-identity": "#6366F1",
@@ -33,11 +32,10 @@ function getCategoryColor(slug: string): string {
 // R2 CDN base URL
 const R2_CDN_URL = "https://pub-ee83597c43b94030b8793a2e4e9d013a.r2.dev";
 
-// Get category image based on slug (5 core categories only)
+// Get category image based on slug (4 core categories only)
 function getCategoryImage(slug: string): string {
   const images: Record<string, string> = {
     "privacy": `${R2_CDN_URL}/images/categories/privacy.jpg`,
-    "crypto-safety": `${R2_CDN_URL}/images/categories/crypto-safety.jpg`,
     "browser-protection": `${R2_CDN_URL}/images/categories/browser-protection.jpg`,
     "file-security": `${R2_CDN_URL}/images/categories/file-security.jpg`,
     "passwords-identity": `${R2_CDN_URL}/images/categories/passwords-identity.jpg`,
