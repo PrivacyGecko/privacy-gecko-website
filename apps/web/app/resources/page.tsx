@@ -64,16 +64,16 @@ export default function ResourcesPage() {
               <Card className="h-full hover:shadow-md transition-all">
                 <CardHeader>
                   <CardTitle className="text-lg">Why Privacy Tools Matter</CardTitle>
-                  <CardDescription>Understanding digital privacy in 2025</CardDescription>
+                  <CardDescription>Understanding digital privacy and why it matters</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
 
-            <Link href="/contact?subject=AI%20Beta">
+            <Link href="/security">
               <Card className="h-full hover:shadow-md transition-all">
                 <CardHeader>
-                  <CardTitle className="text-lg">Join AI Beta Program</CardTitle>
-                  <CardDescription>Get early access to AI features before public launch</CardDescription>
+                  <CardTitle className="text-lg">Security Practices</CardTitle>
+                  <CardDescription>How we protect your data and maintain trust</CardDescription>
                 </CardHeader>
               </Card>
             </Link>

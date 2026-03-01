@@ -27,12 +27,12 @@ export default function SupportPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Community</CardTitle>
+              <CardTitle>GitHub</CardTitle>
               <CardDescription className="mb-4">
-                Join our Telegram community for quick answers and discussions
+                Join our open source community for discussions and contributions
               </CardDescription>
-              <Button href="https://t.me/privacygecko" variant="outline">
-                Join Telegram
+              <Button href="https://github.com/privacygecko" variant="outline">
+                View GitHub
               </Button>
             </CardHeader>
           </Card>

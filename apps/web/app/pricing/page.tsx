@@ -1,130 +1,317 @@
 "use client";
 
-import { Hero } from "@/components/sections/Hero";
-import { Section, SectionHeader } from "@/components/sections/Section";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
-import { products } from "@/lib/products";
-import { CheckCircle, Info } from "lucide-react";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { CheckCircle, Shield, Share2, ArrowRight, Zap } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const stagger = {
+  visible: { transition: { staggerChildren: 0.08 } },
+};
 
 export default function PricingPage() {
+  const plans = [
+    {
+      product: "GeckoAdvisor",
+      icon: Shield,
+      tagline: "Privacy policy scanner for compliance teams",
+      href: "https://geckoadvisor.com",
+      tiers: [
+        {
+          name: "Free",
+          price: "$0",
+          period: "forever",
+          highlight: false,
+          limit: "3 scans per month",
+          features: [
+            "Basic privacy report",
+            "Website policy scanning",
+            "Privacy score",
+            "GDPR flag detection",
+          ],
+          cta: "Start free",
+        },
+        {
+          name: "Pro",
+          price: "$4.99",
+          period: "/month",
+          highlight: true,
+          limit: "Unlimited scans",
+          features: [
+            "Everything in Free",
+            "Detailed compliance reports",
+            "Priority alerts",
+            "Advanced recommendations",
+            "Historical tracking",
+            "Export reports (PDF/CSV)",
+          ],
+          cta: "Start free trial",
+        },
+      ],
+    },
+    {
+      product: "GeckoShare",
+      icon: Share2,
+      tagline: "Encrypted file sharing for sensitive documents",
+      href: "https://geckoshare.com",
+      tiers: [
+        {
+          name: "Free",
+          price: "$0",
+          period: "forever",
+          highlight: false,
+          limit: "100MB per file, 24hr expiry",
+          features: [
+            "End-to-end encryption",
+            "Basic sharing links",
+            "Password protection",
+            "No registration required",
+          ],
+          cta: "Start free",
+        },
+        {
+          name: "Pro",
+          price: "$7.99",
+          period: "/month",
+          highlight: true,
+          limit: "5GB per file, custom expiry",
+          features: [
+            "Everything in Free",
+            "Custom expiration times",
+            "Branded sharing links",
+            "Advanced analytics",
+            "Audit logs & access tracking",
+            "Priority support",
+          ],
+          cta: "Start free trial",
+        },
+      ],
+    },
+  ];
 
   return (
     <>
-      <Hero
-        subtitle="Products"
-        title="Your Complete Privacy Toolkit"
-        description="Explore our suite of privacy tools designed to protect every aspect of your digital life."
-      />
-
-      {/* Product Status Notice */}
-      <Section className="py-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-start gap-2 text-sm text-gray-600 bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <Info className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-semibold text-blue-900 mb-1">Product Availability</p>
-              <p>We're launching our privacy toolkit throughout 2025. Products marked "Live" are available now. Pricing will be announced as each product launches.</p>
-            </div>
-          </div>
+      {/* Hero */}
+      <section className="pt-16 pb-12 md:pt-20 md:pb-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={stagger}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <motion.p
+              variants={fadeUp}
+              className="text-sm font-medium tracking-widest uppercase text-[#00D98A] mb-4"
+            >
+              Pricing
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight text-slate-900 mb-6"
+            >
+              Simple, transparent
+              <br />
+              <span className="text-[#00D98A]">pricing</span>
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="text-xl text-slate-600 leading-relaxed"
+            >
+              Both products have generous free tiers. No credit card required.
+              Upgrade when you need more.
+            </motion.p>
+          </motion.div>
         </div>
-      </Section>
+      </section>
 
-      {/* Product Features Grid */}
-      <Section>
-        <SectionHeader
-          title="Privacy Tools Overview"
-          description="Discover what each tool can do for your digital privacy"
-        />
-        <div className="space-y-8">
-          {products.map((product, index) => (
+      {/* Pricing Cards */}
+      {plans.map((plan, planIndex) => (
+        <section
+          key={plan.product}
+          className={`py-16 md:py-20 ${planIndex % 2 === 0 ? "bg-white" : "bg-slate-50"}`}
+        >
+          <div className="max-w-5xl mx-auto px-6 lg:px-8">
             <motion.div
-              key={product.id}
-              id={product.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="scroll-mt-24"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={stagger}
             >
-              <Card>
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <div className="flex items-center gap-3 mb-2">
-                        <product.icon className="w-6 h-6 text-gecko-green" />
-                        <CardTitle className="text-2xl">{product.name}</CardTitle>
-                        <Badge variant={product.status}>
-                          {product.status === "live" ? "Live" : product.comingDate}
-                        </Badge>
+              {/* Product Header */}
+              <motion.div variants={fadeUp} className="text-center mb-10">
+                <div className="inline-flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-[#00D98A]/10 rounded-xl flex items-center justify-center">
+                    <plan.icon className="w-5 h-5 text-[#00D98A]" />
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900">
+                    {plan.product}
+                  </h2>
+                </div>
+                <p className="text-slate-600">{plan.tagline}</p>
+              </motion.div>
+
+              {/* Tier Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {plan.tiers.map((tier) => (
+                  <motion.div
+                    key={tier.name}
+                    variants={fadeUp}
+                    className={`relative rounded-2xl p-8 border transition-all ${
+                      tier.highlight
+                        ? "bg-white border-[#00D98A] shadow-lg shadow-emerald-100/50"
+                        : "bg-white border-slate-200"
+                    }`}
+                  >
+                    {tier.highlight && (
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                        <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#00D98A] text-white text-xs font-semibold">
+                          <Zap className="w-3 h-3" />
+                          Most popular
+                        </span>
                       </div>
-                      <CardDescription>{product.tagline}</CardDescription>
-                    </div>
-                  </div>
-
-                  {/* Key Features */}
-                  <div className="mt-6">
-                    <h4 className="text-lg font-semibold mb-4">Key Features:</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {product.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-start text-sm">
-                          <CheckCircle className="w-4 h-4 text-gecko-green mr-2 flex-shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* CTA */}
-                  <div className="mt-6 pt-4 border-t border-gray-100">
-                    {product.status === "live" ? (
-                      <Button href={product.href} variant="primary" className="w-full">
-                        Learn More About {product.name} →
-                      </Button>
-                    ) : (
-                      <Button variant="ghost" className="w-full" disabled>
-                        {product.comingDate}
-                      </Button>
                     )}
-                  </div>
-                </CardHeader>
-              </Card>
+
+                    <div className="mb-6">
+                      <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                        {tier.name}
+                      </h3>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-4xl font-display font-bold text-slate-900">
+                          {tier.price}
+                        </span>
+                        <span className="text-slate-500 text-sm">
+                          {tier.period}
+                        </span>
+                      </div>
+                      <p className="text-sm text-slate-500 mt-2">{tier.limit}</p>
+                    </div>
+
+                    <ul className="space-y-3 mb-8">
+                      {tier.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2">
+                          <CheckCircle className="w-4 h-4 text-[#00D98A] flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-slate-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link
+                      href={plan.href}
+                      className={`block w-full text-center px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${
+                        tier.highlight
+                          ? "bg-[#00D98A] text-white hover:bg-[#00B876] shadow-md shadow-emerald-200/50 hover:shadow-lg"
+                          : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                      }`}
+                    >
+                      {tier.cta}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
-          ))}
-        </div>
-      </Section>
-
-
-      {/* Final CTA */}
-      <Section className="bg-neutral-100">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Interested in Privacy Gecko?
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Stay updated on product launches and be the first to know when pricing is announced.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="/contact?subject=Product%20Updates"
-              variant="primary"
-              size="lg"
-              onClick={() => {
-                if (typeof window !== 'undefined' && (window as any).plausible) {
-                  (window as any).plausible('Contact Interest', { props: { source: 'products' } });
-                }
-              }}
-            >
-              Get Updates
-            </Button>
-            <Button href="/about" variant="ghost" size="lg">
-              Learn About Us
-            </Button>
           </div>
+        </section>
+      ))}
+
+      {/* FAQ-style section */}
+      <section className="py-20 md:py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={stagger}
+          >
+            <motion.h2
+              variants={fadeUp}
+              className="text-3xl md:text-4xl font-display font-bold text-slate-900 text-center mb-12"
+            >
+              Common questions
+            </motion.h2>
+
+            <div className="space-y-6">
+              {[
+                {
+                  q: "Do I need a credit card to start?",
+                  a: "No. Both products have free tiers that require no payment information. You can use them immediately.",
+                },
+                {
+                  q: "Can I cancel anytime?",
+                  a: "Yes. Cancel your Pro subscription at any time. You'll retain access until the end of your billing period, then revert to the free tier.",
+                },
+                {
+                  q: "Is there a team or enterprise plan?",
+                  a: "We're building enterprise plans with volume pricing, SSO, and dedicated support. Contact us for early access.",
+                },
+                {
+                  q: "What happens to my data if I downgrade?",
+                  a: "Your data stays safe. On the free tier you'll have limited scans or file sizes, but nothing is deleted.",
+                },
+              ].map((item) => (
+                <motion.div
+                  key={item.q}
+                  variants={fadeUp}
+                  className="bg-slate-50 rounded-2xl p-6 border border-transparent hover:border-slate-200 transition-colors"
+                >
+                  <h3 className="text-lg font-display font-bold text-slate-900 mb-2">
+                    {item.q}
+                  </h3>
+                  <p className="text-slate-600">{item.a}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
-      </Section>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 md:py-32 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="text-center"
+          >
+            <motion.h2
+              variants={fadeUp}
+              className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-6"
+            >
+              Start protecting your privacy today
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="text-xl text-slate-400 max-w-2xl mx-auto mb-10"
+            >
+              No credit card required. Free tier available on both products.
+            </motion.p>
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Link
+                href="https://geckoadvisor.com"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#00D98A] text-white rounded-full font-semibold text-lg transition-all duration-300 hover:bg-[#00B876] hover:scale-[1.02] group shadow-lg shadow-emerald-600/30"
+              >
+                Try GeckoAdvisor free
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="https://geckoshare.com"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white rounded-full font-semibold text-lg border-2 border-slate-600 transition-all duration-300 hover:border-[#00D98A] hover:text-[#00D98A] hover:scale-[1.02]"
+              >
+                Try GeckoShare free
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
     </>
   );
 }

@@ -119,7 +119,7 @@ export function Navigation() {
                               className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group"
                               onClick={() => setProductsOpen(false)}
                             >
-                              <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-100 transition-colors">
+                              <div className="w-10 h-10 rounded-lg bg-[#00D98A]/10 flex items-center justify-center text-[#00D98A] group-hover:bg-[#00D98A]/20 transition-colors">
                                 <product.icon className="w-5 h-5" />
                               </div>
                               <div>
@@ -134,7 +134,7 @@ export function Navigation() {
                         <div className="border-t border-slate-100 pt-3 mt-2">
                           <Link
                             href="/products"
-                            className="flex items-center justify-center gap-2 p-3 rounded-xl text-blue-600 hover:bg-blue-50 transition-colors font-medium text-sm"
+                            className="flex items-center justify-center gap-2 p-3 rounded-xl text-[#00D98A] hover:bg-[#00D98A]/5 transition-colors font-medium text-sm"
                             onClick={() => setProductsOpen(false)}
                           >
                             View all products
@@ -221,7 +221,7 @@ export function Navigation() {
                   {/* Products Link */}
                   <Link
                     href="/products"
-                    className="py-3 text-lg font-medium text-slate-900 hover:text-blue-600 transition-colors"
+                    className="py-3 text-lg font-medium text-slate-900 hover:text-[#00D98A] transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     Products
@@ -238,7 +238,7 @@ export function Navigation() {
                         className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-slate-600 hover:bg-slate-100 transition-colors"
                         onClick={() => setIsOpen(false)}
                       >
-                        <product.icon className="w-4 h-4 text-blue-600" />
+                        <product.icon className="w-4 h-4 text-[#00D98A]" />
                         <span className="text-sm font-medium">{product.name}</span>
                       </a>
                     ))}
@@ -249,7 +249,7 @@ export function Navigation() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="py-3 text-lg font-medium text-slate-900 hover:text-blue-600 transition-colors"
+                      className="py-3 text-lg font-medium text-slate-900 hover:text-[#00D98A] transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       {link.label}
@@ -257,7 +257,7 @@ export function Navigation() {
                   ))}
                   <Link
                     href="/contact"
-                    className="py-3 text-lg font-medium text-slate-900 hover:text-blue-600 transition-colors"
+                    className="py-3 text-lg font-medium text-slate-900 hover:text-[#00D98A] transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     Contact

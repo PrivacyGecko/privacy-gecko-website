@@ -59,7 +59,7 @@ export default function AboutPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-4"
+              className="text-sm font-medium tracking-widest uppercase text-[#00D98A] mb-4"
             >
               About Us
             </motion.p>
@@ -69,7 +69,7 @@ export default function AboutPage() {
             >
               Privacy should be
               <br />
-              <span className="text-blue-600">simple</span>
+              <span className="text-[#00D98A]">simple</span>
             </motion.h1>
             <motion.p
               variants={fadeUp}
@@ -114,7 +114,7 @@ export default function AboutPage() {
 
             <motion.div variants={fadeUp}>
               <div className="bg-slate-50 rounded-3xl p-8 lg:p-10">
-                <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-4">
+                <p className="text-sm font-semibold text-[#00D98A] uppercase tracking-wider mb-4">
                   Our Principles
                 </p>
                 <div className="space-y-4">
@@ -141,7 +141,7 @@ export default function AboutPage() {
             variants={stagger}
           >
             <motion.div variants={fadeUp} className="max-w-2xl mb-16">
-              <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-4">
+              <p className="text-sm font-medium tracking-widest uppercase text-[#00D98A] mb-4">
                 Our Values
               </p>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6">
@@ -159,8 +159,8 @@ export default function AboutPage() {
                   variants={fadeUp}
                   className="bg-white rounded-2xl p-8 border border-slate-200"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
-                    <value.icon className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 rounded-xl bg-[#00D98A]/10 flex items-center justify-center mb-6">
+                    <value.icon className="w-6 h-6 text-[#00D98A]" />
                   </div>
                   <h3 className="text-xl font-display font-bold text-slate-900 mb-3">
                     {value.title}
@@ -187,7 +187,7 @@ export default function AboutPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-6"
+              className="text-sm font-medium tracking-widest uppercase text-[#00D98A] mb-6"
             >
               Our Mission
             </motion.p>
@@ -236,7 +236,7 @@ export default function AboutPage() {
                 href="https://github.com/privacygecko"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-500 transition-colors group shadow-lg shadow-blue-600/30"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-[#00D98A] text-white rounded-full font-semibold hover:bg-[#00B876] transition-colors group shadow-lg shadow-emerald-600/30"
               >
                 <Github className="w-5 h-5" />
                 View on GitHub
@@ -297,14 +297,14 @@ export default function AboutPage() {
             >
               <Link
                 href="/products"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-full font-semibold text-lg transition-all duration-300 hover:bg-blue-700 hover:scale-[1.02] group shadow-lg shadow-blue-600/25"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#00D98A] text-white rounded-full font-semibold text-lg transition-all duration-300 hover:bg-[#00B876] hover:scale-[1.02] group shadow-lg shadow-emerald-600/25"
               >
                 Explore products
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-slate-900 rounded-full font-semibold text-lg border-2 border-slate-200 transition-all duration-300 hover:border-blue-600 hover:text-blue-600 hover:scale-[1.02]"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-slate-900 rounded-full font-semibold text-lg border-2 border-slate-200 transition-all duration-300 hover:border-[#00D98A] hover:text-[#00B876] hover:scale-[1.02]"
               >
                 Get in touch
               </Link>

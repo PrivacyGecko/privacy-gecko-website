@@ -43,7 +43,7 @@ export function SectionHeader({
     >
       {badge && <div className="mb-4">{badge}</div>}
       {subtitle && (
-        <p className="text-blue-600 font-semibold mb-3 uppercase tracking-wider text-sm">
+        <p className="text-[#00D98A] font-semibold mb-3 uppercase tracking-wider text-sm">
           {subtitle}
         </p>
       )}

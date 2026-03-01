@@ -64,8 +64,8 @@ export function Hero({
               transition={{ duration: 0.5, delay: 0.1 }}
               className="mb-6"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 font-semibold text-sm">
-                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 font-semibold text-sm">
+                <span className="w-2 h-2 rounded-full bg-[#00D98A] animate-pulse" />
                 {subtitle}
               </span>
             </motion.div>
@@ -281,8 +281,8 @@ function HomeHero({
                       <Sparkles className="w-6 h-6 text-white" strokeWidth={2} />
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-900 text-[15px]">8 Privacy Tools</p>
-                      <p className="text-sm text-slate-500">Complete protection</p>
+                      <p className="font-semibold text-slate-900 text-[15px]">Privacy Toolkit</p>
+                      <p className="text-sm text-slate-500">2 focused products</p>
                     </div>
                   </div>
                 </div>

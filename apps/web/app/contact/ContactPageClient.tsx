@@ -74,10 +74,10 @@ export function ContactPageClient() {
                   </div>
                   <div>
                     <ExternalLink
-                      href="https://t.me/privacygecko"
+                      href="https://github.com/privacygecko"
                       className="text-gecko-green hover:underline"
                     >
-                      Telegram
+                      GitHub
                     </ExternalLink>
                   </div>
                 </CardDescription>

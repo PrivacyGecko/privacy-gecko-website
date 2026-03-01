@@ -164,8 +164,8 @@ export function ContactForm() {
             <option value="billing">Billing Question</option>
             <option value="partnership">Partnership</option>
             <option value="press">Press/Media</option>
-            <option value="AI Beta Waitlist">AI Beta Waitlist</option>
-            <option value="Early Adopter Waitlist">Early Adopter Waitlist</option>
+            <option value="enterprise">Enterprise Inquiry</option>
+            <option value="feedback">Product Feedback</option>
             <option value="other">Other</option>
           </select>
         </div>

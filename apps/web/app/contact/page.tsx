@@ -30,7 +30,6 @@ export default function ContactPage() {
       description: "Follow for updates",
       links: [
         { href: "https://twitter.com/privacygecko", text: "Twitter" },
-        { href: "https://t.me/privacygecko", text: "Telegram" },
       ],
     },
     {

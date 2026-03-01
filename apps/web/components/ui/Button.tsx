@@ -7,21 +7,21 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Premium blue - main CTA
+        // Gecko Green - main CTA
         primary:
-          "bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl shadow-blue hover:shadow-blue-lg hover:-translate-y-0.5 focus:ring-blue-500 active:translate-y-0",
+          "bg-[#00D98A] text-white rounded-full shadow-lg shadow-emerald-200/50 hover:bg-[#00B876] hover:-translate-y-0.5 focus:ring-[#00D98A] active:translate-y-0",
         // Green accent
         secondary:
           "bg-gradient-to-r from-gecko-green to-gecko-dark text-white rounded-xl shadow-green hover:shadow-lg hover:-translate-y-0.5 focus:ring-gecko-green active:translate-y-0",
         // White/outline
         outline:
-          "border-2 border-slate-200 text-slate-700 bg-white rounded-xl hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50/50 hover:-translate-y-0.5 focus:ring-blue-500 active:translate-y-0 shadow-soft",
+          "border-2 border-slate-200 text-slate-700 bg-white rounded-full hover:border-[#00D98A] hover:text-[#00B876] hover:bg-emerald-50/50 hover:-translate-y-0.5 focus:ring-[#00D98A] active:translate-y-0 shadow-soft",
         // Ghost/minimal
         ghost:
           "text-slate-600 rounded-xl hover:bg-slate-100 hover:text-slate-900 focus:ring-slate-300",
         // White button (for dark backgrounds)
         white:
-          "bg-white text-blue-600 rounded-xl shadow-soft hover:shadow-lg hover:-translate-y-0.5 focus:ring-white active:translate-y-0",
+          "bg-white text-[#00B876] rounded-full shadow-soft hover:shadow-lg hover:-translate-y-0.5 focus:ring-white active:translate-y-0",
       },
       size: {
         sm: "px-4 py-2 text-sm",

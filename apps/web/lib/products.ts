@@ -72,7 +72,7 @@ export interface Product {
 export const products: Product[] = [
   {
     id: "advisor",
-    name: "Gecko Advisor",
+    name: "GeckoAdvisor",
     tagline: "Scan Website Privacy Policies for Hidden Trackers",
     description: "Scan any website's privacy policy for hidden trackers and compliance issues",
     icon: Shield,
@@ -116,7 +116,7 @@ export const products: Product[] = [
   },
   {
     id: "share",
-    name: "Gecko Share",
+    name: "GeckoShare",
     tagline: "Share Files Securely Without Leaving a Trail",
     description: "Send encrypted files that automatically delete after you set the time limit",
     icon: Share2,

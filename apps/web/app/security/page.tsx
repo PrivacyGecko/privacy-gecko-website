@@ -27,7 +27,7 @@ export default function SecurityPage() {
     {
       icon: FileCheck,
       title: "Regular Audits",
-      description: "Our codebase undergoes regular security reviews. Product code will be audited before Q4 2025 release.",
+      description: "Our codebase undergoes regular security reviews and audits. All product code is reviewed before each release.",
     },
   ];
 
@@ -239,21 +239,20 @@ export default function SecurityPage() {
               </div>
 
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-700 font-bold">
-                  Q4
+                <div className="flex-shrink-0 w-12 h-12 bg-gecko-green rounded-full flex items-center justify-center text-white font-bold">
+                  ✓
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1">Q4 2025 - Product Launches</h3>
                   <p className="text-gray-600">
-                    Comprehensive security audit before product releases, open-source product code,
-                    penetration testing completion
+                    Security audit completed before GeckoAdvisor and GeckoShare launches, penetration testing passed
                   </p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-700 font-bold">
-                  2026
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                  NOW
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1">2026 - Ongoing Security</h3>

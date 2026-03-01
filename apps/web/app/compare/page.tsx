@@ -1,75 +1,33 @@
 "use client";
 
-import { Hero } from "@/components/sections/Hero";
-import { Section, SectionHeader } from "@/components/sections/Section";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
-import { CheckCircle, X, Shield, Zap, Lock } from "lucide-react";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { CheckCircle, X, Shield, Zap, Lock, ArrowRight } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+const stagger = {
+  visible: { transition: { staggerChildren: 0.08 } }
+};
 
 export default function ComparePage() {
   const comparisonData = [
-    {
-      feature: "Free Tier",
-      privacyGecko: true,
-      bitwarden: true,
-      nordvpn: false,
-      ublock: true,
-    },
-    {
-      feature: "No Tracking",
-      privacyGecko: true,
-      bitwarden: true,
-      nordvpn: "Partial",
-      ublock: true,
-    },
-    {
-      feature: "Open Source",
-      privacyGecko: "Coming Q4 2025",
-      bitwarden: true,
-      nordvpn: false,
-      ublock: true,
-    },
-    {
-      feature: "No VC Funding",
-      privacyGecko: true,
-      bitwarden: false,
-      nordvpn: false,
-      ublock: true,
-    },
-    {
-      feature: "Complete Ecosystem (8 tools)",
-      privacyGecko: true,
-      bitwarden: false,
-      nordvpn: false,
-      ublock: false,
-    },
-    {
-      feature: "Privacy-First Analytics",
-      privacyGecko: true,
-      bitwarden: true,
-      nordvpn: false,
-      ublock: "N/A",
-    },
-    {
-      feature: "Cryptocurrency Optional",
-      privacyGecko: true,
-      bitwarden: "N/A",
-      nordvpn: false,
-      ublock: "N/A",
-    },
-    {
-      feature: "Self-Hosting Option",
-      privacyGecko: "Coming",
-      bitwarden: true,
-      nordvpn: false,
-      ublock: "N/A",
-    },
+    { feature: "Free Tier", privacyGecko: true, competitor1: true, competitor2: "Limited" },
+    { feature: "No Tracking", privacyGecko: true, competitor1: "Partial", competitor2: false },
+    { feature: "Open Source", privacyGecko: "In Progress", competitor1: true, competitor2: false },
+    { feature: "No VC Funding", privacyGecko: true, competitor1: false, competitor2: false },
+    { feature: "Privacy-First Analytics", privacyGecko: true, competitor1: true, competitor2: false },
+    { feature: "End-to-End Encryption", privacyGecko: true, competitor1: "N/A", competitor2: true },
+    { feature: "Self-Destructing Files", privacyGecko: true, competitor1: "N/A", competitor2: false },
+    { feature: "GDPR Compliance Scanning", privacyGecko: true, competitor1: false, competitor2: "N/A" },
   ];
 
   const renderValue = (value: boolean | string) => {
     if (value === true) {
-      return <CheckCircle className="w-5 h-5 text-gecko-green mx-auto" />;
+      return <CheckCircle className="w-5 h-5 text-[#00D98A] mx-auto" />;
     } else if (value === false) {
       return <X className="w-5 h-5 text-gray-400 mx-auto" />;
     } else {
@@ -79,242 +37,206 @@ export default function ComparePage() {
 
   return (
     <>
-      <Hero
-        subtitle="Comparison"
-        title="How Privacy Gecko Compares"
-        description="See how we stack up against popular privacy tools. Honest comparison of features, pricing, and privacy practices."
-      />
-
-      {/* Why Compare Section */}
-      <Section>
-        <div className="max-w-4xl mx-auto">
+      {/* Hero */}
+      <section className="pt-16 pb-12 md:pt-20 md:pb-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            initial="hidden"
+            animate="visible"
+            variants={stagger}
+            className="max-w-3xl"
           >
-            <h2 className="text-3xl font-display font-bold mb-6 text-center">
-              Why We Built Privacy Gecko
-            </h2>
-            <p className="text-lg text-gray-600 text-center mb-8">
-              Existing privacy tools are great at what they do, but they're all separate. We're building an integrated ecosystem where your privacy tools work together—password manager, VPN, ad blocker, encrypted file sharing, and more.
-            </p>
+            <motion.p
+              variants={fadeUp}
+              className="text-sm font-medium tracking-widest uppercase text-[#00D98A] mb-4"
+            >
+              Comparison
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight text-slate-900 mb-6"
+            >
+              How Privacy Gecko
+              <br />
+              <span className="text-[#00D98A]">compares</span>
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="text-xl text-slate-600 leading-relaxed"
+            >
+              An honest comparison of features, pricing, and privacy practices
+              against popular alternatives.
+            </motion.p>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <Card className="h-full">
-                <CardHeader className="text-center">
-                  <div className="w-12 h-12 bg-gecko-green/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-6 h-6 text-gecko-green" />
-                  </div>
-                  <CardTitle>One Ecosystem</CardTitle>
-                  <CardDescription>
-                    8 integrated tools instead of juggling multiple apps from different companies
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <Card className="h-full">
-                <CardHeader className="text-center">
-                  <div className="w-12 h-12 bg-gecko-green/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Zap className="w-6 h-6 text-gecko-green" />
-                  </div>
-                  <CardTitle>Always Free Tier</CardTitle>
-                  <CardDescription>
-                    Every single tool has a generous free tier. No credit card required to start.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Card className="h-full">
-                <CardHeader className="text-center">
-                  <div className="w-12 h-12 bg-gecko-green/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Lock className="w-6 h-6 text-gecko-green" />
-                  </div>
-                  <CardTitle>No VC Pressure</CardTitle>
-                  <CardDescription>
-                    Bootstrapped with no investors. We'll never sell your data to satisfy shareholders.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
-          </div>
         </div>
-      </Section>
+      </section>
+
+      {/* Why Section */}
+      <section className="py-20 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={stagger}
+          >
+            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6 text-center">
+              Why We Built Privacy Gecko
+            </motion.h2>
+            <motion.p variants={fadeUp} className="text-lg text-slate-600 text-center mb-12 max-w-3xl mx-auto">
+              We build focused, best-in-class privacy tools. GeckoAdvisor for compliance risk analysis. GeckoShare for secure file transfer. Each does one thing exceptionally well.
+            </motion.p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { icon: Shield, title: "Focused Tools", desc: "Two purpose-built products instead of a bloated suite that does everything poorly" },
+                { icon: Zap, title: "Always Free Tier", desc: "Both products have generous free tiers. No credit card required to start." },
+                { icon: Lock, title: "No VC Pressure", desc: "Bootstrapped with no investors. We answer to users, not shareholders." },
+              ].map((item, i) => (
+                <motion.div key={item.title} variants={fadeUp} className="bg-slate-50 rounded-2xl p-8 border border-transparent hover:border-slate-200 transition-colors">
+                  <div className="w-12 h-12 bg-[#00D98A]/10 rounded-xl flex items-center justify-center mb-4">
+                    <item.icon className="w-6 h-6 text-[#00D98A]" />
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-slate-900 mb-2">{item.title}</h3>
+                  <p className="text-slate-600">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Comparison Table */}
-      <Section className="bg-neutral-100">
-        <SectionHeader
-          title="Feature Comparison"
-          description="Privacy Gecko vs. popular alternatives"
-        />
-
-        <div className="max-w-5xl mx-auto overflow-x-auto">
+      <section className="py-20 md:py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={stagger}
           >
-            <table className="w-full bg-white rounded-lg overflow-hidden shadow-sm">
-              <thead className="bg-neutral-50 border-b-2 border-neutral-200">
-                <tr>
-                  <th className="px-6 py-4 text-left font-semibold text-gray-900">Feature</th>
-                  <th className="px-6 py-4 text-center font-semibold text-gecko-green">Privacy Gecko</th>
-                  <th className="px-6 py-4 text-center font-semibold text-gray-700">Bitwarden</th>
-                  <th className="px-6 py-4 text-center font-semibold text-gray-700">NordVPN</th>
-                  <th className="px-6 py-4 text-center font-semibold text-gray-700">uBlock Origin</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-neutral-200">
-                {comparisonData.map((row, index) => (
-                  <tr key={index} className="hover:bg-neutral-50 transition-colors">
-                    <td className="px-6 py-4 font-medium text-gray-900">{row.feature}</td>
-                    <td className="px-6 py-4 text-center bg-gecko-green/5">
-                      {renderValue(row.privacyGecko)}
-                    </td>
-                    <td className="px-6 py-4 text-center">{renderValue(row.bitwarden)}</td>
-                    <td className="px-6 py-4 text-center">{renderValue(row.nordvpn)}</td>
-                    <td className="px-6 py-4 text-center">{renderValue(row.ublock)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </motion.div>
+            <motion.div variants={fadeUp} className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">
+                Feature Comparison
+              </h2>
+              <p className="text-lg text-slate-600">Privacy Gecko vs. popular alternatives</p>
+            </motion.div>
 
-          <p className="text-sm text-gray-500 text-center mt-6">
-            * Comparison data accurate as of January 2025. Features and pricing may change.
-          </p>
+            <motion.div variants={fadeUp} className="max-w-5xl mx-auto overflow-x-auto">
+              <table className="w-full bg-white rounded-2xl overflow-hidden border border-slate-200">
+                <thead className="bg-slate-50 border-b border-slate-200">
+                  <tr>
+                    <th scope="col" className="px-6 py-4 text-left font-semibold text-slate-900">Feature</th>
+                    <th scope="col" className="px-6 py-4 text-center font-semibold text-[#00D98A]">Privacy Gecko</th>
+                    <th scope="col" className="px-6 py-4 text-center font-semibold text-slate-600">Privacy Badger</th>
+                    <th scope="col" className="px-6 py-4 text-center font-semibold text-slate-600">WeTransfer</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {comparisonData.map((row, index) => (
+                    <tr key={index} className="hover:bg-slate-50/50 transition-colors">
+                      <td className="px-6 py-4 font-medium text-slate-900">{row.feature}</td>
+                      <td className="px-6 py-4 text-center bg-[#00D98A]/5">
+                        {renderValue(row.privacyGecko)}
+                      </td>
+                      <td className="px-6 py-4 text-center">{renderValue(row.competitor1)}</td>
+                      <td className="px-6 py-4 text-center">{renderValue(row.competitor2)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </motion.div>
+
+            <motion.p variants={fadeUp} className="text-sm text-slate-500 text-center mt-6">
+              We update this page regularly. Contact us if you spot an error.
+            </motion.p>
+          </motion.div>
         </div>
-      </Section>
+      </section>
 
       {/* What Makes Us Different */}
-      <Section>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-12">
-            What Makes Privacy Gecko Different
-          </h2>
+      <section className="py-20 md:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={stagger}
+          >
+            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-display font-bold text-slate-900 text-center mb-12">
+              What Makes Us Different
+            </motion.h2>
 
-          <div className="space-y-6">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-gecko-green" />
-                    Integrated Ecosystem, Not Fragmented Tools
-                  </CardTitle>
-                  <CardDescription>
-                    Other tools focus on one thing (password manager, VPN, ad blocker). We're building 8 integrated tools that work together seamlessly. One account, one ecosystem, complete privacy protection.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-gecko-green" />
-                    No Venture Capital, No Investor Pressure
-                  </CardTitle>
-                  <CardDescription>
-                    Privacy Gecko is bootstrapped. Bitwarden raised $100M from VC, NordVPN is owned by a large holding company. When investors demand growth, companies often compromise privacy. We answer to users, not shareholders.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-gecko-green" />
-                    Transparent Development & Pricing
-                  </CardTitle>
-                  <CardDescription>
-                    We build in public. Our development is transparent, and pricing is clear from day one. No hidden fees, no dark patterns, no "enterprise contact us" nonsense.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-gecko-green" />
-                    Free Tier Always Available
-                  </CardTitle>
-                  <CardDescription>
-                    Every tool has a generous free tier. Many competitors make you pay for basic privacy features. We believe privacy is a right, not a luxury. If you can pay for Pro, great—you help subsidize free users.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
-          </div>
+            <div className="space-y-6">
+              {[
+                {
+                  title: "Focused Products, Not a Bloated Suite",
+                  desc: "Other companies spread thin across dozens of features. We build two products that do their jobs exceptionally well. GeckoAdvisor is the best privacy policy scanner. GeckoShare is the most private file sharing tool.",
+                },
+                {
+                  title: "No Venture Capital, No Investor Pressure",
+                  desc: "Privacy Gecko is bootstrapped. When investors demand growth, companies often compromise privacy. We answer to users, not shareholders.",
+                },
+                {
+                  title: "Transparent Development & Pricing",
+                  desc: "We build in public. Pricing is clear from day one. No hidden fees, no dark patterns, no \"enterprise contact us\" nonsense.",
+                },
+                {
+                  title: "Free Tier Always Available",
+                  desc: "Both products have generous free tiers. We believe privacy is a right, not a luxury. If you can pay for Pro, great — you help subsidize free users.",
+                },
+              ].map((item) => (
+                <motion.div
+                  key={item.title}
+                  variants={fadeUp}
+                  className="bg-slate-50 rounded-2xl p-8 border border-transparent hover:border-slate-200 transition-colors"
+                >
+                  <h3 className="text-xl font-display font-bold text-slate-900 mb-2 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-[#00D98A] flex-shrink-0" />
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-600 ml-7">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
-      </Section>
+      </section>
 
       {/* CTA */}
-      <Section className="bg-gradient-to-r from-emerald-700 to-blue-900 text-white">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Ready to Try Privacy Gecko?
-          </h2>
-          <p className="text-lg mb-8">
-            Start with our free tier. No credit card required. Cancel anytime.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="https://geckoadvisor.com" variant="outline" className="bg-white text-gecko-green hover:bg-gray-100 border-white" size="lg">
-              Try GeckoAdvisor Free →
-            </Button>
-            <Button href="/products" variant="outline" className="border-2 border-white text-white hover:bg-white/10" size="lg">
-              Explore All 8 Tools
-            </Button>
-          </div>
+      <section className="py-24 md:py-32 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="text-center"
+          >
+            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-6">
+              Ready to try Privacy Gecko?
+            </motion.h2>
+            <motion.p variants={fadeUp} className="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+              Start with our free tier. No credit card required.
+            </motion.p>
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="https://geckoadvisor.com"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#00D98A] text-white rounded-full font-semibold text-lg transition-all duration-300 hover:bg-[#00B876] hover:scale-[1.02] group shadow-lg shadow-emerald-600/30"
+              >
+                Try GeckoAdvisor free
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/products"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white rounded-full font-semibold text-lg border-2 border-slate-600 transition-all duration-300 hover:border-[#00D98A] hover:text-[#00D98A] hover:scale-[1.02]"
+              >
+                Explore our products
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
-      </Section>
+      </section>
     </>
   );
 }

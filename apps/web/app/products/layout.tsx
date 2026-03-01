@@ -1,24 +1,22 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Privacy Tools - Password Manager, VPN & More | Privacy Gecko",
-  description: "Explore Privacy Gecko's complete privacy toolkit: 2 live tools (GeckoAdvisor, GeckoShare) + 6 in development (password manager, VPN, tracker blocker, AI bookmarks, privacy browser, compliance monitor). Free tiers available. AI-enhanced Q1-Q2 2026.",
+  title: "Privacy Tools - GeckoAdvisor & GeckoShare | Privacy Gecko",
+  description: "Privacy tools built for businesses that take data protection seriously. GeckoAdvisor scans privacy policies for compliance risks. GeckoShare provides end-to-end encrypted file sharing. Both free to start.",
   keywords: [
     "privacy tools",
-    "password manager",
-    "privacy VPN",
-    "encrypted file sharing",
-    "ad blocker",
-    "tracker blocker",
-    "AI bookmarks",
-    "privacy browser",
-    "compliance monitor",
     "privacy policy scanner",
-    "Privacy Gecko ecosystem",
+    "encrypted file sharing",
+    "GDPR compliance",
+    "data protection",
+    "GeckoAdvisor",
+    "GeckoShare",
+    "enterprise privacy",
+    "security tools",
   ],
   openGraph: {
-    title: "Privacy Tools - Complete Privacy Toolkit | Privacy Gecko",
-    description: "Explore Privacy Gecko's complete privacy toolkit: 2 live tools + 6 in development. Password manager, VPN, encrypted file sharing, tracker blocker, and more.",
+    title: "Privacy Tools - GeckoAdvisor & GeckoShare | Privacy Gecko",
+    description: "Privacy tools built for businesses. GeckoAdvisor scans privacy policies for compliance risks. GeckoShare provides encrypted file sharing. Free to start.",
     url: "https://privacygecko.com/products",
     siteName: "Privacy Gecko",
     images: [
@@ -34,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Tools - Complete Privacy Toolkit | Privacy Gecko",
-    description: "Explore Privacy Gecko's complete privacy toolkit: 2 live tools + 6 in development. Password manager, VPN, encrypted file sharing, and more.",
+    title: "Privacy Tools - GeckoAdvisor & GeckoShare | Privacy Gecko",
+    description: "Privacy tools built for businesses. GeckoAdvisor scans privacy policies. GeckoShare provides encrypted file sharing. Free to start.",
     images: ["https://privacygecko.com/images/og-products.png"],
   },
   alternates: {

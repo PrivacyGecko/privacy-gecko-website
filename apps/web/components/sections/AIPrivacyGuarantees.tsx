@@ -37,10 +37,10 @@ const guarantees = [
   },
   {
     icon: Users,
-    title: "Community Governance",
-    promise: "Token holders control AI direction",
-    how: "Voting on training priorities, model updates, feature development",
-    verify: "On-chain governance, public proposals, transparent decisions",
+    title: "Customer-Informed Development",
+    promise: "Customers influence product direction",
+    how: "Regular feedback surveys, direct customer interviews, public GitHub issues",
+    verify: "Public GitHub roadmap, changelog, release notes",
   },
   {
     icon: FileCheck,
