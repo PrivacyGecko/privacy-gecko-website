@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Eye, Share2, Shield, Lock, Bookmark, Globe, Wifi, FileSearch, ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { Eye, Share2, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -33,70 +33,11 @@ export default function ProductsPage() {
       color: "emerald",
       features: ["E2E encryption", "Expiring links", "Password protection", "No registration"],
     },
-    {
-      name: "GeckoGuard",
-      tagline: "Tracker blocker",
-      description: "Stop websites from following you across the web. Block ads, trackers, and fingerprinting automatically.",
-      icon: Shield,
-      href: "https://geckoguard.app",
-      color: "violet",
-      features: ["Ad blocking", "Tracker blocking", "Fingerprint protection", "Privacy dashboard"],
-    },
-    {
-      name: "GeckoLock",
-      tagline: "Password manager",
-      description: "Zero-knowledge password vault you control. We can't see your passwords—only you can.",
-      icon: Lock,
-      href: "https://geckolock.com",
-      color: "amber",
-      features: ["Zero-knowledge", "Cross-platform", "2FA built-in", "Secure sharing"],
-    },
-  ];
-
-  const comingProducts = [
-    {
-      name: "GeckoView",
-      tagline: "Private bookmarks",
-      description: "Save and organize content with AI summaries. Your reading history stays completely private.",
-      icon: Bookmark,
-      href: "/products/view",
-      timeline: "Q2 2026",
-      progress: 45,
-    },
-    {
-      name: "GeckoShell",
-      tagline: "Mobile browser",
-      description: "Private mobile browser with built-in tracker blocking for iOS and Android.",
-      icon: Globe,
-      href: "/products/shell",
-      timeline: "Q2 2026",
-      progress: 30,
-    },
-    {
-      name: "GeckoVPN",
-      tagline: "Secure VPN",
-      description: "Privacy-first VPN with no-logs policy and global server network.",
-      icon: Wifi,
-      href: "/products/vpn",
-      timeline: "Q3 2026",
-      progress: 20,
-    },
-    {
-      name: "GeckoWatch",
-      tagline: "Compliance monitor",
-      description: "Continuous website privacy monitoring and compliance tracking for businesses.",
-      icon: FileSearch,
-      href: "/products/watch",
-      timeline: "Q1 2026",
-      progress: 55,
-    },
   ];
 
   const colorClasses = {
     blue: { bg: "bg-blue-50", icon: "bg-blue-600", text: "text-blue-600", border: "border-blue-100" },
     emerald: { bg: "bg-emerald-50", icon: "bg-emerald-600", text: "text-emerald-600", border: "border-emerald-100" },
-    violet: { bg: "bg-violet-50", icon: "bg-violet-600", text: "text-violet-600", border: "border-violet-100" },
-    amber: { bg: "bg-amber-50", icon: "bg-amber-600", text: "text-amber-600", border: "border-amber-100" },
   };
 
   return (
@@ -112,7 +53,7 @@ export default function ProductsPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-4"
+              className="text-sm font-medium tracking-widest uppercase text-emerald-600 mb-4"
             >
               Products
             </motion.p>
@@ -120,16 +61,16 @@ export default function ProductsPage() {
               variants={fadeUp}
               className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight text-slate-900 mb-6"
             >
-              Privacy products
+              Privacy tools
               <br />
-              <span className="text-blue-600">that actually work</span>
+              <span className="text-[#00D98A]">that actually work</span>
             </motion.h1>
             <motion.p
               variants={fadeUp}
               className="text-xl text-slate-600 leading-relaxed"
             >
-              Eight products designed to protect every aspect of your digital life.
-              Four live today, four more coming. All free to start.
+              Two focused products designed to protect your business and personal privacy.
+              Both free to start, no credit card required.
             </motion.p>
           </motion.div>
         </div>
@@ -201,78 +142,6 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Coming Soon */}
-      <section className="py-24 md:py-32 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={stagger}
-          >
-            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
-              <div className="w-2 h-2 rounded-full bg-blue-500" />
-              <h2 className="text-sm font-semibold text-slate-900 uppercase tracking-wider">Coming Soon</h2>
-            </motion.div>
-            <motion.p variants={fadeUp} className="text-slate-600 mb-12 max-w-xl">
-              Four more products launching through 2026. Join the waitlist to get early access.
-            </motion.p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {comingProducts.map((product) => (
-                <motion.div
-                  key={product.name}
-                  variants={fadeUp}
-                  className="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:shadow-lg"
-                >
-                  {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mb-4 group-hover:bg-slate-200 transition-colors">
-                    <product.icon className="w-6 h-6 text-slate-500" strokeWidth={1.5} />
-                  </div>
-
-                  {/* Timeline badge */}
-                  <span className="inline-block px-2.5 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full mb-3">
-                    {product.timeline}
-                  </span>
-
-                  {/* Content */}
-                  <h3 className="text-lg font-display font-bold text-slate-900 mb-1">
-                    {product.name}
-                  </h3>
-                  <p className="text-sm text-slate-500 mb-3">{product.tagline}</p>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                    {product.description}
-                  </p>
-
-                  {/* Progress bar */}
-                  <div className="mb-4">
-                    <div className="flex justify-between text-xs text-slate-500 mb-1">
-                      <span>Development progress</span>
-                      <span>{product.progress}%</span>
-                    </div>
-                    <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-blue-500 rounded-full transition-all duration-500"
-                        style={{ width: `${product.progress}%` }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Link */}
-                  <Link
-                    href={product.href}
-                    className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors inline-flex items-center gap-1"
-                  >
-                    Learn more
-                    <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-24 md:py-32 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -300,19 +169,19 @@ export default function ProductsPage() {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <a
-                href="https://geckoshare.com"
+                href="https://geckoadvisor.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-full font-semibold text-lg transition-all duration-300 hover:bg-blue-500 hover:scale-[1.02] group shadow-lg shadow-blue-600/30"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#00D98A] text-white rounded-full font-semibold text-lg transition-all duration-300 hover:bg-[#00B876] hover:scale-[1.02] group shadow-lg shadow-emerald-600/30"
               >
-                Try GeckoShare free
+                Try GeckoAdvisor free
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </a>
               <Link
-                href="/roadmap"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white rounded-full font-semibold text-lg border-2 border-slate-600 transition-all duration-300 hover:border-blue-400 hover:text-blue-400 hover:scale-[1.02]"
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white rounded-full font-semibold text-lg border-2 border-slate-600 transition-all duration-300 hover:border-[#00D98A] hover:text-[#00D98A] hover:scale-[1.02]"
               >
-                View roadmap
+                Contact us
               </Link>
             </motion.div>
           </motion.div>

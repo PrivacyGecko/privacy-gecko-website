@@ -268,7 +268,7 @@ export default function ComparePage() {
                     Transparent Development & Pricing
                   </CardTitle>
                   <CardDescription>
-                    We build in public. Our roadmap shows exactly what's live, what's in development, and progress percentages. Pricing is clear from day one. No hidden fees, no dark patterns, no "enterprise contact us" nonsense.
+                    We build in public. Our development is transparent, and pricing is clear from day one. No hidden fees, no dark patterns, no "enterprise contact us" nonsense.
                   </CardDescription>
                 </CardHeader>
               </Card>

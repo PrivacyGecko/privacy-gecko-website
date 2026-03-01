@@ -11,7 +11,7 @@ export function MobileStickyCTA() {
         size="lg"
         className="w-full"
       >
-        Join Beta - Free Forever Tier →
+        Try GeckoAdvisor Free →
       </Button>
     </div>
   );

@@ -1,18 +1,28 @@
 import type { Metadata } from "next";
+import { Syne, Outfit } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { MobileStickyCTA } from "@/components/ui/MobileStickyCTA";
 
-// Google Fonts removed for privacy - using system font stack instead
-// No external font requests = zero tracking vectors
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Privacy Gecko - 8 AI-Enhanced Privacy Tools | Free Tier",
-  description: "8 AI-enhanced privacy tools with local processing. Password manager, VPN, encrypted file sharing & more. Free tier available. Zero data collection.",
-  keywords: ["privacy", "security", "encryption", "open source", "privacy tools", "AI privacy", "federated learning", "GDPR", "data protection"],
-  authors: [{ name: "@0xAnonA" }],
-  creator: "@0xAnonA",
+  title: "Privacy Gecko - Enterprise Privacy Tools",
+  description: "Enterprise-grade privacy tools for business. GeckoAdvisor scans privacy policies for compliance risks. GeckoShare provides encrypted file sharing with expiring links. Free tier available.",
+  keywords: ["privacy tools", "privacy policy scanner", "encrypted file sharing", "GDPR compliance", "enterprise privacy", "data protection", "security tools"],
+  authors: [{ name: "Privacy Gecko" }],
+  creator: "Privacy Gecko",
   publisher: "Privacy Gecko",
   robots: "index, follow",
   metadataBase: new URL("https://privacygecko.com"),
@@ -20,8 +30,8 @@ export const metadata: Metadata = {
     canonical: "https://privacygecko.com",
   },
   openGraph: {
-    title: "Privacy Gecko - 8 AI-Enhanced Privacy Tools | Free Tier",
-    description: "8 AI-enhanced privacy tools with local processing. Password manager, VPN, encrypted file sharing & more. Free tier available. Zero data collection.",
+    title: "Privacy Gecko - Enterprise Privacy Tools",
+    description: "Enterprise-grade privacy tools for business. GeckoAdvisor scans privacy policies. GeckoShare provides encrypted file sharing. Free tier available.",
     type: "website",
     url: "https://privacygecko.com",
     siteName: "Privacy Gecko",
@@ -31,16 +41,16 @@ export const metadata: Metadata = {
         url: "/images/og-home.png",
         width: 1200,
         height: 630,
-        alt: "Privacy Gecko - 8 AI-Enhanced Privacy Tools. Zero Data Collection.",
+        alt: "Privacy Gecko - Enterprise Privacy Tools for Business",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@privacygecko",
-    creator: "@0xAnonA",
-    title: "Privacy Gecko - 8 AI-Enhanced Privacy Tools | Free Tier",
-    description: "8 AI-enhanced privacy tools with local processing. Password manager, VPN, encrypted file sharing & more. Free tier available. Zero data collection.",
+    creator: "@privacygecko",
+    title: "Privacy Gecko - Enterprise Privacy Tools",
+    description: "Enterprise-grade privacy tools for business. GeckoAdvisor scans privacy policies. GeckoShare provides encrypted file sharing. Free tier available.",
     images: ["/images/og-home.png"],
   },
   icons: {
@@ -59,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${syne.variable} ${outfit.variable}`}>
       <head>
         {/* Plausible Analytics - Privacy-friendly, GDPR-compliant */}
         <script

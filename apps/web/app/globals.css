@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Distinctive Typography - Syne (Display) + Outfit (Body) */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
-
 @layer base {
   :root {
     /* Brand Colors */
@@ -23,9 +20,7 @@
     --accent: #2563EB;
     --accent-light: #3B82F6;
 
-    /* Typography */
-    --font-display: 'Syne', system-ui, -apple-system, sans-serif;
-    --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
+    /* Typography - CSS variables set by next/font/google in layout.tsx */
   }
 
   html {
@@ -33,7 +28,7 @@
   }
 
   body {
-    font-family: var(--font-body);
+    font-family: var(--font-body), system-ui, -apple-system, sans-serif;
     @apply antialiased bg-white;
     color: var(--ink-light);
     font-weight: 400;
@@ -43,7 +38,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
+    font-family: var(--font-display), system-ui, -apple-system, sans-serif;
     color: var(--ink);
     @apply font-bold;
     letter-spacing: -0.03em;
@@ -90,6 +85,16 @@
     @apply btn-premium bg-blue-600 text-white shadow-blue
            hover:bg-blue-700 hover:shadow-blue-lg hover:-translate-y-0.5
            focus:ring-blue-500;
+  }
+
+  .btn-primary-green {
+    @apply btn-premium text-white shadow-green
+           hover:-translate-y-0.5
+           focus:ring-emerald-500;
+    background-color: var(--gecko-green);
+  }
+  .btn-primary-green:hover {
+    background-color: var(--gecko-green-dark);
   }
 
   .btn-secondary-white {

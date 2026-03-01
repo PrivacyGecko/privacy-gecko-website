@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Shield, Lock, Eye, Share2, ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { Eye, Share2, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 
 // Animation variants
@@ -32,22 +32,6 @@ export default function HomePage() {
       icon: Share2,
       href: "https://geckoshare.com",
       color: "from-emerald-600 to-emerald-700",
-    },
-    {
-      name: "GeckoGuard",
-      tagline: "Tracker blocker",
-      description: "Stop websites from following you across the web",
-      icon: Shield,
-      href: "https://geckoguard.app",
-      color: "from-violet-600 to-violet-700",
-    },
-    {
-      name: "GeckoLock",
-      tagline: "Password manager",
-      description: "Zero-knowledge password vault you control",
-      icon: Lock,
-      href: "https://geckolock.com",
-      color: "from-amber-600 to-amber-700",
     },
   ];
 
@@ -79,9 +63,9 @@ export default function HomePage() {
             {/* Eyebrow */}
             <motion.p
               variants={fadeUp}
-              className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-6"
+              className="text-sm font-medium tracking-widest uppercase text-emerald-600 mb-6"
             >
-              Privacy Ecosystem
+              Privacy Tools for Business
             </motion.p>
 
             {/* Main Headline */}
@@ -92,7 +76,7 @@ export default function HomePage() {
             >
               Your data.
               <br />
-              <span className="text-blue-600">Your control.</span>
+              <span className="text-[#00D98A]">Your control.</span>
             </motion.h1>
 
             {/* Description */}
@@ -100,8 +84,8 @@ export default function HomePage() {
               variants={fadeUp}
               className="text-xl md:text-2xl text-slate-600 max-w-2xl mb-10 leading-relaxed font-light"
             >
-              Four privacy products live today. Four more coming.
-              All built on the principle that you should own your digital life.
+              Scan privacy policies for compliance risks with GeckoAdvisor.
+              Share files securely with GeckoShare. Built for teams that take privacy seriously.
             </motion.p>
 
             {/* CTAs */}
@@ -110,17 +94,17 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <Link
-                href="/products"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-full font-semibold text-lg transition-all duration-300 hover:bg-blue-700 hover:scale-[1.02] group shadow-lg shadow-blue-600/25"
+                href="https://geckoadvisor.com"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#00D98A] text-white rounded-full font-semibold text-lg transition-all duration-300 hover:bg-[#00B876] hover:scale-[1.02] group shadow-lg shadow-emerald-600/25"
               >
-                Explore products
+                Try GeckoAdvisor free
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="https://geckoadvisor.com"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 rounded-full font-semibold text-lg border-2 border-slate-200 transition-all duration-300 hover:border-blue-600 hover:text-blue-600 hover:scale-[1.02]"
+                href="/products"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 rounded-full font-semibold text-lg border-2 border-slate-200 transition-all duration-300 hover:border-[#00D98A] hover:text-emerald-700 hover:scale-[1.02]"
               >
-                Try free now
+                Explore products
               </Link>
             </motion.div>
           </motion.div>
@@ -133,7 +117,7 @@ export default function HomePage() {
             className="absolute bottom-20 right-8 lg:right-16 hidden lg:block"
           >
             <div className="text-right">
-              <p className="text-6xl font-display font-bold text-slate-900">4</p>
+              <p className="text-6xl font-display font-bold text-slate-900">2</p>
               <p className="text-sm text-slate-500 uppercase tracking-wider">Products live</p>
             </div>
           </motion.div>
@@ -151,8 +135,8 @@ export default function HomePage() {
           >
             {/* Section Header */}
             <motion.div variants={fadeUp} className="mb-16 max-w-2xl">
-              <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-4">
-                Live Now
+              <p className="text-sm font-medium tracking-widest uppercase text-emerald-600 mb-4">
+                Our Products
               </p>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tight mb-6">
                 Privacy products that work
@@ -164,7 +148,7 @@ export default function HomePage() {
 
             {/* Products Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-              {products.map((product, index) => (
+              {products.map((product) => (
                 <motion.a
                   key={product.name}
                   href={product.href}
@@ -181,7 +165,7 @@ export default function HomePage() {
                   {/* Content */}
                   <div className="mb-4">
                     <p className="text-sm text-slate-500 mb-1 font-medium">{product.tagline}</p>
-                    <h3 className="text-2xl font-display font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-2xl font-display font-bold text-slate-900 mb-2 group-hover:text-[#00D98A] transition-colors">
                       {product.name}
                     </h3>
                     <p className="text-slate-600 leading-relaxed">
@@ -190,24 +174,13 @@ export default function HomePage() {
                   </div>
 
                   {/* Arrow */}
-                  <div className="flex items-center text-slate-400 group-hover:text-blue-600 transition-colors mt-6">
+                  <div className="flex items-center text-slate-400 group-hover:text-[#00D98A] transition-colors mt-6">
                     <span className="text-sm font-semibold mr-2">Try free</span>
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                 </motion.a>
               ))}
             </div>
-
-            {/* See More */}
-            <motion.div variants={fadeUp} className="mt-12 text-center">
-              <Link
-                href="/products"
-                className="inline-flex items-center text-slate-600 hover:text-slate-900 font-medium transition-colors"
-              >
-                <span>See all 8 products</span>
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
-            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -222,10 +195,10 @@ export default function HomePage() {
             variants={stagger}
             className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
           >
-            {values.map((value, index) => (
+            {values.map((value) => (
               <motion.div key={value.label} variants={fadeUp} className="text-center md:text-left">
                 <div className="flex items-center justify-center md:justify-start mb-3">
-                  <Check className="w-5 h-5 text-emerald-600 mr-2" strokeWidth={2.5} />
+                  <Check className="w-5 h-5 text-[#00D98A] mr-2" strokeWidth={2.5} />
                   <span className="text-lg font-display font-bold text-slate-900">{value.label}</span>
                 </div>
                 <p className="text-sm text-slate-500">{value.detail}</p>
@@ -246,7 +219,7 @@ export default function HomePage() {
             className="grid lg:grid-cols-2 gap-16 items-center"
           >
             <motion.div variants={fadeUp}>
-              <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-4">
+              <p className="text-sm font-medium tracking-widest uppercase text-emerald-600 mb-4">
                 Why Privacy Gecko
               </p>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tight mb-6">
@@ -258,7 +231,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/about"
-                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+                className="inline-flex items-center text-[#00D98A] hover:text-[#00B876] font-semibold transition-colors"
               >
                 Learn about our mission
                 <ArrowRight className="ml-2 w-4 h-4" />
@@ -275,57 +248,6 @@ export default function HomePage() {
                   — The Privacy Gecko team
                 </p>
               </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Coming Soon Preview */}
-      <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={stagger}
-          >
-            <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-16">
-              <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-4">
-                Coming 2025-2026
-              </p>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tight mb-6">
-                The ecosystem grows
-              </h2>
-              <p className="text-xl text-slate-600 leading-relaxed">
-                Four more products launching through 2026, with AI enhancement planned for Q2 2026.
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
-            >
-              {[
-                { name: "GeckoView", desc: "Private bookmarks" },
-                { name: "GeckoShell", desc: "Mobile browser" },
-                { name: "GeckoVPN", desc: "Secure VPN" },
-                { name: "GeckoWatch", desc: "Compliance monitor" },
-              ].map((tool) => (
-                <div key={tool.name} className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                  <p className="text-sm text-slate-500 mb-1">{tool.desc}</p>
-                  <p className="font-display font-bold text-slate-900">{tool.name}</p>
-                </div>
-              ))}
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="mt-12 text-center">
-              <Link
-                href="/roadmap"
-                className="inline-flex items-center text-slate-600 hover:text-slate-900 font-medium transition-colors"
-              >
-                View full roadmap
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -351,7 +273,7 @@ export default function HomePage() {
               variants={fadeUp}
               className="text-xl text-slate-400 max-w-2xl mx-auto mb-10"
             >
-              No credit card. No tracking. Just privacy products that work.
+              No credit card. No tracking. Just privacy tools that work.
             </motion.p>
             <motion.div
               variants={fadeUp}
@@ -359,16 +281,16 @@ export default function HomePage() {
             >
               <Link
                 href="https://geckoadvisor.com"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-full font-semibold text-lg transition-all duration-300 hover:bg-blue-500 hover:scale-[1.02] group shadow-lg shadow-blue-600/30"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#00D98A] text-white rounded-full font-semibold text-lg transition-all duration-300 hover:bg-[#00B876] hover:scale-[1.02] group shadow-lg shadow-emerald-600/30"
               >
                 Try GeckoAdvisor free
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/products"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white rounded-full font-semibold text-lg border-2 border-slate-600 transition-all duration-300 hover:border-blue-400 hover:text-blue-400 hover:scale-[1.02]"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white rounded-full font-semibold text-lg border-2 border-slate-600 transition-all duration-300 hover:border-[#00D98A] hover:text-[#00D98A] hover:scale-[1.02]"
               >
-                Explore all products
+                Explore products
               </Link>
             </motion.div>
           </motion.div>

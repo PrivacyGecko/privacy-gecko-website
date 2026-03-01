@@ -12,8 +12,6 @@ export function Footer() {
       links: [
         { href: "https://geckoadvisor.com", label: "GeckoAdvisor", external: true },
         { href: "https://geckoshare.com", label: "GeckoShare", external: true },
-        { href: "https://geckoguard.app", label: "GeckoGuard", external: true },
-        { href: "https://geckolock.com", label: "GeckoLock", external: true },
       ],
     },
     {
@@ -21,7 +19,6 @@ export function Footer() {
       links: [
         { href: "/about", label: "About", external: false },
         { href: "/blog", label: "Blog", external: false },
-        { href: "/roadmap", label: "Roadmap", external: false },
         { href: "/contact", label: "Contact", external: false },
       ],
     },

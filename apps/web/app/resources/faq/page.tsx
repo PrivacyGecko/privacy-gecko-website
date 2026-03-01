@@ -14,7 +14,7 @@ export default function FAQPage() {
       questions: [
         {
           q: "What is Privacy Gecko?",
-          a: "Privacy Gecko is an ecosystem of 8 privacy-focused tools designed to protect your digital privacy across all aspects of your online life.",
+          a: "Privacy Gecko offers two focused privacy tools: GeckoAdvisor (privacy policy scanner) and GeckoShare (encrypted file sharing), designed to protect your digital privacy.",
         },
         {
           q: "Are your tools really free?",
@@ -22,7 +22,7 @@ export default function FAQPage() {
         },
         {
           q: "Is Privacy Gecko open source?",
-          a: "We're committed to open source transparency. Core privacy features are currently in security audit before public release (Q4 2025 - Q1 2026). Our website is already open source. Sign up for our newsletter to be notified when product repositories go public.",
+          a: "We're committed to open source transparency. Our website is already open source. Product code is released after security audits. Sign up for our newsletter to be notified when product repositories go public.",
         },
       ],
     },

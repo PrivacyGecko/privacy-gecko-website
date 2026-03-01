@@ -106,7 +106,7 @@ export default function AboutPage() {
                   actually private, genuinely useful, and free to start?"</em>
                 </p>
                 <p>
-                  Today, we're building an ecosystem of eight products—four live, four coming—all
+                  Today, we offer two focused products—GeckoAdvisor and GeckoShare—both
                   designed around the principle that you should control your digital life.
                 </p>
               </div>
@@ -228,7 +228,7 @@ export default function AboutPage() {
                 Transparency by default
               </h2>
               <p className="text-lg text-slate-400 leading-relaxed mb-8">
-                Our website is fully open source. Product code releases throughout 2025-2026
+                Our website is fully open source. Product code is released
                 after security audits. Anyone can review, audit, and contribute.
               </p>
 

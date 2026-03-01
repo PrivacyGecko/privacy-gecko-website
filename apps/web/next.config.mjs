@@ -47,13 +47,13 @@ const nextConfig = {
             value: [
               "default-src 'self' *.privacygecko.com",
               "script-src 'self' 'unsafe-eval' 'unsafe-inline' plausible.io *.privacygecko.com",
-              "style-src 'self' 'unsafe-inline' *.privacygecko.com",
+              "style-src 'self' 'unsafe-inline' fonts.googleapis.com *.privacygecko.com",
               "img-src 'self' data: https:",
-              "font-src 'self' data: *.privacygecko.com",
-              "connect-src 'self' plausible.io https://formspree.io *.privacygecko.com",
+              "font-src 'self' data: fonts.gstatic.com *.privacygecko.com",
+              "connect-src 'self' plausible.io *.privacygecko.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",
-              "form-action 'self' https://formspree.io",
+              "form-action 'self'",
               "upgrade-insecure-requests"
             ].join('; ')
           }
@@ -62,14 +62,17 @@ const nextConfig = {
     ]
   },
 
-  // 301 Redirects for roadmap merger
+  // 301 Redirects for removed pages
   async redirects() {
     return [
-      {
-        source: '/ai-roadmap',
-        destination: '/roadmap#ai-development',
-        permanent: true, // 301 redirect
-      },
+      { source: '/products/guard', destination: '/products', permanent: true },
+      { source: '/products/lock', destination: '/products', permanent: true },
+      { source: '/products/view', destination: '/products', permanent: true },
+      { source: '/products/shell', destination: '/products', permanent: true },
+      { source: '/products/vpn', destination: '/products', permanent: true },
+      { source: '/products/watch', destination: '/products', permanent: true },
+      { source: '/roadmap', destination: '/about', permanent: true },
+      { source: '/ai-roadmap', destination: '/about', permanent: true },
     ]
   },
 

@@ -215,7 +215,7 @@ export default function SecurityPage() {
       {/* Security Timeline */}
       <Section className="bg-neutral-100">
         <SectionHeader
-          subtitle="Roadmap"
+          subtitle="Timeline"
           title="Security Milestones"
         />
         <div className="max-w-3xl mx-auto">

@@ -6,7 +6,7 @@ import { Lock, Globe, BookOpen, Zap, type LucideIcon } from "lucide-react";
  *
  * Displays trust icons with labels to build confidence in AI privacy features.
  * Emphasizes key trust factors: Local Processing, Federated Learning, Open Source, Real-time.
- * Used across homepage, product pages, and AI roadmap to communicate privacy guarantees.
+ * Used across homepage and product pages to communicate privacy guarantees.
  *
  * @example
  * ```tsx

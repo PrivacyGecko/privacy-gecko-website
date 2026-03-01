@@ -1,8 +1,7 @@
 /**
- * Domain Configuration for Privacy Gecko Ecosystem
+ * Domain Configuration for Privacy Gecko Products
  *
- * Centralized configuration for all product domains.
- * Update when individual product sites go live.
+ * Centralized configuration for product domains.
  */
 
 export type ProductDomain = {
@@ -10,71 +9,25 @@ export type ProductDomain = {
   name: string;
   domain: string;
   status: 'live' | 'planned' | 'future' | 'testing';
-  useExternalLink: boolean; // If true, link to domain instead of /products/[id]
+  useExternalLink: boolean;
 };
 
 export const MAIN_HUB_DOMAIN = 'www.privacygecko.com';
 
-/**
- * Product domain mappings
- * When a product's domain goes live, set useExternalLink to true
- */
 export const productDomains: Record<string, ProductDomain> = {
   advisor: {
     id: 'advisor',
     name: 'Gecko Advisor',
     domain: 'geckoadvisor.com',
-    status: 'live', // ✅ LIVE
-    useExternalLink: true, // Link to geckoadvisor.com
+    status: 'live',
+    useExternalLink: true,
   },
   share: {
     id: 'share',
     name: 'Gecko Share',
     domain: 'geckoshare.com',
-    status: 'live', // ✅ LIVE
-    useExternalLink: true, // Link to geckoshare.com
-  },
-  guard: {
-    id: 'guard',
-    name: 'Gecko Guard',
-    domain: 'geckoguard.app',
-    status: 'live', // ✅ LIVE - Newly launched
-    useExternalLink: true, // Link to geckoguard.app
-  },
-  lock: {
-    id: 'lock',
-    name: 'Gecko Lock',
-    domain: 'geckolock.com',
-    status: 'live', // ✅ LIVE - Newly launched
-    useExternalLink: true, // Link to geckolock.com
-  },
-  shell: {
-    id: 'shell',
-    name: 'Gecko Shell',
-    domain: 'geckoshell.app',
-    status: 'future',
-    useExternalLink: false,
-  },
-  view: {
-    id: 'view',
-    name: 'Gecko View',
-    domain: 'view.privacygecko.com',
-    status: 'future',
-    useExternalLink: false,
-  },
-  vpn: {
-    id: 'vpn',
-    name: 'Gecko VPN',
-    domain: 'geckovpn.com',
-    status: 'testing',
-    useExternalLink: false,
-  },
-  vault: {
-    id: 'vault',
-    name: 'Gecko Vault',
-    domain: 'www.privacygecko.com', // Stays on main hub
-    status: 'future',
-    useExternalLink: false,
+    status: 'live',
+    useExternalLink: true,
   },
 };
 
@@ -110,11 +63,7 @@ export function getProductCTAText(productId: string): string {
     return 'Visit Site';
   }
 
-  if (product.status === 'planned') {
-    return 'Learn More';
-  }
-
-  return 'Coming Soon';
+  return 'Learn More';
 }
 
 /**
@@ -122,11 +71,4 @@ export function getProductCTAText(productId: string): string {
  */
 export function getLiveProducts(): ProductDomain[] {
   return Object.values(productDomains).filter(p => p.status === 'live');
-}
-
-/**
- * Get all planned product domains
- */
-export function getPlannedProducts(): ProductDomain[] {
-  return Object.values(productDomains).filter(p => p.status === 'planned');
 }

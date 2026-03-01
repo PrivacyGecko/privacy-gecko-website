@@ -5,11 +5,11 @@ export function OrganizationSchema() {
     "name": "Privacy Gecko",
     "url": "https://privacygecko.com",
     "logo": "https://privacygecko.com/images/logo.png",
-    "description": "8 AI-enhanced privacy tools with local processing. Intelligent protection that adapts to new threats without compromising your data.",
+    "description": "Enterprise privacy tools for business. GeckoAdvisor scans privacy policies for compliance risks. GeckoShare provides encrypted file sharing with expiring links.",
     "foundingDate": "2025-01",
     "founder": {
-      "@type": "Person",
-      "name": "@0xAnonA",
+      "@type": "Organization",
+      "name": "Privacy Gecko Team",
     },
     "sameAs": [
       "https://twitter.com/PrivacyGecko",

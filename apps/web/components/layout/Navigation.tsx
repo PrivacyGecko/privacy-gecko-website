@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ArrowRight, Eye, Share2, Shield, Lock, Bookmark, Globe, Wifi, FileSearch, ChevronDown } from "lucide-react";
+import { Menu, X, ArrowRight, Eye, Share2, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -33,20 +33,12 @@ export function Navigation() {
   }, []);
 
   const products = [
-    { name: "GeckoAdvisor", tagline: "Privacy policy scanner", href: "https://geckoadvisor.com", icon: Eye, status: "live" },
-    { name: "GeckoShare", tagline: "Encrypted file sharing", href: "https://geckoshare.com", icon: Share2, status: "live" },
-    { name: "GeckoGuard", tagline: "Tracker blocker", href: "https://geckoguard.app", icon: Shield, status: "live" },
-    { name: "GeckoLock", tagline: "Password manager", href: "https://geckolock.com", icon: Lock, status: "live" },
-    { name: "GeckoView", tagline: "Private bookmarks", href: "/products#geckoview", icon: Bookmark, status: "coming" },
-    { name: "GeckoShell", tagline: "Mobile browser", href: "/products#geckoshell", icon: Globe, status: "coming" },
-    { name: "GeckoVPN", tagline: "Secure VPN", href: "/products#geckovpn", icon: Wifi, status: "coming" },
-    { name: "GeckoWatch", tagline: "Compliance monitor", href: "/products#geckowatch", icon: FileSearch, status: "coming" },
+    { name: "GeckoAdvisor", tagline: "Privacy policy scanner", href: "https://geckoadvisor.com", icon: Eye },
+    { name: "GeckoShare", tagline: "Encrypted file sharing", href: "https://geckoshare.com", icon: Share2 },
   ];
 
-  // Simplified navigation - only essential items
   const navLinks = [
     { href: "/about", label: "About" },
-    { href: "/roadmap", label: "Roadmap" },
     { href: "/blog", label: "Blog" },
   ];
 
@@ -114,13 +106,11 @@ export function Navigation() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-2 w-[520px] bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50"
+                      className="absolute top-full left-0 mt-2 w-[320px] bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50"
                     >
                       <div className="p-4">
-                        {/* Live Products */}
-                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 mb-2">Live Now</p>
-                        <div className="grid grid-cols-2 gap-1 mb-4">
-                          {products.filter(p => p.status === "live").map((product) => (
+                        <div className="space-y-1 mb-4">
+                          {products.map((product) => (
                             <a
                               key={product.name}
                               href={product.href}
@@ -137,27 +127,6 @@ export function Navigation() {
                                 <p className="text-xs text-slate-500">{product.tagline}</p>
                               </div>
                             </a>
-                          ))}
-                        </div>
-
-                        {/* Coming Soon */}
-                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 mb-2">Coming Soon</p>
-                        <div className="grid grid-cols-2 gap-1 mb-4">
-                          {products.filter(p => p.status === "coming").map((product) => (
-                            <Link
-                              key={product.name}
-                              href={product.href}
-                              className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group"
-                              onClick={() => setProductsOpen(false)}
-                            >
-                              <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400 group-hover:bg-slate-200 transition-colors">
-                                <product.icon className="w-5 h-5" />
-                              </div>
-                              <div>
-                                <p className="font-semibold text-slate-600 text-sm">{product.name}</p>
-                                <p className="text-xs text-slate-400">{product.tagline}</p>
-                              </div>
-                            </Link>
                           ))}
                         </div>
 
@@ -204,15 +173,15 @@ export function Navigation() {
                 Contact
               </Link>
               <a
-                href="https://geckoshare.com"
+                href="https://geckoadvisor.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
                   "inline-flex items-center gap-2",
                   "px-6 py-3 rounded-full",
-                  "bg-blue-600 text-white text-base font-semibold",
-                  "hover:bg-blue-700 transition-colors duration-200",
-                  "shadow-lg shadow-blue-600/25",
+                  "bg-[#00D98A] text-white text-base font-semibold",
+                  "hover:bg-[#00B876] transition-colors duration-200",
+                  "shadow-lg shadow-emerald-600/25",
                   "group"
                 )}
               >
@@ -260,7 +229,7 @@ export function Navigation() {
 
                   {/* Product Quick Links */}
                   <div className="grid grid-cols-2 gap-2 py-2 mb-2">
-                    {products.filter(p => p.status === "live").map((product) => (
+                    {products.map((product) => (
                       <a
                         key={product.name}
                         href={product.href}
@@ -297,15 +266,15 @@ export function Navigation() {
 
                 <div className="mt-6 pt-6 border-t border-slate-100">
                   <a
-                    href="https://geckoshare.com"
+                    href="https://geckoadvisor.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
                       "flex items-center justify-center gap-2",
                       "w-full px-6 py-4 rounded-full",
-                      "bg-blue-600 text-white font-semibold",
-                      "hover:bg-blue-700 transition-colors",
-                      "shadow-lg shadow-blue-600/25"
+                      "bg-[#00D98A] text-white font-semibold",
+                      "hover:bg-[#00B876] transition-colors",
+                      "shadow-lg shadow-emerald-600/25"
                     )}
                     onClick={() => setIsOpen(false)}
                   >
