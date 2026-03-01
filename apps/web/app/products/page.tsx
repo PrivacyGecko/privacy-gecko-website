@@ -17,8 +17,8 @@ export default function ProductsPage() {
   const liveProducts = [
     {
       name: "GeckoAdvisor",
-      tagline: "Privacy policy scanner",
-      description: "Analyze any website's privacy practices in seconds. Get instant insights into trackers, cookies, and compliance issues.",
+      tagline: "Domain intelligence for risk & compliance",
+      description: "Screen vendor domains before onboarding. Detect trackers, assess privacy posture, and get compliance insights in seconds.",
       icon: Eye,
       href: "https://geckoadvisor.com",
       color: "blue",
@@ -26,8 +26,8 @@ export default function ProductsPage() {
     },
     {
       name: "GeckoShare",
-      tagline: "Encrypted file sharing",
-      description: "Send files that self-destruct after viewing. End-to-end encryption means only the recipient sees your files.",
+      tagline: "Zero-knowledge file sharing",
+      description: "Files encrypted in your browser before upload. Auto-delete in 24 hours. We never see your data.",
       icon: Share2,
       href: "https://geckoshare.com",
       color: "emerald",
@@ -70,7 +70,7 @@ export default function ProductsPage() {
               className="text-xl text-slate-600 leading-relaxed"
             >
               Two focused products designed to protect your business and personal privacy.
-              Both free to start, no credit card required.
+              Trusted by teams that take compliance seriously.
             </motion.p>
           </motion.div>
         </div>
@@ -131,7 +131,7 @@ export default function ProductsPage() {
 
                     {/* CTA */}
                     <div className={`flex items-center ${colors.text} font-semibold group-hover:gap-3 gap-2 transition-all`}>
-                      <span>Try free</span>
+                      <span>Learn more</span>
                       <ArrowUpRight className="w-4 h-4" />
                     </div>
                   </motion.a>
@@ -162,7 +162,7 @@ export default function ProductsPage() {
               variants={fadeUp}
               className="text-xl text-slate-400 max-w-2xl mx-auto mb-10"
             >
-              Every product has a free tier. No credit card required.
+              Scan vendor domains. Share files securely. No tracking, ever.
             </motion.p>
             <motion.div
               variants={fadeUp}
@@ -174,7 +174,7 @@ export default function ProductsPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-[#00D98A] text-white rounded-full font-semibold text-lg transition-all duration-300 hover:bg-[#00B876] hover:scale-[1.02] group shadow-lg shadow-emerald-600/30"
               >
-                Try GeckoAdvisor free
+                Get started
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </a>
               <Link

@@ -14,14 +14,11 @@ export function Navigation() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -44,25 +41,23 @@ export function Navigation() {
 
   return (
     <>
-      {/* Skip to main content */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-slate-900 focus:text-white focus:rounded-full focus:outline-none"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-[#00D98A] focus:text-white focus:rounded-full focus:outline-none"
       >
         Skip to main content
       </a>
 
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           scrolled
-            ? "bg-white/90 backdrop-blur-xl border-b border-slate-200/50"
+            ? "bg-white/90 backdrop-blur-xl shadow-nav border-b border-slate-100"
             : "bg-transparent"
         )}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Logo */}
             <Link href="/" className="relative z-10">
               <Image
                 src="/images/privacygecko_logo_320x100.png"
@@ -74,9 +69,8 @@ export function Navigation() {
               />
             </Link>
 
-            {/* Desktop Navigation - Centered */}
+            {/* Desktop nav */}
             <div className="hidden lg:flex items-center gap-1">
-              {/* Products Dropdown */}
               <div
                 ref={dropdownRef}
                 className="relative"
@@ -84,61 +78,51 @@ export function Navigation() {
                 onMouseLeave={() => setProductsOpen(false)}
               >
                 <button
-                  className={cn(
-                    "px-5 py-2.5 flex items-center gap-1.5",
-                    "text-base font-medium tracking-tight",
-                    "text-slate-600 hover:text-slate-900",
-                    "transition-colors duration-200"
-                  )}
+                  className="px-4 py-2.5 flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
                   onClick={() => setProductsOpen(!productsOpen)}
                 >
                   Products
-                  <ChevronDown className={cn(
-                    "w-4 h-4 transition-transform duration-200",
-                    productsOpen && "rotate-180"
-                  )} />
+                  <ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-200", productsOpen && "rotate-180")} />
                 </button>
 
                 <AnimatePresence>
                   {productsOpen && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-2 w-[320px] bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50"
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.12 }}
+                      className="absolute top-full left-0 mt-1 w-[300px] bg-white rounded-xl shadow-soft-lg border border-slate-200 overflow-hidden z-50"
                     >
-                      <div className="p-4">
-                        <div className="space-y-1 mb-4">
+                      <div className="p-3">
+                        <div className="space-y-0.5 mb-3">
                           {products.map((product) => (
                             <a
                               key={product.name}
                               href={product.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group"
+                              className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors group"
                               onClick={() => setProductsOpen(false)}
                             >
-                              <div className="w-10 h-10 rounded-lg bg-[#00D98A]/10 flex items-center justify-center text-[#00D98A] group-hover:bg-[#00D98A]/20 transition-colors">
-                                <product.icon className="w-5 h-5" />
+                              <div className="w-9 h-9 rounded-lg bg-gecko-50 flex items-center justify-center text-[#00D98A] group-hover:bg-gecko-100 transition-colors">
+                                <product.icon className="w-4.5 h-4.5" />
                               </div>
                               <div>
                                 <p className="font-semibold text-slate-900 text-sm">{product.name}</p>
-                                <p className="text-xs text-slate-500">{product.tagline}</p>
+                                <p className="text-xs text-slate-400">{product.tagline}</p>
                               </div>
                             </a>
                           ))}
                         </div>
-
-                        {/* View All */}
-                        <div className="border-t border-slate-100 pt-3 mt-2">
+                        <div className="border-t border-slate-100 pt-2">
                           <Link
                             href="/products"
-                            className="flex items-center justify-center gap-2 p-3 rounded-xl text-[#00D98A] hover:bg-[#00D98A]/5 transition-colors font-medium text-sm"
+                            className="flex items-center justify-center gap-1.5 p-2.5 rounded-lg text-[#00D98A] hover:bg-gecko-50 transition-colors font-medium text-sm"
                             onClick={() => setProductsOpen(false)}
                           >
                             View all products
-                            <ArrowRight className="w-4 h-4" />
+                            <ArrowRight className="w-3.5 h-3.5" />
                           </Link>
                         </div>
                       </div>
@@ -147,17 +131,11 @@ export function Navigation() {
                 </AnimatePresence>
               </div>
 
-              {/* Other nav links */}
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={cn(
-                    "px-5 py-2.5",
-                    "text-base font-medium tracking-tight",
-                    "text-slate-600 hover:text-slate-900",
-                    "transition-colors duration-200"
-                  )}
+                  className="px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -165,10 +143,10 @@ export function Navigation() {
             </div>
 
             {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center gap-5">
+            <div className="hidden lg:flex items-center gap-4">
               <Link
                 href="/contact"
-                className="text-base font-medium text-slate-600 hover:text-slate-900 transition-colors"
+                className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
               >
                 Contact
               </Link>
@@ -176,66 +154,47 @@ export function Navigation() {
                 href="https://geckoadvisor.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={cn(
-                  "inline-flex items-center gap-2",
-                  "px-6 py-3 rounded-full",
-                  "bg-[#00D98A] text-white text-base font-semibold",
-                  "hover:bg-[#00B876] transition-colors duration-200",
-                  "shadow-lg shadow-emerald-600/25",
-                  "group"
-                )}
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#00D98A] text-white text-sm font-semibold hover:bg-[#00B876] transition-colors shadow-green group"
               >
-                Try free
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                Get started
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
               </a>
             </div>
 
-            {/* Mobile menu button */}
+            {/* Mobile menu */}
             <button
               className="lg:hidden p-2 -mr-2"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
               aria-expanded={isOpen}
             >
-              {isOpen ? (
-                <X size={24} className="text-slate-900" />
-              ) : (
-                <Menu size={24} className="text-slate-900" />
-              )}
+              {isOpen ? <X size={22} className="text-slate-900" /> : <Menu size={22} className="text-slate-900" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-200"
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.15 }}
+              className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-soft-lg"
             >
-              <div className="max-w-7xl mx-auto px-6 py-6">
+              <div className="max-w-7xl mx-auto px-6 py-5">
                 <div className="flex flex-col gap-1">
-                  {/* Products Link */}
-                  <Link
-                    href="/products"
-                    className="py-3 text-lg font-medium text-slate-900 hover:text-[#00D98A] transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link href="/products" className="py-2.5 text-base font-medium text-slate-900 hover:text-[#00D98A] transition-colors" onClick={() => setIsOpen(false)}>
                     Products
                   </Link>
-
-                  {/* Product Quick Links */}
-                  <div className="grid grid-cols-2 gap-2 py-2 mb-2">
+                  <div className="grid grid-cols-2 gap-2 py-2 mb-1">
                     {products.map((product) => (
                       <a
                         key={product.name}
                         href={product.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 text-slate-600 hover:bg-slate-100 transition-colors"
+                        className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-50 text-slate-600 hover:bg-slate-100 transition-colors"
                         onClick={() => setIsOpen(false)}
                       >
                         <product.icon className="w-4 h-4 text-[#00D98A]" />
@@ -243,42 +202,24 @@ export function Navigation() {
                       </a>
                     ))}
                   </div>
-
-                  {/* Other nav links */}
                   {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="py-3 text-lg font-medium text-slate-900 hover:text-[#00D98A] transition-colors"
-                      onClick={() => setIsOpen(false)}
-                    >
+                    <Link key={link.href} href={link.href} className="py-2.5 text-base font-medium text-slate-900 hover:text-[#00D98A] transition-colors" onClick={() => setIsOpen(false)}>
                       {link.label}
                     </Link>
                   ))}
-                  <Link
-                    href="/contact"
-                    className="py-3 text-lg font-medium text-slate-900 hover:text-[#00D98A] transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link href="/contact" className="py-2.5 text-base font-medium text-slate-900 hover:text-[#00D98A] transition-colors" onClick={() => setIsOpen(false)}>
                     Contact
                   </Link>
                 </div>
-
-                <div className="mt-6 pt-6 border-t border-slate-100">
+                <div className="mt-5 pt-5 border-t border-slate-100">
                   <a
                     href="https://geckoadvisor.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={cn(
-                      "flex items-center justify-center gap-2",
-                      "w-full px-6 py-4 rounded-full",
-                      "bg-[#00D98A] text-white font-semibold",
-                      "hover:bg-[#00B876] transition-colors",
-                      "shadow-lg shadow-emerald-600/25"
-                    )}
+                    className="flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-full bg-[#00D98A] text-white font-semibold hover:bg-[#00B876] transition-colors shadow-green"
                     onClick={() => setIsOpen(false)}
                   >
-                    Try free
+                    Get started
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
@@ -288,7 +229,6 @@ export function Navigation() {
         </AnimatePresence>
       </nav>
 
-      {/* Spacer for fixed nav */}
       <div className="h-20" />
     </>
   );

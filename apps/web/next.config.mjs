@@ -73,6 +73,7 @@ const nextConfig = {
       { source: '/products/watch', destination: '/products', permanent: true },
       { source: '/roadmap', destination: '/about', permanent: true },
       { source: '/ai-roadmap', destination: '/about', permanent: true },
+      { source: '/pricing', destination: '/products', permanent: true },
     ]
   },
 

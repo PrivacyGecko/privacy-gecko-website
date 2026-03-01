@@ -185,6 +185,9 @@ importers:
       '@privacygecko/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@remotion/player':
+        specifier: ^4.0.431
+        version: 4.0.431(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tailwindcss/typography':
         specifier: ^0.5.19
         version: 0.5.19(tailwindcss@3.4.19(tsx@4.21.0))
@@ -221,6 +224,9 @@ importers:
       remark-gfm:
         specifier: ^4.0.1
         version: 4.0.1
+      remotion:
+        specifier: ^4.0.431
+        version: 4.0.431(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       resend:
         specifier: ^6.1.2
         version: 6.6.0
@@ -946,6 +952,12 @@ packages:
 
   '@remirror/core-constants@3.0.0':
     resolution: {integrity: sha512-42aWfPrimMfDKDi4YegyS7x+/0tlzaqwPQCULLanv3DMIlu96KTJR0fM5isWX2UViOqlGnX6YFgqWepcX+XMNg==}
+
+  '@remotion/player@4.0.431':
+    resolution: {integrity: sha512-acyDqVAQNOG3lKV4hszvnuCZZm5EZ+K2xbMoEqIsKA5WkdQxLoBWm8CttLYEZkGim0jjIydZ0ng9Svnb99Jc7g==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
 
   '@rollup/rollup-android-arm-eabi@4.53.3':
     resolution: {integrity: sha512-mRSi+4cBjrRLoaal2PnqH82Wqyb+d3HsPUN/W+WslCXsZsyHa9ZeQQX/pQsZaVIWDkPcpV6jJ+3KLbTbgnwv8w==}
@@ -3371,6 +3383,12 @@ packages:
   remark-stringify@11.0.0:
     resolution: {integrity: sha512-1OSmLd3awB/t8qdoEOMazZkNsfVTeY4fTsgzcQFdXNq8ToTN4ZGwrMnlda4K6smTFKD+GRV6O48i6Z4iKgPPpw==}
 
+  remotion@4.0.431:
+    resolution: {integrity: sha512-Y9q6Qgk2nqtaX6fuDVQ+unVVkvOQVOdwaShbJnmLd4vFOwJzDF/XCuCieKsuos3sAR9rPnurxCLRO0VCix2YbA==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
   requires-port@1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
 
@@ -4703,6 +4721,12 @@ snapshots:
   '@popperjs/core@2.11.8': {}
 
   '@remirror/core-constants@3.0.0': {}
+
+  '@remotion/player@4.0.431(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      remotion: 4.0.431(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   '@rollup/rollup-android-arm-eabi@4.53.3':
     optional: true
@@ -7792,6 +7816,11 @@ snapshots:
       '@types/mdast': 4.0.4
       mdast-util-to-markdown: 2.1.2
       unified: 11.0.5
+
+  remotion@4.0.431(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   requires-port@1.0.0: {}
 

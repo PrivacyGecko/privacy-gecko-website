@@ -11,7 +11,7 @@ export function MobileStickyCTA() {
         size="lg"
         className="w-full"
       >
-        Try GeckoAdvisor Free →
+        Get started →
       </Button>
     </div>
   );
