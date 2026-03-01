@@ -31,89 +31,33 @@ const mockCategories = [
   { id: 4, name: "Passwords & Identity", slug: "passwords-identity", description: "Password security, identity protection, and authentication", createdAt: new Date(), updatedAt: new Date() },
 ];
 
-const mockArticles = [
-  {
-    id: 1,
-    title: "The Complete Guide to Online Privacy in 2025",
-    slug: "complete-guide-online-privacy-2025",
-    excerpt:
-      "Learn everything you need to know about protecting your digital privacy in the modern age. We cover VPNs, secure browsers, encrypted messaging, and more.",
-    content: "",
-    categoryId: 1,
-    pillarId: null,
-    metaTitle: null,
-    metaDescription: null,
-    keywords: null,
-    targetProducts: null,
-    searchIntent: null,
-    depthScore: null,
-    originalityScore: null,
-    usefulnessScore: null,
-    spamScore: null,
-    overallScore: null,
-    status: "published",
-    createdAt: new Date("2025-01-15"),
-    updatedAt: new Date("2025-01-15"),
-    publishedAt: new Date("2025-01-15"),
-    wordCount: null,
-    readingTime: 12,
-    category: { name: "Privacy", slug: "privacy" },
-  },
-  {
-    id: 2,
-    title: "VPN vs Proxy: Which Should You Use?",
-    slug: "vpn-vs-proxy-comparison",
-    excerpt:
-      "Understand the key differences between VPNs and proxies to make the right choice for your privacy needs. We break down speed, security, and use cases.",
-    content: "",
-    categoryId: 2,
-    pillarId: null,
-    metaTitle: null,
-    metaDescription: null,
-    keywords: null,
-    targetProducts: null,
-    searchIntent: null,
-    depthScore: null,
-    originalityScore: null,
-    usefulnessScore: null,
-    spamScore: null,
-    overallScore: null,
-    status: "published",
-    createdAt: new Date("2025-01-10"),
-    updatedAt: new Date("2025-01-10"),
-    publishedAt: new Date("2025-01-10"),
-    wordCount: null,
-    readingTime: 6,
-    category: { name: "Browser Protection", slug: "browser-protection" },
-  },
-  {
-    id: 3,
-    title: "Password Security Best Practices for 2025",
-    slug: "password-security-best-practices",
-    excerpt:
-      "Create and manage strong passwords to keep your accounts safe from hackers. Learn about password managers, 2FA, and passkeys.",
-    content: "",
-    categoryId: 4,
-    pillarId: null,
-    metaTitle: null,
-    metaDescription: null,
-    keywords: null,
-    targetProducts: null,
-    searchIntent: null,
-    depthScore: null,
-    originalityScore: null,
-    usefulnessScore: null,
-    spamScore: null,
-    overallScore: null,
-    status: "published",
-    createdAt: new Date("2025-01-05"),
-    updatedAt: new Date("2025-01-05"),
-    publishedAt: new Date("2025-01-05"),
-    wordCount: null,
-    readingTime: 5,
-    category: { name: "Passwords & Identity", slug: "passwords-identity" },
-  },
-];
+// Empty mock articles — DB is the source of truth when connected
+const mockArticles: Array<{
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string | null;
+  content: string;
+  categoryId: number;
+  pillarId: number | null;
+  metaTitle: string | null;
+  metaDescription: string | null;
+  keywords: string[] | null;
+  targetProducts: string[] | null;
+  searchIntent: string | null;
+  depthScore: number | null;
+  originalityScore: number | null;
+  usefulnessScore: number | null;
+  spamScore: number | null;
+  overallScore: number | null;
+  status: string;
+  createdAt: Date;
+  updatedAt: Date;
+  publishedAt: Date | null;
+  wordCount: number | null;
+  readingTime: number | null;
+  category: { name: string; slug: string };
+}> = [];
 
 // Helper to fetch data from database with fallback to mock data
 async function getLatestArticlesWithFallback() {
@@ -121,14 +65,13 @@ async function getLatestArticlesWithFallback() {
     if (process.env.DATABASE_URL) {
       const { getLatestArticles, getAllCategories } = await import("@privacygecko/database");
       const articles = await getLatestArticles(20);
-      if (articles.length > 0) {
-        const categories = await getAllCategories();
-        const categoryMap = new Map(categories.map(c => [c.id, { name: c.name, slug: c.slug }]));
-        return articles.map(a => ({
-          ...a,
-          category: categoryMap.get(a.categoryId) || { name: "Uncategorized", slug: "uncategorized" }
-        }));
-      }
+      // Always return DB results (even empty) when DB is connected
+      const categories = await getAllCategories();
+      const categoryMap = new Map(categories.map(c => [c.id, { name: c.name, slug: c.slug }]));
+      return articles.map(a => ({
+        ...a,
+        category: categoryMap.get(a.categoryId) || { name: "Uncategorized", slug: "uncategorized" }
+      }));
     }
   } catch (error) {
     console.error("Database error, using mock data:", error);

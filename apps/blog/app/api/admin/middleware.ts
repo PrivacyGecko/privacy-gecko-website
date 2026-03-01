@@ -5,10 +5,10 @@ import { NextResponse } from 'next/server'
  */
 export function validateApiKey(request: Request): boolean {
   const apiKey = request.headers.get('X-API-Key')
-  const validKey = process.env.ADMIN_API_KEY
+  const validKey = process.env.ADMIN_API_KEY || process.env.ADMIN_PASSWORD
 
   if (!validKey) {
-    console.error('ADMIN_API_KEY environment variable is not set')
+    console.error('ADMIN_API_KEY or ADMIN_PASSWORD environment variable is not set')
     return false
   }
 
