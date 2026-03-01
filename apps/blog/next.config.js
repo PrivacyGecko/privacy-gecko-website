@@ -1,32 +1,12 @@
 /** @type {import('next').NextConfig} */
 
-// Determine asset prefix based on environment
-// When accessed via /blog rewrite, assets must load from blog subdomain
-function getAssetPrefix() {
-  // Use explicit ASSET_PREFIX if set
-  if (process.env.ASSET_PREFIX) {
-    return process.env.ASSET_PREFIX;
-  }
-
-  // Auto-detect for Vercel deployments
-  // Must include /blog to match basePath, so assets resolve to /blog/_next/static/...
-  if (process.env.VERCEL_ENV === 'production') {
-    return 'https://blog.privacygecko.com/blog';
-  }
-  if (process.env.VERCEL_ENV === 'preview') {
-    return 'https://blog.stage.privacygecko.com/blog';
-  }
-
-  // Local development - no prefix needed
-  return undefined;
-}
-
 const nextConfig = {
   // basePath ensures all blog URLs are under /blog
   // This provides clean URL structure: /blog, /blog/privacy, /blog/browser-protection, etc.
   basePath: '/blog',
-  // Asset prefix ensures JS/CSS load from blog subdomain when accessed via /blog rewrite
-  assetPrefix: getAssetPrefix(),
+  // No assetPrefix needed — the main site's rewrite rule (/blog/:path*) proxies
+  // all requests including _next/static assets. This avoids CORS issues and
+  // the basePath+assetPrefix double-prefix bug with client-side navigation.
   transpilePackages: ['@privacygecko/ui', '@privacygecko/database'],
 
   // Image optimization for Core Web Vitals
@@ -63,15 +43,6 @@ const nextConfig = {
         source: '/:path*',
         headers: [
           { key: 'X-Robots-Tag', value: 'index, follow' },
-        ],
-      },
-      // CORS headers for assets loaded cross-origin via /blog rewrite proxy
-      // Note: basePath auto-prefixes, so /_next/:path* matches /blog/_next/:path*
-      {
-        source: '/_next/:path*',
-        headers: [
-          { key: 'Access-Control-Allow-Origin', value: '*' },
-          { key: 'Access-Control-Allow-Methods', value: 'GET' },
         ],
       },
     ];
