@@ -81,7 +81,7 @@ const nextConfig = {
   // Blog app uses basePath: '/blog', so all paths are under /blog/*
   async rewrites() {
     // Use environment variable for flexibility between staging and production
-    const blogUrl = process.env.BLOG_URL || 'https://blog.stage.privacygecko.com';
+    const blogUrl = process.env.BLOG_URL || 'https://blog.privacygecko.com';
 
     return {
       beforeFiles: [
