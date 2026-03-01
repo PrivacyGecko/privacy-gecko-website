@@ -9,11 +9,12 @@ function getAssetPrefix() {
   }
 
   // Auto-detect for Vercel deployments
+  // Must include /blog to match basePath, so assets resolve to /blog/_next/static/...
   if (process.env.VERCEL_ENV === 'production') {
-    return 'https://blog.privacygecko.com';
+    return 'https://blog.privacygecko.com/blog';
   }
   if (process.env.VERCEL_ENV === 'preview') {
-    return 'https://blog.stage.privacygecko.com';
+    return 'https://blog.stage.privacygecko.com/blog';
   }
 
   // Local development - no prefix needed
@@ -65,10 +66,11 @@ const nextConfig = {
         ],
       },
       // CORS headers for assets loaded cross-origin via /blog rewrite proxy
+      // Note: basePath auto-prefixes, so /_next/:path* matches /blog/_next/:path*
       {
-        source: '/blog/_next/:path*',
+        source: '/_next/:path*',
         headers: [
-          { key: 'Access-Control-Allow-Origin', value: 'https://www.privacygecko.com' },
+          { key: 'Access-Control-Allow-Origin', value: '*' },
           { key: 'Access-Control-Allow-Methods', value: 'GET' },
         ],
       },
