@@ -35,13 +35,9 @@ We're building a comprehensive suite of privacy tools:
 
 Your website privacy auditor. GeckoAdvisor scans website privacy policies and provides actionable insights about how sites track you and collect your data. Think of it as a health checkup for website privacy practices.
 
-### GeckoShare (Coming Soon)
+### GeckoShare
 
-Secure file sharing without compromises. Upload, encrypt, and share files with end-to-end encryption. Files are automatically deleted after download or expiration.
-
-### GeckoGuard (Coming Soon)
-
-A browser extension that blocks trackers, ads, and malicious scripts in real-time. Unlike other ad blockers, GeckoGuard focuses on privacy, not just aesthetics.
+Zero-knowledge file sharing. Files encrypted in your browser before upload. Auto-delete in 24 hours. We never see your data.
 
 ## Why "Gecko"?
 
@@ -93,12 +89,7 @@ User feedback shapes our roadmap. We build what the community needs, not what ma
 
 ## The Road Ahead
 
-We're just getting started. Here's what's coming in 2025:
-
-- **Q1:** GeckoAdvisor mobile app, GeckoShare beta launch
-- **Q2:** GeckoGuard browser extension, VPN integration
-- **Q3:** Password manager, encrypted messaging
-- **Q4:** AI-powered privacy assistant, business tools
+We're focused on making our existing products best-in-class. GeckoAdvisor and GeckoShare are built for teams that take compliance seriously.
 
 ## Join Our Community
 

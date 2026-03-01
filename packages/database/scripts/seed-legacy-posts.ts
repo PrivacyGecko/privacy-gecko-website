@@ -48,7 +48,7 @@ Digital privacy has never been more important. In 2025, we face unprecedented ch
 3. Make informed choices about services you use
 
 Privacy is not about having something to hide—it's about having control over your own information.`,
-    targetProducts: ['geckoadvisor', 'geckoguard'],
+    targetProducts: ['geckoadvisor'],
   },
   {
     slug: 'open-source-privacy-tools',
@@ -74,7 +74,7 @@ When it comes to privacy tools, open source isn't just a nice-to-have—it's ess
 - Independence from any single company
 
 All Privacy Gecko tools are open source because we believe privacy requires transparency.`,
-    targetProducts: ['geckoadvisor', 'geckoshare', 'geckoguard'],
+    targetProducts: ['geckoadvisor', 'geckoshare'],
   },
   {
     slug: 'getting-started-geckoadvisor',
@@ -138,7 +138,7 @@ Share files without exposing your data.
 ## Our Recommendations
 
 Privacy Gecko offers tools across several of these categories, all built with privacy-first principles.`,
-    targetProducts: ['geckoadvisor', 'geckoshare', 'geckoguard', 'geckolock'],
+    targetProducts: ['geckoadvisor', 'geckoshare'],
   },
   {
     slug: 'local-ai-privacy-protection',

@@ -22,8 +22,6 @@ const s3Client = new S3Client({
 const IMAGES_DIR = path.join(__dirname, "../apps/blog/public/images/categories");
 const images = [
   "privacy.jpg",
-  "security.jpg",
-  "crypto-safety.jpg",
   "browser-protection.jpg",
   "file-security.jpg",
   "passwords-identity.jpg",

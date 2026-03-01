@@ -229,6 +229,4 @@ export const SearchIntent = {
 export const TargetProduct = {
   GECKO_ADVISOR: 'geckoadvisor',
   GECKO_SHARE: 'geckoshare',
-  GECKO_GUARD: 'geckoguard',
-  GECKO_LOCK: 'geckolock',
 } as const

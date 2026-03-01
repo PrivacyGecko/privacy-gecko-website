@@ -13,8 +13,6 @@ export function Footer() {
       links: [
         { href: "https://geckoadvisor.com", label: "GeckoAdvisor", external: true, isMainSite: false },
         { href: "https://geckoshare.com", label: "GeckoShare", external: true, isMainSite: false },
-        { href: "https://geckoguard.app", label: "GeckoGuard", external: true, isMainSite: false },
-        { href: "https://geckolock.com", label: "GeckoLock", external: true, isMainSite: false },
       ],
     },
     {
@@ -22,7 +20,6 @@ export function Footer() {
       links: [
         { href: `${MAIN_SITE_BASE}/about`, label: "About", external: false, isMainSite: true },
         { href: "/", label: "Blog", external: false, isMainSite: false }, // Blog internal
-        { href: `${MAIN_SITE_BASE}/roadmap`, label: "Roadmap", external: false, isMainSite: true },
         { href: `${MAIN_SITE_BASE}/contact`, label: "Contact", external: false, isMainSite: true },
       ],
     },

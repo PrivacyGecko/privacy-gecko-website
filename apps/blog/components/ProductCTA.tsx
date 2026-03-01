@@ -1,42 +1,24 @@
-import Link from "next/link";
-import { Shield, Eye, Lock, Share2, ArrowRight, Sparkles } from "lucide-react";
+import { Eye, Share2, ArrowRight, Sparkles } from "lucide-react";
 
 const productInfo: Record<string, { name: string; description: string; icon: React.ReactNode; href: string; color: string }> = {
-  geckoguard: {
-    name: "GeckoGuard",
-    description: "Password manager with zero-knowledge encryption",
-    icon: <Shield className="w-6 h-6" />,
-    href: "/products/geckoguard",
-    color: "emerald",
-  },
   geckoadvisor: {
     name: "GeckoAdvisor",
-    description: "AI-powered privacy policy analyzer",
+    description: "Domain intelligence for risk & compliance",
     icon: <Eye className="w-6 h-6" />,
-    href: "/products/geckoadvisor",
-    color: "indigo",
-  },
-  geckolock: {
-    name: "GeckoLock",
-    description: "Secure file encryption tool",
-    icon: <Lock className="w-6 h-6" />,
-    href: "/products/geckolock",
-    color: "amber",
+    href: "https://geckoadvisor.com",
+    color: "emerald",
   },
   geckoshare: {
     name: "GeckoShare",
-    description: "End-to-end encrypted file sharing",
+    description: "Zero-knowledge file sharing",
     icon: <Share2 className="w-6 h-6" />,
-    href: "/products/geckoshare",
-    color: "rose",
+    href: "https://geckoshare.com",
+    color: "emerald",
   },
 };
 
 const colorClasses: Record<string, { bg: string; icon: string; iconHover: string }> = {
   emerald: { bg: "bg-emerald-50", icon: "text-emerald-600", iconHover: "group-hover:bg-emerald-600" },
-  indigo: { bg: "bg-indigo-50", icon: "text-indigo-600", iconHover: "group-hover:bg-indigo-600" },
-  amber: { bg: "bg-amber-50", icon: "text-amber-600", iconHover: "group-hover:bg-amber-600" },
-  rose: { bg: "bg-rose-50", icon: "text-rose-600", iconHover: "group-hover:bg-rose-600" },
 };
 
 interface ProductCTAProps {
@@ -88,6 +70,8 @@ export function ProductCTA({ products }: ProductCTAProps) {
               <a
                 key={product.name}
                 href={product.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 hover:border-emerald-500/30 transition-all duration-300"
               >
                 <div className={`w-12 h-12 rounded-xl ${colors.bg} ${colors.icon} flex items-center justify-center ${colors.iconHover} group-hover:text-white transition-colors`}>
@@ -107,13 +91,13 @@ export function ProductCTA({ products }: ProductCTAProps) {
 
         {/* Footer Link */}
         <div className="mt-6 pt-6 border-t border-white/10 text-center">
-          <Link
-            href="/products"
+          <a
+            href="https://privacygecko.com/products"
             className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-emerald-400 transition-colors"
           >
             Explore all PrivacyGecko products
             <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
         </div>
       </div>
     </div>

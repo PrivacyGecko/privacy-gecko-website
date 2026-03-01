@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ArrowRight, Eye, Share2, Shield, Lock, Bookmark, Globe, Wifi, FileSearch, ChevronDown } from "lucide-react";
+import { Menu, X, ArrowRight, Eye, Share2, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Base URL for main site links (empty for same domain)
@@ -34,21 +34,14 @@ export function Navigation() {
   }, []);
 
   const products = [
-    { name: "GeckoAdvisor", tagline: "Privacy policy scanner", href: "https://geckoadvisor.com", icon: Eye, status: "live" },
-    { name: "GeckoShare", tagline: "Encrypted file sharing", href: "https://geckoshare.com", icon: Share2, status: "live" },
-    { name: "GeckoGuard", tagline: "Tracker blocker", href: "https://geckoguard.app", icon: Shield, status: "live" },
-    { name: "GeckoLock", tagline: "Password manager", href: "https://geckolock.com", icon: Lock, status: "live" },
-    { name: "GeckoView", tagline: "Private bookmarks", href: `${MAIN_SITE_BASE}/products#geckoview`, icon: Bookmark, status: "coming" },
-    { name: "GeckoShell", tagline: "Mobile browser", href: `${MAIN_SITE_BASE}/products#geckoshell`, icon: Globe, status: "coming" },
-    { name: "GeckoVPN", tagline: "Secure VPN", href: `${MAIN_SITE_BASE}/products#geckovpn`, icon: Wifi, status: "coming" },
-    { name: "GeckoWatch", tagline: "Compliance monitor", href: `${MAIN_SITE_BASE}/products#geckowatch`, icon: FileSearch, status: "coming" },
+    { name: "GeckoAdvisor", tagline: "Domain intelligence for risk & compliance", href: "https://geckoadvisor.com", icon: Eye },
+    { name: "GeckoShare", tagline: "Zero-knowledge file sharing", href: "https://geckoshare.com", icon: Share2 },
   ];
 
   // Navigation links - use <a> for main site, Link for blog internal
   const navLinks = [
     { href: `${MAIN_SITE_BASE}/about`, label: "About", isMainSite: true },
-    { href: `${MAIN_SITE_BASE}/roadmap`, label: "Roadmap", isMainSite: true },
-    { href: "/", label: "Blog", isMainSite: false }, // Blog home on subdomain
+    { href: "/", label: "Blog", isMainSite: false },
   ];
 
   return (
@@ -104,13 +97,11 @@ export function Navigation() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-2 w-[480px] bg-[var(--color-bg-elevated)] rounded-xl shadow-lg border border-[var(--color-border)] overflow-hidden z-50"
+                      className="absolute top-full left-0 mt-2 w-[300px] bg-[var(--color-bg-elevated)] rounded-xl shadow-lg border border-[var(--color-border)] overflow-hidden z-50"
                     >
-                      <div className="p-4">
-                        {/* Live Products */}
-                        <p className="text-[10px] font-semibold text-[var(--color-text-tertiary)] uppercase tracking-wider px-3 mb-2">Live Now</p>
-                        <div className="grid grid-cols-2 gap-1 mb-4">
-                          {products.filter(p => p.status === "live").map((product) => (
+                      <div className="p-3">
+                        <div className="space-y-0.5 mb-3">
+                          {products.map((product) => (
                             <a
                               key={product.name}
                               href={product.href}
@@ -129,30 +120,7 @@ export function Navigation() {
                             </a>
                           ))}
                         </div>
-
-                        {/* Coming Soon */}
-                        <p className="text-[10px] font-semibold text-[var(--color-text-tertiary)] uppercase tracking-wider px-3 mb-2">Coming Soon</p>
-                        <div className="grid grid-cols-2 gap-1 mb-4">
-                          {products.filter(p => p.status === "coming").map((product) => (
-                            <a
-                              key={product.name}
-                              href={product.href}
-                              className="flex items-center gap-3 p-3 rounded-lg hover:bg-[var(--color-bg-subtle)] transition-colors group"
-                              onClick={() => setProductsOpen(false)}
-                            >
-                              <div className="w-9 h-9 rounded-lg bg-[var(--color-bg-subtle)] flex items-center justify-center text-[var(--color-text-tertiary)] group-hover:bg-[var(--color-border)] transition-colors">
-                                <product.icon className="w-4 h-4" />
-                              </div>
-                              <div>
-                                <p className="font-medium text-[var(--color-text-secondary)] text-sm">{product.name}</p>
-                                <p className="text-xs text-[var(--color-text-tertiary)]">{product.tagline}</p>
-                              </div>
-                            </a>
-                          ))}
-                        </div>
-
-                        {/* View All */}
-                        <div className="border-t border-[var(--color-border-subtle)] pt-3 mt-2">
+                        <div className="border-t border-[var(--color-border-subtle)] pt-2">
                           <a
                             href={`${MAIN_SITE_BASE}/products`}
                             className="flex items-center justify-center gap-2 p-2 rounded-lg text-[var(--color-accent)] hover:bg-[var(--color-accent-subtle)] transition-colors font-medium text-sm"
@@ -204,7 +172,7 @@ export function Navigation() {
                 rel="noopener noreferrer"
                 className="btn-primary group"
               >
-                Try free
+                Get started
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </a>
             </div>
@@ -248,7 +216,7 @@ export function Navigation() {
 
                   {/* Product Quick Links */}
                   <div className="grid grid-cols-2 gap-2 py-2 mb-2">
-                    {products.filter(p => p.status === "live").map((product) => (
+                    {products.map((product) => (
                       <a
                         key={product.name}
                         href={product.href}
@@ -302,7 +270,7 @@ export function Navigation() {
                     className="btn-primary w-full justify-center"
                     onClick={() => setIsOpen(false)}
                   >
-                    Try free
+                    Get started
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
