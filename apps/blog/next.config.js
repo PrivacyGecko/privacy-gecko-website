@@ -64,6 +64,14 @@ const nextConfig = {
           { key: 'X-Robots-Tag', value: 'index, follow' },
         ],
       },
+      // CORS headers for assets loaded cross-origin via /blog rewrite proxy
+      {
+        source: '/blog/_next/:path*',
+        headers: [
+          { key: 'Access-Control-Allow-Origin', value: 'https://www.privacygecko.com' },
+          { key: 'Access-Control-Allow-Methods', value: 'GET' },
+        ],
+      },
     ];
   },
   // 301 redirects for legacy blog posts (preserves SEO)
@@ -71,13 +79,7 @@ const nextConfig = {
   // e.g., source: '/old-slug' actually matches /blog/old-slug
   async redirects() {
     return [
-      // Product Updates category
-      {
-        source: '/introducing-privacy-gecko',
-        destination: '/product-updates/introducing-privacy-gecko',
-        permanent: true,
-      },
-      // Privacy Tips category
+      // Legacy redirects — point old slugs to current category structure
       {
         source: '/why-privacy-tools-matter-2025',
         destination: '/privacy/why-privacy-tools-matter-2025',
@@ -88,19 +90,16 @@ const nextConfig = {
         destination: '/privacy/open-source-privacy-tools',
         permanent: true,
       },
-      // Tutorials category
       {
         source: '/getting-started-geckoadvisor',
-        destination: '/tutorials/getting-started-geckoadvisor',
+        destination: '/privacy/getting-started-geckoadvisor',
         permanent: true,
       },
-      // Privacy Guide category
       {
         source: '/complete-guide-privacy-tools-2025',
         destination: '/privacy/complete-guide-privacy-tools-2025',
         permanent: true,
       },
-      // AI & Privacy category
       {
         source: '/local-ai-privacy-protection',
         destination: '/privacy/local-ai-privacy-protection',
